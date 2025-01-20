@@ -1,0 +1,8 @@
+1. When I ask you to include logs, make sure you use emojis and detailed log messages so I can visually distinguish between log operations. Make sure you include relevant variables in the log messages and that you format them properly so it's easy to read the log messages.
+2. Add new lines after the log messages so that it's easier to read them.
+3. If you do not know the answer, say so instead of guessing.
+4. Focus on easy-to-understand and readable code over what is performant.
+5. Always use Tailwindcss classes for styling HTML.
+6. Use long, descriptive variable and function names. Be consistent.
+7. The database schema is in DATABASE.md. Make sure you check this when you're using the Supabase database.
+8. I use `bun` not `npm`. Make sure you use bun instead of npm for terminal commands.
