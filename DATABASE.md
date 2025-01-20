@@ -19,7 +19,7 @@ erDiagram
         timestamptz created_at
         timestamptz updated_at
         uuid created_by FK
-        uuid assigned_to FK
+        uuid[] assigned_to FK
     }
 
     customers {
@@ -37,7 +37,7 @@ erDiagram
     }
 
     tickets ||--o{ auth.users : "created_by"
-    tickets ||--o{ auth.users : "assigned_to"
+    tickets }o--o{ auth.users : "assigned_to"
     customers ||--|| auth.users : "extends"
 ```
 
@@ -100,7 +100,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 - `created_at`: Timestampz (with timezone), auto-set on creation
 - `updated_at`: Timestampz (with timezone), auto-updated
 - `created_by`: UUID, references auth.users, ticket creator
-- `assigned_to`: UUID, references auth.users, assigned support staff
+- `assigned_to`: UUID array, references auth.users, assigned support staff members
 
 #### Relationships
 - Links to Supabase auth.users table for both creator and assignee

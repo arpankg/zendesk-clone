@@ -1,27 +1,5 @@
 # Modern Customer Support System - Product Requirements Document
 
-## Table of Contents
-1. [Core Architecture](#core-architecture)
-   - [Ticket Data Model](#ticket-data-model)
-   - [API-First Design](#api-first-design)
-2. [Employee Interface](#employee-interface)
-   - [Queue Management](#queue-management)
-   - [Ticket Handling](#ticket-handling)
-   - [Performance Tools](#performance-tools)
-3. [Administrative Control](#administrative-control)
-   - [Team Management](#team-management)
-   - [Routing Intelligence](#routing-intelligence)
-4. [Data Management](#data-management)
-   - [Schema Flexibility](#schema-flexibility)
-   - [Performance Optimization](#performance-optimization)
-5. [Customer Features](#customer-features)
-   - [Customer Portal](#customer-portal)
-   - [Self-Service Tools](#self-service-tools)
-   - [Communication Tools](#communication-tools)
-   - [Feedback and Engagement](#feedback-and-engagement)
-   - [Multi-Channel Support](#multi-channel-support)
-6. [Advanced Features](#advanced-features)
-
 ## Core Architecture
 
 ### Ticket Data Model
@@ -98,7 +76,7 @@ Ensures accessibility and scalability through a robust API architecture.
 
 ### Performance Tools
 - **Metrics Tracking**
-  - Response time monitoring
+  - Response time monitoring -> do this by computing resolution time based on `conversation_history` field of each ticket
   - Resolution rate analysis
 - **Template Management**
   - Response optimization

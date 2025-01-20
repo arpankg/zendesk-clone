@@ -25,7 +25,7 @@ create table public.tickets (
     created_at timestamptz default now() not null,
     updated_at timestamptz default now() not null,
     created_by uuid references auth.users(id),
-    assigned_to uuid references auth.users(id)
+    assigned_to uuid[] default '{}'
 );
 
 -- Add updated_at trigger
