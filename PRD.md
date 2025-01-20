@@ -79,19 +79,17 @@ Ensures accessibility and scalability through a robust API architecture.
   - Response time monitoring -> do this by computing resolution time based on `conversation_history` field of each ticket
   - Resolution rate analysis
 - **Template Management**
-  - Response optimization
-  - Usage analytics
+  - Optimize frequently used responses
 - **Personal Stats**
-  - Individual performance metrics
-  - Productivity tracking
+  - Individual agent performance metrics -> we need to keep track of all the tickets an agent has been involved with!
+  - store a field in the `workers` table that keeps track of the worker's productivity stats - how fast their response times are, how many tickets they resolved, etc.
 
 ## Administrative Control
 
 ### Team Management
-- Create and manage specialized teams
-- Skill-based agent assignments
-- Coverage schedule management
-- Performance monitoring
+- Create and manage teams with specific focus areas
+- Assign agents based on skills
+- Set coverage schedules and monitor team performance
 
 ### Routing Intelligence
 - **Rule-Based Assignment**
