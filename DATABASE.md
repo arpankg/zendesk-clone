@@ -22,12 +22,23 @@ erDiagram
         uuid assigned_to FK
     }
 
+    customers {
+        uuid id PK
+        text first_name
+        text last_name
+        text[] communication_channels
+        text preferred_language
+        text email
+        jsonb feedback_history
+    }
+
     auth.users {
         uuid id PK
     }
 
     tickets ||--o{ auth.users : "created_by"
     tickets ||--o{ auth.users : "assigned_to"
+    customers ||--|| auth.users : "extends"
 ```
 
 ## Tables
@@ -100,3 +111,36 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 - Predefined status and priority values for simplicity
 - Automatic timestamp management for created_at and updated_at
 - Conversation history stored as JSONB for flexibility and simpler querying
+
+### customers
+
+Core table for storing customer information. Extends the auth.users table with additional customer-specific fields.
+
+#### Fields
+- `id`: UUID, primary key, references auth.users(id)
+- `first_name`: Text, required, customer's first name
+- `last_name`: Text, required, customer's last name
+- `communication_channels`: Text array, stores the channels customer has used (e.g., 'email', 'chat', 'widget')
+- `preferred_language`: Text, customer's preferred language for communication
+- `email`: Text, required, customer's email address
+- `feedback_history`: JSONB, stores customer's feedback history in the format:
+  ```json
+  {
+    "feedback": [
+      {
+        "rating": 1-5,
+        "comment": "text feedback",
+        "submitted_at": "timestamptz",
+        "ticket_id": "uuid"
+      }
+    ]
+  }
+  ```
+
+#### Relationships
+- Extends Supabase auth.users table (one-to-one relationship)
+
+#### Notes
+- Uses array for communication channels to track all channels used by customer
+- Feedback history stored as JSONB for flexibility and simpler querying
+- Links to auth.users for authentication and base user information
