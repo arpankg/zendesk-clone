@@ -6,6 +6,7 @@ import CustomerDashboard from './pages/CustomerDashboard'
 import EmployeeDashboard from './pages/EmployeeDashboard'
 import EmployeeLogin from './pages/EmployeeLogin'
 import EmployeeSignUp from './pages/EmployeeSignUp'
+import TicketDetails from './pages/TicketDetails'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/customer-login" element={<CustomerLogin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
       <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+      <Route path="/employee-dashboard/ticket/:id" element={<TicketDetails />} />
       <Route path="/employee-login" element={<EmployeeLogin />} />
       <Route path="/employee-signup" element={<EmployeeSignUp />} />
     </Routes>
