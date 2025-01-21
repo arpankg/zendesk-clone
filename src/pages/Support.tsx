@@ -1,13 +1,26 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { supabase } from '../../config/supabase';
+import { useNavigate } from 'react-router-dom';
 
 const Support = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        navigate('/customer-signup?from=support');
+      }
+    };
+    
+    checkAuth();
+  }, [navigate]);
 
   const validateForm = () => {
     if (!email) return 'Email is required';

@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Support from './pages/Support'
-import SignUp from './pages/SignUp'
+import CustomerSignUp from './pages/CustomerSignUp'
+import CustomerLogin from './pages/CustomerLogin'
 import CustomerDashboard from './pages/CustomerDashboard'
 
 function App() {
@@ -13,14 +14,16 @@ function App() {
               Welcome to Support Portal
             </h1>
             <div className="space-x-4">
-              <a href="/signup" className="text-teal-600 hover:text-teal-800">Sign Up</a>
+              <a href="/customer-login" className="text-teal-600 hover:text-teal-800">Customer Sign In</a>
+              <a href="/customer-signup" className="text-teal-600 hover:text-teal-800">Create Customer Account</a>
               <a href="/support" className="text-teal-600 hover:text-teal-800">Get Support</a>
             </div>
           </div>
         </div>
       } />
       <Route path="/support" element={<Support />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/customer-signup" element={<CustomerSignUp />} />
+      <Route path="/customer-login" element={<CustomerLogin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
     </Routes>
   )
