@@ -25,3 +25,36 @@ We need to create the following React pages:
     - Search Bar - component to search through all of a user's tickets
 
 
+Sample User
+User UID - 5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58
+User Email - arpan@gmail.com
+
+## Implementation Steps
+
+### 1. Support Page Ticket Creation
+1. Modify `src/pages/Support.tsx`:
+   - Add form submission handler with:
+     - Hardcoded user ID: "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58" as created_by
+     - Form fields:
+       - Email (required)
+       - Title (required)
+       - Description (required, plaintext)
+     - Default values:
+       - status: "new"
+       - source_channel: "web"
+       - priority: "normal"
+   - Add form validation
+   - Implement Supabase ticket creation
+   - Add success/error notifications
+
+### 2. Sign Up Implementation
+1. Create `src/pages/SignUp.tsx`:
+   - Form fields based on customers table:
+     - First Name (required)
+     - Last Name (required)
+     - Email (required, unique)
+     - Password (required)
+   - Add form validation
+   - Implement Supabase auth.signUp
+   - Create customer record in customers table
+   - Add success/error notifications

@@ -19,6 +19,7 @@ erDiagram
         timestamptz created_at
         timestamptz updated_at
         uuid created_by FK
+        text customer_email FK
         uuid[] assigned_to FK
     }
 
@@ -28,7 +29,7 @@ erDiagram
         text last_name
         text[] communication_channels
         text preferred_language
-        text email
+        text email UK
         jsonb feedback_history
     }
 
@@ -38,6 +39,7 @@ erDiagram
 
     tickets ||--o{ auth.users : "created_by"
     tickets }o--o{ auth.users : "assigned_to"
+    tickets ||--|| customers : "customer_email"
     customers ||--|| auth.users : "extends"
 ```
 
@@ -50,6 +52,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 #### Fields
 - `id`: UUID, primary key, auto-generated
 - `title`: Text, required, ticket summary
+- `description`: Text, required, detailed explanation of the ticket/issue
 - `status`: Text, required, enum:
   - `new`: Ticket created but not yet assigned to support staff
   - `open`: Assigned to support staff and being worked on
@@ -100,10 +103,12 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 - `created_at`: Timestampz (with timezone), auto-set on creation
 - `updated_at`: Timestampz (with timezone), auto-updated
 - `created_by`: UUID, references auth.users, ticket creator
+- `customer_email`: Text, references customers(email), provides an additional way to link tickets to customers
 - `assigned_to`: UUID array, references auth.users, assigned support staff members
 
 #### Relationships
 - Links to Supabase auth.users table for both creator and assignee
+- Links to customers table via customer_email for customer information
 
 #### Notes
 - Uses JSONB for custom fields to maintain flexibility
@@ -122,7 +127,7 @@ Core table for storing customer information. Extends the auth.users table with a
 - `last_name`: Text, required, customer's last name
 - `communication_channels`: Text array, stores the channels customer has used (e.g., 'email', 'chat', 'widget')
 - `preferred_language`: Text, customer's preferred language for communication
-- `email`: Text, required, customer's email address
+- `email`: Text, required, unique, customer's email address
 - `feedback_history`: JSONB, stores customer's feedback history in the format:
   ```json
   {
@@ -139,6 +144,7 @@ Core table for storing customer information. Extends the auth.users table with a
 
 #### Relationships
 - Extends Supabase auth.users table (one-to-one relationship)
+- Linked to tickets table via email for ticket history
 
 #### Notes
 - Uses array for communication channels to track all channels used by customer
