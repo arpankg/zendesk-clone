@@ -31,7 +31,7 @@ User Email - arpan@gmail.com
 
 ## Implementation Steps
 
-### 1. Support Page Ticket Creation
+### 1. Support Page Ticket Creation - DONE
 1. Modify `src/pages/Support.tsx`:
    - Add form submission handler with:
      - Hardcoded user ID: "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58" as created_by
