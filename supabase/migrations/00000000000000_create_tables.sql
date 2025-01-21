@@ -45,6 +45,30 @@ create trigger handle_updated_at before update on customers
     for each row execute procedure public.handle_updated_at();
 
 ------------------------------------------
+-- Create Workers Table
+------------------------------------------
+
+create table public.workers (
+    -- Primary key linking to auth.users
+    id uuid primary key references auth.users(id),
+    
+    -- Required fields
+    email text not null unique,
+    first_name text not null,
+    last_name text not null,
+    role text not null,
+    timezone text not null,
+    
+    -- Optional fields with defaults
+    skills text[] default '{}',
+    languages text[] default '{}',
+    metrics jsonb default '{}',
+    
+    -- Timestamps
+    created_at timestamptz default now() not null
+);
+
+------------------------------------------
 -- Create Tickets Table
 ------------------------------------------
 

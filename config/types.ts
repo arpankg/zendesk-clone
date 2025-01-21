@@ -190,6 +190,44 @@ export interface Database {
           }
         }
       }
+      workers: {
+        Row: {
+          id: string
+          email: string
+          first_name: string
+          last_name: string
+          role: string
+          timezone: string
+          skills: string[]
+          languages: string[]
+          metrics: Json
+          created_at: string
+        }
+        Insert: {
+          id: string
+          email: string
+          first_name: string
+          last_name: string
+          role: string
+          timezone: string
+          skills?: string[]
+          languages?: string[]
+          metrics?: Json
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          first_name?: string
+          last_name?: string
+          role?: string
+          timezone?: string
+          skills?: string[]
+          languages?: string[]
+          metrics?: Json
+          created_at?: string
+        }
+      }
     }
   }
 }
