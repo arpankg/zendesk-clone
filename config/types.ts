@@ -21,13 +21,14 @@ export interface Database {
           priority: TicketPriority
           tags: string[]
           custom_fields: Json
-          conversation_history: {
-            messages: Array<{
+          ticket_history: {
+            events: Array<{
               id: string
-              content: string
-              created_at: string | null
+              type: string
+              created_at: string
               created_by: string
-              attachments: any[]
+              visibility: 'public' | 'private'
+              [key: string]: Json | undefined
             }>
           }
           internal_notes: {
@@ -48,7 +49,11 @@ export interface Database {
           updated_at: string | null
           created_by: string
           customer_email: string
-          assigned_to: string[]
+          assigned_to: Array<{
+            id: string
+            first_name: string
+            last_name: string
+          }>
         }
         Insert: {
           id?: string
@@ -58,13 +63,14 @@ export interface Database {
           priority?: string
           tags?: string[]
           custom_fields?: Json
-          conversation_history?: {
-            messages: Array<{
+          ticket_history?: {
+            events: Array<{
               id: string
-              content: string
-              created_at: string | null
+              type: string
+              created_at: string
               created_by: string
-              attachments: any[]
+              visibility: 'public' | 'private'
+              [key: string]: Json | undefined
             }>
           }
           internal_notes?: {
@@ -85,7 +91,11 @@ export interface Database {
           updated_at?: string | null
           created_by: string
           customer_email?: string
-          assigned_to?: string[]
+          assigned_to?: Array<{
+            id: string
+            first_name: string
+            last_name: string
+          }>
         }
         Update: {
           id?: string
@@ -95,13 +105,14 @@ export interface Database {
           priority?: string
           tags?: string[]
           custom_fields?: Json
-          conversation_history?: {
-            messages: Array<{
+          ticket_history?: {
+            events: Array<{
               id: string
-              content: string
-              created_at: string | null
+              type: string
+              created_at: string
               created_by: string
-              attachments: any[]
+              visibility: 'public' | 'private'
+              [key: string]: Json | undefined
             }>
           }
           internal_notes?: {
@@ -122,7 +133,11 @@ export interface Database {
           updated_at?: string | null
           created_by?: string
           customer_email?: string
-          assigned_to?: string[]
+          assigned_to?: Array<{
+            id: string
+            first_name: string
+            last_name: string
+          }>
         }
       }
       customers: {

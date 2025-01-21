@@ -12,7 +12,7 @@ erDiagram
         text priority
         text[] tags
         jsonb custom_fields
-        jsonb conversation_history
+        jsonb ticket_history
         jsonb internal_notes
         jsonb feedback
         text source_channel
@@ -20,7 +20,7 @@ erDiagram
         timestamptz updated_at
         uuid created_by FK
         text customer_email FK
-        uuid[] assigned_to FK
+        jsonb assigned_to
     }
 
     customers {
@@ -37,10 +37,23 @@ erDiagram
         uuid id PK
     }
 
+    workers {
+        uuid id PK
+        text email UK
+        text first_name
+        text last_name
+        timestamptz created_at
+        text role
+        text[] skills
+        text[] languages
+        text timezone
+        jsonb metrics
+    }
+
     tickets ||--o{ auth.users : "created_by"
-    tickets }o--o{ auth.users : "assigned_to"
     tickets ||--|| customers : "customer_email"
     customers ||--|| auth.users : "extends"
+    workers ||--|| auth.users : "id"
 ```
 
 ## Tables
@@ -64,20 +77,99 @@ Core table for storing support tickets. Designed for flexibility while maintaini
   - high
 - `tags`: Text array, optional, for categorization and filtering
 - `custom_fields`: JSONB, optional, for flexible metadata storage
-- `conversation_history`: JSONB, stores all messages and internal notes in the format:
+- `ticket_history`: JSONB, stores all ticket events chronologically in the format:
   ```json
   {
-    "messages": [
+    "events": [
       {
-        "id": "uuid",
+        "id": "evt-uuid",
+        "type": "message",
         "content": "message text",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "visibility": "public",
         "attachments": []
+      },
+      {
+        "id": "evt-uuid",
+        "type": "status-update",
+        "old_value": "new",
+        "new_value": "open",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "visibility": "public"
+      },
+      {
+        "id": "evt-uuid",
+        "type": "field-added",
+        "field_name": "custom_field_name",
+        "new_value": "field value",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "visibility": "private"
+      },
+      {
+        "id": "evt-uuid",
+        "type": "field-removed",
+        "field_name": "custom_field_name",
+        "old_value": "field value",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "visibility": "private"
+      },
+      {
+        "id": "evt-uuid",
+        "type": "assignment-added",
+        "agent_id": "user_id",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "visibility": "public"
+      },
+      {
+        "id": "evt-uuid",
+        "type": "assignment-removed",
+        "agent_id": "user_id",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "visibility": "public"
       }
     ]
   }
   ```
+
+  ##### Event Types
+  The `type` field in ticket history events is flexible and can be extended. Initial event types include:
+  
+  1. `message`: Regular conversation messages
+     - Required fields: id, type, content, created_at, created_by, visibility, attachments
+  
+  2. `status-update`: Changes to ticket status
+     - Required fields: id, type, old_value, new_value, created_at, created_by, visibility
+  
+  3. `field-added`: New field added to custom_fields
+     - Required fields: id, type, field_name, new_value, created_at, created_by, visibility
+  
+  4. `field-removed`: Field removed from custom_fields
+     - Required fields: id, type, field_name, old_value, created_at, created_by, visibility
+  
+  5. `assignment-added`: Agent added to ticket assignments
+     - Required fields: id, type, agent_id, created_at, created_by, visibility
+  
+  6. `assignment-removed`: Agent removed from ticket assignments
+     - Required fields: id, type, agent_id, created_at, created_by, visibility
+
+  ##### Event Visibility
+  Each event has a visibility field that can be:
+  - `public`: Visible to both customers and support staff
+  - `private`: Visible only to support staff (internal notes, system events, etc.)
+
+  ##### Notes on Ticket History
+  - Events are stored chronologically in a single array
+  - Each event must have a unique ID
+  - The event type system is extensible - new types can be added without schema changes
+  - Old and new values are stored for auditing when applicable
+  - Assignment changes track individual additions/removals rather than full assignment list changes
+  - The visibility system allows for proper access control of sensitive information
 - `internal_notes`: JSONB, stores internal staff-only notes in the format:
   ```json
   {
@@ -104,7 +196,16 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 - `updated_at`: Timestampz (with timezone), auto-updated
 - `created_by`: UUID, references auth.users, ticket creator
 - `customer_email`: Text, references customers(email), provides an additional way to link tickets to customers
-- `assigned_to`: UUID array, references auth.users, assigned support staff members
+- `assigned_to`: JSONB, stores an array of worker details in format:
+  ```json
+  [
+    {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "first_name": "Jane",
+      "last_name": "Smith"
+    }
+  ]
+  ```
 
 #### Relationships
 - Links to Supabase auth.users table for both creator and assignee
@@ -115,7 +216,6 @@ Core table for storing support tickets. Designed for flexibility while maintaini
 - Simple array for tags as per MVP requirements
 - Predefined status and priority values for simplicity
 - Automatic timestamp management for created_at and updated_at
-- Conversation history stored as JSONB for flexibility and simpler querying
 
 ### customers
 
@@ -150,3 +250,47 @@ Core table for storing customer information. Extends the auth.users table with a
 - Uses array for communication channels to track all channels used by customer
 - Feedback history stored as JSONB for flexibility and simpler querying
 - Links to auth.users for authentication and base user information
+
+### workers
+
+Stores information about support agents and administrators.
+
+#### Fields
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| id | UUID | Primary key, links to Supabase auth | PRIMARY KEY, NOT NULL |
+| email | TEXT | Worker's email address | UNIQUE, NOT NULL |
+| first_name | TEXT | Worker's first name | NOT NULL |
+| last_name | TEXT | Worker's last name | NOT NULL |
+| created_at | TIMESTAMPTZ | When the worker was added | NOT NULL, DEFAULT now() |
+| role | TEXT | Worker's role in the system | NOT NULL, CHECK (role IN ('admin', 'agent')) |
+| skills | TEXT[] | Array of skill tags | DEFAULT '{}' |
+| languages | TEXT[] | Languages the worker can communicate in | DEFAULT '{}' |
+| timezone | TEXT | Worker's timezone (e.g., 'America/New_York') | NOT NULL |
+| metrics | JSONB | Flexible storage for worker performance metrics | DEFAULT '{}' |
+
+#### Relationships
+- `id` links to Supabase auth.users table for authentication
+
+#### Indexes
+- Primary Key on `id`
+- Unique index on `email`
+- Index on `role` for quick role-based queries
+- GIN index on `skills` and `languages` for array operations
+
+#### Example
+```json
+{
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "email": "jane.smith@company.com",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "created_at": "2025-01-21T00:00:00Z",
+  "role": "agent",
+  "skills": ["technical", "billing", "api"],
+  "languages": ["en", "es"],
+  "timezone": "America/New_York",
+  "metrics": {}
+}
+```

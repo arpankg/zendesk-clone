@@ -56,7 +56,17 @@ const Support = () => {
           customer_email: email,
           tags: [],
           custom_fields: {},
-          conversation_history: { messages: [] },
+          ticket_history: {
+            events: [{
+              id: crypto.randomUUID(),
+              type: 'message',
+              content: description,
+              created_at: new Date().toISOString(),
+              created_by: '5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58',
+              visibility: 'public',
+              attachments: []
+            }]
+          },
           internal_notes: { notes: [] },
           feedback: { rating: 0, comment: '', submitted_at: null }
         });

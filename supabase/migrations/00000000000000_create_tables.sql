@@ -61,7 +61,7 @@ create table public.tickets (
     -- Optional fields with defaults
     tags text[] default '{}',
     custom_fields jsonb default '{}',
-    conversation_history jsonb default '{"messages": []}'::jsonb,
+    ticket_history jsonb default '{"events": []}'::jsonb,
     internal_notes jsonb default '{"notes": []}'::jsonb,
     feedback jsonb default '{}',
     source_channel text,
@@ -73,7 +73,7 @@ create table public.tickets (
     -- Foreign keys and references
     created_by uuid references auth.users(id),
     customer_email text references public.customers(email),
-    assigned_to uuid[] default '{}'
+    assigned_to jsonb default '[]'::jsonb
 );
 
 -- Add updated_at trigger for tickets
