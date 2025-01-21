@@ -17,7 +17,7 @@ const EmployeeSignUp = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState<string>('');
   const [query, setQuery] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -109,6 +109,10 @@ const EmployeeSignUp = () => {
     }
   };
 
+  const handleLocationChange = (value: string | null) => {
+    setLocation(value || '');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow">
@@ -191,7 +195,7 @@ const EmployeeSignUp = () => {
             <label htmlFor="location" className="block text-sm font-medium text-gray-700">
               Location (City, Country)
             </label>
-            <Combobox value={location} onChange={setLocation}>
+            <Combobox value={location} onChange={handleLocationChange}>
               <div className="relative mt-1">
                 <Combobox.Input
                   className="w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
