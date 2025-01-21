@@ -39,7 +39,7 @@ INSERT INTO public.workers (
     'Senior Technical Support',
     'America/New_York',
     ARRAY['Technical Support', 'API Integration', 'Database Management'],
-    ARRAY['English', 'Spanish'],
+    ARRAY['en', 'es'],
     '{"tickets_resolved": 0, "avg_response_time": 0}'::jsonb,
     now()
 );
@@ -82,7 +82,7 @@ INSERT INTO public.workers (
     'Customer Success Manager',
     'America/Los_Angeles',
     ARRAY['Customer Success', 'Account Management', 'Product Training'],
-    ARRAY['English', 'French'],
+    ARRAY['en', 'fr'],
     '{"tickets_resolved": 0, "avg_response_time": 0}'::jsonb,
     now()
 );
@@ -125,7 +125,7 @@ INSERT INTO public.workers (
     'Billing Support',
     'Europe/London',
     ARRAY['Billing', 'Payment Processing', 'Refunds'],
-    ARRAY['English', 'German'],
+    ARRAY['en', 'de'],
     '{"tickets_resolved": 0, "avg_response_time": 0}'::jsonb,
     now()
 );
@@ -168,7 +168,7 @@ INSERT INTO public.workers (
     'Product Support Specialist',
     'Asia/Singapore',
     ARRAY['Product Features', 'User Training', 'Bug Reporting'],
-    ARRAY['English', 'Mandarin', 'Cantonese'],
+    ARRAY['en', 'zh', 'yue'],
     '{"tickets_resolved": 0, "avg_response_time": 0}'::jsonb,
     now()
 );
@@ -211,7 +211,7 @@ INSERT INTO public.workers (
     'Support Team Lead',
     'America/Chicago',
     ARRAY['Team Management', 'Escalations', 'Process Improvement', 'Quality Assurance'],
-    ARRAY['English', 'Spanish', 'Portuguese'],
+    ARRAY['en', 'es', 'pt'],
     '{"tickets_resolved": 0, "avg_response_time": 0}'::jsonb,
     now()
 );
