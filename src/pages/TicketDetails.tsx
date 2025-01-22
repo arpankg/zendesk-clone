@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '../../config/supabase';
 import LoadingSpinner from '../components/common/LoadingSpinner';
@@ -57,16 +57,7 @@ const formatMessageDate = (date: string) => {
   return formattedDate;
 };
 
-const getInitials = (name: string) => {
-  logger.event(`Getting initials for: ${name}`);
-  const initials = name
-    .split(' ')
-    .map(part => part[0])
-    .join('')
-    .toUpperCase();
-  logger.event(`Generated initials: ${initials}`);
-  return initials;
-};
+
 
 const TicketDetails = () => {
   logger.component('Component mounted');
