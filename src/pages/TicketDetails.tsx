@@ -26,6 +26,7 @@ const logger = {
 };
 
 type Ticket = Database['public']['Tables']['tickets']['Row'];
+type Customer = Database['public']['Tables']['customers']['Row'];
 type MessageEvent = Ticket['ticket_history']['events'][0] & { content: string };
 
 const formatMessageDate = (date: string) => {
@@ -70,40 +71,57 @@ const TicketDetails = () => {
   logger.component('Component mounted');
   const { id } = useParams<{ id: string }>();
   const [ticket, setTicket] = useState<Ticket | null>(null);
+  const [customer, setCustomer] = useState<Customer | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     logger.component(`Effect triggered with ticket ID: ${id}`);
     
-    const fetchTicket = async () => {
+    const fetchTicketAndCustomer = async () => {
       try {
         logger.data('Fetching ticket data...');
-        const { data, error } = await supabase
+        const { data: ticketData, error: ticketError } = await supabase
           .from('tickets')
           .select('*')
           .eq('id', id)
           .single();
 
-        if (error) {
-          logger.error('Failed to fetch ticket', error);
-          throw error;
+        if (ticketError) {
+          logger.error('Failed to fetch ticket', ticketError);
+          throw ticketError;
         }
         
-        logger.data('Ticket data fetched successfully', data);
-        setTicket(data);
+        logger.data('Ticket data fetched successfully', ticketData);
+        setTicket(ticketData);
+
+        // Fetch customer data
+        logger.data('Fetching customer data...');
+        const { data: customerData, error: customerError } = await supabase
+          .from('customers')
+          .select('*')
+          .eq('email', ticketData.customer_email)
+          .single();
+
+        if (customerError) {
+          logger.error('Failed to fetch customer', customerError);
+          throw customerError;
+        }
+
+        logger.data('Customer data fetched successfully', customerData);
+        setCustomer(customerData);
       } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Failed to fetch ticket';
+        const errorMessage = err instanceof Error ? err.message : 'Failed to fetch data';
         logger.error(errorMessage, err);
         setError(errorMessage);
       } finally {
-        logger.data('Fetch operation completed');
+        logger.data('Fetch operations completed');
         setLoading(false);
       }
     };
 
     if (id) {
-      fetchTicket();
+      fetchTicketAndCustomer();
     } else {
       logger.error('No ticket ID provided');
     }
@@ -183,8 +201,21 @@ const TicketDetails = () => {
       <div className="max-w-5xl mx-auto px-4 py-6">
         <div className="space-y-6">
           {messages.map((message) => {
-            const isCustomer = message.created_by === ticket.customer_email;
-            const name = isCustomer ? message.created_by.split('@')[0] : 'Arpan Gupta';
+            const isCustomer = message.created_by_uuid === ticket.created_by;
+            const name = isCustomer && customer
+              ? `${customer.first_name} ${customer.last_name}`
+              : `${message.created_by_first_name} ${message.created_by_last_name}`;
+            
+            logger.data('Message sender debug info:', {
+              messageId: message.id,
+              created_by_uuid: message.created_by_uuid,
+              customer_email: ticket.customer_email,
+              isCustomer: isCustomer,
+              name: name,
+              first_name: isCustomer ? customer?.first_name : message.created_by_first_name,
+              last_name: isCustomer ? customer?.last_name : message.created_by_last_name
+            });
+            
             logger.render(`Rendering message`, {
               messageId: message.id,
               isCustomer,
@@ -195,7 +226,7 @@ const TicketDetails = () => {
             return (
               <MessageBubble
                 key={message.id}
-                isCustomer={isCustomer}
+                isCustomer={!isCustomer}
                 message={message.content}
                 timestamp={formatMessageDate(message.created_at)}
                 username={name}

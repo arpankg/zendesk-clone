@@ -27,8 +27,8 @@ export function MessageBubble({
         className={cn(
           "rounded-lg px-4 py-2",
           isCustomer
-            ? "bg-primary text-primary-foreground"
-            : "bg-muted"
+            ? "bg-blue-500 text-white"
+            : "bg-gray-100 text-gray-900"
         )}
       >
         <p className="text-sm">{message}</p>
