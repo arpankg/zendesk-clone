@@ -46,9 +46,9 @@ export interface Database {
             }>
           }
           feedback: {
-            rating: number
-            comment: string
-            submitted_at: string | null
+            rating?: number
+            comment?: string
+            submitted_at?: string | null
           }
           source_channel: string
           created_at: string | null
@@ -94,9 +94,9 @@ export interface Database {
             }>
           }
           feedback?: {
-            rating: number
-            comment: string
-            submitted_at: string | null
+            rating?: number
+            comment?: string
+            submitted_at?: string | null
           }
           source_channel?: string
           created_at?: string | null
@@ -142,9 +142,9 @@ export interface Database {
             }>
           }
           feedback?: {
-            rating: number
-            comment: string
-            submitted_at: string | null
+            rating?: number
+            comment?: string
+            submitted_at?: string | null
           }
           source_channel?: string
           created_at?: string | null
