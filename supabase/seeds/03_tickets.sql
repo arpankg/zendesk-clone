@@ -37,6 +37,24 @@ INSERT INTO public.tickets (
                 "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
                 "visibility": "public",
                 "attachments": []
+            },
+            {
+                "id": "evt-1b",
+                "type": "message",
+                "content": "Hi! I''m sorry you''re having trouble accessing your dashboard. Could you please try clearing your browser cache and cookies, then logging in again?",
+                "created_at": "2024-12-20T14:30:00Z",
+                "created_by": "98f2dfb4-c6a1-4d17-9e3b-b531e5d7c6f8",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-1c",
+                "type": "message",
+                "content": "I''ll try that now and let you know if it works.",
+                "created_at": "2024-12-20T14:32:00Z",
+                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
+                "visibility": "public",
+                "attachments": []
             }
         ]
     }'::jsonb,
@@ -90,20 +108,56 @@ INSERT INTO public.tickets (
             {
                 "id": "evt-2b",
                 "type": "message",
-                "content": "Here are the premium plan details...",
+                "content": "Hi Sarah! I''d be happy to help explain our premium plan pricing. What specific information would you like to know?",
                 "created_at": "2024-12-15T09:10:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
+                "created_by": "4f6e8d2b-1a3c-5b7e-9f4d-2c8a6b4e1d3f",
                 "visibility": "public",
                 "attachments": []
             },
             {
                 "id": "evt-2c",
-                "type": "status-update",
-                "old_value": "new",
-                "new_value": "closed",
+                "type": "message",
+                "content": "I''m interested in annual billing. What kind of discount do you offer compared to monthly?",
+                "created_at": "2024-12-15T09:12:00Z",
+                "created_by": "f23c5c88-2322-4c2d-9f59-43e79a9b5c44",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-2d",
+                "type": "message",
+                "content": "With annual billing, you get a 20% discount compared to monthly billing. For the premium plan, that would be $1,200/year instead of $1,500 ($125/month).",
+                "created_at": "2024-12-15T09:14:00Z",
+                "created_by": "4f6e8d2b-1a3c-5b7e-9f4d-2c8a6b4e1d3f",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-2e",
+                "type": "message",
+                "content": "That sounds great! How do I switch to annual billing?",
                 "created_at": "2024-12-15T09:15:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
-                "visibility": "public"
+                "created_by": "f23c5c88-2322-4c2d-9f59-43e79a9b5c44",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-2f",
+                "type": "message",
+                "content": "I''ll help you switch right now. I''ve updated your billing cycle to annual. You''ll see the pro-rated adjustment on your next invoice. Is there anything else you need help with?",
+                "created_at": "2024-12-15T09:17:00Z",
+                "created_by": "4f6e8d2b-1a3c-5b7e-9f4d-2c8a6b4e1d3f",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-2g",
+                "type": "message",
+                "content": "No, that''s all. Thank you for your help!",
+                "created_at": "2024-12-15T09:18:00Z",
+                "created_by": "f23c5c88-2322-4c2d-9f59-43e79a9b5c44",
+                "visibility": "public",
+                "attachments": []
             }
         ]
     }'::jsonb,
@@ -113,7 +167,7 @@ INSERT INTO public.tickets (
                 "id": "note1",
                 "content": "Customer interested in annual plan",
                 "created_at": "2024-12-15T09:12:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58"
+                "created_by": "4f6e8d2b-1a3c-5b7e-9f4d-2c8a6b4e1d3f"
             }
         ]
     }'::jsonb,
@@ -151,11 +205,11 @@ INSERT INTO public.tickets (
 ) VALUES (
     '2b3c4d5e-f6a7-8b9c-0d1e-2f3a4b5c6d7e',
     'Problema con la configuración de idioma',
-    'El sistema no guarda mi preferencia de idioma español.',
+    E'El sistema no guarda mi preferencia de idioma español.',
     'pending',
     'low',
     ARRAY['language', 'settings', 'spanish'],
-    '{"preferred_language": "es"}',
+    '{"preferred_language": "es"}'::jsonb,
     '{
         "events": [
             {
@@ -170,20 +224,20 @@ INSERT INTO public.tickets (
             {
                 "id": "evt-3b",
                 "type": "message",
-                "content": "Por favor, intente borrar la caché...",
-                "created_at": "2024-11-28T16:40:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
+                "content": "Hola Carlos, lamento que tengas problemas con la configuración del idioma. ¿Podrías decirme qué pasos seguiste para cambiar el idioma?",
+                "created_at": "2024-11-28T16:35:00Z",
+                "created_by": "9d8c7b6a-5e4f-3d2e-1f0a-9876543210ab",
                 "visibility": "public",
                 "attachments": []
             },
             {
                 "id": "evt-3c",
-                "type": "status-update",
-                "old_value": "new",
-                "new_value": "pending",
-                "created_at": "2024-11-28T16:42:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
-                "visibility": "public"
+                "type": "message",
+                "content": "Cambié el idioma en la configuración de mi perfil, pero cuando cierro sesión y vuelvo a entrar, está en inglés otra vez.",
+                "created_at": "2024-11-28T16:38:00Z",
+                "created_by": "7d3e41c9-9a5d-4e4f-a71c-94b17e8f6e24",
+                "visibility": "public",
+                "attachments": []
             }
         ]
     }'::jsonb,
@@ -193,7 +247,7 @@ INSERT INTO public.tickets (
                 "id": "note2",
                 "content": "User experiencing persistent language setting issues",
                 "created_at": "2024-11-28T16:42:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58"
+                "created_by": "9d8c7b6a-5e4f-3d2e-1f0a-9876543210ab"
             }
         ]
     }'::jsonb,
@@ -249,12 +303,21 @@ INSERT INTO public.tickets (
             },
             {
                 "id": "evt-4b",
-                "type": "status-update",
-                "old_value": "new",
-                "new_value": "open",
+                "type": "message",
+                "content": "Hi John! You can find our API documentation at docs.example.com/api. Is there a specific endpoint you''re looking for?",
                 "created_at": "2024-01-20T10:05:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
-                "visibility": "public"
+                "created_by": "98f2dfb4-c6a1-4d17-9e3b-b531e5d7c6f8",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-4c",
+                "type": "message",
+                "content": "Yes, I''m specifically looking for the user management endpoints.",
+                "created_at": "2024-01-20T10:07:00Z",
+                "created_by": "a1b2c3d4-e5f6-4a5b-9c8d-1a2b3c4d5e6f",
+                "visibility": "public",
+                "attachments": []
             }
         ]
     }'::jsonb,
@@ -299,7 +362,7 @@ INSERT INTO public.tickets (
             {
                 "id": "evt-5a",
                 "type": "message",
-                "content": "Requesting enhanced reporting features",
+                "content": "Hi! I''d love to see more detailed analytics in the reporting dashboard. Specifically, we need better insights into user engagement patterns and custom event tracking.",
                 "created_at": "2024-12-10T13:30:00Z",
                 "created_by": "b5e7d31c-8a2f-4b9c-9d6e-f4c3a2b1e0d9",
                 "visibility": "public",
@@ -308,29 +371,56 @@ INSERT INTO public.tickets (
             {
                 "id": "evt-5b",
                 "type": "message",
-                "content": "Thanks for the suggestion! We''ll add this to our roadmap.",
-                "created_at": "2024-12-10T13:40:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
+                "content": "Hi Emma! Thank you for the suggestion. Could you tell us more about the specific metrics you''d like to track?",
+                "created_at": "2024-12-10T13:35:00Z",
+                "created_by": "98f2dfb4-c6a1-4d17-9e3b-b531e5d7c6f8",
                 "visibility": "public",
                 "attachments": []
             },
             {
                 "id": "evt-5c",
-                "type": "field-added",
-                "field_name": "feature_category",
-                "new_value": "analytics",
-                "created_at": "2024-12-10T13:41:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
-                "visibility": "private"
+                "type": "message",
+                "content": "We''d like to track user session duration, conversion funnels, and feature adoption rates. It would be great to see how different features correlate with user engagement.",
+                "created_at": "2024-12-10T13:38:00Z",
+                "created_by": "b5e7d31c-8a2f-4b9c-9d6e-f4c3a2b1e0d9",
+                "visibility": "public",
+                "attachments": []
             },
             {
                 "id": "evt-5d",
-                "type": "status-update",
-                "old_value": "new",
-                "new_value": "closed",
+                "type": "message",
+                "content": "Great feedback! I''m happy to share that these features are already on our Q1 2024 roadmap. Would you be interested in joining our beta testing program?",
+                "created_at": "2024-12-10T13:40:00Z",
+                "created_by": "98f2dfb4-c6a1-4d17-9e3b-b531e5d7c6f8",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-5e",
+                "type": "message",
+                "content": "Yes, definitely! Please add me to the beta testing group.",
+                "created_at": "2024-12-10T13:41:00Z",
+                "created_by": "b5e7d31c-8a2f-4b9c-9d6e-f4c3a2b1e0d9",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-5f",
+                "type": "message",
+                "content": "Perfect! I''ve added you to the list. You''ll receive an email about the beta program in January. Is there anything else you need help with?",
                 "created_at": "2024-12-10T13:42:00Z",
-                "created_by": "5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58",
-                "visibility": "public"
+                "created_by": "98f2dfb4-c6a1-4d17-9e3b-b531e5d7c6f8",
+                "visibility": "public",
+                "attachments": []
+            },
+            {
+                "id": "evt-5g",
+                "type": "message",
+                "content": "No, that''s all. Thanks for your help!",
+                "created_at": "2024-12-10T13:43:00Z",
+                "created_by": "b5e7d31c-8a2f-4b9c-9d6e-f4c3a2b1e0d9",
+                "visibility": "public",
+                "attachments": []
             }
         ]
     }'::jsonb,
