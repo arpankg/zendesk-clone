@@ -25,9 +25,15 @@ export interface Database {
             events: Array<{
               id: string
               type: string
+              content?: string
               created_at: string
-              created_by: string
+              created_by_uuid: string
+              created_by_first_name: string
+              created_by_last_name: string
               visibility: 'public' | 'private'
+              attachments?: string[]
+              old_value?: string
+              new_value?: string
               [key: string]: Json | undefined
             }>
           }
@@ -67,9 +73,15 @@ export interface Database {
             events: Array<{
               id: string
               type: string
+              content?: string
               created_at: string
-              created_by: string
+              created_by_uuid: string
+              created_by_first_name: string
+              created_by_last_name: string
               visibility: 'public' | 'private'
+              attachments?: string[]
+              old_value?: string
+              new_value?: string
               [key: string]: Json | undefined
             }>
           }
@@ -109,9 +121,15 @@ export interface Database {
             events: Array<{
               id: string
               type: string
+              content?: string
               created_at: string
-              created_by: string
+              created_by_uuid: string
+              created_by_first_name: string
+              created_by_last_name: string
               visibility: 'public' | 'private'
+              attachments?: string[]
+              old_value?: string
+              new_value?: string
               [key: string]: Json | undefined
             }>
           }

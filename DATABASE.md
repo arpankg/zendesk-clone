@@ -86,7 +86,9 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "type": "message",
         "content": "message text",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "public",
         "attachments": []
       },
@@ -97,6 +99,8 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "new_value": "open",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "public"
       },
       {
@@ -106,6 +110,8 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "new_value": "field value",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "private"
       },
       {
@@ -115,6 +121,8 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "old_value": "field value",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "private"
       },
       {
@@ -123,6 +131,8 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "agent_id": "user_id",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "public"
       },
       {
@@ -131,6 +141,8 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "agent_id": "user_id",
         "created_at": "timestampz",
         "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
         "visibility": "public"
       }
     ]
