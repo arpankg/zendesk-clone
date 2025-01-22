@@ -82,7 +82,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
   {
     "events": [
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "message",
         "content": "message text",
         "created_at": "timestampz",
@@ -91,7 +91,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "attachments": []
       },
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "status-update",
         "old_value": "new",
         "new_value": "open",
@@ -100,7 +100,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "visibility": "public"
       },
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "field-added",
         "field_name": "custom_field_name",
         "new_value": "field value",
@@ -109,7 +109,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "visibility": "private"
       },
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "field-removed",
         "field_name": "custom_field_name",
         "old_value": "field value",
@@ -118,7 +118,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "visibility": "private"
       },
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "assignment-added",
         "agent_id": "user_id",
         "created_at": "timestampz",
@@ -126,7 +126,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "visibility": "public"
       },
       {
-        "id": "evt-uuid",
+        "id": "uuid",
         "type": "assignment-removed",
         "agent_id": "user_id",
         "created_at": "timestampz",
