@@ -27,6 +27,7 @@ const logger = {
 
 type Ticket = Database['public']['Tables']['tickets']['Row'];
 type Customer = Database['public']['Tables']['customers']['Row'];
+type Worker = Database['public']['Tables']['workers']['Row'];
 type MessageEvent = Ticket['ticket_history']['events'][0] & { content: string };
 
 const formatMessageDate = (date: string) => {
@@ -72,14 +73,39 @@ const TicketDetails = () => {
   const { id } = useParams<{ id: string }>();
   const [ticket, setTicket] = useState<Ticket | null>(null);
   const [customer, setCustomer] = useState<Customer | null>(null);
+  const [worker, setWorker] = useState<Worker | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [messageInput, setMessageInput] = useState('');
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     logger.component(`Effect triggered with ticket ID: ${id}`);
     
-    const fetchTicketAndCustomer = async () => {
+    const fetchData = async () => {
       try {
+        // Get current authenticated user
+        const { data: { user }, error: authError } = await supabase.auth.getUser();
+        if (authError) throw authError;
+        if (!user) throw new Error('Not authenticated');
+
+        // Get worker data
+        logger.data('Fetching worker data...');
+        const { data: workerData, error: workerError } = await supabase
+          .from('workers')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+
+        if (workerError) {
+          logger.error('Failed to fetch worker', workerError);
+          throw workerError;
+        }
+        
+        logger.data('Worker data fetched successfully', workerData);
+        setWorker(workerData);
+
+        // Fetch ticket data
         logger.data('Fetching ticket data...');
         const { data: ticketData, error: ticketError } = await supabase
           .from('tickets')
@@ -121,7 +147,7 @@ const TicketDetails = () => {
     };
 
     if (id) {
-      fetchTicketAndCustomer();
+      fetchData();
     } else {
       logger.error('No ticket ID provided');
     }
@@ -166,7 +192,7 @@ const TicketDetails = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 py-4">
@@ -198,47 +224,177 @@ const TicketDetails = () => {
       </div>
 
       {/* Messages */}
-      <div className="max-w-5xl mx-auto px-4 py-6">
-        <div className="space-y-6">
-          {messages.map((message) => {
-            const isCustomer = message.created_by_uuid === ticket.created_by;
-            const name = isCustomer && customer
-              ? `${customer.first_name} ${customer.last_name}`
-              : `${message.created_by_first_name} ${message.created_by_last_name}`;
-            
-            logger.data('Message sender debug info:', {
-              messageId: message.id,
-              created_by_uuid: message.created_by_uuid,
-              customer_email: ticket.customer_email,
-              isCustomer: isCustomer,
-              name: name,
-              first_name: isCustomer ? customer?.first_name : message.created_by_first_name,
-              last_name: isCustomer ? customer?.last_name : message.created_by_last_name
-            });
-            
-            logger.render(`Rendering message`, {
-              messageId: message.id,
-              isCustomer,
-              name,
-              timestamp: message.created_at
-            });
-            
-            return (
-              <MessageBubble
-                key={message.id}
-                isCustomer={!isCustomer}
-                message={message.content}
-                timestamp={formatMessageDate(message.created_at)}
-                username={name}
-                channel={ticket.source_channel}
-              />
-            );
-          })}
-          {messages.length === 0 && (
-            <div className="text-center text-gray-500 py-8">
-              No messages in this ticket yet.
-            </div>
-          )}
+      <div className="flex-1 overflow-y-auto">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="space-y-6">
+            {messages.map((message) => {
+              const isCustomer = message.created_by_uuid === ticket.created_by;
+              const name = isCustomer && customer
+                ? `${customer.first_name} ${customer.last_name}`
+                : `${message.created_by_first_name} ${message.created_by_last_name}`;
+              
+              logger.data('Message sender debug info:', {
+                messageId: message.id,
+                created_by_uuid: message.created_by_uuid,
+                customer_email: ticket.customer_email,
+                isCustomer: isCustomer,
+                name: name,
+                first_name: isCustomer ? customer?.first_name : message.created_by_first_name,
+                last_name: isCustomer ? customer?.last_name : message.created_by_last_name
+              });
+              
+              logger.render(`Rendering message`, {
+                messageId: message.id,
+                isCustomer,
+                name,
+                timestamp: message.created_at
+              });
+              
+              return (
+                <MessageBubble
+                  key={message.id}
+                  isCustomer={!isCustomer}
+                  message={message.content}
+                  timestamp={formatMessageDate(message.created_at)}
+                  username={name}
+                  channel={ticket.source_channel}
+                />
+              );
+            })}
+            {messages.length === 0 && (
+              <div className="text-center text-gray-500 py-8">
+                No messages in this ticket yet.
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Message Input */}
+      <div className="border-t border-gray-200 bg-white">
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <form onSubmit={async (e) => {
+            e.preventDefault();
+            if (!messageInput.trim() || isSending || !worker) return;
+
+            logger.event('Sending message', { content: messageInput });
+            setIsSending(true);
+
+            try {
+              const updates: any = {
+                ticket_history: {
+                  events: [...(ticket.ticket_history?.events || [])]
+                },
+                updated_at: new Date().toISOString()
+              };
+
+              // Check if worker is assigned to ticket
+              const isAssigned = ticket.assigned_to?.some(agent => agent.id === worker.id) ?? false;
+              
+              if (!isAssigned) {
+                logger.event('Adding worker to ticket assignments');
+                // Add worker to assigned_to array
+                updates.assigned_to = [
+                  ...(ticket.assigned_to || []),
+                  {
+                    id: worker.id,
+                    first_name: worker.first_name,
+                    last_name: worker.last_name
+                  }
+                ];
+
+                // Add assignment-added event
+                updates.ticket_history.events.push({
+                  id: crypto.randomUUID(),
+                  type: 'assignment-added',
+                  agent_id: worker.id,
+                  created_at: new Date().toISOString(),
+                  created_by_uuid: worker.id,
+                  created_by_first_name: worker.first_name,
+                  created_by_last_name: worker.last_name,
+                  visibility: 'public'
+                });
+              }
+
+              // Check if status needs to be updated from 'new' to 'open'
+              if (ticket.status === 'new') {
+                logger.event('Updating ticket status from new to open');
+                updates.status = 'open';
+                
+                // Add status-update event
+                updates.ticket_history.events.push({
+                  id: crypto.randomUUID(),
+                  type: 'status-update',
+                  old_value: 'new',
+                  new_value: 'open',
+                  created_at: new Date().toISOString(),
+                  created_by_uuid: worker.id,
+                  created_by_first_name: worker.first_name,
+                  created_by_last_name: worker.last_name,
+                  visibility: 'public'
+                });
+              }
+
+              // Add the message event
+              const newMessage = {
+                id: crypto.randomUUID(),
+                type: 'message' as const,
+                content: messageInput.trim(),
+                created_at: new Date().toISOString(),
+                created_by_uuid: worker.id,
+                created_by_first_name: worker.first_name,
+                created_by_last_name: worker.last_name,
+                visibility: 'public' as const,
+                attachments: []
+              };
+
+              updates.ticket_history.events.push(newMessage);
+
+              // Update the ticket in database
+              const { error: updateError } = await supabase
+                .from('tickets')
+                .update(updates)
+                .eq('id', id);
+
+              if (updateError) {
+                logger.error('Failed to update ticket', updateError);
+                throw updateError;
+              }
+
+              logger.data('Ticket updated successfully');
+              setTicket(prev => prev ? {
+                ...prev,
+                ...updates
+              } : null);
+              setMessageInput('');
+            } catch (err) {
+              logger.error('Error sending message', err);
+            } finally {
+              setIsSending(false);
+            }
+          }} className="flex gap-2">
+            <input
+              type="text"
+              value={messageInput}
+              onChange={(e) => setMessageInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  e.currentTarget.form?.requestSubmit();
+                }
+              }}
+              placeholder="Type your message..."
+              className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSending}
+            />
+            <button
+              type="submit"
+              disabled={!messageInput.trim() || isSending}
+              className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSending ? 'Sending...' : 'Send'}
+            </button>
+          </form>
         </div>
       </div>
     </div>
