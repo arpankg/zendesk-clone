@@ -38,10 +38,8 @@ export function TicketDetailsPanel({ ticket, customer }: TicketDetailsPanelProps
         <Tab.Panels>
           <Tab.Panel className="p-4 space-y-6">
             <PropertiesSection 
-              status={ticket.status}
-              priority={ticket.priority}
               sourceChannel={ticket.source_channel}
-              tags={ticket.tags}
+              tags={ticket.tags || []}
             />
             <NotesSection 
               notes={ticket.internal_notes?.notes || []}
