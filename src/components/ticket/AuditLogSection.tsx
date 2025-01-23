@@ -10,6 +10,7 @@ interface TicketEvent {
   attachments?: string[]
   old_value?: string
   new_value?: string
+  field_name?: string
   [key: string]: any
 }
 
@@ -35,18 +36,24 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
 
   const getEventTypeDisplay = (type: string): { label: string; color: string } => {
     switch (type) {
-      case 'status_change':
-        return { label: 'Status Update', color: 'text-orange-500' }
-      case 'priority_change':
-        return { label: 'Priority Change', color: 'text-red-500' }
-      case 'note_added':
+      case 'message':
         return { label: 'Message', color: 'text-blue-500' }
-      case 'tag_added':
-        return { label: 'Tag Added', color: 'text-gray-500' }
-      case 'tag_removed':
-        return { label: 'Tag Removed', color: 'text-gray-500' }
+      case 'status-update':
+        return { label: 'Status Update', color: 'text-orange-500' }
+      case 'priority-update':
+        return { label: 'Priority Change', color: 'text-red-500' }
+      case 'tag-added':
+        return { label: 'Tag Added', color: 'text-emerald-500' }
+      case 'tag-removed':
+        return { label: 'Tag Removed', color: 'text-amber-500' }
+      case 'field-added':
+        return { label: 'Field Added', color: 'text-cyan-500' }
+      case 'field-removed':
+        return { label: 'Field Removed', color: 'text-teal-500' }
+      case 'assignment-update':
+        return { label: 'Assignment', color: 'text-purple-500' }
       default:
-        return { label: 'Event', color: 'text-gray-500' }
+        return { label: type, color: 'text-gray-500' }
     }
   }
 
@@ -54,32 +61,45 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
     const performedBy = `${event.created_by_first_name} ${event.created_by_last_name}`
     
     switch (event.type) {
-      case 'status_change':
-        return `changed status from ${event.old_value} to ${event.new_value}`
-      case 'priority_change':
-        return `changed priority from ${event.old_value} to ${event.new_value}`
-      case 'note_added':
-        return event.content || ''
-      case 'tag_added':
-        return `added tag: ${event.new_value}`
-      case 'tag_removed':
-        return `removed tag: ${event.old_value}`
+      case 'message':
+        return `${performedBy} sent a message`
+      case 'status-update':
+        return `${performedBy} changed status from '${event.old_value}' to '${event.new_value}'`
+      case 'priority-update':
+        return `${performedBy} changed priority from '${event.old_value}' to '${event.new_value}'`
+      case 'tag-added':
+        return `${performedBy} added tag '${event.new_value}'`
+      case 'tag-removed':
+        return `${performedBy} removed tag '${event.old_value}'`
+      case 'field-added':
+        return `${performedBy} added field '${event.field_name}' with value '${event.new_value}'`
+      case 'field-removed':
+        return `${performedBy} removed field '${event.field_name}'`
+      case 'assignment-update':
+        return `${performedBy} assigned ticket to ${event.new_value}`
       default:
-        return event.content || `performed ${event.type}`
+        return `${performedBy} performed ${event.type}`
     }
   }
 
   const getDotColorForEventType = (type: string): string => {
     switch (type) {
-      case 'status_change':
-        return 'bg-orange-400'
-      case 'priority_change':
-        return 'bg-red-400'
-      case 'note_added':
+      case 'message':
         return 'bg-blue-400'
-      case 'tag_added':
-      case 'tag_removed':
-        return 'bg-gray-400'
+      case 'status-update':
+        return 'bg-orange-400'
+      case 'priority-update':
+        return 'bg-red-400'
+      case 'tag-added':
+        return 'bg-emerald-400'
+      case 'tag-removed':
+        return 'bg-amber-400'
+      case 'field-added':
+        return 'bg-cyan-400'
+      case 'field-removed':
+        return 'bg-teal-400'
+      case 'assignment-update':
+        return 'bg-purple-400'
       default:
         return 'bg-gray-400'
     }
@@ -113,11 +133,6 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
                     </div>
                   </div>
                   
-                  {/* Performed By - truncate if too long */}
-                  <div className="text-xs text-gray-700 truncate" title={`${event.created_by_first_name} ${event.created_by_last_name}`}>
-                    {event.created_by_first_name} {event.created_by_last_name}
-                  </div>
-                  
                   {/* Event Type */}
                   <div className={`text-xs font-medium ${eventType.color}`}>
                     {eventType.label}
@@ -134,7 +149,7 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
                   <div className="text-sm text-gray-900">
                     {getEventDescription(event)}
                   </div>
-                  {event.content && event.type !== 'note_added' && (
+                  {event.type === 'message' && event.content && (
                     <div className="mt-2 text-sm text-gray-600 border-l-2 border-gray-200 pl-3">
                       {event.content}
                     </div>
