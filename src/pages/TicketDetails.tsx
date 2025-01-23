@@ -3,16 +3,14 @@ import { useParams } from 'react-router-dom';
 import { supabase } from '../../config/supabase';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
-import { MessageBubble } from '../components/common/MessageBubble';
 import { TicketDetailsPanel } from '../components/ticket/TicketDetailsPanel';
 import { TicketListPanel } from '../components/ticket/TicketListPanel';
-import { formatMessageDate } from '../lib/utils';
+import { MessageSection } from '../components/ticket/MessageSection';
 import type { Database } from '../../config/types';
 
 type Ticket = Database['public']['Tables']['tickets']['Row'];
 type Customer = Database['public']['Tables']['customers']['Row'];
 type Worker = Database['public']['Tables']['workers']['Row'];
-type MessageEvent = Ticket['ticket_history']['events'][0] & { content: string };
 
 const TicketDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -21,16 +19,12 @@ const TicketDetails = () => {
   const [worker, setWorker] = useState<Worker | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [newMessage, setNewMessage] = useState('');
-  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
-    
     const fetchData = async () => {
       try {
         // Get current authenticated user
-        const { data: { user }, error: authError } = await supabase.auth.getUser();
-        if (authError) throw authError;
+        const { data: { user } } = await supabase.auth.getUser();
         if (!user) throw new Error('Not authenticated');
 
         // Get worker data
@@ -81,24 +75,32 @@ const TicketDetails = () => {
 
     if (id) {
       fetchData();
-    } else {
     }
   }, [id]);
 
-  const handleSendMessage = async () => {
-    if (!newMessage.trim() || isSending || !worker) return;
-
-    setIsSending(true);
+  const handleSendMessage = async (content: string) => {
+    if (!ticket || !worker) return;
 
     try {
-      const updates: any = {
+      const now = new Date().toISOString();
+      const updates: Partial<Ticket> = {
+        updated_at: now,
         ticket_history: {
-          events: [...(ticket.ticket_history?.events || [])]
-        },
-        updated_at: new Date().toISOString()
+          events: [
+            ...(ticket.ticket_history?.events || []),
+            {
+              id: crypto.randomUUID(),
+              type: 'message',
+              content,
+              created_at: now,
+              created_by_uuid: worker.id,
+              created_by_first_name: worker.first_name,
+              created_by_last_name: worker.last_name
+            }
+          ]
+        }
       };
 
-      // Check if worker is assigned to ticket
       const isAssigned = ticket.assigned_to?.some(agent => agent.id === worker.id) ?? false;
       
       if (!isAssigned) {
@@ -108,20 +110,19 @@ const TicketDetails = () => {
           {
             id: worker.id,
             first_name: worker.first_name,
-            last_name: worker.last_name
+            last_name: worker.last_name,
+            assigned_at: now
           }
         ];
 
-        // Add assignment-added event
+        // Add assignment event
         updates.ticket_history.events.push({
           id: crypto.randomUUID(),
-          type: 'assignment-added',
-          agent_id: worker.id,
-          created_at: new Date().toISOString(),
-          created_by_uuid: worker.id,
-          created_by_first_name: worker.first_name,
-          created_by_last_name: worker.last_name,
-          visibility: 'public'
+          type: 'assignment',
+          created_at: now,
+          worker_id: worker.id,
+          worker_first_name: worker.first_name,
+          worker_last_name: worker.last_name
         });
       }
 
@@ -133,32 +134,15 @@ const TicketDetails = () => {
         updates.ticket_history.events.push({
           id: crypto.randomUUID(),
           type: 'status-update',
-          old_value: 'new',
-          new_value: 'open',
-          created_at: new Date().toISOString(),
-          created_by_uuid: worker.id,
-          created_by_first_name: worker.first_name,
-          created_by_last_name: worker.last_name,
-          visibility: 'public'
+          created_at: now,
+          old_status: 'new',
+          new_status: 'open',
+          updated_by_uuid: worker.id,
+          updated_by_first_name: worker.first_name,
+          updated_by_last_name: worker.last_name
         });
       }
 
-      // Add the message event
-      const newMessageEvent = {
-        id: crypto.randomUUID(),
-        type: 'message' as const,
-        content: newMessage.trim(),
-        created_at: new Date().toISOString(),
-        created_by_uuid: worker.id,
-        created_by_first_name: worker.first_name,
-        created_by_last_name: worker.last_name,
-        visibility: 'public' as const,
-        attachments: []
-      };
-
-      updates.ticket_history.events.push(newMessageEvent);
-
-      // Update the ticket in database
       const { error: updateError } = await supabase
         .from('tickets')
         .update(updates)
@@ -172,10 +156,8 @@ const TicketDetails = () => {
         ...prev,
         ...updates
       } : null);
-      setNewMessage('');
     } catch (err) {
-    } finally {
-      setIsSending(false);
+      throw err;
     }
   };
 
@@ -195,19 +177,8 @@ const TicketDetails = () => {
     );
   }
 
-  const messages = (ticket.ticket_history?.events || [])
-    .filter((event): event is MessageEvent => {
-      const isMessage = event.type === 'message' && typeof event.content === 'string';
-      return isMessage;
-    })
-    .sort((a, b) => {
-      const timeA = new Date(a.created_at).getTime();
-      const timeB = new Date(b.created_at).getTime();
-      return timeA - timeB;
-    });
-
   return (
-    <div className="h-screen grid grid-cols-[20rem,1fr,24rem] grid-rows-[auto,1fr] bg-white">
+    <div className="h-screen min-h-screen max-h-screen overflow-hidden grid grid-cols-[20rem,1fr,24rem] grid-rows-[auto,1fr] bg-white">
       {/* Header */}
       <div className="col-span-3 border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 py-4">
@@ -242,66 +213,12 @@ const TicketDetails = () => {
       <TicketListPanel />
 
       {/* Messages Section */}
-      <div className="grid grid-rows-[1fr,auto]">
-        {/* Messages List */}
-        <div className="overflow-y-auto">
-          <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="space-y-6">
-              {messages.map((message) => {
-                const isCustomer = message.created_by_uuid === ticket.created_by;
-                const name = isCustomer && customer
-                  ? `${customer.first_name} ${customer.last_name}`
-                  : `${message.created_by_first_name} ${message.created_by_last_name}`;
-                
-                return (
-                  <MessageBubble
-                    key={message.id}
-                    isCustomer={!isCustomer}
-                    message={message.content}
-                    timestamp={formatMessageDate(message.created_at)}
-                    username={name}
-                    channel={ticket.source_channel}
-                  />
-                );
-              })}
-              {messages.length === 0 && (
-                <div className="text-center text-gray-500 py-8">
-                  No messages in this ticket yet.
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Message Input */}
-        <div className="border-t border-gray-200 bg-white p-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center space-x-4">
-              <input
-                type="text"
-                placeholder="Type your message..."
-                className="flex-1 min-w-0 rounded-lg border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={newMessage}
-                onChange={(e) => {
-                  setNewMessage(e.target.value);
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    handleSendMessage();
-                  }
-                }}
-              />
-              <button
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                onClick={handleSendMessage}
-              >
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MessageSection
+        ticket={ticket}
+        customer={customer}
+        worker={worker}
+        onSendMessage={handleSendMessage}
+      />
 
       {/* Ticket Details Panel */}
       {customer && (
