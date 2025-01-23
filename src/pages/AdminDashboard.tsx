@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // Dummy data
 const dummyAgents = [
@@ -33,6 +34,7 @@ const dummyAgents = [
 
 const AdminDashboard = () => {
   const [agents] = useState(dummyAgents)
+  const navigate = useNavigate()
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -50,7 +52,11 @@ const AdminDashboard = () => {
           </thead>
           <tbody className="divide-y divide-gray-200">
             {agents.map((agent) => (
-              <tr key={agent.id}>
+              <tr 
+                key={agent.id} 
+                onClick={() => navigate(`/admin/agent/${agent.id}`)}
+                className="hover:bg-gray-50 cursor-pointer"
+              >
                 <td className="px-6 py-4">
                   {agent.firstName} {agent.lastName}
                 </td>

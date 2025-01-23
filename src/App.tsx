@@ -8,6 +8,7 @@ import EmployeeLogin from './pages/EmployeeLogin'
 import EmployeeSignUp from './pages/EmployeeSignUp'
 import TicketDetails from './pages/TicketDetails'
 import AdminDashboard from './pages/AdminDashboard'
+import AgentDetails from './pages/AgentDetails'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route path="/employee-login" element={<EmployeeLogin />} />
       <Route path="/employee-signup" element={<EmployeeSignUp />} />
       <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/agent/:id" element={<AgentDetails />} />
     </Routes>
   )
 }
