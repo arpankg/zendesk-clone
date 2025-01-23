@@ -51,16 +51,15 @@ export function MessageSection({ ticket, customer, worker, onSendMessage }: Mess
 
       if (error) throw error;
 
-      // Add to ticket history
+      // Add to ticket history with correct event type
       const historyEvent = {
         id: crypto.randomUUID(),
-        type: 'field_update',
+        type: field === 'status' ? 'status-update' : 'priority-update',
         created_at: new Date().toISOString(),
         created_by_uuid: worker?.id || '',
         created_by_first_name: worker?.first_name || '',
         created_by_last_name: worker?.last_name || '',
         visibility: 'public',
-        field: field,
         old_value: ticket[field],
         new_value: value
       };
