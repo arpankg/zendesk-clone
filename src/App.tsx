@@ -7,6 +7,7 @@ import EmployeeDashboard from './pages/EmployeeDashboard'
 import EmployeeLogin from './pages/EmployeeLogin'
 import EmployeeSignUp from './pages/EmployeeSignUp'
 import TicketDetails from './pages/TicketDetails'
+import AdminDashboard from './pages/AdminDashboard'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <a href="/customer-signup" className="text-teal-600 hover:text-teal-800">Create Customer Account</a>
               <a href="/support" className="text-teal-600 hover:text-teal-800">Get Support</a>
               <a href="/employee-login" className="text-teal-600 hover:text-teal-800">Employee Portal</a>
+              <a href="/admin" className="text-teal-600 hover:text-teal-800">Admin Dashboard</a>
             </div>
           </div>
         </div>
@@ -34,6 +36,7 @@ function App() {
       <Route path="/employee-dashboard/ticket/:id" element={<TicketDetails />} />
       <Route path="/employee-login" element={<EmployeeLogin />} />
       <Route path="/employee-signup" element={<EmployeeSignUp />} />
+      <Route path="/admin" element={<AdminDashboard />} />
     </Routes>
   )
 }
