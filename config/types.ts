@@ -8,6 +8,7 @@ export type Json =
 
 export type TicketStatus = 'new' | 'open' | 'pending' | 'closed'
 export type TicketPriority = 'low' | 'medium' | 'high'
+export type WorkerRole = 'agent' | 'admin'
 
 export interface Database {
   public: {
@@ -214,7 +215,7 @@ export interface Database {
           email: string
           first_name: string
           last_name: string
-          role: string
+          role: WorkerRole
           timezone: string
           skills: string[]
           languages: string[]
@@ -226,7 +227,7 @@ export interface Database {
           email: string
           first_name: string
           last_name: string
-          role: string
+          role: WorkerRole
           timezone: string
           skills?: string[]
           languages?: string[]
@@ -238,7 +239,7 @@ export interface Database {
           email?: string
           first_name?: string
           last_name?: string
-          role?: string
+          role?: WorkerRole
           timezone?: string
           skills?: string[]
           languages?: string[]

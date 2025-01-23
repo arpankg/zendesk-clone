@@ -276,7 +276,7 @@ Stores information about support agents and administrators.
 | first_name | TEXT | Worker's first name | NOT NULL |
 | last_name | TEXT | Worker's last name | NOT NULL |
 | created_at | TIMESTAMPTZ | When the worker was added | NOT NULL, DEFAULT now() |
-| role | TEXT | Worker's role in the system | NOT NULL |
+| role | TEXT | Worker's role in the system ('agent' or 'admin') | NOT NULL |
 | skills | TEXT[] | Array of skill tags | DEFAULT '{}' |
 | languages | TEXT[] | Languages the worker can communicate in | DEFAULT '{}' |
 | timezone | TEXT | Worker's timezone (e.g., 'America/New_York') | NOT NULL |
