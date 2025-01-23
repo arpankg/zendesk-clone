@@ -28,7 +28,7 @@ const AgentDetails = () => {
     firstName: 'John',
     lastName: 'Doe',
     email: 'john.doe@company.com',
-    skills: ['technical', 'billing'],
+    skills: ['technical', 'billing', 'customer service', 'api'],
     timezone: 'America/New_York',
     assignedTickets: 5,
     responseTime: '2.5 hours',
@@ -62,15 +62,15 @@ const AgentDetails = () => {
       {
         label: 'Agent Completions',
         data: agentData.ticketCompletions.map(d => d.count),
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(45, 212, 191, 0.5)',
+        borderColor: 'rgb(45, 212, 191)',
         borderWidth: 1,
       },
       {
         label: 'Team Average',
         data: agentData.teamAverages.map(d => d.count),
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(99, 102, 241, 0.5)',
+        borderColor: 'rgb(99, 102, 241)',
         borderWidth: 1,
       }
     ]
@@ -90,9 +90,17 @@ const AgentDetails = () => {
     scales: {
       y: {
         beginAtZero: true,
+        grid: {
+          color: 'rgba(0, 0, 0, 0.1)',
+        },
         title: {
           display: true,
           text: 'Tickets Completed'
+        }
+      },
+      x: {
+        grid: {
+          color: 'rgba(0, 0, 0, 0.1)',
         }
       }
     }
@@ -100,36 +108,61 @@ const AgentDetails = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">Agent Details</h1>
-      <div className="bg-white shadow-md rounded-lg p-6">
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div>
-            <h2 className="text-lg font-semibold mb-4">Basic Information</h2>
-            <p><span className="font-medium">Name:</span> {agentData.firstName} {agentData.lastName}</p>
-            <p><span className="font-medium">Email:</span> {agentData.email}</p>
-            <p><span className="font-medium">Timezone:</span> {agentData.timezone}</p>
-            <p><span className="font-medium">Skills:</span></p>
-            <div className="flex gap-1 mt-1">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden">
+        {/* Header Section */}
+        <div className="border-b border-gray-200 bg-gray-50 p-6">
+          <div className="flex justify-between items-start mb-4">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                {agentData.firstName} {agentData.lastName}
+              </h1>
+              <p className="text-sm text-gray-500 mt-1">{agentData.email}</p>
+              <p className="text-sm text-gray-500">{agentData.timezone}</p>
+            </div>
+          </div>
+          
+          {/* Skills Badges */}
+          <div className="mt-4">
+            <p className="text-sm font-medium text-gray-500 mb-2">Skills</p>
+            <div className="flex flex-wrap gap-2">
               {agentData.skills.map((skill) => (
-                <span key={skill} className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                <span
+                  key={skill}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-teal-100 text-teal-800"
+                >
                   {skill}
                 </span>
               ))}
             </div>
           </div>
-          <div>
-            <h2 className="text-lg font-semibold mb-4">Performance Metrics</h2>
-            <p><span className="font-medium">Current Assigned Tickets:</span> {agentData.assignedTickets}</p>
-            <p><span className="font-medium">Average Response Time:</span> {agentData.responseTime}</p>
-            <p><span className="font-medium">Resolution Rate:</span> {agentData.resolutionRate}</p>
-            <p><span className="font-medium">Customer Satisfaction:</span> {agentData.customerSatisfaction}</p>
+        </div>
+
+        {/* Quick Stats */}
+        <div className="grid grid-cols-4 gap-4 p-6 border-b border-gray-200">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-gray-500">Assigned Tickets</p>
+            <p className="mt-1 text-2xl font-semibold text-gray-900">{agentData.assignedTickets}</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-gray-500">Response Time</p>
+            <p className="mt-1 text-2xl font-semibold text-gray-900">{agentData.responseTime}</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-gray-500">Resolution Rate</p>
+            <p className="mt-1 text-2xl font-semibold text-gray-900">{agentData.resolutionRate}</p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-gray-500">Customer Satisfaction</p>
+            <p className="mt-1 text-2xl font-semibold text-gray-900">{agentData.customerSatisfaction}</p>
           </div>
         </div>
-        
-        <div className="mt-8">
-          <h2 className="text-lg font-semibold mb-4">Ticket Completion Trends</h2>
-          <div className="h-[400px]">
-            <Bar options={chartOptions} data={chartData} />
+
+        {/* Chart Section */}
+        <div className="p-6">
+          <div className="bg-white rounded-lg">
+            <div className="h-[400px]">
+              <Bar options={chartOptions} data={chartData} />
+            </div>
           </div>
         </div>
       </div>
