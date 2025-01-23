@@ -189,6 +189,7 @@ const TicketDetails = () => {
         customer={customer}
         worker={worker}
         onSendMessage={handleSendMessage}
+        onTicketUpdate={setTicket}
       />
 
       {/* Ticket Details Panel */}

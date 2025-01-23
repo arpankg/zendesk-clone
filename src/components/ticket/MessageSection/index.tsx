@@ -16,9 +16,16 @@ interface MessageSectionProps {
   customer: Customer | null;
   worker: Worker | null;
   onSendMessage: (content: string) => Promise<void>;
+  onTicketUpdate: (ticket: Ticket) => void;
 }
 
-export function MessageSection({ ticket, customer, worker, onSendMessage }: MessageSectionProps) {
+export function MessageSection({ 
+  ticket, 
+  customer, 
+  worker, 
+  onSendMessage,
+  onTicketUpdate 
+}: MessageSectionProps) {
   const [activeDropdown, setActiveDropdown] = useState<'status' | 'priority' | null>(null);
   const [updating, setUpdating] = useState(false);
   const statusButtonRef = useRef<HTMLDivElement>(null);
@@ -64,14 +71,23 @@ export function MessageSection({ ticket, customer, worker, onSendMessage }: Mess
         new_value: value
       };
 
+      const updatedHistory = {
+        events: [...(ticket.ticket_history?.events || []), historyEvent]
+      };
+
       await supabase
         .from('tickets')
         .update({
-          ticket_history: {
-            events: [...(ticket.ticket_history?.events || []), historyEvent]
-          }
+          ticket_history: updatedHistory
         })
         .eq('id', ticket.id);
+
+      // Update local state with new values
+      onTicketUpdate({
+        ...ticket,
+        [field]: value,
+        ticket_history: updatedHistory
+      });
 
     } catch (error) {
       console.error('Error updating ticket:', error);
