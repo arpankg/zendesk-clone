@@ -22,6 +22,80 @@ ChartJS.register(
 const AgentDetails = () => {
   const { id } = useParams<{ id: string }>()
 
+  // Dummy feedback data
+  const dummyFeedback = [
+    {
+      id: '1',
+      rating: 5,
+      date: '2 days ago',
+      comment: "John was incredibly helpful and patient. He explained everything clearly and solved my issue quickly.",
+      customer: {
+        name: "Sarah Chen",
+        email: "sarah.chen@example.com"
+      }
+    },
+    {
+      id: '2',
+      rating: 4,
+      date: '3 days ago',
+      comment: "Good service, though it took a bit longer than expected to resolve my billing issue.",
+      customer: {
+        name: "Michael Rodriguez",
+        email: "m.rodriguez@example.com"
+      }
+    },
+    {
+      id: '3',
+      rating: 5,
+      date: '4 days ago',
+      comment: "Excellent technical support! Fixed my API integration problems in minutes.",
+      customer: {
+        name: "Alex Thompson",
+        email: "alex.t@example.com"
+      }
+    },
+    {
+      id: '4',
+      rating: 3,
+      date: '5 days ago',
+      comment: "Decent support, but had to explain my problem multiple times.",
+      customer: {
+        name: "Emma Wilson",
+        email: "emma.w@example.com"
+      }
+    },
+    {
+      id: '5',
+      rating: 5,
+      date: '1 week ago',
+      comment: "Very knowledgeable about the product. Helped me understand the root cause of the issue.",
+      customer: {
+        name: "David Kumar",
+        email: "d.kumar@example.com"
+      }
+    },
+    {
+      id: '6',
+      rating: 4,
+      date: '1 week ago',
+      comment: "Quick response and professional service. Would recommend.",
+      customer: {
+        name: "Lisa Park",
+        email: "lisa.park@example.com"
+      }
+    },
+    {
+      id: '7',
+      rating: 5,
+      date: '1 week ago',
+      comment: "Went above and beyond to help me with a complex technical issue.",
+      customer: {
+        name: "James Mitchell",
+        email: "j.mitchell@example.com"
+      }
+    }
+  ]
+
   // Dummy data for now
   const agentData = {
     id: id,
@@ -78,6 +152,7 @@ const AgentDetails = () => {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top' as const,
@@ -157,11 +232,37 @@ const AgentDetails = () => {
           </div>
         </div>
 
-        {/* Chart Section */}
+        {/* Chart and Feedback Section */}
         <div className="p-6">
-          <div className="bg-white rounded-lg">
-            <div className="h-[400px]">
-              <Bar options={chartOptions} data={chartData} />
+          <div className="grid grid-cols-3 gap-6">
+            {/* Chart Section - 2/3 width */}
+            <div className="col-span-2 bg-white rounded-lg">
+              <div className="h-[400px]">
+                <Bar options={chartOptions} data={chartData} />
+              </div>
+            </div>
+
+            {/* Feedback Section - 1/3 width */}
+            <div className="h-[400px] overflow-y-auto bg-gray-50 rounded-lg p-4">
+              <h3 className="text-lg font-semibold mb-4">Customer Feedback</h3>
+              {dummyFeedback.map((feedback) => (
+                <div key={feedback.id} className="mb-4 p-3 bg-white rounded-lg shadow-sm">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <div className="font-medium text-gray-900">{feedback.customer.name}</div>
+                      <div className="text-xs text-gray-500">{feedback.customer.email}</div>
+                    </div>
+                    <div className="flex flex-col items-end">
+                      <div className="flex items-center">
+                        <span className="text-yellow-400">★</span>
+                        <span className="text-sm font-medium ml-1">{feedback.rating}</span>
+                      </div>
+                      <span className="text-xs text-gray-500 mt-1">{feedback.date}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2 border-t border-gray-100 pt-2">{feedback.comment}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
