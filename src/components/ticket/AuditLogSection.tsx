@@ -19,6 +19,11 @@ interface AuditLogSectionProps {
 }
 
 export function AuditLogSection({ events }: AuditLogSectionProps) {
+  // Sort events in reverse chronological order
+  const sortedEvents = [...events].sort((a, b) => 
+    new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  );
+
   const formatDate = (date: string) => {
     return new Date(date).toLocaleString('en-US', {
       month: 'short',
@@ -117,7 +122,7 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
         
         {/* Events */}
         <div className="space-y-6">
-          {events.map((event) => {
+          {sortedEvents.map((event) => {
             const eventType = getEventTypeDisplay(event.type)
             return (
               <div key={event.id} className="grid grid-cols-[92px,40px,1fr] items-start gap-0">
@@ -158,7 +163,7 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
               </div>
             )
           })}
-          {events.length === 0 && (
+          {sortedEvents.length === 0 && (
             <div className="text-sm text-gray-500 italic pl-32">No audit log entries found</div>
           )}
         </div>
