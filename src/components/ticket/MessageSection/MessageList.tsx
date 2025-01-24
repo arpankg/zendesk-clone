@@ -1,6 +1,7 @@
 import { MessageBubble } from '../../common/MessageBubble';
 import { formatMessageDate } from '../../../lib/utils';
 import type { Database } from '../../../../config/types';
+import { useEffect } from 'react';
 
 type Ticket = Database['public']['Tables']['tickets']['Row'];
 type Customer = Database['public']['Tables']['customers']['Row'];
@@ -13,8 +14,12 @@ interface MessageListProps {
 }
 
 export function MessageList({ messages, ticket, customer }: MessageListProps) {
+  useEffect(() => {
+    document.getElementById('message-end')?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-y-auto scroll-smooth">
       <div className="max-w-5xl mx-auto p-4">
         <div className="space-y-6">
           {messages.map((message) => {
@@ -40,6 +45,7 @@ export function MessageList({ messages, ticket, customer }: MessageListProps) {
             </div>
           )}
         </div>
+        <div id="message-end" className="h-[1px]" />
       </div>
     </div>
   );
