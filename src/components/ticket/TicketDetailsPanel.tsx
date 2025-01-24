@@ -111,6 +111,59 @@ export function TicketDetailsPanel({
     }
   }
 
+  const handleAddNote = async (noteContent: string) => {
+    try {
+      // Create new note object
+      const newNote = {
+        id: crypto.randomUUID(),
+        content: noteContent,
+        created_at: new Date().toISOString(),
+        created_by: worker?.id || ''
+      }
+      
+      // Update internal_notes in database
+      const updatedNotes = {
+        notes: [...(ticket.internal_notes?.notes || []), newNote]
+      }
+      
+      const { error } = await supabase
+        .from('tickets')
+        .update({ internal_notes: updatedNotes })
+        .eq('id', ticket.id)
+
+      if (error) throw error;
+
+      // Add to ticket history
+      const historyEvent = {
+        id: crypto.randomUUID(),
+        type: 'note-added',
+        created_at: new Date().toISOString(),
+        created_by: worker?.id || '',
+        created_by_first_name: worker?.first_name || '',
+        created_by_last_name: worker?.last_name || '',
+        visibility: 'private'
+      }
+
+      const updatedHistory = {
+        events: [...(ticket.ticket_history?.events || []), historyEvent]
+      }
+
+      await supabase
+        .from('tickets')
+        .update({ ticket_history: updatedHistory })
+        .eq('id', ticket.id)
+
+      // Update local state
+      onTicketUpdate({
+        ...ticket,
+        internal_notes: updatedNotes,
+        ticket_history: updatedHistory
+      })
+    } catch (error) {
+      console.error('Error adding note:', error)
+    }
+  }
+
   return (
     <div className="border-l border-gray-200 bg-white overflow-y-auto">
       <Tab.Group>
@@ -144,6 +197,7 @@ export function TicketDetailsPanel({
             />
             <NotesSection 
               notes={ticket.internal_notes?.notes || []}
+              onAddNote={handleAddNote}
             />
           </Tab.Panel>
           <Tab.Panel className="p-4">
