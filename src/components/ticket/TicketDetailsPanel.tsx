@@ -67,6 +67,50 @@ export function TicketDetailsPanel({
     }
   }
 
+  const handleAddTag = async (newTag: string) => {
+    try {
+      // Update tags in database
+      const newTags = [...ticket.tags, newTag]
+      const { error } = await supabase
+        .from('tickets')
+        .update({ tags: newTags })
+        .eq('id', ticket.id)
+
+      if (error) throw error;
+
+      // Add to ticket history
+      const historyEvent = {
+        id: crypto.randomUUID(),
+        type: 'tag-added',
+        created_at: new Date().toISOString(),
+        created_by: worker?.id || '',
+        created_by_first_name: worker?.first_name || '',
+        created_by_last_name: worker?.last_name || '',
+        visibility: 'public',
+        new_value: newTag,
+        old_value: null
+      }
+
+      const updatedHistory = {
+        events: [...(ticket.ticket_history?.events || []), historyEvent]
+      }
+
+      await supabase
+        .from('tickets')
+        .update({ ticket_history: updatedHistory })
+        .eq('id', ticket.id)
+
+      // Update local state
+      onTicketUpdate({
+        ...ticket,
+        tags: newTags,
+        ticket_history: updatedHistory
+      })
+    } catch (error) {
+      console.error('Error adding tag:', error)
+    }
+  }
+
   return (
     <div className="border-l border-gray-200 bg-white overflow-y-auto">
       <Tab.Group>
@@ -96,6 +140,7 @@ export function TicketDetailsPanel({
               sourceChannel={ticket.source_channel}
               tags={ticket.tags || []}
               onRemoveTag={handleRemoveTag}
+              onAddTag={handleAddTag}
             />
             <NotesSection 
               notes={ticket.internal_notes?.notes || []}

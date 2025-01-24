@@ -6,13 +6,15 @@ interface PropertiesSectionProps {
   tags: string[]
   isExpanded?: boolean
   onRemoveTag: (tag: string) => Promise<void>
+  onAddTag: (tag: string) => Promise<void>
 }
 
 export function PropertiesSection({
   sourceChannel,
   tags,
   isExpanded = true,
-  onRemoveTag
+  onRemoveTag,
+  onAddTag
 }: PropertiesSectionProps) {
   const [isAddingTag, setIsAddingTag] = useState(false)
   const [newTag, setNewTag] = useState('')
@@ -29,6 +31,19 @@ export function PropertiesSection({
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  const handleSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault()
+    if (!newTag.trim()) return
+    
+    try {
+      await onAddTag(newTag.trim())
+      setNewTag('')
+      setIsAddingTag(false)
+    } catch (error) {
+      console.error('Error submitting tag:', error)
+    }
+  }
 
   return (
     <div className="border-b border-gray-200 pb-4">
@@ -77,20 +92,22 @@ export function PropertiesSection({
               )}
             </div>
             {isAddingTag && (
-              <div ref={inputRef} className="mt-2 flex items-center gap-2">
-                <input
-                  type="text"
-                  value={newTag}
-                  onChange={(e) => setNewTag(e.target.value)}
-                  placeholder="Enter tag"
-                  className="flex-1 rounded-md border-0 py-1.5 px-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600"
-                />
-                <button
-                  type="button"
-                  className="rounded-md bg-blue-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                >
-                  Submit
-                </button>
+              <div ref={inputRef} className="mt-2">
+                <form onSubmit={handleSubmit} className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={newTag}
+                    onChange={(e) => setNewTag(e.target.value)}
+                    placeholder="Enter tag"
+                    className="flex-1 rounded-md border-0 py-1.5 px-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-md bg-blue-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             )}
           </div>
