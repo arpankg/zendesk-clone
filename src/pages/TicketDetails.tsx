@@ -181,7 +181,9 @@ const TicketDetails = () => {
     <div className="h-screen min-h-screen max-h-screen overflow-hidden grid grid-cols-[20rem,1fr,24rem] grid-rows-[auto,1fr] bg-white">
 
       {/* Ticket List Panel */}
-      <TicketListPanel />
+      <div className="min-h-screen max-h-screen overflow-hidden border-r border-gray-300">
+      <TicketListPanel /> 
+      </div>
 
       {/* Messages Section */}
       <MessageSection
