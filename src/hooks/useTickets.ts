@@ -1,20 +1,8 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../../config/supabase';
+import { Database } from '../../config/types';
 
-export interface Ticket {
-  id: string;
-  title: string;
-  status: string;
-  priority: string;
-  source_channel: string;
-  created_at: string;
-  updated_at: string;
-  created_by: string;
-  customer_email: string;
-  customer_first_name: string;
-  customer_last_name: string;
-  last_message?: string;
-}
+type Ticket = Database['public']['Tables']['tickets']['Row'];
 
 export function useTickets() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
@@ -34,7 +22,7 @@ export function useTickets() {
               last_name
             )
           `)
-          .order('updated_at', { ascending: false });
+          .order('created_at', { ascending: false });
 
         if (error) {
           throw error;

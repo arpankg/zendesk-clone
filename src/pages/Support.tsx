@@ -5,6 +5,12 @@ import { CustomerHeader } from '../components/customer/CustomerHeader';
 
 const Support = () => {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState<{
+    id: string;
+    first_name: string;
+    last_name: string;
+    email: string;
+  } | null>(null);
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -17,7 +23,19 @@ const Support = () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         navigate('/customer-signup?from=support');
-      } else if (session.user?.email) {
+        return;
+      }
+
+      const { data: userProfile } = await supabase
+        .from('customers')
+        .select('id, first_name, last_name, email')
+        .eq('id', session.user.id)
+        .single();
+
+      if (userProfile) {
+        setUserData(userProfile);
+      }
+      if (session.user?.email) {
         setEmail(session.user.email);
       }
     };
@@ -26,15 +44,16 @@ const Support = () => {
   }, [navigate]);
 
   const validateForm = () => {
-    if (!email) return 'Email is required';
+    if (!userData) return 'Please sign in to create a ticket';
     if (!title) return 'Title is required';
     if (!description) return 'Description is required';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return 'Invalid email format';
     return '';
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!userData) return;
+    
     setError('');
     setSuccess(false);
     
@@ -55,17 +74,20 @@ const Support = () => {
           status: 'new',
           priority: 'medium',
           source_channel: 'web',
-          created_by: '5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58',
+          created_by: userData.id,
           customer_email: email,
           tags: [],
           custom_fields: {},
+          assigned_to: [],
           ticket_history: {
             events: [{
               id: crypto.randomUUID(),
               type: 'message',
               content: description,
               created_at: new Date().toISOString(),
-              created_by: '5084b3db-d1cf-4cf9-8ab1-0b1a6f145e58',
+              created_by: userData.id,
+              created_by_first_name: userData.first_name,
+              created_by_last_name: userData.last_name,
               visibility: 'public',
               attachments: []
             }]
@@ -77,7 +99,6 @@ const Support = () => {
       if (insertError) throw insertError;
 
       setSuccess(true);
-      setEmail('');
       setTitle('');
       setDescription('');
     } catch (err) {
@@ -159,7 +180,7 @@ const Support = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={8}
-                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 p-4"
               />
               <p className="mt-2 text-sm text-gray-500">
                 Please enter the details of your request. A member of our support staff will respond as soon as possible.
