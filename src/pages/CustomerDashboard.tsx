@@ -95,7 +95,7 @@ const CustomerDashboard = () => {
         const { data: { user } } = await supabase.auth.getUser();
         
         if (!user) {
-          navigate('/login');
+          navigate('/customer-login');
           return;
         }
 

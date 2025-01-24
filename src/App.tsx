@@ -10,24 +10,22 @@ import TicketDetails from './pages/TicketDetails'
 import AdminDashboard from './pages/AdminDashboard'
 import AgentDetails from './pages/AgentDetails'
 import KnowledgeBase from './pages/KnowledgeBase'
+import { NavigationBar } from './components/home/NavigationBar'
+import { HeroSection } from './components/home/HeroSection'
+import { QuickActions } from './components/home/QuickActions'
+import { SupportFeatures } from './components/home/SupportFeatures'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
-              Welcome to Support Portal
-            </h1>
-            <div className="space-x-4">
-              <a href="/customer-login" className="text-teal-600 hover:text-teal-800">Customer Sign In</a>
-              <a href="/customer-signup" className="text-teal-600 hover:text-teal-800">Create Customer Account</a>
-              <a href="/support" className="text-teal-600 hover:text-teal-800">Get Support</a>
-              <a href="/employee-login" className="text-teal-600 hover:text-teal-800">Employee Portal</a>
-              <a href="/admin" className="text-teal-600 hover:text-teal-800">Admin Dashboard</a>
-            </div>
-          </div>
+        <div className="min-h-screen bg-white">
+          <NavigationBar />
+          <main>
+            <HeroSection />
+            <QuickActions />
+            <SupportFeatures />
+          </main>
         </div>
       } />
       <Route path="/support" element={<Support />} />
