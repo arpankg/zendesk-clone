@@ -9,6 +9,7 @@ import EmployeeSignUp from './pages/EmployeeSignUp'
 import TicketDetails from './pages/TicketDetails'
 import AdminDashboard from './pages/AdminDashboard'
 import AgentDetails from './pages/AgentDetails'
+import KnowledgeBase from './pages/KnowledgeBase'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       <Route path="/employee-signup" element={<EmployeeSignUp />} />
       <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/admin/agent/:id" element={<AgentDetails />} />
+      <Route path="/knowledge-base" element={<KnowledgeBase />} />
     </Routes>
   )
 }
