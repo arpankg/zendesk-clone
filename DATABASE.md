@@ -144,6 +144,16 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
         "visibility": "public"
+      },
+      {
+        "id": "uuid",
+        "type": "note-added",
+        "content": "note text",
+        "created_at": "timestampz",
+        "created_by": "user_id",
+        "created_by_first_name":"first_name",
+        "created_by_last_name":"last_name",
+        "visibility": "private"
       }
     ]
   }
@@ -169,6 +179,9 @@ Core table for storing support tickets. Designed for flexibility while maintaini
   
   6. `assignment-removed`: Agent removed from ticket assignments
      - Required fields: id, type, agent_id, created_at, created_by, visibility
+  
+  7. `note-added`: Internal note added to ticket
+     - Required fields: id, type, content, created_at, created_by, created_by_first_name, created_by_last_name, visibility (always "private")
 
   ##### Event Visibility
   Each event has a visibility field that can be:
