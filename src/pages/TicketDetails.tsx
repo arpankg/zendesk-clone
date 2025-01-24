@@ -197,6 +197,8 @@ const TicketDetails = () => {
         <TicketDetailsPanel
           ticket={ticket}
           customer={customer}
+          worker={worker}
+          onTicketUpdate={setTicket}
         />
       )}
     </div>
