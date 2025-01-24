@@ -63,6 +63,8 @@ create table public.workers (
     skills text[] default '{}',
     languages text[] default '{}',
     metrics jsonb default '{}',
+    assigned_tickets uuid[] default '{}',
+    ticket_history jsonb default '[]'::jsonb,
     
     -- Timestamps
     created_at timestamptz default now() not null

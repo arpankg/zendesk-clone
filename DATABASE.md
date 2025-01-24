@@ -48,6 +48,8 @@ erDiagram
         text[] languages
         text timezone
         jsonb metrics
+        uuid[] assigned_tickets
+        jsonb ticket_history
     }
 
     tickets ||--o{ auth.users : "created_by"
@@ -294,9 +296,38 @@ Stores information about support agents and administrators.
 | languages | TEXT[] | Languages the worker can communicate in | DEFAULT '{}' |
 | timezone | TEXT | Worker's timezone (e.g., 'America/New_York') | NOT NULL |
 | metrics | JSONB | Flexible storage for worker performance metrics | DEFAULT '{}' |
+| assigned_tickets | UUID[] | Array of currently assigned ticket IDs | DEFAULT '{}' |
+| ticket_history | JSONB | Historical record of resolved tickets with feedback | DEFAULT '[]' |
 
 #### Relationships
 - `id` links to Supabase auth.users table for authentication
+
+#### Ticket History Structure
+The `ticket_history` JSONB array contains records of all tickets resolved by the worker. Each entry follows this structure:
+```json
+[
+  {
+    "ticket_id": "uuid",
+    "title": "Original ticket title",
+    "resolved_at": "timestamptz",
+    "resolution_time": "interval",  // Time between assignment and resolution
+    "feedback": {
+      "rating": 5,
+      "comment": "Very helpful explanation",
+      "submitted_at": "timestamptz"
+    }
+  }
+]
+```
+
+Notes on ticket tracking:
+- `assigned_tickets`: Contains UUIDs of all tickets currently assigned to the worker
+- `ticket_history`: Maintains a complete record of resolved tickets including:
+  - Basic ticket information (ID, title)
+  - Resolution timing details (stored as PostgreSQL interval)
+  - Customer feedback when available
+- Resolution time uses PostgreSQL's interval type for accurate duration tracking
+- All timestamps use timestamptz for timezone-aware datetime tracking
 
 #### Example
 ```json
@@ -310,6 +341,20 @@ Stores information about support agents and administrators.
   "skills": ["technical", "billing", "api"],
   "languages": ["en", "es"],
   "timezone": "America/New_York",
-  "metrics": {}
+  "metrics": {},
+  "assigned_tickets": ["ticket-uuid-1", "ticket-uuid-2"],
+  "ticket_history": [
+    {
+      "ticket_id": "resolved-ticket-uuid",
+      "title": "Example Ticket",
+      "resolved_at": "2025-01-22T12:00:00Z",
+      "resolution_time": "2 hours 30 minutes",
+      "feedback": {
+        "rating": 5,
+        "comment": "Excellent support",
+        "submitted_at": "2025-01-22T13:00:00Z"
+      }
+    }
+  ]
 }
 ```
