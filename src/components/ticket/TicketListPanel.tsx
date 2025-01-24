@@ -61,23 +61,30 @@ export function TicketListPanel() {
               `}
               onClick={() => navigate(`/employee-dashboard/ticket/${ticket.id}`)}
             >
-              <div className="flex items-center space-x-2">
-                <div className={`
-                  w-2 h-2 rounded-full
-                  ${ticket.status === 'open' ? 'bg-green-500' : 'bg-gray-500'}
-                `} />
-                <h3 className="text-sm font-medium text-gray-900 truncate">
-                  {ticket.title}
-                </h3>
-              </div>
-              
-              <div className="mt-1 flex justify-between items-start">
-                <p className="text-sm text-gray-500 truncate max-w-[70%]">
-                  {ticket.last_message || 'No messages yet'}
-                </p>
-                <span className="text-xs text-gray-400">
-                  {formatMessageDate(ticket.updated_at)}
-                </span>
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center space-x-2">
+                  <div className={`
+                    w-2 h-2 rounded-full
+                    ${ticket.status === 'open' ? 'bg-green-500' : 'bg-gray-500'}
+                  `} />
+                  <h3 className="text-sm font-medium text-gray-900 truncate">
+                    {ticket.title}
+                  </h3>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <span className={`
+                    text-sm font-medium px-2 py-0.5 rounded-full
+                    ${ticket.priority === 'high' ? 'bg-red-100 text-red-800' : 
+                      ticket.priority === 'medium' ? 'bg-yellow-100 text-yellow-800' : 
+                      'bg-blue-100 text-blue-800'}
+                  `}>
+                    {ticket.priority.charAt(0).toUpperCase() + ticket.priority.slice(1)}
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    {formatMessageDate(ticket.updated_at)}
+                  </span>
+                </div>
               </div>
             </div>
           );
