@@ -113,9 +113,12 @@ export function TicketDetailsPanel({
 
   const handleAddNote = async (noteContent: string) => {
     try {
+      // Generate a single UUID for the note
+      const noteId = crypto.randomUUID()
+      
       // Create new note object
       const newNote = {
-        id: crypto.randomUUID(),
+        id: noteId,
         content: noteContent,
         created_at: new Date().toISOString(),
         created_by: worker?.id || ''
@@ -133,10 +136,12 @@ export function TicketDetailsPanel({
 
       if (error) throw error;
 
-      // Add to ticket history
+      // Add to ticket history with content and note_id
       const historyEvent = {
         id: crypto.randomUUID(),
         type: 'note-added',
+        content: noteContent,
+        note_id: noteId,
         created_at: new Date().toISOString(),
         created_by: worker?.id || '',
         created_by_first_name: worker?.first_name || '',

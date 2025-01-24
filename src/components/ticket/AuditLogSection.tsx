@@ -57,6 +57,8 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
         return { label: 'Field Removed', color: 'text-teal-500' }
       case 'assignment-update':
         return { label: 'Assignment', color: 'text-purple-500' }
+      case 'note-added':
+        return { label: 'Note Added', color: 'text-indigo-500' }
       default:
         return { label: type, color: 'text-gray-500' }
     }
@@ -82,6 +84,8 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
         return `${performedBy} removed field '${event.field_name}'`
       case 'assignment-update':
         return `${performedBy} assigned ticket to ${event.new_value}`
+      case 'note-added':
+        return `${performedBy} added note`
       default:
         return `${performedBy} performed ${event.type}`
     }
@@ -105,6 +109,8 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
         return 'bg-teal-400'
       case 'assignment-update':
         return 'bg-purple-400'
+      case 'note-added':
+        return 'bg-indigo-400'
       default:
         return 'bg-gray-400'
     }
@@ -154,7 +160,7 @@ export function AuditLogSection({ events }: AuditLogSectionProps) {
                   <div className="text-sm text-gray-900">
                     {getEventDescription(event)}
                   </div>
-                  {event.type === 'message' && event.content && (
+                  {(event.type === 'message' || event.type === 'note-added') && event.content && (
                     <div className="mt-2 text-sm text-gray-600 border-l-2 border-gray-200 pl-3">
                       {event.content}
                     </div>
