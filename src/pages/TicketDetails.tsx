@@ -95,7 +95,8 @@ const TicketDetails = () => {
               created_at: now,
               created_by_uuid: worker.id,
               created_by_first_name: worker.first_name,
-              created_by_last_name: worker.last_name
+              created_by_last_name: worker.last_name,
+              visibility: "public"
             }
           ]
         }
@@ -119,10 +120,12 @@ const TicketDetails = () => {
         updates.ticket_history.events.push({
           id: crypto.randomUUID(),
           type: 'assignment',
+          content: `Assigned to ${worker.first_name} ${worker.last_name}`,
           created_at: now,
-          worker_id: worker.id,
-          worker_first_name: worker.first_name,
-          worker_last_name: worker.last_name
+          created_by_uuid: worker.id,
+          created_by_first_name: worker.first_name,
+          created_by_last_name: worker.last_name,
+          visibility: "private"
         });
       }
 
@@ -135,11 +138,12 @@ const TicketDetails = () => {
           id: crypto.randomUUID(),
           type: 'status-update',
           created_at: now,
-          old_status: 'new',
-          new_status: 'open',
-          updated_by_uuid: worker.id,
-          updated_by_first_name: worker.first_name,
-          updated_by_last_name: worker.last_name
+          old_value: 'new',
+          new_value: 'open',
+          created_by_uuid: worker.id,
+          created_by_first_name: worker.first_name,
+          created_by_last_name: worker.last_name,
+          visibility: 'public'
         });
       }
 

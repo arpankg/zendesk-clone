@@ -4,6 +4,7 @@ import { supabase } from '../../config/supabase';
 import { formatRelativeDate } from '../utils/dateUtils';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
+import { CustomerHeader } from '../components/customer/CustomerHeader';
 import type { Database } from '../../config/types';
 
 type Ticket = Database['public']['Tables']['tickets']['Row'];
@@ -117,27 +118,30 @@ const CustomerDashboard = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-semibold text-gray-900">Your Tickets</h1>
-          <button
-            onClick={() => navigate('/support')}
-            className="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            Create New Ticket
-          </button>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <CustomerHeader />
+      <div className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            <h1 className="text-3xl font-semibold text-gray-900">Your Tickets</h1>
+            <button
+              onClick={() => navigate('/support')}
+              className="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              Create New Ticket
+            </button>
+          </div>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : error ? (
-          <ErrorMessage message={error} />
-        ) : tickets.length === 0 ? (
-          <EmptyState />
-        ) : (
-          <CustomerTicketsTable tickets={tickets} />
-        )}
+          {loading ? (
+            <LoadingSpinner />
+          ) : error ? (
+            <ErrorMessage message={error} />
+          ) : tickets.length === 0 ? (
+            <EmptyState />
+          ) : (
+            <CustomerTicketsTable tickets={tickets} />
+          )}
+        </div>
       </div>
     </div>
   );
