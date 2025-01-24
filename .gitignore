@@ -49,3 +49,16 @@ bun.lockb
 .mf
 .rollup.cache
 tsconfig.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+server/venv/
+server/env/
+server/.env
+*.egg-info/
+.installed.cfg
+*.egg
