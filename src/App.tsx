@@ -3,6 +3,7 @@ import Support from './pages/Support'
 import CustomerSignUp from './pages/CustomerSignUp'
 import CustomerLogin from './pages/CustomerLogin'
 import CustomerDashboard from './pages/CustomerDashboard'
+import CustomerTicketDetails from './pages/CustomerTicketDetails'
 import EmployeeDashboard from './pages/EmployeeDashboard'
 import EmployeeLogin from './pages/EmployeeLogin'
 import EmployeeSignUp from './pages/EmployeeSignUp'
@@ -32,6 +33,7 @@ function App() {
       <Route path="/customer-signup" element={<CustomerSignUp />} />
       <Route path="/customer-login" element={<CustomerLogin />} />
       <Route path="/customer-dashboard" element={<CustomerDashboard />} />
+      <Route path="/customer/ticket/:id" element={<CustomerTicketDetails />} />
       <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
       <Route path="/employee-dashboard/ticket/:id" element={<TicketDetails />} />
       <Route path="/employee-login" element={<EmployeeLogin />} />

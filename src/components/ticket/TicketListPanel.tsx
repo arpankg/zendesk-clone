@@ -26,7 +26,7 @@ export function TicketListPanel() {
   const displayedTickets = useMemo(() => {
     if (showAllTickets || !currentUser?.id) return tickets;
     return tickets.filter(ticket => 
-      ticket.assigned_to?.includes(currentUser.id)
+      ticket.assigned_to?.some(worker => worker.id === currentUser.id)
     );
   }, [tickets, showAllTickets, currentUser?.id]);
 

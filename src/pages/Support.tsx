@@ -85,7 +85,7 @@ const Support = () => {
               type: 'message',
               content: description,
               created_at: new Date().toISOString(),
-              created_by: userData.id,
+              created_by_uuid: userData.id,
               created_by_first_name: userData.first_name,
               created_by_last_name: userData.last_name,
               visibility: 'public',
@@ -111,7 +111,10 @@ const Support = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <CustomerHeader />
+      <CustomerHeader 
+        firstName={userData?.first_name}
+        lastName={userData?.last_name}
+      />
       <div className="py-12">
         <div className="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow">
           <h1 className="text-3xl font-semibold text-gray-900 mb-8">

@@ -14,6 +14,8 @@ interface CustomerTicketsTableProps {
 }
 
 const CustomerTicketsTable: React.FC<CustomerTicketsTableProps> = ({ tickets }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="mt-8 flow-root">
       <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -37,7 +39,7 @@ const CustomerTicketsTable: React.FC<CustomerTicketsTableProps> = ({ tickets }) 
             </thead>
             <tbody className="divide-y divide-gray-200">
               {tickets.map((ticket) => (
-                <tr key={ticket.id}>
+                <tr key={ticket.id} onClick={() => navigate(`/customer/ticket/${ticket.id}`)} className="cursor-pointer hover:bg-gray-50">
                   <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                     {ticket.title}
                   </td>

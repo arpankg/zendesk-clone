@@ -123,14 +123,6 @@ const EmployeeDashboard = () => {
               A list of all tickets in the system. Click on a ticket to view details and respond.
             </p>
           </div>
-          <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-            <button
-              type="button"
-              className="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              Refresh Queue
-            </button>
-          </div>
         </div>
 
         {loading ? (
