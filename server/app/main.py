@@ -16,6 +16,10 @@ app.add_middleware(
 # Include routers
 app.include_router(tickets.router)
 
+@app.get("/api/ping")
+async def ping():
+    return {"status": "acknowledged"}
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to the FastAPI server"}
