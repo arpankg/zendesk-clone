@@ -135,7 +135,7 @@ const Support = () => {
       };
 
       // Fire-and-forget POST request
-      fetch(`${apiUrl}/tickets/create`, {
+      fetch(`${apiUrl}/tickets/assign-to-agent`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

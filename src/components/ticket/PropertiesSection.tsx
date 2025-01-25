@@ -1,4 +1,3 @@
-import { type TicketStatus, type TicketPriority } from '@/config/types'
 import { useState, useRef, useEffect } from 'react'
 
 interface PropertiesSectionProps {
@@ -99,7 +98,7 @@ export function PropertiesSection({
                     value={newTag}
                     onChange={(e) => setNewTag(e.target.value)}
                     placeholder="Enter tag"
-                    className="flex-1 rounded-md border-0 py-1.5 px-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600"
+                    className="block w-full rounded-md border border-gray-300 bg-gray-50 p-2 pl-10 text-sm text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500"
                   />
                   <button
                     type="submit"

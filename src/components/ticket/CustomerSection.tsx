@@ -1,4 +1,4 @@
-import { type Customer } from '@/config/types'
+import { type Customer } from '../../../config/types'
 
 interface CustomerSectionProps {
   customer: Customer
@@ -41,7 +41,7 @@ export function CustomerSection({ customer, isExpanded = true }: CustomerSection
           <div>
             <div className="text-sm text-gray-500">Communication Channels</div>
             <div className="mt-1 flex flex-wrap gap-2">
-              {customer.communication_channels?.map((channel) => (
+              {customer.communication_channels?.map((channel: string) => (
                 <span
                   key={channel}
                   className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700"

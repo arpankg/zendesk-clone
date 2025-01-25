@@ -7,7 +7,12 @@ import { supabase } from '../../../../config/supabase';
 type Ticket = Database['public']['Tables']['tickets']['Row'];
 type Customer = Database['public']['Tables']['customers']['Row'];
 type Worker = Database['public']['Tables']['workers']['Row'];
-type MessageEvent = Ticket['ticket_history']['events'][0] & { content: string };
+type Event = Record<string, any> & {
+  id: string;
+  type: string;
+  created_at: string;
+};
+type MessageEvent = Event & { content: string };
 type TicketStatus = 'new' | 'open' | 'pending' | 'closed';
 type TicketPriority = 'low' | 'medium' | 'high';
 
@@ -59,7 +64,7 @@ export function MessageSection({
       if (error) throw error;
 
       // Add to ticket history with correct event type
-      const historyEvent = {
+      const historyEvent: Event = {
         id: crypto.randomUUID(),
         type: field === 'status' ? 'status-update' : 'priority-update',
         created_at: new Date().toISOString(),
