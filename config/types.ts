@@ -31,6 +31,7 @@ export interface Database {
               created_by_uuid: string
               created_by_first_name: string
               created_by_last_name: string
+              role: 'agent' | 'customer'
               visibility: 'public' | 'private'
               attachments?: string[]
               old_value?: string
@@ -79,6 +80,7 @@ export interface Database {
               created_by_uuid: string
               created_by_first_name: string
               created_by_last_name: string
+              role: 'agent' | 'customer'
               visibility: 'public' | 'private'
               attachments?: string[]
               old_value?: string
@@ -127,6 +129,7 @@ export interface Database {
               created_by_uuid: string
               created_by_first_name: string
               created_by_last_name: string
+              role: 'agent' | 'customer'
               visibility: 'public' | 'private'
               attachments?: string[]
               old_value?: string

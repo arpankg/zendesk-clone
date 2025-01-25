@@ -91,6 +91,7 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "public",
         "attachments": []
       },
@@ -100,9 +101,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "old_value": "new",
         "new_value": "open",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "public"
       },
       {
@@ -111,9 +113,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "field_name": "custom_field_name",
         "new_value": "field value",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "private"
       },
       {
@@ -122,9 +125,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "field_name": "custom_field_name",
         "old_value": "field value",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "private"
       },
       {
@@ -132,9 +136,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "type": "assignment-added",
         "agent_id": "user_id",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "public"
       },
       {
@@ -142,9 +147,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "type": "assignment-removed",
         "agent_id": "user_id",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "public"
       },
       {
@@ -152,9 +158,10 @@ Core table for storing support tickets. Designed for flexibility while maintaini
         "type": "note-added",
         "content": "note text",
         "created_at": "timestampz",
-        "created_by": "user_id",
+        "created_by_uuid": "user_id",
         "created_by_first_name":"first_name",
         "created_by_last_name":"last_name",
+        "role": "agent" | "customer",
         "visibility": "private"
       }
     ]
@@ -165,30 +172,35 @@ Core table for storing support tickets. Designed for flexibility while maintaini
   The `type` field in ticket history events is flexible and can be extended. Initial event types include:
   
   1. `message`: Regular conversation messages
-     - Required fields: id, type, content, created_at, created_by, visibility, attachments
+     - Required fields: id, type, content, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility, attachments
   
   2. `status-update`: Changes to ticket status
-     - Required fields: id, type, old_value, new_value, created_at, created_by, visibility
+     - Required fields: id, type, old_value, new_value, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility
   
   3. `field-added`: New field added to custom_fields
-     - Required fields: id, type, field_name, new_value, created_at, created_by, visibility
+     - Required fields: id, type, field_name, new_value, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility
   
   4. `field-removed`: Field removed from custom_fields
-     - Required fields: id, type, field_name, old_value, created_at, created_by, visibility
+     - Required fields: id, type, field_name, old_value, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility
   
   5. `assignment-added`: Agent added to ticket assignments
-     - Required fields: id, type, agent_id, created_at, created_by, visibility
+     - Required fields: id, type, agent_id, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility
   
   6. `assignment-removed`: Agent removed from ticket assignments
-     - Required fields: id, type, agent_id, created_at, created_by, visibility
+     - Required fields: id, type, agent_id, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility
   
   7. `note-added`: Internal note added to ticket
-     - Required fields: id, type, content, created_at, created_by, created_by_first_name, created_by_last_name, visibility (always "private")
+     - Required fields: id, type, content, created_at, created_by_uuid, created_by_first_name, created_by_last_name, role, visibility (always "private")
 
   ##### Event Visibility
   Each event has a visibility field that can be:
   - `public`: Visible to both customers and support staff
   - `private`: Visible only to support staff (internal notes, system events, etc.)
+
+  ##### Event Role
+  Each event must specify the role of the creator:
+  - `agent`: Event created by a support staff member
+  - `customer`: Event created by a customer
 
   ##### Notes on Ticket History
   - Events are stored chronologically in a single array
