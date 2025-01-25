@@ -18,14 +18,14 @@ export function MessageBubble({
   return (
     <div
       className={cn(
-        "flex flex-col max-w-[70%] space-y-1",
+        "flex flex-col max-w-[50%] space-y-1",
         isCustomer ? "items-end ml-auto" : "items-start"
       )}
     >
       <span className="text-sm text-muted-foreground">{username}</span>
       <div
         className={cn(
-          "rounded-lg px-4 py-2",
+          "rounded-lg px-3 py-2",
           isCustomer
             ? "bg-blue-500 text-white"
             : "bg-gray-100 text-gray-900"
