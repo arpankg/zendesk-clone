@@ -62,3 +62,4 @@ server/.env
 *.egg-info/
 .installed.cfg
 *.egg
+.aider*
