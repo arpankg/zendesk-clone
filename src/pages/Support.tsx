@@ -66,7 +66,7 @@ const Support = () => {
     setIsSubmitting(true);
 
     try {
-      const { error: insertError } = await supabase
+      const { data: insertedTicket, error: insertError } = await supabase
         .from('tickets')
         .insert({
           title,
@@ -94,9 +94,57 @@ const Support = () => {
           },
           internal_notes: { notes: [] },
           feedback: { rating: 0, comment: '', submitted_at: null }
-        });
+        })
+        .select()
 
       if (insertError) throw insertError;
+
+      // Get the appropriate API URL based on environment
+      const apiUrl = import.meta.env.MODE === 'production' 
+        ? import.meta.env.VITE_API_URL_PROD 
+        : import.meta.env.VITE_API_URL_DEV;
+
+      // Include the Supabase ticket ID in the FastAPI request
+      const ticketData = {
+        id: insertedTicket[0].id,
+        title,
+        description,
+        status: 'new',
+        priority: 'medium',
+        source_channel: 'web',
+        created_by: userData.id,
+        customer_email: email,
+        tags: [],
+        custom_fields: {},
+        assigned_to: [],
+        ticket_history: {
+          events: [{
+            id: crypto.randomUUID(),
+            type: 'message',
+            content: description,
+            created_at: new Date().toISOString(),
+            created_by_uuid: userData.id,
+            created_by_first_name: userData.first_name,
+            created_by_last_name: userData.last_name,
+            visibility: 'public',
+            attachments: []
+          }]
+        },
+        internal_notes: { notes: [] },
+        feedback: { rating: 0, comment: '', submitted_at: null }
+      };
+
+      // Fire-and-forget POST request
+      fetch(`${apiUrl}/tickets/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(ticketData),
+      }).catch(err => {
+        // Silent error handling - log only
+        console.error('FastAPI sync error (non-blocking):', err);
+      });
 
       setSuccess(true);
       setTitle('');
