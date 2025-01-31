@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Optional, Any
 from datetime import datetime
 from pprint import pprint
+from app.RAG.rag import get_rag_response
 
 class TicketEvent(BaseModel):
     id: str
@@ -45,7 +46,7 @@ class CreateTicketRequest(BaseModel):
 router = APIRouter()
 
 @router.post("/tickets/solve")
-async def create_ticket(ticket: CreateTicketRequest):
+async def solve_ticket(ticket: CreateTicketRequest):
     # Print basic ticket info
     print(" New Ticket Created:")
     print(f" Title: {ticket.title}")
@@ -65,17 +66,19 @@ async def create_ticket(ticket: CreateTicketRequest):
 
     # Todo
 
-    # Try RAG using the customer's request on the zoom transcripts database
+    print(" Searching Zoom transcripts for relevant information...")
+    rag_results = get_rag_response(query=ticket.description, top_k=10)
+    
 
-    # Look at Results of RAG and send to an Evaluator LLM to see if it properly answers the user's query
+
+        # Look at Results of RAG and send to an Evaluator LLM to see if it properly answers the user's query
 
 
     # If yes, then send a message with this info and mark ticket status
 
     # If no, then add tags to the ticket and assign it to an agent
 
-    
-    return {"message": "Hello World"}
+    # Try RAG using the customer's request on the zoom transcripts database
 
 
-
+    return {"message": "Ticket processed", "rag_results": rag_results}

@@ -4,3 +4,4 @@ pydantic==2.5.2
 langchain
 langchain-openai
 python-dotenv
+langchain_pinecone

@@ -1,5 +1,5 @@
 import pytest
-from app.customer_agent.rag import get_rag_response
+from app.RAG.rag import get_rag_response
 
 def test_basic_search():
     """Test that we can get at least one result from the vector database"""
