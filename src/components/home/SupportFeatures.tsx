@@ -1,20 +1,20 @@
-import { ClockIcon, DocumentCheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { ClockIcon, AcademicCapIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
 
 const features = [
   {
-    name: '24/7 Support',
-    description: 'Our support team is available around the clock to help you with any issues you encounter.',
+    name: '12-Week Intensive Program',
+    description: 'Transform into an elite AI engineer with our 12-week program - 4 weeks remote followed by 8 weeks in Austin, Texas. Work 80-100 hours per week in a Stanford-level AI education environment.',
     icon: ClockIcon,
   },
   {
-    name: 'Comprehensive Documentation',
-    description: 'Access our detailed knowledge base to find answers to common questions and learn best practices.',
-    icon: DocumentCheckIcon,
+    name: 'Free Program + Guaranteed Job',
+    description: 'Participate in our program completely free of charge. Upon successful completion, receive a guaranteed $200,000/year job offer as an AI Engineer in Austin, Texas.',
+    icon: AcademicCapIcon,
   },
   {
-    name: 'Real-time Updates',
-    description: 'Stay informed with real-time updates on your support tickets and requests.',
-    icon: ArrowPathIcon,
+    name: 'Elite Training Environment',
+    description: 'Join our competitive, survival-like environment where you will rapidly rebuild complex applications using modern AI tools, focusing on speed, quality, and scalability.',
+    icon: BuildingOfficeIcon,
   },
 ];
 
@@ -24,10 +24,10 @@ export const SupportFeatures = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900">
-            World-class Support
+            Transform Into an Elite AI Engineer
           </h2>
           <p className="mt-4 text-lg text-gray-500">
-            Everything you need to get the help you deserve
+            Gauntlet AI is your path to becoming a high-caliber AI builder and entrepreneur
           </p>
         </div>
 
