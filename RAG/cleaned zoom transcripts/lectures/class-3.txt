@@ -579,13 +579,6 @@ Noris. I was just going to ask. My chat project is kind of big, and it goes back
 
 ---
 
-Speaker B
-
-I'm sorry, but the provided text chunk is too short and does not contain any context or content that requires correction. If you have a longer snippet or additional text, please provide it for review.
-
-
----
-
 Speaker D
 
 The first thing I would do is ensure you have your messages stored in some database. If you don't, then that's scarier. I'm assuming everybody here has their data, their messages stored in some database. I would create some sort of cron job or function that you can manually run through the command line that would take these database messages and vectorize them or embed them and put them in a vector database. Once you have that set up, you have a very nice little thing where you can either open up a notebook or you can. Whether it's a Jupyter notebook or just some Python code or JavaScript code, you guys are not limited to Python. You can just start querying this vector database that you've set up to ensure that the retriever is working properly. Once you know that you're actually retrieving things and the code is working for the retriever, then what I would do is connect the LLM.

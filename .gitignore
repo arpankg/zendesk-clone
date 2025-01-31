@@ -56,20 +56,23 @@ __pycache__/
 *$py.class
 *.so
 .Python
-server/venv/
-server/env/
-server/.env
-*.egg-info/
-.installed.cfg
-*.egg
-.aider*
+
+# Virtual Environments (comprehensive)
+**/*env*/
+*-env/
+*-ENV/
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
 .env
 .venv
+env.bak/
+venv.bak/
+server/venv/
+server/env/
+server/.env
+
+# Python
 pip-log.txt
 pip-delete-this-directory.txt
 .tox/
@@ -83,3 +86,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+
+
+# Aider
+.aider*

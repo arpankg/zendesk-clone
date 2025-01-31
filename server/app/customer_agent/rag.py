@@ -17,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class RAGSearch:
-    def __init__(self, index_name: str = "zoom-transcripts"):
+    def __init__(self, index_name: str = "gauntlet-zoom-transcripts"):
         """Initialize RAG with Pinecone vector store.
         
         Args:

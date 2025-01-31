@@ -44,7 +44,7 @@ class CreateTicketRequest(BaseModel):
 
 router = APIRouter()
 
-@router.post("/tickets/assign-to-agent")
+@router.post("/tickets/solve")
 async def create_ticket(ticket: CreateTicketRequest):
     # Print basic ticket info
     print(" New Ticket Created:")
@@ -61,5 +61,21 @@ async def create_ticket(ticket: CreateTicketRequest):
     print(f" Custom Fields: {ticket.custom_fields}")
     
     print("\n")  # Add some spacing after all the logs
+
+
+    # Todo
+
+    # Try RAG using the customer's request on the zoom transcripts database
+
+    # Look at Results of RAG and send to an Evaluator LLM to see if it properly answers the user's query
+
+
+    # If yes, then send a message with this info and mark ticket status
+
+    # If no, then add tags to the ticket and assign it to an agent
+
     
     return {"message": "Hello World"}
+
+
+

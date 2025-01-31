@@ -6,6 +6,14 @@ def test_basic_search():
     # Run a basic search query
     results = get_rag_response(query="meeting", top_k=1)
     
+    # Print the results
+    print("\n🔍 Search Results:")
+    for i, result in enumerate(results, 1):
+        print(f"\n📄 Result {i}:")
+        print(f"Content: {result['content']}")
+        print(f"Metadata: {result['metadata']}")
+        print(f"Similarity Score: {result['similarity_score']}\n")
+    
     # Assert we got at least one result
     assert len(results) > 0
     

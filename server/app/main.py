@@ -1,7 +1,13 @@
+from pathlib import Path
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import tickets
 from datetime import datetime
+from langchain_openai import ChatOpenAI
+
+# Load environment variables
+load_dotenv(dotenv_path=Path(__file__).parent.parent.parent / '.env')
 
 app = FastAPI()
 
@@ -31,4 +37,6 @@ async def webhook_handler(request: Request):
 
 @app.get("/")
 async def root():
+    llm = ChatOpenAI()
+    llm.invoke("Hello world!")
     return {"message": "Welcome to the FastAPI server"}
