@@ -1,0 +1,2057 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Let me just start the recording.
+
+00:00:03.000 --> 00:00:10.000
+All right. So first and foremost. Two weeks till Austin, kind of crazy, or two and a half weeks till austin.
+
+00:00:10.000 --> 00:00:15.000
+I do want to say that we are closer than all of you think. So we have that in mind.
+
+00:00:15.000 --> 00:00:21.000
+We'll have a meeting on logistics and move and all that stuff next week.
+
+00:00:21.000 --> 00:00:25.000
+So a lot of people have been asking me this question.
+
+00:00:25.000 --> 00:00:35.000
+How many people are going to make it to Austin? And my answer is as many as possible. So if you submit your assignments, if you complete what you're supposed to complete.
+
+00:00:35.000 --> 00:00:42.000
+Then there should be no reason why you don't make it to Austin.
+
+00:00:42.000 --> 00:00:47.000
+What is P? I have no idea what P is. Maybe there's a…
+
+00:00:47.000 --> 00:00:50.000
+What's the conditional probability of us going to Austin given that we're
+
+00:00:50.000 --> 00:01:07.000
+So now you know, Wilson, that my statistics is terrible. The probability I would say is pretty high as long as you submit your assignments. I mean, I'm not going to put a number on it because I'm not grading all the assignments. Obviously, there's
+
+00:01:07.000 --> 00:01:15.000
+Austin involved and a couple other graders involved, but we will be very clear and everyone will reach out to anybody who's, uh.
+
+00:01:15.000 --> 00:01:22.000
+In jeopardy of losing their spot in Austin. And we have done that for previous students as well.
+
+00:01:22.000 --> 00:01:36.000
+If you haven't gotten any feedback from Austin directly or me, that means you're doing pretty okay. I mean, we were pretty like for week one and for submission yesterday, we just wanted to see that people were meeting deadlines, right? So if we're going to be giving you a job
+
+00:01:36.000 --> 00:01:43.000
+Right after this program. It's the first and foremost thing as an engineer is to meet the deadlines that are set for you.
+
+00:01:43.000 --> 00:01:50.000
+And so if anybody did not meet those deadlines, half of the people didn't even show up to the first class. That was pretty easy cut, right?
+
+00:01:50.000 --> 00:01:55.000
+Now with the next project, the guidelines are going to become more and more stringent.
+
+00:01:55.000 --> 00:02:07.000
+We're going to ask you to sort of hit metrics on production grade or industry grade applications. We're going to ask you to use quantifiable numbers for all four projects.
+
+00:02:07.000 --> 00:02:21.000
+There are 160-ish people left right so but that number is dwindling day by day I'm pretty sure you guys are going to have a really nice group of people that can work together in Austin.
+
+00:02:21.000 --> 00:02:28.000
+And I'm really hoping and excited to see all the projects that come out, especially like having that experience and being together for so long.
+
+00:02:28.000 --> 00:02:46.000
+I feel like you guys will really build some connections. The only other thing I'll say about that is In terms of like… logistics and in terms of like who's going to get in We want everybody to come, right? So if you do the work, if you're able to submit something.
+
+00:02:46.000 --> 00:02:51.000
+Step one, my recommendation submit If a deadline is about to hit, submit whatever you have.
+
+00:02:51.000 --> 00:03:02.000
+Do not wait. Like we will understand whatever circumstances that led to maybe you not finishing the submission, but not submitting something at all.
+
+00:03:02.000 --> 00:03:09.000
+Is actually a very bad idea. And then we'll talk through next week.
+
+00:03:09.000 --> 00:03:14.000
+Yes, you can submit on non-deadline days. This is a great question, Ryan. If you want to submit earlier, that's totally fine.
+
+00:03:14.000 --> 00:03:23.000
+Starting for next week's project, we're also going to be setting out deadlines, not deadlines, metrics. So I'll include in the project talk on Monday.
+
+00:03:23.000 --> 00:03:30.000
+Just like harder and harder guidelines to ensure that we're sort of moving in the right direction.
+
+00:03:30.000 --> 00:03:49.000
+Yeah, you can put the MVP submissions on the same submissions page. I think they're resolving a caching error because somebody was like navigating away from the page and then they're… submission would disappear. So they're resolving that now. But if you just submit, everything should be saved fine.
+
+00:03:49.000 --> 00:03:58.000
+In terms of next week's project, I'm not sure if I should tell you I've been thinking about that a lot. Like, should I reveal next week's project or should I wait till Monday?
+
+00:03:58.000 --> 00:04:07.000
+The hint is… Let me give you a hint.
+
+00:04:07.000 --> 00:04:12.000
+Crm. How about that? That's a big hint. Um.
+
+00:04:12.000 --> 00:04:16.000
+Hey, Paul, we changed some of the projects based on the hiring partners.
+
+00:04:16.000 --> 00:04:39.000
+And so we will change the you're not going to be building Salesforce. We will change the… sort of group of projects or the order of projects based on projects just how we feel the cohort is going and just how we feel like we can sort of challenge you guys more.
+
+00:04:39.000 --> 00:04:46.000
+Yes, we can build a common form. Okay, we got to get sort of started. Oh, yeah. I want somebody to build something better than Ilyasa's app.
+
+00:04:46.000 --> 00:04:51.000
+I'd love that. And then we can raise some funding from him.
+
+00:04:51.000 --> 00:04:58.000
+Okay, so I'm going to start today's lecture because we have a lot to cover and then I'll come back to more questions in general.
+
+00:04:58.000 --> 00:05:05.000
+The other thing I wanted to talk about with you guys was imposter syndrome. So a lot of you might be feeling imposter syndrome right now.
+
+00:05:05.000 --> 00:05:22.000
+Because you've been put into an environment where everything was intentionally not well defined. You have to sort of figure your way out. You have to be resourceful. I will give you advice that My sort of manager gave me when I first started out which was that
+
+00:05:22.000 --> 00:05:27.000
+If you're feeling imposter syndrome, that means you're headed in the right direction for your development.
+
+00:05:27.000 --> 00:05:32.000
+Because if you stayed within your comfort zone. And you continue to just do the things that you were good at.
+
+00:05:32.000 --> 00:05:36.000
+You're not actually developing. You're just honing in on skills you already have.
+
+00:05:36.000 --> 00:05:47.000
+The whole purpose of Gauntlet is to ensure that each one of you excels and becomes amazing engineers for getting something zero to one out there really fast using AI, right?
+
+00:05:47.000 --> 00:05:57.000
+And to ensure that you have that engineering sense that Zach was talking about in Office Hours yesterday. So a lot of you are going to feel this way, especially as time goes on and the projects get harder.
+
+00:05:57.000 --> 00:06:01.000
+I just want to start this class off by saying keep pushing.
+
+00:06:01.000 --> 00:06:06.000
+Keep pushing. The only way you get through imposter syndrome is going right through it.
+
+00:06:06.000 --> 00:06:11.000
+So I wanted to say that and I wanted to direct that to everybody.
+
+00:06:11.000 --> 00:06:29.000
+Okay, today's class. Today's class is going to be on retrieval metrics and optimizations. So we've essentially created a simple rag pipeline, right? But how do we take it to the next level?
+
+00:06:29.000 --> 00:06:39.000
+And there is a lot out there that we could be doing to make our rag pipelines better. But we want to give you guys essentially the starting line.
+
+00:06:39.000 --> 00:06:45.000
+What are some things that you can do out of the box to take your RAG pipeline and maybe make a 2x better?
+
+00:06:45.000 --> 00:06:49.000
+So we're going to be talking through some metrics on how to measure that.
+
+00:06:49.000 --> 00:07:11.000
+And then we're also going to be talking through some optimization skills on how to ensure that we can sort of use this to ensure that we can use this to sort of stay up to date with techniques that we can use to make the pipeline better within your Slack applications.
+
+00:07:11.000 --> 00:07:19.000
+So I'm going to be making a thread on Slack. So let me just do that now.
+
+00:07:19.000 --> 00:07:36.000
+Where you guys can sort of post your questions. Actually… Let's put that.
+
+00:07:36.000 --> 00:07:54.000
+Questions.
+
+00:07:54.000 --> 00:08:07.000
+Okay. So today's learning objectives are we're going to be understanding three retrieval metrics, MRR and DCG, and recall at K. I'll walk through what each one of them are.
+
+00:08:07.000 --> 00:08:14.000
+I'll show you how to calculate them using some basic Python code. And then I'll show you the scenarios in which they are applicable.
+
+00:08:14.000 --> 00:08:21.000
+Next, I'll talk about two methods of ensuring that you might get better results in general for your RAG pipeline.
+
+00:08:21.000 --> 00:08:42.000
+Something called contextual embeddings and something called summary techniques. And then we also have the repo that we'll walk through. I intentionally haven't set up I intentionally haven't set up the repo at all. So I'm going to actually walk through the entire local setup because there's a lot of questions about like, what do you put the keys and
+
+00:08:42.000 --> 00:08:48.000
+How do you set a pine cone? So I want to do that live in class today.
+
+00:08:48.000 --> 00:09:02.000
+So what are retrieval metrics? So if you guys remember the first sort of class that we sort of started out with was a class that Austin was highlighting a couple of sort of spiky POVs that members of the hiring team have.
+
+00:09:02.000 --> 00:09:14.000
+One of them was something called QC or quality control. And so QC for AI is a big concept where we're ensuring that the AI output matches certain criteria.
+
+00:09:14.000 --> 00:09:28.000
+We're ensuring that we have metrics associated with this output And that we want to continue pushing and ensuring that AI is producing output on whatever category, whatever criteria that it's supposed to consistently.
+
+00:09:28.000 --> 00:09:34.000
+And so building this level of a QC system for your different AI components is very important.
+
+00:09:34.000 --> 00:09:39.000
+Because this lets us track, hey, is this really working in the direction that we want it to work in?
+
+00:09:39.000 --> 00:09:45.000
+Or does this need to be upgraded? Does this need to be changed? Does this need to be iterated on?
+
+00:09:45.000 --> 00:09:51.000
+I think a lot of people think of AI as a black box. You put things into the black box and output comes out.
+
+00:09:51.000 --> 00:10:01.000
+But we need a real nice way to measure. Hey, what was the output? Was it accurate? Was it reliable? And is it consistently producing this?
+
+00:10:01.000 --> 00:10:08.000
+When you think about production grade or industry grade applications, consistency and accuracy are extremely important.
+
+00:10:08.000 --> 00:10:15.000
+You can't have AI randomly hallucinate whenever it's trying to do something, a certain task that you give it.
+
+00:10:15.000 --> 00:10:26.000
+So if we were to think about this QC system. There's three areas that we can sort of walk into and those are the three metrics that we're going to explore.
+
+00:10:26.000 --> 00:10:31.000
+But they're going to give you concrete scores to tie your retrieval pipeline to.
+
+00:10:31.000 --> 00:10:39.000
+So I'll know that my recall is at this. I'll know that my MRR is at this. So this way I can say, okay.
+
+00:10:39.000 --> 00:10:46.000
+Maybe this is one implementation of my rag pipeline. Maybe this is a second implementation of my rag pipeline. Maybe this is my third implementation of my rag pipeline.
+
+00:10:46.000 --> 00:10:57.000
+I have quantifiable numbers for each of those implementations on how to decide what the best route forward is.
+
+00:10:57.000 --> 00:11:02.000
+So there's three key retrieval metrics. So the first one is called mean reciprocal rank.
+
+00:11:02.000 --> 00:11:07.000
+Which essentially means how quickly can I find the first correct answer?
+
+00:11:07.000 --> 00:11:18.000
+So there's, let's say there's like a factual tidbit, like a date or historical value Or if there's some sort of information that is specific to some type of user.
+
+00:11:18.000 --> 00:11:22.000
+How quickly can I retrieve that information from a vector database?
+
+00:11:22.000 --> 00:11:27.000
+And this is really nice for like Hey, I want to do some sort of Q&A agent.
+
+00:11:27.000 --> 00:11:43.000
+Or a Q&A support bot or Q&A support chat. And I want to figure out key information from documents How can I grab the right piece of information as quickly as possible? So that's what MRR measures. How quickly your first response is the exact response you're looking for.
+
+00:11:43.000 --> 00:11:50.000
+Next is the normalized discounted cumulative gains. So it's a huge name, but we can just call it NDCG.
+
+00:11:50.000 --> 00:11:56.000
+It sort of evaluates like, hey, this is a ranking of the results that I'm expecting.
+
+00:11:56.000 --> 00:11:59.000
+But this is a ranking that resulted from the actual retrieval.
+
+00:11:59.000 --> 00:12:11.000
+How close was it to the ideal? So I want to ensure that, let's say I'm getting the top reviews on Yelp, right? I want to ensure that ranking comes accurately.
+
+00:12:11.000 --> 00:12:19.000
+But let's say it doesn't. So what can I do to make that better? So it associates a score with getting the ranking correctly.
+
+00:12:19.000 --> 00:12:28.000
+Next one is called recall. And at K. So at K is just the number of items that you're pulling from your vector database, right? So this could be five, this could be 10, this could be 20.
+
+00:12:28.000 --> 00:12:45.000
+So within those 5, 10, 20 items, how many are actually pertinent to the query that we're getting. So this is very important because it shows the coverage How much is my retrieval pipeline grabbing across all these documents?
+
+00:12:45.000 --> 00:12:52.000
+That is related to the specific topic.
+
+00:12:52.000 --> 00:13:03.000
+Okay, so I just checked. Let me just check messages.
+
+00:13:03.000 --> 00:13:12.000
+Great question, Joshua. Mrr can be time. But in this scenario that I'm going to show you that I'm going to show you, it's just going to be like accuracy.
+
+00:13:12.000 --> 00:13:21.000
+So it's going to be like, how were we able to get the first result at the right spot?
+
+00:13:21.000 --> 00:13:40.000
+Is this metric subjective? I'm not sure, Sebastian, which metric you're talking about because you didn't say which one, but I'm And they shouldn't be subjective. They should be based on the sort of the calculation we're doing. And I'll walk through specifically what's happening in the background. So I think we'll come back to your question.
+
+00:13:40.000 --> 00:13:46.000
+Okay. Here's where my disclaimer comes. There are multiple ways to measure RAG.
+
+00:13:46.000 --> 00:13:54.000
+You guys can sort of find 80 some odd metrics. You know, I just made that number up, but there's a lot of metrics out there.
+
+00:13:54.000 --> 00:14:05.000
+For you to start measuring your rag pipelines. And you can even do it with user side metrics, right? How quickly is the user getting the answer? Did the user like the answer they were getting?
+
+00:14:05.000 --> 00:14:18.000
+Right now, we're going to be talking about retrieval specific metrics, but there's no single perfect metric out there. It's up to you as the engineer to make a decision on what metrics should I start with?
+
+00:14:18.000 --> 00:14:22.000
+What is a nice way for me to measure the type of retrieval that I'm doing?
+
+00:14:22.000 --> 00:14:35.000
+And what metrics can sort of complement my MVP, right? It's really important not to choose too many at once. So a lot of the questions I've been getting is like, hey, I'm stuck here. I don't know what to do next.
+
+00:14:35.000 --> 00:14:41.000
+You do not want to be stuck in analysis paralysis. Go to ChatGPT, go to AI, and just ask it to pick one.
+
+00:14:41.000 --> 00:14:47.000
+It's really important for you to start implementing a solution and trying to see if it's headed in the right direction.
+
+00:14:47.000 --> 00:14:54.000
+Than to decide between X odd number of metrics. I'm going to show you three today that you can start using now.
+
+00:14:54.000 --> 00:15:01.000
+But in the future, let's say you find another one. Let's say you want to try something else. Let's say it's these three metrics are not working for you.
+
+00:15:01.000 --> 00:15:11.000
+We'll talk through other metrics that you could use for your QC system to ensure that the retrieval pipeline is working perfectly. But again, I want to make the disclaimer. There are so many metrics out there.
+
+00:15:11.000 --> 00:15:17.000
+And you as the engineer will sort of build up that sense on which metrics to choose from.
+
+00:15:17.000 --> 00:15:23.000
+Right now, we will start with these three. So mean reciprocal rank.
+
+00:15:23.000 --> 00:15:30.000
+When should you actually use this? So let's say you have a correct answer. There's one piece of fact that you need to find in your vector database.
+
+00:15:30.000 --> 00:15:36.000
+And you wanted to go searching for that. Mean reciprocal rank is a really nice way to figure out if that's working properly.
+
+00:15:36.000 --> 00:15:44.000
+So that could be a fact. It could be a tidbit. It could be a specific passage. It could be a specific point that you're looking for.
+
+00:15:44.000 --> 00:15:55.000
+And what it does is it does is It calculates how many tries does it take for the first correct answer, right? So let's say we're doing a bunch of retrievals and I'll show you a visual in just a second.
+
+00:15:55.000 --> 00:15:59.000
+How long does it take for me how many tries does it take?
+
+00:15:59.000 --> 00:16:06.000
+For me to get to that first correct answer. You can also do how long instead of how many tries. But today we're going to be talking about how many tries.
+
+00:16:06.000 --> 00:16:14.000
+And so let me walk you through the calculation of that and come back. So here you'll see on the right side is a visual.
+
+00:16:14.000 --> 00:16:18.000
+The first on the right side is a couple of queries that I've made.
+
+00:16:18.000 --> 00:16:21.000
+And it represents a query we're making to our vector database.
+
+00:16:21.000 --> 00:16:39.000
+So let's say we're trying to pull five items. The answer we're looking for is the green box, and then you have the other blue boxes. So in this scenario, what we're essentially doing is We're taking the number one and dividing it by the position of the correct answer. So in the first query, it took us two tries.
+
+00:16:39.000 --> 00:16:43.000
+In the second query, it just took us one try. And in the last query, it took us four tries.
+
+00:16:43.000 --> 00:16:49.000
+Then what we do is we average these numbers out to then get our mean reciprocal rank.
+
+00:16:49.000 --> 00:16:54.000
+What this means is we get the average number of tries that it's taking across multiple queries.
+
+00:16:54.000 --> 00:17:01.000
+To get to get how quickly we're getting to the correct or the most viable answer.
+
+00:17:01.000 --> 00:17:07.000
+The goal for this, as I outlined in the slide previously, is could we get this number to be 0.8 or higher?
+
+00:17:07.000 --> 00:17:14.000
+So right now in my example, I'm doing three queries that's not enough queries for you to measure.
+
+00:17:14.000 --> 00:17:22.000
+But let's say you were doing 100 some odd queries. Let's say you're doing 200 queries. You can calculate the score for each one and say, hey, which one is it?
+
+00:17:22.000 --> 00:17:38.000
+You can also do this with another sort of ground truth data set, right? So you know Hey, this is what I'm looking for. This is the doc I'm looking for. And you can test to see if your retrieval pipeline is actually hitting an MRR that's high enough.
+
+00:17:38.000 --> 00:17:50.000
+Okay, let me go back to Slack.
+
+00:17:50.000 --> 00:17:58.000
+Yes, you can use multiple methods. That's no problem.
+
+00:17:58.000 --> 00:18:04.000
+Yep, Lucas, I'll talk about how to improve it.
+
+00:18:04.000 --> 00:18:20.000
+How is the relevancy So you are the ones that you can create a test database to decide whether to figure out the ones that are relevant. So you usually have a human decide, hey, the second one is supposed to be the most relevant. The fourth one is supposed to be
+
+00:18:20.000 --> 00:18:28.000
+Yes, you need a ground truth data set for MRR. A ground truth data set is just a data set that's created by a human being.
+
+00:18:28.000 --> 00:18:32.000
+That tells you, hey, this is the documents that are relevant.
+
+00:18:32.000 --> 00:18:39.000
+And so this way you can compare to the output that's coming out.
+
+00:18:39.000 --> 00:18:47.000
+Yeah, Brett, you'd have humans in the loop to determine what is relevant.
+
+00:18:47.000 --> 00:19:05.000
+A great question, Joshua. For the next project, we will actually be using agents. We might not be using rag But for this project, if you wanted to do this, what would happen is we would give you a ground truth data set to compare.
+
+00:19:05.000 --> 00:19:16.000
+Great question, AJ. The MRR is a metric for retrieving out of the vector database. It is not for the LLM or in tandem.
+
+00:19:16.000 --> 00:19:22.000
+Okay, back to the slides for a bit and then I'll come back.
+
+00:19:22.000 --> 00:19:29.000
+Okay, next one is, so when should you use MRR is probably the great question. I'll come to your question in just a second, AJ.
+
+00:19:29.000 --> 00:19:45.000
+Mr is a really nice way if you want to get the right answer fast, right? So let's say you have a QA support box. Let's say you have an FAQ bot. Let's say you have Something where you need to pull a specific piece of information quickly.
+
+00:19:45.000 --> 00:19:48.000
+And you want to do that in less amount of tries.
+
+00:19:48.000 --> 00:19:55.000
+Then MRR is a really nice way to measure that. How do you make this better is a question that I got and I'll show optimizations in just a second.
+
+00:19:55.000 --> 00:20:06.000
+Or two or three ways on how to make this number better. But this is a really nice way to also compare. Let's say you have three or four different RAG implementations. Maybe one is using a framework.
+
+00:20:06.000 --> 00:20:11.000
+Maybe one is natively in Python. Maybe one is using a third framework. How do I compare and figure out?
+
+00:20:11.000 --> 00:20:23.000
+Which RAG pipeline is working best. Okay, let me see if there's more questions before I move on.
+
+00:20:23.000 --> 00:20:34.000
+In real testing, should the human selected truce also be conferring again kind of Yes, great question, Anthony. You should have multiple human beings figure out what your data set is.
+
+00:20:34.000 --> 00:20:43.000
+Again, it doesn't have to be It doesn't have to be super like straight, like, you know.
+
+00:20:43.000 --> 00:20:50.000
+Like too many people involved, like, you know, getting 100 people to review something can actually become crazy. You can even have something generated by AI.
+
+00:20:50.000 --> 00:21:01.000
+And it could just be fake synthetic data. And you can just have that as a way to ensure that your retrieval pipeline is headed in the right direction.
+
+00:21:01.000 --> 00:21:15.000
+I don't want all of you to sort of get caught up in the setup of everything. It's more about understanding how this works in the background and then seeing which ones you can apply to your rag pipeline.
+
+00:21:15.000 --> 00:21:21.000
+Yes, sir. And I'll get into major ways in just a second. Let me get through all the metrics.
+
+00:21:21.000 --> 00:21:28.000
+Okay. All right, so the next metric is NDCG.
+
+00:21:28.000 --> 00:21:39.000
+So this is important when the ranking of something is important to the output, right? So let's say we were using reciprocal rank fusion. This is something we introduced in class on Monday.
+
+00:21:39.000 --> 00:21:52.000
+Where we're ranking the results from multiple queries. And we care about the order in which it's being ranked, right? So this could be, imagine it's like restaurant reviews and we're getting five stars, four stars, three stars, two stars, and one star.
+
+00:21:52.000 --> 00:22:03.000
+We want the five-star reviews to come up first. Is that working? Is that not working properly? Are they sort of put in different areas of the ranking? Are they missing the mark?
+
+00:22:03.000 --> 00:22:16.000
+So it's important to understand like, hey, if I'm doing a sort of a retrieval pipeline where the order of things matters, then I can use this as a way to see whether or not I'm close to the expected order.
+
+00:22:16.000 --> 00:22:28.000
+Okay, so for example. Here, let's say you have like a five-star review and then you have four star reviews and three star reviews and two star reviews. This is the similar to the restaurant scoring system I just talked about.
+
+00:22:28.000 --> 00:22:34.000
+It would be incorrect if the five-star review lands at the end of the list, right?
+
+00:22:34.000 --> 00:22:39.000
+Another way to think of this is let's say we're searching for data science courses in our vector database.
+
+00:22:39.000 --> 00:22:43.000
+And the first course that pops up is Introduction to Data Science.
+
+00:22:43.000 --> 00:22:52.000
+Okay, that's irrelevant. That should be the highest on the list. And then on what should be the least highest on the list? Well, that should be web development with a relevant score of zero.
+
+00:22:52.000 --> 00:23:05.000
+So the way you sort of calculate this score is you have an expected ranking, right? You can check that expected ranking with AI. You can make the expected ranking with human beings and see, hey, when I'm retrieving these things.
+
+00:23:05.000 --> 00:23:17.000
+Are they coming back in the right order? Whether that order is relevant score, whether that order is something else, it's important to understand Are these things coming back in the order that I expect them to come in?
+
+00:23:17.000 --> 00:23:23.000
+And so what scenarios would it be important for us to use this score?
+
+00:23:23.000 --> 00:23:31.000
+So let's say we have a recommendation system. Let's say we have a system where it matters the order in which something is coming. So the movie streaming, for example.
+
+00:23:31.000 --> 00:23:37.000
+Maybe it comes in Ash's most favorite movies or the ones that we expect him to like most.
+
+00:23:37.000 --> 00:23:44.000
+Maybe it's some sort of research database where we're trying to collect topics, right? Which topics are associated with which papers.
+
+00:23:44.000 --> 00:24:02.000
+In this scenario, when we're pulling from the vector database, the ranking matters. The ranking is an important way to understand like this is the most relevant, this is the least important. And so that ranking in these scenarios is a really nice way to sort of be tested using NDCG.
+
+00:24:02.000 --> 00:24:20.000
+Okay, last one is called recall. Recall just means that, hey, I am retrieving K number of documents, right? So I have my vector data store and I'm going to grab 10 documents. I'm going to grab 15 documents. I'm going to grab 20 documents. Of those 5, 10, 15, or 20 documents.
+
+00:24:20.000 --> 00:24:26.000
+How many are relevant? How many of those documents actually correspond to the query that I have?
+
+00:24:26.000 --> 00:24:31.000
+This is important to sort of understand coverage. Let's say I have a ton of data in my vector database.
+
+00:24:31.000 --> 00:24:37.000
+And I'm pulling like a hundred vectors, right? Of these 100 vectors, which ones are actually usable?
+
+00:24:37.000 --> 00:24:51.000
+And if they're not usable, then I'm just pulling for no reason, right? Then I'm associating data that shouldn't be associated And then I'm doing extra legwork to figure out what are the relevant vectors. So this is a really nice way. I have a vector database.
+
+00:24:51.000 --> 00:24:57.000
+I grab a k number of vectors. Can I figure out how many of those vectors are actually truly relevant?
+
+00:24:57.000 --> 00:25:01.000
+And the goal would be that you want this number to be high as possible.
+
+00:25:01.000 --> 00:25:10.000
+So here's an example. Let's say you have, and I've just used like simple images, but obviously this would be text-based documents and vectors.
+
+00:25:10.000 --> 00:25:13.000
+But let's say you have all these images and there's two that are very important.
+
+00:25:13.000 --> 00:25:22.000
+So two out of the actual K value would make it that there's only one third or 0.33 recall at K.
+
+00:25:22.000 --> 00:25:28.000
+Because only 0.33 of the vectors that you retrieved were actually corresponding.
+
+00:25:28.000 --> 00:25:33.000
+With the initial query. So this is very important in a lot of aspects.
+
+00:25:33.000 --> 00:25:44.000
+We don't want to be sort of just building a system that pulls willy nilly, just pulling random items that may not be relevant or may not be too relevant to what we're searching for.
+
+00:25:44.000 --> 00:25:50.000
+So another nice way to figure out or associate a quantifiable number is recall.
+
+00:25:50.000 --> 00:26:12.000
+Okay, I will go to questions. The last thing I'll say is let's say you're thinking about medical research. Let's say you're thinking about patent searches, legal documents. This is a nice way to figure out If a nice place for recall to sort of fit in. Because you have so many legal documents, you have so much medical research, right? But you don't want to just be pulling willy-nilly across like.
+
+00:26:12.000 --> 00:26:17.000
+200,000 documents. You want to figure out how can I make this search more precise?
+
+00:26:17.000 --> 00:26:21.000
+And a really nice way to sort of do that is with recall.
+
+00:26:21.000 --> 00:26:30.000
+Okay. Let me just look at Slack.
+
+00:26:30.000 --> 00:26:41.000
+Yes, there is a whole business. Around some of these metrics.
+
+00:26:41.000 --> 00:26:53.000
+That's true. That's a good point. Sometimes arbitrarily, some of these metrics can be assigned incorrectly. So it's important to have humans in the loop to ensure.
+
+00:26:53.000 --> 00:27:00.000
+I'm confused, for instance, why not just maintain? Great question, Eden. Vector databases are important.
+
+00:27:00.000 --> 00:27:06.000
+For when you're searching through a lot of unstructured data, documents, messages, et cetera.
+
+00:27:06.000 --> 00:27:09.000
+But that doesn't mean you can't pair it with a regular database.
+
+00:27:09.000 --> 00:27:23.000
+So let's say you have some document or message that you found But instead of having to go in and go get the vector database because it's not working properly, you can definitely connect it to just a regular SQL query.
+
+00:27:23.000 --> 00:27:35.000
+Great question, Sebastian. Obviously, different queries have different numbers of documents. I think that's a sort of a you have to go out and try it yourself in terms of the scenario you're using it in.
+
+00:27:35.000 --> 00:27:50.000
+So in this scenario. What I would do is I would try to ensure that more than half of the retrieved vectors were actually relevant with the query to start out. And if you believe that you need to increase that more, you could do that as well.
+
+00:27:50.000 --> 00:27:58.000
+Great question. The scores on the metrics are associated with a couple of things. For MRR, the score is associated with how quickly can you get a relevant answer.
+
+00:27:58.000 --> 00:28:04.000
+So meaning like how many vectors does it take for you to get an answer that is relevant to the query that you have?
+
+00:28:04.000 --> 00:28:18.000
+The next one is like the ranking, right? So NDCG is the ranking of the actual responses that are coming back. So can you rank them by relevance? Can you rank them by other key criteria. And if you're able to rank them
+
+00:28:18.000 --> 00:28:22.000
+Are they coming back with the associated rank you had before?
+
+00:28:22.000 --> 00:28:32.000
+The next one for recall is just to make sure that everything that you're retrieving is in the same sort of problem space, industry area, or it's actually related to what you're searching for.
+
+00:28:32.000 --> 00:28:43.000
+This way, more than half of the vectors that we're doing should, in my opinion, at least be a little bit relevant to what you're trying to search for. You shouldn't just be getting random vectors all over the place.
+
+00:28:43.000 --> 00:28:56.000
+Yes, you can attach metadata to vectors. Users spot on. Metadata. So there's a huge metadata object that is associated with every vector. In fact, we'll go into the pine cone vector today, and I'll show you the metadata object.
+
+00:28:56.000 --> 00:29:17.000
+You can add more fields to this as well. And another way to do it, there's other popular vector databases, MongoDB, quadrant where you can have like a ton of vectors. You can even search by the parameters or you can even filter.
+
+00:29:17.000 --> 00:29:24.000
+Could be wrong, but I believe the photo shows the relevancy score
+
+00:29:24.000 --> 00:29:33.000
+To how much yes yes so every time you do retrieval and do the vector search, it is all compared to the query.
+
+00:29:33.000 --> 00:29:39.000
+So Anthony vector queries and SQL queries are pretty much the same price.
+
+00:29:39.000 --> 00:29:49.000
+I mean, there's not a significant difference in price. But again, that could be something we check and it depends on what you're using.
+
+00:29:49.000 --> 00:29:58.000
+So AJ, great question. The similarity search algorithm is ranking each of the vectors that it retrieves based on how similar they are, but based on the cosine angle.
+
+00:29:58.000 --> 00:30:16.000
+It also obviously data quality is always foremost like If you're putting terrible data into your vector database, the output will be bad. So one of the easiest way to sort of make your rag pipeline better is to add better data to your vector database. That's obviously always going to be true.
+
+00:30:16.000 --> 00:30:21.000
+But it's also important that We understand, as you're saying.
+
+00:30:21.000 --> 00:30:35.000
+You can change the embedding model. You can change what vector database you're using. And we want to give you methods to quantifiably measure how to figure out which of the configurations should be the one you move forward with.
+
+00:30:35.000 --> 00:30:42.000
+Okay. We are running out of time. Okay, so before I move forward, I want to say there is a repo.
+
+00:30:42.000 --> 00:30:51.000
+Where I've taken some time to Well, I've taken some time to use AI and to some example code I had in the past.
+
+00:30:51.000 --> 00:31:03.000
+And some code that we've used in sort of other consulting projects and create some sort of calculators using Python for each of these. So I'm going to walk through them real quick. And then this is available to you in the gauntlet repo.
+
+00:31:03.000 --> 00:31:09.000
+So as we talked about, when you're calculating mean reciprocal rank, there is some sort of ground truth.
+
+00:31:09.000 --> 00:31:17.000
+Meaning this is the expected, these are the relevant documents I expect. So here you'll notice that in our function, we have something called ground truth.
+
+00:31:17.000 --> 00:31:41.000
+Where we're saying that these are the relevant documents And then you'll see that you can feed in the retrieved documents that we're getting for each query and figure out When was it able to finally get one of the documents in the ground truth? So that's what I walked through and it does the calculation as well. The same thing, one divided by the number of tries and then averaged out to the number of tries.
+
+00:31:41.000 --> 00:31:55.000
+Okay. For this one, what we're doing is we're listing the number of sort of relevant scores based on some information that we give it already. So for example.
+
+00:31:55.000 --> 00:32:00.000
+I have a dictionary called relevance. In the relevant dictionary has the doc.
+
+00:32:00.000 --> 00:32:13.000
+With some scoring metric, right? So three, two, one, zero. And what we're able to do is compare the output from a vector database And see if it matches the relevant scores and if it's ordered correctly with those numerical values.
+
+00:32:13.000 --> 00:32:20.000
+I think this is just to illustrate how you can go about calculating this and how you can do it programmatically.
+
+00:32:20.000 --> 00:32:29.000
+Obviously, you can feed this into AI and sort of get a more applicable version for your applications. But this is a really nice way to understand the concept, right?
+
+00:32:29.000 --> 00:32:38.000
+The concept is I know the relevancy of things and documents. I sort of outline that in a dictionary and then I compare it with what's being retrieved from my retriever.
+
+00:32:38.000 --> 00:32:47.000
+Finally, it's recall and so For recall, again, it's pretty similar to what we did previously where we defined the relevant documents first.
+
+00:32:47.000 --> 00:32:52.000
+And then we compared to see how many of the retrieved documents were in the relevant documents.
+
+00:32:52.000 --> 00:32:58.000
+So this is a nice way to figure out, okay, I'm getting X number of vectors back from my retrieval pipeline.
+
+00:32:58.000 --> 00:33:02.000
+How many of them are actually relevant to what I'm actually trying to do.
+
+00:33:02.000 --> 00:33:06.000
+Another thing I'll add to this is I don't have any LLM calls in here.
+
+00:33:06.000 --> 00:33:19.000
+So these are just example calculators for you to use. But you can also send some of this to an LLM. So instead of having a relevant dictionary where it shows that humans have picked all the relevant documents.
+
+00:33:19.000 --> 00:33:23.000
+You can have an LLM decide whether or not this is actually relevant.
+
+00:33:23.000 --> 00:33:36.000
+And you can use an O1 reasoning model. You can use higher grade models to decide whether or not your retrieval pipeline is functioning properly.
+
+00:33:36.000 --> 00:33:37.000
+Sorry. Yeah.
+
+00:33:37.000 --> 00:33:42.000
+Can you repeat that last bit about using hired, yeah.
+
+00:33:42.000 --> 00:34:04.000
+Yeah, great question. So let's say, Marcus, that I have You know, just some retrieved vectors from a series of queries that I have and I saved that somewhere maybe in a CSV or whatever What I could do is maybe because right now we're using an embedding model, usually ADA002 is what people usually use for OpenAI.
+
+00:34:04.000 --> 00:34:12.000
+And so, or if you're using one of the ones out of Pinecone, they're still not as powerful as 01, right? So not as powerful as 4-0.
+
+00:34:12.000 --> 00:34:22.000
+So what you can do is send a list of retrieved documents and what you're trying to look for, how you're determining relevance, and ask the LLM to say.
+
+00:34:22.000 --> 00:34:29.000
+Hey, is this really the order in which these documents should be relevant or what is the number of documents that are relevant in the retrieved documents that I have?
+
+00:34:29.000 --> 00:34:39.000
+So this way, the LLM or the reasoning model can be the human in the loop Or take over a lot of those tasks. Obviously, that'd be a little bit more advanced and I would start with a human being.
+
+00:34:39.000 --> 00:34:46.000
+But in the future, you can probably use a reasoning model as well.
+
+00:34:46.000 --> 00:34:56.000
+You can even store your vectors. Yes, you can store your vectors in a Postgres database fairly quickly. You can do that inside AWS. There's also something called pgvector.
+
+00:34:56.000 --> 00:35:08.000
+And so… It's really important to understand that you can easily do this in a NoSQL or a SQL environment.
+
+00:35:08.000 --> 00:35:25.000
+Oh, great question, AJ. Those three are three things that you can do. So I'll say that clearly. Let's say so you've picked So I wouldn't do all three scores at once. But let's say you've picked a recall, right? You want to make sure that your recall score is above a certain threshold. Let's say it's 0.5.
+
+00:35:25.000 --> 00:35:33.000
+What I would do is these are all the components that you can configure to ensure that your recall gets better. The quality of data, 100%.
+
+00:35:33.000 --> 00:35:40.000
+The embedding model. There are so many embedding models out there. There's open source embedding models like Nomic.
+
+00:35:40.000 --> 00:35:46.000
+There's foundational embedding models like OpenAI. So you can switch those out and see if they're going to be performing differently.
+
+00:35:46.000 --> 00:35:51.000
+You can change the vector database, as AJ is saying, quadrant, pine cone.
+
+00:35:51.000 --> 00:35:58.000
+A regular Postgres database. You can even use Click House on AWS, right? There's so many options for configurations.
+
+00:35:58.000 --> 00:36:03.000
+And so as engineers, you need a way to figure out which configuration is the best.
+
+00:36:03.000 --> 00:36:11.000
+After this, I'll give you two more examples of ways to sort of make this better, which is contextual embeddings and summary lookup.
+
+00:36:11.000 --> 00:36:22.000
+But the one thing I'll also talk about, and I'll share some articles and stuff on this because it's different for each vector database, but the metadata object that is associated with every vector is very powerful.
+
+00:36:22.000 --> 00:36:29.000
+Let's say I have a huge vector space and each vector has a metadata object with a certain series of parameters.
+
+00:36:29.000 --> 00:36:35.000
+I can actually reduce the size of that vector space using one of those parameters to make my search faster and more accurate.
+
+00:36:35.000 --> 00:36:40.000
+So let's say I have a bunch of Harry Potter books in my vector database.
+
+00:36:40.000 --> 00:36:46.000
+And each of the filters have the title of the book, each of the metadata objects have the title of the book.
+
+00:36:46.000 --> 00:36:54.000
+And the chapter that they're associated with. What I could do is use the metadata object to filter to just the Harry Potter and the Sorcerer's Stone.
+
+00:36:54.000 --> 00:36:59.000
+And ensure that I'm only searching that book of vectors to get in response back.
+
+00:36:59.000 --> 00:37:11.000
+So it's really powerful in reducing latency and increasing accuracy. Prompt engineering is also a great lever. So Mikael, that is spot on.
+
+00:37:11.000 --> 00:37:22.000
+Like if you're getting context, you need to frame the context context correctly, and you need to make sure that once the context is framed correctly, that the stuff that you're putting into that is proper.
+
+00:37:22.000 --> 00:37:37.000
+So I think it's important to understand that what's everything I can do to make my rag pipeline better? That is not some you know new optimization change the database, change the embedding model.
+
+00:37:37.000 --> 00:37:43.000
+Do some prompt engineering, change the prompt engineering technique that I'm using.
+
+00:37:43.000 --> 00:37:51.000
+And increase the quality of data that I have add metadata to each of the vectors to ensure that I can organize them properly.
+
+00:37:51.000 --> 00:38:00.000
+And then we'll talk about two more as well. Can these calculations be made in JS? 100%. Adam, you can probably just feed it into Claude or ChatGPT.
+
+00:38:00.000 --> 00:38:04.000
+And do it that way.
+
+00:38:04.000 --> 00:38:13.000
+Kale, that is a great question. Over-optimization is always a problem. Overtraining is always a problem. How do you improve the MRR.
+
+00:38:13.000 --> 00:38:19.000
+So what if it doesn't actually improve in actual life? These are just test demo scenarios.
+
+00:38:19.000 --> 00:38:24.000
+I think when it comes to like production grade industry applications where RAG is being used.
+
+00:38:24.000 --> 00:38:40.000
+You sort of will also have the assistance of a data scientist, a data engineer, and you sort of have to sort of make different data sets, like a verification data set you make a training data set and you make an evaluation data set. All of these have to be distinct and there's a process that you follow.
+
+00:38:40.000 --> 00:38:44.000
+And you almost have to conduct an experiment with each of the configurations.
+
+00:38:44.000 --> 00:38:55.000
+But again, I don't want you guys to play in that right now. Maybe that is something you guys get to at your jobs. But right now it's an introduction, right? These are the metrics and the values The goals would be, do you understand them?
+
+00:38:55.000 --> 00:39:05.000
+Can you add a basic level implement one of them? And do you understand how you can change the configurations to make your rag pipeline better?
+
+00:39:05.000 --> 00:39:11.000
+Yes, we will be in future weeks. Using re-ranker models.
+
+00:39:11.000 --> 00:39:18.000
+How can you should we make k large and filter off Rollins queries use curries. Okay, so Drew is asking, how can we optimize K?
+
+00:39:18.000 --> 00:39:27.000
+Or the number of chunks that you sort of grab. Frankly speaking, Drew, it's trial and error when you're first starting out.
+
+00:39:27.000 --> 00:39:32.000
+I remember we were doing a project once and we were starting out with five, then we tried to attend, then we tried to do with 20.
+
+00:39:32.000 --> 00:39:36.000
+And then each one of them we would test out and see.
+
+00:39:36.000 --> 00:39:51.000
+With the stakeholder on the project, like, is this actually relevant? So almost doing a recall calculation that is non-programmatic. So at the time, we were thinking of using recall, but we didn't have it ready programmatically. So we had human beings come in and do it properly.
+
+00:39:51.000 --> 00:40:06.000
+I think it's very important that you have some level of verification going on because that level of verification will ensure that what you're building is made for production. It's made to last and it's consistent. So the answer to your question is trial and error.
+
+00:40:06.000 --> 00:40:13.000
+I'm sure there's better ways to do it, but that's the way I've seen work almost every time.
+
+00:40:13.000 --> 00:40:18.000
+Great question, Anthony. Why would the database change something if the embedding model is the same?
+
+00:40:18.000 --> 00:40:25.000
+Vector databases have a lot of features, a lot of search functionality, a lot of similarity search algorithms.
+
+00:40:25.000 --> 00:40:31.000
+They have a lot of different algorithms that you can use, Euclidean, cosine, et cetera.
+
+00:40:31.000 --> 00:40:51.000
+Changing the database can actually alter some of these scores because the databases are built differently. For example, Quadrant could be built on-prem within a server It doesn't have to be cloud-based. Or using SQL versus NoSQL. So if you're using pgvector versus Mongo.
+
+00:40:51.000 --> 00:40:57.000
+Like what is going to sort of get you to the right result. So I would test it, in my opinion, especially in the future.
+
+00:40:57.000 --> 00:41:02.000
+But right now, let's say you start with something and you have a threshold for how well it needs to work.
+
+00:41:02.000 --> 00:41:10.000
+Maybe you want to make database the last thing you changed, then that's okay. You can start with the embedding model and you can start with the data itself.
+
+00:41:10.000 --> 00:41:15.000
+And the prompt.
+
+00:41:15.000 --> 00:41:23.000
+Yes, you could. Yeah. So Brett makes a really good point. It's not just about adding better data. It's also about removing bad data.
+
+00:41:23.000 --> 00:41:33.000
+So people always get that wrong. You need to remove the data that is sort of taking away from what you're actually trying to search for.
+
+00:41:33.000 --> 00:41:39.000
+That might be a really big issue when it comes to ensuring that your data quality is high.
+
+00:41:39.000 --> 00:41:44.000
+Okay, I'm going to come back to the questions and I will make sure each one of them is answered.
+
+00:41:44.000 --> 00:41:49.000
+But I want to make sure that I walk through the two optimization examples that we have.
+
+00:41:49.000 --> 00:41:55.000
+The first one is called contextual embeddings. This is a really, really straightforward way.
+
+00:41:55.000 --> 00:42:05.000
+For you guys to sort of make your vectors a little bit better, right? And perform at a better level.
+
+00:42:05.000 --> 00:42:11.000
+And so in this scenario, let's say I have two words, mouse and mouse and mouse.
+
+00:42:11.000 --> 00:42:18.000
+They both refer to two different things. But I don't have the context to associate which vector goes where.
+
+00:42:18.000 --> 00:42:22.000
+So a really nice way is add some context to the vector.
+
+00:42:22.000 --> 00:42:25.000
+And people would say, does that mean I'm just increasing the size of the chunk?
+
+00:42:25.000 --> 00:42:35.000
+No, that means that you're adding actual text that corresponds with this. For example, let's say I was trying to make a vector for this line of code.
+
+00:42:35.000 --> 00:42:44.000
+Right here, this line of code called calculate recall at k right So what I would do is I would make a vector by saying.
+
+00:42:44.000 --> 00:42:51.000
+The following is a line of code in the recall k.py file in the class four retrieval metrics repo.
+
+00:42:51.000 --> 00:43:02.000
+And this is what it says. And then the line of code. I've added context to where the vector might be, what place it might be in, what it's referring to.
+
+00:43:02.000 --> 00:43:07.000
+This context is really valuable and can be synthetically generated by an LLM.
+
+00:43:07.000 --> 00:43:12.000
+To ensure that each of your vectors isn't just random sentences in the cloud, right?
+
+00:43:12.000 --> 00:43:23.000
+It could have parameters associated with it. It could have additional context associated with it. It can refer to a bigger document or a bigger piece of information.
+
+00:43:23.000 --> 00:43:34.000
+So if I were to talk about how can you do this, you can talk about what chapter it's associated with, what section it's associated with on a document. For example, this contextual information is on slide number 17.
+
+00:43:34.000 --> 00:43:53.000
+Of the class four slide deck, right? All of this is important information and context. So when I come in as a user and I chat with your rag system and say, hey, what's on slide 17, the RAG system can actually grab the relevant vector and actually answer that correctly.
+
+00:43:53.000 --> 00:44:01.000
+And this works well with metadata. Like the title of a project, the author of a book, timestamps.
+
+00:44:01.000 --> 00:44:11.000
+You can even do neighboring text. This is really powerful. So you can see like, oh, this was the text that came before and this was the text that came after. Now you're going to ask me, how do we know how much context to add?
+
+00:44:11.000 --> 00:44:18.000
+What I would do is start off with one or two pieces of information that you want to add to the vectors to make them more relevant.
+
+00:44:18.000 --> 00:44:25.000
+And I would see whether or not your recall score gets higher, see whether or not you're getting answers faster to the user.
+
+00:44:25.000 --> 00:44:34.000
+And so it's definitely a trial and error here, right? You want to see and test, hey, if I add this to the system, does it get better?
+
+00:44:34.000 --> 00:44:51.000
+Okay, going back to questions and then finally we'll do our summary lookup Is there a reason to store vectors of different types of inventory? No, you don't. There's no reason to store vectors of different embedding types. If you're going to switch embedding types, you should switch it for all your vectors.
+
+00:44:51.000 --> 00:45:02.000
+The indexing algorithms are different for full text search. There's performance Oh, you're just answering. Yeah, I agree.
+
+00:45:02.000 --> 00:45:06.000
+Yes, Joshua. The first thing I would focus on is recall.
+
+00:45:06.000 --> 00:45:15.000
+Just ensure when your RAG database is pulling things that more than half of the vectors are actually relevant.
+
+00:45:15.000 --> 00:45:33.000
+This is not okay so are we expecting… Great question, Steven. I'm not going to specifically ask you to implement a lot of these features. The one thing I will say is The summary lookup feature, and I'll talk about this at the end of class, is a really, really nice way
+
+00:45:33.000 --> 00:45:43.000
+To sort of search across documents in your Slack workspace. So whether that's images, PDFs, or anything, using summary lookup across PDFs, documents.
+
+00:45:43.000 --> 00:45:47.000
+It's a really nice way to figure out, okay, I'm going to this document and grabbing this information.
+
+00:45:47.000 --> 00:46:03.000
+So the answer to your question directly, what would be awesome for this week would be if you added summary lookup with the documents associated with your Slack workspace.
+
+00:46:03.000 --> 00:46:12.000
+So Amir, the Harry Potter example would be the actual books that I was actually referring to the books.
+
+00:46:12.000 --> 00:46:26.000
+But in your sense. Yeah, so for in terms of your Slack workspace, Amir if you What I would focus on is recall. And the thing that I'm asking you guys to implement or I would suggest implementing is summary lookup.
+
+00:46:26.000 --> 00:46:30.000
+And I'll walk through the code for that in just a second.
+
+00:46:30.000 --> 00:46:39.000
+When do you do search when do you do search When do your strategic and strategic?
+
+00:46:39.000 --> 00:46:56.000
+Okay. Spencer, you don't need re-ranker access. You could do a lot of this without that access on AWS.
+
+00:46:56.000 --> 00:47:01.000
+Okay, how does this apply to our project seems the question that keeps coming up.
+
+00:47:01.000 --> 00:47:06.000
+The only thing you have to do for your project is consider one of these metrics to measure.
+
+00:47:06.000 --> 00:47:20.000
+I'm not going to check that directly. The one thing I would suggest For your AI component is using summary lookup to find documents that are within your Slack workspace because you should be saving documents and uploads and all that stuff.
+
+00:47:20.000 --> 00:47:27.000
+And be able to search them through using the summary process.
+
+00:47:27.000 --> 00:47:35.000
+I don't, where do you add this context in the same text? Oh, so the context can be added in the same text or it can be the metadata.
+
+00:47:35.000 --> 00:47:41.000
+It can be both.
+
+00:47:41.000 --> 00:47:45.000
+You can run these tests on your local machine using some of the code that we offer.
+
+00:47:45.000 --> 00:47:52.000
+But in terms of like actually doing it on link chain, link chain does not automatically calculate for you.
+
+00:47:52.000 --> 00:48:06.000
+Lang Smith does show you the output. So you can actually do a very quick calculation of what's going on So when do we add context to chunks about
+
+00:48:06.000 --> 00:48:15.000
+Yeah, so Gary, what I would do is I'd get an MVP working of your rag pipeline And if you feel that there's your recall score is too low.
+
+00:48:15.000 --> 00:48:21.000
+I would consider adding more metadata to reduce the vector space and add context or add more information.
+
+00:48:21.000 --> 00:48:31.000
+To the actual vector that is being to the actual text that's being vectorized.
+
+00:48:31.000 --> 00:48:42.000
+Aj, great question for the clarification. The chat avatar can connect to the document one, right? So if you guys completed MVP today.
+
+00:48:42.000 --> 00:48:46.000
+You should be able to do a basic chat with your vector database.
+
+00:48:46.000 --> 00:48:54.000
+But to take it to the next level, summary lookup is a really nice way to sort of say, okay, I'm going to go grab this. The avatar or the persona is going to go grab the document.
+
+00:48:54.000 --> 00:49:14.000
+And grab the information and put it out there. And so the answer is your chat avatar can connect to your summary lookup And do the document for you. So we're trying to give you guidance on how to approach your AI components. But again, if a lot of you want to sort of do it your own way, you could do that as well.
+
+00:49:14.000 --> 00:49:25.000
+How do you add context to your metadata? Sebastian, that just depends on if you just, there's a bunch of Pinecone documentation on this. If you just search Pinecone metadata, they have a bunch of documentation you can use.
+
+00:49:25.000 --> 00:49:31.000
+Yes, you can stick with the vector database store you've already chosen.
+
+00:49:31.000 --> 00:49:36.000
+Do a chat summary of each chunk to each vector related to the chunk? No.
+
+00:49:36.000 --> 00:49:49.000
+Gary, so the summaries would be for huge documents. So I'll show you in just a sec using the, so what we're doing for summary lookup is we're making another index of all the summaries and then using that index to then
+
+00:49:49.000 --> 00:49:59.000
+Find specific vectors in a document. So summaries are for Documents, huge documents, PDFs. In case of your chat app.
+
+00:49:59.000 --> 00:50:05.000
+In case of your chat up, the documents I'm thinking of are like, let's say you've uploaded something to Slack.
+
+00:50:05.000 --> 00:50:13.000
+So if you don't have the upload feature working, then summary lookup might not be the way to go. And you might want to just focus on the messaging.
+
+00:50:13.000 --> 00:50:21.000
+But there's a lot of students who are able to upload documents and then save them somewhere. So if you have that working, this is a really nice way to go and find it.
+
+00:50:21.000 --> 00:50:32.000
+You can also do summaries based on individuals and all the messages that they've had, and then go look up based on those chat histories.
+
+00:50:32.000 --> 00:50:36.000
+How frequently should be adding new messages. That's totally up to you.
+
+00:50:36.000 --> 00:50:48.000
+Um. But yeah, I think it's important to update the messages so you have enough data to actually Get your rag pipeline working.
+
+00:50:48.000 --> 00:50:59.000
+Document lookup is not required for Monday, but it's important for me to push you guys in a direction on what components to add. And that's my suggestion.
+
+00:50:59.000 --> 00:51:06.000
+Oh, well, speed is a big… win drawers.
+
+00:51:06.000 --> 00:51:17.000
+So, yeah. Yeah, I mean, speed is a huge advantage, but I also think that From a user experience perspective.
+
+00:51:17.000 --> 00:51:25.000
+Instead of having to go through all these vectors and maybe get the wrong answer, I feel like summary lookup just has a better user experience because of that speed.
+
+00:51:25.000 --> 00:51:29.000
+Okay, I'm going to do one last thing and then go into the code because we're running out of time.
+
+00:51:29.000 --> 00:51:33.000
+Summary lookup, what is that? So let's say you have a document.
+
+00:51:33.000 --> 00:51:41.000
+So you can create chapter summaries of that document. And you can create even section summaries and sort of pinpoint to the paragraph.
+
+00:51:41.000 --> 00:51:55.000
+So it's like I have API documentation. I can go into authentication methods, and then I can go into OAuth implementation steps. That means I can sort of narrow down on the area excuse me, on where I should be grabbing the information.
+
+00:51:55.000 --> 00:51:59.000
+So it lets me quickly get to the right portion of a document.
+
+00:51:59.000 --> 00:52:03.000
+To ensure that I can grab that information and do something with it.
+
+00:52:03.000 --> 00:52:11.000
+In terms of your Slack applications. You guys have implemented messaging channels, threads. Some of you even have the upload feature working.
+
+00:52:11.000 --> 00:52:22.000
+So if we think about all the AI features for your persona, the AI persona should be able to sort of chat with the entire workspace in terms of get me messages or give me a summary of all my messages with Gary.
+
+00:52:22.000 --> 00:52:35.000
+Gave me a summary of all my messages with markers. When me and Marcus last talked, what did we talk about All of these things are stuff that is out of the box available if you're vectorizing all the messages inside of the Slack workspace
+
+00:52:35.000 --> 00:52:44.000
+But what else can you do? You can actually pinpoint And take all the documents that you've uploaded and use summary lookup to sort of chat with the documents.
+
+00:52:44.000 --> 00:52:49.000
+You can also create huge documents with all the messages that you have in a channel.
+
+00:52:49.000 --> 00:52:54.000
+And then say, okay, I'm looking in the channel I have with Callum and in that channel.
+
+00:52:54.000 --> 00:53:04.000
+I want to find X, Y, and Z. So I think it's important that these methods are really powerful for your Slack application. We're trying to say, hey, these are potential AI features that you can add to your AI avatar.
+
+00:53:04.000 --> 00:53:10.000
+Obviously, you guys might be thinking of something else, but we want to give you some level of direction on where to go.
+
+00:53:10.000 --> 00:53:25.000
+Okay, finally. I'm going to go to the repo. And this repo is very similar to the repo that we had yesterday in terms of set up in terms of all the keys that you need. And so intentionally, I haven't done anything.
+
+00:53:25.000 --> 00:53:29.000
+I'm going to walk through just how to do this from scratch.
+
+00:53:29.000 --> 00:53:33.000
+So I want to sort of resolve any questions that you guys might be having.
+
+00:53:33.000 --> 00:53:47.000
+Regarding initial setup. And also it's looking like this class is going to run a little bit longer so I do want to say like I will be staying on to ensure all the material is done and completed.
+
+00:53:47.000 --> 00:53:51.000
+But if someone has to pop and then watch the recording later, that's okay.
+
+00:53:51.000 --> 00:54:02.000
+Okay, so I'm going to open up my terminal.
+
+00:54:02.000 --> 00:54:08.000
+And I'm just going to go into my desktop And I'm going to clone the repo down.
+
+00:54:08.000 --> 00:54:11.000
+I'm not forking it, but you guys should be forking it.
+
+00:54:11.000 --> 00:54:18.000
+In fact, you know what? I'm going to fork it just to illustrate the importance of forking.
+
+00:54:18.000 --> 00:54:27.000
+All right. It's really important that you guys have your own forked version. Let's say you need this in the future. Let's say you want to reference this.
+
+00:54:27.000 --> 00:54:30.000
+I want to make sure that it's available to you on your personal account.
+
+00:54:30.000 --> 00:54:38.000
+Okay, so here. We're going to copy this and we're going to clone it down.
+
+00:54:38.000 --> 00:54:49.000
+Looks like I already had one saved from previous work. So let's go to documents.
+
+00:54:49.000 --> 00:55:19.000
+And let's limit there. Okay, awesome. And I'm going to open up cursor With… the actual Okay, this is the wrong repo file.
+
+00:55:23.000 --> 00:55:32.000
+Great question, Mark. When you're working in your team with your hiring partners, you will be able to do the branching.
+
+00:55:32.000 --> 00:55:35.000
+But in terms of best practices when it comes to open source software.
+
+00:55:35.000 --> 00:55:44.000
+So I guess that's what this would be considered. You want to ensure that you're forking it onto your own. And then that doesn't mean you can't sort of open up a pull request with the original version.
+
+00:55:44.000 --> 00:55:56.000
+You can still do that through your forked version. But this just ensures that all the work that you're doing is confined to your personal account.
+
+00:55:56.000 --> 00:56:00.000
+Yeah, so somebody did release the open AI key this morning.
+
+00:56:00.000 --> 00:56:10.000
+And that's okay. I did generate a new one. So I believe it should be working fine now, but we'll find out in just a second.
+
+00:56:10.000 --> 00:56:32.000
+Okay. All right. So I'm going to just follow exactly what is being said on the the README. So I'm going to go to pine cone
+
+00:56:32.000 --> 00:56:39.000
+And for anybody that's about to leave because they have to work on something else or whatever.
+
+00:56:39.000 --> 00:56:45.000
+We have another session with Zach today. 3 EET, I believe.
+
+00:56:45.000 --> 00:56:50.000
+And he's going to finish out the live build using cursor and AI first development.
+
+00:56:50.000 --> 00:56:58.000
+For the hack a lot project. So he shows his entire thought process He's got to the point where you can make a submission for the hackathon.
+
+00:56:58.000 --> 00:57:06.000
+And I believe he's going to be adding timed competitions and so The awesome part about this is we're then going to run a hackathon for you guys later on.
+
+00:57:06.000 --> 00:57:10.000
+Where we'll make some sort of prize, whatever, $500 or something.
+
+00:57:10.000 --> 00:57:15.000
+Where you guys can sort of submit your things and sort of do like a side project that you might want to launch.
+
+00:57:15.000 --> 00:57:21.000
+So that's going to be that's going to be Great question.
+
+00:57:21.000 --> 00:57:27.000
+I mean, a lot of people were telling me they have a lot of side projects and they're entrepreneurs.
+
+00:57:27.000 --> 00:57:32.000
+No, we didn't do it the first week, Brett. This is just an idea that we had.
+
+00:57:32.000 --> 00:57:46.000
+Like yesterday, Zach just really wants to So, so far he's put in an hour and a half or so. He wants to put in a couple more hours and sort of launch it and show you guys
+
+00:57:46.000 --> 00:57:52.000
+Okay, can we implement rag in the hack a lot? Yes, we can. So I'll ask Zach.
+
+00:57:52.000 --> 00:57:56.000
+So we'll probably finish out the app today and then We'll add RAG to it later on.
+
+00:57:56.000 --> 00:58:06.000
+Later on, meaning probably tomorrow. Okay, so I'm just going to create an index here as instructed.
+
+00:58:06.000 --> 00:58:13.000
+Just walking through it, I just want to make sure that everyone is, you know.
+
+00:58:13.000 --> 00:58:21.000
+Doing this properly. And let's call it that. It's going to copy this.
+
+00:58:21.000 --> 00:58:26.000
+Exactly.
+
+00:58:26.000 --> 00:58:34.000
+And normally I would use the CLI, but I'm trying to show you guys how to do this properly.
+
+00:58:34.000 --> 00:58:38.000
+So here you'll notice I've used 1536. It's always going to be cosine.
+
+00:58:38.000 --> 00:58:45.000
+And I'm going to create the index.
+
+00:58:45.000 --> 00:59:05.000
+Okay, I've created the index here. I'm going to go to my API keys. Let's create a new key for class four.
+
+00:59:05.000 --> 00:59:10.000
+Notice how my env file is in the root directory of the folder.
+
+00:59:10.000 --> 00:59:34.000
+There's already… a bunch of files here, but you want to make sure that your env file is in the root directory so What I'm going to do is copy over my sample in the readme Looks like I didn't add a sample file to this. I can fix that too.
+
+00:59:34.000 --> 00:59:40.000
+Okay, and let's put our key here.
+
+00:59:40.000 --> 01:00:04.000
+Again, for anybody who already knows how to do this, feel free to drop, but I want to make sure that I clearly show what you should be doing for project setup.
+
+01:00:04.000 --> 01:00:32.000
+And then we're going to create a second index here. For chunk index.
+
+01:00:32.000 --> 01:00:48.000
+Then I'm going to grab the open AI key.
+
+01:00:48.000 --> 01:00:55.000
+Okay, let me just answer AJ's question directly. The doc is up to date.
+
+01:00:55.000 --> 01:00:59.000
+So when you're doing the persona that matches you.
+
+01:00:59.000 --> 01:01:04.000
+I believe that requires a rag pipeline. You guys can correct me if I'm wrong and use a different method.
+
+01:01:04.000 --> 01:01:16.000
+But in terms of grading, I'm looking for any and all AI features that you've added and you will get credit for all of them, right? So it's important for me to give you direction. So when you're building the persona.
+
+01:01:16.000 --> 01:01:20.000
+You need a vector database of my messages. So if you don't have that.
+
+01:01:20.000 --> 01:01:27.000
+I'm not really sure how you're building that persona Unless it's just based off a single prompt that you're using.
+
+01:01:27.000 --> 01:01:34.000
+Let's say you're using vector databases and RAG to build that persona automatically using the messages for that individual.
+
+01:01:34.000 --> 01:01:40.000
+Then you should automatically be able to chat with that persona, answer questions, et cetera.
+
+01:01:40.000 --> 01:01:49.000
+The summary lookup is just an extension of that, right? Now I can have all the messages across everything, make it much faster. I can add documents to that.
+
+01:01:49.000 --> 01:02:01.000
+I can add documents that are associated across the board. And so you guys, this is my suggestion to you that your persona will become immensely powerful if it has all the messages associated with Austin Allred.
+
+01:02:01.000 --> 01:02:06.000
+And all the documents Austin Allred has now uploaded onto Slack.
+
+01:02:06.000 --> 01:02:17.000
+In terms of how we grade it, right? First and foremost, it's graded based on Is your AI component actually functional and working? Is your persona answering me when I'm doing the Slack message?
+
+01:02:17.000 --> 01:02:23.000
+And is it going to… actually search up something, give me relevant answers.
+
+01:02:23.000 --> 01:02:31.000
+So I wanted to answer that directly by saying. The AI persona is connected directly to RAC.
+
+01:02:31.000 --> 01:02:32.000
+Yeah.
+
+01:02:32.000 --> 01:02:39.000
+Yeah, can I jump in to… Perfect. I think the main point of confusion for me is sometimes when you're describing the persona, you describe it as if we're talking to our own persona.
+
+01:02:39.000 --> 01:02:47.000
+And asking it to do stuff for us. Other times it has been described as other people will DM literally my account on Slack.
+
+01:02:47.000 --> 01:02:52.000
+And it'll be an AI responding with all of my knowledge. Which of those two things are we talking about?
+
+01:02:52.000 --> 01:02:53.000
+Either one of those things, AJ, if you implement either one of those things, you will pass.
+
+01:02:53.000 --> 01:02:57.000
+I mean, they both obviously involved, right? Cool, cool, cool.
+
+01:02:57.000 --> 01:03:19.000
+So I want you guys to understand in terms of the AI components, we just want to see you guys actually try and get some of the AI components working, right? At least for week two. I think the the The guidelines will become more stringent as the other projects come forward. But at least for this week, can you get your AI project from start to finish?
+
+01:03:19.000 --> 01:03:24.000
+There's some of you with ideas already, so feel free to go and push through on those ideas.
+
+01:03:24.000 --> 01:03:27.000
+But there's a bunch of you who have no idea what AI components to add.
+
+01:03:27.000 --> 01:03:31.000
+So I'm giving you the options, right? So that's what's happening.
+
+01:03:31.000 --> 01:03:36.000
+I want to make sure that everybody has a direction. I don't want anybody to be stuck.
+
+01:03:36.000 --> 01:03:40.000
+And so whether you're chatting with all your messages, whether you're chatting with documents.
+
+01:03:40.000 --> 01:03:47.000
+We want to try to implement some level of AI components this week. But AJ, I think it's a really good question. And the answer directly.
+
+01:03:47.000 --> 01:03:50.000
+I would be happy with either this week.
+
+01:03:50.000 --> 01:04:00.000
+Awesome. Thank you.
+
+01:04:00.000 --> 01:04:08.000
+Sorry, I'm just reading the questions.
+
+01:04:08.000 --> 01:04:22.000
+Oh, like I'm Joshua, I'm going to talk about setting up the summary lookup and actually running it and walking through the code.
+
+01:04:22.000 --> 01:04:27.000
+Yes, we can ask Austin to reach out to Hye Jen.
+
+01:04:27.000 --> 01:04:33.000
+Oh, Robert S, in case of having all the user matches, why use RAG? We have access to all the messages.
+
+01:04:33.000 --> 01:04:49.000
+Running the rear. So Robert, I would argue that rag makes it makes it so that you can find meaning across messages and make a a better answer than you would without an LLM and without actually composing messages together.
+
+01:04:49.000 --> 01:05:02.000
+But if you feel that if you feel that may not be necessary. I would still recommend using RAG as a way to sort of connect make connections across all the documents that you have. Otherwise, you'll just be sort of, here's everything that we have.
+
+01:05:02.000 --> 01:05:10.000
+And here's what's coming up, like a simple search. Rather, we want the persona to actually answer as if they were you.
+
+01:05:10.000 --> 01:05:13.000
+How's that good?
+
+01:05:13.000 --> 01:05:35.000
+Just to add on to that a thought and something I've been looking at kind of myself But rather than just a Slack one-to-one message, imagine a team that's working together And they're using that as their main communication, more of a channel kind of environment. And then one of the team members is gone.
+
+01:05:35.000 --> 01:05:41.000
+If you've been ragging the entire conversation and you ragged the individual.
+
+01:05:41.000 --> 01:05:55.000
+Then you have the entire conversation. However, back, you know, it goes in history And you would be able to answer a lot of questions without having to do external research. Maybe there was a question six months ago about How did we apply this one particular thing?
+
+01:05:55.000 --> 01:06:02.000
+And that person isn't even there today, or maybe they're not with the company anymore. If you've ragged that knowledge.
+
+01:06:02.000 --> 01:06:10.000
+You have that persona knowledge there from both as an individual and as a team. I think that would be super powerful.
+
+01:06:10.000 --> 01:06:19.000
+As a team member I use Slack a lot. I mean, I was looking for a message from Ash just yesterday that was only four days ago.
+
+01:06:19.000 --> 01:06:22.000
+And I had to scroll and scroll and scroll and scroll.
+
+01:06:22.000 --> 01:06:35.000
+So imagine you give them a, you have some kind of knowledge or a key or something or a trick, and you're like, what was that one thing? Well, rather than trying to scroll or trying to make a search that would work to get you that piece.
+
+01:06:35.000 --> 01:06:41.000
+Your AI already knows the answer and ashes are already in bed, but I can get his response because we have that rag.
+
+01:06:41.000 --> 01:06:48.000
+You know, just as a thought of where my mind is going
+
+01:06:48.000 --> 01:06:55.000
+No, I think, Zach, you're spot on. I think connecting messages across channels is going to be really powerful. Like what if we have like a project gauntlet channel?
+
+01:06:55.000 --> 01:07:05.000
+And like we lose all the messages in it. Then we can go search that channel and find that message quickly. So I think it's powerful using a vector database for To answer Nicholas's question directly.
+
+01:07:05.000 --> 01:07:13.000
+Persona summary lookup, document lookup. If you do any one of these things, any one of these AI components is working and functional in your application.
+
+01:07:13.000 --> 01:07:19.000
+You will pass this week. I'll be very clear about this. We are giving you so many avenues to explore here.
+
+01:07:19.000 --> 01:07:26.000
+And any one of the avenues that you get working and working properly will lead to passing.
+
+01:07:26.000 --> 01:07:34.000
+Stephen, I'll come back to the voice tips in just a second. I want to finish out the setup video and then I'll come back. Okay.
+
+01:07:34.000 --> 01:07:38.000
+Okay, I keep getting off track. I need to finish. Okay.
+
+01:07:38.000 --> 01:07:51.000
+Here is… Opening I key.
+
+01:07:51.000 --> 01:07:56.000
+Again, this is for anybody who has any issues with local setup. I wanted to do this once.
+
+01:07:56.000 --> 01:08:09.000
+And make sure that everybody Add… a path going forward.
+
+01:08:09.000 --> 01:08:23.000
+So you'll see I'm walking through each and every step. Getting the keys, everything.
+
+01:08:23.000 --> 01:08:28.000
+Zach, where's the key button on Langsmith now? They changed it.
+
+01:08:28.000 --> 01:08:35.000
+Oh, it's been a week since we looked. Of course they changed it. I think it's under Settings now?
+
+01:08:35.000 --> 01:08:36.000
+Okay. Oh, it is.
+
+01:08:36.000 --> 01:08:43.000
+Api keys yeah
+
+01:08:43.000 --> 01:08:48.000
+Don't get used to any stability in the langsmith. Whoops.
+
+01:08:48.000 --> 01:08:49.000
+As soon as you know where it's at, guarantee it's changed.
+
+01:08:49.000 --> 01:08:53.000
+Yep, they're going to change it every time.
+
+01:08:53.000 --> 01:09:03.000
+It was so bad when we're doing our weekly classes, our other classes, I would go and check before class where I was at so we'd have it ready for class. That's how bad it is.
+
+01:09:03.000 --> 01:09:04.000
+I feel like… it also like with their library too, they'll change where all the libraries are located and yeah, everything across the board they'll say like they'll change.
+
+01:09:04.000 --> 01:09:20.000
+Their service is great.
+
+01:09:20.000 --> 01:09:24.000
+Like specific methods on what classes they're in. And anyway, so everyone should explain And that…
+
+01:09:24.000 --> 01:09:41.000
+And community. If you write something really cool and people love it, you're using it today and tomorrow it'll be gone because they've absorbed it into their It requires good research skills. It's a great tool to
+
+01:09:41.000 --> 01:09:51.000
+Just waiting for my Docker desktop to start working. Give me a sec.
+
+01:09:51.000 --> 01:10:03.000
+All right, we got the Docker desktop working here. And what we're going to do is just run some commands. These commands are already in the
+
+01:10:03.000 --> 01:10:10.000
+So… Do that.
+
+01:10:10.000 --> 01:10:40.000
+All right, so our containers are being built You can see it in a second.
+
+01:10:49.000 --> 01:11:05.000
+I'm just going to keep following. The guidelines here.
+
+01:11:05.000 --> 01:11:06.000
+Yep.
+
+01:11:06.000 --> 01:11:13.000
+Can I ask a quick question about Docker? So we've got Docker running with this project. I've got my Supabase running in Docker.
+
+01:11:13.000 --> 01:11:17.000
+If I don't shut it down, is it just going to be running in the background on my computer?
+
+01:11:17.000 --> 01:11:18.000
+Yeah, yes, you have to shut it down manually. Usually what happens is doc.
+
+01:11:18.000 --> 01:11:24.000
+Forever? Okay. Any tips for that?
+
+01:11:24.000 --> 01:11:32.000
+Like making sure. Yeah, I do. I have Docker Desktop.
+
+01:11:32.000 --> 01:11:33.000
+Yes.
+
+01:11:33.000 --> 01:11:40.000
+Do you have a Mac? Okay, so on top You'll see this little icon on top, which should indicate your doctor running in the background. I would right click on that icon and just quit it. That should resolve most of your issues.
+
+01:11:40.000 --> 01:11:47.000
+Okay, but what if I won like super base to keep running, but some other ones to to shut down.
+
+01:11:47.000 --> 01:11:53.000
+Oh, so if you want super base to keep running, then… what you should open up.
+
+01:11:53.000 --> 01:12:00.000
+Like, say I have different projects I'm doing Docker in. Is it easy in Docker Desktop to sort of see?
+
+01:12:00.000 --> 01:12:04.000
+What's running and according to what projects? Okay.
+
+01:12:04.000 --> 01:12:11.000
+Yes, if you just open up desktop, you'll see projects here and you can just click the trash button for the project you want to delete.
+
+01:12:11.000 --> 01:12:12.000
+Or stop if you just want to turn it off, but you don't want to delete it.
+
+01:12:12.000 --> 01:12:15.000
+Cool. Thank you.
+
+01:12:15.000 --> 01:12:18.000
+I see it. I see it. Okay, great.
+
+01:12:18.000 --> 01:12:34.000
+Yep. Okay, so right now we're just setting up our vectors for each of the documents that we have stored.
+
+01:12:34.000 --> 01:12:41.000
+More questions as this is happening. Actually, let me just go on Slack thread.
+
+01:12:41.000 --> 01:12:42.000
+Is it being… Go ahead, Spencer. What's up?
+
+01:12:42.000 --> 01:12:48.000
+Can I chime in real quick, Ash?
+
+01:12:48.000 --> 01:13:03.000
+I just wanted to say I am… I was adding… pulling down these notebooks Having them into a As markdown documents in my code base to give like Claude something to go off of.
+
+01:13:03.000 --> 01:13:04.000
+Yeah.
+
+01:13:04.000 --> 01:13:15.000
+And I wonder if other folks are doing that. Yeah, I just wanted to mention it because Sorry.
+
+01:13:15.000 --> 01:13:25.000
+You need to add those markdown documents to your git ignore file i just i As I was doing that, I was like, oh, this is a way that people could leak their keys.
+
+01:13:25.000 --> 01:13:26.000
+Oh. Yeah.
+
+01:13:26.000 --> 01:13:38.000
+So just wanted to add that. The keys are stored in plain text in those notebooks. And so if you like convert those to Markdown and use that as reference for your use as reference for coding so that could be a potential way to leak keys.
+
+01:13:38.000 --> 01:13:39.000
+You are spot.
+
+01:13:39.000 --> 01:13:49.000
+Yeah, I don't keep the keys in my docs, but I also have a docs folder that is an Obsidian vault and I put that in the gitignore. So that's my strategy.
+
+01:13:49.000 --> 01:13:54.000
+But I don't put the keys in there in the first place.
+
+01:13:54.000 --> 01:14:08.000
+I think with the keys Spencer, you make a really good point let's just check. So one of the biggest things that might be happening is When you're doing git add, git commit, and git push.
+
+01:14:08.000 --> 01:14:13.000
+We want to make sure we do a git status. Before we do a git add.
+
+01:14:13.000 --> 01:14:20.000
+This will show all the files that have been updated. And you want to pick and choose the files that you're actually sending to GitHub.
+
+01:14:20.000 --> 01:14:28.000
+That's the first step. The second step is, as Spencer said, have a gitignore. Put any file that may have a chance of the keys leaking.
+
+01:14:28.000 --> 01:14:34.000
+Inside the git ignore. It's really, really important that we highlight that.
+
+01:14:34.000 --> 01:14:41.000
+And a way to sort of make sure that cursor doesn't update your gitignore. There's a cursor ignore file.
+
+01:14:41.000 --> 01:14:47.000
+So you can put the gitignore file and the cursor ignore file so your gitignore never gets updated.
+
+01:14:47.000 --> 01:14:51.000
+So these are just some steps to sort of go about this.
+
+01:14:51.000 --> 01:14:58.000
+But the reason I wanted to I mean, Spencer makes a really good point. When your key goes live because we're sharing keys right now.
+
+01:14:58.000 --> 01:15:07.000
+It now is unusable by the entire cohort. And so then I get a message. I then delete it.
+
+01:15:07.000 --> 01:15:11.000
+I then make a new one. And so I've been trying to keep up with that.
+
+01:15:11.000 --> 01:15:17.000
+I apologize if I'm delayed sometimes. But it's really important that we sort of get this practice in hand.
+
+01:15:17.000 --> 01:15:22.000
+And to ensure that we handle keys properly. Kel, go ahead.
+
+01:15:22.000 --> 01:15:30.000
+Yeah, I was just wondering Maybe like if one person did this, then we could just copy it to everyone. We could set up a pre-commit hook.
+
+01:15:30.000 --> 01:15:36.000
+So that it looks at every commit and looks at your .en file.
+
+01:15:36.000 --> 01:15:40.000
+And if there's any matches, it just rejects the commit.
+
+01:15:40.000 --> 01:15:48.000
+Yeah, I feel like there's… Zach, do you think that already exists? We can just use something out there?
+
+01:15:48.000 --> 01:15:56.000
+There is tooling for that. The thing is, it's a real hassle to get set up.
+
+01:15:56.000 --> 01:16:24.000
+But most importantly this I feel is a grow up moment, not a helicopter engineer moment that as good engineers, you need to know this practice inside and out. It needs to resonate when you do anything and so It's a burden to have to reset these. And, you know, it's not a hard thing but
+
+01:16:24.000 --> 01:16:35.000
+You need to mess up in an environment that it's not really important because if you're not If you don't ingrain these by the time you get to a job and you do it.
+
+01:16:35.000 --> 01:16:44.000
+I've seen lots of, I work at, you know, I get hired as like CTO at a lot of companies for interviews And I can't tell you how many people have been replaced and not hired.
+
+01:16:44.000 --> 01:16:57.000
+Because they did not ingrain this process. And so this is one of those We're kind of babying you in the sense that we'll reset it and nobody gets yelled at you know too much. It's annoying and that kind of thing.
+
+01:16:57.000 --> 01:17:08.000
+But from your perspective. Get it into your mental framework and then you won't make the mistakes moving forward and it'll matter in your job.
+
+01:17:08.000 --> 01:17:18.000
+We can set up tools, but there are so many different tools And so many companies I've worked for will not use that tooling. And so it's back to you.
+
+01:17:18.000 --> 01:17:23.000
+I would say… Everybody just has to learn how to do it right.
+
+01:17:23.000 --> 01:17:28.000
+And, you know, that process. And now in four more weeks or six weeks, if it's still happening.
+
+01:17:28.000 --> 01:17:43.000
+I'd be chewing on somebody myself. But, you know, from a general perspective, when we work on our other engineers, our zero to one, where we're teaching to be engineers, we expect that this gets resolved by month three.
+
+01:17:43.000 --> 01:17:57.000
+Which for you guys would be about the end of week two so You know, in time and work comparison You know, it's everybody has done it and will do it in their lifetime.
+
+01:17:57.000 --> 01:18:02.000
+You know, we often joke that if you haven't wiped out the company database, you're not a real engineer yet.
+
+01:18:02.000 --> 01:18:08.000
+Because every engineer of any amount of time has done it or done some serious damage. Hopefully there's a backup.
+
+01:18:08.000 --> 01:18:19.000
+I've done it. And I will tell you this too. Part of what we want you to do as we are thinking through this AI is really bad about moving keys around.
+
+01:18:19.000 --> 01:18:25.000
+And I had to happen to me just the other day. Claude went and just decided it was going to move it somewhere else.
+
+01:18:25.000 --> 01:18:30.000
+And I got notified, killed my keys. I had to go redo it. So it's going to happen.
+
+01:18:30.000 --> 01:18:37.000
+In life, but we want you just to be very vigilant in your own mind frame from it.
+
+01:18:37.000 --> 01:18:48.000
+So to answer your question, Colin, yes and no. But learn it and learn it well. Now, if you write something yourself that does it for you and you want to share it.
+
+01:18:48.000 --> 01:18:58.000
+I have mixed opinions on that, but for yourself, absolutely. But just understand that this is real world And it is something you're going to deal with for potentially the rest of your life.
+
+01:18:58.000 --> 01:19:08.000
+Especially where you will most likely end up. You're not going to end up at Amazon on a project that has 100 engineers that have been there forever.
+
+01:19:08.000 --> 01:19:16.000
+You're most likely going to end up in a company that says, we want to work quick. You've learned this skill. We want to develop. We want these new things.
+
+01:19:16.000 --> 01:19:24.000
+And they're not going to have those systems set up. So pretty good chance the better you are at it, just the better employee you'll be and the better engineer you'll be.
+
+01:19:24.000 --> 01:19:27.000
+My thoughts.
+
+01:19:27.000 --> 01:19:32.000
+Okay. Thank you guys for that.
+
+01:19:32.000 --> 01:19:37.000
+And thanks, Zach. I think that perspective really matters. And I will become harsher.
+
+01:19:37.000 --> 01:19:50.000
+As the weeks go on. Because I could figure out who share the key. So I want to make sure that right now I'm pretty lenient. I'm lenient with a lot of things. But as the weeks go on, I won't.
+
+01:19:50.000 --> 01:19:51.000
+You'll tell us if we leak the key, right? Because I want to know if somehow I did that. Okay, great.
+
+01:19:51.000 --> 01:19:59.000
+I'll… Yeah. Maybe I'll just put a, I'll put a pre commit hook and the pre-commit hook sends me the GitHub.
+
+01:19:59.000 --> 01:20:03.000
+Of the individual that's about to leak a key.
+
+01:20:03.000 --> 01:20:19.000
+What are… some common ways keys could be leaked that aren't obvious because i think Maybe I leaked my own personal key because it seems it got regenerated, but I checked my database everything and Or my GitHub, and it's not there.
+
+01:20:19.000 --> 01:20:34.000
+In the commit, but I'm just unsure like what might happen like i was looking online, maybe there's a commit history just any ideas or how to figure that out would be good too.
+
+01:20:34.000 --> 01:20:39.000
+I think we will 100%. I'll answer your question, but I'm just going to walk through the code first because I keep putting it off.
+
+01:20:39.000 --> 01:20:42.000
+I'm going to finish the code and Marcus will come directly back to your question.
+
+01:20:42.000 --> 01:20:49.000
+No, you're totally fine. You're totally fine. Don't be sorry. Okay, so what we've done here is we've created a summary index.
+
+01:20:49.000 --> 01:20:58.000
+So there's a bunch of documents in our in our code base. And these documents correspond with large PDF files that correspond to books.
+
+01:20:58.000 --> 01:21:03.000
+And you'll notice that what we've done is create a summary of each of these books and vectorize it.
+
+01:21:03.000 --> 01:21:18.000
+Then we have a second database. Or a second index, excuse me, which is actually the chunks. So this is now chunks from the original books and that we've now vectorized and added.
+
+01:21:18.000 --> 01:21:26.000
+You'll notice that we've added metadata. Which is the source. So it tells me which book the chunk or the vector is coming from.
+
+01:21:26.000 --> 01:21:39.000
+In terms of code, what we're doing is we're going to first search through the summary And find, okay, what's going to be the most relevant book to get my answer from.
+
+01:21:39.000 --> 01:21:43.000
+And then we're going to search through the chunks to find an answer directly to the query.
+
+01:21:43.000 --> 01:21:56.000
+So this is really powerful because instead of having to search through all of the vectors across all of the books I now went to the exact document And then I was able to use the summaries to find where possibly my answer could be.
+
+01:21:56.000 --> 01:22:11.000
+And then I was able to then get an answer using an LLM and direct passages from that book to make my sort of life a little easier, a little bit faster. This should increase the quality of vectors that you're pulling.
+
+01:22:11.000 --> 01:22:15.000
+And it should make the speed at which you're pulling stuff much faster.
+
+01:22:15.000 --> 01:22:20.000
+Okay, I just want to run through that. This was how we set it up.
+
+01:22:20.000 --> 01:22:27.000
+I'm going to now take questions, obviously. And the last thing I want to talk about is what are your expectations for the end of this week?
+
+01:22:27.000 --> 01:22:34.000
+The expectations for the end of this week are working AI features on top of your Slack application.
+
+01:22:34.000 --> 01:22:45.000
+This could be a persona that answers for you. This could be a RAG implementation that you're able to ask questions to regarding any message across the workspace.
+
+01:22:45.000 --> 01:22:51.000
+This could be document lookup using summaries where you can ask questions to specific documents.
+
+01:22:51.000 --> 01:22:55.000
+Any of these AI features working seamlessly in your Slack application.
+
+01:22:55.000 --> 01:22:59.000
+Would give you a passing grade. If you want a higher grade.
+
+01:22:59.000 --> 01:23:03.000
+Then adding multiple of these AI components would do that as well.
+
+01:23:03.000 --> 01:23:14.000
+My recommendation for the persona is that you use RAG. You rag all the messages that you have across channels And your persona is able to pull from this vector database and answer questions directly.
+
+01:23:14.000 --> 01:23:19.000
+If you want to then also add in documents, because a lot of you have this upload functionality.
+
+01:23:19.000 --> 01:23:24.000
+You can then add documents, vectorize those, and include them a part of your vector store.
+
+01:23:24.000 --> 01:23:28.000
+And you can use summary lookup if you wish to make it more optimized.
+
+01:23:28.000 --> 01:23:32.000
+But I think these are all options for you. These are directions that we're trying to give you.
+
+01:23:32.000 --> 01:23:36.000
+As long as we see a working AI feature, any one of those three.
+
+01:23:36.000 --> 01:23:43.000
+Or something else that is on that same level. You will pass for the week. And, you know, nothing is breaking.
+
+01:23:43.000 --> 01:23:55.000
+You're making the video, everything's submitted on time. Okay, that's all I wanted to cover. I'll go to questions now. And then Zach, do you want to answer Marcus's question or I can go first?
+
+01:23:55.000 --> 01:23:59.000
+Are we talking on the question of accidental ways to leak ENV stuff?
+
+01:23:59.000 --> 01:24:01.000
+Yeah.
+
+01:24:01.000 --> 01:24:10.000
+It's kind of threefold. Generally speaking, here, because it's a learning environment, we use public repos And that's always a problem.
+
+01:24:10.000 --> 01:24:16.000
+If it's a private repo, about 90% of that is not as much of an issue.
+
+01:24:16.000 --> 01:24:33.000
+Anymore. In a public, absolutely make sure you're getting nor is ignoring your ENV file and use your ENV files. 90% of the times that it leaks, it's because one of those two things didn't happen.
+
+01:24:33.000 --> 01:24:41.000
+And I don't know, I haven't looked at all the ones Ash has had, but I've looked at a couple when Austin was talking about it the other day, and that was the case in both of those.
+
+01:24:41.000 --> 01:24:48.000
+Just that the get ignore was not properly ignoring ENV or the env wasn't even there.
+
+01:24:48.000 --> 01:25:06.000
+The third one would be AI likes to use inline variables So don't never pass your variables as much. If you sat through my deal, we did the variables manually because we didn't give Claude access. Now, it is indexed and you can use the cursor ignore, which is great.
+
+01:25:06.000 --> 01:25:17.000
+But if Claude doesn't index it. Directly when you pass it, it's much less likely that he's going to put it around he, they, she, whatever Claude is, I don't know.
+
+01:25:17.000 --> 01:25:33.000
+Them, whatever Claude's assumption is and so Don't pass it and then make sure you ignore it. And at least the first few times that you do your your always use git status. Double check that you don't see it.
+
+01:25:33.000 --> 01:25:45.000
+And then just get good at looking at what Claude is doing, what you're doing in your AI, whichever one you're using, and just look because it's going to give you the plus minus differential between added code, remove code.
+
+01:25:45.000 --> 01:25:53.000
+And just keep an eye on it. If you do that 98% of the time, you'll be fine. There's a couple of times in life where it'll be really, you know, something will happen.
+
+01:25:53.000 --> 01:25:59.000
+But that will solve almost everything.
+
+01:25:59.000 --> 01:26:05.000
+Yeah, I think in terms of like accidental ways, you can probably also ask AI. But I think what Zach mentioned is true.
+
+01:26:05.000 --> 01:26:16.000
+We just have a scenario in which we're also dealing with public repos because right now I've been trying to add everybody's GitHub to our GitHub org.
+
+01:26:16.000 --> 01:26:24.000
+And I only get like 25 invitations a day. So I'm trying to figure out how to fix this. But in terms of like.
+
+01:26:24.000 --> 01:26:31.000
+How we resolve this going forward. I think we'll just put all the repos in our continent AI organization.
+
+01:26:31.000 --> 01:26:37.000
+Obviously that you can keep a version for yourself as well. I'm not saying that you can only keep it in Gauntlet AI.
+
+01:26:37.000 --> 01:26:41.000
+But this way we'll be able to manage keys much better.
+
+01:26:41.000 --> 01:26:46.000
+Okay. So I just want to answer some questions on the Slack.
+
+01:26:46.000 --> 01:26:54.000
+Benji, the metrics that Pinecone gives you, those are automatic from Pinecone. They're not connected to any code that we ran.
+
+01:26:54.000 --> 01:27:04.000
+So those are metrics that Pinecode automatically calculates. And Gary, it's a two-step search in what I did. I searched through the summaries and then I searched through the chunks.
+
+01:27:04.000 --> 01:27:05.000
+Marcus.
+
+01:27:05.000 --> 01:27:12.000
+So when did those metrics come up then? I'm a little confused about what it's showing.
+
+01:27:12.000 --> 01:27:13.000
+Cause for, yeah.
+
+01:27:13.000 --> 01:27:20.000
+So those… So those metrics are automatically, I didn't do anything for them. Those are automatically calculated by Pinecone, I said
+
+01:27:20.000 --> 01:27:38.000
+A chunk but i like it's based on our docs, though. It's based on our PDF. So somehow… it got connected with those within the code base And when I, you know, like I successfully ran the rag on my uh
+
+01:27:38.000 --> 01:27:57.000
+On my super base data But when I go to the the rag, the pine cone databases that I connected to that data I'm not seeing any metrics at all. So I'm just wondering Like when… Or browser, I'm sorry, in the browser.
+
+01:27:57.000 --> 01:28:02.000
+So I'm not sure why you're not seeing the tab, but these metrics are
+
+01:28:02.000 --> 01:28:09.000
+I mean the browser tab. I misspoke. If you go up next to metrics.
+
+01:28:09.000 --> 01:28:10.000
+Oh, next to this one. You're not seeing that in your pine cone, you're saying?
+
+01:28:10.000 --> 01:28:21.000
+Correct. Yeah, all of these records
+
+01:28:21.000 --> 01:28:22.000
+Yeah.
+
+01:28:22.000 --> 01:28:29.000
+Well, I'm seeing that in the pine cone I ran from your test project, but I'm not seeing it in the pine cone of uh… my project.
+
+01:28:29.000 --> 01:28:46.000
+But I was successfully running regs so basically like Pinecone has the data from my database, I'm making queries to it. At what point are these records being generated and why are there so few of them? Is there something in the code itself that is generating this?
+
+01:28:46.000 --> 01:28:58.000
+So I have no idea in terms of your code. But if you're using super basic pine code, it might be on super base and pine code might just be connecting to that. It might be one, uh.
+
+01:28:58.000 --> 01:29:00.000
+Idea that I have in terms of what I'm doing, this is automatic.
+
+01:29:00.000 --> 01:29:03.000
+Okay. Yeah, yeah.
+
+01:29:03.000 --> 01:29:08.000
+So in terms of what I'm doing, whenever I do an upload of vectors, that's automatic.
+
+01:29:08.000 --> 01:29:13.000
+So Pinecone will do this automatically if the vectors are saved natively on pinecone.
+
+01:29:13.000 --> 01:29:19.000
+I believe if you're using SuperBase, I would check the SuperBase database for the vector.
+
+01:29:19.000 --> 01:29:20.000
+If I had to guess.
+
+01:29:20.000 --> 01:29:29.000
+Okay. So when we ran the Docker compose upload file or whatever, that's when these records ended up in Pinecone.
+
+01:29:29.000 --> 01:29:30.000
+And… And then why are there only 10?
+
+01:29:30.000 --> 01:29:33.000
+Yep, that's right.
+
+01:29:33.000 --> 01:29:34.000
+Because the… Because there's more.
+
+01:29:34.000 --> 01:29:38.000
+Like it seems like there would be a ton.
+
+01:29:38.000 --> 01:29:39.000
+It's just paginated. There's 2,000.
+
+01:29:39.000 --> 01:29:44.000
+There are. Okay. Oh, okay, okay, okay.
+
+01:29:44.000 --> 01:29:49.000
+Yeah. No, no, no, don't be sorry at all.
+
+01:29:49.000 --> 01:29:58.000
+There's only four summary vectors because there's four books, but the chunk vectors are over 2,000.
+
+01:29:58.000 --> 01:30:13.000
+Okay. No, but good question. I believe the reason you might not be seeing what I'm seeing is Probably because of the superbase connection, but that could be something we test.
+
+01:30:13.000 --> 01:30:20.000
+Yes, grades are pass fail. So if you have AI components working, that'd probably be the primary sort of way you can sort of pass this week.
+
+01:30:20.000 --> 01:30:33.000
+We would like to see your Slack application functioning properly in terms of the functions that we highlighted in the project document. And then we would like to see one or more AI features working properly in the Slack.
+
+01:30:33.000 --> 01:30:42.000
+Yes. So Steven, we'll have our AWS workshop tomorrow where we'll talk about a standardized DevOps flow and what you should be using and what services at what time.
+
+01:30:42.000 --> 01:30:47.000
+But I didn't want to ruin anybody's applications or what they had for deployment so far.
+
+01:30:47.000 --> 01:30:55.000
+That's not something I'm introducing now. We'll talk through it tomorrow, but it'll be for the next project.
+
+01:30:55.000 --> 01:30:59.000
+And some of the services Stephen will be, just to give you a head start.
+
+01:30:59.000 --> 01:31:07.000
+Amplify. And then I believe that for the next project, we're just going to be using Firebase or Superbase.
+
+01:31:07.000 --> 01:31:37.000
+So the only AWS service you'll really need is Amplify. Okay, that's all the Slack questions and I will do the Zoom questions and then call it because we are running super late.
+
+01:31:44.000 --> 01:31:51.000
+What was the code ashround in the terminal? John, I just copied the code off the readme of the project. It was just some Docker commands.
+
+01:31:51.000 --> 01:31:55.000
+So they're all on the README of the project and copy them.
+
+01:31:55.000 --> 01:32:07.000
+We will be able to improve upon, yes, you will be able to improve upon your submissions. You have until Sunday to do another submission so If you feel that you want to continue to make your AI features better.
+
+01:32:07.000 --> 01:32:15.000
+Then yes. And Ben, great question. Is the next project going to be for weeks three and four? Yes. So what happens is the first week we always rebuild.
+
+01:32:15.000 --> 01:32:21.000
+In the second week, we always add AI.
+
+01:32:21.000 --> 01:32:25.000
+We talked about optimizing rack training. How much of this is expected from array? Great question, Palmer.
+
+01:32:25.000 --> 01:32:32.000
+In terms of your week two stuff, I would like you guys to try, if you have some time to implement recall.
+
+01:32:32.000 --> 01:32:35.000
+To see how many of the vectors you're pulling are actually relevant to the query.
+
+01:32:35.000 --> 01:32:45.000
+But in terms of grading at the end of this week, the only thing I'm looking for is functioning AI features on top of a functioning Slack rebuild.
+
+01:32:45.000 --> 01:32:55.000
+Yep. Where's the best way to easily deeply, apart from AWS, my app works perfectly, Logan?
+
+01:32:55.000 --> 01:33:02.000
+Rishab, you can probably just deploy on… Netlify or Vercel and Amplify, frankly.
+
+01:33:02.000 --> 01:33:06.000
+They're all really easy. You just click buttons and connect it to your GitHub repo.
+
+01:33:06.000 --> 01:33:14.000
+What's the point of having two indexes on Pinecone? The reason that we have two indexes is because the first one is the indexes of the summary and the second one is the chunks.
+
+01:33:14.000 --> 01:33:26.000
+So indexing a smaller vector database with just the summaries is really quick. It helps me find where to look and then I can just quickly look in that specific book's vectors to find the answer.
+
+01:33:26.000 --> 01:33:31.000
+With Week 1 still not back where I was, should I just focus on week two and San Gov?
+
+01:33:31.000 --> 01:33:36.000
+Yes, Paul, focus on week two. I love this week's main theme is AI features.
+
+01:33:36.000 --> 01:33:56.000
+When I was trying to set up stuff on AWS over the weekend, I wasn't Search and… If you're deploying just your front end, I would just try to use something else. But if there is more issues happening, then I would bring them to the AWS workshop tomorrow. We'll just walk through it. I think we just need dedicated time for AWS.
+
+01:33:56.000 --> 01:34:01.000
+And that's what we'll do tomorrow. Okay, I believe that's all the questions.
+
+01:34:01.000 --> 01:34:09.000
+Today, Zach will be finishing out He's part two of the hack a lot project build live build. That's going to be at 3 Eastern.
+
+01:34:09.000 --> 01:34:16.000
+So I'll give Zach a chance to say something about that and what to expect. And then beyond that, I'm going to call class today.
+
+01:34:16.000 --> 01:34:21.000
+And thank you guys for joining me and giving me your attention for such a long time.
+
+01:34:21.000 --> 01:34:30.000
+Yeah, so we're going to continue Ah, man, you don't know how hard it was for me to sit all night? Good thing I had plenty of… The unfun work to do.
+
+01:34:30.000 --> 01:34:38.000
+To keep me busy, but I wanted to finish it yesterday. So we're going to today we're going to add roles.
+
+01:34:38.000 --> 01:34:49.000
+Reviewers so that we can take grades, that kind of thing. I mean, you know how, if you attended the first one, you know how it went and we take a little bit off the cuff.
+
+01:34:49.000 --> 01:35:00.000
+I do like the idea of doing rag, but I will say this. I'm not going to do rag while it's your week of rag work. I'm not going to give you the answers. So if we do reg, we'll do that next week but
+
+01:35:00.000 --> 01:35:08.000
+I would really like to really like I think we can get most of it finished out in another hour, hour and a half.
+
+01:35:08.000 --> 01:35:16.000
+So we might have three hours of work into it. Maybe we might need to touch base again just a little bit to finalize our first event.
+
+01:35:16.000 --> 01:35:28.000
+And then this weekend, we're running a… Run a timed hackathon just for fun and we'll get some reward and somebody can You know, win some money or gift card or I don't know, whatever it comes out to.
+
+01:35:28.000 --> 01:35:36.000
+But I think that's a pretty cool testament to what it is that you're learning For us to be able to build an app.
+
+01:35:36.000 --> 01:35:41.000
+Deploy it, use it, and have a winner all within five days. Sounds like a lot of fun.
+
+01:35:41.000 --> 01:35:46.000
+So that's what we'll be doing today. We'll just continue. So, um.
+
+01:35:46.000 --> 01:35:48.000
+Yeah, we'll see you then. Look forward. I'm excited.
+
+01:35:48.000 --> 01:35:56.000
+All right. See you guys. See you guys at three Eastern. And I hope you have a great rest of your day. Thank you for your time. This was awesome.
+
+01:35:56.000 --> 01:36:03.000
+And thank you for engaging so much with all of us. Okay, see ya. Bye.
+

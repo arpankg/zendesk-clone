@@ -1,0 +1,1406 @@
+WEBVTT
+
+00:00:02.000 --> 00:00:11.000
+All right, it just started the recording. All right. So I'm going to start off with a small Q&A regarding the project, make sure I'm handling everything.
+
+00:00:11.000 --> 00:00:24.000
+In terms of, I know there's an error for next applications in the Amplify deployment route. So for now I want to say that I have tried numerous things to fix this.
+
+00:00:24.000 --> 00:00:31.000
+But it keeps having the IM pass role error. What I would say is just to ensure that nobody's deployment is delayed.
+
+00:00:31.000 --> 00:00:35.000
+You can just use a free Vercel account for your next application.
+
+00:00:35.000 --> 00:00:47.000
+To deploy for now and we will continue troubleshooting what's going on with the next issue and amplify it might just be I did not know about the 25 deployment limit.
+
+00:00:47.000 --> 00:00:54.000
+I will look into that today. I will look into the 25 deployment.
+
+00:00:54.000 --> 00:01:11.000
+Yes, you can use Netlify as well. But anyway, my suggestion to you regarding the next issue is use a free alternative for the time being so it does not hinder your development and hinder your submission.
+
+00:01:11.000 --> 00:01:22.000
+Okay. I want to walk through some of the questions that I've been getting about project two, and then I'm going to open up the sort of the room to then specific questions about the project.
+
+00:01:22.000 --> 00:01:34.000
+And then we'll also talk about some suggestions maybe full stack wise, maybe questions you guys are having regarding coding And then maybe split off, maybe me and Zach can split off into breakout rooms.
+
+00:01:34.000 --> 00:01:52.000
+The first and foremost thing that I want to talk about is People keep asking me like, what are the minimum requirements for passing right so I don't want you guys to sort of look at it that way. Like there isn't like specific functionality that we're looking for when we're judging the application.
+
+00:01:52.000 --> 00:02:08.000
+Rather, we're looking to see at least how many of the function items of functionality listed on the document you were able to implement, right? So there's different like people, some people are going much faster. Some people are going a little bit slower.
+
+00:02:08.000 --> 00:02:14.000
+So the goal is first and foremost, how much functionality can I add to this MVP before the deadline?
+
+00:02:14.000 --> 00:02:21.000
+The reason we're having these intermittent submission deadlines is because a lot of individuals are falling behind.
+
+00:02:21.000 --> 00:02:27.000
+Or some of them are waiting until the last second to get everything in and then not having enough time to submit.
+
+00:02:27.000 --> 00:02:35.000
+So Austin's been getting messages regarding this I've been getting messages that, hey, can we extend the deadline? Can we get a little bit more time?
+
+00:02:35.000 --> 00:02:47.000
+And the answer to that question is we really don't, the answer is no, unless there's a circumstance that is like really pressing Or that is really changing what you're doing. And obviously we're taking those circumstances case by case but like
+
+00:02:47.000 --> 00:02:53.000
+It's really important that when we set a deadline or gauntlet, those deadlines are met.
+
+00:02:53.000 --> 00:02:59.000
+And so no matter how far your application has gotten, it's important for you to submit.
+
+00:02:59.000 --> 00:03:03.000
+So on Friday, when the deadline comes for the rebuild, you should submit something.
+
+00:03:03.000 --> 00:03:09.000
+You have a secondary opportunity if you are missing something in the application where something's broken to fix that.
+
+00:03:09.000 --> 00:03:14.000
+Where you can resubmit on Sunday. But we've added these intermittent deadlines, Tuesday night.
+
+00:03:14.000 --> 00:03:21.000
+A check-in tomorrow to ensure that we're moving in the right direction and people are sort of progressing.
+
+00:03:21.000 --> 00:03:29.000
+Towards that Friday big deadline. So a lot of people have been asking me that question about What are the minimum pricing requirements?
+
+00:03:29.000 --> 00:03:35.000
+The minimum passing requirements are at least four to five pieces of functionality that are working properly on your application.
+
+00:03:35.000 --> 00:03:42.000
+And that's not to limit you guys. You can add more functionality. And why do we have so many intermittent deadlines? It's to keep you guys on track.
+
+00:03:42.000 --> 00:03:49.000
+And maybe some of you are faster than others and you don't need that, but it's important for you guys to see that if there is a deadline for submission.
+
+00:03:49.000 --> 00:03:54.000
+That you submit what you have at the time. On time. Go ahead.
+
+00:03:54.000 --> 00:03:55.000
+Kell. Kell.
+
+00:03:55.000 --> 00:04:08.000
+Yeah, I'm wondering… How hard and fast are the actual, like… time part of the deadline. So it's 3 p.m. My time, right?
+
+00:04:08.000 --> 00:04:15.000
+Is that like, yeah, we want everything in at 3 p.m. Or is that like, cause that's basically, you know, that's 5 p.m. Austin time.
+
+00:04:15.000 --> 00:04:19.000
+Is that, you know, we want you to have something by the end of the day type thing.
+
+00:04:19.000 --> 00:04:27.000
+Great question. I give a little bit of a leeway. So if the deadline is like, I'll give you a little extra hour.
+
+00:04:27.000 --> 00:04:33.000
+But the goal would be to, especially as we get closer to austin that it's going to be five o'clock.
+
+00:04:33.000 --> 00:04:41.000
+So right now we're giving you the full hour. So there's like a whole hour time blocked for your submission where will accept anything within that hour.
+
+00:04:41.000 --> 00:04:52.000
+And maybe even 15 minutes after. When we get to Austin, it's going to be a harder deadline where if it's five o'clock, it'll be five o'clock.
+
+00:04:52.000 --> 00:04:53.000
+Okay.
+
+00:04:53.000 --> 00:05:02.000
+I was actually going to ask that. I'll admit to seeing the seeing the hour time block and thinking oh Oh, of course I can get my deadline in by six.
+
+00:05:02.000 --> 00:05:07.000
+Because that's how long the event is, right? So…
+
+00:05:07.000 --> 00:05:11.000
+No, no. For now, it's okay. So I'm not like, no one's like, yeah, yeah. But I'm saying like when we get to Austin.
+
+00:05:11.000 --> 00:05:14.000
+Yeah.
+
+00:05:14.000 --> 00:05:28.000
+You know, things will get ramp up right so I don't know if you guys have been noticing, but the classes are getting much smaller. People are falling off and so the withdrawal rate is obviously happening as we speak.
+
+00:05:28.000 --> 00:05:45.000
+And… In Austin, we expect everyone who's in Austin who's come to have been through the last four weeks Know what the importance of deadlines is and understand like Hey, like this is what's required of me to get this job at the end of this program so
+
+00:05:45.000 --> 00:05:55.000
+In Austin, the deadlines will be harsher. One second, George. I'm just going to take two Zoom chat questions. I'm going to go directly to you.
+
+00:05:55.000 --> 00:06:02.000
+So the question from Noah is the project document mentioned multi-front end architecture. For clarification, this means a different UI.
+
+00:06:02.000 --> 00:06:18.000
+For different kinds of users Great question. This means specifically that it's not different screens for different types of users, rather different multimodal functionality. So if you want to make a Zendesk mobile application.
+
+00:06:18.000 --> 00:06:28.000
+You want to make, I don't know, a mac a native application or you want to make a web application we're giving the chance and opportunity for you to do that.
+
+00:06:28.000 --> 00:06:31.000
+But what I would recommend is get the web app working first.
+
+00:06:31.000 --> 00:06:36.000
+And then if you have time, if you have done a lot of the functionality already and you want to challenge yourself.
+
+00:06:36.000 --> 00:06:39.000
+Then you can then replicate that web application onto a mobile.
+
+00:06:39.000 --> 00:06:54.000
+Or a different interface. So that's what multi front end means. It's referring to the different devices that you might be able to use your application on. And that's why it's saying like if you have made a robust API You can connect that API to anything.
+
+00:06:54.000 --> 00:06:56.000
+That's what it's referring to specifically.
+
+00:06:56.000 --> 00:07:10.000
+Can you speak a little bit more to that? Because that was one of the sections where it's mentioned in two places in the document. And in one place, it does seem to be what you're describing where it's about different like deployments like for iOS and Android. In another one, it talks about deploying multiple, what I assume to be React front ends
+
+00:07:10.000 --> 00:07:15.000
+Two different edge functions. Which seems to rule out that it's talking about.
+
+00:07:15.000 --> 00:07:25.000
+Like iOS or Android, like mobile stuff like that I don't know if that's already something you cleaned up while you were going through earlier, but that was one of the things I was referring to yesterday.
+
+00:07:25.000 --> 00:07:33.000
+Oh, so that might be just something I haven't cleaned up yet, but that's because there was some things that I changed from Trilogy.
+
+00:07:33.000 --> 00:07:36.000
+Are you referring to number five, AJ? That's one.
+
+00:07:36.000 --> 00:07:45.000
+Potentially. It may have been the case that how they describe multi-front end in the ITD was different from what you had in the brief.
+
+00:07:45.000 --> 00:07:53.000
+Okay, I will update that directly after class. Okay, Joris, you had a question. I know you raised a hand.
+
+00:07:53.000 --> 00:08:14.000
+Yes, so my question is about how much functionality in the business logic you suggest to implement in Postgre sql versus some TypeScript route because i see that when we have a TypeScript route and this calls the database and there's more overhead.
+
+00:08:14.000 --> 00:08:21.000
+Doing things in SQL is harder to debug and to write.
+
+00:08:21.000 --> 00:08:28.000
+Zach, this might be a question for you. You might have a better answer than me, but you go first and then I can add.
+
+00:08:28.000 --> 00:08:44.000
+Well, welcome to the world of software. Right. I mean, there's no right answer. Some companies would want one versus the other. Okay, so a lot of companies They have database teams and they don't want they won't let you touch the database. So you have to know how to do
+
+00:08:44.000 --> 00:08:57.000
+The end programming. Some places, they would do the database the SQL programming for you and give you, you know, so it depends find one and make it work.
+
+00:08:57.000 --> 00:09:02.000
+All of them are valid and all of them are used in different cases.
+
+00:09:02.000 --> 00:09:16.000
+Generally, though, any place of any size that has a database team, if you work on a team where there's a database person or two, you will never touch the database because that is the entire wealth of the company is in data, right?
+
+00:09:16.000 --> 00:09:25.000
+So I would say definitely get familiar with the front and doing the front end logic in code first. And if you feel like you want to go to that route, by all means.
+
+00:09:25.000 --> 00:09:34.000
+But ultimately, it is dealer's choice. I've said for a long time, if it works, it's right. If it doesn't, it's wrong.
+
+00:09:34.000 --> 00:09:45.000
+So keep that in mind. It doesn't matter how elegant, how great it is. If it doesn't work, it's not.
+
+00:09:45.000 --> 00:09:56.000
+And I think Zach brings up a good point. There will probably be a database team at Trilogy. And I have a feeling that you'll have less access to it.
+
+00:09:56.000 --> 00:10:05.000
+I mean, that might influence your decision a little bit. Okay, Cameron is saying that important work skill better to come clean at or before the deadline.
+
+00:10:05.000 --> 00:10:15.000
+Than to uh shit try to hide it for management. I don't know what the ending was there, but I do agree that We should plan to meet our deadlines early.
+
+00:10:15.000 --> 00:10:31.000
+And ensure that we're hitting, especially at work. So anytime, I mean, the hiring partners will be at the same office that you guys are at. And so it's important to showcase that you have the basic skills required for them to hire you.
+
+00:10:31.000 --> 00:10:39.000
+Robert is asking, do we need a live link to MVP today or does demo video suffice? We do want the deployed link to your application.
+
+00:10:39.000 --> 00:10:46.000
+And so whether you have to use Vercel, whether you have to use Netlify free accounts, whether you're going to do it off Amplify because it's working for you.
+
+00:10:46.000 --> 00:10:58.000
+Use something and do share us a link. Question from Matrice is how many gauntlet participants are left? We were around the 130 number now, but I don't have the exact number.
+
+00:10:58.000 --> 00:11:06.000
+I predict that we might be around 100 before we head to Austin.
+
+00:11:06.000 --> 00:11:12.000
+Sterling is asking, will Amplify be fixed prior to Friday? I still can't host on Amplify, so I'm using Versal currently.
+
+00:11:12.000 --> 00:11:19.000
+Sterling, we are working on that Amplify error right now. I know there's that 25 deployment limit. I know there's that next error.
+
+00:11:19.000 --> 00:11:26.000
+We're trying to figure it out with the Trilogy aws team In the meantime, if you submit a Vercel link, you will not be docked.
+
+00:11:26.000 --> 00:11:33.000
+Again, the only thing we're sort of mandating and sort of in terms of looking for is that there is a deployed link.
+
+00:11:33.000 --> 00:11:37.000
+But understand that the reason you guys can't use Amplify is because of us.
+
+00:11:37.000 --> 00:11:40.000
+So if you have to use Vercel, if you have to use Netlify.
+
+00:11:40.000 --> 00:11:50.000
+Feel free to do so. For those who Amplify is working for, please use Amplify.
+
+00:11:50.000 --> 00:12:05.000
+Ash, can I hop in here one second? I think one of the important things that kind of gets overlooked here Your ingenuity and your ability to solve problems is what makes you valuable.
+
+00:12:05.000 --> 00:12:10.000
+And so a lot of these questions, although great questions, I'm not knocking the questions.
+
+00:12:10.000 --> 00:12:18.000
+But keep in mind that finding solutions is why you will be getting paid and not an AI.
+
+00:12:18.000 --> 00:12:31.000
+Ai can write the code. Writing code is easy, right? It's finding solutions to problems we didn't know or coming around things that haven't been dealt with. So keep in mind your ingenuity, your problem solving.
+
+00:12:31.000 --> 00:12:37.000
+Is what makes you worth six figures. That's the value. The rest of this is all you learning to use tools.
+
+00:12:37.000 --> 00:12:41.000
+So just kind of keep that in mind as you're going through these.
+
+00:12:41.000 --> 00:12:48.000
+Solve it. If you find a novel way to solve it that's not quite there, but it's within the guidelines, I guarantee you'll be applauded.
+
+00:12:48.000 --> 00:12:55.000
+Far more than you'll be not, right, Ashley? I mean, ultimately.
+
+00:12:55.000 --> 00:12:59.000
+Agreed. Resourcefulness is a key trait in everybody that will get hired.
+
+00:12:59.000 --> 00:13:06.000
+Aj is asking, you could potentially host it on AWS. This should be released free, really cheap at 10 cents per month.
+
+00:13:06.000 --> 00:13:11.000
+Yeah, there's a lot of really good free options out there. Vercel and Netlify being the top two.
+
+00:13:11.000 --> 00:13:17.000
+But again, I think you guys can easily find a free solution for now.
+
+00:13:17.000 --> 00:13:28.000
+While we fix the amplify problem. And I apologize for the delay there, but we are working with a third party infrastructure team. So just the communicating back and forth does take some time.
+
+00:13:28.000 --> 00:13:36.000
+Cameron Williams said, at the shop I was at, I was on the database team. So even though I was in front end, I was expected to write business logic in SQL.
+
+00:13:36.000 --> 00:13:44.000
+Yeah, I mean, sometimes depending on the size of your company you'll be asked to do many things at once. Right, Zach?
+
+00:13:44.000 --> 00:13:48.000
+Because I asked Zach to teach. I asked Zach to code. So he does what I'm talking about.
+
+00:13:48.000 --> 00:14:02.000
+Aj goes, this is a question for you, Zach. How do you typically treat the divide on teams that How do you typically treat Maybe there's a typo there. Aj, I'll ask you to fill in.
+
+00:14:02.000 --> 00:14:06.000
+How do you typically treat that divide on teams that use Firebase?
+
+00:14:06.000 --> 00:14:19.000
+I kind of answered that down a little bit but ultimately Because Firebase is backend as a service, much like Superbase and I forget what the AWS one's called and Azure has one. I mean, right, there's a lot of these services.
+
+00:14:19.000 --> 00:14:25.000
+Except for backend logic, which is done in Cloud Functions. Right. Typically.
+
+00:14:25.000 --> 00:14:32.000
+I usually have one person dedicated to that that really has a higher level understanding of both software and the code base we're building.
+
+00:14:32.000 --> 00:14:43.000
+But otherwise, generally speaking. I let people build the code that they need because it's all front end based so
+
+00:14:43.000 --> 00:14:46.000
+Does that answer that, AJ?
+
+00:14:46.000 --> 00:14:48.000
+Yeah.
+
+00:14:48.000 --> 00:14:55.000
+So David is saying at some point I heard Austin talking about making things production gate, but seems directly at odds with what we're trying to do.
+
+00:14:55.000 --> 00:15:08.000
+Would get as many features in as possible. I think a production grade as making things look nice in different browsers scale performance, secure handling, and edge functions. But spending time polishing one feature takes away from trying to implement many.
+
+00:15:08.000 --> 00:15:13.000
+Great question, David. I think this is very important to address directly.
+
+00:15:13.000 --> 00:15:18.000
+I think the goal for the MVP submission today is to get as many pieces of functionality in.
+
+00:15:18.000 --> 00:15:22.000
+So that at the end of the week, you can make them production grade.
+
+00:15:22.000 --> 00:15:26.000
+I think if you try to make them production grade right now.
+
+00:15:26.000 --> 00:15:33.000
+You won't have enough functioning app. So this goes back to the, what is the real definition of MVP?
+
+00:15:33.000 --> 00:15:41.000
+Mvp just doesn't mean that you have a few things working here and there. There should be a full user journey that you're able to complete.
+
+00:15:41.000 --> 00:15:54.000
+So you're able to create a ticket. You're able to manage the ticket, change the status on the ticket. I wouldn't qualify an app with just one really good feature as MVP. If the user that is going to use that application
+
+00:15:54.000 --> 00:16:05.000
+Isn't going to get anything out of it. So that's why the goal for today is to add those pieces of functionality then we can spend Wednesday, Thursday, and Friday to make them production grade.
+
+00:16:05.000 --> 00:16:16.000
+And we're also trying to challenge you right so The gauntlet is we're trying to get you to put in the number of hours required to put in all those pieces of functionality and get them working properly.
+
+00:16:16.000 --> 00:16:21.000
+So this is a challenge that you're going to be facing at your job. And it's a challenge that we're giving you right now.
+
+00:16:21.000 --> 00:16:30.000
+Put in as many features as you can. And then we'll work on making them production grade over the week. Zach, anything to add there?
+
+00:16:30.000 --> 00:16:46.000
+No, I'm just going to agree with that. It's much harder to make a feature production grade than move to another feature than it is to get the features you need and then enhance them step by step because what will happen is
+
+00:16:46.000 --> 00:17:02.000
+Especially in this environment you don't have $200,000 designer over here that's going to give you every option, right? You have to figure that out. So you're going to go some To a point and go, wait a minute, this is stupid. Let me get rid of that. I want to change it. If you spend too much time
+
+00:17:02.000 --> 00:17:19.000
+On form before you've got the function, you're not going to get any of it because you will make changes and you should make changes as you use it and say, this is too many steps or, oh, I forgot And so, yeah, absolutely. Function first, get as many functions as you can
+
+00:17:19.000 --> 00:17:28.000
+That meet the, and Paul said it i forgot would take God said it, but he said, if you ship it and you're not embarrassed, you ship too late.
+
+00:17:28.000 --> 00:17:42.000
+Meaning that you have to get it out there, right? Get the function, try to figure out all the functions you can possibly get in it, and then enhance it as you go along because you'll be working on a function. Oh, I can fix some of this real quick.
+
+00:17:42.000 --> 00:17:51.000
+But you have to go that route. Design route in fast development does not work. It has to be function.
+
+00:17:51.000 --> 00:17:59.000
+Roger's asking, what was the 25 limit issue again? So Roger, there were some individuals who were getting unable to make deployments on amplify.
+
+00:17:59.000 --> 00:18:07.000
+Because they were limited to 25 deployments across. I just want to make sure that nobody's using the unified service role access keys.
+
+00:18:07.000 --> 00:18:11.000
+To make those deployments, if you're doing that, that might be the issue.
+
+00:18:11.000 --> 00:18:16.000
+But each individual account should have 25 deployments, which should be more than enough for you.
+
+00:18:16.000 --> 00:18:22.000
+So I think it's a access key thing, but Roger, we're looking into that right now.
+
+00:18:22.000 --> 00:18:28.000
+Harmony's asking, do we have to do a walkthrough as well or the live link enough? No, both are required.
+
+00:18:28.000 --> 00:18:34.000
+Going forward. And that's reflected on the LMS, the deployed link and the walkthrough.
+
+00:18:34.000 --> 00:18:50.000
+Thanks, Spencer, for sharing the message off Slack. Benji, I have been prioritizing backend So my repo might look cuter than my deployed F by tonight. No worries. That's okay. We look at the the code as well. And we do a preliminary check with AI as well.
+
+00:18:50.000 --> 00:19:09.000
+Zach is asking, oh, Zach is just answering a question. Anthony's asking, we can just do EC2, right? Anthony, if there's some significant performance that your app is going to do. Feel free to do EC2, but I will be monitoring the EC2 because of the crypto miners that you guys have been creating.
+
+00:19:09.000 --> 00:19:24.000
+Maybe not you guys, but the people that you've shared your keys with have been creating and so Anthony, you could do EC2, but let's be careful.
+
+00:19:24.000 --> 00:19:27.000
+Go ahead, Cal.
+
+00:19:27.000 --> 00:19:41.000
+Yeah, no, I was just curious on that note um easy to… tying into super base should be super straightforward, right? It's just adding in the URLs.
+
+00:19:41.000 --> 00:19:56.000
+It should be super straightforward. I don't think there should be, I think there's a lot of videos on it too but In terms of super base, you can also pretty much just make a production grade Super Base app pretty quickly as well. So you might not need to put an EC2.
+
+00:19:56.000 --> 00:20:04.000
+I've also noticed that you guys have super base so calm this is unrelated to the question you asked, but to directly answer your question, it should be pretty easy.
+
+00:20:04.000 --> 00:20:11.000
+In terms of super base, what I've noticed is you guys have put a layer in between super base and your front end.
+
+00:20:11.000 --> 00:20:21.000
+Um which is you know, neither here or there, but I almost feel like you don't need it. I feel like you can just call the SDK directly in your React application.
+
+00:20:21.000 --> 00:20:29.000
+And you can create maybe a utils library or a lib folder with all the functions that handle your super base card operations.
+
+00:20:29.000 --> 00:20:35.000
+Maybe even business logic functions. And you shouldn't need the layer in between.
+
+00:20:35.000 --> 00:20:38.000
+It almost feels like there's a wrapper for no reason.
+
+00:20:38.000 --> 00:20:43.000
+Well, your docs had API first design, I think, is the thing that caused a lot of people to go in this direction erroneously.
+
+00:20:43.000 --> 00:20:44.000
+Got it. Got it. Api first design just means that we're separating the front end out.
+
+00:20:44.000 --> 00:20:50.000
+Yeah.
+
+00:20:50.000 --> 00:20:59.000
+So if we do super base backend as a service that SDK is like a functioning API for us already.
+
+00:20:59.000 --> 00:21:03.000
+But I understand the language and why that might have been the case.
+
+00:21:03.000 --> 00:21:08.000
+And for those who have already started on their API layer, please don't stop. It's totally fine.
+
+00:21:08.000 --> 00:21:15.000
+But I think for future considerations, I would directly use super-based functionality.
+
+00:21:15.000 --> 00:21:18.000
+Go ahead, Zach.
+
+00:21:18.000 --> 00:21:35.000
+I was just going to say you can also have an API layer that is not directly related to database and authentication, right? There are other things that happen in the API layer, like adding all of your As far as your AI as far as your AI
+
+00:21:35.000 --> 00:21:42.000
+Implementation. There's a lot of things that happen in an API level, but backend as a service should be used as backend as a service.
+
+00:21:42.000 --> 00:21:52.000
+They pay engineers for security. They pay engineers for reliability right they They're paying a lot of money to maintain that. And that's what you should use.
+
+00:21:52.000 --> 00:22:12.000
+And the whole benefit to back end as a service is it reduces this monolithic trinity of front-end trinity of front backend and database to allow you to focus between the interaction between front end and database in a more seamless route at a cloud nature.
+
+00:22:12.000 --> 00:22:19.000
+That's the benefit to it. So if you're abstracting that, you're losing the benefit of why we have back end as a service.
+
+00:22:19.000 --> 00:22:31.000
+And so, but keep in mind, and so Cloud Functions will often serve as the backend for other things AI and that kind. But you can have a Python backend, you can have a node backend. I mean, you can have anything that you want.
+
+00:22:31.000 --> 00:22:38.000
+But there are other services that you would want to.
+
+00:22:38.000 --> 00:22:42.000
+I think Paul has a really nice point here. Mvp shippable, embarrassed.
+
+00:22:42.000 --> 00:22:47.000
+But shippable and able to be used as product. And the answer is that is spot on.
+
+00:22:47.000 --> 00:22:55.000
+You should be a little bit embarrassed of your MVP, but you should launch anyway.
+
+00:22:55.000 --> 00:23:01.000
+Oh, Andre is asking, my background is not in software engineering. So could you expand on what API first design means?
+
+00:23:01.000 --> 00:23:06.000
+You want to take that one a little? I mean, I feel like you answered it, Zach, but if you want to add anything.
+
+00:23:06.000 --> 00:23:21.000
+Well, so if you think about, I mean, I don't know what you did you know in normal life. But if you think about with that trinity of things, right? That's typically what web is about, front end, back end, and database services.
+
+00:23:21.000 --> 00:23:25.000
+Persistent data. There are three basic thoughts.
+
+00:23:25.000 --> 00:23:35.000
+Run in first, backend or API first. Or data first. And usually it comes from what your specialty is or whoever starts the team.
+
+00:23:35.000 --> 00:23:40.000
+None of them are right or wrong. But as a back-end engineer.
+
+00:23:40.000 --> 00:23:58.000
+I've had too much or not enough coffee. You have to think about, for me, I like building back in first. So I'm an API first, back in first developer. I think about what data do I need to move from front end to the database or what I have to move from front end from other services
+
+00:23:58.000 --> 00:24:05.000
+Api first. If you think about on web. There's mobile first versus desktop first.
+
+00:24:05.000 --> 00:24:11.000
+Some developers want to build it So that it fits the mobile device first.
+
+00:24:11.000 --> 00:24:15.000
+And then they fix the desktop issues, some or the other way around.
+
+00:24:15.000 --> 00:24:20.000
+But it's just a paradigm of thought. What data do I need?
+
+00:24:20.000 --> 00:24:26.000
+To move from point A to point B, And that's where you start. That's all it is.
+
+00:24:26.000 --> 00:24:33.000
+Thanks, Zach.
+
+00:24:33.000 --> 00:24:38.000
+Sorry, I'm just, I'm looking for questions. Oh.
+
+00:24:38.000 --> 00:24:47.000
+Roger's asking, do deployments include failed deployments? So just pre-build as much as possible. So after you have one deployment working on Amplify, you should never need to redeploy.
+
+00:24:47.000 --> 00:24:54.000
+Every time you put a commit into your main branch, it will automatically redeploy. So if anybody has deployments that are failing.
+
+00:24:54.000 --> 00:25:02.000
+I would delete all of them and keep one. Ensure that it's connected to the branch that you want it to be connected to and let it automatically redeploy when you make fixes.
+
+00:25:02.000 --> 00:25:06.000
+But that's why they're getting the 25, right? Is because maybe they did like 10, 10 failed deploys.
+
+00:25:06.000 --> 00:25:15.000
+I think, yeah, I think you're right, Roger. I think people are trying multiple. Yeah, so when you fix something, you don't have to redo the deployment.
+
+00:25:15.000 --> 00:25:23.000
+As soon as you push it to GitHub. It will redeploy automatically. You can also just go into the existing deployment and click redeploy.
+
+00:25:23.000 --> 00:25:24.000
+Thanks, Roger. I think that's a good point.
+
+00:25:24.000 --> 00:25:25.000
+I think that's not what they're asking about. I think there are people who are under the impression that 25 other people's existing deploys are preventing them from making one deploy.
+
+00:25:25.000 --> 00:25:40.000
+Hey.
+
+00:25:40.000 --> 00:25:41.000
+And the problem is that it's across people. It's not for an individual person, correct?
+
+00:25:41.000 --> 00:25:45.000
+Yeah, just want to clarify the 25 that we're limited to includes successful and failed deployments. I'm looking at the page right now. I can see all the deployments for
+
+00:25:45.000 --> 00:25:51.000
+Yeah, so we have 25 deployments for the whole organization right now. So I think we just need to request more.
+
+00:25:51.000 --> 00:25:52.000
+And that includes failed ones.
+
+00:25:52.000 --> 00:25:58.000
+Yeah, I just… That's weird. I'm just going to request like 200. I think that's good, right? I don't know.
+
+00:25:58.000 --> 00:26:10.000
+But 250, whatever. 300? Okay, fine. I mean, I will, let's make it a practice to get rid of our failed deployments, but I… I will put the request in today.
+
+00:26:10.000 --> 00:26:23.000
+Uh… Again, in the meantime, if anybody did not get my message earlier, please use a free service to ensure there is some level of deployment you can do. There's many options out there.
+
+00:26:23.000 --> 00:26:32.000
+Tyler is asking, can you talk a little bit about the AI grader and how it works in terms of code? From my understanding, looks like best practices and often subjective and software development.
+
+00:26:32.000 --> 00:26:49.000
+Great question, Tyler. We're not looking at like specific like how you did linting or how you set up your function or components. It's more about like Is there huge red flags in your in your code. Huge red flags meaning
+
+00:26:49.000 --> 00:26:55.000
+A lot of code from other open source repos, huge red flags meaning like.
+
+00:26:55.000 --> 00:27:00.000
+Is the video showing something, but they don't even have that component that exists.
+
+00:27:00.000 --> 00:27:09.000
+On their application. So we look for like the existence of basic auth the existence of basic components that should match with what the project requires.
+
+00:27:09.000 --> 00:27:20.000
+Obviously, I'm not saying it's like a spot on perfect every time. So it does have a fail safe, like where one of our engineers go in and make sure that the AI is grading properly, but it just does a preliminary check for us.
+
+00:27:20.000 --> 00:27:26.000
+To ensure that no one's trying to escape the system is the way I'll put it.
+
+00:27:26.000 --> 00:27:32.000
+And so that's the reason why we added that preliminary check. And you'll notice that Austin does come in afterward.
+
+00:27:32.000 --> 00:27:39.000
+And look through almost all the projects.
+
+00:27:39.000 --> 00:27:50.000
+Yes, I think so I have to adjust the quota across prod other gauntlet, and I'll do that. I'll request that today.
+
+00:27:50.000 --> 00:28:00.000
+For the brain lift today, do we have to have all gotten all the test pass requirements done? And the answer is no. I understand if you're still working on your brain lift So I'll be a little bit lenient on that.
+
+00:28:00.000 --> 00:28:06.000
+So as much of the areas that you can get done, please submit.
+
+00:28:06.000 --> 00:28:16.000
+The AI preliminary check also goes through your brain lift and ensures that you weren't just reusing a brain lift from last week, for example.
+
+00:28:16.000 --> 00:28:27.000
+Or the brainlifter you're writing about actually applies to what the project is.
+
+00:28:27.000 --> 00:28:36.000
+Using Superbase client is questionably is also questionable for part of production readiness and security reasons. Interesting.
+
+00:28:36.000 --> 00:28:41.000
+I would say neither here or there. I think there's arguments on both sides.
+
+00:28:41.000 --> 00:28:46.000
+I think if I was building Facebook for Meta, maybe you're right.
+
+00:28:46.000 --> 00:28:50.000
+But I think since we're building Zendesk for us, we should be okay so far.
+
+00:28:50.000 --> 00:28:57.000
+Unless you guys are going to launch it if you guys are going to launch it There's a lot of things we can do to super base to sort of amp up the security and the compliance.
+
+00:28:57.000 --> 00:29:06.000
+And that same goes for Firebase.
+
+00:29:06.000 --> 00:29:16.000
+Ah, yeah, super base. My bad. Not super bass. Okay, I'm gonna set I'm going to separate us out into breakout rooms now.
+
+00:29:16.000 --> 00:29:22.000
+So we can do a lot of the admin stuff here. Then I'll ask Zach to take some of the full stack questions because we still have about 20 minutes.
+
+00:29:22.000 --> 00:29:29.000
+Um. So it looks like, Sebastian, you're having a serious problem with routing.
+
+00:29:29.000 --> 00:29:32.000
+If you want to post your routing issue and your error on those Slack.
+
+00:29:32.000 --> 00:29:56.000
+I'm sure we can sort of address it in office hours today Yeah, Lucas, we're working on the AI autograder giving more warning messages and feedback So obviously, we are building alongside you, right? So we wanted to launch an MVP and we did. And so we're going to make the MVP better as time goes on.
+
+00:29:56.000 --> 00:30:01.000
+The autograder is not a browser agent. But that could be a really nice addition.
+
+00:30:01.000 --> 00:30:09.000
+We'll consider. Should we be running WorkSmart for everything Gauntlet AI? The answer is yes.
+
+00:30:09.000 --> 00:30:16.000
+So I would turn it on for classes and office hours.
+
+00:30:16.000 --> 00:30:21.000
+Great question from Drew. What are some topics we can look into or think about for this week's brain lift?
+
+00:30:21.000 --> 00:30:37.000
+For this week's brain lift, I've been thinking a lot about you guys picking a specific niche a specific audience, a specific ICP for those who are familiar with the term ideal customer profile that you can sort of dictate your
+
+00:30:37.000 --> 00:30:43.000
+Crm for, right? So if you build a solution for everybody, oftentimes it's a solution for nobody.
+
+00:30:43.000 --> 00:30:52.000
+So in terms of actually building out a brain lift, a really nice way to do this is like, for example, let's say Ash is building the CRM for private tutors.
+
+00:30:52.000 --> 00:30:58.000
+It lets private tutors manage their entire business. Manage their leads, their students, their lessons, etc.
+
+00:30:58.000 --> 00:31:06.000
+So my whole brain lift could be on what is wrong with HubSpot and Salesforce right now that tutors are having a hard time with?
+
+00:31:06.000 --> 00:31:18.000
+My brain lift could be on what features can I add to ensure that tutors are better handled or every one of their functionality is better handled within my CRM versus another.
+
+00:31:18.000 --> 00:31:30.000
+So think about your end user. When you think about your end user, it helps you understand, okay, where can I make adjustments here and what spiky POVs correspond to making this a better application.
+
+00:31:30.000 --> 00:31:34.000
+Versus other options for my users. That's one angle you can go at it with.
+
+00:31:34.000 --> 00:31:40.000
+Another angle is you can do a survey of all the CRM applications out there and what's wrong with these applications.
+
+00:31:40.000 --> 00:31:50.000
+You can find so many HubSpot experts, so many Salesforce experts on Reddit and Twitter to figure out, hey, these are the areas where these CRMs are going wrong.
+
+00:31:50.000 --> 00:31:54.000
+And these are the areas where I can have a spiky POV and build something better.
+
+00:31:54.000 --> 00:32:02.000
+Those would be my two ideas on perspective. Zach, I don't know if you had any thoughts.
+
+00:32:02.000 --> 00:32:15.000
+No, I think that's a really good perspective. One of the things, especially Salesforce, HubSpot's not quite as bad. Salesforce is insanely ridiculously complicated.
+
+00:32:15.000 --> 00:32:27.000
+Okay, we use it in the bloom tech side. And, you know, we had to have multiple engineers always fixing and updating Just to be able to track a phone call was insane.
+
+00:32:27.000 --> 00:32:37.000
+First, you had to run a special query and you had all these different steps So if you just do any research about why Salesforce would be bad for such.
+
+00:32:37.000 --> 00:32:42.000
+And I will say this, don't forget perplexity. Perplexity is really great.
+
+00:32:42.000 --> 00:32:55.000
+Using AI to save you a lot of research. You can get a lot of ideas very quickly with perplexity and ask it, why is HubSpot bad Why is, and then ask, why is it good and compare the two and look at what's happening.
+
+00:32:55.000 --> 00:33:07.000
+If you've ever had to use them, you will know what I mean. And if you haven't, it's kind of like being a tech support at a printer you know at a printer phone center. It's miserable. You don't want it. And so
+
+00:33:07.000 --> 00:33:11.000
+Think about what your dream would be to handle the best.
+
+00:33:11.000 --> 00:33:18.000
+Kind of situation. And if you've looked at the negatives, you should be able to put some pieces together that would help you out in there.
+
+00:33:18.000 --> 00:33:24.000
+And ask people, if you go on Twitter, you'll get a ton of responses. Why does Salesforce suck?
+
+00:33:24.000 --> 00:33:30.000
+I promise you'll get plenty of comments to help you out with that.
+
+00:33:30.000 --> 00:33:37.000
+Max is asking if we're launching production grade, I don't think our edge functions will be able to handle 1 million plus requests without running asynchronously.
+
+00:33:37.000 --> 00:33:43.000
+And using some kind of messaging queue, this is a use case we need to think about when we're designing our architecture.
+
+00:33:43.000 --> 00:33:55.000
+So most backends as a service scale vertically. So I'm not saying that you guys have to go out and buy the next tier of service, but I would push back on the idea that you can't make super base or Firebase production grade.
+
+00:33:55.000 --> 00:34:11.000
+I agree that it's not like Google, I agree that it's not like gmail But I think the scenario that you guys are practicing for is when When your hiring team tells you that, hey, Max, go out and build me X app for this user.
+
+00:34:11.000 --> 00:34:20.000
+And I need it in four days. I think the goal would be how can we get that app out in a way that we can test to see if it's an actually good idea.
+
+00:34:20.000 --> 00:34:26.000
+To see if there's product market fit. And then obviously over time, we can add more security, more scalability.
+
+00:34:26.000 --> 00:34:38.000
+I think backend as a service is a great starting point. I think it's a great starting point that can scale up. And then once the costs don't justify what you're getting from the backend as a service.
+
+00:34:38.000 --> 00:34:47.000
+Then you can think about transitioning to your own backend. Is what I have on that.
+
+00:34:47.000 --> 00:34:54.000
+Okay, I'm going to make the breakout room now. And if you have some full stack questions.
+
+00:34:54.000 --> 00:35:01.000
+Specifically about super based or some like node.js questions, React questions, et cetera.
+
+00:35:01.000 --> 00:35:05.000
+Feel free to join Zach's breakout room, breakout room number one.
+
+00:35:05.000 --> 00:35:16.000
+And then I will be staying in the main room. To answer administrative questions different questions about the project, the mindset, et cetera, what you're building, MVP, stuff like that.
+
+00:35:16.000 --> 00:35:22.000
+And then I've also created an extra breakout room for anybody who just wants to hang and study together.
+
+00:35:22.000 --> 00:35:27.000
+For the last 20 minutes. So I'm not going to force anybody to sit and hear me talk the whole way through.
+
+00:35:27.000 --> 00:35:44.000
+Thanks, guys. All right, I've just opened the rooms. You can click breakout rooms at the bottom and you should be able to navigate directly to the room.
+
+00:35:44.000 --> 00:35:50.000
+Thanks, guys.
+
+00:35:50.000 --> 00:36:01.000
+All right, I'm going to go back to the questions in the thread.
+
+00:36:01.000 --> 00:36:06.000
+Oh, Mikhail asked a great question is when we'll be having the meeting about logistics regarding Austin?
+
+00:36:06.000 --> 00:36:17.000
+So the goal for this is probably Monday or Tuesday next week. We're trying to do a Friday, but We don't want to mess with your guys's submission deadline.
+
+00:36:17.000 --> 00:36:23.000
+So you will 100%, I would say by the end of this week or early next, you should have the meeting on your schedule.
+
+00:36:23.000 --> 00:36:24.000
+Nice. Sorry, I'm actually traveling from Germany.
+
+00:36:24.000 --> 00:36:29.000
+Go ahead. Sorry.
+
+00:36:29.000 --> 00:36:43.000
+Right. So I mean, this is traveling from Europe. You have to book the ticket in advance and And so some guidance would be already needed at least some pointers or like what about the flight tickets? What about, do I book? I have no clarity about anything.
+
+00:36:43.000 --> 00:36:49.000
+You're like… So your flight ticket will be booked for you. So you don't need to worry about the price.
+
+00:36:49.000 --> 00:37:00.000
+You will have the flight ticket the week before the thing launches and Everyone is getting their own apartment so it's not like You guys are going to be sharing and everything. All those details will be given to you.
+
+00:37:00.000 --> 00:37:03.000
+Are you worried about anything else besides the flight ticket?
+
+00:37:03.000 --> 00:37:08.000
+I mean, that's the critical thing. The other one is like, you know, also.
+
+00:37:08.000 --> 00:37:19.000
+I mean, food and lodging and things like that, like basic questions are probably I'm not worried that much, but the critical thing is like definitely the flight. When it will be and uh You know?
+
+00:37:19.000 --> 00:37:26.000
+Yep. So Sumane, the flight will be the day before for you because you have an international flight.
+
+00:37:26.000 --> 00:37:27.000
+So you can land on the fifth, which is the move-in day.
+
+00:37:27.000 --> 00:37:30.000
+Oops.
+
+00:37:30.000 --> 00:37:34.000
+Is it the fifth or is it the Monday, that Monday of that week?
+
+00:37:34.000 --> 00:37:57.000
+Everyone's flight will be that day. And you guys will, we're essentially getting a campus where everyone's getting a room of their own It's like a studio, I believe. And then for individuals bringing their family, it's a one bedroom But anyway, money is no issue for the logistics team. You will be getting your ticket on time.
+
+00:37:57.000 --> 00:37:58.000
+Awesome.
+
+00:37:58.000 --> 00:38:05.000
+We will be paying for everything. And Paul, there will be food as well. But I think for the food, you guys have your own little kitchen area. So I don't know how that works.
+
+00:38:05.000 --> 00:38:08.000
+But so food is the thing I'm a little unclear on.
+
+00:38:08.000 --> 00:38:13.000
+I'm sure dinner will be provided, but I'm not sure if like you guys are like you mandatory have to eat with us or something.
+
+00:38:13.000 --> 00:38:14.000
+Okay.
+
+00:38:14.000 --> 00:38:23.000
+But there's an office space as well. So in terms of everything, if you make it through week four, we will cover everything in terms of transportation.
+
+00:38:23.000 --> 00:38:31.000
+In terms of location, in terms of office space, in terms of the shuttle from the apartment to the office, all of that is covered.
+
+00:38:31.000 --> 00:38:32.000
+Okay.
+
+00:38:32.000 --> 00:38:45.000
+I'm a little lesser on the food. Tim, I do believe that the rooms have small kitchens in them but I will make sure before I, so don't hold me to that, but I'm pretty sure they do.
+
+00:38:45.000 --> 00:38:46.000
+You just said…
+
+00:38:46.000 --> 00:38:53.000
+And we have standing desks or something like that because that's another question I have. I usually, you know.
+
+00:38:53.000 --> 00:39:00.000
+I don't know if there are standing desks. That's something I'd have to ask.
+
+00:39:00.000 --> 00:39:01.000
+Oh, so you're saying computer. You're not saying the desk itself.
+
+00:39:01.000 --> 00:39:03.000
+Are just at least like a desktop or a desktop
+
+00:39:03.000 --> 00:39:07.000
+Yeah, also, I mean, two questions, you know, two separate questions but Yeah, so we have to bring our own laptops, right?
+
+00:39:07.000 --> 00:39:18.000
+I will have to check on that. I'm not sure. I would 100% bring your own laptop, but I think there will be options for computers for individuals who might not have laptops that are up to par.
+
+00:39:18.000 --> 00:39:20.000
+With what's required for the program.
+
+00:39:20.000 --> 00:39:21.000
+Okay.
+
+00:39:21.000 --> 00:39:24.000
+Actually, you just said everybody's going to land on Monday. On the money okay so So we're going to be flying out Sunday night or we're going to be flying out Monday.
+
+00:39:24.000 --> 00:39:30.000
+Yep.
+
+00:39:30.000 --> 00:39:32.000
+It depends on where you are. Probably.
+
+00:39:32.000 --> 00:39:37.000
+Florida. But exactly what date?
+
+00:39:37.000 --> 00:39:38.000
+Okay. Yeah, let me, I know the date. Let me grab that.
+
+00:39:38.000 --> 00:39:49.000
+Exactly what data are we traveling? Oh, that's all I well, I mean, that's all I need. I know other people might need more but I assume other people that the exact day we're going to be flying is important
+
+00:39:49.000 --> 00:39:56.000
+I want to reassure everyone that getting you guys to Austin, getting you moved in, that's our responsibility. We've hired three people for that.
+
+00:39:56.000 --> 00:40:05.000
+And so it's just at this point a little bit of a scheduling thing, but the move-in day is Monday, February 3rd.
+
+00:40:05.000 --> 00:40:18.000
+So for example, Suman, who's coming from Germany is not going to go Monday morning, you know, his flight might be before on Sunday, but if someone's like, I'm coming, would be coming from New Jersey. So my flight could just be Monday morning.
+
+00:40:18.000 --> 00:40:26.000
+Anyway, it just depends on the location you're traveling from, Roger. But it'll be Mondays when everybody lands in Austin.
+
+00:40:26.000 --> 00:40:44.000
+Okay, okay, got it. The only reason I'm bringing it up is I'm doing a family trip down to Florida. So it's just a question of do I sell my ticket back to Boston and fly to Florida or do I fly from Boston? So the day is exactly what I needed. And so now I can go figure out my stuff. I appreciate it.
+
+00:40:44.000 --> 00:40:50.000
+Anytime. Monday, Monday, February 3rd is when everybody will be moved to Austin.
+
+00:40:50.000 --> 00:40:52.000
+Great.
+
+00:40:52.000 --> 00:41:03.000
+Tyler is asking, and again, I'm going to hand off a lot of logistical details to the team and you'll meet them. I think one of them introduced themselves in the channel.
+
+00:41:03.000 --> 00:41:10.000
+But we will do everything in our power to ensure that coding and learning is the main thing you have to do.
+
+00:41:10.000 --> 00:41:17.000
+And not have to worry about, you know. Everything else in your day-to-day lives.
+
+00:41:17.000 --> 00:41:26.000
+In terms of like workspace and apartment and transportation and all that.
+
+00:41:26.000 --> 00:41:40.000
+And some people have asked me like about the food. I have no idea what's going to be served. I am vegetarian. So anybody, if there's any dietary restrictions, we'll account for that but like I'm sure we're trying to get everybody their own kitchen so we don't have to
+
+00:41:40.000 --> 00:41:48.000
+Worry about that too much. Tyler is asking, are you coming to Austin as well so we can harass you in person? I will be in Austin.
+
+00:41:48.000 --> 00:41:56.000
+And I don't think I'll be there the first week, but I will be there starting week Six.
+
+00:41:56.000 --> 00:42:09.000
+I have some things that I have to finish out. But yes, I will be in Austin for you guys. And I will be there and members of the staff will also fly in and out So I think Zach will come for a little bit, I think.
+
+00:42:09.000 --> 00:42:12.000
+Tom will come for a little bit. I think Aaron will come.
+
+00:42:12.000 --> 00:42:20.000
+At the end, maybe. And then we're going to have other staff members there as well, who's going to be acting as section leads.
+
+00:42:20.000 --> 00:42:31.000
+Excuse me. But, uh. I guess I will be there for your for you know day-to-day questions and stuff And then for the first week, I'll be there sort of remotely.
+
+00:42:31.000 --> 00:42:36.000
+Austin will be there, of course. Austin is actually moving his entire family to Austin.
+
+00:42:36.000 --> 00:42:42.000
+He'll be living in the area. But there's like an office space that we're all going to be congregating at.
+
+00:42:42.000 --> 00:42:47.000
+Which I believe is different than the living space so It, uh.
+
+00:42:47.000 --> 00:42:52.000
+But a lot of staff members will be there. A lot of members from the Trilogy team will be there.
+
+00:42:52.000 --> 00:42:57.000
+A lot of the speakers that we're having that are joining us remotely will be joining us live.
+
+00:42:57.000 --> 00:43:02.000
+There's going to be barbecues and there's going to be social events for you guys to meet each other.
+
+00:43:02.000 --> 00:43:07.000
+So I'm excited. To get to Austin, Texas.
+
+00:43:07.000 --> 00:43:14.000
+Paul is asking, can I drive? I have no idea, Paul. So if this is a question I'm going to have to ask.
+
+00:43:14.000 --> 00:43:22.000
+If your drive can be reimbursed, I think they'd be happy to reimburse your drive Because they'd be saving money on a flight.
+
+00:43:22.000 --> 00:43:34.000
+Tim is asking, is it an apartment or a hotel room? I believe it's like a small apartment, but… Correct. You know, don't hold me to that.
+
+00:43:34.000 --> 00:43:40.000
+Yes, anybody who's bringing their family to Austin, the flights will be accommodated for your family.
+
+00:43:40.000 --> 00:43:46.000
+Who do we contact for accommodation questions? You'll be meeting the staff members who are in charge of logistics shortly.
+
+00:43:46.000 --> 00:43:54.000
+At the end of this week or early next. The room should have small kitchens but again don't hold me to that. We're trying to make sure.
+
+00:43:54.000 --> 00:44:03.000
+We will be having, I'm not going to say mandatory dress codes, but nobody come in shorts when we have like a billion dollar founder talking to you. All right.
+
+00:44:03.000 --> 00:44:08.000
+That'd be nice.
+
+00:44:08.000 --> 00:44:17.000
+Tyler's asking in Austin, will there be more solo projects or mainly group? There will be more solo projects. The group project, the big one will be at the end.
+
+00:44:17.000 --> 00:44:26.000
+So we want to make sure that at the end. You guys are building a working application end to end.
+
+00:44:26.000 --> 00:44:30.000
+So you'll have maybe a small group and the size of the group is up to you.
+
+00:44:30.000 --> 00:44:38.000
+And then we want to do a demo day where you showcase your application And I'm going to try to convince a lot of you to launch your application.
+
+00:44:38.000 --> 00:44:41.000
+But let's see if I convince you of that or not.
+
+00:44:41.000 --> 00:44:52.000
+And… And so After demo day, we'll also have people to give you feedback and maybe I'll ask Austin and bring in a few potential investors. We'll see.
+
+00:44:52.000 --> 00:45:03.000
+We're going to make demo day really fun. Benji's asking, you mentioned expecting numbers to decrease by another 23% or so. What do you think will be the primary reason for these drops?
+
+00:45:03.000 --> 00:45:14.000
+Lack of no submissions. Yeah, a lot of people are just not submitting, which is like the only one of the few things you have to do, guys, is submit something.
+
+00:45:14.000 --> 00:45:20.000
+You know, that's why if anybody that messages me directly, that's the one thing I bring up all the time.
+
+00:45:20.000 --> 00:45:28.000
+Like, please submit something when the deadline hits. Because I don't want anybody to sort of be like, okay, I'll submit a day later. I'll let Ash know. And then they don't do that.
+
+00:45:28.000 --> 00:45:34.000
+And then they don't do that again. And then they miss the entire week, right? So that's been the primary reason.
+
+00:45:34.000 --> 00:45:40.000
+That people are dropping is that they're either they're just not submitting what is required of them.
+
+00:45:40.000 --> 00:45:48.000
+I think that's a really good question, Benji. Yeah.
+
+00:45:48.000 --> 00:45:54.000
+Ash, is there a deadline to submit the MVP today or is it like the PST 12?
+
+00:45:54.000 --> 00:45:55.000
+Yep, same deadline as last week. Six o'clock tonight, I believe. Et.
+
+00:45:55.000 --> 00:46:02.000
+Midnight. Which is, I…
+
+00:46:02.000 --> 00:46:05.000
+Mvp due 6 p.m. Mvp due tonight. Six to seven. And then there's a check-in tomorrow. And then the final deadline for week one is Friday.
+
+00:46:05.000 --> 00:46:11.000
+Okay.
+
+00:46:11.000 --> 00:46:17.000
+Same deadlines as last week. And then we have a dinner today, guys, with the founder of Chroma.
+
+00:46:17.000 --> 00:46:20.000
+Chroma is a local vector database. I think it's a really cool product.
+
+00:46:20.000 --> 00:46:24.000
+And then we have another dinner tomorrow with the founder of Every.
+
+00:46:24.000 --> 00:46:30.000
+So I just want to call that out that we also have two more events.
+
+00:46:30.000 --> 00:46:37.000
+Rishab is asking, will we have some time before the job starts to make arrangements about moving to Austin Permanent? The answer is yes.
+
+00:46:37.000 --> 00:46:46.000
+You will, once you get your contract and stuff, you guys will have a couple of days
+
+00:46:46.000 --> 00:47:00.000
+Patrice is asking, you said there are 130 now and you predict around 100 will go to Austin. Are you putting more dropouts or do you plan to… cut 30 more people. Frankly speaking, guys, I haven't like went out of my way to cut anybody
+
+00:47:00.000 --> 00:47:10.000
+The lack of submission or the lack of really any work that is being submitted by a student makes them stop and withdraw themselves.
+
+00:47:10.000 --> 00:47:20.000
+It's it like me and Austin, what we've done is we've given people second, third, fourth chances And if that second or third, fourth chance we see no submission.
+
+00:47:20.000 --> 00:47:24.000
+We're asking these students to check in with Austin almost daily.
+
+00:47:24.000 --> 00:47:36.000
+On these days. And if we see no submission, then, you know, we are withdrawing them so The answer is no, we have not gone out of our way to kick anybody out.
+
+00:47:36.000 --> 00:47:42.000
+What's happening is people have just not met the mark that is required and set for them.
+
+00:47:42.000 --> 00:47:50.000
+In terms of the deadlines. Palmer is asking, this is great info. Looking forward to the detailed meeting next week.
+
+00:47:50.000 --> 00:47:56.000
+Is there any preliminary info like what you could share. I understand this is a lot probably still up in the air.
+
+00:47:56.000 --> 00:48:09.000
+So most of the awesome details have been decided. They've already paid for a lot of things. It's just that I don't want to be the party giving you all the information because I don't want to give you information that's unreliable in any way, shape or form.
+
+00:48:09.000 --> 00:48:16.000
+So I want to leave that to our logistics team. So that's the big reason why I may be holding back on some details.
+
+00:48:16.000 --> 00:48:22.000
+And ensuring that the right person is giving you the right information.
+
+00:48:22.000 --> 00:48:27.000
+Do we have a general location in Austin? I know the office space is in downtown Austin.
+
+00:48:27.000 --> 00:48:36.000
+And I know the apartment is a little bit outside of downtown, but I don't know the exact neighborhood frankly speaking, I haven't been to Austin.
+
+00:48:36.000 --> 00:48:42.000
+I've been in New York most of my life.
+
+00:48:42.000 --> 00:48:55.000
+You don't need a tailored suit. I just want to address the Chris is asking, should I make sure I have a tailored suit for Or Austin. No, I don't believe you need anything that super formal. Feel free to bring something, you know, business or
+
+00:48:55.000 --> 00:49:03.000
+You know, just in case we have some big meeting or you know, I mean, your interviews, you know, you guys might be interviewing a trilogy. So feel free to bring anything you think is required.
+
+00:49:03.000 --> 00:49:17.000
+In terms of like the events that we're going to be hosting for school I just want to make sure that you know we all are coming somewhat professional. I'm not going to be like mandate mandating anything. I'm not your RA in college. I'm not going to come after you or anything.
+
+00:49:17.000 --> 00:49:27.000
+But whatever you feel you need to make sure you're giving the right impression is the right thing.
+
+00:49:27.000 --> 00:49:38.000
+What will our days look like? Will we be carpooling to the office or will be working in our lodging? Great question, Robert. We will be going to the office and the office will be open most of the day. I don't know if it's 24 seven.
+
+00:49:38.000 --> 00:49:47.000
+Lamar, but it'll be open a lot. So a lot of the work is going to and collaboration will be done in the office. Doesn't mean you can't work at home.
+
+00:49:47.000 --> 00:49:51.000
+But, uh. The office space is super big.
+
+00:49:51.000 --> 00:49:56.000
+A ton of room for you guys to work together. I think it's gonna be really nice.
+
+00:49:56.000 --> 00:50:02.000
+Yeah, Timothy, if you wear sweatpants, it's okay, I guess. Depends on which sweatpants you wear, right?
+
+00:50:02.000 --> 00:50:08.000
+I mean, isn't every tech founder wearing athleisure these days? If the billion dollar founder is in shorts.
+
+00:50:08.000 --> 00:50:15.000
+Feel free to wear whatever you want.
+
+00:50:15.000 --> 00:50:24.000
+For the last project, does our co-founder need to be from Gauntlet since we are tech, can we wait a bit?
+
+00:50:24.000 --> 00:50:30.000
+I'm confused by your question. If you're asking, do you need to list gauntlet as a co-founder on an app you're launching?
+
+00:50:30.000 --> 00:50:32.000
+The answer is no. We don't want
+
+00:50:32.000 --> 00:50:41.000
+No, no. I meant that… the person like we choose since I'm from tech, I'm guessing most people here are from tech.
+
+00:50:41.000 --> 00:50:52.000
+If I just, for the last project, I get like someone I worked with previously to do like the best side of it. Is that okay or not?
+
+00:50:52.000 --> 00:50:57.000
+Oh, so this is a project that you've worked on previously that you're going to be doing for the demo day stuff?
+
+00:50:57.000 --> 00:51:05.000
+No, no, no. Just any project I choose to do, if I can get like have like someone not from Gauntlet hand and build the business part and I just do the tech part for it.
+
+00:51:05.000 --> 00:51:06.000
+Since you said like last project is going to be in teams
+
+00:51:06.000 --> 00:51:15.000
+Oh, got it. I am unsure if that would be possible and I'll just have to ask Austin directly.
+
+00:51:15.000 --> 00:51:18.000
+Yeah, because mostly we are all like deck hair
+
+00:51:18.000 --> 00:51:22.000
+Yeah, I would, I mean, that's not to say that you can't use AI to figure out the business stuff.
+
+00:51:22.000 --> 00:51:30.000
+But I think we're going to require you to do the project with your teammates.
+
+00:51:30.000 --> 00:51:36.000
+I'm pretty sure. And we're not going to bring in outsiders.
+
+00:51:36.000 --> 00:51:37.000
+Aj is asking, can you get cowboy hats for students? I think it's Austin.
+
+00:51:37.000 --> 00:51:40.000
+All right. All right.
+
+00:51:40.000 --> 00:51:45.000
+For anybody who graduates, you'll be getting a cowboy hat from me.
+
+00:51:45.000 --> 00:51:52.000
+You know, a little present.
+
+00:51:52.000 --> 00:51:56.000
+Paul is asking, can I change my project from support focus to sales focus? Yes.
+
+00:51:56.000 --> 00:52:01.000
+100%. Essentially, Paul is saying, can I change the perspective I'm working on? Yes.
+
+00:52:01.000 --> 00:52:15.000
+Understood. Yeah, no worries. Okay, we're coming to an end. So I'm also going to close the rooms in a second.
+
+00:52:15.000 --> 00:52:21.000
+Timothy, there is parking for cars.
+
+00:52:21.000 --> 00:52:34.000
+Yes, Christian, you can work on your API afterward. That's no worries.
+
+00:52:34.000 --> 00:52:38.000
+Joshua's asking, are we going to get Uber credits for grocery shopping?
+
+00:52:38.000 --> 00:52:44.000
+I'm not sure. I'm going to leave that to the logistics team. I'm not sure how the food situation is working.
+
+00:52:44.000 --> 00:52:51.000
+There's a cafeteria, if everyone's getting credits. I have no idea So that's going to be a topic or question for the logistics team.
+
+00:52:51.000 --> 00:52:52.000
+Go ahead, Cal.
+
+00:52:52.000 --> 00:53:04.000
+Yeah, I was just wondering, so you said that the apartments were a little bit outside of town um what sort of a commute are we looking at? Is it a transit sort of deal? Is it a shuttle thing.
+
+00:53:04.000 --> 00:53:11.000
+I believe there's going to be a shuttle for you guys. I don't think you have to take public transit.
+
+00:53:11.000 --> 00:53:20.000
+Unless you guys are going to stay at the office 24 seven, then I have no idea. Then you might need to figure something out after I don't think there's going to be a shuttle at midnight, for example.
+
+00:53:20.000 --> 00:53:24.000
+Um…
+
+00:53:24.000 --> 00:53:32.000
+Chris is saying, will there be no sleeping under your desk role um I don't know.
+
+00:53:32.000 --> 00:53:38.000
+I don't know the answer to this question. I think what I'll do is I'll put everybody in like a group chat.
+
+00:53:38.000 --> 00:53:52.000
+With me just in case for emergencies or if you need me ASAP if something's going on or like someone's stuck at the office who needs a ride or something But I would try not to sleep under your desk. I mean, you could just work
+
+00:53:52.000 --> 00:54:06.000
+When you get back to your apartment, right? So it's not like I'm trying to tell you to stop working But I don't want to put you guys in any… situation that's like, I don't know, I don't think it's unsafe or anything, but let's just not take any
+
+00:54:06.000 --> 00:54:29.000
+Risk, I guess. Patrice is saying, well, the jobs we get through Gottler require us to travel for work or we work exclusively from Austin. I have no idea to the answer to this question. I think that's a question we can ask. I can ask Trilogy directly.
+
+00:54:29.000 --> 00:54:37.000
+Austin mentioned in the LinkedIn post, we originally anticipated only about 50% of people would graduate, but given how strict we've been on admissions.
+
+00:54:37.000 --> 00:54:46.000
+We anticipate 75% will. Is the dropout rate a concern for you? Is there a quota you're trying to meet?
+
+00:54:46.000 --> 00:54:50.000
+The answer is the dropout rate is not a concern for me. We're not trying to meet our quota.
+
+00:54:50.000 --> 00:54:56.000
+However many people graduate, they will graduate however and each one of them will get their offer for a job.
+
+00:54:56.000 --> 00:55:09.000
+I'm not trying to push 100 people through just so we can… I don't know, get, I guess, I don't know if it's like, I don't know if I don't even think we're getting like a per person or anything like that.
+
+00:55:09.000 --> 00:55:15.000
+It's just like, whatever, however many people graduate. However many finish the program, however many are qualified.
+
+00:55:15.000 --> 00:55:19.000
+Those are the people that me and Austin are comfortable pushing through to the next job.
+
+00:55:19.000 --> 00:55:28.000
+I'm not trying to get a certain number out there. We've really changed the incentives with before. Maybe previously boot camps were like, oh.
+
+00:55:28.000 --> 00:55:31.000
+We need to get a thousand people graduated to make sure this works properly.
+
+00:55:31.000 --> 00:55:46.000
+That's not what we're trying to do. We're trying to ensure that there are proper AI engineers at these firms.
+
+00:55:46.000 --> 00:55:53.000
+Yeah, Paul, you can bring your any yeah you guys can bring a standing desk and your monitors, whatever you want.
+
+00:55:53.000 --> 00:56:00.000
+Okay, I'm going to think that was all the questions. Yes, you get to choose your last project.
+
+00:56:00.000 --> 00:56:04.000
+And it should be based on like a brain lift and spiky POVs.
+
+00:56:04.000 --> 00:56:09.000
+That's why you guys are training for this That's what we're asking you to do it.
+
+00:56:09.000 --> 00:56:17.000
+All right. I think this was great office hours, Greg. Great questions across the board. I will make sure the logistics questions are answered by the team that should answer them.
+
+00:56:17.000 --> 00:56:23.000
+And I'll get something on the schedule for that later this week or early next week.
+
+00:56:23.000 --> 00:56:30.000
+Um… Yeah, excited to see what you guys build.
+
+00:56:30.000 --> 00:56:39.000
+I want to do a shout out by saying, please launch your applications. It'll be really cool And people have been asking me, Ash, how do I launch?
+
+00:56:39.000 --> 00:56:50.000
+It's actually pretty straightforward from a like, you know, things that you could do. I would post about on Twitter. I would post it on Reddit threads that correspond with the user profile that you have.
+
+00:56:50.000 --> 00:56:59.000
+Maybe do a product hunt launch. I think it's important and exciting that everything we build gets a real triangle. We're building it for real users.
+
+00:56:59.000 --> 00:57:03.000
+So if anybody believes by the end of this week or end of next week.
+
+00:57:03.000 --> 00:57:12.000
+That you have a solution that is working and a solution that is Good.
+
+00:57:12.000 --> 00:57:20.000
+Then feel free to launch it.
+
+00:57:20.000 --> 00:57:27.000
+Lecture on launching. Oh, wow. Aj. Well, frankly speaking, if you guys launch something that works really well.
+
+00:57:27.000 --> 00:57:33.000
+There is someone named Austin Allred who will just retweet it. So that's your first user acquisition channel.
+
+00:57:33.000 --> 00:57:39.000
+We can talk a lot about
+
+00:57:39.000 --> 00:57:47.000
+What are the go-to-market strategies for something? But I'm not going to get into that right now. Maybe we'll do a separate thing on that later on as like an elective.
+
+00:57:47.000 --> 00:57:57.000
+But it's just awesome that you guys would consider. What are some ideas where you can get your application in front of its ideal user.
+
+00:57:57.000 --> 00:58:03.000
+Aj asking, would this be relevant to Zach's ventures? And the answer is
+
+00:58:03.000 --> 00:58:15.000
+But that was a statement. I think if they're interested in some of us doing the entrepreneurial stuff in Zach's Ventures, there'd be a legitimate case to get a guest lecture one of the weeks on how to launch a thing.
+
+00:58:15.000 --> 00:58:22.000
+Because it sounded like Neeraj was looking for people who can have a distribution plan for the last project that we'll be pitching on demo day.
+
+00:58:22.000 --> 00:58:29.000
+Yeah, so in terms of Trilogy University and what this program is based on historically, there were a bunch of founders that came out of it.
+
+00:58:29.000 --> 00:58:38.000
+Immediately with their demo day project. I'm sure if Neeraj is impressed with your project, there will be an opportunity with Zach's Ventures.
+
+00:58:38.000 --> 00:58:41.000
+And I'm sure I will try to get as many people as I can.
+
+00:58:41.000 --> 00:58:49.000
+To teach you guys some of that stuff. Chris is asking, did Austin pick his favorite chat app yet? I have no idea.
+
+00:58:49.000 --> 00:58:58.000
+Timothy Singh. Customer support portal for disgruntled OnlyFans subscribers All right.
+
+00:58:58.000 --> 00:59:04.000
+The OnlyFans market is actually pretty big. So Timothy, I think you'd make a lot of money.
+
+00:59:04.000 --> 00:59:23.000
+But… I don't know if that's going to be something that Zach Winter's is able to going. Paul is saying, do we own whatever we're launching? The answer is yes, you own everything that you launch. We don't want anything of it.
+
+00:59:23.000 --> 00:59:30.000
+Yeah, so the trilogy companies may offer investment, but you own what you're launching.
+
+00:59:30.000 --> 00:59:35.000
+Okay. Yeah, you forfeit ownership of anything you make at the company.
+
+00:59:35.000 --> 00:59:40.000
+But again, not in Gauntlet.
+
+00:59:40.000 --> 00:59:44.000
+That doesn't sound… Sorry, I'm jumping in.
+
+00:59:44.000 --> 01:00:06.000
+That doesn't sound like what Austin told us earlier, though. I think we should double check on the ownership stuff before people walk away with the right idea. My understanding was anything we build during gauntlet If we get hired and stay at a company for 100 days that the ownership transfers to them at that point.
+
+01:00:06.000 --> 01:00:14.000
+That's on like a one by one basis. Like they might require that. I don't think there is anything necessarily in the contract and you could fight them.
+
+01:00:14.000 --> 01:00:15.000
+Yeah.
+
+01:00:15.000 --> 01:00:22.000
+I don't think there's been really… there's nothing set in stone regarding this. But again, I'll have Austin come in and I'll make sure that it's correct.
+
+01:00:22.000 --> 01:00:23.000
+All right, I'm going to call it today. Thanks, guys, for a great office hours.
+
+01:00:23.000 --> 01:00:26.000
+Cool. Thank you.
+
+01:00:26.000 --> 01:00:31.000
+I want to do one more thing saying that if you're facing deployment issues, please use a free service.
+
+01:00:31.000 --> 01:00:41.000
+To deploy automatically. And then regarding that otherwise Have a great rest of your day. Keep working and let's get those functionality in.
+

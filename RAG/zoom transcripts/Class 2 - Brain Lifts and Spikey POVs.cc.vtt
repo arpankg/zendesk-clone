@@ -1,0 +1,1064 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.000
+Oh, I think, Ash, are you the host? You've got to authorize it to… Record.
+
+00:00:09.000 --> 00:00:11.000
+I just did.
+
+00:00:11.000 --> 00:00:24.000
+Cool. Sorry about my cough. But yeah, as folks filter in, we're going to go ahead and kick off and talk about some really, really exciting stuff.
+
+00:00:24.000 --> 00:00:33.000
+I'm going to share my screen and make sure I've got the right Chrome that I'm sharing because I've got a handful of them.
+
+00:00:33.000 --> 00:00:38.000
+We're going to jump back and forth just a little bit.
+
+00:00:38.000 --> 00:00:58.000
+All right. So today we're talking about brain lifts so We'll get into all the details about what a brain lift is, but the simplest way to think of it is it is a second brain, both for yourself. So, you know, all of your learnings, all of your notes, all of anything that you're going through.
+
+00:00:58.000 --> 00:01:09.000
+You'll record in a So that you have it. It's indexable, it's searchable, it's all of that fun stuff.
+
+00:01:09.000 --> 00:01:14.000
+Excuse me. And importantly for AI.
+
+00:01:14.000 --> 00:01:30.000
+So we not only build this second brain for ourself. But we, for ourselves, but we feed it to models in ways that are really cool and really exciting and really impactful. So we're going to go ahead and get started.
+
+00:01:30.000 --> 00:01:35.000
+And there are a couple different pieces of software that you're all going to get access to.
+
+00:01:35.000 --> 00:01:41.000
+Actually, this is the wrong Deck.
+
+00:01:41.000 --> 00:02:00.000
+And yeah, we'll get into all that. All right. Today, we're going to talk about what LLMs are really good at and what they're bad at and To some extent, how we override them. So LLMs are really, really good at giving us the consensus, right?
+
+00:02:00.000 --> 00:02:14.000
+They've crawled the entire internet. Every piece of data that there is to feed into these models is If it's not already fed in is going to be fed in, the LLMs get really smart at telling you exactly what you would find if you were to summarize
+
+00:02:14.000 --> 00:02:25.000
+Everything on the internet to some extent. That's really cool, but… Also, sometimes what is generally accepted on the internet is wrong.
+
+00:02:25.000 --> 00:02:36.000
+And when we talked about in the handbook, the two things that are necessary to build really great products, we talk about brain lifts and we talk about AI first development.
+
+00:02:36.000 --> 00:02:52.000
+So AI-first development, that's being able to build stuff really fast, really well. The spiky points of view, brain lifts, that's all about having a unique perspective, having a unique understanding, having, you know, there's stuff that AI can't do.
+
+00:02:52.000 --> 00:03:02.000
+And getting really good at doing the stuff that AI can't do. And this is where human reasoning and intuition and everything else that humans are really good at come into play.
+
+00:03:02.000 --> 00:03:06.000
+So we'll talk a lot about spiky POVs or spiky points of view.
+
+00:03:06.000 --> 00:03:24.000
+That's basically a non-consensus, something that's not out there in the In the ether or accepted by an LLM is a pretty good definition of it. Before you had to like try to explain what the consensus view of the world was. Now it's like, oh, it's what the LLM thinks.
+
+00:03:24.000 --> 00:03:38.000
+And then we're going to talk about how to use all of that to make LLMs better, make our understanding better. And we'll show you some really cool tools that really only exist within Gauntlet right now.
+
+00:03:38.000 --> 00:03:50.000
+But yeah, it'd be awesome. All right. So… Consensus views. When we say consensus view, what does that mean?
+
+00:03:50.000 --> 00:03:57.000
+One way I think of this is it's not exactly true, but if you were to ask Reddit or if you were to ask Twitter.
+
+00:03:57.000 --> 00:04:12.000
+What's the general response going to be? Usually it's not like bad But it's not going to be surprising and it's not going to be super valuable. So good leaders are strong communicators. Yeah, for sure. You would find that.
+
+00:04:12.000 --> 00:04:33.000
+More so, you know. Leaders have to have vision. Leaders have to be decisive. That's all stuff that you would find if you were to ask an LLM, what are the good traits that make up a leader. But obviously there's a lot more to that. And depending on how you're to think about it, there are a lot of different angles and alternatives to
+
+00:04:33.000 --> 00:04:37.000
+Understanding what a leader might be that might be really important.
+
+00:04:37.000 --> 00:04:47.000
+And we'll look at some examples of spiky POVs. We have a lot of them within Gauntlet. The reasons we run many things the way that we do.
+
+00:04:47.000 --> 00:04:54.000
+Very, very different than what's commonly accepted is because of that.
+
+00:04:54.000 --> 00:05:06.000
+All right. Okay, just making sure I'm staying up with the chat. Yeah, so I would not want to live my life by asking Reddit what I should do in every instance. Not saying that everything on Reddit is incorrect.
+
+00:05:06.000 --> 00:05:12.000
+But that's not going to lead you down. The optimal path.
+
+00:05:12.000 --> 00:05:19.000
+So… Some of this is about learning and making use of our knowledge. Some of it is about finding unique insight.
+
+00:05:19.000 --> 00:05:29.000
+Basically, any successful person or any successful company that you look at, they're going to have a bunch of spiky POVs that drive their success.
+
+00:05:29.000 --> 00:05:43.000
+So, you know, Amazon in the early days, they wanted to offer a ton of selection. They knew that people would buy stuff on the internet, even without you touching and Seeing it, that was not consensus at the time.
+
+00:05:43.000 --> 00:05:48.000
+Tesla started selling cars without dealerships. I mean, that's among, you know.
+
+00:05:48.000 --> 00:05:51.000
+These are not all of the spiky POVs that these folks have.
+
+00:05:51.000 --> 00:06:13.000
+And people want to share stuff that's going to stay forever. So those core concepts, those spikey POVs are really what differentiate products and really the the things that determine who you are in, I think the most intense way. They're probably the most important. There's a bunch of consensus stuff like, hey, I need really good design.
+
+00:06:13.000 --> 00:06:20.000
+Very few places disagree with that. But the spiky POVs are what drive your products to really be great.
+
+00:06:20.000 --> 00:06:26.000
+So yeah, that's where the innovation lies. It gives you a competitive advantage.
+
+00:06:26.000 --> 00:06:35.000
+And it's it's important not to be wrong where you can. I know that's easier said than done, but that's the reality of it.
+
+00:06:35.000 --> 00:06:40.000
+So we're going to skip through a little bit of this.
+
+00:06:40.000 --> 00:06:47.000
+But yeah, we've talked about LLMs are really, really good at consensus. They excel at summarizing stuff.
+
+00:06:47.000 --> 00:06:57.000
+They are not good. And we're going to have to spend a lot of time talking about where specifically LLMs are not good. And then more importantly.
+
+00:06:57.000 --> 00:07:02.000
+A lot of the time you'll have to battle your LLM to some extent.
+
+00:07:02.000 --> 00:07:11.000
+And the way that you, so if you just tell whatever AI model you're using, hey, remember that I think X once.
+
+00:07:11.000 --> 00:07:18.000
+It's going to revert back to the consensus again and again and again, just because there's so much data and so much training.
+
+00:07:18.000 --> 00:07:25.000
+That falls into that consensus. So we're going to strategically override some of that to get what we want out of the output.
+
+00:07:25.000 --> 00:07:42.000
+And sometimes that's just related to spiky POVs. Sometimes that's more like Hey, I know you've been trained on a million lines of JavaScript that say X, I'm not trying to do X right now. I'm trying to do Y. So I know that, you know, you're
+
+00:07:42.000 --> 00:07:47.000
+You're trained to give me this. I need you to give me that instead.
+
+00:07:47.000 --> 00:07:53.000
+And you'll find that LLMs are always reverting back to the consensus and it's a somewhat constant battle.
+
+00:07:53.000 --> 00:07:59.000
+We'll talk about how specifically to do that. All right.
+
+00:07:59.000 --> 00:08:04.000
+So…
+
+00:08:04.000 --> 00:08:08.000
+One of the tools that we use to do that is called a second brain.
+
+00:08:08.000 --> 00:08:14.000
+So Tiago Forte was kind of the creator, at least the modern creator of the second brain concept.
+
+00:08:14.000 --> 00:08:23.000
+All that a second brain is is Anything that you read or see or hear or touch, trying to get it into some format.
+
+00:08:23.000 --> 00:08:28.000
+In the early days of second brains, it was just so that you could have it, right? It was, hey.
+
+00:08:28.000 --> 00:08:35.000
+As you're reading on Kindle, if you highlight it, you're going to automatically sync all of your notes to Evernote.
+
+00:08:35.000 --> 00:08:49.000
+And then you can look it up. And then when you're reading an article on the internet, if you use Instapaper, highlight it and it'll sync it to Evernote. And so you have this giant library of everything that you've read and you can, it's indexed and you can search it.
+
+00:08:49.000 --> 00:09:07.000
+That's kind of how it started. And that's still valuable. I'll show you just in a second my I've been using Roam Research for several years, and I have a giant five-year history of most of the meetings I've been in, most of the books that I've read, most of the articles that I've read.
+
+00:09:07.000 --> 00:09:18.000
+And generally speaking, the best second brain tools nowadays are built as a graph database. So stuff links together and you can explore all the links.
+
+00:09:18.000 --> 00:09:37.000
+So as an example, this is my The visualization isn't useful other than it's interesting. But this is my Roam research graph. So each one of those little nodes, as you're going through and taking notes, you can tag stuff and it'll tag all the stuff together so
+
+00:09:37.000 --> 00:09:48.000
+Up here, those might be all the books that I've read. They might be tagged by the author. And then if I'm reading a different book by a different author, I can jump to all the insights from that author.
+
+00:09:48.000 --> 00:09:53.000
+I can search for any word and I can find anything that I've read about that specific word.
+
+00:09:53.000 --> 00:10:03.000
+If I'm looking up Elon Musk, I can see all of the stuff that I've read about him in articles and biographies and all the tweets of his that I've saved and whatever else.
+
+00:10:03.000 --> 00:10:15.000
+So we're going to give you a second brain tool that everybody's going to use at gauntlet. And we're going to show you how to use it in just a second. In fact, I think right now.
+
+00:10:15.000 --> 00:10:24.000
+So the tool that we use is called Workflowy. We use that specifically because there's some cool stuff that we've built into it.
+
+00:10:24.000 --> 00:10:32.000
+So there's a lot of different software that works, generally speaking, for a second brain. But for Gauntlet, we're all going to use Workflowy.
+
+00:10:32.000 --> 00:10:46.000
+You all have a premium workflowy account. Again, you have to register with it, but if you register with your gauntletai.com email address, it'll automatically upgrade you to freemium.
+
+00:10:46.000 --> 00:10:56.000
+And we're going to talk about brain lifts and talk about how those work. But first, we're going to look at Workflowy and see how that works.
+
+00:10:56.000 --> 00:11:03.000
+Obsidian is another great tool for that. Sitting is great.
+
+00:11:03.000 --> 00:11:19.000
+Rome is, yeah, I like Rome. But for this, for everything gauntlet we're using Workflowy and we will I'll show you the export futures. Workflowy is really, really good.
+
+00:11:19.000 --> 00:11:26.000
+Um so Let me show you Workflowy real quick.
+
+00:11:26.000 --> 00:11:41.000
+Got to stop share. I've got to share my other Chrome window So this is workflowy. And what I've got right now is the generic template that it brings up as soon as you create a workflowy account.
+
+00:11:41.000 --> 00:11:48.000
+So it's an infinite document. Every bullet is also its own document. And we'll show you what you mean by that.
+
+00:11:48.000 --> 00:11:58.000
+It's generally… views as kind of an outline. So if I want to create a sub bullet, I hit enter and that goes the next line. I hit tab.
+
+00:11:58.000 --> 00:12:08.000
+And now this, what I'm typing right here is a child is a child of the parent.
+
+00:12:08.000 --> 00:12:12.000
+That is that bullet, right? So that makes sense. They're nested.
+
+00:12:12.000 --> 00:12:25.000
+Each one of these lines becomes its own document effectively. So I can open it up and I can look at just that and it's children Or I can go back and look at everything.
+
+00:12:25.000 --> 00:12:30.000
+So you click on a bullet, it'll zoom into that specific bullet.
+
+00:12:30.000 --> 00:12:38.000
+If you click an arrow. To the left, it'll expand and collapse. You can just type wherever you want, enters a new bullet, tab will indent.
+
+00:12:38.000 --> 00:12:46.000
+Shift tab will out dent. So, you know, make it go back and forth between what level it is.
+
+00:12:46.000 --> 00:12:53.000
+You can use tags. There are a couple different kinds of tags you can use. This is one kind of tag. If you use like a hashtag.
+
+00:12:53.000 --> 00:13:00.000
+Type tag type now you can go and look at the page of everything that includes that hashtag.
+
+00:13:00.000 --> 00:13:11.000
+You can use today, you can mark stuff with dates, you can share easily. There are a bunch of keyboard shortcuts.
+
+00:13:11.000 --> 00:13:30.000
+And I think it's, you know, it'll become pretty obvious how to use it and you can Importantly, you can look at any sub bullet you can easily share and both by email or secret link you can export Where is that at?
+
+00:13:30.000 --> 00:13:35.000
+You can export. It allows you to export in all sorts of different formats.
+
+00:13:35.000 --> 00:13:46.000
+And yeah, so that's… That's workflowy. That's the 30 second description of it. You'll get really used to using it. It's really powerful.
+
+00:13:46.000 --> 00:13:57.000
+It's really cool. Yeah, I think that is pretty self-explanatory. Now we're going to talk a little bit about brain lifts.
+
+00:13:57.000 --> 00:14:05.000
+And all that a brain lift is, is it is a workflowy document with a very specific format.
+
+00:14:05.000 --> 00:14:15.000
+And we'll talk about why this format is specific. But it is specific for a reason. So this is, I'm going to collapse everything.
+
+00:14:15.000 --> 00:14:25.000
+Before we look at this brain lift. And as you've already seen, we're going to have you submit a brain lift along with each product.
+
+00:14:25.000 --> 00:14:36.000
+And that brain lift consists of all the stuff that you're studying, all the stuff that you're reading about the product about how AI is used to build that product.
+
+00:14:36.000 --> 00:14:40.000
+And in just a second, it will make a whole lot of sense why that's valuable.
+
+00:14:40.000 --> 00:14:46.000
+So this is the general brain lift template. It has purpose, events, spiky POVs.
+
+00:14:46.000 --> 00:14:54.000
+And Knowledge Tree. And you can create a template in Workflowy so that every time you create a brain lift, you're just copying the template.
+
+00:14:54.000 --> 00:15:07.000
+Again and again. And then within the purpose, you're talking about why the brain lift is going to be useful, what's in scope, what's out of scope. This is kind of all free form, whatever you want to put in.
+
+00:15:07.000 --> 00:15:21.000
+And I guess… I'm not going to bury the lead here. The powerful thing that we're going to do with all of this is we've built software that translates your brain lift into an LLM.
+
+00:15:21.000 --> 00:15:27.000
+So that the LLM understands and uses your brain lift to basically alter itself.
+
+00:15:27.000 --> 00:15:33.000
+And we'll show you that software in just a second. And there's a whole bunch of other stuff the software does.
+
+00:15:33.000 --> 00:15:41.000
+So you plug in some experts. Experts are people that you trust on this topic.
+
+00:15:41.000 --> 00:16:01.000
+And then within those experts, you can basically leave Any… their views, you can write it out in text Even more powerful is if you link stuff So here we're going to look at what happens when this is the case. So here's
+
+00:16:01.000 --> 00:16:08.000
+And I didn't build this brain lift. So this is something that I know nothing about other than what's in here.
+
+00:16:08.000 --> 00:16:12.000
+Which is a good way to think about it because that's kind of how your model views the world.
+
+00:16:12.000 --> 00:16:21.000
+So this is Kimberly Barron's. That's who she is. This is what's interesting about her. Here's a link to her Twitter. Here's a link to her website.
+
+00:16:21.000 --> 00:16:32.000
+Here's a link to some other stuff that she's done. The more, you know, if you can link directly to a website or to their resources that you want the LLM to learn from.
+
+00:16:32.000 --> 00:16:41.000
+It's going to suck all of that in and understand all of it, which is really difficult to wrap your mind around, but really, really cool.
+
+00:16:41.000 --> 00:16:49.000
+And then the spiky POVs we call out specifically as their own objects. And we do that as truths.
+
+00:16:49.000 --> 00:17:07.000
+And myths. So you'll type those out. You can give some, there's some examples of truths and myths that they gleaned from the studying of this topic, which I think was how to build the best vocabulary study for K through eight schools or something like that.
+
+00:17:07.000 --> 00:17:26.000
+And so there are some of their spiky POVs about learning science. There are some of the myths that They are rejecting about learning science. And these are really, really important so These spiky POVs here that's going to override the default behavior of your LLM.
+
+00:17:26.000 --> 00:17:32.000
+So if there's something that you want to be included in your thinking, in your product, in anything.
+
+00:17:32.000 --> 00:17:41.000
+If it's in the spiky POV, It's used as the strongest signal For an LLM to understand. So as an example.
+
+00:17:41.000 --> 00:17:49.000
+You know, the traditional teacher in front of the classroom model is one of the worst ways to teach students. It's been used for 100 years because it's cost effective.
+
+00:17:49.000 --> 00:18:01.000
+Students can learn more if they're building more stuff. I mean, there's a whole bunch of stuff in here. Direct instruction is the fastest way to get information into a student's brain, which is why we're doing it right here as fast as we can.
+
+00:18:01.000 --> 00:18:17.000
+But if you were to ask an LLM, and I'll show you in just a second, what's the best way to learn, it's not going to understand all this stuff. It's probably going to be If I think about what the consensus view on learning is probably going to say um
+
+00:18:17.000 --> 00:18:27.000
+Experimental or what's the Yeah, the… Gosh, what's it called?
+
+00:18:27.000 --> 00:18:37.000
+Like self-discovery learning is going to be the best because students learn the best that way. And so every time you try to design something, it's going to design it in that way.
+
+00:18:37.000 --> 00:18:46.000
+Which is awesome, except… You don't want that. And the reason… Yeah.
+
+00:18:46.000 --> 00:18:51.000
+The reason the people that put this together don't always want inquiry based inquiry based was the word I was looking for.
+
+00:18:51.000 --> 00:19:01.000
+It's because it takes a lot of time and it takes a lot of motivation from the student to be digging into stuff themselves when they don't know what they want to learn necessarily.
+
+00:19:01.000 --> 00:19:13.000
+So when they build educational products, they override that behavior, that understanding within the LLM so that the LLM is not always spitting out like, oh, you should do this in inquiry based.
+
+00:19:13.000 --> 00:19:33.000
+So this is kind of how we teach the LLM. And then at the bottom, we include knowledge categories. And that's basically Any other insights, any other sources? And you'll get very, very used to all of this. So here's an example knowledge summary for training LLMs, which is what we're talking about.
+
+00:19:33.000 --> 00:20:03.000
+Here are the different ways that LLMs can be ridden, overridden. Here's some sources of how you can look at that with the summaries and the links and insights. This is all pretty pretty free form. The only I'm going to collapse all of these um
+
+00:20:09.000 --> 00:20:15.000
+Yeah, we're going to talk about how it's overridden in just a second.
+
+00:20:15.000 --> 00:20:26.000
+Um… Yo, this will make… My honest concern is it seems like a bunch of busy work. Just wait. Just wait.
+
+00:20:26.000 --> 00:20:37.000
+So why do we do all of this? Why do we… spend, I mean, I, yeah, I think that's a really good question to respond to directly.
+
+00:20:37.000 --> 00:20:41.000
+Are we just doing this to like record all of our learning somewhere?
+
+00:20:41.000 --> 00:20:56.000
+We would probably do that because it's valuable, because it is important to be researching and learning, but If it were just that, I don't care enough that I'm going to make you guys document stuff in a specific way and make you show it to me in a specific way. The purpose of this is not
+
+00:20:56.000 --> 00:21:17.000
+Just show your work. So we're going to look at another piece of software that you guys will have access to Very shortly. A small disclaimer that The auth on this was built assuming Google and then we couldn't use Google because they didn't authorize us to have enough licenses fast enough.
+
+00:21:17.000 --> 00:21:26.000
+So we're fixing that off as we speak. And soon you'll all have access to E4.
+
+00:21:26.000 --> 00:21:27.000
+Really, really…
+
+00:21:27.000 --> 00:21:34.000
+So this is E4. It's a really, really cool Oh, sorry. A really, really cool tool that everybody is going to have access to.
+
+00:21:34.000 --> 00:21:46.000
+It is currently in development, so there are changes to it literally yesterday and today, features have been added and they're going to continue to be features added.
+
+00:21:46.000 --> 00:21:56.000
+And we'll show you some of the really cool things that it can do. So first, we're going to, this is a new chat that I created. It's completely clean, hasn't been touched by anything.
+
+00:21:56.000 --> 00:22:01.000
+We're going to ask what, come on, let me type.
+
+00:22:01.000 --> 00:22:14.000
+What does E4 mean? So what it's doing right now This is the kind of base case for usage of E4.
+
+00:22:14.000 --> 00:22:22.000
+It just ran that query through 14 different AI models, all of which you have access to by virtue of using E4.
+
+00:22:22.000 --> 00:22:30.000
+And it's going to spit out each of those models so that you can look at them In different ways.
+
+00:22:30.000 --> 00:22:36.000
+Well, it I didn't want it to include my brain lift, but oh well.
+
+00:22:36.000 --> 00:22:54.000
+So let's start a brand new chat. That doesn't have… My library. And then we're going to ask it, what is he for?
+
+00:22:54.000 --> 00:23:01.000
+So it's giving us mostly the same answer that it looks like it picked up on the landing page of E4.
+
+00:23:01.000 --> 00:23:10.000
+A collaborative AI assistant Let's try different.
+
+00:23:10.000 --> 00:23:19.000
+What does the word E4, Maine.
+
+00:23:19.000 --> 00:23:28.000
+The word e4 refers to an official in ancient Sparta who acted as an overseer or a guide. So that's why E4 is named E4.
+
+00:23:28.000 --> 00:23:32.000
+So that's the response from llama. Llama 3.1.
+
+00:23:32.000 --> 00:23:40.000
+We'll look at Llama 3.3. There's Gemini. There's Mixtural, there's Nova, there's Quinn, there's Gemini, there's Grok, there's OpenAI.
+
+00:23:40.000 --> 00:23:46.000
+Different open AI models. There's 4.0, there's 4.0 Mini, there's Nova Pro, there's Sonnet.
+
+00:23:46.000 --> 00:23:52.000
+So you can run queries against all of the LLMs simultaneously.
+
+00:23:52.000 --> 00:23:58.000
+It spits back, these are all really fast, but it will show you what the different speeds were.
+
+00:23:58.000 --> 00:24:08.000
+And pretty quickly, you'll be like, okay, actually it's taking long enough that I don't want to use all of the models Let's just run it.
+
+00:24:08.000 --> 00:24:21.000
+Against those or you can run it against absolutely everything Use a little bit of caution here because obviously these queries can add up and get expensive if you're not You know.
+
+00:24:21.000 --> 00:24:31.000
+The default setting is the fastest models. So if you just are doing something basic, you can use the fast models. If you're doing something more advanced, you can pick whatever model works for you.
+
+00:24:31.000 --> 00:24:35.000
+And it doesn't show it very well with that query because it was really simple.
+
+00:24:35.000 --> 00:24:43.000
+But let's do a more complex query. What's a more complex query? I hate thinking of very generic.
+
+00:24:43.000 --> 00:24:56.000
+I'm moving to Austin on February 3rd and i'm interested in good barbecue restaurants.
+
+00:24:56.000 --> 00:25:06.000
+What are the… five best barbecue Restaurants. Wow. Barbecue.
+
+00:25:06.000 --> 00:25:13.000
+Near downtown that are open pass Open at 10 a.m.
+
+00:25:13.000 --> 00:25:16.000
+Because not all of them are going to be open at 10 a.m.
+
+00:25:16.000 --> 00:25:33.000
+And just, we're going to select all the models we're going to hit return And now you'll be able to see some of what E4 is capable of.
+
+00:25:33.000 --> 00:25:41.000
+All right. So there's what Llama gives you There is mixed role, there's quen.
+
+00:25:41.000 --> 00:25:54.000
+There's Grok. There's Gemini. And so you can see here the different amount of tokens that are used. You can see the kind of weights or temperature of how it's determining that.
+
+00:25:54.000 --> 00:26:06.000
+Like what percentage of the response is a result of which aspect of the model. So here in Gemini, you can see that a lot of it's from the system, some of it's from the system prompt.
+
+00:26:06.000 --> 00:26:12.000
+Some of it is from the conversation history and very little is from the query.
+
+00:26:12.000 --> 00:26:20.000
+Then, you know, and different models will have different weights and different speeds of all of that. So you can get used to using the models.
+
+00:26:20.000 --> 00:26:30.000
+Here, this is really important. You can annotate. So in other words, you can give a thumbs up or a thumbs down. I'm not going to do that just because when you thumbs up or thumbs down something.
+
+00:26:30.000 --> 00:26:42.000
+That's going to make the model specifically within this chat know that you approved of or didn't appreciate that particular query is going to give you more or less of the response to that query.
+
+00:26:42.000 --> 00:26:46.000
+So this is really cool, not only because you have access to everything.
+
+00:26:46.000 --> 00:26:51.000
+But because you can compare them really easily and most of the time you'll be, you know.
+
+00:26:51.000 --> 00:26:57.000
+Eventually you'll pick one model and we'll just use it. So that's the multi-AI model.
+
+00:26:57.000 --> 00:27:02.000
+Way of using E4. Now we're going to jump into artifacts.
+
+00:27:02.000 --> 00:27:09.000
+Not all of the models use artifacts. Artifacts is just on Sonnet 3.5.
+
+00:27:09.000 --> 00:27:21.000
+But I could say… create a web page that gives me the top five Rest barbecue.
+
+00:27:21.000 --> 00:27:31.000
+Restaurants in Austin that are open at 10 a.m.
+
+00:27:31.000 --> 00:27:34.000
+Now, I'm going to scroll up so we can look at that.
+
+00:27:34.000 --> 00:27:45.000
+There's some things. That sauna is going to really well here. There's some things that it's going to do less well at.
+
+00:27:45.000 --> 00:27:52.000
+And we will watch that happen. So it's building that out right now in the artifacts panel.
+
+00:27:52.000 --> 00:27:59.000
+It's going to give me a preview of the thing that it just built out. We'll see if it works the first time. I'd say.
+
+00:27:59.000 --> 00:28:08.000
+Sometimes it does, sometimes it doesn't. Okay. We just generated a website of the top five barbecue restaurants in Austin.
+
+00:28:08.000 --> 00:28:18.000
+It looks like it did have some sense of all of those, but what if it What if it didn't know everything about what all those barbecue restaurants are?
+
+00:28:18.000 --> 00:28:23.000
+We can control what sources we're using here. And this is one of the cool things that's pretty cool about E4.
+
+00:28:23.000 --> 00:28:44.000
+You can say, let's also use the web. And we're going to run similar query again. I don't know if it will But turning on web as the context to use Now, we've kind of done some stuff in the background so that Sonnet
+
+00:28:44.000 --> 00:28:49.000
+We bake in a web search crawler simultaneously.
+
+00:28:49.000 --> 00:29:01.000
+And… it can not only build all of that stuff, but it can search the web in order to do that and it will Probably build an artifact and then it's going to give you some web results.
+
+00:29:01.000 --> 00:29:17.000
+Simultaneously. So this tab here allows you to determine what context to use. And you've got your library, which we'll show you in just a second. You've got your chats. You can use all of your chats or you can ignore the other chats.
+
+00:29:17.000 --> 00:29:22.000
+You can use the web and we've built in a search for X. And when I say we.
+
+00:29:22.000 --> 00:29:29.000
+I didn't build this, but people built it for us. So we're super, super grateful for them and for their work.
+
+00:29:29.000 --> 00:29:35.000
+So let's see what that web page looks like. Pretty similar.
+
+00:29:35.000 --> 00:29:45.000
+So it didn't change too much, but just know that You can, it looks like here's some websites that it used to determine that. So those are the sources that it included.
+
+00:29:45.000 --> 00:29:58.000
+Now, we started this talking about brain lifts. Why are we talking about brain lifts in the context of E4 and using all of this stuff?
+
+00:29:58.000 --> 00:30:03.000
+I'm going to create a new chat. And we're going to make the chat.
+
+00:30:03.000 --> 00:30:16.000
+K through eight education And our goal is going to be models, we're going to include our library this time. We'll show you why.
+
+00:30:16.000 --> 00:30:22.000
+We'll do the fastest models. And we'll show you what that is in just a second.
+
+00:30:22.000 --> 00:30:27.000
+Oh, that didn't name my chat.
+
+00:30:27.000 --> 00:30:42.000
+So what is going on here? Oh, and by the way, you can attach documents, you can attach files. We're making it really easy to load stuff into a model. But if I go to project resources over here.
+
+00:30:42.000 --> 00:30:47.000
+For this project. There is a data type of brain lift.
+
+00:30:47.000 --> 00:30:56.000
+So I'll show you how this works, but I've already done it. So here's another example of a brain lift.
+
+00:30:56.000 --> 00:31:05.000
+Where is it?
+
+00:31:05.000 --> 00:31:14.000
+Anyway, so you can take this brain lift and you say share I only have you access to that one.
+
+00:31:14.000 --> 00:31:23.000
+So let's go Create a new brain lift. I only have you access to that one. Okay.
+
+00:31:23.000 --> 00:31:27.000
+Let's create a new node. Some.
+
+00:31:27.000 --> 00:31:35.000
+Brain lift. When you're ready to move your brain lift over to E4, all you have to do is hit share.
+
+00:31:35.000 --> 00:31:46.000
+Click invite my secret link And copy this link. So I just copy that link. Now I can go and pull over into E4 And I've already done that.
+
+00:31:46.000 --> 00:31:52.000
+I'll show you what it looks like. When you do do that.
+
+00:31:52.000 --> 00:31:56.000
+You drop in your link.
+
+00:31:56.000 --> 00:32:12.000
+I have to do it again. Sorry. You drop in your link, you say add
+
+00:32:12.000 --> 00:32:17.000
+Now it's got that in the file. It knows that the type is work flowy.
+
+00:32:17.000 --> 00:32:25.000
+I don't think I added that as a brain lift though.
+
+00:32:25.000 --> 00:32:31.000
+So there we go. Now the brain lift has been loaded into the LLM.
+
+00:32:31.000 --> 00:32:37.000
+It's got all of the truths. It's got all of the myths. There is a whole bunch of other stuff happening in the background.
+
+00:32:37.000 --> 00:32:54.000
+And now… when i use my model What is the best… fastest way to build a vocabulary lesson.
+
+00:32:54.000 --> 00:33:06.000
+For K-8 students.
+
+00:33:06.000 --> 00:33:11.000
+So it's going to That was probably a bad prompt.
+
+00:33:11.000 --> 00:33:27.000
+But it's going to run through all of the models But it's going to do them factoring in fact… and weighing the brain lift that we just used.
+
+00:33:27.000 --> 00:33:42.000
+So the more context you give the LLM, this lets you override the LLM's basic assumptions basic theory, basic consensus.
+
+00:33:42.000 --> 00:33:49.000
+And… We don't want X. We don't need web.
+
+00:33:49.000 --> 00:34:01.000
+Well, let's do the fastest models. And I'm going to say i'm going to say produce a lesson plan for eighth grade vocabulary words.
+
+00:34:01.000 --> 00:34:08.000
+Including 50 of the best vocabulary words.
+
+00:34:08.000 --> 00:34:15.000
+To use to prepare for the SAT.
+
+00:34:15.000 --> 00:34:23.000
+And I'm going to give it web search. Because it's probably going to go out and search the web for what are the 50 best vocabulary words to prepare for the SAT.
+
+00:34:23.000 --> 00:34:33.000
+And then importantly, instead of just giving me a lesson plan it now knows based on my spiky POVs, based on my brain lift.
+
+00:34:33.000 --> 00:34:51.000
+What I'm looking for when I want a lesson plan. So it's going to give me stuff that It's all of that stuff that we plugged in that's non-consensus, it's now affecting the query that we run. And if we were to tell it to build a web page, the stuff that we loaded in
+
+00:34:51.000 --> 00:35:06.000
+Would affect the webpage it builds. If it was code-based stuff, it would affect the code. So all of it matters and you can pretty easily add different resources to your project. You can add Different files.
+
+00:35:06.000 --> 00:35:30.000
+You can link different stuff. There's a bunch of stuff that it's pulling in within the brain lift already You can tell it how to prioritize different different sources that you have loaded in you can focus, you can increase prioritization, you can decrease prioritization. You're going to get used to all of this stuff.
+
+00:35:30.000 --> 00:35:38.000
+But this is a really, really powerful tool. And so… Yeah, it looks like as an example.
+
+00:35:38.000 --> 00:35:44.000
+Llama is giving us… a very basic outline.
+
+00:35:44.000 --> 00:35:49.000
+If we go over to 4.0. Gives us a little bit different of one.
+
+00:35:49.000 --> 00:35:56.000
+And it's given us the 50 vocabulary words to use. And here are the sources that it pulled that from.
+
+00:35:56.000 --> 00:36:14.000
+So… I'm going to jump into the chat because I know there are a whole bunch of questions happening and I'm way behind. So give me just a second to scroll.
+
+00:36:14.000 --> 00:36:20.000
+Yeah, so will we lose? So E4 is at all the companies that are hiring from us.
+
+00:36:20.000 --> 00:36:30.000
+Use E4 and use brain lifts and use workflow. That's the reason we're using those Tools.
+
+00:36:30.000 --> 00:36:35.000
+But it will be probably a paid product at some point.
+
+00:36:35.000 --> 00:36:42.000
+I don't. Know the details of when as far as that goes. Okay.
+
+00:36:42.000 --> 00:36:52.000
+So yeah, that's a good question from Mike. Does it aggregate all of the answers No, at least not in this format.
+
+00:36:52.000 --> 00:37:06.000
+We'll show you some other stuff that it can do. But generally speaking, it's just, I mean, this is literally these are the responses. It's running those all through each of those different models and telling you what the response is from all of those
+
+00:37:06.000 --> 00:37:22.000
+Different models Um… Yeah, there is a compare view So if I pick This model, how do I select multiple models?
+
+00:37:22.000 --> 00:37:36.000
+I think it's command. So I pick those three, I hit compare view
+
+00:37:36.000 --> 00:37:43.000
+And now it kind of breaks it down into different parts. So you've got the summary from each of them.
+
+00:37:43.000 --> 00:37:46.000
+These are the elements that are unique to those different models.
+
+00:37:46.000 --> 00:38:01.000
+And then it kind of chunks it up into different categories and you can look at them independently and see… really quickly, okay, I like this. I don't like that. You can get rid of models. It'll bring others in.
+
+00:38:01.000 --> 00:38:11.000
+Pretty freaking cool stuff that they've built for us. Oh, sorry. I should have showed you.
+
+00:38:11.000 --> 00:38:19.000
+That was a feature that wasn't there yesterday. Edit columns was not there yesterday. Oh yeah, so you can… pick and choose which models you're comparing.
+
+00:38:19.000 --> 00:38:26.000
+Just like that. And we didn't. Awesome.
+
+00:38:26.000 --> 00:38:40.000
+Pretty cool stuff. Um… Yeah, right now the… The artifact page, it's not a great way to get stuff in and out of this outside of copy paste.
+
+00:38:40.000 --> 00:38:46.000
+So it's There's some other stuff that's going on.
+
+00:38:46.000 --> 00:39:05.000
+For… making it more advanced for pulling it directly into a document. But for right now, you should use it kind of purpose built. If you're just building a generic application, you don't need this as much. If you are more doing stuff that's more
+
+00:39:05.000 --> 00:39:15.000
+Directly affected by your spiky POVs or you want to Think about stuff a little bit differently, or you want to test a bunch of models, use E4.
+
+00:39:15.000 --> 00:39:19.000
+There's a couple other modes that I'll show you really quickly.
+
+00:39:19.000 --> 00:39:27.000
+And so reasoning, that just uses the models that are really good at reasoning 01, stuff like that.
+
+00:39:27.000 --> 00:39:36.000
+Artifacts that builds stuff for you. Multi-ai models is the one we've been looking at where it looks at all of the models.
+
+00:39:36.000 --> 00:39:42.000
+And now let's look at Council of Kings. So this is This is kind of fun.
+
+00:39:42.000 --> 00:39:48.000
+The kings are the kings Well, Wish.
+
+00:39:48.000 --> 00:39:55.000
+What's the best way to build a business? The reason this started.
+
+00:39:55.000 --> 00:40:00.000
+As… Okay.
+
+00:40:00.000 --> 00:40:18.000
+So we've got 10 experts that it's consulting. And we plugged in a couple of experts in learning science, and then it's got some generic experts. So we've got experts Lulu Cheng, who's a corporate communicator. That's a generic one.
+
+00:40:18.000 --> 00:40:30.000
+Sam Altman is a generic one. You got the Council of E4s, which is if you try to aggregate all of the advice. I think we've got Warren Buffett in there.
+
+00:40:30.000 --> 00:40:36.000
+Zig Engelman is an education activist. This is my favorite one.
+
+00:40:36.000 --> 00:40:48.000
+Danielle, who is somebody who's helping us build out uh Gauntlet, you'll meet her in Austin. We plugged her in as a default king.
+
+00:40:48.000 --> 00:41:01.000
+So you can Yeah, check out what her advice would be. And you'll love Danielle when you can meet And you still have the compare view It's not pulling in the messages.
+
+00:41:01.000 --> 00:41:07.000
+Yeah. And then I can say, hey, I liked Zigs.
+
+00:41:07.000 --> 00:41:15.000
+That was good. I guess, yeah.
+
+00:41:15.000 --> 00:41:36.000
+All right. You guys are arguing about… Yeah, I actually very legitimately, I mean, they're just barely getting started with this.
+
+00:41:36.000 --> 00:41:41.000
+Why can't I just paste my spiky POV from Workflowy combined with my prompts and say, consider my spiky POV?
+
+00:41:41.000 --> 00:41:51.000
+It would make a lot of sense if LMs work that way. They don't always… do that in the way that you would want.
+
+00:41:51.000 --> 00:41:59.000
+They tend to underweight your underweight your copy paste stuff.
+
+00:41:59.000 --> 00:42:06.000
+You're always trying to, if I go back to the actually the template that we were using for the brain lift.
+
+00:42:06.000 --> 00:42:20.000
+There are a bunch of different ways to train LLMs. They can be overridden in the following ways. Fine tuning rag context And self-evolving.
+
+00:42:20.000 --> 00:42:27.000
+Context we like where we can provide it. Rag is a little more intense. Fine tuning needs a ton of data.
+
+00:42:27.000 --> 00:42:35.000
+What's happening in the background of E4 is a little bit of rag, a little bit of context. You're injecting a little bit in the context window.
+
+00:42:35.000 --> 00:42:41.000
+And then you're trying to, they vectorize some data and feed it into the model and say, use this.
+
+00:42:41.000 --> 00:42:47.000
+So you can do that with your, you can just copy paste. I'm not opposed to that at all.
+
+00:42:47.000 --> 00:42:59.000
+Generally speaking, this will be a little more, it will override harder if you use E4 than if you're just copy pasting into the direct context window.
+
+00:42:59.000 --> 00:43:08.000
+The one thing that… I do want to make clear about all of this is none of this existed a month ago.
+
+00:43:08.000 --> 00:43:16.000
+So there is a lot of learning. There's a lot of changes going to happen. There's going to be a lot of enablement.
+
+00:43:16.000 --> 00:43:24.000
+I'm sure there are ways we'll learn that the tools work well. There are ways we'll learn that the tools don't work well.
+
+00:43:24.000 --> 00:43:36.000
+But… Yeah. So that's a really good question. Are the models being trained on our brain lifts? So let's talk for just a minute about the word trained.
+
+00:43:36.000 --> 00:43:46.000
+Because there are different definitions of the word trained and trained The proper definition of trained is when you're building a model.
+
+00:43:46.000 --> 00:43:59.000
+You're training it on a bunch of data. And then everything that we do on top of that technically isn't training a model, but it's kind of informing a model. Sometimes I'll use train versus inform.
+
+00:43:59.000 --> 00:44:05.000
+It's one of those things that a lot of people use those words synonymously enough that they've lost a whole lot of meaning.
+
+00:44:05.000 --> 00:44:17.000
+Um so it's Yeah. People will say you're training a model here, even though were not taking it directly.
+
+00:44:17.000 --> 00:44:22.000
+All right. Some other cool stuff that you can do.
+
+00:44:22.000 --> 00:44:28.000
+If I go to experts theme. Sorry. Expert's feed.
+
+00:44:28.000 --> 00:44:39.000
+It is… it's taking everything from my brain lift, including the experts that I plugged in.
+
+00:44:39.000 --> 00:44:45.000
+It's deducing who other experts might be based on who those people are.
+
+00:44:45.000 --> 00:44:50.000
+And if you want to learn really quickly about something, you can go to your experts feed on any given project.
+
+00:44:50.000 --> 00:45:00.000
+And it's going to give you a sense of who it thinks the experts might be on X. You can follow them. You can engage here with those people.
+
+00:45:00.000 --> 00:45:07.000
+You know, so Tommy Lee is the guy who talks about education a lot.
+
+00:45:07.000 --> 00:45:16.000
+Looks like that is synthesis, which is an AI tutor that my kids use.
+
+00:45:16.000 --> 00:45:28.000
+Yeah, not all of this is going to be directly relevant to what you're building, but it helps you identify the people that you might want to follow and the people that you might want to learn from.
+
+00:45:28.000 --> 00:45:41.000
+There are metrics tabs. That's going to kind of graph out your LLMs, which ones are the best, which ones are the fastest, which ones You're using a lot.
+
+00:45:41.000 --> 00:45:48.000
+And lets you… determine what you're looking at. If you're just looking at today or the last seven days.
+
+00:45:48.000 --> 00:46:02.000
+A bunch of other cool stuff. You can use multi-user chats you can share these or invite other people. We probably won't doing a ton of that very quickly.
+
+00:46:02.000 --> 00:46:11.000
+Yeah, there are a couple of tools. So some of the questions I'm already seeing are.
+
+00:46:11.000 --> 00:46:16.000
+Does this tool work reliably on workflowy docs in other languages?
+
+00:46:16.000 --> 00:46:21.000
+Well, here's something about AI that's interesting. I have no idea because I don't know that anybody has ever tried it.
+
+00:46:21.000 --> 00:46:32.000
+Normally in software land, you would say, no, it would be ridiculous that you would expect software to automatically be able to understand different languages.
+
+00:46:32.000 --> 00:46:35.000
+It is entirely possible.
+
+00:46:35.000 --> 00:46:41.000
+That it does. I just don't know.
+
+00:46:41.000 --> 00:46:46.000
+Is RAG only as good as the brain lifts we connect to E4?
+
+00:46:46.000 --> 00:47:06.000
+I know you're going to hate me for this. I'm not going to get deep into rag and how it works and all the benefits because that's the next That's coming later. And we could talk about rag for rag hours and hours and we will. Rag is retrieval augmented generation, which is a methodology for
+
+00:47:06.000 --> 00:47:14.000
+Feeding models data. What is access like for reasoning models?
+
+00:47:14.000 --> 00:47:24.000
+So yeah, reasoning models, if I go back to my chat over here And hide my metrics.
+
+00:47:24.000 --> 00:47:29.000
+Hide my experts feed.
+
+00:47:29.000 --> 00:47:33.000
+Sorry, I've got a bunch of Zoom windows, so it's hard for me to see everything.
+
+00:47:33.000 --> 00:47:37.000
+Let me hide my expert's feed. I'll go back to chat. There we go.
+
+00:47:37.000 --> 00:47:50.000
+So the reasoning models you have models 01, 01 Mini, and Gemini 2.0 through E4.
+
+00:47:50.000 --> 00:48:01.000
+Cool. Yes, it uses the, yeah, so when we, for the experts um We have experts here.
+
+00:48:01.000 --> 00:48:07.000
+So we plugged in Zig Engelman, Kimoto Behrens, and Justin Skykakak.
+
+00:48:07.000 --> 00:48:14.000
+And then if we were to ask If we're going to go to… I think it's Council of Kings.
+
+00:48:14.000 --> 00:48:24.000
+Still getting used to the interfaces. There's Zig Engelman. It won't load somebody if it can't find enough on them.
+
+00:48:24.000 --> 00:48:34.000
+And it plugged in Benjamin Bloom as well so Yeah, you list those in the brain lift.
+
+00:48:34.000 --> 00:48:45.000
+Yeah, you'll have a lot of time to play with this. So please keep building and don't just sit here and play with it all day, but obviously playing with AI is a good thing.
+
+00:48:45.000 --> 00:48:54.000
+Yeah, what qualifies as an expert? I think the way I would define expert is it's somebody that you trust to have a good opinion about X.
+
+00:48:54.000 --> 00:49:03.000
+So even if someone is, you know. Widely regarded as an expert if I think they're an idiot, I would not include them as an expert in Workflowy.
+
+00:49:03.000 --> 00:49:13.000
+And one of the things that you'll find is your judgment really matters when you're doing stuff like this at companies that are using brain lifts.
+
+00:49:13.000 --> 00:49:31.000
+What is in the brain lift really matters. And it's actually a really good forcing function for if you disagree with something in the spiky POVs as an example. I think like if you were to look at a company's spiky POVs, that becomes the culture, that becomes the way a company operates.
+
+00:49:31.000 --> 00:49:48.000
+If people are disagreeing about the spiky POVs. There's nothing that guarantees that what's in your spiky POVs is correct, right? You could be wrong. You could be misguided. You could be understanding. It's really important that you are correct or that at least it doesn't break everything if you're incorrect.
+
+00:49:48.000 --> 00:49:55.000
+And so if you're building a group project and you disagree about the spiky POVs, those are really, really important conversations to have.
+
+00:49:55.000 --> 00:50:09.000
+And having talked to some of the folks who are using this framework as a company Those forced to the forefront conversations that are really, really important to hash out.
+
+00:50:09.000 --> 00:50:16.000
+And sometimes it's the same as any other company. Sometimes it's disagree and commit.
+
+00:50:16.000 --> 00:50:24.000
+Just the fact that you're writing stuff down isn't going to naturally solve all of your Questions?
+
+00:50:24.000 --> 00:50:33.000
+But yeah. Does it matter if we talk about E4 online? I think you're fine to talk about it.
+
+00:50:33.000 --> 00:50:42.000
+You should be fine there. I don't know a ton about multi-language tasks.
+
+00:50:42.000 --> 00:50:52.000
+I speak Russian, but I haven't plugged anything in. So I don't know. I haven't, I mean, there are a whole bunch of experiments that I'm Like one of the cool things about having, you know.
+
+00:50:52.000 --> 00:51:02.000
+100 plus people that are trying all this stuff. So I'm sure someone's going to stumble upon something interesting or a clever hack or different ways to use all this stuff.
+
+00:51:02.000 --> 00:51:07.000
+And yeah, we can… We'll learn a lot from each other as well.
+
+00:51:07.000 --> 00:51:27.000
+Um… All right, I think… My spiky POV is that Next.js is bad. Yeah, we're… Well, that… You can plug that into your spiky POVs and your LLM will be less likely to write Next.js if you think it's bad.
+
+00:51:27.000 --> 00:51:38.000
+Yeah, and we'll talk a lot about RAG and embeddings and context windows and other technical stuff that we don't have time to get into yet.
+
+00:51:38.000 --> 00:51:49.000
+But we wanted to introduce this to you. And that gives us a chance to actually use spiky POVs and brain lifts for the first time.
+
+00:51:49.000 --> 00:52:03.000
+So as a part of your final submission of Slack. That's going to happen on Friday. And the reason we do that Friday is because most you're going to have some things that we're going to strongly recommend that you fix over the weekend.
+
+00:52:03.000 --> 00:52:10.000
+Or you can keep going on it over the weekend.
+
+00:52:10.000 --> 00:52:17.000
+So I think I get it. But before you finish, can we get an elevator pitch for why these tools deserve a spot in our workflow.
+
+00:52:17.000 --> 00:52:22.000
+So… Look, if you decide not to use E4, that's totally fine.
+
+00:52:22.000 --> 00:52:41.000
+I'm not going to ever be like, you have to use this tool in this way, other than that when you submit your brain lift, it has to be in workflowy because that's the simplest for all the software that we've built to understand everything uses Workflowy. So Workflow, I take back what I just said.
+
+00:52:41.000 --> 00:52:46.000
+We're going to require that you use Workflowy. You don't have to use E4.
+
+00:52:46.000 --> 00:52:53.000
+I think it's a really cool tool, but I'm not going to force you to use it or monitor its usage or, you know.
+
+00:52:53.000 --> 00:53:13.000
+Look at anything. If you have recommendations for it, you know, we talk with the team Constantly. And yes, in the slides, there's a direct link to the workflowy template. And you guys are going to get really used to brain lifts and the template, but you'll literally get a list
+
+00:53:13.000 --> 00:53:18.000
+Link to this. Exact brain lift template.
+
+00:53:18.000 --> 00:53:31.000
+And we haven't talked a lot about sharing or But as you can imagine, you can imagine If I drill into one of these bullets, I can export or share Or load in just that bullet.
+
+00:53:31.000 --> 00:53:37.000
+When the server is not encountering an error. There are a bunch of other stuff that you can do.
+
+00:53:37.000 --> 00:53:45.000
+Over here, you can mirror it, you can export it as Markdown if you want to.
+
+00:53:45.000 --> 00:54:04.000
+But yeah, yeah. Yeah, if there are any more questions, feel free to answer in Slack. I know this was a very direct introduction to E4. Oh, the other thing We're still finishing up getting everybody E4 access. We have to build in a new type of auth.
+
+00:54:04.000 --> 00:54:11.000
+So that will be coming. Probably later today. Workflowy.
+
+00:54:11.000 --> 00:54:30.000
+The same as most other tools it's fully authorized with corporate level stuff. If you sign up with a with a gauntletai.com email address and Yeah. So with that, we'll let you get back to extending Slack projects, and Ash, go ahead.
+
+00:54:30.000 --> 00:54:37.000
+Yep. Yeah, I had one thing to say. I keep getting the same question over and over again.
+
+00:54:37.000 --> 00:54:50.000
+Which is like, what am I supposed to be doing now The goal when you have free time is to work on your Slack project and make sure it has all the foundation to add all the AI features on top.
+
+00:54:50.000 --> 00:55:00.000
+You don't want to come into Monday and have to worry about threads, worry about channels, worry about random features that you needed to then add AI to it.
+
+00:55:00.000 --> 00:55:13.000
+So you want to get this into a place where it's like really nice, really working well so that when you start adding AI and it starts to hallucinate and it starts to get much harder and it becomes much more difficult for you to add these AI features.
+
+00:55:13.000 --> 00:55:17.000
+You don't want to worry about the easy stuff. You want to focus on the AI.
+
+00:55:17.000 --> 00:55:24.000
+I just want to say that when you have free time, you should be working on making your foundation the best it can be.
+
+00:55:24.000 --> 00:55:33.000
+The AI features are outlined in the document. If you just scroll to the bottom as well. But you guys can add the AI features you would like as well. I just want to make that very clear. What should you be doing?
+
+00:55:33.000 --> 00:55:44.000
+You should be preparing your Slack project and making it the best it can be for Friday's submission and readying it for AI tooling.
+
+00:55:44.000 --> 00:55:52.000
+Awesome. Thank you, everybody. And yeah, if there are any other questions, this is where stuff starts to get really interesting.
+
+00:55:52.000 --> 00:56:09.000
+And there obviously were, I can't believe it, this is day three. So we've only gone through 48 hours of The 90-ish… Days of Gauntlet so far. So there's a whole lot more. But I think you've got a pretty good jumping off point to build your first project.
+
+00:56:09.000 --> 00:56:23.000
+And I would echo what Ash recommends. Building existing, like you want your slack clone to be as feature complete, productized, push to production.
+
+00:56:23.000 --> 00:56:30.000
+As it possibly can be. And yeah, yeah.
+
+00:56:30.000 --> 00:56:37.000
+It definitely feels like Friday already. And we're going to work until then. And next week gets much more deeper into the stuff that wasn't, I'll say stuff that wasn't possible until a couple of years ago so We're really looking forward to that.
+
+00:56:37.000 --> 00:56:53.000
+Thank you
+

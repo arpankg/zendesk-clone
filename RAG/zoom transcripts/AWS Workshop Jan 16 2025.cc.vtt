@@ -1,0 +1,1598 @@
+WEBVTT
+
+00:00:06.000 --> 00:00:20.000
+And then Steve, let me make you co-host.
+
+00:00:20.000 --> 00:00:26.000
+All right. So the first thing I want to talk about is our project for next week.
+
+00:00:26.000 --> 00:00:34.000
+Drum roll drum roll, please. Okay, fake drum roll. So the app that you're going to be rebuilding is Zendesk.
+
+00:00:34.000 --> 00:00:42.000
+So you will be rebuilding some of the Zendesk functionality and adding agents to automate some of that functionality.
+
+00:00:42.000 --> 00:00:52.000
+So Zendesk covers a lot. There's ticket management. There's a knowledge base and a documentation system There's a customer support chat.
+
+00:00:52.000 --> 00:00:57.000
+There's also ticket routing and getting into the right person in a business.
+
+00:00:57.000 --> 00:01:07.000
+And then there's also a reporting and analytics dashboard. So on Monday, we will be giving you the project document for the Zendesk project.
+
+00:01:07.000 --> 00:01:18.000
+The requirements for build and the suggested AI components. But there's a few more things that we're going to be adding to the Zendesk project that were not in the Slack project.
+
+00:01:18.000 --> 00:01:24.000
+First and foremost, prescribed deployment instructions.
+
+00:01:24.000 --> 00:01:30.000
+That means that you will… follow the deployment guidelines that we have set forth for this project.
+
+00:01:30.000 --> 00:01:36.000
+That includes the tech stack. So I know originally i had said that You can pretty much use anything under the sun.
+
+00:01:36.000 --> 00:01:46.000
+But the hiring partners have defined the tech stack For the next project, and they've defined the deployment vehicle that we will be using.
+
+00:01:46.000 --> 00:01:54.000
+For the project so For the next project, we will be using React for the front end.
+
+00:01:54.000 --> 00:02:00.000
+If you decide to use next or remix, I don't care, but it has to be React.
+
+00:02:00.000 --> 00:02:07.000
+The backend will be super base. So all the people who have been using Superbase so far.
+
+00:02:07.000 --> 00:02:11.000
+Good news for you. For the people who haven't used Superbase yet.
+
+00:02:11.000 --> 00:02:18.000
+I will be posting a complete course end to end on super base if you've never used Superbase before.
+
+00:02:18.000 --> 00:02:23.000
+That you can sort of go through yourself. So the backend will be super base.
+
+00:02:23.000 --> 00:02:30.000
+And the… we will all be using the cursor agent.
+
+00:02:30.000 --> 00:02:43.000
+Not just the cursor chat. But the cursor agent on the composer tab And then finally, in terms of our agents, we will be using Langchain.
+
+00:02:43.000 --> 00:02:50.000
+So in terms of all of these decisions. How do we deploy this? So with Super Base.
+
+00:02:50.000 --> 00:02:53.000
+You don't really need to do much because it's a backend as a service.
+
+00:02:53.000 --> 00:02:58.000
+You can deploy to production fairly quickly. In terms of your React applications.
+
+00:02:58.000 --> 00:03:04.000
+We will be using Amplify. To deploy your React applications.
+
+00:03:04.000 --> 00:03:10.000
+So amplify. Will be used for next. It could be used for Remix. It could be used for React.
+
+00:03:10.000 --> 00:03:16.000
+But that will be what is used. To deploy your front end.
+
+00:03:16.000 --> 00:03:29.000
+Okay. So I'll say that one more time. We are building Zendesk next week and the exact specifications and the exact AI features will be revealed on Monday in Monday's class.
+
+00:03:29.000 --> 00:03:35.000
+The tech stack for the Zendesk project is as follows. React, Super Base.
+
+00:03:35.000 --> 00:03:41.000
+Langchain cursor agent. Where React is your front end, Superbase is your back end.
+
+00:03:41.000 --> 00:03:49.000
+And Langchain is the framework you're using to build agents. And cursor agent is the AI tool that you're going to be sort of focusing on.
+
+00:03:49.000 --> 00:03:56.000
+Obviously, if you want to use other AI tools, I'm not too worried about that. If you want to use v0 or Replit agent to make your front end, feel free.
+
+00:03:56.000 --> 00:04:04.000
+Or I would also suggest trying lovable. Lovable is actually pretty awesome with React.
+
+00:04:04.000 --> 00:04:11.000
+Long story short, we will be deploying our front end on Amplify. So Steve will be walking through that in just a second.
+
+00:04:11.000 --> 00:04:16.000
+But I want to take any questions.
+
+00:04:16.000 --> 00:04:21.000
+Any questions on the tech stack and the decisions that were made by the hiring partners?
+
+00:04:21.000 --> 00:04:27.000
+Yes, Adam, you're being discouraged to use the chat feature, but obviously if you need to use it, feel free. We're not going to like monitor that.
+
+00:04:27.000 --> 00:04:32.000
+But it'd be awesome if you guys got really good at using the agent feature end-to-end.
+
+00:04:32.000 --> 00:04:37.000
+So I want to recommend and push for usage of cursor agent.
+
+00:04:37.000 --> 00:04:42.000
+But again, in a few situations where you might not need to use that.
+
+00:04:42.000 --> 00:04:52.000
+Then. You can use the chat. Yes. Can you explain the prescribed segment for each of the tech stacks.
+
+00:04:52.000 --> 00:05:01.000
+So the goal for the next two weeks is going to be focusing on getting something out there quickly that is production grade.
+
+00:05:01.000 --> 00:05:11.000
+So we made a decision and by we, I mean the hiring partners What can we do to ensure that you have a working solution as quickly as possible?
+
+00:05:11.000 --> 00:05:20.000
+So using a backend as a service is a really nice way that agencies, startups get a MVP off the ground and running.
+
+00:05:20.000 --> 00:05:24.000
+Which is able to handle a lot of this production grade activity.
+
+00:05:24.000 --> 00:05:29.000
+Whether it's concurrent users, whether it's a lot of message requests, whether it's a lot of auth requests.
+
+00:05:29.000 --> 00:05:33.000
+You're able to do that fairly quickly with a backend as a service like Firebase or Superbase.
+
+00:05:33.000 --> 00:05:45.000
+So what we've decided is we want you guys to build the MVP faster. So how do we do We do that using SuperBase. So you don't have to think about a lot of the things you would need for a backend.
+
+00:05:45.000 --> 00:05:49.000
+Does that mean we're never going to build our own backend? No, it does not. It just means for this project, we're not going to.
+
+00:05:49.000 --> 00:05:57.000
+Next, for the front end, we're using react because it's the most documented front end library right now.
+
+00:05:57.000 --> 00:06:12.000
+That means that next is there. Obviously, Remix is there. But at the end of the day, they're all building on top of React and AI does a really nice job of solving your react issues or answering questions about React specifically.
+
+00:06:12.000 --> 00:06:20.000
+There's also a ton, a ton of React component libraries that you can sort of plug in, chat CN, Material UI, Ant Design.
+
+00:06:20.000 --> 00:06:26.000
+All of these component libraries should make the creation of an MVP much quicker.
+
+00:06:26.000 --> 00:06:38.000
+Now, this means that you should be able to build an interface quicker and you should be able to build the backend quicker. So that means you can focus on some of this underlying technology way more like ticketing.
+
+00:06:38.000 --> 00:06:54.000
+Like customer service, like routing tickets correctly. Like handling customer support tickets. So all of this stuff is the reason why we've decided to choose this backend. And we were also thinking like in a actual tech job.
+
+00:06:54.000 --> 00:07:03.000
+You would be given the tech stack. You wouldn't be asked to pick the tech stack. Correct me if I'm wrong, Steve. Like your manager would give you the tech stack, right? And so in this sense.
+
+00:07:03.000 --> 00:07:10.000
+This is what we're doing in future projects. Well, we might change the tech stack a little bit But this is the tech stack for now.
+
+00:07:10.000 --> 00:07:16.000
+In terms of the agent infrastructure, Langchain is the recommended framework for building agents. That's what we're going to be teaching on Monday as well.
+
+00:07:16.000 --> 00:07:21.000
+And then we'll be teaching crew AI. But if you feel strongly about using another framework.
+
+00:07:21.000 --> 00:07:35.000
+I'm a little bit, I'm totally okay with that. You can use super base edge functions to run your agents. And we'll walk through all of that on Monday. So I don't want anybody to feel Like they have to know that right now because you do have a deadline tomorrow.
+
+00:07:35.000 --> 00:07:42.000
+But that was the reasoning behind the tech stack.
+
+00:07:42.000 --> 00:07:54.000
+Is there a real-time solution for this stack Like an example, I'm pretty sure there is, Cameron. I can try to find it and share it.
+
+00:07:54.000 --> 00:08:01.000
+Great question, Steven. Stephen's question was, how does writing a backend and Superbase differ from Nest.js as a backend?
+
+00:08:01.000 --> 00:08:19.000
+Well, you really don't have to do much in terms of building out the actual connection to super base you can actually connect Super Base directly with its sdk on the front end by just building an instance on the back end. But I think when I share out the super base information and setup.
+
+00:08:19.000 --> 00:08:25.000
+I think that will walk through everything. Okay.
+
+00:08:25.000 --> 00:08:42.000
+Max, I wouldn't try to build something out and then convert to Super Base. I feel like it's easier just to get the basic fundamentals of super base down and try it out yourself.
+
+00:08:42.000 --> 00:08:49.000
+I'm Joshua is asking, does that mean we're creating a project that I'm creating a project template that everybody's going to fork?
+
+00:08:49.000 --> 00:08:53.000
+That's a good suggestion. I didn't think of it that way.
+
+00:08:53.000 --> 00:08:57.000
+But I could build something out. I will let you know for now. I'm not sure.
+
+00:08:57.000 --> 00:09:02.000
+Are the hiring partners generally happy with what they've seen from us so far? The answer is yes.
+
+00:09:02.000 --> 00:09:11.000
+But they want us to make the projects harder. So you'll see that next week we're going to have a huge focus on something called test to pass.
+
+00:09:11.000 --> 00:09:23.000
+Testa pass is a framework that you're going to be working with When you're at the companies with your hiring partners and it's essentially a framework that helps us understand like Is this application actually ready for users?
+
+00:09:23.000 --> 00:09:34.000
+Concurrent request, number of API calls, all of this like production grade metrics. What are those to have this application ready for real users?
+
+00:09:34.000 --> 00:09:43.000
+We're going to be adding those to the Zendesk project and getting you guys sort of not just building AI slop but usable applications for users.
+
+00:09:43.000 --> 00:09:48.000
+Yes, I will share a lot of resources for learning React.
+
+00:09:48.000 --> 00:10:01.000
+I will send the super base lesson and react lesson full courses by the end of like right after this class.
+
+00:10:01.000 --> 00:10:11.000
+Aj, I hear you on the Langchain stuff, but Langchain is a really nice way to get started with agents. So I have to also think about the people who have not been exposed to agents at all.
+
+00:10:11.000 --> 00:10:19.000
+If you want to use another framework, AJ, feel free. I'm okay with auto gen. I'm okay with llama index. I'm okay with you building one out natively.
+
+00:10:19.000 --> 00:10:29.000
+But we have to introduce something in terms of like people who've never seen it before. And then we'll also add in more options as time goes on.
+
+00:10:29.000 --> 00:10:36.000
+So I'll be a little bit more lenient on the agent tech stack part, but super base and react are set in stone.
+
+00:10:36.000 --> 00:10:51.000
+Yes, you can run agents on super base edge functions. Okay, I got to stop now and give the time to Steve, otherwise I'm going to be stuck in all these questions. Okay, we're no longer going to be monitoring the Zoom questions.
+
+00:10:51.000 --> 00:10:54.000
+If you have questions, please put them in the Slack thread.
+
+00:10:54.000 --> 00:11:03.000
+And then I'm going to have Steve walk through his amplify And we'll take it after that.
+
+00:11:03.000 --> 00:11:15.000
+Thanks, Ash. Yeah, so I want to stress that I'm not a web developer, but I quickly built a little web app that will simply take in a value and write it to a database. And so I'm going to demo how to deploy that via Amplify.
+
+00:11:15.000 --> 00:11:21.000
+Through GitHub.
+
+00:11:21.000 --> 00:11:30.000
+Share. Okay. And I figured we'd start with Supabase. It's not going to be a full Supabase tutorial.
+
+00:11:30.000 --> 00:11:37.000
+But I did come in here, I created a project ahead of time. It's pretty straightforward if you've never used it before on just getting a project started.
+
+00:11:37.000 --> 00:11:42.000
+But once you have your project started, you'll see on the left-hand side over here.
+
+00:11:42.000 --> 00:11:47.000
+There is the SQL editor. For those of you who you should know a little bit of SQL.
+
+00:11:47.000 --> 00:12:03.000
+And I went ahead and created a couple of tables, one for my auth users and one for My app to write stuff too. So this is actually just a good old you know editor so i can select all from values
+
+00:12:03.000 --> 00:12:09.000
+And run. And it will give me my three little rows that i've created.
+
+00:12:09.000 --> 00:12:14.000
+I'm going to show, this is a very temporary project and I want to highlight this right off the get-go.
+
+00:12:14.000 --> 00:12:19.000
+I'm going to show my keys. I'm going to show my URL and everything. This project is going to be deleted.
+
+00:12:19.000 --> 00:12:26.000
+It's not worth copying, but if you need to for the next like two minutes, go ahead and copy any kind of keys right down.
+
+00:12:26.000 --> 00:12:39.000
+And use them. But we can also go into the table editor And we can view that I have two tables. I have a profiles table and this is that values table I was talking about. This is what my super base is going to write to.
+
+00:12:39.000 --> 00:12:44.000
+And actually, I should stress. So here in the SQL editor is where you could create your table ahead of time.
+
+00:12:44.000 --> 00:12:52.000
+Soup base also responds to any kind of ORM objects if you want to do it dynamically via your your web app.
+
+00:12:52.000 --> 00:13:00.000
+You can do that too. So you would just create table give it a name.
+
+00:13:00.000 --> 00:13:03.000
+And then like I, you know, give it some columns, right?
+
+00:13:03.000 --> 00:13:08.000
+My column integer.
+
+00:13:08.000 --> 00:13:16.000
+And now if I come back to table editor I now have a my table table that I could write to.
+
+00:13:16.000 --> 00:13:21.000
+So values is my very common name for the table I created.
+
+00:13:21.000 --> 00:13:34.000
+And so I have a web app, and Zoom is in the way. I'm going to scroll this down a little bit here and just called you know super base vitae starter. So quickly used vitae to whip up a web app that takes in a value. I have it running locally right now so
+
+00:13:34.000 --> 00:13:39.000
+From my terminal, I just ran it in dev. So it's running on my local host.
+
+00:13:39.000 --> 00:13:46.000
+It's literally this, right? So if I write Good morning.
+
+00:13:46.000 --> 00:13:50.000
+Save value. The whole app is to write that to a database.
+
+00:13:50.000 --> 00:13:56.000
+If I come back to my table, there it is. There's my new row.
+
+00:13:56.000 --> 00:14:01.000
+So how do I deploy this? And that's sort of the basis of this demo is how do we actually deploy it?
+
+00:14:01.000 --> 00:14:15.000
+If we come into AWS. And so from AWS, you would just type amplify AWS Amplify.
+
+00:14:15.000 --> 00:14:23.000
+And now the idea is pretty straightforward. It can be, I would say in this new version, harder to debug. So I'm going to walk through that quickly too.
+
+00:14:23.000 --> 00:14:29.000
+But we're just going to deploy an app. And there are multiple ways to do it. We're using GitHub.
+
+00:14:29.000 --> 00:14:36.000
+I've never done it without Git. So I suggest doing that, but it does look like there are some options if you have it stored as a zip file or an S3 bucket.
+
+00:14:36.000 --> 00:14:42.000
+I probably wouldn't go that approach. It's best to go from GitHub.
+
+00:14:42.000 --> 00:14:50.000
+And so I'm going to select github. Hit next. It's going to make me log in and create a token.
+
+00:14:50.000 --> 00:14:56.000
+And I've actually already done this ahead of time. It may actually ask you to put in your credentials and everything.
+
+00:14:56.000 --> 00:15:04.000
+This is your first time doing it, it should give you something like this so i'm going to grab my repo right here. I'm not going to use my pass key right now.
+
+00:15:04.000 --> 00:15:09.000
+Make sure the password doesn't show up.
+
+00:15:09.000 --> 00:15:14.000
+No, you're not saved. And we're going to give it all the permissions I want.
+
+00:15:14.000 --> 00:15:20.000
+You can add it to all repositories. I did just select repositories. So I picked a couple of my super base examples.
+
+00:15:20.000 --> 00:15:29.000
+And so you would just select your very specific repository that you want to connect Amplify to Once you've got that done, you can hit save.
+
+00:15:29.000 --> 00:15:39.000
+And then close out of here. When you come back, you may have to refresh the screen. Every time I add a new repo, I usually have to refresh.
+
+00:15:39.000 --> 00:15:46.000
+But it may just pop up.
+
+00:15:46.000 --> 00:15:55.000
+And now I'm going to select my Supabase Vitae starter It's going to ask you which branch. I'm going to use my main branch as what I want to deploy.
+
+00:15:55.000 --> 00:16:00.000
+And then I'm going to hit next. And it's going to ask me for some settings.
+
+00:16:00.000 --> 00:16:09.000
+This is sort of the web developer aspect of it. Generally, I just want to run npm run build. So it's going to run it. It's going to build it right here on the web console.
+
+00:16:09.000 --> 00:16:15.000
+I'm going to output this, I think, very standard for a racked app. If I want my whole code.
+
+00:16:15.000 --> 00:16:22.000
+It'll create a new folder called distant Now, the important thing is in the advanced settings is this environmental variable section.
+
+00:16:22.000 --> 00:16:34.000
+For Supabase, you need to have at least two keys If you are connecting to any other services or using any other API calls or anything like that, you're going to have maybe multiple environmental variables.
+
+00:16:34.000 --> 00:16:39.000
+So I'm going to create two And I need to look at my code quick.
+
+00:16:39.000 --> 00:16:45.000
+To see what I actually named my variables.
+
+00:16:45.000 --> 00:16:55.000
+Okay, so I got, do I know. Vitae super based URL.
+
+00:16:55.000 --> 00:17:10.000
+And super base and non-key. Which again, let me switch gears real quick. Back on the project on your Supabase project to find those keys, you can come down to the little cog in project settings.
+
+00:17:10.000 --> 00:17:16.000
+And there is an API in configuration. And here's where you would get your project URL.
+
+00:17:16.000 --> 00:17:27.000
+And you're a non-public key. You should not need the service role for anything right now unless you Well, no, for the moment, you shouldn't need that key at all.
+
+00:17:27.000 --> 00:17:31.000
+So you're going to write these two down in your environmental variables file.
+
+00:17:31.000 --> 00:17:50.000
+And I think in our first project, we had a lot of instances of Deploying environmental variables to our GitHub repos That's a big, big no-no. I don't know if Presumably somebody has talked to you about that, they've maybe messaged you in the chat, but I want to highlight it and really emphasize you should never ever
+
+00:17:50.000 --> 00:18:00.000
+But your environmental variables in your GitHub repo. I know some of you, this is your new development, your first time developing new projects, but that is like a standard. It doesn't matter what field you go into.
+
+00:18:00.000 --> 00:18:08.000
+Data, software engineering, web development, AI, never put your environmental variables in a GitHub repo.
+
+00:18:08.000 --> 00:18:12.000
+All right, so back on my app here. So I actually need these two values.
+
+00:18:12.000 --> 00:18:17.000
+Actually, I can just copy them from here. That's probably a little easier.
+
+00:18:17.000 --> 00:18:23.000
+So this is my url And then my anon key.
+
+00:18:23.000 --> 00:18:27.000
+Is this guy right here.
+
+00:18:27.000 --> 00:18:35.000
+I'm okay with keeping the cookies cached. I'm not going to do any live package updates right now.
+
+00:18:35.000 --> 00:18:43.000
+Quickly look over the Settings looks good to me. Save and deploy.
+
+00:18:43.000 --> 00:18:51.000
+Now it's going to take a few minutes. In the old version, they had a nice little UI. It would say, hey, build, run, deploy, and you could sort of track it.
+
+00:18:51.000 --> 00:18:57.000
+Now you get just sort of this.
+
+00:18:57.000 --> 00:19:05.000
+But this is a sign of their new UI. So you can tell right now it's deploying, it's building, it's provisioning. And so you can see the log as it's provisioning.
+
+00:19:05.000 --> 00:19:19.000
+And this is where most of your errors will happen. If you're going to have an error, it's going to happen in the build step.
+
+00:19:19.000 --> 00:19:46.000
+We actually do have an error. Don't look like it broke, though.
+
+00:19:46.000 --> 00:19:54.000
+I guess while that's running, one of the very common practices do not storing your environmental variables in GitHub.
+
+00:19:54.000 --> 00:19:57.000
+Is to have a gitignore file. Ash, I don't know if anybody's ever mentioned this.
+
+00:19:57.000 --> 00:19:59.000
+Okay, he's nodding yes Okay, yeah, just for…
+
+00:19:59.000 --> 00:20:10.000
+But you should say it again. Okay, because… It's been a real issue. And I want to, I want to I want to hit the subject.
+
+00:20:10.000 --> 00:20:11.000
+I'm running.
+
+00:20:11.000 --> 00:20:17.000
+So in your repo, like right in the root, you can create this .gitignore file. So anytime you initialize a new GitHub repo or clone it, pull it, whatever.
+
+00:20:17.000 --> 00:20:33.000
+It should be already initialized, but you can create this .gitignore file And here's where you will go in and you can do like any kind of extension. So I'm by default removing most of my logs. I don't want the disk to be up there. And then I just added .env.
+
+00:20:33.000 --> 00:20:48.000
+So you could literally put an actual file name, a full path name, or any kind of wildcard characters. Like maybe I don't want anything with the dot idea extension. But this will keep it anytime you do a git add git commit, get push, it will keep .m from
+
+00:20:48.000 --> 00:20:55.000
+Trying to get pushed up to your origin.
+
+00:20:55.000 --> 00:21:00.000
+And it won't try to fail you or anything. It knows not to push that code up there.
+
+00:21:00.000 --> 00:21:01.000
+Okay, looks like we are successfully deployed. I'm sorry, Ash, go ahead.
+
+00:21:01.000 --> 00:21:10.000
+And the one thing I'll add is The one thing I'll add is if you make a cursor ignore file and put your gitignore file in the cursor ignore file.
+
+00:21:10.000 --> 00:21:17.000
+With the .env, the agent will also not update your ENVs or your gitignore. So a lot of people have been saying the same thing.
+
+00:21:17.000 --> 00:21:24.000
+It wasn't me it was cursor well This is how you fix the cursor problem with a cursor ignore.
+
+00:21:24.000 --> 00:21:29.000
+Okay, so we are deployed and we can see I have a new domain here and everything.
+
+00:21:29.000 --> 00:21:41.000
+But let's go back to my actual app. And so this URL, and it should be publicly available Let's open it up in a new tab.
+
+00:21:41.000 --> 00:21:58.000
+And now on this URL, which you can see is not my local host anymore, we have successfully deployed the app to the general public. And so again, I can type in a new world AI is fun.
+
+00:21:58.000 --> 00:22:04.000
+Does value save successfully. I can go back to my super base Let's go look at my table.
+
+00:22:04.000 --> 00:22:11.000
+And I'm writing it to my values and there's my new row. Ai is fine. So that's the extent of my application and the deployment.
+
+00:22:11.000 --> 00:22:19.000
+Again, if you have errors. It took me a minute to figure out where the errors were coming from.
+
+00:22:19.000 --> 00:22:26.000
+And there's not like a whole big, hey, check here, click here for your logs. You actually have to like click on this. This is a giant button.
+
+00:22:26.000 --> 00:22:34.000
+Where it says main deployed. You just click on that and then you have deployments, build and deploy, which again is I think, in my opinion.
+
+00:22:34.000 --> 00:22:41.000
+Not as intuitive, right? It doesn't intuitive doesn't scream at you, click on me, build, click on me, deploy. But this is where you would see the logs.
+
+00:22:41.000 --> 00:22:54.000
+On what actually happened during your build and deploy. Okay, I was not looking at chat at all. Are there any Questions.
+
+00:22:54.000 --> 00:22:59.000
+I do see a few here.
+
+00:22:59.000 --> 00:23:08.000
+Yes, there are some. Let me walk through.
+
+00:23:08.000 --> 00:23:19.000
+Okay, it looks like that's where I stopped watching.
+
+00:23:19.000 --> 00:23:21.000
+Did I say Vite? Oh, I do say vitae.
+
+00:23:21.000 --> 00:23:25.000
+I think you said vitae or something.
+
+00:23:25.000 --> 00:23:36.000
+I mean, I think we answered all the questions, but I'll go through more like free tier and super base gives you i believe two projects that you can work with.
+
+00:23:36.000 --> 00:23:41.000
+People are asking, when do I delete my Slack database if I've already used Superbase for that? The answer is Monday.
+
+00:23:41.000 --> 00:23:48.000
+When we switch over to the new project. Is there any specific questions about Amplify?
+
+00:23:48.000 --> 00:23:54.000
+Because I want to be very clear about There's a reason why we've made deployments so easy.
+
+00:23:54.000 --> 00:23:59.000
+Is because when you're going to be at your job As a software engineer at one of these companies.
+
+00:23:59.000 --> 00:24:12.000
+You're going to have someone like Steve to manage deployment for you. It's not going to be you who has to deal with the actual deployment, the ETL, the et cetera, et cetera. Steve, any terms I forgot, feel free to add them.
+
+00:24:12.000 --> 00:24:18.000
+You guys are going to be ones building applications and getting MVPs out the door.
+
+00:24:18.000 --> 00:24:25.000
+So we are sort of making the deployment pipeline simpler for a reason.
+
+00:24:25.000 --> 00:24:30.000
+No, the only thing i'll add And Amplify is a newer tool to me as well.
+
+00:24:30.000 --> 00:24:41.000
+And having, I don't want to say it was easy because I do have a lot of years of experience of developing and whatnot. So it was sort of intuitive But for those of you who've never deployed anything, it should still be
+
+00:24:41.000 --> 00:24:56.000
+Rather straightforward if you know where to look for the logs and errors. And that's why I wanted to highlight this build deploy section. If you know where to look for that, you can sort of backtrack and bug fix. I'm not going to go over them right now, but there are some other cool features about Amplify if
+
+00:24:56.000 --> 00:25:00.000
+You get ahead in your project and you say, hey, I want to try some of these other things.
+
+00:25:00.000 --> 00:25:06.000
+You know, you can actually do, and it's all AWS stuff under the hood, but you can actually do storage like an S3 bucket right in Amplify.
+
+00:25:06.000 --> 00:25:13.000
+You can do functions, which would be kind of like a lambda function right in Amplify. And you can call those functions from your web app that's been deployed.
+
+00:25:13.000 --> 00:25:21.000
+So there are some cool things about Amplify beyond just the, hey, we're hosting it for you. But that's kind of all I demonstrated right now is how to host your app.
+
+00:25:21.000 --> 00:25:22.000
+Yep. And I want to highlight
+
+00:25:22.000 --> 00:25:34.000
+If we didn't talk about DNS and any of that and finding domain names any of that so If we get to that point, we can do another workshop on how to buy and deploy it to an actual registered DNS name.
+
+00:25:34.000 --> 00:25:41.000
+For the moment, I think the hiring partners are fine. With having a URL like this.
+
+00:25:41.000 --> 00:25:51.000
+Yep. And I want to be very clear. The manager you guys will have when you get hired is looking at your projects.
+
+00:25:51.000 --> 00:25:55.000
+So it's not just Austin and me. It's not just Zach. It's not just Steve.
+
+00:25:55.000 --> 00:26:08.000
+It's the manager you're going to be working with Or maybe your skip level, he is looking at everything you're building. So this is not we're not just building this program to challenge you guys and build really cool AI stuff.
+
+00:26:08.000 --> 00:26:14.000
+Like this has to end up in a job, right? I want to make that very clear.
+
+00:26:14.000 --> 00:26:19.000
+There's a couple of questions I'm getting. Um.
+
+00:26:19.000 --> 00:26:26.000
+Just react with vitae or whatever. Is that what employers use honestly I'm ambivalent.
+
+00:26:26.000 --> 00:26:43.000
+And the answer is usually employers have various decisions they make on front end technologies Some really like next, some really like react But most of them Right now, at least your hiring partners, the three companies we're working with.
+
+00:26:43.000 --> 00:27:00.000
+They care less about you knowing the advanced portions of next and the advanced portions of Remix and server-side rendering and all of that. More, they want to see functioning AI end to end for real users, right? So you're right. We're probably using a simpler
+
+00:27:00.000 --> 00:27:13.000
+Front end, then, you know, we could with next and remix But that's for a reason. We want you to worry less about the nuances of the tech stack and build real functioning usable product.
+
+00:27:13.000 --> 00:27:15.000
+So that's going to be the focus. And that's why.
+
+00:27:15.000 --> 00:27:30.000
+Yeah, I'm going to double down on that too. There's a reason I pick the easiest of easiest and I don't usually worry about the uh the visuals of my web apps, because I'm not a web developer But I have students who do blockchain stuff too. And they always ask me the kind of same thing. This is not a web dev class.
+
+00:27:30.000 --> 00:27:33.000
+There's a little bit of web dev in it to get your AI working.
+
+00:27:33.000 --> 00:27:42.000
+That's not the point. The point is to see the functionality behind it. You're going to have web developers or maybe you can ask AI to build the web element, right?
+
+00:27:42.000 --> 00:27:49.000
+Which is actually kind of what I did here. Because I do not know React at all, but I would still come up with, you know, this little shindig.
+
+00:27:49.000 --> 00:27:54.000
+So the AI is the important part. If you need help getting it to look a certain way.
+
+00:27:54.000 --> 00:28:02.000
+Or get it deployed, we can help. The idea is to get your AI as powerful as possible.
+
+00:28:02.000 --> 00:28:10.000
+And then to build using AI, right? Yeah, it doesn't have to code it all yourself.
+
+00:28:10.000 --> 00:28:11.000
+A couple new messages.
+
+00:28:11.000 --> 00:28:17.000
+Paul has a great question in the chat. Will we get any say in tech stack if we work for one of these three? Answer is yes.
+
+00:28:17.000 --> 00:28:26.000
+Usually what happens is you have a meeting sort of like a product roadmapping meeting where you and the team that you're working with gets to decide.
+
+00:28:26.000 --> 00:28:29.000
+What tech stack the entire product that you're building will have.
+
+00:28:29.000 --> 00:28:38.000
+If you're onboarding onto an existing product. Then you have to use the tech stack they've already used, obviously. But if you're green fielding a new product.
+
+00:28:38.000 --> 00:28:40.000
+And you're a part of that team, which is where you guys will be.
+
+00:28:40.000 --> 00:28:47.000
+Aj will be not just teams of one, it'll be like one or two because there'll be multiple AI engineers, right? So.
+
+00:28:47.000 --> 00:28:53.000
+You guys can come together and decide with your manager what your tech stack is going to be, but you will get input with your manager.
+
+00:28:53.000 --> 00:28:58.000
+And probably duos are triplets is what people are thinking.
+
+00:28:58.000 --> 00:29:09.000
+Maybe triplets is the wrong word. But that's what's happening. Steve, there's an interesting question here. Superbase doesn't have a consistent IPv4 address.
+
+00:29:09.000 --> 00:29:15.000
+Unless you pay for it, does Amplify accept an IPv6? I believe it does, but I can check with Tom.
+
+00:29:15.000 --> 00:29:21.000
+It does. I'm not sure. Understand fully the question. Why do we need the IPv6
+
+00:29:21.000 --> 00:29:30.000
+Yeah, I don't think you would need the IPV. Anyway, I believe you should be fine marcus but We can look into it if there's an issue, Steve, right? I don't know.
+
+00:29:30.000 --> 00:29:31.000
+Yeah, because most
+
+00:29:31.000 --> 00:29:36.000
+Isn't it that the front end would lose track of your super base if its IPv4 address changes, and that's how I was addressing it?
+
+00:29:36.000 --> 00:29:47.000
+Oh, okay. It should accept an IPv6, but don't quote me on that. I've not worked with Supabase too much.
+
+00:29:47.000 --> 00:29:48.000
+So…
+
+00:29:48.000 --> 00:29:53.000
+Again, we're trying to pick the open-ended server tools here that are serverless tools
+
+00:29:53.000 --> 00:29:58.000
+So I believe the IPv6 should work. If there's any indication that it's not working.
+
+00:29:58.000 --> 00:30:03.000
+Feel free to shoot me a message before On Monday.
+
+00:30:03.000 --> 00:30:10.000
+Steve, there's a question here that somebody tried to follow what you were doing.
+
+00:30:10.000 --> 00:30:15.000
+And they got an IM create role error. Why would they be creating a role?
+
+00:30:15.000 --> 00:30:19.000
+Don't see that message.
+
+00:30:19.000 --> 00:30:20.000
+Oh, um…
+
+00:30:20.000 --> 00:30:26.000
+That's in the Slack thread. They said, I am create role error after trying to save and deploy just now.
+
+00:30:26.000 --> 00:30:38.000
+Can you paste that into
+
+00:30:38.000 --> 00:30:39.000
+And… Go ahead, Steve. Sorry.
+
+00:30:39.000 --> 00:30:49.000
+Okay, so… I thought we gave all Amplify permissions, but it may, I mean, that's an IAM thing. Oh, okay.
+
+00:30:49.000 --> 00:30:56.000
+Yes. Let me stop share. I actually need to switch accounts.
+
+00:30:56.000 --> 00:31:06.000
+Okay, yeah. While you do that, I'm going to answer a few more questions. Does Amplify keep the same URL every time it deploys? The answer is yes, it should.
+
+00:31:06.000 --> 00:31:12.000
+Next question is, is the stack fully hosted on AWS Amplify, including Superbase or only the front end?
+
+00:31:12.000 --> 00:31:14.000
+Paul, only the front end is hosted on AWS Amplify The backend should be handled by Superbase.
+
+00:31:14.000 --> 00:31:21.000
+Right.
+
+00:31:21.000 --> 00:31:26.000
+Aj asked, did this come with CI main branch and then to deploy?
+
+00:31:26.000 --> 00:31:29.000
+I believe Steve picked the main branch, but maybe I'm not getting your question.
+
+00:31:29.000 --> 00:31:33.000
+You can deploy any branch, but yeah, I picked the main one.
+
+00:31:33.000 --> 00:31:38.000
+The steps you did sets up CI from main Cool.
+
+00:31:38.000 --> 00:31:39.000
+Yeah.
+
+00:31:39.000 --> 00:31:47.000
+Yep. Dallas asked, is Amplify mainly for front ends? The answer is no. Amplify actually handles everything, including S3, including Cloud Functions, including front ends.
+
+00:31:47.000 --> 00:31:52.000
+Right.
+
+00:31:52.000 --> 00:31:54.000
+And including backends. So when I spoke
+
+00:31:54.000 --> 00:32:00.000
+It's like an internal version of RDS on it too. So if you didn't want to use Supabase, we're telling you to do it.
+
+00:32:00.000 --> 00:32:01.000
+But if you wanted to go the RDS route, it can go that route too.
+
+00:32:01.000 --> 00:32:04.000
+Yeah.
+
+00:32:04.000 --> 00:32:11.000
+Yes. So actually, I remember I was in the meeting with one of the hiring partners and they were saying like.
+
+00:32:11.000 --> 00:32:14.000
+Why aren't all the students just using Amplify? It does everything.
+
+00:32:14.000 --> 00:32:22.000
+So Amplify is probably one of the easiest ways as a software engineer, as a solo builder, as someone who's just starting out.
+
+00:32:22.000 --> 00:32:31.000
+As someone who wants to get an app out quickly to deploy everything. That means if you want your agents to be on Lambda functions in the cloud within Amplify, you could do that.
+
+00:32:31.000 --> 00:32:36.000
+But if you want to store documents within the storage system within Amplify, you could do that.
+
+00:32:36.000 --> 00:32:42.000
+It's a really nice all-in-one solution. So we really are going to be pushing the use of Amplify.
+
+00:32:42.000 --> 00:32:53.000
+In terms of the Zendesk project. Inside the Zendesk project, you're going to have some agent functionality that's going to be inside super base edge functions.
+
+00:32:53.000 --> 00:33:02.000
+So you don't have to use the other features of Amplify right now, but I really, really suggest looking into Amplify more.
+
+00:33:02.000 --> 00:33:08.000
+As it offers everything you need for the program.
+
+00:33:08.000 --> 00:33:15.000
+Okay, next question. Like for AI features, I currently spend my career to fast API where I run a Python script and come up with a response.
+
+00:33:15.000 --> 00:33:21.000
+Great question. So for the Zendesk project, Spencer, you would do the same thing. You might not need the Fast API.
+
+00:33:21.000 --> 00:33:27.000
+You can just host that agent code in an edge function And then hit it whenever you need to.
+
+00:33:27.000 --> 00:33:30.000
+Speaking my language, no, that's where I build my apps in. Bast API.
+
+00:33:30.000 --> 00:33:31.000
+Yeah, and to be honest, to add on to what Steve is saying.
+
+00:33:31.000 --> 00:33:35.000
+Sweet.
+
+00:33:35.000 --> 00:33:38.000
+We have consulting projects here on the B2B side of BloomTech.
+
+00:33:38.000 --> 00:33:44.000
+And we host our agents on AWS Lambdas.
+
+00:33:44.000 --> 00:33:49.000
+Okay, next question is, will the app on Amplify have access to other AWS services?
+
+00:33:49.000 --> 00:33:58.000
+The answer is probably not. And it shouldn't need it, right?
+
+00:33:58.000 --> 00:33:59.000
+Nope.
+
+00:33:59.000 --> 00:34:14.000
+Oh, am I frozen? And the answer is it will not have access, but it shouldn't need access because all your agent codes should be in SuperBase. Your backend should be in super base Amplify should just be your friend.
+
+00:34:14.000 --> 00:34:24.000
+Sebastian is asking, how do you update the code in Amplify? You just make a new commit to your main branch and it'll automatically redeploy.
+
+00:34:24.000 --> 00:34:30.000
+Nicholas is asking, do we need to ensure our code base is a monorepo to use Amplify?
+
+00:34:30.000 --> 00:34:31.000
+You don't have to.
+
+00:34:31.000 --> 00:34:40.000
+Well, you don't you don't have to do that because if super base is going to handle all your backend The Amplify stuff could just be your front end repo. So it doesn't have to be mono.
+
+00:34:40.000 --> 00:34:52.000
+Stephen is asking, there was a my code is a monorepo checkbox Not sure what that was for though. If you're using Next.js and trying to deploy on Amplify, that might be a reason why you need to say.
+
+00:34:52.000 --> 00:34:57.000
+My code is a monorepo because the API routes and the front end components are in the same repo.
+
+00:34:57.000 --> 00:35:00.000
+But that won't be the case if you're just using React.
+
+00:35:00.000 --> 00:35:08.000
+Asher is asking, are we not going to be in on teams of one? You might be on teams of one. You'll be on very small teams, maybe teams of one to two, one to three.
+
+00:35:08.000 --> 00:35:12.000
+But it depends on which of the hiring partners you go to.
+
+00:35:12.000 --> 00:35:18.000
+But again, you will be disconnected from the larger team and you'll be asked of building applications fairly quickly.
+
+00:35:18.000 --> 00:35:24.000
+Benjamin just has the same IM error. And then that Steve is looking to now.
+
+00:35:24.000 --> 00:35:28.000
+I'm adding a new permission right now.
+
+00:35:28.000 --> 00:35:34.000
+Okay, thanks, Steve. Aj is asking, it seems like there might be benefit if we self-host Super Base in AWS as well.
+
+00:35:34.000 --> 00:35:50.000
+Can be a session on that. Yes. So if you want to like deploy like let's say you want to launch your Zendesk application at the end of next week And you want to have actual users on it and and you want to put that all on AWS, yes, there is a benefit to hosting the Super Base on AWS
+
+00:35:50.000 --> 00:36:02.000
+We'll add the we'll maybe add a session later on. But I want to see working demos before we get to that level.
+
+00:36:02.000 --> 00:36:09.000
+The same goes for this voice apps thing and the video thing. Like I want to see you guys post on Slack.
+
+00:36:09.000 --> 00:36:21.000
+That you used the free tier of 11 labs use fish.audio to get your AI personas working. And then if we need to I'll get to the next level or next tier of a service, then we can do that.
+
+00:36:21.000 --> 00:36:29.000
+I don't want to just arbitrarily give services to everybody. I want you guys to work your way up to that.
+
+00:36:29.000 --> 00:36:35.000
+That role has been modified. If those of you who were running into the IAM error want to give it another whirl.
+
+00:36:35.000 --> 00:36:39.000
+Thank you, Steve. So please log out, log back in and try it out.
+
+00:36:39.000 --> 00:36:41.000
+You may not need to log out.
+
+00:36:41.000 --> 00:36:49.000
+Okay. Kayla is asking, is super face going to be the same… AZ as amplified. I don't know what AZ stands for.
+
+00:36:49.000 --> 00:37:01.000
+Availability zone so if are they going to be co-hosted in like US East 1C or something like that uh rather than… having connections kind of ping ponging across the country.
+
+00:37:01.000 --> 00:37:08.000
+I believe the free tier doesn't let you pick the availability zone, but that might be wrong.
+
+00:37:08.000 --> 00:37:12.000
+Kale, I'll probably look into this and answer your question, but Steve, what do you think?
+
+00:37:12.000 --> 00:37:20.000
+Yeah, I don't actually know. Super Base has availability zones. It's not hosted on AWS, so it's Kind of up to them.
+
+00:37:20.000 --> 00:37:25.000
+Yeah, they're deciding for us. Okay, if we get to a point where, you know.
+
+00:37:25.000 --> 00:37:36.000
+It's everything's working properly and we want to fix this we can do the thing where we add the super base to AWS, but I don't think we're there yet.
+
+00:37:36.000 --> 00:37:43.000
+Aj is asking, I want to deploy before building. Aj, yeah, I would deploy your Amplify on Amplify directly.
+
+00:37:43.000 --> 00:37:50.000
+And get your basic Apple running. And then you can add stuff to it automatically. So then when you push updates to main.
+
+00:37:50.000 --> 00:37:52.000
+You can see the updates on the deployed URL from AWS.
+
+00:37:52.000 --> 00:37:59.000
+So I'd actually, I don't know if I'm answering the same question or contradicting you, but I actually go the other way.
+
+00:37:59.000 --> 00:38:05.000
+I would build it and run it locally and make sure it works before you try to deploy it.
+
+00:38:05.000 --> 00:38:11.000
+I think he was saying like he wants to have the entire system set up so it's automatically deploying, but I might be wrong.
+
+00:38:11.000 --> 00:38:12.000
+Okay.
+
+00:38:12.000 --> 00:38:19.000
+I mean, I usually like to have like a working end-to-end authDB and front end before writing the first feature.
+
+00:38:19.000 --> 00:38:20.000
+Yeah. Yes, I would do that.
+
+00:38:20.000 --> 00:38:21.000
+Aside from, you know, off.
+
+00:38:21.000 --> 00:38:23.000
+Yeah.
+
+00:38:23.000 --> 00:38:30.000
+You can run that still locally, right? You can still have the front end and the back end fully developed before you even deploy it.
+
+00:38:30.000 --> 00:38:33.000
+Yeah, for sure.
+
+00:38:33.000 --> 00:38:34.000
+So let's add one more engineering practice. I would create a staging branch.
+
+00:38:34.000 --> 00:38:37.000
+Yeah.
+
+00:38:37.000 --> 00:38:42.000
+And you can work off your staging branch locally and make sure everything's working properly. And when you're ready.
+
+00:38:42.000 --> 00:38:47.000
+To add that to your main branch and then the automatic deploy to Amplify will happen.
+
+00:38:47.000 --> 00:38:55.000
+You can do it that way too. So this way You know, you sort of do get both of mine and Steve's recommendations. You make sure staging is working properly.
+
+00:38:55.000 --> 00:39:04.000
+You have some level of checks before you head to the main branch and then you're able to then deploy the main branch as soon as you commit to it.
+
+00:39:04.000 --> 00:39:05.000
+How much of a pain is it to get staging like deploying an amplify?
+
+00:39:05.000 --> 00:39:06.000
+That might be a solution.
+
+00:39:06.000 --> 00:39:09.000
+Yeah, that's in general.
+
+00:39:09.000 --> 00:39:10.000
+It shouldn't be that much of a pain. You just changed branch. You just changed the branch. Yeah.
+
+00:39:10.000 --> 00:39:12.000
+It'd be the same process. Yeah.
+
+00:39:12.000 --> 00:39:17.000
+Mm-hmm.
+
+00:39:17.000 --> 00:39:26.000
+Good question, though. Sorry, I lost my train of thought in the questions.
+
+00:39:26.000 --> 00:39:29.000
+Sebastian is asking, so for the backend, we can deploy our Python code.
+
+00:39:29.000 --> 00:39:33.000
+No, for the backend use super base. You don't need any Python code.
+
+00:39:33.000 --> 00:39:40.000
+Superbasia will do the whole backend. End to end. You can make the tables on it You can use the SDK to hit it.
+
+00:39:40.000 --> 00:39:44.000
+The reason you might need Python code is for your agent.
+
+00:39:44.000 --> 00:39:57.000
+And that would be on a super base edge function But in terms of your backend and your API, you shouldn't need any Python code.
+
+00:39:57.000 --> 00:39:58.000
+Oh, got it this week. Yeah, yeah, yeah. This week you can use Amplify to deploy your Python code. Yes.
+
+00:39:58.000 --> 00:40:03.000
+I was thinking about like this week You know, because I'm using Python for the backend
+
+00:40:03.000 --> 00:40:08.000
+Joshua is asking, are we using Amplify V1 or V2? I don't think it matters, right, Steve? Either works.
+
+00:40:08.000 --> 00:40:15.000
+Well, I like V1 better, but I just demoed V2 because that's the one they they put in front of you.
+
+00:40:15.000 --> 00:40:21.000
+Oh, great, great point from, uh. In the chat, I think Superbase Edge functions are only JS.
+
+00:40:21.000 --> 00:40:22.000
+Langchain has a great JS and a great Python library. So I believe we should be fine.
+
+00:40:22.000 --> 00:40:26.000
+Yeah, they are.
+
+00:40:26.000 --> 00:40:35.000
+I'll trust you guys to trust you guys convert the, I mean, maybe I'll give you code for JavaScript and Python on Monday. So.
+
+00:40:35.000 --> 00:40:39.000
+These either.
+
+00:40:39.000 --> 00:40:48.000
+Again, I haven't done too much react, but presumably you could do, I don't know if you If I'm stepping over bombs here, but you could presumably write a Lambda function in Python and then call that as well.
+
+00:40:48.000 --> 00:40:54.000
+Yep. Steve is right.
+
+00:40:54.000 --> 00:41:03.000
+Yeah, we will. Everything will be Python first, usually when it comes to anything we teach in ai because all the libraries are Python first.
+
+00:41:03.000 --> 00:41:09.000
+Sebastian is asking, how do we create security so front end backend communicate internally?
+
+00:41:09.000 --> 00:41:15.000
+If you use super base auth and securities are managed by them, so you don't have to do much.
+
+00:41:15.000 --> 00:41:19.000
+But if you want to add cores to your Slack project, if that's what you're referring to, Sebastian.
+
+00:41:19.000 --> 00:41:28.000
+That might be a nice way to do it. But in terms of next week's project, superbition, manage everything.
+
+00:41:28.000 --> 00:41:39.000
+So someone is saying, oh, if it's only JS or TS, you can't use edge functions. Well, you can go on Amplify and use Cloud Functions, which works with Python.
+
+00:41:39.000 --> 00:41:46.000
+There's between Amplify and Super Base, there should be nothing hindering you from completing next week's project.
+
+00:41:46.000 --> 00:41:53.000
+Aj is asking, do any of the tech managers at the hiring companies have opinions about vector databases? I've been avoiding Pinecone. Should I super raise vector?
+
+00:41:53.000 --> 00:41:59.000
+Yes. So there's some varying opinions. People really love PG vector.
+
+00:41:59.000 --> 00:42:08.000
+And people really love people really MongoDB. So MongoDB also and post your vectors with a lot of parameters on it.
+
+00:42:08.000 --> 00:42:13.000
+If you're using Postgres, just know that you have to enable the extension first.
+
+00:42:13.000 --> 00:42:14.000
+Yep. But those would be the two that we recommend.
+
+00:42:14.000 --> 00:42:19.000
+If you're going to use vectors.
+
+00:42:19.000 --> 00:42:23.000
+At least from the hiring partners. And so going forward, if we do introduce something more rag.
+
+00:42:23.000 --> 00:42:29.000
+We'll probably switch out Pinecone for Mongo and show you that instead.
+
+00:42:29.000 --> 00:42:39.000
+When you say supervisors handle your backend given Vanilla react are there any backends or frameworks Node Express that employers want to use?
+
+00:42:39.000 --> 00:42:48.000
+That they commonly use so super base will handle everything where you don't need any node or express.
+
+00:42:48.000 --> 00:42:52.000
+In the future, when we are not using Superbase for your backend.
+
+00:42:52.000 --> 00:43:05.000
+I'll ask. It's a pretty varied. There's a lot of Java usage in the employer's backends, but Again, I don't want you to worry about that right now. I think the only thing you should worry about is the Zendesk project and Superbase.
+
+00:43:05.000 --> 00:43:11.000
+And then as the projects go on, we'll introduce more technologies that the hiring partners are using.
+
+00:43:11.000 --> 00:43:18.000
+I think we need to make sure we're defining what backend is too. We're using Superbase as the database only, not necessarily the entire backend.
+
+00:43:18.000 --> 00:43:31.000
+Hmm.
+
+00:43:31.000 --> 00:43:42.000
+As Joshua, Superbase has an SDK. So you can just port the super base library in and you can do all the routing, you can do all the hits And you can do that automatically.
+
+00:43:42.000 --> 00:43:50.000
+And that's what I was talking about, the orm objects. If you want to do the object relational mappings.
+
+00:43:50.000 --> 00:43:55.000
+Steve, can you walk through creating an access key one more time.
+
+00:43:55.000 --> 00:43:56.000
+Yeah.
+
+00:43:56.000 --> 00:44:03.000
+Yeah. Let me actually log into my student account, if I remember what that password was.
+
+00:44:03.000 --> 00:44:13.000
+So I would have the same view as what you guys have.
+
+00:44:13.000 --> 00:44:19.000
+Have the hiring managers discuss the method of deployment that should be adopted should all code by cursor be scrutinized.
+
+00:44:19.000 --> 00:44:35.000
+All code by cursor agent should be scrutinized. Eventually we're going to start doing test driven development So a lot of people like to create a lot of people like have a human being create the test for a project And then check if the tests are passing with AI.
+
+00:44:35.000 --> 00:44:40.000
+Check if the tests are passing with the code that the cursor agent created.
+
+00:44:40.000 --> 00:44:50.000
+People are putting their messages in both locations. I'm ignoring the Zoom chat because There's a ton of messages. Just want to say that. Let's just put it in the Slack.
+
+00:44:50.000 --> 00:45:00.000
+Um. Can we build AI features in Python and expose them on an API and call that API in Super Biz?
+
+00:45:00.000 --> 00:45:01.000
+Sure. That's okay. Say again.
+
+00:45:01.000 --> 00:45:05.000
+Where are you going to host that though? Where you're going to host that though?
+
+00:45:05.000 --> 00:45:07.000
+Amplify, right? Or no?
+
+00:45:07.000 --> 00:45:14.000
+You could. You could deploy the Python function and then call that. I'm saying if you're going to use an API to call it, it has to be hosted somewhere too.
+
+00:45:14.000 --> 00:45:20.000
+Right. So Uzzare, I would just use, I mean, you could use EC2, but again, to make things easier.
+
+00:45:20.000 --> 00:45:21.000
+You're getting off the initial tech stack a little bit here.
+
+00:45:21.000 --> 00:45:31.000
+And if you're if you're really… Yeah, we can just put all of the code that you're using on a cloud function on Amplify.
+
+00:45:31.000 --> 00:45:38.000
+Or an edge function on Superbiz. There should be no need for the API.
+
+00:45:38.000 --> 00:45:40.000
+Let me walk through the access keys again.
+
+00:45:40.000 --> 00:45:53.000
+I have Langchain is too big to fit in edge functions We will show you alternatives to that. And then on Monday, I'll show you how to add that add to an edge function or a cloud function on amplify.
+
+00:45:53.000 --> 00:46:01.000
+So on Monday's classes on Langchen, by the way. If you guys don't know. So Monday's class is introduction to Langchain. So any agents that we build.
+
+00:46:01.000 --> 00:46:05.000
+We'll walk through deploying them on Amplify using a Cloud Function.
+
+00:46:05.000 --> 00:46:14.000
+Ash, if you want to allow it, I can also walk through like some of the lighter projects I've done. I've just hosted Langcheng in an app that I've hosted on ECR.
+
+00:46:14.000 --> 00:46:18.000
+And then use that to power a lambda function. I don't know if we want to go that route but that
+
+00:46:18.000 --> 00:46:28.000
+I think we will… I think we'll do that if the agents become really crazy, but I'm not sure what to expect from what these guys are going to build.
+
+00:46:28.000 --> 00:46:34.000
+So do you want to I think we can add another workshop for that maybe next week.
+
+00:46:34.000 --> 00:46:35.000
+Yeah.
+
+00:46:35.000 --> 00:46:42.000
+Okay. For access keys, I actually can't remember my demo student password. So I'm going to do it from my account. So if it looks a little different.
+
+00:46:42.000 --> 00:46:45.000
+It's because I have the admin privileges, but you should all be able to do what I'm about to do.
+
+00:46:45.000 --> 00:46:50.000
+So from the homepage, I clicked on IAM. Identity access management.
+
+00:46:50.000 --> 00:46:57.000
+And a lot of this stuff is probably going to be access denied. You don't see that, but you should be able to click on users.
+
+00:46:57.000 --> 00:47:10.000
+And now the way I've set up the permissions, you should be only able to see You should be able to see all the users, but you should only be able to click on your own and see like last activity, password age.
+
+00:47:10.000 --> 00:47:17.000
+Everybody else should be denied. But so if i find Like your own.
+
+00:47:17.000 --> 00:47:27.000
+I should be able to click on it. And then again, you're probably going to see some more access denied stuff here, but you should be able to click on security credentials. There should be an option here.
+
+00:47:27.000 --> 00:47:32.000
+And then from here, you will want to create an access key.
+
+00:47:32.000 --> 00:47:36.000
+And then you can kind of pick anyone. I'm just going to pick other.
+
+00:47:36.000 --> 00:47:41.000
+It's sort of the generic. You can give it a tag.
+
+00:47:41.000 --> 00:47:46.000
+I'm going to delete this key. And if you saw my little video.
+
+00:47:46.000 --> 00:47:54.000
+The most important screen and it's also the one where you need to not click off of it until you have your access keys stored somewhere.
+
+00:47:54.000 --> 00:48:01.000
+Whether that's AWS secrets, whether you write it down on paper, whether you store it on a sticky or notepad or whatever.
+
+00:48:01.000 --> 00:48:06.000
+You will not be able to get this secret access key ever again.
+
+00:48:06.000 --> 00:48:12.000
+The only way to re-access you know using access keys to create a new one.
+
+00:48:12.000 --> 00:48:14.000
+You'd have to destroy this one and get a new one.
+
+00:48:14.000 --> 00:48:17.000
+You'd be able to retrieve the access key, but not the secret.
+
+00:48:17.000 --> 00:48:22.000
+So you write that down, you're done. You can actually download it as a CSV here.
+
+00:48:22.000 --> 00:48:33.000
+To save and then you would just pass those keys in to any of your API calls, photo three whatever JavaScript uses.
+
+00:48:33.000 --> 00:48:37.000
+Steve, there seems to be an error screenshot in Slack. I don't know if you can, I don't know what to, it's with from Juan.
+
+00:48:37.000 --> 00:48:51.000
+Okay.
+
+00:48:51.000 --> 00:48:54.000
+Do you want to forward me the screenshot? All right.
+
+00:48:54.000 --> 00:48:57.000
+Yeah, and the regular BloomTech one?
+
+00:48:57.000 --> 00:49:04.000
+Yeah.
+
+00:49:04.000 --> 00:49:10.000
+Okay. And guys, all of this tech stack information will be on the project document. Someone asked me if I'm going to write this down somewhere.
+
+00:49:10.000 --> 00:49:18.000
+Answer is yes. The project document you get for Zendesk on Monday We'll include everything that we said so far.
+
+00:49:18.000 --> 00:49:30.000
+And it'll also include any key information regarding the tech stack.
+
+00:49:30.000 --> 00:49:35.000
+Steve, I just sent you the message.
+
+00:49:35.000 --> 00:49:42.000
+Okay.
+
+00:49:42.000 --> 00:49:44.000
+John 10, you can use S3 through Amplify.
+
+00:49:44.000 --> 00:49:55.000
+Okay, let me stop sharing. I'm going to check out
+
+00:49:55.000 --> 00:49:58.000
+Okay, is it just this one user or does everybody have that?
+
+00:49:58.000 --> 00:50:03.000
+So I believe Juan is the only one with that for now.
+
+00:50:03.000 --> 00:50:21.000
+Because I feel like I tested this out on my demo user and I'm in the same group as everybody else and I was able to do it.
+
+00:50:21.000 --> 00:50:29.000
+It might be something else then maybe?
+
+00:50:29.000 --> 00:50:32.000
+A couple of really good questions in the thread while Steve looks into that is like.
+
+00:50:32.000 --> 00:50:44.000
+Can we still use S3? Can we still use Lambda? What I'm saying is for your MVP, until there's actual You know, until you have thousands of documents, until you have like thousands of thousands of hits to your agents.
+
+00:50:44.000 --> 00:50:52.000
+There's no need to use lambda or S3. You can just use Amplify Cloud Functions and Amplify Storage.
+
+00:50:52.000 --> 00:51:00.000
+So I'm really trying to streamline the deployment area. I mean, obviously, if you're really good at AWS, if you know what you're doing, sure, go ahead.
+
+00:51:00.000 --> 00:51:05.000
+But I think to start out for your MVPs, let's get everything working end to end.
+
+00:51:05.000 --> 00:51:15.000
+And the easiest way to get something working end to end is to use all the availability of things on Amplify. You have storage, which is basically a smaller version of S3.
+
+00:51:15.000 --> 00:51:19.000
+You have Cloud Functions, which is an easier version of Lambdas.
+
+00:51:19.000 --> 00:51:23.000
+You have everything at your disposal within Amplify. So start there.
+
+00:51:23.000 --> 00:51:38.000
+Once everything is working and your app is doing really well, feel free to move on to better services more optimized services. But I don't want us to fully focus on S3 and Lambda before we get something working untamed.
+
+00:51:38.000 --> 00:51:53.000
+Don't get me wrong, we want to focus on optimizations But we want to do that after we have an MVP working.
+
+00:51:53.000 --> 00:52:01.000
+Question in the Zoom is…
+
+00:52:01.000 --> 00:52:10.000
+The tech stack is required. Super Base and React.
+
+00:52:10.000 --> 00:52:19.000
+I will say Superbase is really straightforward to use, especially with people coming with Amplify is also required.
+
+00:52:19.000 --> 00:52:33.000
+Because frankly speaking, we had a lot of people with the people you know the east ec2 instances that are mining Bitcoin, not mining Bitcoin, mining random crypto like And so it's a bad look. So right now we're going to
+
+00:52:33.000 --> 00:52:41.000
+Mandate amplify, mandate Super Base, mandate React. In the future, as we get more and more confident in your ability.
+
+00:52:41.000 --> 00:53:04.000
+Especially AWS wise we will reduce the mandates.
+
+00:53:04.000 --> 00:53:11.000
+Yes, Lucas, you can use SuperBase for everything, storage, auth. Functions, everything. Superbase has everything.
+
+00:53:11.000 --> 00:53:15.000
+So you don't need to leave Superbase if you don't want to.
+
+00:53:15.000 --> 00:53:22.000
+Joshua asked, can Cloud Functions host file parsing using Tesseract? I'm not sure. I haven't tried it out.
+
+00:53:22.000 --> 00:53:35.000
+But if they can't, then you can feel free to use lambdas.
+
+00:53:35.000 --> 00:53:48.000
+Yes, I will. Benji makes a great point. There's a great super base channel where everyone's been talking and answering a bunch of questions regarding super base And I think it's a really nice way to sort of get started.
+
+00:53:48.000 --> 00:53:52.000
+I've also I'm going to be posting the course as well.
+
+00:53:52.000 --> 00:54:06.000
+Now here's the channel.
+
+00:54:06.000 --> 00:54:15.000
+Okay. We have a couple more minutes left.
+
+00:54:15.000 --> 00:54:21.000
+No, you do not need to make any changes to your current Slack application. I will say that one more time.
+
+00:54:21.000 --> 00:54:26.000
+You do not need to change the deployment or make any changes to your current Slack application.
+
+00:54:26.000 --> 00:54:30.000
+This is for the Zendesk project starting on Monday next week.
+
+00:54:30.000 --> 00:54:34.000
+Now, if you feel that your deployment is not working and you might want to try out Amplify.
+
+00:54:34.000 --> 00:54:48.000
+Because it might be an easier solution, feel free. Amplify should work with your Slack application as well.
+
+00:54:48.000 --> 00:54:54.000
+Hey, Sebastian, Steve just added the I am create policy action So I would check again.
+
+00:54:54.000 --> 00:54:59.000
+Every project is two weeks. The first week is rebuilding it. The second week is AI.
+
+00:54:59.000 --> 00:55:02.000
+I didn't know how to create policy. I had to create role. Is it a different?
+
+00:55:02.000 --> 00:55:03.000
+Here. Okay.
+
+00:55:03.000 --> 00:55:07.000
+Yeah, somebody got to create policies.
+
+00:55:07.000 --> 00:55:12.000
+Why would they need to create a policy though? Right?
+
+00:55:12.000 --> 00:55:16.000
+Yeah, go ahead.
+
+00:55:16.000 --> 00:55:18.000
+Yeah, everyone's getting your I am create policy.
+
+00:55:18.000 --> 00:55:30.000
+Okay.
+
+00:55:30.000 --> 00:56:00.000
+I can send you that as well.
+
+00:56:25.000 --> 00:56:31.000
+No, just Joshua, nothing else is up to you. These are the four things you can use.
+
+00:56:31.000 --> 00:56:35.000
+And I would start off with just building out the basic application with Super Base and React.
+
+00:56:35.000 --> 00:56:59.000
+And then worry about creating the agent functionality after class on number.
+
+00:56:59.000 --> 00:57:04.000
+Lucas, you can sign up for a free trial for Zendesk and use the entire application.
+
+00:57:04.000 --> 00:57:11.000
+Just don't use your gauntlet email because they'll block us. There's also a bunch of YouTube videos that showcase the Zendesk functionality end-to-end.
+
+00:57:11.000 --> 00:57:18.000
+So there's, I would say YouTube and the free trial should be enough to get you an idea of what the what the product does.
+
+00:57:18.000 --> 00:57:24.000
+Oh, I have attach policy, not create policy. That's here.
+
+00:57:24.000 --> 00:57:39.000
+Thanks, Steve.
+
+00:57:39.000 --> 00:57:48.000
+Can I get somebody else to confirm that they can create their own access keys.
+
+00:57:48.000 --> 00:57:52.000
+I was able to create access keys just fine through the console.
+
+00:57:52.000 --> 00:58:00.000
+The problem that I ran into was like with elastic beanstalk and whatnot, where it needs you to create an IAM role.
+
+00:58:00.000 --> 00:58:01.000
+But yeah, you can create them through the console just fine. Unless we've hit a limit.
+
+00:58:01.000 --> 00:58:05.000
+Okay.
+
+00:58:05.000 --> 00:58:06.000
+On the account.
+
+00:58:06.000 --> 00:58:14.000
+Well, we've got one user who's unable to view the users, I will manually modify his account.
+
+00:58:14.000 --> 00:58:16.000
+I think Steve's just making sure it's not an error that's showing up there.
+
+00:58:16.000 --> 00:58:22.000
+Yeah, I want to make sure it's not a whole permission set here not Just one user.
+
+00:58:22.000 --> 00:58:23.000
+Mine is still good too.
+
+00:58:23.000 --> 00:58:24.000
+Okay, so I would just…
+
+00:58:24.000 --> 00:58:31.000
+Yeah, let me just say out loud one more time. If we all sign up for the Zendesk free trial using a gauntlet email.
+
+00:58:31.000 --> 00:58:39.000
+That's not a good idea. We will get blocked, I'm pretty sure as like some sort of i don't know.
+
+00:58:39.000 --> 00:58:44.000
+Ours, Austin will be like… Hey, why is everyone trying to sign up for Zendesk?
+
+00:58:44.000 --> 00:58:49.000
+So what I would say is if you have a regular email that you can use or like a throwaway email.
+
+00:58:49.000 --> 00:58:52.000
+If you're signing up for a free trial because you want to understand how Zendesk works.
+
+00:58:52.000 --> 00:59:00.000
+Feel free. But there's a ton of videos on YouTube. A ton of videos walking through Zendesk functionality.
+
+00:59:00.000 --> 00:59:10.000
+So you should be able to do that as well.
+
+00:59:10.000 --> 00:59:11.000
+Okay. Sounds good.
+
+00:59:11.000 --> 00:59:18.000
+Ash, I'm going to ping you offline. Some weird…
+
+00:59:18.000 --> 00:59:27.000
+Okay, did you see?
+
+00:59:27.000 --> 00:59:32.000
+Yeah, in terms of trademarks, if you try to sell something, that's when it becomes an issue.
+
+00:59:32.000 --> 00:59:43.000
+Not selling anything. So unless someone's going to launch their application You got to let me know if you're going to launch your application. I'll help you out.
+
+00:59:43.000 --> 00:59:52.000
+Okay. That was the plan for the session today. I know me and Steve are still working on two or three errors here and there, but we'll give you an update on that within the next 15 minutes.
+
+00:59:52.000 --> 00:59:53.000
+In terms of…
+
+00:59:53.000 --> 00:59:58.000
+Yeah, and real quick, one, I found, or Juan Pablo, I found your error and why it's happening. I just need to ping Ashton.
+
+00:59:58.000 --> 01:00:02.000
+See why you have a certain policy. Okay, go ahead, Ed.
+
+01:00:02.000 --> 01:00:15.000
+Okay. Thank you, Steve. And then in terms of Next steps. We have… the live build for Hack-a-Lot today.
+
+01:00:15.000 --> 01:00:19.000
+Later today. So if you want to finish that out with Zach, you can join that.
+
+01:00:19.000 --> 01:00:23.000
+In terms of what's due tomorrow, I've already defined what we're looking for.
+
+01:00:23.000 --> 01:00:34.000
+In terms of voice and video functionality. If you finished your text functionality and it's working well, please use 11 labs free tier to show me that your voice functionality also works well?
+
+01:00:34.000 --> 01:00:37.000
+And then if I need to get you the higher tier service, I could do that.
+
+01:00:37.000 --> 01:00:40.000
+Once you have the voice one working, then we can talk about the video.
+
+01:00:40.000 --> 01:00:54.000
+But the next step for all of you, and I'm going to keep pushing you on this, let's start adding So use 11 labs, use fish.audio to get the demo working. Share the demo out on Slack, and then we can talk about next steps.
+
+01:00:54.000 --> 01:00:55.000
+Ash, real quick, I want to answer this question because I'm still a teacher at heart.
+
+01:00:55.000 --> 01:00:58.000
+Okay, that's it for me.
+
+01:00:58.000 --> 01:01:11.000
+So Benji asked the question about EC2 questions. And EC2 is sort of one of my foundational tools so I don't know how you want to get his questions to me, but if you want to shoot me an email or forward them to Ash, I'm more than happy to answer
+
+01:01:11.000 --> 01:01:15.000
+Ec2 or other area of questions.
+
+01:01:15.000 --> 01:01:26.000
+I love that, Steve, and I appreciate it. At this point, if we don't need to use it, I'm not going to use it. But I mean, in the future, I'd love to learn. So we'll talk maybe in a few months.
+
+01:01:26.000 --> 01:01:33.000
+Sounds good. Yeah, I use it on a day-to-day for my data engineering, data science stuff so
+
+01:01:33.000 --> 01:01:34.000
+Okay, we'll do a little bonus class at the end. Other stuff.
+
+01:01:34.000 --> 01:01:44.000
+I think Steve would just add a class on it. Yeah, we'll add a whole class on just uh I think we need like a data engineering foundations or that type of class.
+
+01:01:44.000 --> 01:01:45.000
+I was overruled on that. I strongly suggested that like a demo.
+
+01:01:45.000 --> 01:01:49.000
+Or like a data center. I know we were both we were both overruled on that.
+
+01:01:49.000 --> 01:01:55.000
+The hiring partner said you didn't need that and they didn't want you to know that. I don't think they didn't want you to know it, but they don't care if you know it.
+
+01:01:55.000 --> 01:01:56.000
+Yeah, but I think… I think we can do like electives, right?
+
+01:01:56.000 --> 01:02:01.000
+They just want AI stuff.
+
+01:02:01.000 --> 01:02:07.000
+We could have electives where we come in and teach different things.
+
+01:02:07.000 --> 01:02:11.000
+Okay, I'm going to call the session today. I'll see you guys.
+
+01:02:11.000 --> 01:02:22.000
+In… the session with Zach if you want to see if the end of that build. And other than that Please work on voice functionality for your AI apps.
+
+01:02:22.000 --> 01:02:34.000
+A couple of options for voice is the free TR on 11 labs. You don't need to clone a new voice. Just one of the voices available to you and or fish.audio, the open source version.
+
+01:02:34.000 --> 01:02:36.000
+Okay. Thank you, guys. Have a good rest of your day.
+
+01:02:36.000 --> 01:02:40.000
+Thank you.
+

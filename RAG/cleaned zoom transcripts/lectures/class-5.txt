@@ -1,0 +1,451 @@
+%START_METADATA%
+
+Class_Name="Class 5 - Chaining with LangChain Expression Language"
+
+Class_Date="2025-01-20"
+
+%END_METADATA%
+
+
+
+---
+
+Speaker A
+
+We're about to start recording, so I think now we are beginning the lecture proper. And a reminder that although I did catch that in the Zoom chat, for the most part, I'm not going to see the Zoom chat. So let me get that question thread up. I'm going to go ahead and put it in announcements, even though it's not really an announcement. But it's a thread, so please respond there, and that way it will stay more towards the top. All right, let's get to it. Desktop capture. Okay, are people seeing my screen, and is my audio still reasonable? Great.
+
+
+---
+
+Speaker B
+
+We can hear you.
+
+
+---
+
+Speaker A
+
+Just great. Great. All right. Wired headphones for the win. I'd gone wireless out of convenience, but, you know, anyway, so welcome to week three and project two, really here at Gauntlet. And what that project is is a ticket management customer relationship system. You can think of it as something similar to Zendesk, if you have experience with that. And there are, of course, other examples out there. This one, though, is called Auto CRM because the high-level goal is to use AI to use LLMs to automate as much of the drudgery as possible. Of course, we're taking the same structure as last time. So this first week of the project, you're not worried about adding those features really yet, but you do want to build a solid system that you can add those features to. And what is a ticket management system? What does it involve? Well, I also want to get through the lecture, so I'm not going to go through it in super depth.
+
+You have the doc for reference, and I'm sure that there'll be future sessions where we'll talk about it more. You can ask questions in Slack, but the short of it is this should be something that enables users to file tickets that are requests for support or potentially sales leads. It enables agents or workers to work on those tickets, and it enables supervisors or administrators to sort of set up the whole system or see an overview of it, that kind of thing. And as you can see, we've put a lot of guidelines in this doc about how you should build a robust system, how it should, you know, rebuild as many components as possible on this list. So there's a lot here to dig into in this first week. I'm not going to read all this right now, but I encourage you to go through it, and you should, you know, again, target modern best practices for development. No more API key leaks. And there's also this section here with important technical decisions, which gives specific guidance.
+
+And most of this should be familiar or fairly clear. I think for the first week you'll notice a section at the end about the framework, which is really like the LLM Framework. That's what we're learning about now, and you won't really need to add this until the AI features anyway. So if you don't understand this section fully right now, that's fine, you will. There's also a test to pass requirements, which, as Ash said, we might actually add a little bit more here, but I would think of this as similar to a rubric, something that gives you guys more specific guidelines to target. So these are, in a sense, the most measurable or specific actionable requirements that you will need to hit and how we will be approaching and thinking about evaluating it in those regards. Now, of course, these are not the technical requirements in terms of the feature list that's up here; that matters too. So I see some questions in the thread, but I think...
+
+So I see some questions in the thread, but I think. All right, what should be the admin's function specifically? Well, there's stuff in here, I mean there's actually an AI feature, but when you get to the AI feature, you could perhaps have the dynamic dashboard do administrative controls. There you go. So check the doc. If something's not in the doc, then definitely let it. I mean, even if you have questions about things in the doc, feel free to let us know. But I bet you the doc will answer a lot of your first questions because there's definitely a lot here.
+
+
+---
+
+Speaker B
+
+The only other thing I'll point out is that the test frameworks right now, as Aaron said, are the ones that are the generic ones that we had for the Slack project as well. But we're going to be adding specific metrics for production-grade applications probably later today. So, like concurrent users or the number of tickets managed or something like that to make sure that the application you're building is hitting the mark when it comes to usability for tons of users. So I just wanted to call that out directly. And to answer Paul's question, no, you don't have a level account, but I would start with the free tier.
+
+
+---
+
+Speaker A
+
+Right, great. Well, thank you, Ash. And onwards to the class proper. So today we are digging into the LangChain expression language, which you heard me mention in very brief passing. I think there was one snippet of code that used it last week, but we're going to understand a bit more about it and use it as a vehicle to just see more things we can do with LLMs, more ways we can put it together. Because the high, high level of this is that the LangChain expression language is a flexible and sort of concise but powerful expression language that lets us make constructs to put the pieces of an LLM system together in different ways, because it's all kind of a modular sort of approach. And again, the analogy that I gave last week, and you'll see this in the syntax itself.
+
+And again, the analogy that I gave last week, and you'll see this in the syntax itself. You know, if you spend much time on a UNIX-type CLI and you know how to pipe from commands to commands, you know how powerful that is, right? The UNIX philosophy is that you have a bunch of little individual programs that are specialized, that do something well, and then you can pipe your grep to your sed to your whatever and all of a sudden have something pretty complicated. So same general idea here, and indeed kind of looks and works pretty similar. There are some differences, of course. The main difference I would highlight just from a technical perspective is it's not literally just text. It is essentially key-value pairs that's usually being passed between these things. But that's to be expected, I think, in the modern era. So think JSON blobs. All right. And I should also spend just a moment
+
+So think JSON blobs. All right. And I should also spend just a moment. The word chain really is basically a sort of pattern or structure you can build with these tools. There are others, we will get to them. But chain just means a link to a link to a link. So it goes into a thing, out of that thing, into the next thing out, et cetera. There are other sorts of patterns, and we will learn about them as well. We start here. So, yeah, we're going to learn about chaining, about the LangChain expression language, and a little bit part of what's cool about the LangChain expression language, besides the fact that it's fairly nice to work with, is it can give us some things kind of for free. It can give us ways to specify or to set up concurrency. So that can be nice. All right, so a little bit about what a chain is versus, say, an agent, which is a concept I'm sure you're familiar with already, at least informally.
+
+So an agent is when there's an LLM that essentially has to make decisions, right? And perhaps has some tools and some things at its disposal to do that. Whereas a chain is more structured, and you might think, well, gee, why would we lock ourselves down? LLMs are smart. Let's just agent everything, right? Well, as you've all no doubt experienced in the past two weeks, regardless of the impressive capabilities of LLMs, they are not infallible. I mean, if nothing else, they are, you know, they're generally a function of what we feed them, the prompt we feed them. So unless we're feeding them perfect prompts all the time, they're not going to come out perfect anyway. And they are just inherently probabilistic. And so if you're trying to solve a problem that itself has structure, that itself has a sequence, and a lot of the problems we might want to solve do—think about data pipelines and things like that—then a chain can be a great tool.
+
+It can basically simplify the problem space, simplify what you are tackling, and make it much more reliable, much more straightforward, because you're sort of not exactly hard coding, but you're building the structure into it. Whereas an agent is great if you're solving a problem that requires that sort of flexibility, that requires on-the-fly, dynamic decision-making. Of course, that's going to lead to certain forms of complexity and require extra thought on your part to keep it reliable in some regards, depending on what problem you're solving. All right, I see a few questions coming in about LangChain Expression Language. Yeah, I mean, I don't want to turn this into a compilers class, as much as I love computer languages, actually, but you could definitely make the case that the LangChain Expression Language is essentially a bit of syntactic sugar in a framework like. I get it, that's it, it's. They call it the LangChain Expression Language.
+
+I get it, that's it. They call it the LangChain expression language. It's not something that you have a compiler for. It's really just a way, a syntax, and then some code around it that makes it particularly convenient to use and solve a pretty wide range of problems. So they call it the LangChain expression language. And why does it look drastically different? Well, again, that's because it's essentially a callback to or influenced by Unix command line. So if you've not done a whole lot of command line stuff, it's going to look a little alien to you. And I encourage you to do some command line stuff at some point, but that's what it's influenced by. It's a pretty different universe than JavaScript and TypeScript. All right, okay. I think I'm gonna get back to, oh yeah, and I can't. So the examples are all Python. If you're doing this from TypeScript, I'm sure that there are ways, and we'll follow up on the specifics in the Slack.
+
+I'm sure that there are ways, and we'll follow up on the specifics in Slack. In general, a lot of LLM and machine learning ecosystems are often developed initially for Python, so it's often very cozy there. But TypeScript should have reasonable support, I would think. Okay, so why use LangChain expression language plus seeing a few examples? So essentially, what's going on here? We have some code on the right that uses a basic prompt template to make a prompt that takes a country and then asks a question about that country. And we can format that prompt as we're doing here, pass in France, ask the LLM to predict based on that prompt, and then look at the result. So, you know, three lines of code, right? And this breaks the steps down. This is like each link of the chain that we get to. So this is fine. And you could think of this as the imperative paradigm for people who do care about programming languages or asking those questions.
+
+But what the LangChain expression language does is it turns that into a one-liner, and indeed you could chain more pieces together, or you could take this piece and this becomes another thing that you could chain to other things later on. So it's just a much faster, more expressive way when you're experimenting with things. And I do encourage you to experiment at least some with this. I mean, we, you are AI-first in your development, and you definitely can ask an LLM to write code. Like if you ask it to write LangChain expression language code for something, I bet you it'll do something. But it's also fine to look at it at least a bit yourself. The repo lets you set up some Python notebooks, even if your preferred development environment is TypeScript. Python notebooks, as you'll see, give a very nice way to just quickly try things. So in any case, it changes multiple lines to one line.
+
+So in any case, it changes multiple lines to one line. That's the nice syntactic sugar development developer UX sort of aspect to it, and it kind of standardizes the interface. You know, now that you have a chain, the way you use chain objects is usually this dot invoke. So we're invoking the chain and we're passing in the payload. So this is, as I said, where it's a little bit different. This isn't just a string; this is actually a dictionary of key-value pairs. But that initial payload is fed into this first thing here, the template. The template does what it does, passes its output to here. The LLM does what it does, passes output here. And string output parser is a special one. You see, we import it here from output parsers, and the LangChain core library has a ton of this sort of stuff. But this one you'll see a lot. And it's basically like, hey, the user doesn't want to see the full key-value pair dict blob thing; they care about just the actual LLM response.
+
+Let's parse that out and make it nicely visible. So this one actually will return. I think it is just a string or at the very least it's more legible than the full payload output of the LLM. So now this is a very MVP example here. But in addition to the syntactic sugar aspect, which is not nothing, you know, our developer experience matters, I think it impacts our productivity quite a bit. But by using this, this also exposes not just .invoke but as you'll see, it exposes some asynchronous entry points. It exposes, you know, the ability to do batch processing, streaming, and you get all that kind of for free as different ways to interact with a chain object. And also because this is LangChain and LangChain is, you know, part of LangSmith, you get kind of built-in observability. You know, if you set those environment variables that we tell you to set around the project and such, it will automatically send traces to the LangSmith platform. And so that's some nice stuff to get.
+
+And so that's some nice stuff to get. All right, a lot of stuff coming in the thread, but I think it's all being handled, or at least. All right. All right, this one shows one LLM call. Yes, this is. So there are three steps here, and the middle one is the only one that actually sends stuff to OpenAI. Right, that's this thing that was instantiated here. This first one is a prompt template. But still, all of these take, you know, some LLM-related input, do what they're supposed to do. In this case, stick the country, France, in the placeholder country, and then pass it to the next step. And I mean, there could be chains that have multiple LLM calls, but one LLM call is plenty for a lot of. It depends on what you're doing. Right. But a lot of times your chain might just have one LLM call, and the stuff before and after is almost ETL-type stuff, dealing with data, dealing with RAG, maybe, as we'll see. Indeed, as we will see.
+
+Indeed, as we will see. So how could we potentially use chains to do a RAG? And this is also, I believe, in more detail in one of the notebooks. So we'll see some more code on that. So what we have here, again, is the manual versus the LangChain expression language. And in this case, we're breaking it out with comments. So it doesn't really look shorter or anything. But again, it's not just about being fewer lines of code; it's about giving us some of these other perks in terms of the interface and the observability. So assuming, and the setup code is not pictured here, but you all know what RAG is at this point. Assuming you've set up RAG and you have a RAG retriever, how do you actually interact with a RAG? Well, you can get relevant documents based on the user prompt or whatever your query is.
+
+And then you typically are going to have a template, and you need to format that prompt template with the user's question and the context, the documents you retrieved, and then get those results from the LLM. You can do all of that with LangChain expression language. There are runnable parallels and runnable pass-throughs, which are special functions or modules from this framework that let you have the chain run in parallel. You can invoke it multiple times in that way, and the runnable pass-through is going to pass the query through unchanged. So what's happening here is we're formatting, we're retrieving the documents, and at the same time, we're going to pass through the query to the next step because we need the query at the next step as well. This is, again, kind of a simple example.
+
+So this is again kind of a simple example. You won't necessarily get a ton of benefit from using parallel runnable pass through here in terms of the performance of it, but you can definitely get an advantage from it when your task is parallelizable, which I hope you have some passing familiarity with, but essentially when it has components that don't depend on one another that can be worked on separately, enabling some sort of horizontal scaling. Yeah, exactly. You do have to wait for the retriever to finish. In this case, the retriever would be considered blocking. So we're just passing through anyway just to show the syntax of it. Where is this code going? This code would go somewhere in whatever file you are managing your interactions with the LLM in a RAG-based system. So this is literally the line of code that would send the user's question both to the RAG and to the LLM.
+
+And by the way, even though this looks like more code, you'd only need to do this code once, and then every time you want to actually interact with the LLM, it would just be invoking the chain on it. That would both query the RAG and then send that all to the LLM and get the response from the LLM. All right, so that last question, I think that last question might not be immediately about the lecture itself. Okay. Yeah, I think there's some side discussions going on in the thread. That's fine. All right, so. And how are we doing with slides here? Okay, so we're going to switch out to the first notebook pretty soon here, but we can look at this slide first. So this is a somewhat more involved example, sort of showing how you can set a RAG chain and what's happening here. And again, you'll see a lot of imports from LangChain, including how we're connecting to OpenAI, and how we're just going to do an in-memory vector store.
+
+But this could be Pinecone, this could be Postgres vector if you're particularly exploratory. But I know that we'll have specific recommendations for what you should be using. But for teaching and memory, it is nice. And we are setting up the vector store, putting one document in it, a basic fact about somebody named Byron. And then the template is instructing the LLM to answer the question based only on the context. So we're trying to tell the LLM to focus on the document results, and we ask the question and then we also say answer in the following language because LLMs tend to be pretty good at that, at least decent-sized ones. And we make the prompt template and then we put it all together in a chain. And you'll see here part of the reason we're making this example a little bit more involved is, you know, if you have a more complicated payload here, you might have to do things like this. And this is actually almost like an implicit chain within a chain.
+
+And this is actually almost like an implicit chain within a chain, right? So item getter is just retrieving the values as a sort of key-value retrieval. We want to have the question, but we want to have the question twice. Once we're just... So instead of the pass-through approach we're doing here, we're passing it through by just retrieving it here. And that's the question. Then there's also the context, which comes from the retriever. So we pass the question to the retriever, which is going to do the vector DB thing and find the relevant documents. The language is just another part of the payload. So the payload, you know, we invoke by just giving the question and language. But because the template expects three things, we need to change those two things to three. That's what's happening here, right? And that's why
+
+That's what's happening here, right? And that's why. And you can see it's literally just making inline a dictionary, right? A key-value pair blob and then chaining that to the next thing. And that's fine because that's what this is. That's what the chain is, just key-value pairs being chained one to the next. And so you can be fairly open-ended and you can, if you are familiar with lambdas, you could think about other ways to maybe inline make flexible little dicts or simple functions to pass from dictionary to dictionary. And the other takeaway from this is you are not limited to just stitching together the LLM and things you import from LangChain, right? You're not. You can program your own functions and code that can be part of chains that can do things to the payload, operate on it. You know, to go back here, you could even, and I'm not saying to do this right away, you could have an agent inside a chain, right? Like you could have an agent be one of the steps of the chain.
+
+As long as the agent receives a dict and returns a dict at the end of the day, which it probably does, that could be a piece of your chain. You could also have an agent that can start chains if you want to get more confusing. But do not make spurious complexity. I'm just describing to you the flexibility of the system. Always build the simplest system you can to solve the problem at hand. So can you use LangSmith without the LangChain? Okay, Ash has got that one. All right, so at this point I'm going to actually start writing some code. And this is the first notebook in the repository. If you have that up and running. And again, for this to work you will have had to make a .env file that's going to have these keys in it and then that gets copied into the Docker container. Assuming you're starting this the Docker way. And we're going to run and see what's happening here.
+
+Assuming you're starting this the Docker way. And we're going to run and see what's happening here. So what happened? Well, this is our first MVP chain example, and we have a prompt to a model to an output parser seen a few times now. It's not a bad pattern, by the way. And this makes it simpler to use. And the template is basically to make something about a poem, and then we invoke this with a topic, and then it returns, and you can see here what string output parser. The last step is doing it is actually making this truly a string. Now, because in a Python notebook, if you don't explicitly print, the behavior of a cell is to just echo the last value of the cell. We're just getting sort of an echo of it. But the new lines don't look pretty. We can change that by actually printing it. And then we should see actual new lines. And this should be a subtly different poem. Yeah, this is a silver queen, this is a silver orb. It's funny, the first line is absolutely identical.
+
+It's funny, the first line is absolutely identical. So this is apparently a local optimum for our poetic LLM when writing about the moon. But you can see there were just a few lines. We get a one-line interface that lets us do something pretty neat. I mean, I know this doesn't feel that impressive to us all in 2025, now that ChatGPT has been out for a couple of years, but I still think it's kind of crazy that we can just ask for a poem and get it, and obviously, this sort of thing could then be exposed in something we'll see not in this lecture, but in the future. You know, you can expose this as an interface for an API. So it's not just being poked at here in a Python REPL or as part of some function or some code you have. So that's the general pattern here. Now we'll see more of this down here.
+
+So that's the general pattern here. Now we'll see more of this down here. But since I was advertising the goodness of playing with things a little bit yourself in a Python REPL or Python notebook, one of the things I like doing is using the dir function. And that lets you basically see what's in scope, but you can also use it on a specific thing to see what's inside its scope. So let's see what's inside the scope of the chain. And you see there's a ton of stuff here. You can generally ignore the double underscore stuff. That's a Python style thing for inner fields because Python doesn't really have a protected way to do that. But then we start seeing all sorts of actual exposed things and we see things like batch, right, and then invoke. Well, that's like invoking, but asynchronous. So there's a lot of cool stuff in here. Obviously, this is not a full replacement for proper documentation, and we link that as well.
+
+Obviously, this is not a full replacement for proper documentation, and we link that as well. But it lets you sort of see, hey, streaming and then, yeah, lots of stuff back and forth to JSON and such. So there's a lot that these are capable of. But .INVOKE is like the default simple synchronous entry point. So we can look at each piece of the chain's behavior individually. So we can look at, if we just. The chain again was the prompt, then the model, then the output parser, which is just a string output parser. So if we pass the prompt, if we pass the payload into the prompt, it gives a formatted prompt that populates the template. And then if we take that and make it a message, that becomes a human message. And that's what would actually go to the LLM. And we can also see it as a string. And this is essentially, you know, the nice way to look at it if you wanted to expose it to a user, similar to what the string output parser is doing.
+
+All right, and then if we pass the prompt value on and note what we give to the model, the original prompt value is the one that has all the information here. It'll give a response, and we can similarly use it. If we use OpenAI like this, it actually directly gives us the string. So just a few different ways to interact with it. This is all doing the same thing, so I won't spend too much longer here, but just really driving home that the chain is just taking each of these steps and linking them together. That way, you just have one object that you interact with, you feed your input, and you get the final output you actually care about. There's one more step here in between output parsing the message to be a nice string. Okay, so this is doing it all again. Go ahead and move on to the RAG example after I check for questions real quick.
+
+Go ahead and move on to the RAG example after I check for questions real quick. All right, so, and again, don't dismiss the power of just a well-engineered prompt template and a simple chain that could solve a fair number of problems. But RAG obviously is pretty powerful and can solve some good problems too. So how can we do RAG? LangChain expression language. So we. This is similar to the example in the slide, but this just adds other documents and we can interact with it live. So I can show you a little bit about, you know, why we phrase this prompt this way. You know, the more you work with this, the more it'll be about, like, the ideal, I would say, of a lot of LLM development is to get through the rest of this boilerplate as much as you can to be able to then iterate on making an effective prompt. And I'm not saying this is the end-all-be-all of RAG prompts right here, but this, you know, based only is a nice guide to the LLM. So as you see, we stick something together.
+
+So as you see, we stick something together. And if we just asked OpenAI without giving it these documents, "Where did Harrison work?" I would assume it would say something like, "I'm a large language model, I don't know who the heck Harrison is or whatever, like you need to tell me or something," because it's just a random thing. But with the documents, it can confidently answer, "Harrison worked at Kensho." And now, what if we ask it, "Where did Bob work?" Aha. That's a pretty good response, right? And again, we're not. If this is a true life-or-death, rocket ship, medical treatment situation, I wouldn't consider this a strong enough guardrail to really guarantee that the LLM won't mess up. But it's definitely a pretty strong nudge to tell the LLM right here in the prompt, "Hey, here's a question, here's some documents, answer based only on that." And as a result, if you ask something that's extraneous to the documents, this is the sort of answer you'll get.
+
+Now let's see, here is just redefining the chain so we can run this if we want. I'll go ahead and delete it. So when we invoke it, we can invoke step by step again to sort of see the setup and retrieval we put together. Already here is taking the retriever and passing the question through. So we're using that same pattern of runnable, parallel runnable pass through. It's doing these two things in parallel, and it's not really saving a lot of compute that way because this is the expensive thing, this is relatively cheap. Nonetheless, it lets us sort of set it up nicely and flexibly, and we'll see when we ask, we get both documents back because there are only two documents in the store, and the defaults probably return three, but it is returning the more relevant one first.
+
+
+---
+
+Speaker B
+
+And.
+
+
+---
+
+Speaker A
+
+Yeah, here's a picture of what's going on. If the runnable parallel thing is a little bit hard for you to picture just from the code, you can think of it as splitting the chain in two. And again, in this situation, it won't be a big performance speed-up, but in a situation where you're doing something where the compute can be put out into separate pieces that don't depend on one another, or you have a bunch of prompts that you want to run in parallel, where basically being able to run in parallel means the input doesn't depend on the output from something else, because that's what lets you split it up in these different parallel chains here and then it comes back together to the actual chain to give you the result. All right, now we have another example here. How are we doing for time? Doing pretty well actually. And in this example, we're defining our own sort of code to make something kind of like a chain. Right. So we're making our own functions and our own invoke chain.
+
+Right. So we're making our own functions and our own invoke chain. And you could do this. So there's no actual LangChain imports or usage here. And again, this shows you that it's really just putting the pieces together. But of course, doing this won't give you all of the asynchronous stuff and the streaming. So that's what we'll get to here. But yeah, this is do it yourself, and this is the exact same thing using LangChain expression language. And then this is streaming do it yourself. So to stream, you'll see the response types out as it comes. And this is using the Streaming API from OpenAI, although other LLMs have similar, and for very long prompts or for very long interactions, streaming is a very handy way to deal with it if it's user-facing because it might take an LLM, you know, five seconds or something to finish responding to some really long prompt.
+
+But with the streaming output, you'll be able to start printing right away and printing faster than the user could possibly read. So from the user's perspective, it goes from five seconds to instant, and that's a pretty big difference in terms of their experience. And again, you don't need to use LangChain for this. This shows how you could do it yourself. And I won't dig into the code here too much. I'll just call yield is doing a lot of the heavy lifting. And you had a comment. I mean, Ash, can you make sure that comment gets in the repository? I could add comments here, but I'm not necessarily going to push this copy of it.
+
+
+---
+
+Speaker B
+
+So, the comment you just made online.
+
+
+---
+
+Speaker A
+
+That this is do it yourself, this is do it with LangChain, and then this is do it yourself versus do it with LangChain down here.
+
+
+---
+
+Speaker B
+
+Okay, yeah, I can add the titles to that, basically.
+
+
+---
+
+Speaker A
+
+Right? Yeah, yeah, yeah. So again, yield is what's giving us this bit by bit, you know, where as long as there is content in the response, we're looping over the content and giving that bit of content and that's how we got. Again, when you run this, if you see it's printing, it's pretty fast. But maybe I could ask for a longer joke, but hopefully you saw that. And then another thing we can do is batching. Well, batching means giving multiple things all at once. You know, let's say that your LLM pipeline is a piece of a data pipeline and you have 100,000 rows of data to process. It might be convenient to give that all as one batch and let that be processed. And again, it's using the batch API, in this case from OpenAI. So all this is sort of just different ways to interact. The language is coming from what OpenAI exposes to us. But if we run this and thread pool executors let us do it, letting us do this with some, you know, we actually are doing this in parallel.
+
+Basically, we're mapping each of these topics to an invocation of the chain, and we're executing each of them in a thread pool worker at a certain point. The limiting factor here will be the OpenAI API and how many requests they let us make, that kind of thing. But, you know, three requests at once isn't slowing us down here. And it gives us all the responses there. In this case, the batch chain is operating on lists, so lists of payloads, lists of questions to lists of responses, right? Fairly straightforward. Now, I should have emphasized here, so these did the same thing, right? This was like 30 lines of code to do streaming when we do it ourselves versus this is how you do streaming with LangChain expression language. This is the LCEL chain, right? Similarly, we had to set up a batch chain with a thread pool executor and use functional programming stuff to do batching ourselves.
+
+Or if we have LangChain expression language, it's just dot batch, right? It does the same thing. So again, it's good to have some intuition for how it's doing or how you could do it yourself. But in practice, this is nice and convenient. And then last but not least, asynchronous. So doing it ourselves, slash. What is asynchronous? Asynchronous means non-blocking. So, you know, usually when you are running code, you're assuming that there's a synchronous thread going through, running this line, getting that result, and going to the next line because the next line might depend on the result from that previous line.
+
+Right, asynchronous operations are useful for long-running tasks like network calls or when it's convenient. Indeed, prompt invocations can be long-running now. These prompt invocations probably won't be because they're pretty short, but if you are really using that context window and you're feeding lots and lots of data, you might have a situation where asynchronous makes sense to consider. Now, we can use the `await` keyword in Python to create our own asynchronous interface here. It works and doesn't really look any different when just executing this one thing, but this was an asynchronous execution. Alternatively, we can just use an invoke on the LangChain expression language object, and again, we have to await the result. This is similar to the syntax in JavaScript and TypeScript, so I'm assuming that pretty much everybody ought to be familiar with this one way or another. This just happens to be the Python way to do it.
+
+This just happens to be the Python way to do it. So, any questions on these somewhat more advanced uses of the LangChain expression object? So, the streaming, the batching, and the async, while people think about that, all this stuff should have ended up in Langsmith. Let's go check on Langsmith. Let's see here. Yep, looks like it did end up in the default project. If you specify, you'll see in the repository you can specify a LangChain project, and that will let the projects organize your traces. So, you know, I could have done that, but I encourage you to do that, especially when you're working on actual projects, to keep your traces organized. And you can see here there's summaries like we've seen in the past, where apparently 11% of our requests are streaming. Most of our latency looks pretty good.
+
+Most of our latency looks pretty good. And you can see not just the LLM interactions, but again, it instruments the non-LLM interactions, it instruments retrieving documents from vector stores and instruments populating chat templates. These did not send, you know, this specific step, did not interact with OpenAI, did not send any tokens, it just prepared for the next step. But we see all of it here, which can be pretty useful if you're debugging. All right, let's look at some of the questions that maybe came in. Can you give an example in-app of when you would use these constructs? Sure. So, well, I mean, I kind of did, at least conceptually, but let's give very specific examples. So let's say you're building a customer support chatbot. That would be a good case to use streaming responses and you know, let's say. And why is there a chain in there? Well, because it's not just you're not just one-shotting all your customer messages to OpenAI.
+
+That's not going to be a very good experience. We have a RAG chain or something that takes the user's questions and retrieves additional context, you know, maybe from your help center, maybe from their account, sends that information in. The prompt to the LLM gives that response to the user. And because it's doing a fair number of steps and maybe it ends up giving a lot of context, the prompt might take a little while. Streaming the response will let you immediately start showing text to the user pretty much as soon as they hit enter. And that gives them a pretty good user experience versus potentially having to wait a few seconds and then just have a wall of text appear. That would be a worse user experience. So I guess for streaming, I usually think about user-facing stuff like that. There are potentially other use cases, but that one in particular comes to mind. Batching, again, I would think data pipelines, things where you have a lot of things to process.
+
+Batching, again, I would think of data pipelines as things where you have a lot of things to process. Let's say you build a chain that, let's say it's not an LLM, sorry, a RAG. Let's say it's a chain that somehow engineers features on unstructured data. You have a whole database full of user reviews and comments, and you have an LLM that, you know, you set up to classify those comments and to give you structured information about their sentiment and about whatever else, right? And to put it in a structured format so you can do some data analysis on it. So essentially, we're talking about data processing, and you have a whole bunch of rows. You can just throw it all in a batch and send it all at once and then wait for it all to come back. Because it's like the opposite of user-facing. You don't need to stream the response character by character.
+
+You don't need to stream the response character by character. The whole point is to process, you know, to engineer these new features on all your data and then give that to your business analyst to do something with, say, and then async. I mean, anytime you've got something that takes a long time to run and you don't want it to be blocking, it's, you know, again, in the world of LLMs, really long prompts would be potentially one of those situations. But there could be others where you just have other pieces of the chain. Specific example, maybe something that has an agent in it. Actually, agents are particular because agents, you know, if you have. Let's go back to our chat support system.
+
+Let's go back to our chat support system. If the chat support system isn't just an LLM but is actually an agent, a tool-using agent that can actually do things and can reason, then that's going to potentially have arbitrarily long compute to some extent because agents, as you'll see, do that sometimes and it can be nice to have that be asynchronous so you're not blocking everything else on what the agent is potentially figuring out. Await is like an expression to run in the background. Yeah, basically. I mean what it is is it's saying this is going to go off and run in the background and actually we're going to wait for it. So it actually kind of makes this asynchronous thing synchronous. It tells us we're waiting for the result. I know that there's a similar keyword in JavaScript, it's just escaping me right now.
+
+I know that there's a similar keyword in JavaScript, it's just escaping me right now. But if somebody wants to drop it in the thread, the stream looks awesome in the notebook, but is showing in our front end a little more complicated? Probably? Yeah, I don't think it's that complicated. I think that if you refer to the OpenAI documentation, LangChain documentation, it's not that much of a lift. But yes, the notebook is doing some of the work for us here as well. Is it a no-brainer to use LangChain versus doing it more raw? I mean, tool choice ultimately is still subjective and contextual. I don't think you can call anything just like a no-brainer, the objective right choice. We are teaching LangChain and largely prescribing it because it is a well-packaged experience and it lets you focus on the fast iteration that you need to do the tasks we're asking you to do.
+
+That said, personally, I do think part of why we have the non-LangChain versions and the non-LCL chains is important. The more magical a tool is, the more important I think it is to actually understand at least a little bit about what it's doing behind the magic so that you're not just sort of superstitious about it. Just because it's so expressive and so simple and cool, you still need to know what's going on, right? You can't just be throwing it around without any understanding because you'll end up in a bad place sooner or later if you do that, and you won't be able to fix it because you won't understand what's going on. So, I hope that kind of answers your question. A little bit of my philosophy there at the end. We're not worried about fine-tuning right now, and I'll let Ash field if and when that'll be relevant. But it's not relevant for us right now.
+
+But it's not relevant for us right now. And I will just generally say fine-tuning is cool, but it's expensive enough that you don't want to go to it as your first option. It's good to start with other approaches. You can do a lot with just prompt engineering, for example. All right, some Zendesk questions, I'm gonna let those be handled in the thread. Lane Graph. Yeah, we will talk some about Lane Graph. And indeed, you know, as I kind of alluded to at the beginning, there are things more complicated than chains. Graph is even more general. Right, but don't worry about that today. Do we want to elaborate on the requirements? Well, Ash, we do have about five minutes. Do we want to elaborate a little bit more on the requirements? The other thing we have besides questions is there is another notebook here, but I'm not going to run this notebook live. I think we've given it to them, so I encourage you to look at it. So I can either talk about it or you could talk about requirements.
+
+
+---
+
+Speaker B
+
+Yeah, I can do requirements because it's the main question coming. So let me take a step back and talk about how we set up projects. Projects are meant to give you creativity and the chance to explore while at the same time giving you a few starting points to provide direction. We are not trying to confine you to specific requirements. Rather, we say that if you have no idea where to start, then this is where you should start. So in the first project, there were a ton of questions about, hey, what should I be using? How do I start? And people were really confused about how to go about doing anything. So that's why for this project, our prescribed stack is React, Supabase, and Cursor Agent. Those are the three required things that we are requiring of you. Please use those three things. So Supabase Auth, Supabase Database, Cursor Agent for the majority of the AI-first development, and React for your front end. Those are the three things that must happen.
+
+Those are the three things that must happen. Everything else is a strong recommendation. But if you want to deviate from that recommendation and do something else, you can. For example, if you want to use LangChain, feel free. But if you don't want to use LangChain and use something else, that's okay. A lot of this program is also taking some time to learn on your own, making the right call. And so if you feel that you want to use something else, you can. What I've tried to do in this document, what Aaron has tried to do, is elaborate as much as we can on all the possibilities and what we're looking at in terms of functionality and all the potential AI features. We still have to add some of the production-grade metrics that we're going to be looking for, and we'll add them shortly. But in terms of what you should be working on right now, it is to get as many of those functions that are outlined in the MVP rebuilt in the document inside your applications.
+
+And we believe if you use Supabase and you use React and Cursor Agent, you should be able to do that fairly quickly. Yes. So Supabase is something that we are requiring you guys to use. If there's a really good reason not to, then I can talk about it. But the three things that we're requiring are React, Supabase, and Cursor Agent. Okay, AJ, go ahead.
+
+
+---
+
+Speaker C
+
+Yeah, sort of like formulating a question based on what you just said. But the point about being able to build much faster with Supabase, it certainly seems to be the case that that's in general true and in general good for AI development. So I guess what I'm wondering is the ITD recommendations coming from the hiring team, is that in the context of their recommendations for AI development in general, or were they looking at the actual requirements of this week's app? Because a lot of this, like, AI-first stuff in here, and I think in my opinion, like having built like a bunch of apps, the only time like Firebase or Supabase is actually kind of a bad tech choice, is if you're going to be doing stuff where you have an API, like providing custom business logic, actually, to a bunch of different front ends.
+
+
+---
+
+Speaker A
+
+Yes.
+
+
+---
+
+Speaker C
+
+Which, yeah.
+
+
+---
+
+Speaker B
+
+So to answer your question directly, if you guys are on their team, they will make you prototype and build the first version using Firebase or Supabase. So they're giving you tasks defined by what you would be doing on the job, not based on the project requirements.
+
+
+---
+
+Speaker A
+
+Cool.
+
+
+---
+
+Speaker C
+
+Makes sense.
+
+
+---
+
+Speaker B
+
+Gail. Oh, Callum. Sorry. Oh, okay. AJ, you got a second question?
+
+
+---
+
+Speaker C
+
+No, I just felt like lowering my head.
+
+
+---
+
+Speaker B
+
+Okay.
+
+
+---
+
+Speaker A
+
+There are some questions in the thread too. So there's a question about CI/CD from Joshua.
+
+
+---
+
+Speaker B
+
+CI/CD is just GitHub. Right. So just GitHub connected to Amplify. There's no other advanced CI/CD we're using, if there's more specifics about that. But the only CI/CD they were looking for is a working GitHub connection. From your repo to the Amplify.
+
+
+---
+
+Speaker A
+
+And then Lucas asked, is Amplify required or just a strong suggestion?
+
+
+---
+
+Speaker B
+
+Amplify is a strong suggestion because you do have access to the gamut of AWS features, but you guys really should not need anything else. But Amplify, it has S3 capabilities, it has cloud functions, it has backend deployment. So I would start with Amplify and then Supabase automatically deploys on itself and you don't need that. Rustam, we're not. You don't multi. Front-end architecture is for those individuals who get their web app working. So if you get your web app working and you want to try out doing a mobile application, you can do it that way.
+
+
+---
+
+Speaker A
+
+Sorry, I forgot to mute myself.
+
+
+---
+
+Speaker B
+
+You called on me to unmute myself last time.
+
+
+---
+
+Speaker A
+
+I just noticed in the calendar that we don't currently have a 24-hour proof of concept thing scheduled. Are we not doing that for this project? Is it all just kind of ad hoc?
+
+
+---
+
+Speaker B
+
+Friday or how does that work? The deadlines are at the bottom of the project doc, and I reflected that on the calendar while Aaron was teaching, so you should see it now. Okay, thanks. Yes, the question for the next app is TikTok, so the next one's mobile. Jared or Callum for a second question? Jared, go ahead.
+
+
+---
+
+Speaker A
+
+Yeah, thanks. I was wondering if you're going to upload the recording from the AWS workshop last week.
+
+
+---
+
+Speaker B
+
+I did, on the recordings channel, I believe. Let me check.
+
+
+---
+
+Speaker A
+
+Oh, you did? Okay, thank you. I think the Windsurf question has come up a few times. People want to use Windsurf.
+
+
+---
+
+Speaker B
+
+You can use Windsurf if you want, but we're not going to be paying for Windsurf. Direct answer.
+
+
+---
+
+Speaker A
+
+And there's also, can you discuss Lovable? How do we integrate it into our stacks?
+
+
+---
+
+Speaker B
+
+Lovable is for your front-end scaffold. So the same way we use v0 or you use Replicate Agent, it should just help you make the front-end scaffolding. That includes the general gist of what your front-end application looks like. Then the goal would be to take the code out of Lovable and then connect it to your Supabase account.
+
+
+---
+
+Speaker A
+
+And Robert, to your question about Cursor Agent, it is the chat tab and cursor. I mean, yeah, but I think Cursor Agent is what we're saying. But really, what we're saying is whatever cursor functionality is enabled. Right. That is what we're default suggesting here.
+
+
+---
+
+Speaker B
+
+So someone's asking the question Tal is asking a question that Austin is letting people use other stacks and can we not use these stacks? And then the answer to that question I'm giving is I will connect with Austin directly. But based on what I've learned from Trilogy folks, we want you guys to at least use Supabase and React. If you decide to change other things, you can. But if you want to change your stack and you have a really good reason for it because it affects the Zendesk capability or you think it's going to be XYZ better, then if you shoot me a message, I could do some approvals here and there. But the gist of what Trilogy is looking for is Supabase and React. There is a GitHub org I'm slowly inviting everybody to. I should probably think of doing that quicker so by the end of this week everyone will be added to the GitHub org. Yes, about the IAM pass role. Steve gave the IAM pass role to the users already, so I'm not sure what's happening there.
+
+Steve gave the IM password to the users already, so I'm not sure what's happening there. That's something I'm going to check out today and try to get resolved. I would use Supabase storage workspace if necessary and required.
+
+
+---
+
+Speaker A
+
+All people are thinking of a few more questions. Since we didn't get to the second notebook, the one that's called Chroma Multimodal RAG, I encourage checking that out if you're curious. It's already rendered, so you can really just scroll through it, but you could also try to run it locally if you want. That's optional, but it shows a multimodal RAG, AKA RAG that can actually index and refer to images, which is pretty cool. It's more just to know the capabilities of these things. It's probably not something you'll immediately use for this project, who knows, but probably not. Anyway, it sounds like some more questions have come in.
+
+
+---
+
+Speaker B
+
+Aiden's asking, what if we run out of Lovable credits? Then I would just switch over to Cursor directly. Yes, Lamar, I can just reset your login.
+
+
+---
+
+Speaker A
+
+Okay, and Rafal has his hand up, I think.
+
+
+---
+
+Speaker B
+
+Yep. Hi, could you expand a bit on the multi front-end architecture point? Because sure. I tried to chat with the OWAN about it a bit. Having next to zero front-end experience, I am still confused on Monorepo or how to set up basic architecture structure for these multiple React contents. Yep. So if you're looking to make something multi front-end, that means that the API is abstracted away from your front end. So if you have a Next project with an API on it, for example, it might be a little bit harder for you to connect a mobile application using React Native or something else. So what they're saying is if you're going to consider, you know, making a mobile application or something else, or taking your web application and deciding to also go mobile, then what you would consider is to do a two-repo solution where you'd have a React repo and you maybe just have Supabase.
+
+So since we're using Supabase for fall, all this means is every time you want to do another front-end architecture, you can just create a new repo and connect Supabase to it directly using the SDK. But I wouldn't consider talking about mobile or thinking about the multiple front ends yet. I would just work on the web-based functionality. And once you get that working, if you want to go onto mobile, you can. So yes, I'm definitely trying the simplest solution for now. Yep.
+
+
+---
+
+Speaker A
+
+So Marcus asked a great question in the thread about spiky POVs and that, you know, so far I've done nothing related to CRMs. I've not used a lot of CRMs in my career either, so I get it. We put in the project doc some resources, some videos you can watch of people walking through and using CRMs and discussing them. So that can be a good place to get started if you're light on your CRM experience. And the other thing I'd say is CRMs are their own ecosystem. But if you've never really used, if you've never been on that side of the business or whatever, but you have at least used some sort of ticketing system, and I imagine you have probably, right, maybe from a more technical perspective, maybe Jira or maybe even GitHub issues are kind of a ticket system. Think of the use case of user requests coming in. If you've never used it, at the very least I'm sure you've been the customer at a business that uses a CRM.
+
+So think about the full end-to-end process of how requests come in, how they have to be managed, how people would work with it, and how you can potentially minimize the drudgery. That's the overall goal. So that's where I would start coming from when you're thinking about your planning, your spiky POVs, and whatever else.
+
+
+---
+
+Speaker D
+
+So if I could pop in real fast. One thing, Marcus, about what I was saying with spiky POVs isn't just like, oh, you can look at it because, like, yeah, I can get a sense of what's going on. But it's that specifically that spiky POVs come from experience, not just kind of looking at a YouTube video and being like, I think this is true. And it goes against the grain. Like, why do you think that's true? Because you've experienced it, you've tested it, which you don't get from looking at a YouTube video.
+
+
+---
+
+Speaker A
+
+Sure. No, I think that's a great point. And what I would say is you're not always going to have the same amount of experience going into a project. Like the first project, Slack. All of us have lived and breathed Slack or something like it, I think. But the same is not true of CRMs. And that might mean that your spiky POV section is a little bit more sparse, and that is okay. Or that you have to be more thoughtful. You still need to have something there that is part of the requirements. And I don't know if we're going to give more specific guidelines for how much, but I think that it's good that you're aware that, yes, to be particularly opinionated would come from deeper personal experience using the thing or something. And if you don't have that, then you can still spend some time doing some research and trying to find. Well, maybe there's somebody, maybe not just a YouTube video, but if there's a former
+
+Well, maybe there's somebody, maybe not just a YouTube video, but if there's a former colleague. Like, let's say you have a past colleague who you respect, you know, some friend, and you know that they ended up working on CRM stuff. Maybe ask them if they want to chat over coffee or something. You can pick their brain a bit. You know, there are a variety of ways to potentially pursue it, but still, recognizing your limitations as well is a good part of that. So I think that's all part of the problem space, if that makes sense.
+
+
+---
+
+Speaker B
+
+And I will say that when you guys get your assignments at your job, you might not have experience with them.
+
+
+---
+
+Speaker A
+
+Application you're working on.
+
+
+---
+
+Speaker B
+
+So by the way, you can make a free Zendesk account with any email and try it out directly as well. Okay. I will look into the IM password error, but I think we're going to call class for today. I want to go over just the calendar. We have two talks, tomorrow night and Wednesday night with Austin and guest speakers. And then we have our usual MVP deadline tomorrow, then a project check-in on Wednesday. Our next class will be on Wednesday with Aaron on Langgraph. And then we'll have office hours in between the two classes. We're also going to be planning a logistics session for all the logistics related to Austin later this week, and then we'll probably have another logistics session early next week. So a lot of stuff is going to be added on the fly in terms of the logistics stuff, but just keep an eye on the calendar just so you guys are aware of that.
+
+In terms of the goal for tomorrow's MVP submission, the goal is to try to get your scaffold up and running connected to your Supabase and at least some of the functionality. You can pick and choose which of the functions, at least try to get three or four of those functions working properly for MVP submission. So we've laid out a lot of functions, right? So you can pick any of the functionality and try to get as many as done by tomorrow's submission. The goal is that we are on track for the end of the week, so I don't want anybody to fall behind. So the goal is that you are working all the way through today and tomorrow to get some sort of MVP submitted and then by the end of the week we're getting that full rebuild done. But that's the plan. If there are more questions, feel free to reach out to Austin directly on Slack or me. And then I'm going to do that AWS stuff. Think about the IAM pass role and.
+
+
+---
+
+Speaker A
+
+Then thanks, Aaron, thanks, Ash, and thanks, everybody, and enjoy the second project.
+
+
+---
+
+Speaker B
+
+Thank you, guys.

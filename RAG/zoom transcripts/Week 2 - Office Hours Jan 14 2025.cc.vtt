@@ -1,0 +1,2000 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+Okay, with that. I'm going to start the recording and hand it off.
+
+00:00:03.000 --> 00:00:15.000
+All right. All right. Real quick on the rag. One thing I would suggest to make your life a little easier put some content in there that's completely bizarre and abstract.
+
+00:00:15.000 --> 00:00:28.000
+So that when you query it, you get it back and you know whether or not you're getting a good response. So, you know, something about Scooby went to Pluto and you know ate marshmallows and this whole, you know, put a little thing that's really bizarre
+
+00:00:28.000 --> 00:00:32.000
+What at Scooby-Doo, you'll know right off the bat how well your rag is working.
+
+00:00:32.000 --> 00:00:41.000
+And then you can query based around some of those odd things. Helps you just know that it's working or not.
+
+00:00:41.000 --> 00:00:50.000
+Yeah, that's right, Shaggy. Okay, so today we're going to do a little bit kind of a background.
+
+00:00:50.000 --> 00:01:06.000
+My company, we predominantly do startups. We work with startups to get them to MVP so they go for their first So rapid development is a concept that I've been doing for a long time.
+
+00:01:06.000 --> 00:01:14.000
+Ai just changes the game. There's a certain amount of engineering sense that you have to develop.
+
+00:01:14.000 --> 00:01:20.000
+You have to develop a thought process on what happens in an app.
+
+00:01:20.000 --> 00:01:26.000
+It comes from building them over and over and over again and looking at what works and what doesn't.
+
+00:01:26.000 --> 00:01:43.000
+Internalizing and questioning your process okay So the process that we're going to use today does have my background in developing apps But it's pretty, you know, you know, replicatable.
+
+00:01:43.000 --> 00:01:49.000
+And we're really going to see With the exception of maybe two things.
+
+00:01:49.000 --> 00:01:59.000
+Creating a .env. And… maybe testing in one little piece of code. We're going to see if we can do 100%.
+
+00:01:59.000 --> 00:02:07.000
+We're 99.9% AI. And we're going to start at the beginning. So, excuse me.
+
+00:02:07.000 --> 00:02:12.000
+This morning having coffee as I posted. That was my idea for a build today.
+
+00:02:12.000 --> 00:02:17.000
+I've done no work on it except what has been posted.
+
+00:02:17.000 --> 00:02:26.000
+In fact, my idea was the exact message that I sent to Ash as I was As I was typing it.
+
+00:02:26.000 --> 00:02:32.000
+The important part is We're going to go ahead and go to perplexity and look at that. So I'm going to go ahead and share my screen.
+
+00:02:32.000 --> 00:02:40.000
+I'm on widescreen. I'm sorry if that's of issue. Hopefully everybody sees fine. If not, we can kind of work around it.
+
+00:02:40.000 --> 00:02:52.000
+But part of my development style is I like to build and look at the same time. So we'll start there. And if we have an issue, we'll move forward okay so feel free to shout out. I'm not watching.
+
+00:02:52.000 --> 00:02:58.000
+The chat, so I probably won't see it unless it just happens to pop up.
+
+00:02:58.000 --> 00:03:04.000
+All right. All right, we're live. I think.
+
+00:03:04.000 --> 00:03:15.000
+So I loaded up Tailwind with React. It's there, but this started the morning.
+
+00:03:15.000 --> 00:03:27.000
+So I thought about what I wanted to do. Which is a hackathon's mission app where you can, you know, kind of a applicable. I can imagine a scenario where your boss walks in and says, hey.
+
+00:03:27.000 --> 00:03:34.000
+I've got this great idea. What is today? Tuesday, Monday, we're going to do a hackathon. You've got three days to build it.
+
+00:03:34.000 --> 00:03:40.000
+I've been in that situation before anyway. You know, it's fairly real life.
+
+00:03:40.000 --> 00:03:49.000
+And these are the things that I want Just off the top of my mind as I'm drinking my coffee that I want to do.
+
+00:03:49.000 --> 00:03:57.000
+First step, I always… look at the basic research. And you can see that this research was intense.
+
+00:03:57.000 --> 00:04:03.000
+Tell me four or five recommendations. Here are the recommendations.
+
+00:04:03.000 --> 00:04:08.000
+First one out of the bat was Firebase with React, which I agree with, I happen to like.
+
+00:04:08.000 --> 00:04:19.000
+But this was their opinion. You know, this is perplexity. I don't know. I think, I don't know what the… free tier is using.
+
+00:04:19.000 --> 00:04:26.000
+So AWS in there Super base with React was number two, Amplify number three.
+
+00:04:26.000 --> 00:04:33.000
+Google Cloud, and then you start getting into all of these things spread out.
+
+00:04:33.000 --> 00:04:43.000
+Part of rapid development is restricting is restricting as much as you can to a single place.
+
+00:04:43.000 --> 00:04:50.000
+Helps out in a lot of things. The other thing too is remember that we're going to be using Claude.
+
+00:04:50.000 --> 00:04:56.000
+And Claude. I think was last updated six months ago So anything newer than six months.
+
+00:04:56.000 --> 00:05:01.000
+It's not going to know. One of the arguments I have with it all the time is.
+
+00:05:01.000 --> 00:05:04.000
+I say I want my model to be GPT 4.0 mini.
+
+00:05:04.000 --> 00:05:10.000
+And it'll go, great, we're going to use GPT-4. And I'll be like, no, Minnie. And it's like, it doesn't exist.
+
+00:05:10.000 --> 00:05:17.000
+Yes, it does, right? We have to keep in mind whatever platform we're building on.
+
+00:05:17.000 --> 00:05:22.000
+If it's less than a year old. Claude probably won't help us out much.
+
+00:05:22.000 --> 00:05:27.000
+Then I said, hey, tell me which one has the best security.
+
+00:05:27.000 --> 00:05:33.000
+Security is important, a couple of options. And then I said, which one is the easiest?
+
+00:05:33.000 --> 00:05:41.000
+Free and simplified to go from development to production And again, it gave its opinion. And that's the end of the research.
+
+00:05:41.000 --> 00:05:45.000
+So I posted that. Should be easy for you to look at.
+
+00:05:45.000 --> 00:05:50.000
+But now I have an idea of what I want. And specifically.
+
+00:05:50.000 --> 00:05:58.000
+This first, I hear. This is what we're looking for is what we're going to start building today.
+
+00:05:58.000 --> 00:06:05.000
+A couple of things, good housekeeping. We need to start a new React app.
+
+00:06:05.000 --> 00:06:13.000
+We also, oh, AI companion. Okay, great. We need to start a new React app.
+
+00:06:13.000 --> 00:06:19.000
+We need to test it. We also, in this case, we need a Firebase app and we need a repo.
+
+00:06:19.000 --> 00:06:23.000
+I don't know how many people have done all of these kind of things together.
+
+00:06:23.000 --> 00:06:33.000
+I figure it's just easier to start it. We've never seen any of it. And that's where we're going to start. Okay.
+
+00:06:33.000 --> 00:06:34.000
+Sure.
+
+00:06:34.000 --> 00:06:44.000
+Can I ask a quick question on Starting the react app so i'm using Next, which obviously uses React. Sometimes I'm still a little unclear on where react ends and next begins.
+
+00:06:44.000 --> 00:06:45.000
+Sure.
+
+00:06:45.000 --> 00:06:51.000
+I know you can start a React app specifically, but would it be best to start a Next app or is that unnecessary or what?
+
+00:06:51.000 --> 00:06:57.000
+So, well, it depends on what your needs are. And this comes to that engineering sense I talk about.
+
+00:06:57.000 --> 00:07:12.000
+For the last seven years, six and a half years. Every Christmas break, I would take all the top React frameworks and I would build the same app And every single one of them, figure out if my company, if we wanted to change or not.
+
+00:07:12.000 --> 00:07:17.000
+We've never used Next. Because… I don't like their auth.
+
+00:07:17.000 --> 00:07:27.000
+I don't like Vercel. And so Right off the bat, that gives a certain problem. Next does not play well.
+
+00:07:27.000 --> 00:07:34.000
+Outside of Brazil. So I don't use it. It's a good app. There's some really strong features with it.
+
+00:07:34.000 --> 00:07:50.000
+But for me, it doesn't do what I need. So, you know, engineering, since you just have to learn to learn Learn in the sense of what's the technology stack. Remix is really cool. I really like it.
+
+00:07:50.000 --> 00:07:56.000
+But React. Has lots of documentation.
+
+00:07:56.000 --> 00:08:03.000
+I mean, I forget how many tens of millions of stack overflow comments on React. So it's a good option.
+
+00:08:03.000 --> 00:08:08.000
+There are certain cons with that the SEO is not the best. You have to do some extra stuff with that.
+
+00:08:08.000 --> 00:08:17.000
+But we'll deal with it. Again, my opinion, these are the Not saying it's right or wrong, but this is how we do it.
+
+00:08:17.000 --> 00:08:26.000
+And this is how we'll go through it today. So let's get started. All right, we need terminal.
+
+00:08:26.000 --> 00:08:36.000
+And I think… Let's see, do I have a… I don't know if I have a gauntlet. I think I do.
+
+00:08:36.000 --> 00:08:44.000
+Yeah. And when I say we're starting at the beginning, we are starting at the beginning. Okay, so this my flow.
+
+00:08:44.000 --> 00:08:54.000
+Doesn't have to be everybody else's, but First thing I want to do is make a directory We're just going to call this heck a lot. Why not?
+
+00:08:54.000 --> 00:09:03.000
+I'm brilliant with names, as you can see. And… All right.
+
+00:09:03.000 --> 00:09:17.000
+I always start in terminal, always get my bearings first. From old school back when we had to do everything in terminal, it's just the way I work, but it's a highly effective workflow So if you're looking for a flow.
+
+00:09:17.000 --> 00:09:24.000
+It's a pretty good way to go. And then now let's open cursor.
+
+00:09:24.000 --> 00:09:29.000
+All right, we've got cursor. We no longer need this. As you can see, we're completely empty.
+
+00:09:29.000 --> 00:09:35.000
+So three things that we need to do. Create a React app.
+
+00:09:35.000 --> 00:09:43.000
+Firebase app and a GitHub repo. So I'm just going to go split screen.
+
+00:09:43.000 --> 00:09:47.000
+I like to work split screen and let's start with Tailwind.
+
+00:09:47.000 --> 00:09:55.000
+Other thing is, don't be afraid to use the documentation. I mean, I do it all the time and that's the way to go.
+
+00:09:55.000 --> 00:10:11.000
+So Tailwind CSS with Vite. So let's get started. Npm create, right? We're just looking at our vet At latest. And I want it to be in here. So I'm going to use a period. I don't need a nested folder.
+
+00:10:11.000 --> 00:10:18.000
+We're going to go to react. Javascript, good. We're going to follow our instructions.
+
+00:10:18.000 --> 00:10:25.000
+Oh, it has been PMI. Oops, ENPM. All right.
+
+00:10:25.000 --> 00:10:32.000
+While that's installing real quick
+
+00:10:32.000 --> 00:10:40.000
+I hate linters. They're good to have, but they always break. So we have some errors, but nothing or some warnings, but no errors.
+
+00:10:40.000 --> 00:10:47.000
+All right npm run dev. And let's make sure we have an app that works.
+
+00:10:47.000 --> 00:10:53.000
+Step one, app working. Great. Let's go to the next line. Number two.
+
+00:10:53.000 --> 00:10:57.000
+We're going to copy Open a new terminal.
+
+00:10:57.000 --> 00:11:04.000
+And based. All right. Next line. Number three, configure your template. Copy this.
+
+00:11:04.000 --> 00:11:17.000
+Tell me in css Now, notice here So something happened in our Because we don't have a tail in CSS, right?
+
+00:11:17.000 --> 00:11:28.000
+So sometimes you got to pay attention to Oops. Come on.
+
+00:11:28.000 --> 00:11:33.000
+That looks like it's installing.
+
+00:11:33.000 --> 00:11:37.000
+Now we have a tail in CSS, so we're going to go to that next.
+
+00:11:37.000 --> 00:11:42.000
+And we just copy. Paste, save.
+
+00:11:42.000 --> 00:11:46.000
+Number four. At CSS.
+
+00:11:46.000 --> 00:11:55.000
+So we're going to copy this. Find our CSS, go to the tops.
+
+00:11:55.000 --> 00:12:01.000
+As it says, save. If we look at our page, we don't really see much difference.
+
+00:12:01.000 --> 00:12:14.000
+We're running. Now, here's the important part This is one of those things that comes with screwing it up once or twice you'll get We're running these changes require a restart.
+
+00:12:14.000 --> 00:12:22.000
+They don't really tell you, but it does. So notice it's changed.
+
+00:12:22.000 --> 00:12:30.000
+That means everything's working. Always keep my terminal open so I can see my webpage. If something breaks, we can fix it.
+
+00:12:30.000 --> 00:12:38.000
+Finally, the last thing is to test it. And so we're going to test it.
+
+00:12:38.000 --> 00:12:46.000
+Oops, JS. We can get rid of all their stuff. Paste looks like it's probably right.
+
+00:12:46.000 --> 00:13:01.000
+Hello, world. All right. Step one. React App, SWC with Tailwind running tested We're good. Step two, let's go create a repo.
+
+00:13:01.000 --> 00:13:04.000
+So you'll create a new repo I like to name my repos the same.
+
+00:13:04.000 --> 00:13:11.000
+As my… It's because I need lots of I'm going to go.
+
+00:13:11.000 --> 00:13:27.000
+Actually will go All right, we're going to create a repo take this middle section Copy it, go back over here Paste. We've got a success message.
+
+00:13:27.000 --> 00:13:32.000
+We can refresh. In fact, we have the README as it says.
+
+00:13:32.000 --> 00:13:39.000
+So now we can go ahead and I'm going to just optimize this just a little bit. There we go.
+
+00:13:39.000 --> 00:13:48.000
+So now we can go ahead and push all of our other changes I use… alias shortcuts that I've built over time.
+
+00:13:48.000 --> 00:13:56.000
+When we're done, if anybody's interested. I'll send you the repo where you can use it. But I have shortcuts. So in this case.
+
+00:13:56.000 --> 00:14:17.000
+Get ink creates an entire the initial commit. And if we refresh And all it does is take it does get add, get commit, get push, pushes it together And adds these little fancy emojis.
+
+00:14:17.000 --> 00:14:23.000
+And it's called Emoji commit for a reason. So now our repo is set up.
+
+00:14:23.000 --> 00:14:29.000
+We're good there. Final step. Let's go ahead and create a Firebase project.
+
+00:14:29.000 --> 00:14:36.000
+Hack a lot. We don't need analytics.
+
+00:14:36.000 --> 00:14:42.000
+Give this a second. This is the keep your brain from frying.
+
+00:14:42.000 --> 00:14:52.000
+Rest moment. Now, if we look At what we said we were going to build.
+
+00:14:52.000 --> 00:14:58.000
+We have here, what do we want? Here we go. So Firebase auth.
+
+00:14:58.000 --> 00:15:02.000
+Authentication, Firestore database. Storage, hosting.
+
+00:15:02.000 --> 00:15:10.000
+Cloud Functions and real time. So as we're looking at this, we can go ahead and get some of that set up.
+
+00:15:10.000 --> 00:15:16.000
+First thing we need to do is start our app. Again, we name it.
+
+00:15:16.000 --> 00:15:29.000
+Hack a lot. We're going to use hosting. So we'll just go ahead and register the app, get that up out of the way.
+
+00:15:29.000 --> 00:15:39.000
+It gives us the instructions again. So… We're going to go ahead and install.
+
+00:15:39.000 --> 00:15:45.000
+Now, this is the point. Of screw up.
+
+00:15:45.000 --> 00:15:53.000
+So what we're going to do, we're going to minimize this just a little bit and open this up so we can get into cloud.
+
+00:15:53.000 --> 00:16:00.000
+I'm going to remove that. And… I'm going to show you a little thing about Vlad.
+
+00:16:00.000 --> 00:16:10.000
+With cursor, we just started. And if we go to our code base and we tell we want to chat with our code base.
+
+00:16:10.000 --> 00:16:16.000
+We have a very limited code base. And the reason is that it's less than 10 minutes old.
+
+00:16:16.000 --> 00:16:22.000
+It only indexes every 10 minutes. So if you're moving through it quickly.
+
+00:16:22.000 --> 00:16:24.000
+Every now and then you have to come over here and tell it.
+
+00:16:24.000 --> 00:16:33.000
+We need to re-sync. See, there's nothing been synced. So now we have our code base.
+
+00:16:33.000 --> 00:16:42.000
+And the two times when this is important starting off And if you've just made a whole bunch of changes to coding your bug hunting.
+
+00:16:42.000 --> 00:16:48.000
+And you're making a lot of changes. You may need to refresh it so that it can see its own changes.
+
+00:16:48.000 --> 00:16:50.000
+All right. Yep.
+
+00:16:50.000 --> 00:16:57.000
+Quick question. Is this only new files or every time a file is edited?
+
+00:16:57.000 --> 00:17:11.000
+Well… I only do it when there's major change or I've made a lot of change that we're trying to bug hunt. But ultimately, it sinks every 10 minutes Yeah, it syncs every 10 minutes.
+
+00:17:11.000 --> 00:17:12.000
+So.
+
+00:17:12.000 --> 00:17:16.000
+But basically it's indexing the files themselves. But if I edit a file, it will still know that it's been edited because it will still be able to view the file Okay. Okay. Thank you.
+
+00:17:16.000 --> 00:17:23.000
+Only because it's in context, but it's not searchable, right? The indexing doesn't work on it.
+
+00:17:23.000 --> 00:17:24.000
+Sorry, just quickly on that point, in terms of the purpose of the indexing.
+
+00:17:24.000 --> 00:17:30.000
+Okay, so go ahead.
+
+00:17:30.000 --> 00:17:40.000
+Does that only apply if we use at code base or if we use Composer and we just tell it to make some change, will it still be able to see the new folders and files?
+
+00:17:40.000 --> 00:17:45.000
+Only if it's in context. If you've been using it in that. And that brings up a question.
+
+00:17:45.000 --> 00:17:50.000
+Chat and composer. I use chat only for one-up changes.
+
+00:17:50.000 --> 00:17:57.000
+Maybe, you know, and we'll use it here in a minute But I use Composer.
+
+00:17:57.000 --> 00:18:01.000
+All of the time. Because then I'll show you why.
+
+00:18:01.000 --> 00:18:08.000
+Preview function has some things that I like better than chat. I don't like to have to copy and paste or tell it where to put code.
+
+00:18:08.000 --> 00:18:15.000
+So I use Composer in that. But let's go ahead and look at this real quick.
+
+00:18:15.000 --> 00:18:27.000
+We're going to build this app, right? But we need a .env. Now, if we come over here and look at our GitHub, you have to get this into your mind where it becomes standard.
+
+00:18:27.000 --> 00:18:35.000
+Notice there is no .env. You can let Claude do it.
+
+00:18:35.000 --> 00:18:42.000
+I don't. Pretty simple, four characters And save it.
+
+00:18:42.000 --> 00:18:46.000
+Now, you can put dot star after that if you want all of these other things.
+
+00:18:46.000 --> 00:18:51.000
+But it's one area where it's one area where Claude likes to go a bit crazy.
+
+00:18:51.000 --> 00:19:03.000
+And I just… I don't know if you've ever watched like rally car racing, you know, like street rallies and stuff, you have a driver and a navigator.
+
+00:19:03.000 --> 00:19:13.000
+Pair programming is what we're doing. I'm the navigator. I'm telling the driver where I want it to go. The driver happens to be AI.
+
+00:19:13.000 --> 00:19:17.000
+It used to be I would do this with my junior developers.
+
+00:19:17.000 --> 00:19:31.000
+Now it's just AI. But I'm in charge and there are a few instances where you have to be in Or Clyde will… Push your… your files on to GitHub, for instance.
+
+00:19:31.000 --> 00:19:40.000
+So I always do this route myself you can And so I just touch an ENV.
+
+00:19:40.000 --> 00:19:46.000
+And make sure that it's there. And of course, if we do a git status.
+
+00:19:46.000 --> 00:19:53.000
+We want to be able to do a git status. Thank you.
+
+00:19:53.000 --> 00:19:57.000
+Where we do not…
+
+00:19:57.000 --> 00:20:07.000
+C, our E and V. First thing out. Any file that has sensitive documentation, you have to be cognizant of.
+
+00:20:07.000 --> 00:20:12.000
+You cannot let Claude. And every now and then you have to check in with Claude and say, hey, yo.
+
+00:20:12.000 --> 00:20:26.000
+Dude, you screwed up. Put it back, right? And so it's something to always keep in mind So we're going to ask her, we're not going to do code base we're just going to say I have a Firebase.
+
+00:20:26.000 --> 00:20:30.000
+And it calls it here, what, the config Where?
+
+00:20:30.000 --> 00:20:39.000
+Should I put it? And so it's going to tell us And if you notice.
+
+00:20:39.000 --> 00:20:46.000
+If creating a config file. And it's also adding all of our ENVs.
+
+00:20:46.000 --> 00:20:55.000
+And it's checking our gitignore. Which is exactly what we wanted to do. And it's importing it. So we can go ahead and say accept all.
+
+00:20:55.000 --> 00:20:58.000
+And if we come over here and we look at it.
+
+00:20:58.000 --> 00:21:03.000
+This config, so it created a firebase And here's our config.
+
+00:21:03.000 --> 00:21:10.000
+And choosing our choosing our E and V.
+
+00:21:10.000 --> 00:21:17.000
+And this The rest of it matches, import Firebase, right? All of this matches.
+
+00:21:17.000 --> 00:21:22.000
+As it should, app Firebase. Okay.
+
+00:21:22.000 --> 00:21:27.000
+But I… So you either have two choices.
+
+00:21:27.000 --> 00:21:32.000
+I don't post my keys. Into Composer.
+
+00:21:32.000 --> 00:21:48.000
+So you have to make a decision on what you're going to do with them. The overall best way for security purposes would be to come here and go to your ENV And copy and paste them.
+
+00:21:48.000 --> 00:21:57.000
+One at a time. We don't need quotes. And that's what I'm wanting to do. I'm sorry that it's boring.
+
+00:21:57.000 --> 00:22:06.000
+But it's life. We're going to make a lot of progress in a matter of minutes here shortly.
+
+00:22:06.000 --> 00:22:13.000
+Make sure that you're lining them up, storage bucket. We need all of our keys.
+
+00:22:13.000 --> 00:22:31.000
+Bucket. One of the areas that I have a lot of meetings with is either bad structure that almost always was determined by Claude.
+
+00:22:31.000 --> 00:22:43.000
+Or you just let Clyde go too crazy too fast and It happens. Part of being a developer is you got to screw some stuff up. The trick is not to get fired from it.
+
+00:22:43.000 --> 00:22:50.000
+But I have to question if you haven't screwed something up pretty big, if you haven't wiped out a database.
+
+00:22:50.000 --> 00:22:55.000
+Are you really a developer? We'll see. All right. So we go to our next one.
+
+00:22:55.000 --> 00:23:00.000
+Install Firebase. I already have this installed, but you just copy and paste it.
+
+00:23:00.000 --> 00:23:07.000
+And then we just follow this, Firebase login. And this is Joseph's.
+
+00:23:07.000 --> 00:23:14.000
+Going to… Firebase login.
+
+00:23:14.000 --> 00:23:21.000
+And so I'm logged in. Next step, Firebase init.
+
+00:23:21.000 --> 00:23:25.000
+Notice this is going to give us options that we need to pick.
+
+00:23:25.000 --> 00:23:33.000
+I only choose one and that's hosting It's using existing project because we already built one.
+
+00:23:33.000 --> 00:23:44.000
+I think we just scroll until we find it. And now it's going to set it up. It's going to ask us a couple more questions.
+
+00:23:44.000 --> 00:23:51.000
+It is Vite, yes.
+
+00:23:51.000 --> 00:23:56.000
+Where do we want? I like Sport South Carolina. That's just a choice.
+
+00:23:56.000 --> 00:24:01.000
+We're not going to set up any GitHub actions yet, but you can.
+
+00:24:01.000 --> 00:24:10.000
+And Firebase initialization complete. We should see a Firebase RC. This is heavy duty lifting. That's all it generates from all that.
+
+00:24:10.000 --> 00:24:21.000
+It does matter. And then the next thing it says we do is a Firebase deploy.
+
+00:24:21.000 --> 00:24:26.000
+And we'll see if we get a deploy. We will then check the deploy.
+
+00:24:26.000 --> 00:24:37.000
+We'll drop it in so everybody can follow the progress as we go because here in a minute we're going to set up some auth And so here's our URL.
+
+00:24:37.000 --> 00:24:46.000
+We're going to check it. Hey, hello world. That is what we expect. So I'm going to paste this in Slack.
+
+00:24:46.000 --> 00:25:05.000
+Did I find Slack. I'm going to post it in the all gauntlet Right there. And I'm just going to say project Okay, so everybody should be able to click on that if you so choose.
+
+00:25:05.000 --> 00:25:10.000
+And we should see hello world. So set up.
+
+00:25:10.000 --> 00:25:15.000
+New React app. Tailwind.
+
+00:25:15.000 --> 00:25:20.000
+Repo. Firebase and it's deployed.
+
+00:25:20.000 --> 00:25:27.000
+And that took us, what, 20 minutes? And that's Mostly because I talk a lot.
+
+00:25:27.000 --> 00:25:38.000
+Before we start this next phase. Two minutes for questions if we have any.
+
+00:25:38.000 --> 00:25:41.000
+All right. Sounds like silence to me. So we're going to work Okay, Marcus, you're up.
+
+00:25:41.000 --> 00:25:53.000
+Oh, I have a really cool question, if that's good. One issue that it's just really been on my mind. So you're starting this like project off doing it the right way, setting everything up.
+
+00:25:53.000 --> 00:26:03.000
+What if you're like you start a project or not even a few because you wouldn't do this, but I would It was horrifying. It was a mess.
+
+00:26:03.000 --> 00:26:16.000
+And I feel like just trying to go through this course with like a database that just wasn't structured the right way to be with and then just a lot of like feature deliverables, just like you have to do this, have to do this as opposed to being able to really
+
+00:26:16.000 --> 00:26:23.000
+Take a step back, just refactor it, maybe redo some stuff. What would be your recommendations there?
+
+00:26:23.000 --> 00:26:35.000
+Move forward and refactor as you get opportunity. I mean, there's i mean it's Typically, yeah, a long time ago, I got nicknamed the bearded dragon because I breathe fire.
+
+00:26:35.000 --> 00:26:40.000
+I'm not going to simplify it. This is tough for a reason.
+
+00:26:40.000 --> 00:26:50.000
+And all software is tough, but it's really great. But you should never move backwards. And I think a lot of you that were in one of my other Heard me say, don't get married to your project.
+
+00:26:50.000 --> 00:27:01.000
+You're going to have a lot of projects and so The goal is that if you make one, you make it work. And this is a simple rule of thumb.
+
+00:27:01.000 --> 00:27:11.000
+If it works, it's right. If it doesn't, it's wrong. So no matter how pretty it is, if it doesn't work, it's wrong. And no matter how ugly it is, if it does, it's right.
+
+00:27:11.000 --> 00:27:16.000
+You keep that in mind. You're always building for a reason.
+
+00:27:16.000 --> 00:27:25.000
+If we think about the term engineer An engineer is a science applied skill.
+
+00:27:25.000 --> 00:27:35.000
+We take the science of the people who think. You do these wonderful Einstein thought projects. Great. I don't know that we need, you know.
+
+00:27:35.000 --> 00:27:54.000
+The general principles that he came up with but an engineer built the satellite that gives a geospatial awareness okay So we as engineers take applied science or I take a science and make it applied.
+
+00:27:54.000 --> 00:28:00.000
+There are two parts to an engineer. One, they apply science.
+
+00:28:00.000 --> 00:28:06.000
+Two, they do it economically. Finance how much things cost.
+
+00:28:06.000 --> 00:28:11.000
+Is important to an engineer. And if it's not, you're in the wrong field.
+
+00:28:11.000 --> 00:28:20.000
+So when you're building a project and it's ugly. You have two choices. Both can be right or wrong depending on the situation. You can scrap it.
+
+00:28:20.000 --> 00:28:25.000
+Or you can improve it. They come with pros and cons both ways.
+
+00:28:25.000 --> 00:28:28.000
+But you should always be moving forward. And learning from it.
+
+00:28:28.000 --> 00:28:46.000
+So Zach, you're actually… It was in response to me when you said previously that you should always move forward, not backward. And it was in response to using clerk for authentication when I got Supabase set up and wanted to use that for authentication.
+
+00:28:46.000 --> 00:28:53.000
+Man, there was a point where I just had to say, Claude.
+
+00:28:53.000 --> 00:28:54.000
+There you go. Those are choices?
+
+00:28:54.000 --> 00:28:59.000
+Refactor this, we got to use super base for authentication. And I don't know when I should have made that call. I made it and things are working great now. But yeah, it got to a point where it really was not working. Yeah.
+
+00:28:59.000 --> 00:29:17.000
+It's… Absolutely. Moving forward doesn't mean that you don't make major change. Moving forward means that you're not going backwards in constant. If you look at it and you say, okay, I can fix this in 10 hours Or I can rebuild it in three.
+
+00:29:17.000 --> 00:29:27.000
+Rebuilding is moving forward. But you have to learn when to make that decision. And the only way that that comes is from screwing it up a lot.
+
+00:29:27.000 --> 00:29:33.000
+And that's just part of being an engineer. Build a lot and learn from your mistakes.
+
+00:29:33.000 --> 00:29:41.000
+You know, it's resistance that builds strength Nobody in the world lays in bed and gets stronger.
+
+00:29:41.000 --> 00:29:48.000
+You have to go to the gym. You have to lift heavier weights. You have to run harder. You have to do all of these things. It's resistance.
+
+00:29:48.000 --> 00:29:51.000
+In the engineering, it's the same thing to get better at it, you have to break.
+
+00:29:51.000 --> 00:29:57.000
+You have to test things, push it to the limit, see where it's at, reevaluate and continue to grow.
+
+00:29:57.000 --> 00:30:01.000
+I think I saw Sebastian with his hand up. I don't know. I don't see him anymore.
+
+00:30:01.000 --> 00:30:04.000
+So Sebastian, if you had a question, we'll hit it and then we're going to move on.
+
+00:30:04.000 --> 00:30:24.000
+I think we can go to my question later because it's in regards on on how to deciding you know like the front components like how can i reuse some things and and how because Right now, I get it like it's very easy to set up the basics, but then when the projects start to build up.
+
+00:30:24.000 --> 00:30:25.000
+Well, let's do it. Yeah, let's do it.
+
+00:30:25.000 --> 00:30:32.000
+For me it's really complicated to understand where somebody, okay, yeah.
+
+00:30:32.000 --> 00:30:33.000
+Do you mind? Sorry.
+
+00:30:33.000 --> 00:30:43.000
+I'm just going to do it. Okay. So we're at this point where we're at this point We don't really have anything, any code written. We are deployed, right? And now let's think about our question. So I'm going to go back over here.
+
+00:30:43.000 --> 00:30:48.000
+And get my initial question right here.
+
+00:30:48.000 --> 00:30:55.000
+And we're going to start a fresh compose Nothing in it. And we're going to tell Claude this is what we're going to build.
+
+00:30:55.000 --> 00:31:00.000
+Don't start building. Yet. Okay.
+
+00:31:00.000 --> 00:31:08.000
+So we're going to tell it, yep And now look, look what Claude just did.
+
+00:31:08.000 --> 00:31:17.000
+Or is doing. Man, we've got core entities, okay? We've got three different user types. We've got events, submissions, reviews.
+
+00:31:17.000 --> 00:31:24.000
+Key features that looks pretty good. Event management. Yeah, that's going to be good. Submission, review.
+
+00:31:24.000 --> 00:31:44.000
+Notifications. Look at these dashboard views. Now, the one thing it doesn't have on here, let's just say The one… park, we'll say part is a landing page.
+
+00:31:44.000 --> 00:31:55.000
+So let's think about this. We go to a page, we're a hackathon page Okay, so we would typically we would want a landing page that's going to be our, hey, check out our cool hackathon app, right?
+
+00:31:55.000 --> 00:32:00.000
+And what things do we want on it right off the bat?
+
+00:32:00.000 --> 00:32:05.000
+Well, we want a nav bar that's going to allow us to have authentication.
+
+00:32:05.000 --> 00:32:17.000
+That's a good start. Okay. Is a landing page with nav and authentication now This is where you have to develop your engineering sense.
+
+00:32:17.000 --> 00:32:30.000
+You have to learn what an app needs. Now you can get feedback and you can get questions and if you're not sure, ask Claude. Tell it, don't build anything. Give me feedback.
+
+00:32:30.000 --> 00:32:35.000
+So that I can begin to begin piece it together. Okay.
+
+00:32:35.000 --> 00:32:48.000
+Now, we know we just talked about authors. Firebase authentication. So let's go ahead and add authentication to our backend as a service. So we have that.
+
+00:32:48.000 --> 00:32:54.000
+We want signing. We're just going to use email. And okay, that was complicated.
+
+00:32:54.000 --> 00:33:07.000
+So let's start, right? We need landing page with nav bar Let's see, what do we want? There will be a… But we have a login and oops.
+
+00:33:07.000 --> 00:33:13.000
+Log in and log in registration in that bar.
+
+00:33:13.000 --> 00:33:20.000
+All right, let's go. We've started.
+
+00:33:20.000 --> 00:33:26.000
+Now, notice what it's doing. Does anyone see, look at all these great pages.
+
+00:33:26.000 --> 00:33:32.000
+But does anyone catch what issue we have.
+
+00:33:32.000 --> 00:33:36.000
+There's no data structure or data model
+
+00:33:36.000 --> 00:33:40.000
+Well, do we need one?
+
+00:33:40.000 --> 00:33:41.000
+I think it's very important.
+
+00:33:41.000 --> 00:33:54.000
+There's this process in software in computing called just in time So there's this concept of just in time. You don't do what you don't need to do.
+
+00:33:54.000 --> 00:34:05.000
+But no, the answer that I'm looking for here is that we need a code base now Again, when we try this code base and we're like, wait a minute, we're not seeing a code base. We go to a new one.
+
+00:34:05.000 --> 00:34:10.000
+And we look. We don't have a code base.
+
+00:34:10.000 --> 00:34:19.000
+Let's go ahead and double check our embedding, because we may not have an embedding Okay, so it's synced.
+
+00:34:19.000 --> 00:34:23.000
+All right. And we can go ahead and go back to where we were working.
+
+00:34:23.000 --> 00:34:32.000
+You have to check these things. Paying attention to paying attention what your terminal gives you back.
+
+00:34:32.000 --> 00:34:42.000
+Three terminals in this case. The live are working terminal for commits and installs And our terminal or composer window.
+
+00:34:42.000 --> 00:34:49.000
+Build the landing page. So we have to talk to it.
+
+00:34:49.000 --> 00:34:58.000
+All right. And we're off. List the directory. If you see listed directory, that means it's trying to read the documentation.
+
+00:34:58.000 --> 00:35:04.000
+Right. Or whatever it is, code base Notice over here, we crashed for a second.
+
+00:35:04.000 --> 00:35:09.000
+Now, it's still trying to generate. So we can't.
+
+00:35:09.000 --> 00:35:19.000
+At one time to see if Clyde can handle it. I had two cursors side by side and I was building two apps at exactly the same. I type in one window While I was doing this, I'd go to the other one
+
+00:35:19.000 --> 00:35:24.000
+And then I had him on my other monitors. So it will handle that.
+
+00:35:24.000 --> 00:35:34.000
+It's still trying to build. We can't. We can't rush that. And I have to be honest I get a bit impatient.
+
+00:35:34.000 --> 00:35:40.000
+Let's go ahead and find our site. So we now have a crash.
+
+00:35:40.000 --> 00:35:51.000
+Big red over here is telling us when we have this crash right So it was trying to solve if you let Claude think it through for a minute, as long as you see it's thinking.
+
+00:35:51.000 --> 00:36:02.000
+Give it time. Do not try to you know to interject into Claude. Let Claude work through those basics first.
+
+00:36:02.000 --> 00:36:16.000
+Now, while we're here. And we're talking about are firebase config. If you have anything in here Make sure you always add it.
+
+00:36:16.000 --> 00:36:29.000
+To your… So it will not get pushed. In this case, the only thing is the .env Okay, so now Claude is going to tell us all the great stuff that he did.
+
+00:36:29.000 --> 00:36:40.000
+We're going to go ahead and accept it. And we can look through it real quickly. Here we have a login page I've created basic structure. We have logo home link.
+
+00:36:40.000 --> 00:36:47.000
+Modern landing placeholder But… we have an issue.
+
+00:36:47.000 --> 00:36:54.000
+Now, because we're doing this brand spanking new, we never know when we're going to get an issue, just so that you know.
+
+00:36:54.000 --> 00:37:02.000
+I couldn't plan it, but what we're going to do is we're going to take the whole issue We're just simply going to paste it in there.
+
+00:37:02.000 --> 00:37:12.000
+And like Claude, again, do it. If I was working with my junior reactors, that's what I would do. I'd say, you got an issue, solve the issue, right?
+
+00:37:12.000 --> 00:37:19.000
+So we treat Claude just like a junior developer this is our driver and we are the navigators.
+
+00:37:19.000 --> 00:37:24.000
+Okay, so now it says, oh, you need to install this.
+
+00:37:24.000 --> 00:37:34.000
+React Router DOM. So let's go ahead and install it. All right. And so it's generating down here
+
+00:37:34.000 --> 00:37:45.000
+And now it wants to run dev again now. Notice when it does that. This is one of those weird little gotchas with Claude.
+
+00:37:45.000 --> 00:37:55.000
+That somebody's trying to get a hold of me. So… it doesn't run properly.
+
+00:37:55.000 --> 00:38:02.000
+Claude doesn't run properly in there. So you do have to come over and over
+
+00:38:02.000 --> 00:38:10.000
+And restart it. And let's see. All right.
+
+00:38:10.000 --> 00:38:14.000
+Look at that. We are… We are smoking.
+
+00:38:14.000 --> 00:38:21.000
+So we have a login I don't know that I necessarily like that pattern. We can clean that up later.
+
+00:38:21.000 --> 00:38:29.000
+Okay, but it's quite a bit of stuff. That four minutes while we were waiting, lots happened.
+
+00:38:29.000 --> 00:38:40.000
+So let's go ahead and move forward with it now. Let's look at the first thing we have to do is register, right?
+
+00:38:40.000 --> 00:38:49.000
+They really wanted to talk. So let's look at our register. What's some things I don't like about it? Well.
+
+00:38:49.000 --> 00:38:56.000
+Okay, so… We need off with Firebase.
+
+00:38:56.000 --> 00:39:17.000
+We're assuming it probably did it already but did it already we don't want to assume and i want To make… changes to the register. So we're going to use what it recognizes slash register route I don't like full name.
+
+00:39:17.000 --> 00:39:25.000
+So we're going to tell it, go ahead and remove. Full name. And yeah, for now we'll do that.
+
+00:39:25.000 --> 00:39:30.000
+Okay, so we're going to submit.
+
+00:39:30.000 --> 00:39:51.000
+I'm not sure why. Is that just a… So that's some kind of design feature it's working on. We'll fix that in a minute.
+
+00:39:51.000 --> 00:39:59.000
+Hey, it's still generating. Oh yeah, I like that much better.
+
+00:39:59.000 --> 00:40:10.000
+Why don't I want a full name? Because… Once you kind of get it set up, you'll probably switch to oauth Which is GitHub, Google.
+
+00:40:10.000 --> 00:40:17.000
+I don't even know what all the different ones they use anymore apple all these different ones, they already have a name attached to it.
+
+00:40:17.000 --> 00:40:23.000
+All right, so it's going to tell me, so let's go ahead and accept this for a second.
+
+00:40:23.000 --> 00:40:31.000
+And it says we need to install, which we already did, but we're going to let it Double check that.
+
+00:40:31.000 --> 00:40:38.000
+Yeah, look at that. Adding some state management added air handling.
+
+00:40:38.000 --> 00:40:50.000
+Oh, yeah. Moving along. Now, what's funny is I get impatient in the three minutes that it takes when this used to take it.
+
+00:40:50.000 --> 00:40:56.000
+You know, this app would take a week at least to build.
+
+00:40:56.000 --> 00:41:08.000
+Okay, and we can look through here. No linter errors. Let's apply that. All right. So we're making progress. So let's just find out if we can register.
+
+00:41:08.000 --> 00:41:15.000
+We're going to test it out. We want to probably put some other stuff in there.
+
+00:41:15.000 --> 00:41:20.000
+Like, I can't tell if I'm typing anything. So we'll figure it out.
+
+00:41:20.000 --> 00:41:30.000
+Oh, we need… Register. Okay, so I was on the wrong link there
+
+00:41:30.000 --> 00:41:36.000
+And make sure I type my password the same. We'll fix that in a second.
+
+00:41:36.000 --> 00:41:46.000
+Okay. So if we go back over here to our auth and we check Hey, we've got a username. This is working.
+
+00:41:46.000 --> 00:41:55.000
+All right, we hear smoking now. Now, it doesn't go anywhere because we only have one page, but we can make some improvements.
+
+00:41:55.000 --> 00:42:02.000
+Okay, first. So we're going to tell it. Just like I would if I was working with one of you.
+
+00:42:02.000 --> 00:42:12.000
+First, what do we want? The color of the input contrast needs to be fixed.
+
+00:42:12.000 --> 00:42:25.000
+And… We want… the register form, I guess we'd call it, I will say centered with nothing else.
+
+00:42:25.000 --> 00:42:30.000
+On the page. Let's see what we get.
+
+00:42:30.000 --> 00:42:39.000
+So for those of you keeping track how many lines of code have we done?
+
+00:42:39.000 --> 00:42:44.000
+Well, you wrote some stuff in the terminal, but other than that, it's about zero, right?
+
+00:42:44.000 --> 00:42:51.000
+Well, technically, we did copy and paste the Tailwind test code.
+
+00:42:51.000 --> 00:42:56.000
+So we did copy and paste that, which is three lines.
+
+00:42:56.000 --> 00:42:57.000
+Command V is two key presses right so
+
+00:42:57.000 --> 00:43:11.000
+But I haven't Yeah, so I mean, you know, we can round up and say five maybe right because we did create a dot uh ENV and manually add that too. All right, let's go ahead and accept it.
+
+00:43:11.000 --> 00:43:16.000
+And now let's go ahead. Now, notice what it did.
+
+00:43:16.000 --> 00:43:22.000
+It already figured out. Claude already knows if you're logged in, you want to see something different.
+
+00:43:22.000 --> 00:43:26.000
+We have a log out button. But it didn't seem to work, right?
+
+00:43:26.000 --> 00:43:37.000
+Okay, so… Let's refresh this. And this is one of those situations where Claude improved it. I don't know what this great crap is.
+
+00:43:37.000 --> 00:43:44.000
+Off to the side. I'm assuming if we asked Claude, Claude would say, oh, that's so you could put a picture in there.
+
+00:43:44.000 --> 00:43:47.000
+So we're going to have to work on that. But this is better.
+
+00:43:47.000 --> 00:44:01.000
+But I want to have the icon because we want an icon to see password on register and log in.
+
+00:44:01.000 --> 00:44:09.000
+And this is how we run through it.
+
+00:44:09.000 --> 00:44:14.000
+This is AI-first development now Technically, this ends in 12 minutes.
+
+00:44:14.000 --> 00:44:20.000
+I don't know, Ash. I'm willing to go a bit longer if anybody wants to stay.
+
+00:44:20.000 --> 00:44:31.000
+And then we need to decide, do we want to continue this out? Because here in a second, we're going to go to start the dashboard stuff. I'd like to get some of that built in.
+
+00:44:31.000 --> 00:44:37.000
+But do we want to reschedule? Should I rebuild it and we pick back up and show you what we've done?
+
+00:44:37.000 --> 00:44:39.000
+What do you think?
+
+00:44:39.000 --> 00:44:44.000
+I'm okay with you if we keep going as long as you're good on your schedule and your time.
+
+00:44:44.000 --> 00:44:50.000
+Okay. Well, I'll keep going for a while if anybody wants to stay on that.
+
+00:44:50.000 --> 00:44:57.000
+And fancy. Fd.
+
+00:44:57.000 --> 00:45:05.000
+So I'm a form last person. You'll develop your own style. I believe in functionality.
+
+00:45:05.000 --> 00:45:08.000
+Before I make it too terribly pretty, I don't really care.
+
+00:45:08.000 --> 00:45:18.000
+Because we hire a professional designer after it works to come in and make it nice and then we refactor at that point.
+
+00:45:18.000 --> 00:45:25.000
+That's your style. But just so you know, I care less about function or form. I care all about function.
+
+00:45:25.000 --> 00:45:41.000
+Okay, so we now have a better create account but now, oh, and look at that. Look how smart it was. It even fixed our sign-in form as well. So let's go ahead and sign in and let's move to the next thing.
+
+00:45:41.000 --> 00:45:53.000
+While we're thinking about what we need next. All right. So logout doesn't work, all right Log out.
+
+00:45:53.000 --> 00:46:05.000
+Button does not work.
+
+00:46:05.000 --> 00:46:09.000
+Now, let's think about what we want to do next. So we want a dashboard, right?
+
+00:46:09.000 --> 00:46:18.000
+We also want We want different roles. If we look back at our thing here. So we want three roles.
+
+00:46:18.000 --> 00:46:26.000
+Let's create the dashboard first. So then we'll create the roles.
+
+00:46:26.000 --> 00:46:31.000
+And then we'll, yeah, so let's go ahead and work on being able to make some submissions.
+
+00:46:31.000 --> 00:46:42.000
+I think that sounds like a good spot.
+
+00:46:42.000 --> 00:46:50.000
+Yep. That's why coffee is good at this. It makes you jittery while you're going.
+
+00:46:50.000 --> 00:46:55.000
+All right, so let's see here. All right, so log in we're going to test.
+
+00:46:55.000 --> 00:47:06.000
+Notice that I'm testing every time I'm testing every time to make sure things work. I don't think that's the right password.
+
+00:47:06.000 --> 00:47:16.000
+All right. Logout works. Okay, so let's log back in and let's start working on a dashboard.
+
+00:47:16.000 --> 00:47:36.000
+Okay. We need a dashboard. How do we want to do our dashboard? We'll do it traditional for now let's say that has a left Side menu or side nav.
+
+00:47:36.000 --> 00:47:49.000
+Yeah, let's start there. Once we have a dashboard component, then we can tell it we need to route there when we log in.
+
+00:47:49.000 --> 00:48:03.000
+And again, this is engineering sense that gets developed. It's as important to develop flow understanding as it is the ability to write, read code any of the other stuff.
+
+00:48:03.000 --> 00:48:08.000
+But… It's one that only comes with experience.
+
+00:48:08.000 --> 00:48:20.000
+So how do you get the experience? Well, if we can write a project today You can easily write one a week to test out new ideas.
+
+00:48:20.000 --> 00:48:29.000
+I mean, there are times when I'll build app after and clearly I built three just to Test this out.
+
+00:48:29.000 --> 00:48:40.000
+I was like, you guys are having all the fun. I'm dealing with… Really boring translation stuff. And I want to have some fun too so I love the process of software.
+
+00:48:40.000 --> 00:48:48.000
+And again, it's working pretty hard. I still think we're at pretty much… zero for actual code written.
+
+00:48:48.000 --> 00:48:58.000
+And other than copy and pasting ENV files. I have not touched a single file.
+
+00:48:58.000 --> 00:49:04.000
+In our code base, right? All right, let's accept that.
+
+00:49:04.000 --> 00:49:13.000
+Where's it at? Well, let's ask.
+
+00:49:13.000 --> 00:49:25.000
+Asking these kind of questions are the questions that you begin to, oh, that's why it's going slow. We're on slow request.
+
+00:49:25.000 --> 00:49:32.000
+I probably burnt up all my fast for a little bit. Okay, slash dashboard.
+
+00:49:32.000 --> 00:49:37.000
+And it's like, oh, wait a minute. After logging in, you should go right to the dashboard.
+
+00:49:37.000 --> 00:49:48.000
+Again, we're allowing Our junior developer that is pretty good at what it does.
+
+00:49:48.000 --> 00:49:53.000
+Look at those go.
+
+00:49:53.000 --> 00:49:57.000
+All right. I'm going to go ahead and accept all that.
+
+00:49:57.000 --> 00:50:04.000
+Now, this is pretty spiffy. We've got a user component. I don't know what it is with this gray.
+
+00:50:04.000 --> 00:50:10.000
+We're going to have to figure that out. Okay, but this is pretty good.
+
+00:50:10.000 --> 00:50:21.000
+Now… Let's go ahead and let's go ahead and So we need to protect this with auth, right? And if we look at what it's telling us, added protection route.
+
+00:50:21.000 --> 00:50:25.000
+So we should not be able to access it when we're logged out.
+
+00:50:25.000 --> 00:50:32.000
+But the only way we can confirm that at this point is start our server Fresh.
+
+00:50:32.000 --> 00:50:48.000
+Let's see. It looks like the dashboard is showing Okay, that looks pretty good. Let's go to dashboard.
+
+00:50:48.000 --> 00:50:54.000
+So if it's one of the things, keep mental note, if we go to dashboard and we're not logged in.
+
+00:50:54.000 --> 00:50:59.000
+We need a redirectory. We need it to go to something we can use.
+
+00:50:59.000 --> 00:51:02.000
+All right, so let's get back over here.
+
+00:51:02.000 --> 00:51:06.000
+Hey, Zach, you just missed an S in the URL. It was dab board.
+
+00:51:06.000 --> 00:51:16.000
+Oh, did I? Let's test that. Let's just double check.
+
+00:51:16.000 --> 00:51:21.000
+So it brings up another thing. We need a 404. Dashboard.
+
+00:51:21.000 --> 00:51:28.000
+Doesn't look like it's being predicted, right? So let's go ahead and talk to it.
+
+00:51:28.000 --> 00:51:36.000
+The okay so what do we want to happen When I register.
+
+00:51:36.000 --> 00:51:41.000
+Register or too early in the morning for me. Log in.
+
+00:51:41.000 --> 00:51:48.000
+I want… I guess we want to redirect to dashboard.
+
+00:51:48.000 --> 00:51:55.000
+Dashboard. If… Logged out.
+
+00:51:55.000 --> 00:52:05.000
+Dashboard, what do we want it to do? We probably want dashboard to redirect to the landing page.
+
+00:52:05.000 --> 00:52:11.000
+So while we're here, let's take a look and see if we can figure out what this gray is.
+
+00:52:11.000 --> 00:52:31.000
+Because you need to know what it's… you know kind of terms for things So that… we as we begin to build out so that's Very odd. I don't know what he's trying to accomplish with that.
+
+00:52:31.000 --> 00:52:36.000
+Is it a design? Nope, it looks like it's just CSS. Okay.
+
+00:52:36.000 --> 00:52:46.000
+So we'll let this build.
+
+00:52:46.000 --> 00:53:03.000
+We look real quick at it. Okay, so it has an is authenticated added protected route. So it created a protected route component When authenticated, redirects the dashboard log in, redirects dashboard.
+
+00:53:03.000 --> 00:53:21.000
+And register, okay, that looks pretty good. All right, let's accept that. So this is a pretty good spot, right? We have some login. We've tested it. We want to go ahead and make sure that we…
+
+00:53:21.000 --> 00:53:34.000
+Okay, that all looks pretty good. So let's go ahead and do a commit. So again, my emoji commit get imp is for improvement. I'm going to give it what I want.
+
+00:53:34.000 --> 00:53:41.000
+I'm going to say log in. Register.
+
+00:53:41.000 --> 00:53:51.000
+What else do we have? We have a dashboard. And I like when I know it's working up to that point, I like to put it there working so I can come back to it down the road.
+
+00:53:51.000 --> 00:53:57.000
+And notice it creates that. And if we go to GitHub and we look at it.
+
+00:53:57.000 --> 00:54:01.000
+Again, I call it emoji commits for a reason, thumbs up.
+
+00:54:01.000 --> 00:54:09.000
+Means there was an improvement made to the code there's also breaking code there's a few others.
+
+00:54:09.000 --> 00:54:27.000
+But I'll post it if anybody's interested in that. The other thing I like to do is This is our deployed app. I want to go ahead and deploy that And so let's look at our package JSON.
+
+00:54:27.000 --> 00:54:40.000
+We need to do a build. Npm run build and it deployment, right? So let's go and look at what happens when you do Firebase deploy Give this a second.
+
+00:54:40.000 --> 00:55:00.000
+Build and deploy. If you set up your Firebase correctly, it'll usually build for you And booyah, we are once again live. Everybody can go to that and everybody can go sign in and create an account if you want.
+
+00:55:00.000 --> 00:55:07.000
+All right, let's move forward. So what's some of the other stuff we talked about?
+
+00:55:07.000 --> 00:55:18.000
+Okay. So let's do… submissions. Okay. We've got to figure out what's going on. So let's take a picture.
+
+00:55:18.000 --> 00:55:28.000
+I'm going to take the full thing. I'm going to copy the image. I'm going to say Please get rid of the dark.
+
+00:55:28.000 --> 00:55:37.000
+Gray on the right side. That's good enough.
+
+00:55:37.000 --> 00:55:47.000
+We don't need that anymore. So let's see what Claude has to say about that.
+
+00:55:47.000 --> 00:55:54.000
+And it's very bizarre.
+
+00:55:54.000 --> 00:56:00.000
+So God is thinking.
+
+00:56:00.000 --> 00:56:09.000
+I see the dark gray area. Oh, yeah. Okay.
+
+00:56:09.000 --> 00:56:18.000
+Let's see what we get out of it here. And so remember, you're talking to a junior And let's refresh it.
+
+00:56:18.000 --> 00:56:26.000
+So what we need to do is we need to That didn't work.
+
+00:56:26.000 --> 00:56:36.000
+I still see the gray on… What do we have? Submissions.
+
+00:56:36.000 --> 00:56:50.000
+Reviews, users. Log in and register routes.
+
+00:56:50.000 --> 00:56:55.000
+I need to figure out why I don't have fast access.
+
+00:56:55.000 --> 00:57:05.000
+This is definitely a two app builder kind of Wait.
+
+00:57:05.000 --> 00:57:11.000
+If you're new to software in the sense of building web production software.
+
+00:57:11.000 --> 00:57:21.000
+You can pay attention just to which files It's building and where it's positioning. Notice this is best practice.
+
+00:57:21.000 --> 00:57:30.000
+Components. And inside of dashboard, because we have multiple things in dashboard, this is best practice.
+
+00:57:30.000 --> 00:57:43.000
+Don't try to outthink. Don't try to outthink it. Let it do what it's best at. React is well documented. There's a lot of React out there, best practices and generally.
+
+00:57:43.000 --> 00:57:49.000
+But we still stuck with that. What is going on? Well, we're going to have to solve that because that's going to be annoying.
+
+00:57:49.000 --> 00:57:59.000
+So let's see what Claude had to say. Change the container background to white.
+
+00:57:59.000 --> 00:58:09.000
+Let's see. Do we… have two containers
+
+00:58:09.000 --> 00:58:13.000
+In the HTML.
+
+00:58:13.000 --> 00:58:23.000
+Let's see what it says. I mean, the whole point they've spent, I don't know how many.
+
+00:58:23.000 --> 00:58:39.000
+I'm curious if anybody has an idea of how much money Meta and Open and Anthropic has spent just to teach These LLMs to work with natural language.
+
+00:58:39.000 --> 00:58:44.000
+So looking at the structure, we have nested containers that might be causing the issue.
+
+00:58:44.000 --> 00:58:52.000
+Okay, that would make sense. That's a possibility.
+
+00:58:52.000 --> 00:58:57.000
+Okay, let's accept. Let's see if we got a change. So we still have an issue here.
+
+00:58:57.000 --> 00:59:05.000
+So let's see if we can track it down.
+
+00:59:05.000 --> 00:59:18.000
+Okay, so that is there.
+
+00:59:18.000 --> 00:59:24.000
+Okay, so this is…
+
+00:59:24.000 --> 00:59:36.000
+The line of code that we have a problem with. We want to copy the element.
+
+00:59:36.000 --> 00:59:44.000
+On the… Want it to be full screen.
+
+00:59:44.000 --> 00:59:53.000
+Full width, I guess.
+
+00:59:53.000 --> 01:00:07.000
+See what it thinks from there. Wow, that's thinking. Let's look at… we want to do submissions but
+
+01:00:07.000 --> 01:00:16.000
+Sure, I'm not on. Okay. No.
+
+01:00:16.000 --> 01:00:37.000
+Now, this is a Interesting. The issue is with the placeholder content.
+
+01:00:37.000 --> 01:00:51.000
+That is weird, yeah. So sometimes… You just have to.
+
+01:00:51.000 --> 01:00:56.000
+Hey, Claude.
+
+01:00:56.000 --> 01:01:01.000
+I've dated the placeholder.
+
+01:01:01.000 --> 01:01:16.000
+Remove all ye place.
+
+01:01:16.000 --> 01:01:29.000
+And a second, we're going to build a submission form And then… If a few of you, if you've already signed up, that'd be great. If you haven't, we need a few of you signed up because we're going to test the submission.
+
+01:01:29.000 --> 01:01:34.000
+In a few moments.
+
+01:01:34.000 --> 01:01:41.000
+Let me see. Do we have anybody that's signed up yet?
+
+01:01:41.000 --> 01:01:53.000
+Maybe we can get a few more. Yeah.
+
+01:01:53.000 --> 01:02:03.000
+I'm just talking about submissions. That's kind of creepy Well, I might be listening through.
+
+01:02:03.000 --> 01:02:19.000
+Through Siri. If anybody has Siri, don't watch the What's the not gods of war but the other one where her name is Siri and he's always yelling at her. So my Siri always goes nuts every time I have it on.
+
+01:02:19.000 --> 01:02:24.000
+Okay, so let's see here. Yeah. We're going to have to figure that out.
+
+01:02:24.000 --> 01:02:31.000
+It's going to a mobile device. Oh, interesting.
+
+01:02:31.000 --> 01:02:37.000
+Yes.
+
+01:02:37.000 --> 01:02:48.000
+Desktop.
+
+01:02:48.000 --> 01:02:55.000
+Okay. Now, so let's think about the submissions.
+
+01:02:55.000 --> 01:03:15.000
+We're going to take a submission in right now. And we want to be able to So whatever it is.
+
+01:03:15.000 --> 01:03:20.000
+Zach, it might be a min width on the initial main content container.
+
+01:03:20.000 --> 01:03:25.000
+Probably, but I want Claude to find it.
+
+01:03:25.000 --> 01:03:28.000
+Yeah, I almost feel like we found it quicker than Claude did, but yeah.
+
+01:03:28.000 --> 01:03:41.000
+Sometimes. Sometimes you will. And as you do it more and more You will find it. The other thing I've noticed over time is that if you've had a longer compose like this going and you can't find the issue.
+
+01:03:41.000 --> 01:03:52.000
+Go to something else. That's going to include it, require it in a new compose window to solve that particular issue while it's solving something else.
+
+01:03:52.000 --> 01:04:03.000
+A lot of times it will. So let's see here. Hierarchy sidebar Nah, main component.
+
+01:04:03.000 --> 01:04:08.000
+Well, that's interesting.
+
+01:04:08.000 --> 01:04:17.000
+Yeah. Okay. We're going to let it solve, but that's better. I mean, at least we can get a larger screen out of it.
+
+01:04:17.000 --> 01:04:28.000
+Let's see. Yep, not there yet. But we're going to start hearing you. Okay, so let's go ahead and build. We're going to tell it we need this submission.
+
+01:04:28.000 --> 01:04:32.000
+To be able to take in a URL. It's going to save it.
+
+01:04:32.000 --> 01:04:42.000
+To the database that based on the user that submitted it. And then over here, we're going to update our total submissions.
+
+01:04:42.000 --> 01:04:49.000
+So let's work on that. Let's go ahead and start a new compose because I feel like
+
+01:04:49.000 --> 01:04:57.000
+It's not… thinking that well. So, okay.
+
+01:04:57.000 --> 01:05:02.000
+Let's see, do we need to do a code base? Always check for new code base if you need it.
+
+01:05:02.000 --> 01:05:10.000
+If you don't, it won't give you the option if it's already synced up. But if it's not, it'll So just check.
+
+01:05:10.000 --> 01:05:19.000
+All right, so… Let's see. We need… the submission.
+
+01:05:19.000 --> 01:05:35.000
+Text box or text input, we'll call it an input to take a URL, save it to, so we want it to what save it to the database In this case, that's firestore.
+
+01:05:35.000 --> 01:05:43.000
+Try to use terms that are specific with it so it doesn't then go, wait, we didn't do a database. You only have Firestore, which is our database.
+
+01:05:43.000 --> 01:05:57.000
+Okay, saved Firestore. And… What else do we want? We only want to only allow We don't even need that right now.
+
+01:05:57.000 --> 01:06:00.000
+Because we don't have anything else that we're doing with users.
+
+01:06:00.000 --> 01:06:06.000
+And update the total submissions.
+
+01:06:06.000 --> 01:06:12.000
+On the main dashboard. What else do we want?
+
+01:06:12.000 --> 01:06:22.000
+Make sure it starts at zero.
+
+01:06:22.000 --> 01:06:37.000
+See what we get out of it here.
+
+01:06:37.000 --> 01:06:45.000
+So search our code base. Always want to see that, right? Because that way we know that it's doing what it should be doing.
+
+01:06:45.000 --> 01:06:50.000
+I'll need to update the submission component. Now that sounds good.
+
+01:06:50.000 --> 01:07:00.000
+Oh, look at that. Better. It's making progress. Let's look at our submissions. That one's still not.
+
+01:07:00.000 --> 01:07:09.000
+The joys of software. This is why AI, no matter how smart it is, it's still dumb.
+
+01:07:09.000 --> 01:07:21.000
+And we have to always remember that we're controlling that aspect of it.
+
+01:07:21.000 --> 01:07:23.000
+I also have a really quick question if you're down to answer it.
+
+01:07:23.000 --> 01:07:24.000
+Go ahead.
+
+01:07:24.000 --> 01:07:34.000
+So one thing that I've been doing, and I think a number of people have been doing is generating a checklist of items to implement.
+
+01:07:34.000 --> 01:07:43.000
+You haven't been doing it. I think, and let me know if I'm totally missing the point, just like, hey, this is what I need to do. Okay, do this, do this. For a lot of what I'm doing.
+
+01:07:43.000 --> 01:07:48.000
+What do you think of that
+
+01:07:48.000 --> 01:08:03.000
+Well, if you remember somewhere We did generate one, right? We got, I don't know where it's at in the It's in here somewhere where we did generate one. And we'll check back into it.
+
+01:08:03.000 --> 01:08:10.000
+I mean, you should generate one if you don't know. Some of the basic steps.
+
+01:08:10.000 --> 01:08:21.000
+The biggest thing with it is, is that do one thing And, you know, progress forward as much as you can.
+
+01:08:21.000 --> 01:08:27.000
+So let's see what happens so now let's see what happens Let's see, we got ourselves, looks like we have a break.
+
+01:08:27.000 --> 01:08:42.000
+So let's go to our console and see what we're getting. All right. So in this case, it's telling us that we does not provide for export given getAuth. All right. So we're just going to take this.
+
+01:08:42.000 --> 01:08:48.000
+Copy it. And one thing I found along the way, then I'll get back to you, Marcus, is that tell it where it's from.
+
+01:08:48.000 --> 01:08:54.000
+This error is from the console.
+
+01:08:54.000 --> 01:09:00.000
+Because you will be working with heirs generally in three locations.
+
+01:09:00.000 --> 01:09:10.000
+Your terminal where it's running The console in the app, or if it's a front end You'll get error messages, you know, like we did earlier.
+
+01:09:10.000 --> 01:09:15.000
+The issue is because we're trying to import get auth from Firebase Firestore.
+
+01:09:15.000 --> 01:09:21.000
+Which should be imported from Firebase okay
+
+01:09:21.000 --> 01:09:38.000
+I've got a quick tip, by the way. If anybody doesn't know, you can drop images into Claude and it works pretty well as well. So I'll command shift 4 to take a little screen grab of my console. And sometimes that's way quicker than copy pasting.
+
+01:09:38.000 --> 01:09:39.000
+Also works really well for
+
+01:09:39.000 --> 01:09:43.000
+Two, you can tell it where like an element is wrong and it'll be able to visually recognize and then edit the tailwind.
+
+01:09:43.000 --> 01:09:54.000
+Didn't really. Yeah, generally didn't work so great with the gray over here, right? It's all the gray. But yeah, you absolutely Find the workflow that works best for you.
+
+01:09:54.000 --> 01:10:02.000
+I'm on Mac. I use this. This awesome screenshot.
+
+01:10:02.000 --> 01:10:09.000
+And so… Sometimes I'll grab the page, you know, just fills whatever I'm in the mood for.
+
+01:10:09.000 --> 01:10:18.000
+But find your Images, the one thing with images is they take up a lot more compute.
+
+01:10:18.000 --> 01:10:25.000
+So if you're getting, if you're looking at a long day moving forward, that kind of thing.
+
+01:10:25.000 --> 01:10:33.000
+The less images you do, the longer your clod will last before you start to get a rate limit.
+
+01:10:33.000 --> 01:10:43.000
+That's about the only thing with that. Let's see here. Firebase, Firestore, Listen, stream. Okay, so we're getting a bad request. Let's go ahead and clear that.
+
+01:10:43.000 --> 01:10:47.000
+And okay, let's tell it, let's fix this form a bit.
+
+01:10:47.000 --> 01:10:55.000
+The input for submissions. Input should match.
+
+01:10:55.000 --> 01:11:02.000
+On the login? Yeah, I think that was pretty good.
+
+01:11:02.000 --> 01:11:10.000
+Now, truth be told. Some of these situations we can solve faster In some instances.
+
+01:11:10.000 --> 01:11:17.000
+Than Claude. Is apparently solving issues.
+
+01:11:17.000 --> 01:11:28.000
+But… What we're trying to do ultimately is see how much we can use AI four completely.
+
+01:11:28.000 --> 01:11:34.000
+So it improved it. It's still got that weird gray off to the edge, though. We'll figure it out eventually.
+
+01:11:34.000 --> 01:11:43.000
+Save, okay. What we want to do is we want to do Let's test this.
+
+01:11:43.000 --> 01:11:52.000
+Even as small and submit project Okay, so looks like we have lots of stuff happening.
+
+01:11:52.000 --> 01:12:02.000
+So one of the things that we want is please… at a toast notification.
+
+01:12:02.000 --> 01:12:11.000
+Form is upload or when submission is made
+
+01:12:11.000 --> 01:12:26.000
+And so we can come over here and let's go ahead and look at our Firestore real quick just to see what we have happening inside of our database.
+
+01:12:26.000 --> 01:12:43.000
+Oh, we didn't create a firestore. No wonder. Okay, so… Let's see here. So production mode. Firebase wants to start in production mode Which disallows everything.
+
+01:12:43.000 --> 01:13:02.000
+Or you have test mode, which allows anything for X amount of time, but we're going to go ahead and go with production mode.
+
+01:13:02.000 --> 01:13:09.000
+Okay, so we're going to go ahead and let's get That.
+
+01:13:09.000 --> 01:13:15.000
+And let's see what we got going on there. Now update the app component.
+
+01:13:15.000 --> 01:13:20.000
+Yep, so let's add some toast.
+
+01:13:20.000 --> 01:13:25.000
+Let's go back over here and look at our web page.
+
+01:13:25.000 --> 01:13:31.000
+Okay, missing or insufficient permission. So we're going to have to deal with that. And of course, that's because we just locked everything out.
+
+01:13:31.000 --> 01:13:37.000
+But we'll see how Claude handles it.
+
+01:13:37.000 --> 01:13:43.000
+Okay, so… Let's refresh our page here just to double check.
+
+01:13:43.000 --> 01:13:53.000
+Let's do a pace. Now, there we go. Missing or insufficient funds. We're getting an error. So now we need to tell Claude that. And again.
+
+01:13:53.000 --> 01:14:10.000
+I like, and see that's the same era. I don't like to pass it the same error multiple times if I can find it. So this time we We received… two errors one in the app.
+
+01:14:10.000 --> 01:14:30.000
+And one in console. And let's go ahead and put in our
+
+01:14:30.000 --> 01:14:35.000
+Now, what it should do… is it should say.
+
+01:14:35.000 --> 01:14:41.000
+Indicate that we need to set up fire yep fire store security rules.
+
+01:14:41.000 --> 01:14:48.000
+So it's going to give us two options. It's going to generate us a Firestore rules.
+
+01:14:48.000 --> 01:14:53.000
+Which I like to always have because you can deploy those separately.
+
+01:14:53.000 --> 01:15:00.000
+And… But the other thing I like to do, at least when I'm getting started, and again, this is just me.
+
+01:15:00.000 --> 01:15:05.000
+I just like to grab that and just like that Go ahead and go to rules.
+
+01:15:05.000 --> 01:15:12.000
+Most things will have a rule set of some kind.
+
+01:15:12.000 --> 01:15:21.000
+Delete. And…
+
+01:15:21.000 --> 01:15:26.000
+Let's publish that. Takes it a moment to propagate.
+
+01:15:26.000 --> 01:15:30.000
+And let's see, we don't need that. I'm going to reject that.
+
+01:15:30.000 --> 01:15:36.000
+Actually, let's see what it's going to tell us. Let's look at it. She'd just give us a fire verse? Yeah.
+
+01:15:36.000 --> 01:15:47.000
+Version. Now notice here it allows us to, and I'm just going to reject that
+
+01:15:47.000 --> 01:15:58.000
+And so now if we reject, notice we grabbed our rules here already But if you don't accept first before it tries to run your command.
+
+01:15:58.000 --> 01:16:04.000
+You'll lose your code. All right, let's refresh that.
+
+01:16:04.000 --> 01:16:07.000
+Wait, can you repeat that one more time?
+
+01:16:07.000 --> 01:16:14.000
+So like here where it wrote this code here And then it had an accept.
+
+01:16:14.000 --> 01:16:21.000
+So I accepted the code changes. And then it wanted to run this separately next.
+
+01:16:21.000 --> 01:16:30.000
+And I rejected. If you don't want it to run this and you hit reject first, the code it wrote in Firestore rules would be removed.
+
+01:16:30.000 --> 01:16:36.000
+So then you don't have it as a backup, that's all.
+
+01:16:36.000 --> 01:16:37.000
+Okay. Okay.
+
+01:16:37.000 --> 01:16:41.000
+Zach, I think I called a class in 10 minutes, by the way We'll come back to it later on.
+
+01:16:41.000 --> 01:16:56.000
+Yeah. So notice we got please enter a valid URL because I don't know what I posted in there, but Oh, it was the rules. So let's go and grab our URL again real quick.
+
+01:16:56.000 --> 01:17:02.000
+And… Woohoo! Project submitted successfully.
+
+01:17:02.000 --> 01:17:10.000
+There's our project. Oh yeah, that's nice Let's go look at Firebase real quick. We can come back to our Firebase.
+
+01:17:10.000 --> 01:17:28.000
+It automatically created the table structure. Well, it's no SQL in this environment, so it's called a collection document, but nonetheless it was created at the status pending. I don't know why it decided pending right we would probably want to maybe want to
+
+01:17:28.000 --> 01:17:40.000
+But we can use that for what we're trying to accomplish because we want it to have notifications sent Here's the email that sent it. Here's the URL of the, I mean, the user ID that sent it.
+
+01:17:40.000 --> 01:17:46.000
+Now let's move to the next thing. Let's go back over here. Oh, look at that.
+
+01:17:46.000 --> 01:17:52.000
+One total submission, one all right.
+
+01:17:52.000 --> 01:17:58.000
+Well, that's pretty cool. So can a few of you that have logged in, can you give it a shot?
+
+01:17:58.000 --> 01:18:03.000
+Oh, wait, we got to go live with it. So let's go ahead and say get imp.
+
+01:18:03.000 --> 01:18:17.000
+Submission. Firebase deploy
+
+01:18:17.000 --> 01:18:23.000
+Let that go to cloud and then go to cloud We'll have a few people tested.
+
+01:18:23.000 --> 01:18:27.000
+And see what they see. Make sure you don't see mine.
+
+01:18:27.000 --> 01:18:39.000
+And vice versa, because this is just a user account. All right, so it's live and we'll see if I have a couple of tests.
+
+01:18:39.000 --> 01:18:47.000
+So we can look at our cannot create item with duplicate ID. That makes perfect sense because we were trying to submit over and over again.
+
+01:18:47.000 --> 01:18:54.000
+We're not using storage yet, so that's okay. So we've got three of them.
+
+01:18:54.000 --> 01:19:02.000
+So let's see. Benjamin, can you see mine?
+
+01:19:02.000 --> 01:19:03.000
+Yes, I see all three.
+
+01:19:03.000 --> 01:19:15.000
+Or only yours? All right. So we see all three. So now we need to go back to Claude and say… Sometimes, you know, you got to feed its ego a little bit. You are doing great.
+
+01:19:15.000 --> 01:19:22.000
+But… the um URL pending.
+
+01:19:22.000 --> 01:19:35.000
+Should be only Yeah, let's think about this. Available. Yeah, we'll say available to admin.
+
+01:19:35.000 --> 01:19:40.000
+Reviewer.
+
+01:19:40.000 --> 01:19:47.000
+And the person that the person that submitted the URL.
+
+01:19:47.000 --> 01:19:57.000
+All right, let's see what it takes from there.
+
+01:19:57.000 --> 01:20:09.000
+And so if we refresh this So we see four yeah I'll modify the rules to implement role-based access control.
+
+01:20:09.000 --> 01:20:16.000
+Oh, yeah. Let me tell you. Role-based access control It's tough.
+
+01:20:16.000 --> 01:20:23.000
+There's a lot of things that go into role-based access control.
+
+01:20:23.000 --> 01:20:29.000
+So, oh, look at it. It's working up a storm.
+
+01:20:29.000 --> 01:20:35.000
+We can only type as fast as Claude.
+
+01:20:35.000 --> 01:20:55.000
+And then we'll test this. We'll look at it real quick. We'll deploy it, and then we'll decide If… what next steps?
+
+01:20:55.000 --> 01:21:01.000
+Looks like it's ran through. Let's accept that.
+
+01:21:01.000 --> 01:21:15.000
+And we do have this Firebase rules, right? Last time we manually posted Let's ask Claude. So it tells us here to deploy the updated Firestore rules.
+
+01:21:15.000 --> 01:21:24.000
+Firestore rules.
+
+01:21:24.000 --> 01:21:39.000
+Okay, so let's see, you cannot understand. Okay. Let's do it this way. Can you create the Deploy.
+
+01:21:39.000 --> 01:21:45.000
+Means. Let it.
+
+01:21:45.000 --> 01:21:50.000
+Test it out. Constantly test it. See what it gives you.
+
+01:21:50.000 --> 01:22:02.000
+Over time
+
+01:22:02.000 --> 01:22:16.000
+So it now added this to the rules and indexes And… May these changes.
+
+01:22:16.000 --> 01:22:25.000
+Hey, let's run the command. Logged in yep.
+
+01:22:25.000 --> 01:22:32.000
+Great. You're logged in. I appreciate that. Okay, Firebase deploy.
+
+01:22:32.000 --> 01:22:48.000
+Okay, so it's deploying. What else does it want to do? What do we deploy? Our rules. So if we come and look at our rules, we should see new rules definitely a lot different from what we just did a minute ago.
+
+01:22:48.000 --> 01:23:14.000
+Okay, let's accept it. And now… So let's just… Give us a copy here and
+
+01:23:14.000 --> 01:23:32.000
+One thing besides it just being generally quick, I mean. If any of you have built strictly by hand any projects of any size, you would know that we are far ahead of the What are we at?
+
+01:23:32.000 --> 01:23:38.000
+75 minutes or so.
+
+01:23:38.000 --> 01:23:52.000
+All right. So notice it made a change to the rules again
+
+01:23:52.000 --> 01:23:58.000
+Tells us what it did each time, which we want, yes, so we can go through and read that.
+
+01:23:58.000 --> 01:24:10.000
+So let's refresh. Now, mine is just showing As it should be. So let's go ahead and m update of m.
+
+01:24:10.000 --> 01:24:24.000
+Rules for submission. Firebase deploy Right?
+
+01:24:24.000 --> 01:24:34.000
+While that's compiling, or not compiling, but working What would you recommend for like new developers in this day and age? Because you refer to this as a junior developer.
+
+01:24:34.000 --> 01:24:40.000
+But let's say you're actually a junior developer and don't have experience. What would you say to kind of get that?
+
+01:24:40.000 --> 01:24:55.000
+Build. I mean, flat out build. Think of something that you're interested in anything Sit down, take, what are we at? We're at 70. Ash, I know you said wrap it up now.
+
+01:24:55.000 --> 01:25:09.000
+So real quick, Marcus, one second. If Benjamin, a couple of you that had logged in and posted, log in and see if you only see yours or you see all of them now. We want to test that that's working.
+
+01:25:09.000 --> 01:25:17.000
+Build a project One of the great things I think to do now Pick a stack.
+
+01:25:17.000 --> 01:25:23.000
+Go to YouTube, find an app that somebody gives you the entire build through.
+
+01:25:23.000 --> 01:25:29.000
+Right. Look at its features, take those features.
+
+01:25:29.000 --> 01:25:34.000
+And see if you can build it 100% react without watching the video. Just look at the features.
+
+01:25:34.000 --> 01:25:39.000
+And build it. If you get stuck, if you're like, well, I don't know what comes next, what I would do next.
+
+01:25:39.000 --> 01:25:46.000
+Fast forward through the video, watch a few segments of it.
+
+01:25:46.000 --> 01:25:47.000
+That's not with AI or isn't.
+
+01:25:47.000 --> 01:25:53.000
+But the bottom line is you need to build. Well, I would build it all. I would look at the video and build it all AI.
+
+01:25:53.000 --> 01:25:54.000
+Okay.
+
+01:25:54.000 --> 01:26:00.000
+I would kind of take their idea what they're going to build so you have an idea of the steps they're taking.
+
+01:26:00.000 --> 01:26:04.000
+And then see if you can build it from AI before watching the video.
+
+01:26:04.000 --> 01:26:12.000
+Just looking at their steps. What they say they're going to build. Maybe watch the first five minutes where they give you a walkthrough.
+
+01:26:12.000 --> 01:26:22.000
+But the bottom line is you have to build. And the best you know instructor of time is screwing up.
+
+01:26:22.000 --> 01:26:30.000
+The problem is that it's too easy to screw up And then get lost in the screw up, right?
+
+01:26:30.000 --> 01:26:45.000
+So find any tutorial that gives you a project layout. Go to… You know, claw at her open and say, I want to build this. Give me a structure that and 10 steps.
+
+01:26:45.000 --> 01:27:02.000
+That you would follow and compare the two. Do it in Cloud, do it in Anthropic and Compare the two. I don't know what your learning style is. And I do see you, AJ, just one second um but ultimately you have to build. You cannot get good at it.
+
+01:27:02.000 --> 01:27:15.000
+In the understanding if you don't go through it. Go through it, spend an hour, do as much as you can an hour and then Look at where it's at and spend another hour on it and move on to it and do another project.
+
+01:27:15.000 --> 01:27:24.000
+Don't get lost in the details. Before AJ, I know Benjamin and whoever else, can you see only yours?
+
+01:27:24.000 --> 01:27:29.000
+We just want to confirm that that's working on production. I'm live.
+
+01:27:29.000 --> 01:27:31.000
+Yeah, we only see our own.
+
+01:27:31.000 --> 01:27:42.000
+Excellent. So we made progress. I think that is a good stopping spot. Aj real quick, and then we'll wrap.
+
+01:27:42.000 --> 01:28:05.000
+A while ago, so this is not a big question. I think earlier you were, yeah, when you were setting up the project When you're not like in a teaching mode where you're like demoing, do you like use the Do you report on Firebase or do you use like the CLI commands to like sort of like
+
+01:28:05.000 --> 01:28:06.000
+Like in the 21st minutes. Okay.
+
+01:28:06.000 --> 01:28:14.000
+I do it like I exactly showed you. That's my standardized workflow all the time.
+
+01:28:14.000 --> 01:28:17.000
+Interesting.
+
+01:28:17.000 --> 01:28:18.000
+Right?
+
+01:28:18.000 --> 01:28:26.000
+I did this. The only thing is that it went slower because I was talking But otherwise, this is exactly how I do it every day.
+
+01:28:26.000 --> 01:28:32.000
+Every time. So what I will do is I'm going to go ahead and stop screen sharing. I think we made pretty good progress.
+
+01:28:32.000 --> 01:28:43.000
+What do you want to do kind of as a group? Do you want to get together later on in the week and continue to build?
+
+01:28:43.000 --> 01:28:44.000
+Exactly. You could go live on YouTube or something at this point.
+
+01:28:44.000 --> 01:28:51.000
+Now I want to build it. So I wanted to I know. I was like, man, we should have streamed it on YouTube and then I could have recorded it, put up my channel.
+
+01:28:51.000 --> 01:28:52.000
+Yeah.
+
+01:28:52.000 --> 01:29:15.000
+Oh, might have to… I have to do that again. But what are, you know, what are your thoughts I would be willing to bet… In another… hour and a half to two hours, we would have all of our functionality that we want.
+
+01:29:15.000 --> 01:29:21.000
+Let's see, let's do it after MVP. I'm not sure what you mean by do it after MVP.
+
+01:29:21.000 --> 01:29:24.000
+They have the rag feature MVP due to So we'll do it. We'll do it.
+
+01:29:24.000 --> 01:29:27.000
+Oh, today. Gotcha. Okay. That would make sense.
+
+01:29:27.000 --> 01:29:32.000
+Probably, I don't know, end of this week, probably we'll come back.
+
+01:29:32.000 --> 01:29:33.000
+Well, I don't know if I can wait that long, Ash.
+
+01:29:33.000 --> 01:29:38.000
+Oh, God. All right. Maybe we could do tomorrow after class then.
+
+01:29:38.000 --> 01:29:40.000
+If you want to do that. You let me know what time you have on your calendar and then we'll take it from there.
+
+01:29:40.000 --> 01:29:46.000
+I'm getting with that.
+
+01:29:46.000 --> 01:29:51.000
+My afternoons and evenings and whatever we have with Melly.
+
+01:29:51.000 --> 01:29:55.000
+Yeah, so that three o'clock Argentina time, but any other uh okay Thank you, Zach.
+
+01:29:55.000 --> 01:29:57.000
+Yeah.
+
+01:29:57.000 --> 01:30:04.000
+So we'll look at it. We'll see if we can plan it to continue today or tomorrow or the next day.
+
+01:30:04.000 --> 01:30:11.000
+And I hope it's been beneficial. I know that listening to me talk and just watching on the screen can get old.
+
+01:30:11.000 --> 01:30:25.000
+But I think that hopefully you how it can be done. And I want to wrap it up. I want a fully functioning hackathon grade Then we'll do a hackathon.
+
+01:30:25.000 --> 01:30:28.000
+Based on our hackathon, we'll plan that for the weekend maybe.
+
+01:30:28.000 --> 01:30:33.000
+And then I'll send an email to all the college hackathon organizations. Hey, use our app.
+
+01:30:33.000 --> 01:30:34.000
+There you go. We built it in three hours. We hope you loved it.
+
+01:30:34.000 --> 01:30:38.000
+And procedure.
+
+01:30:38.000 --> 01:30:41.000
+Cool. Thanks, Zach. Thanks for your time. This was awesome. Thanks, guys.
+
+01:30:41.000 --> 01:30:47.000
+Bye.
+

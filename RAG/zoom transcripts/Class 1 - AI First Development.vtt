@@ -1,0 +1,2126 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.000
+Before we do. Ash, I am requesting to record this to the cloud so we can watch it back later if necessary.
+
+00:00:02.000 --> 00:00:07.000
+And there's going to be a lot of logistical stuff today.
+
+00:00:07.000 --> 00:00:23.000
+More than there normally will be, but we're all Getting onboarded, we're all getting everything all set up. There's access to a whole bunch of stuff that we'll talk about later, but Just to set the agenda for what we're going to be talking about today, we're going to start with
+
+00:00:23.000 --> 00:00:40.000
+Kind of introduction, hello, a little bit of overview-y stuff. And then immediately after that, we're going to kick it over into our first lesson. We're going to start talking about AI first development and what our first project is and what we're going to be working on.
+
+00:00:40.000 --> 00:00:49.000
+Pretty much immediately. And then we'll start building from there. Later on today, the founder of Trilogy, his name is Joe.
+
+00:00:49.000 --> 00:01:04.000
+And he's one of the brainchildren and the deep pockets behind all of this is going to pop in and say hello and talk about why we're all here and why we're excited and why all of this exists in the first place.
+
+00:01:04.000 --> 00:01:09.000
+But I think this is just really, really cool. And I am excited to be here.
+
+00:01:09.000 --> 00:01:19.000
+So with that, I am going to… Share my screen and share a deck and we're going to walk through some stuff together.
+
+00:01:19.000 --> 00:01:40.000
+Know that generally speaking, we avoid uh We're more excited about building and logistics and than you know going through details and getting access to software, but there's going to be a lot of that today because there's a lot of software we're going to be using. There's a lot of logistics that we have to cover.
+
+00:01:40.000 --> 00:01:50.000
+And there's a lot of the, you know, as we get started, it feel like a lot. But very, very quickly you'll get into the swing of things.
+
+00:01:50.000 --> 00:01:57.000
+And we'll spend most of our time learning and researching and building. So with that said.
+
+00:01:57.000 --> 00:02:04.000
+I'm going to share my screen. Present.
+
+00:02:04.000 --> 00:02:10.000
+And I will monitor the Zoom Slack or sorry, the Zoom chat.
+
+00:02:10.000 --> 00:02:29.000
+To the extent that I can. So feel free to message in there, but know that those messages will disappear pretty much after this meeting is gone. If there's something that's more permanent, feel free to ask it in the Slack chat um but
+
+00:02:29.000 --> 00:02:38.000
+For now, let's just use a Zoom chat. We'll get into all the… fanciness of best ways to do these meetings later.
+
+00:02:38.000 --> 00:02:47.000
+All right. So Gauntlet AI. What is going on? Why are we all here? What is this?
+
+00:02:47.000 --> 00:03:00.000
+So basically, this is the result of, and I apologize if some of you have heard this before in info sessions, some people haven't. So we're going to go over it again.
+
+00:03:00.000 --> 00:03:09.000
+We started working with a handful of companies over a year ago. We ran code schools and different, you know, learn to code type of programs.
+
+00:03:09.000 --> 00:03:20.000
+And all of a sudden, company after company was coming to us saying, hey, this is really cool, but We've got to figure out what's going on in AI. We need AI, AI, AI.
+
+00:03:20.000 --> 00:03:36.000
+And we went out to those companies and said, what is it about AI that you what about it? And they said, we don't know, just we hear buzz that there's something going on with AI. We don't know what it is. So can you figure that out?
+
+00:03:36.000 --> 00:03:45.000
+So we sent out a research team and they spent quite a bit of time painstakingly going company to company, trying to figure out what was working within AI.
+
+00:03:45.000 --> 00:03:54.000
+And what they found was pretty surprising, at least to me. They found that 95% of companies had no idea what they could or should be doing with AI.
+
+00:03:54.000 --> 00:04:05.000
+And all right, let's refrain from drawing if we could. And a handful of people were really, really advanced.
+
+00:04:05.000 --> 00:04:21.000
+And it was kind of one of those situations where the people who really knew what was going on were like individual engineers sitting in the basement playing with LLMs and it had not, you know, it wasn't coming top down from the open AI team of this is the best way to build stuff.
+
+00:04:21.000 --> 00:04:33.000
+This is exactly what you should be doing. A lot of random engineers figuring out a lot of stuff along the way. And you'll notice that that's kind of a theme of what's happening in AI.
+
+00:04:33.000 --> 00:04:40.000
+We are in the Homebrew computer club days. So people are doing magic with AI.
+
+00:04:40.000 --> 00:04:52.000
+But… Not many people know what is possible or what is out there. And frankly, I think most people haven't seen what AI is truly capable of.
+
+00:04:52.000 --> 00:04:58.000
+So we don't profess to be the people who know everything.
+
+00:04:58.000 --> 00:05:02.000
+And there's still going to be stuff that we don't understand yet.
+
+00:05:02.000 --> 00:05:24.000
+And that's unique for me in an educational position where We're going to be learning stuff right alongside of you guys and stuff is going to be changing faster than any curriculum can possibly be built. But that's what also makes this really exciting. So the way we look at AI is it is the biggest force multiplier in human history.
+
+00:05:24.000 --> 00:05:45.000
+If you look at kind of… an analogy of what the steam engine did for factories or kind of what the internet did generalized human knowledge. We think AI does that level of change for individuals who are trying to do things, who are trying to build things.
+
+00:05:45.000 --> 00:05:58.000
+So we had a few of the companies that we were working with They are some of the biggest hires of software engineers on the planet. They have tons and tons of engineers that they're working with.
+
+00:05:58.000 --> 00:06:12.000
+And they measure things really religiously and they would see crazy, crazy shifts in productivity. We're talking across thousands of engineers. Hey, the entire team got 50% more productive last quarter.
+
+00:06:12.000 --> 00:06:22.000
+And then another 50% more productive this quarter. And, you know, so you're really good at math. That's more than 2x In like six months. That's completely unheard of.
+
+00:06:22.000 --> 00:06:34.000
+And so they started looking into it more and more and realizing that it was really, really difficult for them to get their existing staff to adopt new skills and adopt new practices.
+
+00:06:34.000 --> 00:06:55.000
+And that if they could find people who are really smart and really hardworking who were really willing to go all in and become AI first. The amount of value that you can create by having that is so extreme that it kind of became a conversation of how can we get as many of those smart, talented people using AI
+
+00:06:55.000 --> 00:07:08.000
+As we possibly can. And that became Gauntlet um so Those companies are funding everything. Those are the companies that want to hire you all. We're not going to have enough engineers on the other side for them to hire. They would hire
+
+00:07:08.000 --> 00:07:13.000
+What we're going to have at the end and some again.
+
+00:07:13.000 --> 00:07:22.000
+But yeah, at the end of the day, AI is super, super powerful. And we'll go over some other stuff in a little bit.
+
+00:07:22.000 --> 00:07:38.000
+So the way that Gauntlet AI works, our overall goal is to create the most sought after AI builders on the planet. We'll talk About what we mean when we say AI builders, but it is an extremely intensive 12 weeks.
+
+00:07:38.000 --> 00:07:52.000
+When we say extremely intensive, we really, really mean it. We're not exaggerating or lying When we say 80 to 100 hours a week, I had a couple of people, well, I had one person this morning message me and like, hey, I think this is going to be difficult on top of my full-time job, don't you?
+
+00:07:52.000 --> 00:08:00.000
+I said, yes, I hope we've been clear. This is impossible to do in addition to a full-time job. It does not work.
+
+00:08:00.000 --> 00:08:09.000
+We are… on a mission to create a credential that is more sought after than Stanford or MIT.
+
+00:08:09.000 --> 00:08:17.000
+We want at the end of this, our goal is for every company to look at what you guys are doing and say, man, anybody who came through Gauntlet.
+
+00:08:17.000 --> 00:08:22.000
+That's hands down the first people we want to hire in any situation.
+
+00:08:22.000 --> 00:08:26.000
+How does it work? So it's going to be four weeks remote.
+
+00:08:26.000 --> 00:08:33.000
+And then eight weeks, all expenses paid in Austin, Texas. We'll talk about the logistics of all of that along the way.
+
+00:08:33.000 --> 00:08:42.000
+Basically, February 3rd is moving day. Assuming you're still with us at that point, we're flying everybody out. We're putting everybody up in hotels.
+
+00:08:42.000 --> 00:08:48.000
+We've got another eight weeks of fun times in Austin.
+
+00:08:48.000 --> 00:08:56.000
+Participation is 100% free. I'm sure you've all you're all aware that none of you have paid anything. None of you ever will pay anything.
+
+00:08:56.000 --> 00:09:08.000
+And if you complete the gauntlet, you receive an offer from, there's a company matching process along the way. You get $200,000 a year job as an AI engineer in Austin, Texas.
+
+00:09:08.000 --> 00:09:15.000
+That's 200,000 base benefits are on top of that. It's a full-time W2.
+
+00:09:15.000 --> 00:09:33.000
+Very intensive role. Probably probably can't continue on at 100 hours. Some people can. So, you know, not necessarily 100 hours a week, but they're not going to be nine to five clock in, clock out jobs either. Very intensive, very startup like and there's a lot to
+
+00:09:33.000 --> 00:09:49.000
+Build. So with that said, there are things that are easy for us to solve for and there are things that are difficult for us to solve for or that require a little bit more effort and energy.
+
+00:09:49.000 --> 00:09:56.000
+So in the admissions process, as you all saw, we started with the CCAT, which is a general cognitive assessment.
+
+00:09:56.000 --> 00:10:04.000
+Our bar for that was very, very high. If you are here, you are smart almost by definition.
+
+00:10:04.000 --> 00:10:08.000
+We know what you're capable of. We know what your intellectual horsepower is.
+
+00:10:08.000 --> 00:10:21.000
+I find that it's rare people admit that in this day and age, but it's… that does matter. The next parts are all going to be about how hard you can work, how fast you can learn.
+
+00:10:21.000 --> 00:10:40.000
+And this is, as I said, this is all in. This is not a side project. This is not something you're going to be able to get by half-heartedly, it will be very obvious to everybody instantly If that's the way you're trying to do things.
+
+00:10:40.000 --> 00:10:57.000
+If this isn't for you, I should say this upfront. There is no… ill will or malintent, if that's the case, that's totally fine. Let me, you know, the… If you want to ring the bell and say, hey, I'm out.
+
+00:10:57.000 --> 00:11:17.000
+100% acceptable, no judgment. That doesn't mean you're not a good person, but that door is always open to you. We want you to be here for the right reasons. We want you to be here and be committed. Everybody… If you're not committed, you owe it to, I think, everybody else who is committed to
+
+00:11:17.000 --> 00:11:25.000
+Open that up to yourself and let us know. And we'll make adjustments and everybody will go along their way.
+
+00:11:25.000 --> 00:11:39.000
+I've gotten a bunch of emails over the last 48 hours. I don't know if it's something that happened in the unofficial Discord, people saying you're positive that you're not going to charge us a bunch of money if we drop out early or if we don't
+
+00:11:39.000 --> 00:11:47.000
+Take one of the jobs that are available. No, there is never any scenario under which you have to pay gauntlet AI a penny.
+
+00:11:47.000 --> 00:11:51.000
+So I hope that we're 100% clear there.
+
+00:11:51.000 --> 00:11:58.000
+If this is a scam, it's the most inefficient, ineffective scam there has ever been.
+
+00:11:58.000 --> 00:12:08.000
+You'll never pay any of us a penny. All right. So with that, let's get into building with AI and what that means.
+
+00:12:08.000 --> 00:12:29.000
+So when we talk about AI, We're not talking about, there are companies like OpenAI and XAI and Mistral and Anthropic They're spending literally billions and billions of dollars building these really powerful models. They're slurping up all the data that exists. They're generating new data.
+
+00:12:29.000 --> 00:12:38.000
+You know, turning it into these super powerful models. Our goal is to be able to use all of that in the most effective way possible.
+
+00:12:38.000 --> 00:12:48.000
+So we're not going to compete with OpenAI, right? We're not building the next chat GPT. We're not doing frontier research of AI.
+
+00:12:48.000 --> 00:12:55.000
+Our goal is to ride the wave. And we mean that very intentionally. And we'll talk about that quite a lot.
+
+00:12:55.000 --> 00:13:05.000
+If you're on the cutting edge of AI, you can do stuff that would have blown everybody's minds Honestly, at this point, probably six months ago.
+
+00:13:05.000 --> 00:13:14.000
+But definitely a year ago, absolutely five years ago, you couldn't even fathom how quickly you can do stuff, how much you can do.
+
+00:13:14.000 --> 00:13:28.000
+And so yeah, our focus isn't on, our focus is making use of AI. Sebastian asked a really good question in the chat. Are we going to train our own models or use pre-trained models and leverage from there?
+
+00:13:28.000 --> 00:13:40.000
+Yeah, that's what I'm trying to say is we're going to use those models that other people have trained for us. Creating a model that is better than them is a multi-billion dollar decade long investment.
+
+00:13:40.000 --> 00:13:54.000
+So we're using all that stuff that people are building. In the 1980s, we're not trying to build the next best computer. We're trying to figure out how to use computers really effectively.
+
+00:13:54.000 --> 00:14:03.000
+So that's what we mean when we talk about riding the wave. And then let's talk a little bit about AI first.
+
+00:14:03.000 --> 00:14:11.000
+Graphic that AI created for me. You'll notice that will be a theme. We do practice what we preach, at least we try to.
+
+00:14:11.000 --> 00:14:30.000
+Um so What I wanted this graph to display is that when you first get started, if you are used to building stuff Yes, John, applied AI is a really um Yeah, really good way to think about it. We'll talk about, Anthony, that's a good question.
+
+00:14:30.000 --> 00:14:46.000
+What about fine tuning models? We have strong opinions about fine tuning models. Generally speaking, even fine tuning right now is a lot less effective than using different techniques that are much cheaper and more effective.
+
+00:14:46.000 --> 00:14:59.000
+We can teach you how to fine tune. It's not crazily difficult, but generally speaking, using better QC first principles and better rag, and we're not even talking about that stuff even today.
+
+00:14:59.000 --> 00:15:06.000
+Do a better job than fine tuning for a lot. You need just a crazy amount of data to do it.
+
+00:15:06.000 --> 00:15:11.000
+To make a model better with fine tuning. But we'll talk about all that as we get into the weeds.
+
+00:15:11.000 --> 00:15:28.000
+I'll share the prompt with you. I think it was, it was The prompt I used to create this, I think it was GPT 4.0. And I basically said, show me a curve where And I made a couple of changes along the way.
+
+00:15:28.000 --> 00:15:35.000
+Where there's one curve that increases over time and then there's a flat line that stays exactly the same point.
+
+00:15:35.000 --> 00:15:43.000
+There's a crossover point and I told it what the X and the Y axes were. But basically all that we're trying to say here is.
+
+00:15:43.000 --> 00:16:03.000
+Building AI first, when we talk about building AI first, that's you're not writing code. We don't want you pretty much ever to initially write code. The AI is the AI a better engineer than anybody in this room when given the opportunity to do so.
+
+00:16:03.000 --> 00:16:14.000
+Your job is to direct and to conduct and to prompt and to give boundaries to and to teach that AI what it needs to do.
+
+00:16:14.000 --> 00:16:30.000
+In the beginning, that feels slower and it sometimes is slower. It's especially if you're a really, really good engineer, it takes a minute to To get to the point where you're better with AI than you are manually.
+
+00:16:30.000 --> 00:16:38.000
+So if you're a really good engineer, and I see in the Yes.
+
+00:16:38.000 --> 00:16:45.000
+Everybody's getting Cursor Pro today. We'll be sending you invites to that.
+
+00:16:45.000 --> 00:16:51.000
+Literally right after this call, you're jumping a couple of slides ahead.
+
+00:16:51.000 --> 00:17:00.000
+The… It may feel slower if you're a good engineer at first. I promise you, give it a week, less than a week.
+
+00:17:00.000 --> 00:17:11.000
+And you'll be on the other side. It's so… just get used to letting AI write the code for you. Let AI do the first pass.
+
+00:17:11.000 --> 00:17:27.000
+At first it's going to be like, oh, I could just do this more easily myself But… pretty quickly that will not be the case. All right, I'm going to Ignore the chat a little bit. We got to keep moving on. Yes, we're going to give you guys access to
+
+00:17:27.000 --> 00:17:37.000
+So many tools that access to tooling will not be the thing that you're you're frustrated by you.
+
+00:17:37.000 --> 00:17:46.000
+We've got tools that you guys We haven't even, you've never seen because some of them we've built internally. Anyway.
+
+00:17:46.000 --> 00:18:03.000
+So when we take a step back and look at, okay, in the new world of AI, What does it mean? What would it take to build product that's worth, say, $100 million. If you were to ask that question five years ago, it's like, okay, well, I need
+
+00:18:03.000 --> 00:18:12.000
+A team of 100 people. I need a bunch of capital i need like We don't think any of that is pretty much true anymore.
+
+00:18:12.000 --> 00:18:30.000
+We think it pretty much requires, and, you know, Trilogy, who is behind, one of the companies behind this, and they also operated Trilogy University, which you'll notice we're not quite a direct clone of, but we're basically rebuilding Trilogy University.
+
+00:18:30.000 --> 00:18:54.000
+They own and operate more than 150 different software companies. They measure everything more rigorously than any company you've ever seen measure stuff. They're really, really good at building software products. And some of this comes from their thinking. So what we think is required to build a product worth $100 million is AI first development.
+
+00:18:54.000 --> 00:19:10.000
+That takes the number of people requirement down from Maybe it used to be 100. Now it's probably one, maybe two, maybe three. But it's definitely much, much smaller, a lot less smaller investment, a lot, lot more AI.
+
+00:19:10.000 --> 00:19:24.000
+And that's what we talk about when we say AI first development. There are I mean, we've talked to individual teams that literally it used to be 15 people operating this team. Now it's one person and AI.
+
+00:19:24.000 --> 00:19:30.000
+That's 100% happening in production major companies today.
+
+00:19:30.000 --> 00:19:45.000
+And the second part is the second part both requirement to use AI-first development because AI is changing so rapidly and you have to learn to learn to use AI.
+
+00:19:45.000 --> 00:20:01.000
+We're not going to focus on that as much today, but that will be a major component of Gauntlet, not just building with AI to make stuff really quickly but In order to do that, you have to be able to learn really rapidly. You have to be a voracious, self-driven learner.
+
+00:20:01.000 --> 00:20:08.000
+And we're also going to be using a tool that we call brain lifts. So think of a brain lift is basically a second brain.
+
+00:20:08.000 --> 00:20:15.000
+But it's a second brain that we build in such a way that it can be fed to models.
+
+00:20:15.000 --> 00:20:20.000
+And we'll talk about reasons that that's true a lot in the future.
+
+00:20:20.000 --> 00:20:37.000
+But one of the main reasons is that for AI, if you think about what AI generates, it's basically a consensus-driven view of the world. It swallowed all of the data that it's found and it kind of unintentionally develops this mental model of
+
+00:20:37.000 --> 00:20:42.000
+The way the world operates. And sometimes that mental model is wrong.
+
+00:20:42.000 --> 00:20:53.000
+Or it overemphasizes or underemphasizes different factors that are really, really, really important to building good products.
+
+00:20:53.000 --> 00:21:09.000
+And to making AI work well. So one of the things that we'll talk about a lot is how we build a second brain. We call it a brain lift and how we make it so that what's in that brain lift overrides the general thinking of the model.
+
+00:21:09.000 --> 00:21:29.000
+That's the way you force the model to do the right thing. And you do have to force it. You have to push it. You have to fight with the model Because the model is so trained on the consensus view that when there's something that's non-consensus but true, we really have to ram it down the model's throat. We'll talk a lot about that.
+
+00:21:29.000 --> 00:21:47.000
+And then, uh. That also helps us You have to learn really quickly and adopt really quickly. Even, you know, we started building this curriculum several months ago And there are entire portions of the curriculum that we would have built that became completely irrele
+
+00:21:47.000 --> 00:21:55.000
+There are other parts of the curriculum that we had to completely rewrite. And that's in a period of several months, right? Imagine what it looks like over five years.
+
+00:21:55.000 --> 00:22:01.000
+I literally can't even imagine what things will look like five years from now or a year from now.
+
+00:22:01.000 --> 00:22:07.000
+So we're going to have to learn to learn and learn to stay on the cutting edge of what AI is rolling out.
+
+00:22:07.000 --> 00:22:12.000
+That's a little bit intimidating, but I think it's super, super exciting.
+
+00:22:12.000 --> 00:22:20.000
+Um and uh Yeah, it's a good question. We're going to have a full session on this later this week.
+
+00:22:20.000 --> 00:22:35.000
+For The tooling that we use for brainless, we use a tool called Workflowy, and we'll give you all access to that But basically, they're in any number of tools that operate pretty similarly.
+
+00:22:35.000 --> 00:22:43.000
+Workflow is basically based on a graph database and it lets you kind of outline things and fill it. We'll talk about it all.
+
+00:22:43.000 --> 00:22:56.000
+Yeah, we'll give you access to the tool and the tool we use is called Workflowy, but the tool isn't the important thing. It's more the format and what you're putting in the brain lift and how you're using it and all that other stuff.
+
+00:22:56.000 --> 00:23:04.000
+The other thing that we'll talk a lot about is what we call QC first AI or quality control first AI.
+
+00:23:04.000 --> 00:23:18.000
+So the great and terrible thing about AI is if it doesn't know the answer to something, it's going to give you its best guess. And that best guess, because it's based on the consensus-driven view of all the data on the internet, it's going to sound pretty plausible.
+
+00:23:18.000 --> 00:23:27.000
+Um so As an example, if you tell AI to build X writing code, it will build X.
+
+00:23:27.000 --> 00:23:31.000
+It may be completely the wrong way to build X. It may not be the X that you were thinking about.
+
+00:23:31.000 --> 00:23:39.000
+So a lot of what we do is kind of reining in or building a framework around the AI and letting the AI fill in that gap.
+
+00:23:39.000 --> 00:23:56.000
+And we call that QC versus AI. So a lot of the time you're you're defining guidelines at which So as an example, you could say, hey, I want X very explicitly now go try five different times to do X and give me you know
+
+00:23:56.000 --> 00:24:06.000
+Based on this y metric. When you're giving me an output, give me the output that best solves for why.
+
+00:24:06.000 --> 00:24:21.000
+Yes, workflow is very similar to Obsidian, Roam. It's what they use at Trilogy, which is the reason we use that. Before that, I used Rum Research, Obsidian. They're all pretty similar. I mean.
+
+00:24:21.000 --> 00:24:29.000
+Tiny investor in Rome research should disclaim that. We're not going to use that for um For Gauntlet.
+
+00:24:29.000 --> 00:24:42.000
+All right. Now let's get into some logistics. Because there is a whole lot of software. There's a whole lot of stuff That's going to feel a little overwhelming at first because there's so many different tools that we're throwing at you.
+
+00:24:42.000 --> 00:24:55.000
+Obsidian and Rome are Yeah, they're tools to their second brain tools you can yeah All right, so the most important ones, email.
+
+00:24:55.000 --> 00:25:06.000
+You should all have access to email, but I can see on my dashboard how many of you have logged into that email so far?
+
+00:25:06.000 --> 00:25:15.000
+And it is not yet 100% of you. So if you have not used your Gauntletai.com email, please log into that.
+
+00:25:15.000 --> 00:25:35.000
+We sent those invitations to your personal email address. But the easiest way for us to grant access to tools is going to be sending stuff to your gauntletai.com email address Or sometimes we can just white label, hey, let anybody with gauntletai.com
+
+00:25:35.000 --> 00:25:44.000
+Email address, create this tool automatically. And so email is probably the most important tool. Second is Slack.
+
+00:25:44.000 --> 00:25:54.000
+If you're not in the Slack, get in the Slack. That's an invite link that you can join. Most of our day-to-day communication is going to be in Slack.
+
+00:25:54.000 --> 00:26:03.000
+And then calendar, we have a Google calendar. I've noticed that some of you are not as familiar with using Google account. So Google Calendar.
+
+00:26:03.000 --> 00:26:08.000
+It lets you, if you use the Google Calendar link in 99% of ways.
+
+00:26:08.000 --> 00:26:22.000
+It will, whatever it will whatever You can either add it to the calendar app that you're currently using or the calendars are pretty good at being interoperable with each other. So if there's a personal calendar you use, you know, so I've got like
+
+00:26:22.000 --> 00:26:40.000
+I can show you my calendar setup. I've got like seven different calendars and I can show This is my home calendar, my personal calendar. Is this the gauntlet calendar? Is this… And yeah, we can… And all of that. If you're not getting access to any of this
+
+00:26:40.000 --> 00:26:47.000
+Please, I guess the first three please let me know.
+
+00:26:47.000 --> 00:26:53.000
+The other stuff is all stuff you're going to be getting access to some of them during the first lesson.
+
+00:26:53.000 --> 00:27:06.000
+Some of them as time goes along. But every additional access thing will be sent to your gauntlet AI email address.
+
+00:27:06.000 --> 00:27:31.000
+So the first tool we're going to get access to is WorkSmart. So WorkSmart is a tool that It's mostly for you. It's a little bit for us. But you turn it on and it's going to watch what you're doing. It's going to see how productive you're being. It's going to look at the way you're using different tools and recommend changes. It's really, really cool.
+
+00:27:31.000 --> 00:27:51.000
+The part that's for us. Uh… The part that's for us It will… Monitor your usage and send that data pretty much to me specifically. And we're going to use AI to look at that and identify if there are any
+
+00:27:51.000 --> 00:27:59.000
+You know, if there's particular models that are working better than others, if there are workflows that are operating better than others.
+
+00:27:59.000 --> 00:28:11.000
+There's a lot of cool stuff that we can do. You can delete any. So it's something that you turn on it's not monitoring anything unless you're turning it on.
+
+00:28:11.000 --> 00:28:20.000
+We do ask you to turn it on. It just makes everything at Gauntlet run. Turn it on when you're doing gauntlet stuff If you're not doing gauntlet stuff, turn it off.
+
+00:28:20.000 --> 00:28:24.000
+And, you know, go about your day, do whatever you want.
+
+00:28:24.000 --> 00:28:39.000
+We are requiring it just because it's impossible to do a lot of the things that we need to do without work smart But again, turn it off if you don't want to. And it does allow you to delete any of the logs that you don't
+
+00:28:39.000 --> 00:28:49.000
+Want at any time. So that's totally an option. You're also going to get access to what we call the platform.
+
+00:28:49.000 --> 00:28:57.000
+Since we're using personal computers, what's to stop work smart from recording, sending personal information? Yeah, that's a really good question.
+
+00:28:57.000 --> 00:29:15.000
+So there are a couple of ways that you can manage that. One is… You can either turn it off when you're doing personal stuff or some people want to create a a separate user within a computer that's for gauntlet stuff only and use that user
+
+00:29:15.000 --> 00:29:23.000
+Only install work smart on that part. On that user and don't install it on your personal user.
+
+00:29:23.000 --> 00:29:27.000
+So however you want to do it is totally up to you.
+
+00:29:27.000 --> 00:29:32.000
+It's just the only way that we can make something like this work.
+
+00:29:32.000 --> 00:29:37.000
+So yeah, personally, I have it on, I just turn it on and off.
+
+00:29:37.000 --> 00:29:51.000
+I don't want to be logging in and out of different users. I'm a little bit lazy, but if you're more conscious about that, then put it on a different user on your computer.
+
+00:29:51.000 --> 00:30:00.000
+Worksmart available on this, I believe it's on Linux. Yeah. Let me, I'll triple check but But yeah.
+
+00:30:00.000 --> 00:30:24.000
+All right. And then platform. When we say platform, it's the platform that we built for gauntlet. If there's a question about something, you'll get access to that later today um but it's that's the system that we built So you'll use your Gauntlet AI email to log into it. That's how you'll submit assignments.
+
+00:30:24.000 --> 00:30:33.000
+That's how you'll… That's kind of our learning management system that we built.
+
+00:30:33.000 --> 00:30:41.000
+Then, you know, development tools we talked about Yeah, what does Gauntlet do with the work smart data?
+
+00:30:41.000 --> 00:30:50.000
+We're basically just trying to use it to use it learn how to make AI like learn what's working and what's not within AI.
+
+00:30:50.000 --> 00:31:01.000
+Worksmart isn't recording the screen. We do have a few people who volunteered to stream the entirety of their experience and get a little more data from that.
+
+00:31:01.000 --> 00:31:09.000
+But it takes screenshots every so often when it's turned on.
+
+00:31:09.000 --> 00:31:17.000
+And it logs your keystrokes. So know that if you're doing personal stuff using passwords.
+
+00:31:17.000 --> 00:31:30.000
+Please turn WorkSmart off. Obviously, we're not like, I don't want your personal information. I don't want your personal data. We're just trying to trying to learn from it.
+
+00:31:30.000 --> 00:31:35.000
+Um…
+
+00:31:35.000 --> 00:31:45.000
+This is a good question. It's not open source, but I can… We can show you the logs. Turning it into a fully automated engineer model.
+
+00:31:45.000 --> 00:31:57.000
+I mean… Candidally, you guys, Crossover, which is the company that built WorkSmart, originally built it as a tool to allow freelancers to build stuff.
+
+00:31:57.000 --> 00:32:15.000
+They have tens of thousands of engineers using WorkSmart. If they want to… build a model with that stuff they would do that. What we're really looking for is to understand how you guys are using AI and how we can help gauntlet students better use AI.
+
+00:32:15.000 --> 00:32:23.000
+So for the students who are Yeah, I'll send you guys all the data to the work smart stuff.
+
+00:32:23.000 --> 00:32:43.000
+It's not… Yeah, it's a really i mean I like using it just because it helps me know what to use, but I want you guys to be aware of everything that it's doing and make sure that that is the
+
+00:32:43.000 --> 00:32:56.000
+Worksmart data from top CCAT performers, new models to wrangle models, zero human development If only. No, there's uh We're so far away from that, as you guys will very quickly see.
+
+00:32:56.000 --> 00:33:06.000
+Yeah, I don't know. Okay, I'm… I'm having trouble keeping up with the chat. So I'll send out a bunch of FAQs on WorkSmart or feel free to message me.
+
+00:33:06.000 --> 00:33:18.000
+Totally understand the skepticism. And I wanted to make sure to like talk about that head on because if I were in your shoes, I would be asking the same questions. We're not going to use it to say, hey, you weren't
+
+00:33:18.000 --> 00:33:36.000
+You know, you weren't sitting there for 10 hours today but we I mean, there's a mode called gimbal walk where we can just walk around and see what everybody's working on and Stuff like that.
+
+00:33:36.000 --> 00:33:46.000
+But yeah, at the end of the day, work smart is smart a way to help you become more productive and it's a way for us to get smarter and better as Gauntlet.
+
+00:33:46.000 --> 00:33:51.000
+So that is… what it is.
+
+00:33:51.000 --> 00:34:01.000
+The development tools that you'll be getting access to, everybody will get access to Cursor pro Yeah, I mean, look.
+
+00:34:01.000 --> 00:34:06.000
+I think that's a really fair comment, Mike. And it's something that we should talk about.
+
+00:34:06.000 --> 00:34:17.000
+The purpose of this program is to create the best employees for the hiring companies as possible.
+
+00:34:17.000 --> 00:34:32.000
+In order to do that. My job is to like i You guys don't pay me, right? The companies pay me because they want us to help create really great employees who are going to create a lot of value.
+
+00:34:32.000 --> 00:34:43.000
+And that's So the way that I generate the most value is I help you guys become the most effective employees that you possibly can be.
+
+00:34:43.000 --> 00:34:59.000
+That's my job. If… And I think the the incentives are actually more aligned there than they have been in times when people are paying me tuition and I say, hey, I'm going to try to train you really well.
+
+00:34:59.000 --> 00:35:14.000
+I am going to be… If… My relationship with you guys is if you're falling behind, I'm going to be honest with you. I'm going to tell you that you need to step it up. I'm going to tell you that you're falling behind.
+
+00:35:14.000 --> 00:35:20.000
+Not because I mean… Because I want the best for all of you.
+
+00:35:20.000 --> 00:35:29.000
+So I only succeed if you guys are all successful. Yeah, if stuff isn't working, then it harms me.
+
+00:35:29.000 --> 00:35:36.000
+So we're definitely on the same team. And the goal is to create as much value as we possibly can.
+
+00:35:36.000 --> 00:35:41.000
+For the hiring companies when you're ready to work for them.
+
+00:35:41.000 --> 00:35:53.000
+Along the way, obviously, you're going to be learning a ton. You're going to I think it'll be a formative experience, but yeah.
+
+00:35:53.000 --> 00:36:08.000
+Is WorkSmart used to measure the amount of hours So yeah, Ryan, that's like… Gauntlet isn't really free. We're putting in 80 to 100 hours a week. I mean, you're right in the sense that like.
+
+00:36:08.000 --> 00:36:27.000
+Learning takes time and we're asking a lot But you're not generating anything like the IP that you're creating, you're not like building products that we're going to go sell. The only value the companies get out of Gauntlet is hopefully you guys become
+
+00:36:27.000 --> 00:36:33.000
+Good enough that they can hire you. That's the only value these companies are getting.
+
+00:36:33.000 --> 00:36:40.000
+Um so our goal is to do that.
+
+00:36:40.000 --> 00:36:46.000
+All right. Yes, that's a really good question.
+
+00:36:46.000 --> 00:36:54.000
+First, let me get into some of the… more logistics real quick.
+
+00:36:54.000 --> 00:37:10.000
+So you'll be getting Cursor Pro later today. That's probably the I'd say my assumption is that that's going to be the main tool most of you use. Cursor is really Everybody gets AWS accounts. So anything that you deploy, you know.
+
+00:37:10.000 --> 00:37:18.000
+The companies are covering all of that. You'll get workflow, which we'll use for brainless. There's a tool called E4, which we'll talk about later.
+
+00:37:18.000 --> 00:37:25.000
+It's a tool that lets you run different
+
+00:37:25.000 --> 00:37:42.000
+It lets you… run different queries and run them against a bunch of different models at the same time. That's a tool that we've built internally. So you can see which models are better, which models are faster. You can see how similar and how different all the different models are.
+
+00:37:42.000 --> 00:37:49.000
+It's really, really cool. Um.
+
+00:37:49.000 --> 00:38:04.000
+I wouldn't have a concern if it was a company laptop. Yeah, create a different user on your laptop and treat it as a If that's a concern.
+
+00:38:04.000 --> 00:38:12.000
+Yeah, create a different user and just this all work smart on that one user and treat that user like it's the work user.
+
+00:38:12.000 --> 00:38:18.000
+Are there PCs, laptops available for use in Austin? If you don't have a laptop, let us know.
+
+00:38:18.000 --> 00:38:29.000
+I think most people were planning on bringing a laptop, but we're not like you know show up with 200 MacBooks. But if you don't have a computer that works, let us know.
+
+00:38:29.000 --> 00:38:38.000
+Um… Yeah, so let's talk about streaming for a minute. A handful of people, I think there are five people.
+
+00:38:38.000 --> 00:38:44.000
+Who have volunteered to have volunteered to stream pretty much the entire experience of Gauntlet.
+
+00:38:44.000 --> 00:39:00.000
+The reason that we want them to do that is A, because we think it'll be cool for them to stream and build an audience. We're not trying to keep gauntlet private. We're trying to build in public as much as we can.
+
+00:39:00.000 --> 00:39:14.000
+That for the streaming explicitly, we are going to watch how they're using AI, what practices and techniques are working the best. We're going to use AI to analyze that.
+
+00:39:14.000 --> 00:39:19.000
+And we're going to see what learnings we glean from it and share it with everybody else who's in Gauntlet.
+
+00:39:19.000 --> 00:39:27.000
+And so thank you for the handful of people who have volunteered for that.
+
+00:39:27.000 --> 00:39:39.000
+And yeah, I'm excited about that. So in case it's not clear uh You're welcome to share publicly all of the stuff that you're working on. There are times when we actually require it.
+
+00:39:39.000 --> 00:39:47.000
+Both because it's cool to share and because interaction with the real world and the other people building AI.
+
+00:39:47.000 --> 00:39:51.000
+Is the way that you learn how to build with AI right now.
+
+00:39:51.000 --> 00:39:58.000
+I think, you know, compare it again Homebrew computer club Um.
+
+00:39:58.000 --> 00:40:10.000
+The way that you learn how to use a computer was like hanging out with other people using computers. There wasn't you know, there weren't schools, there weren't handbooks. So we're doing our best to build a school and build, you know.
+
+00:40:10.000 --> 00:40:22.000
+Curriculum but curriculum We know that we won' All of it. All right, guys.
+
+00:40:22.000 --> 00:40:33.000
+Yeah, if you have questions for me about, like, we've got to get moving on. If you have questions about any of the specifics Feel free to message me.
+
+00:40:33.000 --> 00:40:41.000
+The curriculum that we're working on consists of two parts. And we're going to be kind of repeating this process over and over again.
+
+00:40:41.000 --> 00:40:47.000
+So we have the speed build and that's you're going to get your first speed build today.
+
+00:40:47.000 --> 00:40:50.000
+And that's learning how to build stuff really quickly with AI.
+
+00:40:50.000 --> 00:41:03.000
+And then there's the AI evolution which is taking stuff that only AI is capable of and layering it into the products that we're building.
+
+00:41:03.000 --> 00:41:14.000
+And then when you're submitting a product in the platform, there are four things that it consists of. One is a link to the application.
+
+00:41:14.000 --> 00:41:20.000
+Which will be production quality deployed. One is a link to your code, which will be GitHub.
+
+00:41:20.000 --> 00:41:24.000
+One is a link to the brain lifts that you've used.
+
+00:41:24.000 --> 00:41:41.000
+And we'll talk more about that in, I think it's Wednesday. And then a video walkthrough of the product that you built that's posted on X. Why X? Because X is basically where all of the AI discussion that's meaningful and all the AI learning happens.
+
+00:41:41.000 --> 00:41:46.000
+And learning in public is an important part of building with AI right now.
+
+00:41:46.000 --> 00:41:54.000
+And that's That's it. I'm going to spend some time going through some of this other stuff.
+
+00:41:54.000 --> 00:41:58.000
+And if you have any questions, feel free to reach out to me.
+
+00:41:58.000 --> 00:42:08.000
+And I'm going to turn the time over to our instructors. And with that, we're jumping right into our first lesson.
+
+00:42:08.000 --> 00:42:31.000
+Great. Well, thank you so much, Austin. So my name is Aaron Gallant and I will be your instructor for the sort of regular initial sessions on Monday and Wednesday, where we'll be going over core topics in AI space, the skills and tools you need to do the things we're asking you to do.
+
+00:42:31.000 --> 00:42:40.000
+So today, that means AI first development and So in the interest of time, let's just jump right in.
+
+00:42:40.000 --> 00:42:56.000
+Oh, wow. I'll do it as I have the slides up, though.
+
+00:42:56.000 --> 00:43:08.000
+Assume that my desktop is up. So because I am juggling a lot of windows and sharing stuff, I will not try to monitor the Zoom chat during lecture, just so you know.
+
+00:43:08.000 --> 00:43:20.000
+I will have an eye on the Slack chat. So that can be a place to ask questions and I will see.
+
+00:43:20.000 --> 00:43:46.000
+But what is AI-first development? Austin already motivated us a bit, but the idea is to use these modern generative machine learning tools as the sort of core engine of our development process. And I'm going to note that I will tend to use language like LLMs and generative ml i will use those terms more than terms like AI.
+
+00:43:46.000 --> 00:44:01.000
+It's not because I don't think there's any such thing as AI. It's because LLM and generative ML are specific. They are what we are actually using ai Well, that's philosophical and we can get to that at some future point if we ever have.
+
+00:44:01.000 --> 00:44:18.000
+As I already mentioned, during class. There will be a Slack thread and I'll go ahead and even make And I guess we'll just use the all the gauntlet AI channel here. So I will make a question thread.
+
+00:44:18.000 --> 00:44:34.000
+My eyes will be in this question thread. Now, I will not necessarily answer every single question that is asked during lecture. There are also other staff who are watching, especially if it's a logistical or a policy question.
+
+00:44:34.000 --> 00:44:44.000
+Then you can Expect an answer from somebody else, most likely. My focus is, of course, on the lecture material.
+
+00:44:44.000 --> 00:44:49.000
+And the topics. A hand.
+
+00:44:49.000 --> 00:44:54.000
+You'll be tagged. You all probably know how to use Slack or similar tools.
+
+00:44:54.000 --> 00:45:04.000
+The main thing I'd emphasize is if you have a question, ask it. We are here to help so don't hesitate about asking questions.
+
+00:45:04.000 --> 00:45:19.000
+All right. What are our goals today? This is something also important to our learning methodology here for people who are potentially new to that we set out the learning objectives, and these are things that we want you to get from this
+
+00:45:19.000 --> 00:45:28.000
+From this material so from this material At the end, you can use this to sort of check your own understanding and refer back to it, study it.
+
+00:45:28.000 --> 00:45:34.000
+You know if there's a part that you didn't quite catch that can be a good clue where you need to study.
+
+00:45:34.000 --> 00:45:48.000
+We are going to learn about how The AI-first methodology helps you shift that. And we're going to do so with an actual somewhat, well, not somewhat real world example So Ash, our head of product.
+
+00:45:48.000 --> 00:46:07.000
+Had to put together an initial LMS for GOTLIT in short order. And so, of course, he used a bunch of LLM tools and we're going to step through process that you did and you will end up in the near future actually using
+
+00:46:07.000 --> 00:46:22.000
+And having access to the output of all this. I want to talk about a few of the particular sort of best of class tools in this space, but I do want to emphasize, as Austin also basically alluded to. This is such a fast changing space
+
+00:46:22.000 --> 00:46:32.000
+That there's a lot of likelihood that during the gauntlet program, some new LLM tool will launch that's probably actually pretty good.
+
+00:46:32.000 --> 00:46:44.000
+It might be better than something that came before it so it's it's we will offer tools and workflows, but it's not necessarily the end all be all. Yeah, I see the question on replit.
+
+00:46:44.000 --> 00:46:59.000
+Replit is definitely a contender too. We didn't show Replet because we only have by an hour for the lecture. But, you know, there's not necessarily objectively best tools here. Use the tools that work for you.
+
+00:46:59.000 --> 00:47:09.000
+Of course, they're the tools that we will be providing you that we're paying for. So there's that aspect of it. And cursor in particular, I think, is still somewhat uniquely position, but we'll get to that.
+
+00:47:09.000 --> 00:47:15.000
+And we'll talk a little bit about chain of thought and some basic prompt engineering.
+
+00:47:15.000 --> 00:47:38.000
+And really prompt engineering, I mean, part of what's so cool about LLMs is that you can just in the natural language and get results and getting to getting good at that Even though it might not feel like Am I really into, no, that counts. I mean, it's a little bit of a dark magic sometimes, but that definitely counts as
+
+00:47:38.000 --> 00:47:45.000
+A legitimate and important technique and one worth understanding. So.
+
+00:47:45.000 --> 00:47:55.000
+All right, paradigm shift here so Traditionally, how do you develop code? Well, I imagine you all know this. You've all done this in some way.
+
+00:47:55.000 --> 00:48:07.000
+You perhaps start with some templates, maybe, or you just start with that good old blank editor And you write code, right?
+
+00:48:07.000 --> 00:48:14.000
+Somewhat recently, there are these chat agents like say ChatGPT3, right?
+
+00:48:14.000 --> 00:48:21.000
+That is good enough that, hey, instead of maybe looking up stuff in your documentation or searching Stack Overflow.
+
+00:48:21.000 --> 00:48:39.000
+You talk to this chat bot It's kind of like talking to Stack Overflow sometimes when you're doing this and it gives you things Now, it has some limitations, right? It's a lot of copy pasting And it only has the context that you give it in those prompts.
+
+00:48:39.000 --> 00:48:55.000
+And a recurring, you're going to hear me talk about context and context window a lot throughout this course, and that's because that's Like that's the input of the actual machine learning model that is the LLM. That matters so much. And you want to have, if you're not
+
+00:48:55.000 --> 00:48:58.000
+If you don't come, I come from a data science machine learning.
+
+00:48:58.000 --> 00:49:03.000
+So I might take some of this language a little bit for granted.
+
+00:49:03.000 --> 00:49:13.000
+If you don't come from that background, that's okay. But you want to build a mental model where you see LLMs as a predictive statistical model Basically, that's what they are.
+
+00:49:13.000 --> 00:49:29.000
+Over the natural language distribution of tokens such and you know the input matters a lot. And because when you're just chatting, it only has what you give it, it doesn't know other things. I mean, it knows what it's trained on in a sense, but it doesn't
+
+00:49:29.000 --> 00:49:35.000
+Have access to your whole code. It doesn't have all the context that you have.
+
+00:49:35.000 --> 00:49:54.000
+So that's where AI first development is a change, right? We are using some different tools that via a variety of clever things We won't have time to dig into the full details of how it all works, but there's lots of resources for that.
+
+00:49:54.000 --> 00:50:06.000
+But as an example, it doesn't just shove the entire code base in the context window all the time. I mean, there are LLMs that are big enough that you might be able to do that, but you wouldn't really want to. That would be expensive and slow.
+
+00:50:06.000 --> 00:50:25.000
+Instead, it uses various tricks. There's repo maps that let you sort of structurally understandably a repository. It's similar to what IDs have had for a long time where they can link symbols across files, right? Like, oh, this import is from here and this was defined there.
+
+00:50:25.000 --> 00:50:42.000
+So you can understand the structure of files And you can also potentially have a uh a vector database of your code base And all this is happening automatically. This is kind of like the magic that cursor is doing for you. Cursor is doing these sorts of things
+
+00:50:42.000 --> 00:50:47.000
+So that when you interact with the llm.
+
+00:50:47.000 --> 00:51:02.000
+It has appropriate context. And this might not sound like a lot, but it makes a huge difference. It changes. Instead of you still kind of writing most of the code and just using chat as like a somewhat more convenient stack overflow.
+
+00:51:02.000 --> 00:51:07.000
+Even when you're writing code, your code is like implicitly a prompt for more code.
+
+00:51:07.000 --> 00:51:19.000
+And you will end up spending most of your time in cursor hitting tab and reading code. At least that's what I do, right? And then like editing things here and there. You still need to be engaged. It's still work.
+
+00:51:19.000 --> 00:51:27.000
+But you read more than you think. And so that's why it's sort of more like a care program.
+
+00:51:27.000 --> 00:51:36.000
+All right, to the tech stacks that work best with LLMs, I'm going to defer that question to anybody who wants to answer that question with their own experience in the thread.
+
+00:51:36.000 --> 00:51:50.000
+There's so many options out there. I will say I've been impressed with Cursor personally because Cursor is the main tool that doesn't just do green. Of course, we're doing green field today and it's great. And a lot of what you're doing, you're starting projects
+
+00:51:50.000 --> 00:51:56.000
+From scratch. But I'm often working with existing code.
+
+00:51:56.000 --> 00:52:00.000
+And poster works pretty well. All right.
+
+00:52:00.000 --> 00:52:09.000
+So uh A little bit about why this matters for the overall journey here.
+
+00:52:09.000 --> 00:52:25.000
+Well, we're asking you to do a lot of stuff gauntlet is essentially you building a lot of projects. There's obviously we provide support and instruction, but the gauntlet part of it is you making things and being able to make things
+
+00:52:25.000 --> 00:52:35.000
+Efficiently now efficiently now People can differ here, but I would say there's the somewhat infamous motto, move fast, break things.
+
+00:52:35.000 --> 00:52:52.000
+I would say with generative ML, you don't want to move past breakings. You want to move fast make things like you just want to actually make a prototype, get to that part because any developer knows you get to the part where you actually have a running prototype and there's a sort of flywheel
+
+00:52:52.000 --> 00:53:02.000
+Have a fast feedback loop and you're doing something and it gives and you get information from having done that and you do the next thing and it gets better and better and better.
+
+00:53:02.000 --> 00:53:10.000
+You want to get to that point. Fast. And that's what these tools will enable.
+
+00:53:10.000 --> 00:53:22.000
+So we are going to step through, as I said, the building of the LMS. Lms, sorry for dropping so many acronyms, learning management system.
+
+00:53:22.000 --> 00:53:27.000
+It's… content management system for educational stuff.
+
+00:53:27.000 --> 00:53:40.000
+It's not the most… complicated crazy thing ever, but it's actually a pretty important piece of what we're doing. And it's also it's an industry in its own right. There are companies that make money doing this.
+
+00:53:40.000 --> 00:53:59.000
+So… to build our learning management system we're going to The goal is something that has authentication, user management, and of course, sort of content management. The main goal is you are going to use this to access slides and recording.
+
+00:53:59.000 --> 00:54:04.000
+And other resources, things like that, right?
+
+00:54:04.000 --> 00:54:22.000
+And also submit stuff, right? We want to step through the basically what Ash did using LLMs, chatting with them to uh get the code that you need.
+
+00:54:22.000 --> 00:54:33.000
+To get the plan first and then to get code and then to iterate on the So that's another thing. And that's why I said move fast, make things, not move fast, break things.
+
+00:54:33.000 --> 00:54:50.000
+Because even though the goal is to move fast. You still want to plan. It's still worth at least five or ten minutes thinking about what you're doing, writing it down and writing it down with the help of an LLM because that's what we're doing. You can use an LLM
+
+00:54:50.000 --> 00:55:01.000
+As a sort of brainstorm buddy And in this case, it really is just a chat interface llm And the output from this would be something like a PRV, project requirements document.
+
+00:55:01.000 --> 00:55:08.000
+Which I imagine we're likely But even when you want to move fast.
+
+00:55:08.000 --> 00:55:17.000
+You still need to plan. There's a saying in academia about how months in the laboratory can save you hours in the library.
+
+00:55:17.000 --> 00:55:26.000
+Right. So you want to spend those that little bit of time planning and understanding what you're doing and what came up.
+
+00:55:26.000 --> 00:55:32.000
+So to plan with LLMs, and I'm going to have to tab out here in a sec.
+
+00:55:32.000 --> 00:55:40.000
+We're going to make a structured PRD that will be input for we're going to show V0, which is a tool from Vercel.
+
+00:55:40.000 --> 00:55:48.000
+That helps you build from this. But there are others in this space, as we've discussed.
+
+00:55:48.000 --> 00:55:53.000
+And one of the main techniques you'll see in the prompting in this chat session is chain of thought prompting.
+
+00:55:53.000 --> 00:56:10.000
+Where we basically ask the LLM to think through what it's doing. And it might seem funny. It might seem like why does it like when you ask a personal question, it doesn't necessarily matter if you say and make sure you think that through.
+
+00:56:10.000 --> 00:56:28.000
+Maybe it does but uh this sort of approach though is very effective with a lot of LLMs and is one of the parts of prompt engineering Because it essentially encourages the LLM to the base intuition I get is to sort of spend more tokens on it.
+
+00:56:28.000 --> 00:56:39.000
+To spend a little bit more of its own time, possibly activating more parameters and getting to the tail ends of whatever probability distributions it needs to to give you the best outcome.
+
+00:56:39.000 --> 00:56:44.000
+It also makes the output pretty literate. And easy for you to see and review.
+
+00:56:44.000 --> 00:56:52.000
+And iterate on if you need. So let's see here.
+
+00:56:52.000 --> 00:56:55.000
+I guess, yeah, a few more slides before you get to the example.
+
+00:56:55.000 --> 00:57:01.000
+So a few more details here. When do you want to break down prompts like that?
+
+00:57:01.000 --> 00:57:13.000
+Well, basically, when it's a really complex task, like make a whole LMS, You might want to break. I'm sure you can ask an LLM to, hey, describe, make a PRD to make your whole elements.
+
+00:57:13.000 --> 00:57:26.000
+Like you could give it a simple prompt like that and it would give you something that looks plausible. Llms are great at giving you things that look plausible. That is exactly what they are trained and tuned for. But you want things that are
+
+00:57:26.000 --> 00:57:34.000
+Good. And that means in this case, breaking it down So it is sequential.
+
+00:57:34.000 --> 00:57:43.000
+And has pieces that logically correspond to the pieces you actually care about, the pieces that will actually have to be built, things like that.
+
+00:57:43.000 --> 00:58:03.000
+And again, this is when it matters. And in this case, because this output is going to be then fed to another LLM, it does matter. If you blindly without really quality checking the output from one LLM, continue to feed that to another LLM.
+
+00:58:03.000 --> 00:58:09.000
+The randomness of LLMs might steer you farther and farther off the course.
+
+00:58:09.000 --> 00:58:29.000
+And here's a few examples. Chains um So… I'm going to leave this for reference because I think this is keep an eye on the time and how much more we have to go through.
+
+00:58:29.000 --> 00:58:42.000
+And… you can see, I think, the general idea here you give it a overall goal But then you break it out into different steps.
+
+00:58:42.000 --> 00:58:51.000
+And you ask it for each of these steps individually. And you are involved, that's support here. You can, of course, you could, while you're doing this.
+
+00:58:51.000 --> 00:59:04.000
+You could start by brainstorming and chat with the LLM saying, hey, I want to make verification loop what would you suggest as the steps? And you could see the output from that maybe use that.
+
+00:59:04.000 --> 00:59:14.000
+Yourself, but you want to be engaged in this. This is not something to just grow and trust that the LLM will do it correctly.
+
+00:59:14.000 --> 00:59:27.000
+So um spending tokens. Well, I'm being a little bit loose, I'll admit. But what I essentially mean is that you're putting more a token.
+
+00:59:27.000 --> 00:59:32.000
+Kind of means word. Technically, it's not exactly a word. It depends a little bit on the language model.
+
+00:59:32.000 --> 00:59:43.000
+But it means that we're just pushing When you ask an LLM to think through this, you'll often notice that the response is more structured and verbose.
+
+00:59:43.000 --> 00:59:53.000
+Instead of just directly answering the question it will say, okay, well, to do this, I need a blog, blah, blah.
+
+00:59:53.000 --> 01:00:03.000
+And that structure because that structure An LLM is a next token predictor. It is giving you that next word based on the previous words.
+
+01:00:03.000 --> 01:00:18.000
+Structuring the output such that it has those words as part of the output can increase the quality and reliability of what comes next and can basically make it So spending tokens, the short of it is, well, literally spending money.
+
+01:00:18.000 --> 01:00:31.000
+Literally pushing more words, more text through your through your model and having a larger cloud bill. So that's literally what you're doing.
+
+01:00:31.000 --> 01:00:37.000
+But the hope is that you're doing it in a way that increases the quality of the outcome.
+
+01:00:37.000 --> 01:00:41.000
+Care about. All right.
+
+01:00:41.000 --> 01:00:49.000
+Yes, I see that ARPAN is already on the actual prompt here. So let's go ahead and get to that.
+
+01:00:49.000 --> 01:01:00.000
+So here to make the PRD, And Ash, I'll let you, yeah, Ash is fielding the question for why he framed this prompt this way.
+
+01:01:00.000 --> 01:01:01.000
+So I'll just stick with it. Or do you want to…
+
+01:01:01.000 --> 01:01:07.000
+I mean… Aaron, the easy answer is because I used to be a technical product manager, so I probably said that first.
+
+01:01:07.000 --> 01:01:17.000
+It's fine. Yeah, yeah. Yeah, you know, do what you know, right? That's totally fair.
+
+01:01:17.000 --> 01:01:23.000
+But you'll see here the structure of this prompt, though, illustrates a lot of the things I was just talking about. It's breaking things down step by step.
+
+01:01:23.000 --> 01:01:32.000
+And I imagine this is not the very first prompt that Amish wrote to do this. I imagine that Ash himself iterated a little, although It's written a lot of prompts, so it probably didn't take him that much.
+
+01:01:32.000 --> 01:01:38.000
+But, you know, writing a prompt like this might take some iteration, some planning on your part.
+
+01:01:38.000 --> 01:01:53.000
+And, you know, you break down the user types their goals and you can see like what are we aiming at what we're aiming at user stories as a student, I need to whatever, right? Why?
+
+01:01:53.000 --> 01:02:02.000
+And then how the system will essentially facilitate that. So, you know, TPM type stuff or some sort of people.
+
+01:02:02.000 --> 01:02:16.000
+Then also kind of very basic prompt engineering but This is a pretty good practice. You almost always want to tell the language model what you want. Tell its structure of the output.
+
+01:02:16.000 --> 01:02:24.000
+And in this case, we want bullet points we want clear and straightforward sentences and so that's what we get.
+
+01:02:24.000 --> 01:02:30.000
+And that facilitates our review, that facilitates potentially giving it to another tool, that kind of thing.
+
+01:02:30.000 --> 01:02:36.000
+So I'm not going to read all of this. You have this link, by the way, it's in the slides.
+
+01:02:36.000 --> 01:02:41.000
+So you can definitely review all this as you'd like.
+
+01:02:41.000 --> 01:02:50.000
+Then the next step though is, okay, well, this is a lot of user stories. Let's take the top three user stories for each role.
+
+01:02:50.000 --> 01:02:53.000
+And then what do we need? What are the data models?
+
+01:02:53.000 --> 01:03:07.000
+And then also telling it, hey. This is what we're using. And language models trained on new enough internet. It knows what we're talking about. And again, this helps it know the sort of output that's expected.
+
+01:03:07.000 --> 01:03:15.000
+And again, think step by step. Um and By the way, you'll notice we'll paste some of these prompts into Quad.
+
+01:03:15.000 --> 01:03:24.000
+Different language models will behave differently. The think step-by-step in the case of chat gpt might still be doing something.
+
+01:03:24.000 --> 01:03:53.000
+But clearly this part of it, say output, you know, concise blah blah that's stopping the chat GPT from actually at least quote thinking out loud. It's not giving it's out loud step by step. Whereas Claude, although it didn't just paste the same prompt into Claude right now.
+
+01:03:53.000 --> 01:04:00.000
+It's probabilistic. The first time I did this It actually did think through a little bit more at first. In this case.
+
+01:04:00.000 --> 01:04:03.000
+Thought through a little bit, said, let me break this down.
+
+01:04:03.000 --> 01:04:13.000
+You're going to get varied responses sometimes. Like you're going to get different models, different invocations of the same model.
+
+01:04:13.000 --> 01:04:18.000
+I'll go back to the first time I did this. You don't think I'm crazy.
+
+01:04:18.000 --> 01:04:23.000
+Yeah, it's been a while playing with it. So yeah, yeah.
+
+01:04:23.000 --> 01:04:35.000
+Thought about this step by step and it sort of iterated the steps in order for all of them and then asked if it wanted me, if I wanted it to elaborate on the user story.
+
+01:04:35.000 --> 01:04:43.000
+So as opposed to immediately structuring the user stories individually. Let's go back to the current one though.
+
+01:04:43.000 --> 01:04:48.000
+So…
+
+01:04:48.000 --> 01:04:59.000
+All right, so we were here. So we were at top three user stories and Now we ask it for data models and it gives.
+
+01:04:59.000 --> 01:05:16.000
+At least rudimentary data models. This isn't exactly a create table statement, but this is enough structure that if we feed it to or something, we could probably get a structured schema, V0, I should say. We could get a more structured scheme out of this. It indicates what the
+
+01:05:16.000 --> 01:05:24.000
+Keys are, things like that. And the top level entities we need. We can look through and yeah, this looks about right. Users, courses, materials.
+
+01:05:24.000 --> 01:05:39.000
+Enrollments. If anything, this LMS is right now there's only one course at Gauntlet. You're all enrolled in This is thinking, though, hey, you could have multiple courses and not everybody's going to be enrolled in a course. So you need to talk that relationship.
+
+01:05:39.000 --> 01:05:48.000
+That kind of thing. And this is still output. It's even giving the functionality requirements.
+
+01:05:48.000 --> 01:06:02.000
+And what Clark will do. And now we're asking it to define API endpoints so what the actual backend will need to do based on this data model, based on the needed functionality.
+
+01:06:02.000 --> 01:06:21.000
+And so it's a list of API endpoints And again, all of this was all of this originally asked chatting with an llm to rapidly iterate, not starting himself writing code, writing plans, but getting this sort of technical planning document
+
+01:06:21.000 --> 01:06:26.000
+With an LLA. And I think you get the idea of this one.
+
+01:06:26.000 --> 01:06:28.000
+Is there anything at the end that we need to look at?
+
+01:06:28.000 --> 01:06:36.000
+Looks all right we eventually even get to like MVP launch requirements that's how you know You did what you needed.
+
+01:06:36.000 --> 01:06:41.000
+Now, of course. If there's output that you should be reading the output.
+
+01:06:41.000 --> 01:06:48.000
+Of your element. And if there's something that you want to change, just tell the LLM. Just say, hey, actually.
+
+01:06:48.000 --> 01:06:58.000
+I only want the top five MVP large requirements can you you know refactor it, make it more concise that way or something like that.
+
+01:06:58.000 --> 01:07:13.000
+But for now, we will move to the next step. Do a quick check on questions. I think they've been answered by other people.
+
+01:07:13.000 --> 01:07:24.000
+I added the concise version of Claude. Yeah, there are other versions of Claude too. Yeah, you're right. I mean, there's a whole drop down yes on it versus uh Yeah.
+
+01:07:24.000 --> 01:07:28.000
+All right. Back to the slides for a moment.
+
+01:07:28.000 --> 01:07:33.000
+So you've done your plan and you did your planning with your brainstorm buddy.
+
+01:07:33.000 --> 01:07:39.000
+Which could be chat GPT or Claude or Whoever. Next.
+
+01:07:39.000 --> 01:07:55.000
+You need to generate the prototype. And what you want to do, you can't just copy paste this entire, like if you copy pasted all of this into v0, you probably wouldn't really get the best output. Again, there is some human labor to be done.
+
+01:07:55.000 --> 01:07:58.000
+Ultimately kind of a good thing. That's why there are jobs at the university.
+
+01:07:58.000 --> 01:08:19.000
+Right. But you want to find the actionable chunks. You want to look through and feed these portions to v0 it's sort of similar to the idea of chain of thought, right? But you're breaking down these chunks And while I'm saying this, by the way, I want to emphasize, I sort of alluded to this earlier.
+
+01:08:19.000 --> 01:08:28.000
+This is just one way of doing it. This is not necessarily the end all be all way of doing this. If you find a workflow with these tools that works for you.
+
+01:08:28.000 --> 01:08:31.000
+That's fine. You don't have to ask permission to do things differently.
+
+01:08:31.000 --> 01:08:45.000
+But the principles to take away from this are that you want to understand what the language models can do and then critically what they can't necessarily do or what they are weaker and make sure that your workflow accounts.
+
+01:08:45.000 --> 01:08:57.000
+So, um. We're going to end up doing few shot code generation. So there's another prompt engineering thing probably already know but few shot basically means give it some examples.
+
+01:08:57.000 --> 01:09:11.000
+In the case of v0, it's basically part of the UI and flow is that you give it components and patterns and stuff that you want it to use. It's a front end development tool and so it's going to sort of
+
+01:09:11.000 --> 01:09:20.000
+Speak that language and know what you And then once you get it, v0 itself provides tooling to iterate.
+
+01:09:20.000 --> 01:09:37.000
+We'll scroll. This session is also Yeah, right here. So you can scroll through this yourself. So I will again take a somewhat quick pass in the interest of time, but feel free to be more thorough yourself later. And again.
+
+01:09:37.000 --> 01:09:47.000
+If when you're being more thorough later, you have questions, you want to ask them in the Slack That's fine. Slack is also an anytime async sort of thing.
+
+01:09:47.000 --> 01:09:56.000
+So that'll be a recurring theme here. We have an hour to lecture you're working more than will need to spend some time on your own studying.
+
+01:09:56.000 --> 01:10:10.000
+Thinking as well. That's how schools work. Uh so uh Where are we starting here? So we're starting selecting the tooling. So Ash already knew what he wanted to use.
+
+01:10:10.000 --> 01:10:15.000
+Uh… Again, look at this prompt.
+
+01:10:15.000 --> 01:10:24.000
+Ash here, our hero. I should say me, but I want to give ash credit prompting V0.
+
+01:10:24.000 --> 01:10:43.000
+And speaking from it here. Like create a reusable table component should have filtering available integer values search bar This is not necessarily a layperson font. This is a prompt written by somebody who knows how to speak front end language.
+
+01:10:43.000 --> 01:10:57.000
+You don't have to be a front expert Because you're not actually doing all that. You're not cranking out all this reactor or anything. You're asking an LLM to do it, but you need to have a mental model and you need to know the terminology. You need to use it correctly because
+
+01:10:57.000 --> 01:11:03.000
+That's what the language model speaks. So.
+
+01:11:03.000 --> 01:11:12.000
+Anyway, we give it that prompt and we'll see here, I mean, this is already, by the way, this is the output. So here's a visual preview. But for now, let's look at the code first.
+
+01:11:12.000 --> 01:11:28.000
+So the first thing it gave us, it gave us okay, this is a schema essentially right you know it's giving some structure to the data, having some mock data that fits that structure or really a function that generates mock data.
+
+01:11:28.000 --> 01:11:47.000
+I like that. Basic table filters and such. I mean, we don't need to read every line of this code at the moment, but I mean, you can see it output a lot. Now, again, if you were actually checking this into a repo, you do want to take the time to at least
+
+01:11:47.000 --> 01:11:54.000
+Scroll through and inspect everything. Think of it like a code review of a PR, right?
+
+01:11:54.000 --> 01:11:59.000
+As I said, you're going to spend more time reading code than writing it.
+
+01:11:59.000 --> 01:12:09.000
+And you might find things to change because even if it was a human writing this, there are often implicit assumptions just little subtleties, right?
+
+01:12:09.000 --> 01:12:20.000
+So now you'll notice the output besides creating these files explains what the files do. So this is convenient as you want to review it yourself.
+
+01:12:20.000 --> 01:12:37.000
+And says what the implementation should provide. And says how you can further customize it. You can add columns, change the styling Then, apparently, what happened next was an error, right? And did the UI prompt this automatically or did you have to paste this in yourself?
+
+01:12:37.000 --> 01:12:42.000
+Yeah, so what happens when you get an error on V0, and this is the same for replit agent.
+
+01:12:42.000 --> 01:12:49.000
+It gives you the logs on the right side and then you can just click a button to say the transfer it over to the chat window.
+
+01:12:49.000 --> 01:12:50.000
+And then I do like to adjust that prompt to say where the error was.
+
+01:12:50.000 --> 01:12:54.000
+Yep.
+
+01:12:54.000 --> 01:13:06.000
+Because if you let it go looking, it'll then just fix the random file that wasn't supposed to be fixed. But yeah, there's just a button that pops up on the right side
+
+01:13:06.000 --> 01:13:13.000
+Yeah, Claude artifacts work the same way when I was running through these prompts with Claude. I started developing stuff. It had an error. It says.
+
+01:13:13.000 --> 01:13:16.000
+We have an error. You want me to try to fix it? I'm like, yes, please.
+
+01:13:16.000 --> 01:13:25.000
+And hopefully it fixes it. Well, to see the button, you'd actually have to trigger this chat yourself, which by the way.
+
+01:13:25.000 --> 01:13:28.000
+You should like you can and change even the responses somewhat.
+
+01:13:28.000 --> 01:13:36.000
+Start your own fresh session start from whatever prompts you want and you'll you'll see this pretty quickly.
+
+01:13:36.000 --> 01:14:02.000
+Should be self-explanatory, I think. So when we said revise the code, the llm started revising the code to address the error, figures out okay We're using all for all weeks some picky variable name or schema mapping thing. We don't need to worry about details at the moment, but it looks like it fixed it.
+
+01:14:02.000 --> 01:14:23.000
+So that's nice. We're asking for the next feature. So we are chunking here. We asked at first for tables. Now we're going to ask it sidebar, right? And the sidebar should basically let you navigate between all these places, all these parts of the elements.
+
+01:14:23.000 --> 01:14:36.000
+And so… you can see you can see By the way, there's clearly some prompt engineering that Vercel did on our behalf because this response here is already kind of thinking out loud.
+
+01:14:36.000 --> 01:14:46.000
+So I'm pretty sure that like this user prompt is being put into some sort of template that is being sent to the LLM that is telling the LLM how to respond.
+
+01:14:46.000 --> 01:14:55.000
+How to give a balance of code and explanation because the output here always has a very consistent structure thinking about what's doing and getting code and explain what the code does.
+
+01:14:55.000 --> 01:15:07.000
+We're not asking it to do. If you wanted to do this with a something that wasn't v0 if you want to just like fire up a vanilla llama and try to get it to do something like this you'd have to do
+
+01:15:07.000 --> 01:15:11.000
+Quite a bit of prompt engineering.
+
+01:15:11.000 --> 01:15:17.000
+And then, uh. We can ask it to move stuff, to reorganize things, right?
+
+01:15:17.000 --> 01:15:28.000
+So it's reorganizing stuff. And it will update the project structure So it understands that and another update Let's add a column inside the table.
+
+01:15:28.000 --> 01:15:35.000
+And it can do that. And then each time it's giving you the files it modified.
+
+01:15:35.000 --> 01:15:48.000
+That takes me to preview for some reason though. Ah, but it looks like It does indicate that there is what the diff was if we navigate. Yeah, show diff.
+
+01:15:48.000 --> 01:15:53.000
+Yeah. So it looks like it takes a little bit of clicking. There's UI problems here i'm sure.
+
+01:15:53.000 --> 01:16:02.000
+V0 will probably iterate on their UI again over the next 12 weeks while you're While you're doing this, V0 itself is likely to change.
+
+01:16:02.000 --> 01:16:10.000
+But you can navigate to the file that it said that was changed and you can see the diff and you can click the little diff indicator and you can see the actual change.
+
+01:16:10.000 --> 01:16:13.000
+All these other lines were generated from previous parts of the discussion.
+
+01:16:13.000 --> 01:16:18.000
+But this latest discussion just generated a couple of lines like this, right?
+
+01:16:18.000 --> 01:16:23.000
+And so Again, think of this as code review.
+
+01:16:23.000 --> 01:16:29.000
+At least when I do code reviews, I find breaking it into diffs very helpful.
+
+01:16:29.000 --> 01:16:32.000
+That way you know what you should actually be focusing on.
+
+01:16:32.000 --> 01:16:41.000
+All right. Update to include project as a type. Sure. Yeah, that makes sense.
+
+01:16:41.000 --> 01:16:46.000
+Create a page for calendar. Create. Create.
+
+01:16:46.000 --> 01:16:52.000
+There's a lot. Let's see here. I might not just read all of this.
+
+01:16:52.000 --> 01:17:08.000
+At this point, sort of get to the end preview So the point is this is quick, but this still takes time. A lot of this is out. The prompts are all fairly straightforward, but then you do have to read the output and think about
+
+01:17:08.000 --> 01:17:12.000
+But this is a good example of what we mean when we say like you're not writing the code.
+
+01:17:12.000 --> 01:17:22.000
+You're interacting with an LLM. We're asking for forms. We're asking for a lot of pieces here.
+
+01:17:22.000 --> 01:17:29.000
+And oh, yeah, there's another error, which again automatically asked it to fix.
+
+01:17:29.000 --> 01:17:47.000
+And let's just get to the very end here. Oh, so There was even an error during deployment Was this just like running the front end Ash, what was this last error here?
+
+01:17:47.000 --> 01:17:48.000
+Yeah, so that was a build error. So with v0, you can deploy directly to Vercel.
+
+01:17:48.000 --> 01:17:51.000
+It looks a little different.
+
+01:17:51.000 --> 01:18:02.000
+So that was a build error on that. When I was trying to compile. And then so you can actually when you try to deploy it, bring your build errors back and then try to fix them as well.
+
+01:18:02.000 --> 01:18:08.000
+Yeah, part of what's nice about v0 is the integration with Vercel, which is itself a host.
+
+01:18:08.000 --> 01:18:31.000
+And Yeah, we can feed it back and fix the error Here is our preview of what we have. We can navigate it we can see the different components oh Maybe your calendar doesn't go anywhere yet.
+
+01:18:31.000 --> 01:18:37.000
+I guess we're using Google Calendar. But we can look at the other pieces.
+
+01:18:37.000 --> 01:18:38.000
+Yeah, the resources
+
+01:18:38.000 --> 01:18:47.000
+I will say sometimes V0, when you're switching back from versions it will lose itself. So sometimes it should have a page and then it won't.
+
+01:18:47.000 --> 01:18:48.000
+Yeah, I might lose track of my version it's actually got here in the preview.
+
+01:18:48.000 --> 01:18:53.000
+But sorry.
+
+01:18:53.000 --> 01:19:04.000
+And there's even a console. Which we don't need, but I assume right now, but I assume this is where like when you did the build, the deploy error, I assume maybe this is where it was also displayed.
+
+01:19:04.000 --> 01:19:18.000
+Um so What is the ultimate result here? Well, the ultimate result, of course, is this code, which you can also then check into a repo as you probably should after you finish reviewing and making sure it's what you want.
+
+01:19:18.000 --> 01:19:30.000
+And so that's step two. Of our overall AI first development. Step one was the prd What step?
+
+01:19:30.000 --> 01:19:41.000
+So we have our scaffold step three is iterating iterating you know actual development with cursor so cursor.
+
+01:19:41.000 --> 01:19:57.000
+And I already said this at the beginning, cursor, which is one of the tools you'll be given is, in my opinion, somewhat unique in that it's well suited not just for making something from scratch but from scratch dumping in a bunch of existing code like this
+
+01:19:57.000 --> 01:20:02.000
+And understanding that code and helping you iterate on it more effectively.
+
+01:20:02.000 --> 01:20:08.000
+Frankly, even if you don't use it, like even if you just use it as if you were using BS code.
+
+01:20:08.000 --> 01:20:15.000
+But you only use the tab for smart LLM completion, that can already potentially be a little bit of a speedup.
+
+01:20:15.000 --> 01:20:20.000
+So you almost don't even need to learn anything to use it. But of course, you should learn things.
+
+01:20:20.000 --> 01:20:23.000
+Because there are a few tricks to what it can do.
+
+01:20:23.000 --> 01:20:35.000
+That make it more effective to use. So the goal though as I said, is when you use cursor, it's an editor. It's uh it looks like VS Code.
+
+01:20:35.000 --> 01:20:42.000
+Css, global CSS from that project that we prototyped in v0.
+
+01:20:42.000 --> 01:21:01.000
+But what want to do is want to do have cursor complete most of what we're doing. We'll start typing and cursor will suggest more code or we can actually chat with an LLN and ask it to do things.
+
+01:21:01.000 --> 01:21:10.000
+This will, because codeine is often very repetitive, this will just speed up literally the mechanical process of you writing.
+
+01:21:10.000 --> 01:21:16.000
+So what are some of the things you can do? Well, you can do command or control if you're not on a Mac.
+
+01:21:16.000 --> 01:21:27.000
+K for inline generation. So what that means Oh, you can see, by the way, it's Yeah, it's already suggesting stuff.
+
+01:21:27.000 --> 01:21:41.000
+Like even just making… blank space. And it's something to get used to. You have to sometimes ignore it because you don't always want it, but it's pretty clever. It learns very well from what you're doing.
+
+01:21:41.000 --> 01:21:52.000
+And if you start doing stuff that will become part of its context window that it will use to inform what it's going to suggest. So this gray text here, I guess I'll teach this one first instead of command K.
+
+01:21:52.000 --> 01:22:02.000
+This is what I was talking about. Magic of temp. Press pad, you get whatever text it's suggesting. And if you press tab again You get whatever text it's suggesting.
+
+01:22:02.000 --> 01:22:13.000
+And apparently it thinks I should use Tatillion web font. That must be a popular font. That's probably why it's like statistically suggesting it, I guess.
+
+01:22:13.000 --> 01:22:18.000
+We don't actually want this. We didn't ask for it. So I really had to get rid of it.
+
+01:22:18.000 --> 01:22:34.000
+But um For now, though, we'll show to generate control k and this is like inline generation. And you can see there's model options stick with the default for now. We can save type of model chatter for later lectures and for Slack.
+
+01:22:34.000 --> 01:22:46.000
+But we can say, you know. Style all ordered list elements to be This would be terrible.
+
+01:22:46.000 --> 01:22:55.000
+Just to show what you can do. All right. Yeah. I mean, that's a very minimal example, but it shows the UI.
+
+01:22:55.000 --> 01:22:58.000
+And you can see whenever you do this, instead of the like tab to complete.
+
+01:22:58.000 --> 01:23:08.000
+It comes up with this green Which is like code that would be added, kind of like a git diff and you can either accept it or rejected.
+
+01:23:08.000 --> 01:23:15.000
+So if you accept it, it becomes audio code. If you reject it, of course, it doesn't.
+
+01:23:15.000 --> 01:23:20.000
+And you can give it more complicated instructions than that, obviously.
+
+01:23:20.000 --> 01:23:35.000
+At the same time, the purpose of control K isn't necessarily to be like, write a complete implementation of whatever, because it's in So its scope more is like write a function that does this or Some CSS style that does that.
+
+01:23:35.000 --> 01:23:41.000
+If you want to do larger things, that's what command L is for.
+
+01:23:41.000 --> 01:23:46.000
+And that takes you over here to the right. Now, there's actually a lot going on here.
+
+01:23:46.000 --> 01:24:08.000
+So we'll break this down. You'll see this is the context. So by default, it will assume that whatever file you came from should be in its context And it will even kind of suggest other files that you could include in the context window that might be relevant.
+
+01:24:08.000 --> 01:24:13.000
+And it's doing that based on its understanding. Oh, if you click it twice, apparently you get to see the file.
+
+01:24:13.000 --> 01:24:28.000
+Right. Get rid of that. But it's doing that based on its structural understanding of the repository. So it's like, okay, you're looking at global CSS. What are some related files? Of course, global CSS is kind of connected to every file.
+
+01:24:28.000 --> 01:24:34.000
+These suggestions might be kind of almost arbitrary, but often if you have a very large code base.
+
+01:24:34.000 --> 01:24:42.000
+This will be a good way to see, hey. These are the files related to it and clicking it basically says, hey, send this file along in this prompt as well.
+
+01:24:42.000 --> 01:24:51.000
+And then the sort of stuff you can ask You can ask it to write code, but you could also potentially ask questions. I mean, let's see here.
+
+01:24:51.000 --> 01:24:56.000
+How does the globals.css.
+
+01:24:56.000 --> 01:25:04.000
+File impact the styling Sidebar.
+
+01:25:04.000 --> 01:25:09.000
+Of the sidebar.
+
+01:25:09.000 --> 01:25:14.000
+And toggle.
+
+01:25:14.000 --> 01:25:28.000
+And it should be able to give a somewhat literate answer because it should be able to point out. Now, of course, there's stuff that impacts everything. So that's the first thing that's point of But if there's anything in here that impacts
+
+01:25:28.000 --> 01:25:38.000
+Those specifically Of course, there might even not be.
+
+01:25:38.000 --> 01:25:47.000
+Yeah, okay, layers and borders and background colors And so it's breaking down the parts of the code that are showing what's connected across these files. So this is just asking a question.
+
+01:25:47.000 --> 01:25:57.000
+You might even actually asking it to write for the week. You can, of course, ask it to write code. You'll also see that for each of these, you can potentially like copy paste, you can apply this code to your editor.
+
+01:25:57.000 --> 01:26:14.000
+So there's a lot that you can do here. I use the chat mostly actually though to chat and to ask questions. And another thing here, so sometimes instead of giving it a specific file you can notice like what is the
+
+01:26:14.000 --> 01:26:27.000
+Entry point. Something like that. We'll see how it does with that. And there's this full So if instead of hitting enter, you do control that will chat with the entire code base.
+
+01:26:27.000 --> 01:26:40.000
+So that's potentially a little more expensive because it'll probably result in more tokens being sent. Although, of course, the way cursor works, you're not necessarily paying per token but you do have a set number of like high quality chats per month
+
+01:26:40.000 --> 01:26:46.000
+I forget their exact pricing model.
+
+01:26:46.000 --> 01:26:53.000
+Now, of course, this is a front-end app, so I'm not sure exactly what it's going to say here. A back end app might be a little clearer.
+
+01:26:53.000 --> 01:27:00.000
+It thinks, yeah, okay, it identifies it as a Next.js application. And I want to emphasize here.
+
+01:27:00.000 --> 01:27:09.000
+Like all i did all i did All I did here was ask, what is the entry point naive comp and just said across the whole code base.
+
+01:27:09.000 --> 01:27:15.000
+And it was able to understand this is Next.js, Layout GSX is the root.
+
+01:27:15.000 --> 01:27:21.000
+And, you know, it identifies this as the entry point, which I think is fair.
+
+01:27:21.000 --> 01:27:34.000
+And… Again, if this was a backend app, it would probably find the actual like point that starts the starts the server, you know, that kind of thing.
+
+01:27:34.000 --> 01:27:43.000
+So you can ask it to write code. If you ask it to write code, it'll output blocks like this that you can copy over If you want.
+
+01:27:43.000 --> 01:27:51.000
+I'll let you explore that. So can you speak to agent mode? Yeah, so that's exactly where I'm going next. So there's other stuff here.
+
+01:27:51.000 --> 01:28:01.000
+There's even something new that I'm not going to show because it warns you that, oh, this is a new experimental but bug finder, which I guess we'll just idle search for bugs and it even warns you.
+
+01:28:01.000 --> 01:28:21.000
+This is an experimental. Expensive weird feature. So the slightly less new but still very cool feature is agent and let's use agent. And what we're going to do here actually is use agent to finish fleshing out this because the first output from the zero
+
+01:28:21.000 --> 01:28:27.000
+Had a lot of the structure. But it did not have a clerk.
+
+01:28:27.000 --> 01:28:36.000
+For authorization and not actually have the authorization partner. So um ash added that.
+
+01:28:36.000 --> 01:28:45.000
+By prompting and doing it in agent mode. So again, this is on the sidebar, the command L, sorry, yeah, command L side of things.
+
+01:28:45.000 --> 01:29:05.000
+And… we click composer and there's normal mode But normal mode lets you potentially combine steps and combine files. But what's particularly interesting is agent mode, which is even more autonomous. You can run commands And can do quite a lot.
+
+01:29:05.000 --> 01:29:11.000
+Ash, does this look right to you? Should I add any other context or just let it rip?
+
+01:29:11.000 --> 01:29:17.000
+No, her agent, I just did like a zero shot prompt, very little context. And it just sort of worked out.
+
+01:29:17.000 --> 01:29:18.000
+Adam.
+
+01:29:18.000 --> 01:29:21.000
+All right. Well, let's see if lightning strikes twice.
+
+01:29:21.000 --> 01:29:27.000
+The students are saying in the chat, they're like YOLO mode. So I basically YOLO mode the cursor and click implementation.
+
+01:29:27.000 --> 01:29:37.000
+Yeah, so yeah, clerk was yolo's the accursor and let's see if we can Double YOLO.
+
+01:29:37.000 --> 01:29:42.000
+Let's at least watch cursor agent do its thing. And you can see, again, clearly.
+
+01:29:42.000 --> 01:29:51.000
+Anybody who's done prompt engineering, there's some prompt engineering happening here. Like this was fed into some sort of template that's causing it to say, hey, think out loud, explain what you're doing.
+
+01:29:51.000 --> 01:29:57.000
+Look the time, blah, blah, blah. So it's first, let me check your structure. So it's looking Add our code.
+
+01:29:57.000 --> 01:30:16.000
+And then it knows, hey, this is probably the first file I should look at, layout.psx all right do clerk. We're going to have to install this And then it's recommending this command Which I might have to install NPM in my box here.
+
+01:30:16.000 --> 01:30:30.000
+It's just called Node.js on fedora. Or npm probably.
+
+01:30:30.000 --> 01:30:35.000
+While we may not step through all of this, but you'll see this is an important point that while we're waiting for that.
+
+01:30:35.000 --> 01:30:44.000
+It suggests commands, but it isn't going to just run the command.
+
+01:30:44.000 --> 01:30:56.000
+All right, let's… Hopefully that gives us NPM.
+
+01:30:56.000 --> 01:31:13.000
+So we, and this is important because this is running as you, right? Now, by the way, I happen to be running this inside. I'm actually on a Linux distribution and I'm running this inside of VM. You might want to consider that sort of
+
+01:31:13.000 --> 01:31:31.000
+Containment when you're using these tools, just because it gives you a little bit of assurance if something weird happens It's not because these tools are going to do anything malicious with intentionality it's just bugs right or just mistakes so
+
+01:31:31.000 --> 01:31:48.000
+Okay.npm. Sure, go ahead and run npm install Clerk Next.js.
+
+01:31:48.000 --> 01:32:00.000
+It looks like it's using Claude Sonnet. But there's a dropdown here. You can select. And after we finish running through this, I'll show a little bit more about Paris or how you can customize it. You can customize models.
+
+01:32:00.000 --> 01:32:09.000
+Use something called cursor rules which is kind of like a system prompt, if you're familiar with that, from a prompt engineering perspective.
+
+01:32:09.000 --> 01:32:22.000
+All right, this is thinking a while. Yeah. Well, it's not really in our interest to watch something spin. So while this thinks, you get the idea. It's going to be an interactive session.
+
+01:32:22.000 --> 01:32:33.000
+So the agent mode is powerful, but it's not completely autonomous. It's going to think through things And then it's going to say, hey, we should install Clerk. And yeah, you're right. We should install Clerk. Yes.
+
+01:32:33.000 --> 01:32:39.000
+And then it's going to think of something next after that. Like, oh, then I'm going to clerk to this one.
+
+01:32:39.000 --> 01:32:52.000
+File and add this And you'll see the diffs and you'll approve and allow that into your editor and But of course, change it if you need to, right?
+
+01:32:52.000 --> 01:33:03.000
+Essentially, you can think of these agents as like very eager And oddly knowledgeable junior engineers who report to you and are always available.
+
+01:33:03.000 --> 01:33:10.000
+They know a lot of stuff and they're very fast But they don't always have the judgment.
+
+01:33:10.000 --> 01:33:23.000
+The context of what your project really is. They only have the context you feed them. Even with a tool as clever as cursor that tries to essentially figure out the context from your repository from the surrounding stuff.
+
+01:33:23.000 --> 01:33:29.000
+We all know from working in software development that the code itself is not always all the content.
+
+01:33:29.000 --> 01:33:45.000
+There's context that is just in people's heads for context that is um You know, in some doc or in some discussion Or whatever. Anyway, it's going to town. It's missing some other module here. So I'm not going to try to fight
+
+01:33:45.000 --> 01:33:54.000
+With setting up a whole node environment for this. I don't do a lot of JavaScript development, I will confess. But this would definitely speed me up.
+
+01:33:54.000 --> 01:34:04.000
+If I was going to do that. And it is actually adding stuff, even though it's missing some imports. So that would be easy enough.
+
+01:34:04.000 --> 01:34:07.000
+Aaron, do you want me to just share mine?
+
+01:34:07.000 --> 01:34:09.000
+Sure, if you want to do that. You can step through your session of it.
+
+01:34:09.000 --> 01:34:16.000
+Oh, yeah. I'll do a quick one before I know you have to do the project, so I'll do a really quick one.
+
+01:34:16.000 --> 01:34:23.000
+Yeah, I was going to step through the rest. Yeah, run through it and then I'll show the rest of cursor stuff and then the project.
+
+01:34:23.000 --> 01:34:28.000
+Excuse me. So here the clerk module is installed.
+
+01:34:28.000 --> 01:34:37.000
+Then I made the middleware right away. There was an error or a warning that was then resolved.
+
+01:34:37.000 --> 01:34:43.000
+It created the provider, which then it wrapped the sort of main component and the root layout in.
+
+01:34:43.000 --> 01:34:51.000
+And then it created the sign-in component, which I believe it just used a component out of clerks, one of the components that comes built in.
+
+01:34:51.000 --> 01:35:00.000
+And then there was a sign up component. And then finally, just added user to one of my components.
+
+01:35:00.000 --> 01:35:05.000
+Then I added the keys. The agent pretty much did all the task.
+
+01:35:05.000 --> 01:35:10.000
+There wasn't really much I did after that. I sort of ended there.
+
+01:35:10.000 --> 01:35:13.000
+Before we sort of get into class.
+
+01:35:13.000 --> 01:35:19.000
+Very cool. And by the way, I look more, it actually basically worked for me too. Those were just lint warnings.
+
+01:35:19.000 --> 01:35:27.000
+Saying that it was missing certain things, but it actually did still create and suggest a lot of that's the same sort of code.
+
+01:35:27.000 --> 01:35:37.000
+So… So that's a little bit about rapid development iteration. Now, obviously.
+
+01:35:37.000 --> 01:35:42.000
+This is still an editor. This is basically BS code. You should still be editing code yourself sometime.
+
+01:35:42.000 --> 01:35:47.000
+It's not like you never edit code when you're doing this approach to development.
+
+01:35:47.000 --> 01:36:06.000
+But you should definitely take advantage of these aspects of it, the tab completions, as I said, are just like free speed once you get used to them and uh the L to chat with it, the composer with the agent mode to do all sorts of more powerful
+
+01:36:06.000 --> 01:36:22.000
+Things. Basically, you can ask it to add features or potentially factor code bases would be another good use of agent mode And then control K for the little inline instructions, which I would most often use for just like adding the function or something like that.
+
+01:36:22.000 --> 01:36:28.000
+Although honestly, there are lots of times where you can do control K, but it might even be faster ergonomically.
+
+01:36:28.000 --> 01:36:36.000
+To literally just start typing Well, this is a CSS file, so we don't really have functions here.
+
+01:36:36.000 --> 01:36:43.000
+But to start typing some sort of function And literally.
+
+01:36:43.000 --> 01:36:50.000
+Yeah, well, it's already suggesting stuff. But literally start typing your function in.
+
+01:36:50.000 --> 01:36:57.000
+And it will suggest code to come next. So that can be faster as well.
+
+01:36:57.000 --> 01:37:01.000
+All right. So back to the slides for a little bit.
+
+01:37:01.000 --> 01:37:14.000
+Talked about this, talked about this. You can also, of course, control K to select code. That is something I should show you. So in addition to just control K to add stuff, you can select code.
+
+01:37:14.000 --> 01:37:17.000
+And it can still apply. And then this code will be the context plan.
+
+01:37:17.000 --> 01:37:25.000
+And I can say… rename app to Graham.
+
+01:37:25.000 --> 01:37:36.000
+I mean, that's kind of silly, but you can see that it will just change and then you can accept or reject And we'll go ahead and accept. Great.
+
+01:37:36.000 --> 01:37:44.000
+And then it has that. So that can be another way to use it.
+
+01:37:44.000 --> 01:38:09.000
+So you can also customize cursor. So if we go to the settings we can see that there are models. This is the default. Default's not bad. There's lots of other models that you can enable and throw at it. And multiple models are enabled because when you're actually interacting with it, you can select the model you're using here.
+
+01:38:09.000 --> 01:38:21.000
+There's more advanced configuration you can do in terms of the features cutting edge stuff that's happening As you can see, the defaults tend to be very bleeding.
+
+01:38:21.000 --> 01:38:27.000
+Cursor embraces the idea of My cursor itself is iterating quickly and giving us very current things.
+
+01:38:27.000 --> 01:38:36.000
+I'm changing kind of every week. And then the other important thing here is rules for AI. So they have an example here.
+
+01:38:36.000 --> 01:38:44.000
+These are the personal rules. These are global rules. So these will happen for all of your checks. If you want your you know to say, you know.
+
+01:38:44.000 --> 01:38:51.000
+Always output f8 when writing python it that way.
+
+01:38:51.000 --> 01:39:03.000
+Always make it pep. And just tell the LLM that you are. I almost do that by default to be honest but like you're telling the LLM, hey.
+
+01:39:03.000 --> 01:39:12.000
+This is what I want all the time. And then the other thing that you can have are custom rules.
+
+01:39:12.000 --> 01:39:19.000
+That are project specific. And that is by making a dot cursor rules file in that project. And that'll be picked up automatically.
+
+01:39:19.000 --> 01:39:32.000
+And that will give a place to put maybe project standards or other things that are relevant to that specific development.
+
+01:39:32.000 --> 01:39:37.000
+And there's a whole curated repository of these sorts of things.
+
+01:39:37.000 --> 01:39:58.000
+So there are starting points in a bunch of like if you're doing full stack development you want to a scalable go back and Here is, it's not word wrapped, but here is a cursor file, right? Which is essentially, again, a system prompt telling it
+
+01:39:58.000 --> 01:40:03.000
+How to behave to make a good scalable go back in.
+
+01:40:03.000 --> 01:40:14.000
+And what it's doing. It looks like there's even some multi-shot examples, few shot examples in here. It's a little hard to tell because there's no new lines But of course, that doesn't matter so much to the LLM.
+
+01:40:14.000 --> 01:40:24.000
+So it is definitely good to look for to make or look for relevant cursor rules files when you're working on the project to make cursor behavior.
+
+01:40:24.000 --> 01:40:34.000
+Even better. And then even better Yeah, we already stepped through code generation with chat So, uh.
+
+01:40:34.000 --> 01:40:40.000
+When you see code you like, you can click apply and that'll put it in your adorable.
+
+01:40:40.000 --> 01:40:48.000
+So that is basically it for the slides. Oh, there's one other thing that I want to show a little bit from earlier.
+
+01:40:48.000 --> 01:40:59.000
+But if I go to clawed, the main flow that Ash actually used was chat gpt and v0, but quad for instance.
+
+01:40:59.000 --> 01:41:10.000
+Actually kind of did both. So Claude has a thing called artifacts. And as I was making the PRD, It basically said, hey.
+
+01:41:10.000 --> 01:41:15.000
+I said, hey, make me the actual data models. And it actually made an artifact. It actually made code.
+
+01:41:15.000 --> 01:41:21.000
+And for some reason it decided to use prisma i think And I said.
+
+01:41:21.000 --> 01:41:25.000
+Know, do it in SQL. And so then it changed it to SQL.
+
+01:41:25.000 --> 01:41:35.000
+And make me some Next.js API routes that made the Next.js API routes And then I asked it to iterate on the API routes and it made a different version of it.
+
+01:41:35.000 --> 01:41:43.000
+Again, different tools, similar functionality. There's going to be a lot of that. There is not necessarily any objectively best one.
+
+01:41:43.000 --> 01:41:48.000
+But Claude is definitely worth considering as a tool. It's a contender.
+
+01:41:48.000 --> 01:42:00.000
+That said, while it does have the niceness of like the chat seamlessly going to artifact generation. It doesn't have the seamless preview deploy thing.
+
+01:42:00.000 --> 01:42:09.000
+And the diff view actually isn't quite as nice. It's got this versioning thing down here, but it's not telling me what lines it changed.
+
+01:42:09.000 --> 01:42:18.000
+Tradeoffs. All right. I'm going to check to see if there are any questions.
+
+01:42:18.000 --> 01:42:31.000
+What changed most recently about workflow and cursor? I mean, I guess agent mode, right? Agent mode is I consider that the cursor as a whole feels recent to me still. I've been doing this for a while. But within cursor, agent mode is definitely
+
+01:42:31.000 --> 01:42:52.000
+New and different and pretty cool. All right. So with the time remaining, we're going to talk about the project. So, and I believe this should already be set for people with the link So I'm just going to even drop this
+
+01:42:52.000 --> 01:42:56.000
+It's probably going to be linked in other places too. Oh, it's already shared. Thanks, Al.
+
+01:42:56.000 --> 01:43:05.000
+So… the structure of a gauntlet is that you're going to be working on projects.
+
+01:43:05.000 --> 01:43:21.000
+The first week is spent essentially creating a often full stack that uh that would potentially be a significant amount of work to develop, but you will be accelerated by the power of these tools that we just discussed.
+
+01:43:21.000 --> 01:43:46.000
+And so What that means is that you will be spending a week in this case trying to make a chat tool, something kind of like Slack, right? Because These chat tools are the foundation of our distributed asynchronous workforces in the modern technological era. They often are the workplace, even the places that go back to the office, these are still pretty important.
+
+01:43:46.000 --> 01:43:52.000
+And if you're remote principally. This is home.
+
+01:43:52.000 --> 01:44:16.000
+How does this, what is chat genius then chat genius is a project that offers the functionality of Slack But then also we'll have an avatar that will represent users and enable them to essentially delegate communication or have much more intelligent auto responses on their behalf.
+
+01:44:16.000 --> 01:44:36.000
+So a little bit about the structure here, and there'll be time to go over more of the logistics and structure, but This will be turned in, I believe, via the LMS, but you'll be writing code There'll be a brain lift that will also be turned in, but more on brain lifts on Wednesday. We actually teach
+
+01:44:36.000 --> 01:44:46.000
+More about brain lifts. And then a walkthrough. And this would say be like a screen share, a loon type thing.
+
+01:44:46.000 --> 01:44:54.000
+That you can share, that you can publicize, X LinkedIn or whatever else, but X and LinkedIn are good starting places.
+
+01:44:54.000 --> 01:45:07.000
+And interacting with the feedback. And what we really want to see is generate some buzz like get people to use it, you know, get people interested get actual users, get actual feedback, iterate on it.
+
+01:45:07.000 --> 01:45:22.000
+And see how far you can take it. You know, we're giving baseline goals here but the more you go and if you come up with your own ideas of things to add, that's great. This is not don't see this structure as in any way limiting.
+
+01:45:22.000 --> 01:45:29.000
+This is meant to be a foundation for what we actually love to see go So.
+
+01:45:29.000 --> 01:45:41.000
+What is the first week? On the first week, you should develop something such as Slack as a reference app And it should have these core features.
+
+01:45:41.000 --> 01:45:48.000
+It should have authentication, real-time messaging. Some sort of way to organize those messages and the channels and DMs.
+
+01:45:48.000 --> 01:45:54.000
+Some way to share files and search Turks a text as well, I would say.
+
+01:45:54.000 --> 01:46:01.000
+Something for users to have presence and status some sort of threads and some sort of emoji.
+
+01:46:01.000 --> 01:46:09.000
+And that's like baseline that's kind of that's kind of slack slack has other stuff, right? But that's a lot of of what we use.
+
+01:46:09.000 --> 01:46:24.000
+And please do use AI-first approaches in doing this and also it is okay. So cursor itself If it looks familiar to you Because it's built on VSCO, right? They didn't start completely from scratch.
+
+01:46:24.000 --> 01:46:36.000
+It is okay if assuming that the license is compatible with things to build on existing projects or to use open source software however you see fit.
+
+01:46:36.000 --> 01:46:46.000
+Just make sure that uh you know you actually are building on it and making it appropriate for what you're doing.
+
+01:46:46.000 --> 01:46:51.000
+But potentially, you know, this is the week one goal, but I will say that if you get through it.
+
+01:46:51.000 --> 01:46:58.000
+Extra quick, you can always add more features you come up with or even start thinking about the AI objectives.
+
+01:46:58.000 --> 01:47:06.000
+So week two The goal, by the way, at the end of this week on Friday is that you have your chat app.
+
+01:47:06.000 --> 01:47:09.000
+And it's just a chat app at that point. It doesn't have AI features.
+
+01:47:09.000 --> 01:47:26.000
+Just developed with it. Week two you will be adding AI features. And the high level goal again is this concept of an AI avatar. And what this AI avatar means is something that should be able to represent the user
+
+01:47:26.000 --> 01:47:30.000
+Act somewhat on their behalf, communicate in this case, on their behalf.
+
+01:47:30.000 --> 01:47:35.000
+And start with text and start with text These are text tools.
+
+01:47:35.000 --> 01:47:43.000
+The main what the user provides, the material you'll have to work with for your prompts will be text.
+
+01:47:43.000 --> 01:47:51.000
+But given a prompt. This avatar should be able to create and send communication on behalf of that user.
+
+01:47:51.000 --> 01:47:58.000
+And it should be automatically informed by content on Slack, i.e. It's context aware, sort of like you saw with cursor, right?
+
+01:47:58.000 --> 01:48:04.000
+Is context aware somewhat automatically. When I talk to it and when I ask it to do things.
+
+01:48:04.000 --> 01:48:13.000
+And this… also should sort of sound like the user should be prompted and given some information of how to sound like the user.
+
+01:48:13.000 --> 01:48:22.000
+To give it some person. And the envisioned workflow here, but again, you come up with your own ideas, please add them.
+
+01:48:22.000 --> 01:48:26.000
+The goal is impress us, not do exactly what you say.
+
+01:48:26.000 --> 01:48:43.000
+But the idea is that when you are away, instead of just like becoming a a blank red dot or a white dot or whatever zz You can have this as your sort of ai representative that if somebody has a question.
+
+01:48:43.000 --> 01:48:54.000
+They can get a response from that avatar. So you could send it to send communication or people could ask it questions and automatically receive a response without your intervention.
+
+01:48:54.000 --> 01:49:13.000
+And of course, there should probably be a notice like this was sent by the avatar, so might not be 100 double check things later and all that, but it can potentially be a way to add something much better than a static array message
+
+01:49:13.000 --> 01:49:18.000
+That actually can handle some of your business while you're answer questions on your behalf.
+
+01:49:18.000 --> 01:49:21.000
+And potentially have access to your DMs and contacts like that.
+
+01:49:21.000 --> 01:49:28.000
+So that's the AI feature. And then the advanced features If you knock this out the park.
+
+01:49:28.000 --> 01:49:35.000
+Is to really make it an avatar. What I mean by that is to make it represent the user with voice or video.
+
+01:49:35.000 --> 01:49:46.000
+So voice synthesis. Is a pretty well established space and will provide more resources on it as we get closer to it, but there's a number of product offerings in that area.
+
+01:49:46.000 --> 01:50:04.000
+You often have to give them a few minutes of speaking or something to make them sound like somebody you could potentially have them let the user select it to sound like somebody else but having the user sound like themselves back to themselves would be a good feature to target.
+
+01:50:04.000 --> 01:50:12.000
+And then video synthesis is basically the same thing, just a lot more dimensions and a lot bigger bytes. And there are, again, services. We link a few of them.
+
+01:50:12.000 --> 01:50:18.000
+Hagen and VID. If you get to this part, they do have free tiers.
+
+01:50:18.000 --> 01:50:31.000
+So start there. But if you're at this level and you're running the limitations there, we want to help you. So let us know and we'll we'll figure out how to figure out how unlock whatever resources you need.
+
+01:50:31.000 --> 01:50:43.000
+So… And then the idea is that this video or voice avatar would match the user and represent them and perhaps even have expressions and gestures.
+
+01:50:43.000 --> 01:50:46.000
+And not be too creepy. I mean, that would be the ultimate goal.
+
+01:50:46.000 --> 01:51:04.000
+The cutting edge here, if you look at the more impressive demos from these services, is pretty good. They are somewhat getting out of that creepy valley, making things that look really vary, especially in smaller windows very good. It does require a decent amount of information from the user to look like the user.
+
+01:51:04.000 --> 01:51:17.000
+So it's going to just be based static on the users like single picture it probably won't be, you wouldn't be able to make a fully video realistic avatar based on that. But you know what? If you figure out a way.
+
+01:51:17.000 --> 01:51:35.000
+Definitely impress us. And another way you could do it is, well, if we just have the static picture, then we just synthesize the voice or maybe we go for some more stylized avatar that doesn't try to be further but instead tries to be artistic in some way.
+
+01:51:35.000 --> 01:51:38.000
+That can be a good way to deal with those limitations, but make it not creepy.
+
+01:51:38.000 --> 01:51:46.000
+So that's the goals of the project. There's more here in the doc in terms of resources.
+
+01:51:46.000 --> 01:52:04.000
+And information you'll need. And of course, there will be more lectures where we actually talk about some of the techniques you'd need to build these features. But already today We've talked about the AI-assisted development So what you should need to start working on this, to start working on the week one objective. So after this lecture.
+
+01:52:04.000 --> 01:52:12.000
+You should start. It's another hour of the day and you're going to be all of them that you can get to implement all these projects.
+
+01:52:12.000 --> 01:52:21.000
+That should be your initial target. There's some more structure here. So this should also be on your calendar.
+
+01:52:21.000 --> 01:52:26.000
+But there will be a check-in already tomorrow.
+
+01:52:26.000 --> 01:52:33.000
+No, that's Wednesday, I guess. You should hopefully hit MVP by tomorrow. By MVP, I mean like a working chat.
+
+01:52:33.000 --> 01:52:46.000
+Something that starts And maybe it doesn't even have all the functionality, but at least like has messages and channels. And then there will be a check-in on wednesday And then actually complete on Friday.
+
+01:52:46.000 --> 01:52:53.000
+So that's the schedule. That's the goal for this week. You want to have a working app already tomorrow that gets you to the point where you have those feedback loops.
+
+01:52:53.000 --> 01:52:57.000
+You can add features and get ready to go. All right.
+
+01:52:57.000 --> 01:53:19.000
+Yeah, real quick, you guys. Sorry, I'm still getting over a cold. As Aaron said, the MVP we're going to have due tomorrow, we'll send you a link to an invite to the LMS, which is the place you'll be submitting it. You saw we actually
+
+01:53:19.000 --> 01:53:32.000
+Decided to rebuild the LMS using AI. So you saw some of the process of doing that. But there's going to be a whole lot of researching and figuring stuff out and guess and check.
+
+01:53:32.000 --> 01:53:43.000
+Use the help channel in Slack. We've got TAs there, but we're definitely… Yeah, as mentioned, we're getting thrown in the deep end very intentionally, very quickly.
+
+01:53:43.000 --> 01:53:50.000
+And then as a fun little thing on top of that, we're going to be looking through the MVPs that are submitted tomorrow.
+
+01:53:50.000 --> 01:54:14.000
+I'm going to, based on the criteria of what Austin likes, be giving $500 to the coolest mvp So that gives you… I mean, you know, including sleep time, like 30 hours to work on it. So we're intentionally having a quick check-in early to see where you get and
+
+01:54:14.000 --> 01:54:21.000
+That's a good question. I don't know. Surprised me. I mean, honestly… Look, you're talking 30 hours from now.
+
+01:54:21.000 --> 01:54:32.000
+A chat app that works is pretty impressive so Yeah, so we'll be giving $500 to whoever stuff is the coolest.
+
+01:54:32.000 --> 01:54:39.000
+And then later today, so get started now. You've got a few hours to work on it.
+
+01:54:39.000 --> 01:54:53.000
+And then we'll have Joe, who is one of the founders of uh I don't know, he's a spiritual co-founder of Gauntlet for sure, founder of Trilogy, founder of Trilogy University.
+
+01:54:53.000 --> 01:55:00.000
+And he's one of the smartest people I've ever met. And so we're really excited to meet him.
+
+01:55:00.000 --> 01:55:12.000
+Yes, and I have not been Um… Yeah, I don't like obviously if you just pull an entire like fully built.
+
+01:55:12.000 --> 01:55:22.000
+Slack, that's probably not what we're looking for. But yeah, let's see.
+
+01:55:22.000 --> 01:55:27.000
+And yeah, I think you can do whatever you want with him.
+
+01:55:27.000 --> 01:55:41.000
+The goal is to build the best chat app you can build using AI first development and the first turn in point is going to be in a few hours. It's not too terribly long.
+
+01:55:41.000 --> 01:55:57.000
+Yeah, we'll meet Joe later today. Clearly the intent here is to throw everybody into the deep end and get building as much as we can as quickly as we can. Obviously, there are a lot of AI techniques and practices that are more advanced that
+
+01:55:57.000 --> 01:56:14.000
+We'll cover later. So yeah, you're going to, you should have access to So let me add a disclaimer that I know I have like four emails of people that have different account issues.
+
+01:56:14.000 --> 01:56:18.000
+Ignoring those, which we will solve.
+
+01:56:18.000 --> 01:56:29.000
+The… You'll be getting access to an AWS account. You should have a cursor pro invite in your inbox.
+
+01:56:29.000 --> 01:56:37.000
+And you'll also be getting GitHub. The UI can be whatever you want.
+
+01:56:37.000 --> 01:56:47.000
+Brain lifts we're learning about tomorrow in the morning and you'll, we're not going to pay attention to the brain lift submission until the end of this week.
+
+01:56:47.000 --> 01:56:49.000
+But Yeah.
+
+01:56:49.000 --> 01:56:59.000
+I think everyone's really worried about deployment so let me get one point across, which is I want to see a video demo. So if that's local, that's fine.
+
+01:56:59.000 --> 01:57:04.000
+Like, I don't want anybody to worry like you should be worried about rebuilding this application.
+
+01:57:04.000 --> 01:57:09.000
+And giving it all the functionality that is required and taking that over the edge.
+
+01:57:09.000 --> 01:57:19.000
+Deployment should be when we've added the AI features and we're ready to, you know fully out there and launch this. But right now, let's work on MVP and get something out there that's really good.
+
+01:57:19.000 --> 01:57:24.000
+And I just want to see a loom video of how it's working, what's going on.
+
+01:57:24.000 --> 01:57:29.000
+It could even just be on Zoom. You can record yourself.
+
+01:57:29.000 --> 01:57:38.000
+Yeah, I will. The first project so the the final deadline. So at the end of the week, it needs to be deployed, but not for the MVP.
+
+01:57:38.000 --> 01:57:41.000
+Yep. Yep. Not for tomorrow. That's what I'm saying.
+
+01:57:41.000 --> 01:57:49.000
+Yeah. Sound good? Okay, I'm going to dig through a bunch of questions about access.
+
+01:57:49.000 --> 01:57:53.000
+I mean, you can use whatever you want. We're giving you AWS.
+
+01:57:53.000 --> 01:58:03.000
+For free. I mean, obviously, if you're doing your own Azure stuff, then that's not super expensive.
+
+01:58:03.000 --> 01:58:15.000
+So we're trying to make the deadlines at 5 p.m. Central, which is why it's kind of the It's on the calendar at 3 p.m. Pacific.
+
+01:58:15.000 --> 01:58:32.000
+5 p.m. Central. The reason we're doing that is we're going to on the final deadline is actually basically midnight on sunday But if you submit on Friday, that will give you a chance to make any revisions you need over the weekend.
+
+01:58:32.000 --> 01:58:40.000
+We're trying to stagger it out so that nobody gets surprised and something isn't up to par and it's a big shock to everybody.
+
+01:58:40.000 --> 01:58:51.000
+So that's why we're doing more required submissions this time than there will be in the future. Next time, we're not going to have you submit like three or four different versions. It'll just be one submission.
+
+01:58:51.000 --> 01:59:06.000
+So yeah, we're trying to scaffold it a little bit but Yeah, we'll get AWS invites out here soon. You should have cursor invites. I know I have a bunch of you that have X.
+
+01:59:06.000 --> 01:59:21.000
+Didn't work where x is some account will solve those. And… Yeah, VO has a free tier that's good enough for anything we would be doing.
+
+01:59:21.000 --> 01:59:45.000
+Yeah, you can go ahead and Slack me. Later on, we'll get into a more In the future, stuff that's like mission critical email is better because Slack kind of gets lost in the noise. But for right now, just Slack is great. Come to me for pretty much anything and we'll solve it all.
+
+01:59:45.000 --> 02:00:01.000
+Okay, we'll see you with Joe in just a little bit.
+

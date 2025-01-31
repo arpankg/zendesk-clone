@@ -1,0 +1,1253 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+No, we're about to start recording, though. So I think now we are beginning the lecture proper.
+
+00:00:05.000 --> 00:00:17.000
+And a reminder that although I did catch that in the Zoom chat, for the most part, I'm not going to see the Zoom chat. So let me get that question thread up.
+
+00:00:17.000 --> 00:00:26.000
+I'm going to go ahead and put it in announcements, even though it's not really an announcement, but it's a thread, so please respond there. And that way it will stay.
+
+00:00:26.000 --> 00:00:33.000
+More towards the top.
+
+00:00:33.000 --> 00:00:48.000
+All right. And let's get to it.
+
+00:00:48.000 --> 00:00:57.000
+Desktop capture. Okay. People seeing my screen and as my audio is still reasonable ish.
+
+00:00:57.000 --> 00:00:58.000
+Yep, we can hear you just great.
+
+00:00:58.000 --> 00:01:07.000
+Great. Great. All right. Wired headphones for the win i'd gone wireless out of convenience.
+
+00:01:07.000 --> 00:01:20.000
+You know, anyway. Welcome to week three and project two, really, here at Gauntlet uh and uh what that project is.
+
+00:01:20.000 --> 00:01:32.000
+Is a… ticket management, customer relationship system. You can think of it as something similar to Zendesk if you have experience with that.
+
+00:01:32.000 --> 00:01:46.000
+And there are, of course, other examples out there. This one, though, is called auto CRM because the high level goal is to use AI to use LLMs to automate as much of the drudgery as possible.
+
+00:01:46.000 --> 00:02:00.000
+Of course, we're taking the same structure as last time. So this first week of the project You're not worried about adding those features really yet, but you do want to build a solid system that you can add those features to.
+
+00:02:00.000 --> 00:02:23.000
+And what is a ticket management system? What does it involve? Well, I also want to get through the lecture, so I'm not going to go through it in super depth. You have the doc for reference and I'm sure that there will be future sessions where we'll talk about it more. You can ask questions in Slack, but the short of it is this should be something that enables
+
+00:02:23.000 --> 00:02:43.000
+Users to file tickets that are requests for support or potentially sales leads. It enables agents or workers to work on those tickets and it enables supervisors or administrators to sort of set up the whole system or see an overview of it, that kind of thing.
+
+00:02:43.000 --> 00:02:57.000
+And as you can see, we've put a lot of guidelines in this doc about how you should build a robust system, how it should rebuild as many components as possible.
+
+00:02:57.000 --> 00:03:04.000
+On this list. So there's a lot here to dig into in this first week. I'm not going to read all this right now.
+
+00:03:04.000 --> 00:03:14.000
+But I encourage you to go through it. You should, again, target modern best practices for development.
+
+00:03:14.000 --> 00:03:36.000
+No more API key leaks. And there's also this section here with important technical decisions, which gives specific guidance And most of this should be familiar or fairly clear, I think, for the first week, you'll notice a section at the end about framework, which is really like LLM framework
+
+00:03:36.000 --> 00:03:42.000
+That's what we're learning about now. And you won't really need to add this until the AI features anyway.
+
+00:03:42.000 --> 00:03:47.000
+So if you don't understand this section fully right now. That's fine. You will.
+
+00:03:47.000 --> 00:03:54.000
+There's also test to pass requirements, which, as Ash said, we might actually add a little bit more here.
+
+00:03:54.000 --> 00:04:14.000
+But I would think of this as… similar to a rubric, something that gives you more specific guidelines to target So… These are, in a sense, the measurable or specific actionable requirements that you you will need to hit and how we will
+
+00:04:14.000 --> 00:04:23.000
+Be approaching and thinking about evaluating it in those regards. And now, of course, these are not the technical, technical requirements in terms of feature list. That's up here.
+
+00:04:23.000 --> 00:04:40.000
+That matters too so I see some questions in the thread, but I think… All right, what should be the admins function specifically? Well, there's stuff in here. I mean, there's actually an AI feature, but when you get to the AI feature, you could perhaps have them
+
+00:04:40.000 --> 00:04:45.000
+The dynamic dashboard.
+
+00:04:45.000 --> 00:04:49.000
+Oh. Administrative controls. There you go.
+
+00:04:49.000 --> 00:05:04.000
+So check the doc. If something's not in the doc, then Definitely let it. I mean, and even if you have questions about things in the doc, feel free to let us know. But I bet you the doc will answer a lot of your first questions because there's definitely a lot here.
+
+00:05:04.000 --> 00:05:05.000
+Anything that, yeah.
+
+00:05:05.000 --> 00:05:15.000
+The only other thing I'll point out is the test to pass frameworks right now, as Aaron said, are the ones that are the generic ones that we had for the Slack project as well.
+
+00:05:15.000 --> 00:05:22.000
+But we're going to be adding like specific metrics for production grade applications probably later today.
+
+00:05:22.000 --> 00:05:28.000
+So like concurrent users or number of tickets managed or something like that.
+
+00:05:28.000 --> 00:05:38.000
+To make sure that the application you're building is like hitting the mark when it comes to usability for real for tons of users. So I just wanted to call that out directly.
+
+00:05:38.000 --> 00:05:48.000
+And to answer Paul's question, no, you don't have a lovable account, but I would start with the free tier.
+
+00:05:48.000 --> 00:06:12.000
+Right? Great. Well, thank you, Ash. And onwards to the class proper so Today, we are digging into the Langchain expression language, which you heard me mention in very brief passing, I think there was one snippet of code that used it last week. But we're going to understand a bit more about it and use it as a vehicle
+
+00:06:12.000 --> 00:06:33.000
+To just see more things we can do with LLMs, more ways we can put it together because the high High level of this is that the Langchain expression language is a flexible and a sort of concise but powerful expression language that lets us make constructs to
+
+00:06:33.000 --> 00:06:46.000
+Put the pieces of an LLM system together in different ways because they're all it's all kind of a modular sort of approach. And again, the analogy that I gave last week, and you'll see this in the syntax itself.
+
+00:06:46.000 --> 00:07:03.000
+If you spend much time on a Unix type CLI and you know how to pipe from commands to commands, you know how powerful that is, right? The Unix philosophy is that You have a bunch of little individual programs that are specialized that do something well, and then you can pipe
+
+00:07:03.000 --> 00:07:09.000
+Your grep to your SED to your whatever and all of a sudden have something pretty complicated.
+
+00:07:09.000 --> 00:07:30.000
+So… same general idea here and indeed kind of looks and works pretty similar there are some Differences, of course. The main difference I would highlight just from a technical perspective is it's not literally just text. It is essentially key value pairs that's usually being passed between these things.
+
+00:07:30.000 --> 00:07:36.000
+That's to be expected, I think, in the modern era. So think Jason blobs.
+
+00:07:36.000 --> 00:07:50.000
+All right. And I should also spend just a moment, the word chain, it really is basically a sort of pattern or structure you can build With these tools, there are others. We will get to them.
+
+00:07:50.000 --> 00:08:05.000
+But chain just means a link to a link to a link. So it goes into a thing out of that thing, into the next thing out et cetera. There are other sorts of patterns and we will learn about them as well.
+
+00:08:05.000 --> 00:08:21.000
+Start here. We're going to learn about training, about the length chain expression language, and Part of what's cool about the Langchain expression language, besides the fact that it's fairly nice to work with.
+
+00:08:21.000 --> 00:08:28.000
+Is it can give us some things kind of for free. It can give us ways to specify or to set up concurrency.
+
+00:08:28.000 --> 00:08:42.000
+So that could be nice. All right. So a little bit about what a chain is versus say an agent, which is a concept I'm sure you're familiar with already, at least informally.
+
+00:08:42.000 --> 00:08:56.000
+So an agent is when there's an LLM essentially has to make decisions, right? And perhaps has some tools and some things at its disposal to do that.
+
+00:08:56.000 --> 00:09:01.000
+Whereas a chain is more structured. And you might think, well.
+
+00:09:01.000 --> 00:09:08.000
+Gee, why would we lock ourselves down? Llms are smart. Let's just agents everything, right? Well.
+
+00:09:08.000 --> 00:09:18.000
+As you've all no doubt experienced the past two weeks, regardless of the impressive capabilities of LLMs, they are not infallible. I mean, if nothing else.
+
+00:09:18.000 --> 00:09:27.000
+They are you know they are generally a function of what we feed them, the prompt we feed them. So unless we're feeding them perfect prompts all the time, they're not going to come out perfect anyway.
+
+00:09:27.000 --> 00:09:39.000
+And they are just inherently probabilistic and so If you're trying to solve a problem that itself has structure, that itself has a sequence, and a lot of the problems we might want to solve do.
+
+00:09:39.000 --> 00:09:57.000
+Think about data pipelines and things like that. Then a chain can be a great tool. It can basically simplify the problem space, simplify what you are tackling and make it much more reliable, much more straightforward because you're sort of
+
+00:09:57.000 --> 00:10:09.000
+Not exactly hard coding, but you're building the structure into it. Whereas an agent is great if you're solving a problem that requires that sort of flexibility, that requires on the fly dynamic decision making.
+
+00:10:09.000 --> 00:10:22.000
+Of course, that's going to lead to certain forms of complexity and require extra thought on your part to keep it reliable in some regards, depending on what problem you're solving.
+
+00:10:22.000 --> 00:10:34.000
+I see a few questions coming in about lane chain expression language. I mean… I don't want to turn this into a compilers class as much as I love computer languages, actually.
+
+00:10:34.000 --> 00:10:49.000
+You could definitely make the case that the lang chain expression language is essentially a bit of syntactic sugar in a freight work. Like I get it. That's They call it the Lang chain expression language It's not something that like you
+
+00:10:49.000 --> 00:11:01.000
+Have a compiler for. It's really just a way, a syntax and then some code around it that makes it particularly convenient to use and solve a pretty wide range of problems.
+
+00:11:01.000 --> 00:11:09.000
+They call it the Langchain expression language. And why does it look drastically different?
+
+00:11:09.000 --> 00:11:22.000
+Well, again, that's because it's essentially a callback to or influenced by Unix command line. So if you've not done a whole lot of command line stuff, it's going to look a little alien to you. And I encourage you to do some command line stuff at some point.
+
+00:11:22.000 --> 00:11:29.000
+But that's what it's influenced by. It's a pretty different universe than JavaScript and TypeScript.
+
+00:11:29.000 --> 00:11:44.000
+All right. Okay, I think I'm going to… get back to get back to Oh, yeah. And I can't, so the examples are all Python. If you're doing this from TypeScript.
+
+00:11:44.000 --> 00:11:50.000
+I'm sure that there are ways and we'll follow up on the specifics in the Slack.
+
+00:11:50.000 --> 00:12:00.000
+In general, a lot of LLM and machine learning ecosystem is often developed initially for python.
+
+00:12:00.000 --> 00:12:08.000
+So it's often very cozy there, but TypeScript should have reasonable support, I would think.
+
+00:12:08.000 --> 00:12:17.000
+Okay. So why use Lang chain expression language plus seeing a few examples?
+
+00:12:17.000 --> 00:12:31.000
+Essentially what's going on here We have some code on the right that uses a basic prompt template to make a prompt that takes a country and then asks a question about that country. And we can format that prompt.
+
+00:12:31.000 --> 00:12:39.000
+As we're doing here, passing france ask the LLM to predict based on that prompt and then look at the result.
+
+00:12:39.000 --> 00:12:54.000
+So three lines of code, right? And this breaks the steps down. This is like each link of the chain that we get to so uh this is fine. And you could think of this as the imperative paradigm for people who do
+
+00:12:54.000 --> 00:13:11.000
+Care about programming languages and we're asking those questions. But with the Langchain expression language does is it turns that into a one-liner. And indeed, you could chain more pieces together, or you could take this piece And this becomes another thing that you could chain to other things
+
+00:13:11.000 --> 00:13:21.000
+Later on. So it's just a much faster, more expressive way when you're experimenting with things.
+
+00:13:21.000 --> 00:13:34.000
+And I do encourage you to experiment at least some with this. I mean, you are AI first in your development and you definitely can ask an LLM to write code. If you ask it to write link chain expression language code to something, I bet you it'll do something.
+
+00:13:34.000 --> 00:13:39.000
+But it's also fine to look at it at least a bit yourself.
+
+00:13:39.000 --> 00:13:50.000
+The repo lets you set up some Python notebooks, which even if your preferred development environment is TypeScript, Python notebooks, as you'll see, give a very nice way to just quickly try things.
+
+00:13:50.000 --> 00:14:03.000
+So in any case, it changes. Multiple lines to one line. That's the nice syntactic sugar development developer UX sort of aspect to it.
+
+00:14:03.000 --> 00:14:07.000
+And it kind of standardizes the interface. Now that you have a chain.
+
+00:14:07.000 --> 00:14:13.000
+The way you use chain objects is usually this dot invoke. So we're invoking the chain.
+
+00:14:13.000 --> 00:14:17.000
+And we're passing in the payload. So this is, as I said, this is where it's a little bit different.
+
+00:14:17.000 --> 00:14:29.000
+This isn't just a string. This is actually a dictionary, key value pairs But that initial payload is fed into this first thing here, the template.
+
+00:14:29.000 --> 00:14:44.000
+The template does what it does, passes its output to here. The LLM does what it does, passes output here, and string output parser is a special One, you see we import it here from output parsers. And the Langchain core library has a ton of this sort of stuff. But this one you'll see a lot.
+
+00:14:44.000 --> 00:15:00.000
+And it's basically like, hey, the user doesn't want to see the full key value pair dict blob thing. They care about just the actual LLM response. Let's parse that out and make it nicely visible. So this one actually will return
+
+00:15:00.000 --> 00:15:07.000
+I think it is just a string or at the very least, it's more legible And the full payload output of the LLM.
+
+00:15:07.000 --> 00:15:13.000
+So, uh. Now, this is very MVP example here.
+
+00:15:13.000 --> 00:15:24.000
+But in addition to the syntactic sugar aspect, which is not nothing. Our developer experience matters. I think. It impacts our productivity quite a bit.
+
+00:15:24.000 --> 00:15:47.000
+But by using this, this also exposes not just .invoke, but as you'll see, it exposes some asynchronous entry points. It exposes the ability to do batch processing streaming and you get all that kind of for free as different ways to interact with the chain object. And also because this is laying chain and laying chain.
+
+00:15:47.000 --> 00:16:02.000
+Is part of Lang Smith. You get kind of built-in observability. If you set those environment variables that we tell you to set around the project and such, it will automatically send traces.
+
+00:16:02.000 --> 00:16:08.000
+To the Lang Smith platform. And so that's some nice stuff to get.
+
+00:16:08.000 --> 00:16:13.000
+All right. A lot of stuff coming in. The thread.
+
+00:16:13.000 --> 00:16:25.000
+But I think… It's all being handled or at least all right no all right this one shows one llm call yes So there's three steps here.
+
+00:16:25.000 --> 00:16:36.000
+And the middle one is the only one that actually sends stuff to OpenAI, right? That's this thing that was instantiated here. This first one is a prompt template.
+
+00:16:36.000 --> 00:16:49.000
+But still, all of these take all of these some LLM related input, do what they're supposed to do In this case, stick the country France in the placeholder country And then pass it to the next step.
+
+00:16:49.000 --> 00:17:05.000
+And I mean, there could be chains that have multiple LLM calls, but One LLM calls plenty for a lot of, it depends what you're doing, right? But a lot of times your chain might just have one LLM call And the stuff before and after is
+
+00:17:05.000 --> 00:17:13.000
+Almost ETL type stuff is dealing with data, dealing with RAG maybe, as we'll see.
+
+00:17:13.000 --> 00:17:29.000
+Indeed, as we will see. So how could we potentially use chains to do a rag. And this is also, I believe, in more detail in one of the notebooks. So we'll see some more code on that.
+
+00:17:29.000 --> 00:17:44.000
+So… What we have here, again, this is the manual versus the Lang chain expression language. And in this case, we're breaking it out with comments so it doesn't really look shorter or anything. But again, it's not just about being less lines of code it's about
+
+00:17:44.000 --> 00:17:50.000
+Giving us some of these other perks in terms of the interface and the observability.
+
+00:17:50.000 --> 00:18:00.000
+So… assuming and the setup code is not pictured here, but you all know what RAG is at this point. Assuming you've set up RAG and you have a RAG retriever, how do you actually interact with the RAG?
+
+00:18:00.000 --> 00:18:06.000
+You can get relevant documents based on the user prompt or whatever your query is.
+
+00:18:06.000 --> 00:18:18.000
+And then you typically are going to have a template and you need to form format that prompt template with the user's question and the context, the documents you retrieved, and then get those results from the LLM.
+
+00:18:18.000 --> 00:18:22.000
+And you can do all of that with laying chain expression language.
+
+00:18:22.000 --> 00:18:37.000
+And you can actually there's these runnable parallels and runnable pass-throughs are special basically special functions or things that come from.
+
+00:18:37.000 --> 00:18:42.000
+I guess modules might be the better word. From this framework.
+
+00:18:42.000 --> 00:19:04.000
+That let you have the chain basically as the things here say run this in parallel so you can invoke it multiple times in that way. And then the runnable pass through is going to pass the query through unchanged. So what's happening here
+
+00:19:04.000 --> 00:19:10.000
+Is we're formatting We're retrieving the documents.
+
+00:19:10.000 --> 00:19:20.000
+And at the same time, we're going to pass through the query to the next step because we need the query at the next step as well.
+
+00:19:20.000 --> 00:19:29.000
+So this is, again, kind of a simple example. You won't necessarily get a ton of benefit from using runnable parallel and runnable pass-through here in terms of the performance of it.
+
+00:19:29.000 --> 00:19:36.000
+But you can definitely get advantage from it when your task is parallelizable.
+
+00:19:36.000 --> 00:19:45.000
+Which I hope you have some passing familiarity with, but essentially when it has components that don't depend on one another.
+
+00:19:45.000 --> 00:19:51.000
+That can be worked on separately that enables some sort of horizontal scaling.
+
+00:19:51.000 --> 00:19:59.000
+Yeah, exactly. You do have to wait for the retriever to finish in this case. The retriever would be considered blocking. So we're just passing through anyway.
+
+00:19:59.000 --> 00:20:06.000
+Is just to show the syntax of it.
+
+00:20:06.000 --> 00:20:18.000
+Where is this code going? This code would go somewhere in whatever file that you are managing your interactions with the LLM in a RAG-based system.
+
+00:20:18.000 --> 00:20:34.000
+So this is literally the line of code that would send the user's question both to the rag and the LLM. And by the way, even though this looks like more code, you'd only need to do this code once. And then every time you want to actually interact
+
+00:20:34.000 --> 00:20:37.000
+With the LLM, it would just be invoking the chain on it.
+
+00:20:37.000 --> 00:20:55.000
+At that would both query the rag. And then send that all to the LLM and get the response from the LLM.
+
+00:20:55.000 --> 00:21:00.000
+All right.
+
+00:21:00.000 --> 00:21:14.000
+I read that last question. I think that last question might not be immediately about the lecture itself.
+
+00:21:14.000 --> 00:21:18.000
+Okay, yeah, I think there's some side discussions going on in the thread. That's fine.
+
+00:21:18.000 --> 00:21:30.000
+All right. So, and how are we doing with slides here Okay, so we're going to switch out to the first notebook pretty soon here, but we can look at this slide first.
+
+00:21:30.000 --> 00:21:48.000
+So this is a somewhat more involved example sort of how you can set a rag chain And what's happening here And again, you'll see a lot of imports from Langchain.
+
+00:21:48.000 --> 00:22:04.000
+Including how we're connecting to open AI, how we're just going to do an in-memory vector store, but this could be pine cone this could be PG vector if you're particularly exploratory, but I know that we'll have specific recommendations for what you should be using.
+
+00:22:04.000 --> 00:22:12.000
+But for teaching and memory is nice. And we are setting up the vector store, putting one document in it.
+
+00:22:12.000 --> 00:22:25.000
+A basic fact about somebody named Byron. And then the template is instructing the LLM, answer the question based only on the context. So we're trying to tell the other one to focus on the document results.
+
+00:22:25.000 --> 00:22:34.000
+And we ask the question. And then we also say answer in the following language because LLMs tend to be pretty good at that.
+
+00:22:34.000 --> 00:22:43.000
+At least decent sized ones. And we make the prompt template. And then we put it all together in a chain.
+
+00:22:43.000 --> 00:22:59.000
+And you'll see here, part of the reason we're making this example a little bit more involved is if you have a more complicated payload here, you might have to do things like this and this is actually like almost like an implicit chain within
+
+00:22:59.000 --> 00:23:13.000
+A chain, right? Item getter is just retrieving the values is sort of a key value retrieval And we want to have the question, but we want to have the question twice.
+
+00:23:13.000 --> 00:23:31.000
+Once we're just, so this is instead of the pass-through approach we're doing here We're passing it through by just retrieving it here. And that's the question. And then there's also the context. That's what comes from the retriever So we passed the question to the retriever, which is going to do the
+
+00:23:31.000 --> 00:23:51.000
+Vector db thing and find the relevant documents And then the language is just another part of the payload. So the payload we invoke by just giving question and language But because the template expects three things.
+
+00:23:51.000 --> 00:24:12.000
+We need to change those two things to three. That's what's happening here, right? And that's why you can see what happens It's literally just making in line a dictionary, right? A key value pair blob And then changing that to the next thing. And that's fine because that's what this is. That's what the chain is just key value pairs being chained one to the next.
+
+00:24:12.000 --> 00:24:28.000
+And so you can be fairly open-ended and you can if you are familiar with lambdas. You could think about other ways to maybe in line make flexible little dicts or simple functions to pass from dictionary to dictionary. And the other takeaway from this is you are not limited to just
+
+00:24:28.000 --> 00:24:44.000
+Stitching together the LLM and things you import from Langchain, right? You're not You can program your own functions and code that can be part of chains that can do things to the payload operate on it.
+
+00:24:44.000 --> 00:24:52.000
+To go back here, you could even, and I'm not saying to do this right away You could have an agent inside a chain, right?
+
+00:24:52.000 --> 00:25:01.000
+Like you could have an agent be one of the steps of the chain as long as the agent receives addict and returns a dict at the end of the day Which it probably does.
+
+00:25:01.000 --> 00:25:16.000
+That could be a piece of your chain. You could also have an agent that can start chains if you want to get more confusing but do not make spurious complexity. I'm just describing to you the flexibility of the system.
+
+00:25:16.000 --> 00:25:20.000
+Always build the simplest system you can to solve the problem at hand.
+
+00:25:20.000 --> 00:25:27.000
+So can you use Langsmith without the Lang train? Okay, Ash's got that one.
+
+00:25:27.000 --> 00:25:31.000
+All right.
+
+00:25:31.000 --> 00:25:39.000
+So… At this point, I'm going to actually start running some code.
+
+00:25:39.000 --> 00:25:47.000
+And this is the first notebook in the repository, if you have that up and running.
+
+00:25:47.000 --> 00:25:55.000
+And again, for this to work, you will have had to make a .env file that's going to have these keys in it.
+
+00:25:55.000 --> 00:26:04.000
+And then that gets copied into the Docker container, assuming you're starting this the Docker way.
+
+00:26:04.000 --> 00:26:12.000
+And we're going to run. And see what's happening here.
+
+00:26:12.000 --> 00:26:20.000
+So what happened? Well, this first MVP chain example, and we have a prompt to a model to an output parser.
+
+00:26:20.000 --> 00:26:27.000
+Seen a few times. Now, it's not a bad pattern, by the way. And this makes it simpler to use.
+
+00:26:27.000 --> 00:26:43.000
+And the template is basically make something about a poem and then we invoke this with a topic and then it returns And you can see here what string output parse for the last step is doing. It is actually making this truly a string. Now, because in a Python notebook.
+
+00:26:43.000 --> 00:26:55.000
+If you don't explicitly print. The behavior of the cell is to just echo the last value of the cell. We're just getting sort of an echo of it, but the new lines don't look pretty.
+
+00:26:55.000 --> 00:27:02.000
+We can change that. By actually printing it. And then we should see actual new lines.
+
+00:27:02.000 --> 00:27:17.000
+And this should be a subtly different home yeah this is a silver queen. This is a silver orb The first line is absolutely identical. So this is apparently a local optimum for our poetic LLM.
+
+00:27:17.000 --> 00:27:20.000
+Writing about the moon.
+
+00:27:20.000 --> 00:27:34.000
+But you can see there was just a few lines. We got a one line interface that lets us do something pretty neat. I mean, I know this doesn't feel that impressive to us all in 2025 now that ChatGPT has been out for a couple of years.
+
+00:27:34.000 --> 00:27:40.000
+But I still think it's kind of crazy that we can just ask for a poem and get it.
+
+00:27:40.000 --> 00:27:54.000
+And obviously this sort of thing could then be exposed and something we'll see not in this lecture, but in future You can expose this as an interface for an API.
+
+00:27:54.000 --> 00:28:00.000
+So it's not just being poked at here in a Python REPL or as part of some function or some code you have.
+
+00:28:00.000 --> 00:28:14.000
+So, uh. That's the general pattern here. Now, we'll see more of this down here, but since I was advertising the goodness of playing with things a little bit yourself in a Python REPL.
+
+00:28:14.000 --> 00:28:23.000
+Python notebook. One of the things I like doing is using the dir function And that lets you basically see what's in scope.
+
+00:28:23.000 --> 00:28:30.000
+But you can also use it on a specific thing to see what's inside its scope. So let's see what's inside the scope of the chain.
+
+00:28:30.000 --> 00:28:44.000
+And you see there's a ton of stuff here. You can generally ignore the double underscore stuff. That's a Python style thing for inner fields because Python doesn't really have a protected way to do that.
+
+00:28:44.000 --> 00:28:49.000
+But then we start seeing all sorts of actual exposed things and we see things like batch.
+
+00:28:49.000 --> 00:29:03.000
+And then a invoke. Well, that's like invoking, but asynchronous. So there's a lot of cool stuff in here. Obviously, this is not a fault replacement for proper documentation and We link that as well.
+
+00:29:03.000 --> 00:29:08.000
+But it lets you sort of see, hey, streaming and then, yeah, lots of stuff.
+
+00:29:08.000 --> 00:29:16.000
+Back and forth to Jason and such. So there's a lot that these are capable of.
+
+00:29:16.000 --> 00:29:21.000
+But .invoke is like the default simple synchronous entry point.
+
+00:29:21.000 --> 00:29:37.000
+So we can look at each piece of the chain's behavior individually. So we could look at if we just, the chain again the prompt, then the model, then the output parser, which is just a string output parser.
+
+00:29:37.000 --> 00:29:48.000
+So if we pass the prompt. If we pass the payload into the prompt, it gives a formatted prompt.
+
+00:29:48.000 --> 00:29:58.000
+That populates the template. And then if we take that and make it a message, that becomes a human message. And that's what would actually go to the LLM.
+
+00:29:58.000 --> 00:30:06.000
+And we can also see it as a string. And this is essentially the nice way to look at it if you wanted to expose it to a user.
+
+00:30:06.000 --> 00:30:19.000
+Similar to what string output parser is doing. All right. And then if we pass the prompt value on and note, what we give to the model is the original prompt.
+
+00:30:19.000 --> 00:30:26.000
+Value is the one that has all the information here.
+
+00:30:26.000 --> 00:30:33.000
+It'll give a response.
+
+00:30:33.000 --> 00:30:38.000
+And we can similarly
+
+00:30:38.000 --> 00:30:44.000
+Use it if we use OpenAI like this, it actually directly gives us the string.
+
+00:30:44.000 --> 00:30:55.000
+So just a few different ways to interact with it. This is all doing the same thing. So I won't spend too much longer here, but just really driving home that the chain is just taking each of these steps and linking them together.
+
+00:30:55.000 --> 00:31:03.000
+And that way you just have one object that you interact with that you feed your input and you get the final output you actually care about.
+
+00:31:03.000 --> 00:31:09.000
+All right, there's one more step here in between. Output parsing the message can be a nice string.
+
+00:31:09.000 --> 00:31:16.000
+Okay. So this is doing it all again.
+
+00:31:16.000 --> 00:31:26.000
+I'm going to go ahead and move on to the RAG example after I check for questions real quick.
+
+00:31:26.000 --> 00:31:38.000
+All right. And again, don't dismiss the power of just a well-engineered prompt template and a simple chain that could solve a fair number of problems.
+
+00:31:38.000 --> 00:31:45.000
+But RAG obviously is pretty powerful. It can solve some good problems too. So how can we do RAG?
+
+00:31:45.000 --> 00:32:03.000
+Laying chain expression language. So we This is similar to the example in the slide, but this just adds other documents and we can interact with it live so i can show you A little bit about why we phrase this prompt this way.
+
+00:32:03.000 --> 00:32:17.000
+You know it's the more you work with this, the more it'll be about like the ideal, I would say of a lot of LLM development is to get through the rest of this boilerplate as much as you can to be able to then iterate on making an effective prompt.
+
+00:32:17.000 --> 00:32:27.000
+And I'm not saying this is the end all be all of rag prompts right here, but this, you know, based only is a nice guide to the LLM.
+
+00:32:27.000 --> 00:32:41.000
+So as you see, we stick something together. And if we just asked OpenAI without giving it these uh these documents. Where did Harrison work? I would assume it would say something like.
+
+00:32:41.000 --> 00:32:51.000
+It's a large language model. I don't know who the heck Harrison is or whatever, like you need to tell me or something because it's just a random thing.
+
+00:32:51.000 --> 00:32:55.000
+But with the documents, it can confidently answer Harrison worked at Ken Show.
+
+00:32:55.000 --> 00:33:08.000
+And now what if we ask it Where did Bob work?
+
+00:33:08.000 --> 00:33:23.000
+That's a pretty good response, right? And again, we're not If this is a true like a true life or death, rocket ship, medical treatment situation. I wouldn't consider this a strong enough guardrail to really guarantee that the LLM won't mess up?
+
+00:33:23.000 --> 00:33:38.000
+But it's definitely a pretty strong nudge. To tell the LLM right here in the prompt Hey, here's a question, here's some documents answer based only on that. And as a result, if you ask something that's extraneous to the documents.
+
+00:33:38.000 --> 00:33:42.000
+Is the sort of answer you'll get.
+
+00:33:42.000 --> 00:33:50.000
+Now, let's see here. Is just redefining the chain so we can run this if we want.
+
+00:33:50.000 --> 00:33:57.000
+I'll go ahead and delete it.
+
+00:33:57.000 --> 00:34:11.000
+So when we invoke it and we can invoke step-by-step again to sort of see setup and retrieval we put together already here is taking the retriever and passing the question through.
+
+00:34:11.000 --> 00:34:24.000
+So we're using that same pattern of runnable parallel runnable pass-through. It's doing these two things in parallel And it's not really saving a lot of compute that way because this is the expensive thing. This is relatively cheap.
+
+00:34:24.000 --> 00:34:32.000
+But nonetheless, it lets us sort of set it up nice and flexibly.
+
+00:34:32.000 --> 00:34:39.000
+And we'll see when we ask, we get both documents back because there's only two documents in the store and the defaults probably return three.
+
+00:34:39.000 --> 00:34:55.000
+But it is retarding the more relevant one first. And… Yeah. Here's a picture of what's going on. If the runnable parallel thing is a little bit hard for you to picture just from the code.
+
+00:34:55.000 --> 00:34:58.000
+You can think of it as splitting the chain in two.
+
+00:34:58.000 --> 00:35:03.000
+And again, in this situation, it won't be a big performance speedup, but in a situation.
+
+00:35:03.000 --> 00:35:09.000
+Or you're doing something where the compute can be put out into separate pieces that don't depend on one another.
+
+00:35:09.000 --> 00:35:18.000
+Or you have a bunch of prompts that you want to run in parallel where basically being able to run in parallel means the input doesn't depend on the output from something else.
+
+00:35:18.000 --> 00:35:23.000
+Because that's what lets you split it up in these different parallel chains here. And then it comes back together.
+
+00:35:23.000 --> 00:35:29.000
+To the actual chain. To give you the result.
+
+00:35:29.000 --> 00:35:34.000
+All right. Now we have a Another example here.
+
+00:35:34.000 --> 00:35:40.000
+How are we doing for time? Doing pretty well, actually. And in this example.
+
+00:35:40.000 --> 00:35:47.000
+We're defining our own sort of code to make something kind of like a chain.
+
+00:35:47.000 --> 00:35:53.000
+Right? So we're making our own functions and our own invoke chain.
+
+00:35:53.000 --> 00:36:00.000
+And you could do this. So there's no actual lang chain imports or usage here.
+
+00:36:00.000 --> 00:36:09.000
+And again, this shows you that it's really just putting the pieces together. But of course, doing this won't give you all of the asynchronous stuff.
+
+00:36:09.000 --> 00:36:19.000
+And the streaming. So that's what we'll get to here. But yeah, this is do it yourself. And this is the exact same thing using lane chain expression language.
+
+00:36:19.000 --> 00:36:26.000
+And then this is streaming do-it-yourself. So to stream it you'll see.
+
+00:36:26.000 --> 00:36:36.000
+The response types out as it comes. And this is using the streaming API from OpenAI, although other LLMs have similar. And for very long.
+
+00:36:36.000 --> 00:36:52.000
+Prompts or for very long interactions. Streaming is a very handy way to deal with it if it's user facing because It might take an LLM five seconds or something to finish responding to some really long prompt.
+
+00:36:52.000 --> 00:37:03.000
+But with the streaming output, you'll be able to start printing right away and printing faster than the user could possibly read. So from the user's perspective, it goes from five seconds to instant.
+
+00:37:03.000 --> 00:37:08.000
+And that's a pretty big difference in terms of their experience.
+
+00:37:08.000 --> 00:37:21.000
+And again, you don't need to use Langchain for this. This shows how you could do it yourself. And I won't dig into the code here too much. I'll just call out Yield is doing a lot of the heavy lifting.
+
+00:37:21.000 --> 00:37:30.000
+And you add a comment. I mean, Ash, can you make sure that that comment gets in the repository? I could add comments here, but I'm not.
+
+00:37:30.000 --> 00:37:33.000
+Necessarily going to push this copy of it. So…
+
+00:37:33.000 --> 00:37:37.000
+The comment you just made online
+
+00:37:37.000 --> 00:37:42.000
+That this is do it yourself. This is do it with laying train. And then this is do it yourself.
+
+00:37:42.000 --> 00:37:45.000
+Versus do it with Langchain down here. Yeah, yeah, yeah.
+
+00:37:45.000 --> 00:37:50.000
+Okay, yeah, I can have the titles that basically, right?
+
+00:37:50.000 --> 00:38:05.000
+So again, yield. Is what's giving us this bit by bit As long as there is content in the response, we're looping over the content and giving that bit of content.
+
+00:38:05.000 --> 00:38:11.000
+And that's how we got, again, when you run this, if you see it's printing, it's pretty fast.
+
+00:38:11.000 --> 00:38:18.000
+Maybe I could ask for a longer joke. But hopefully you saw that.
+
+00:38:18.000 --> 00:38:48.000
+And then another thing we can do is batching. Well, batching means giving multiple things all at once. Let's say that you're at once LLM pipeline is a piece of a data pipeline and you have 100,000 rows of data to process. It might be convenient to give that all as one batch and let that be processed
+
+00:38:48.000 --> 00:38:52.000
+The language is coming from an open API. Ai exposes to us.
+
+00:38:52.000 --> 00:39:12.000
+But if we run this. And thread pool executors letting us do this with some we actually are doing this in parallel, basically. We're mapping each of these chains Sorry, each of these topics to an invocation of the chain.
+
+00:39:12.000 --> 00:39:15.000
+And we're executing each of them in a thread pool worker.
+
+00:39:15.000 --> 00:39:29.000
+At a certain point, the limiting factor here will be the OpenAI API and how many requests they let us make, that kind of thing but three requests at once isn't isn't slowing us down here.
+
+00:39:29.000 --> 00:39:41.000
+And it gives us all the responses there. And in this case, batch chain is operating on lists, so lists of payloads, lists of questions to lists of responses.
+
+00:39:41.000 --> 00:40:00.000
+Right. Fairly straightforward. Now, I should have emphasized here so these did the same thing, right? So this was like, I don't know, 30 lines of code to do streaming when we do it ourselves versus this is how you do streaming with lang chain expression language. Like this is the LCEL chain, right?
+
+00:40:00.000 --> 00:40:08.000
+And similarly, we had to set up a batch chain with a thread pool executor and use functional programming stuff.
+
+00:40:08.000 --> 00:40:15.000
+To do batching ourselves. Or if we have lane chain expression language, it's just dot batch.
+
+00:40:15.000 --> 00:40:26.000
+Right. And it does the same thing. Again, it's good to have some intuition for how it's doing or how you could do it yourself, but in practice, this is Nice and convenient.
+
+00:40:26.000 --> 00:40:35.000
+And then last but not least, asynchronous. So doing it ourselves slash what is asynchronous? Asynchronous means like non-blocking.
+
+00:40:35.000 --> 00:40:52.000
+So, you know, usually when you are running code, you're assuming that there's a synchronous thread going through running this line, getting that result and going to the next line because the next line might depend on the result from that previous line, right?
+
+00:40:52.000 --> 00:41:07.000
+Asynchronous. For long running things like network calls or for things where that's convenient And indeed, prompt invocations can be long running. Now, these prompt invocations probably won't be because they're pretty short.
+
+00:41:07.000 --> 00:41:16.000
+But if you are really using that context window and you're feeding lots and lots of stuff, you might have something where asynchronous makes sense to think about.
+
+00:41:16.000 --> 00:41:30.000
+Now, we can use the await keyword in Python to come up with our own asynchronous uh interface here and it works and it doesn't really look any different just executing this one thing.
+
+00:41:30.000 --> 00:41:44.000
+But this was an asynchronous execution. Or we can just use a invoke on the lane chain expression language object. And again, we have to await the result. This is similar to, I know there's similar syntax and JavaScript, TypeScript, land.
+
+00:41:44.000 --> 00:41:52.000
+So I'm assuming that pretty much everybody ought to be familiar with this one way or another. This just happens to be the Python way to do it.
+
+00:41:52.000 --> 00:42:01.000
+So any questions on these somewhat more advanced uses of the lang chain expression object.
+
+00:42:01.000 --> 00:42:08.000
+So the streaming, the batching, and the async. While people think about that.
+
+00:42:08.000 --> 00:42:23.000
+All this stuff should have ended up in Langsmith. Let's go check on Lang Smith.
+
+00:42:23.000 --> 00:42:37.000
+Let's see here.
+
+00:42:37.000 --> 00:42:44.000
+Yep, looks like it did. It ended up in the default project. If you specify, you'll see in the repository.
+
+00:42:44.000 --> 00:42:52.000
+You can specify a Langchain project and the projects let you organize your traces.
+
+00:42:52.000 --> 00:43:01.000
+So, you know, I could have done that. I encourage you to do that, especially when you're working on actual projects to keep your traces organized.
+
+00:43:01.000 --> 00:43:06.000
+And you can see here.
+
+00:43:06.000 --> 00:43:16.000
+There's summaries like we've seen in the past. Where apparently 11% of our requests are streaming. Most of our latency looks pretty good.
+
+00:43:16.000 --> 00:43:28.000
+And you can see not just the LLM interactions, but again, it instruments the non-LM interactions. It instruments retrieving documents from vector stores. It instruments populating chat templates.
+
+00:43:28.000 --> 00:43:42.000
+These did not send, this specific step did not interact with OpenAI, did not send any tokens I just prepared for the next step. But we see all of it here, which can be pretty useful if you're debugging.
+
+00:43:42.000 --> 00:43:48.000
+All right, let's look at some of the questions that maybe came in.
+
+00:43:48.000 --> 00:43:51.000
+Can you give an example in-app of when you would use these constructs?
+
+00:43:51.000 --> 00:44:06.000
+Sure. Well, I mean, I kind of did, at least conceptually, but let's give very specific examples. So let's say you're building a customer support chat bot.
+
+00:44:06.000 --> 00:44:20.000
+That would be a good case to use streaming responses. And let's say, why is there a chain in there? Well, because it's not just, you're not just one-shotting all your customer messages to OpenAI. That's not going to be a very good experience. We have a rag chain or something.
+
+00:44:20.000 --> 00:44:31.000
+That takes the user's questions and retrieves additional context, maybe from your help center, maybe from their account, sends that information in the prompt.
+
+00:44:31.000 --> 00:44:42.000
+To the LLM gives that response to the user. And because it's doing a fair number of steps and maybe it ends up giving a lot of context, so the prompt might take a little while.
+
+00:44:42.000 --> 00:44:48.000
+Streaming the response will let you immediately start showing text to the user pretty much as soon as they hit enter.
+
+00:44:48.000 --> 00:44:55.000
+And that gives them a pretty good user experience versus potentially having to wait a few seconds and then just have a wall of text appear.
+
+00:44:55.000 --> 00:45:06.000
+That would be a worse user experience. So I guess for streaming, I usually think about user facing stuff like that. There are potentially other use cases, but that one particular comes to mind.
+
+00:45:06.000 --> 00:45:21.000
+Batching, again, I would think data pipelines, things where you have a lot of things to process. Let's say you build a chain that let's say it's not an RAG. Let's say it's a chain that somehow engineers features.
+
+00:45:21.000 --> 00:45:43.000
+On unstructured data. You have a whole database full of user reviews and comments and you have an LLM that you set it up to classify those comments and to give you structured information about their sentiment and about whatever else, right?
+
+00:45:43.000 --> 00:45:50.000
+And to put it in like a structured format so you can do some data analysis on it. So essentially we're talking about data processing.
+
+00:45:50.000 --> 00:46:02.000
+And you have a whole bunch of rows. You could just throw it all in a batch and send it all at once and then wait for it all to come back because this is like the opposite of user facing. You don't need to stream the response character by character.
+
+00:46:02.000 --> 00:46:14.000
+The whole point is to process to engineer these new features on all your data and then give that to your business analyst to do something with Say.
+
+00:46:14.000 --> 00:46:22.000
+Async. I mean, anytime you've got something that takes a long time to run and you don't want it to be blocking.
+
+00:46:22.000 --> 00:46:34.000
+Again, in the world of LLMs, really long prompts would be potentially one of those situations, but there could be others Where you just have other pieces of the chain.
+
+00:46:34.000 --> 00:46:46.000
+A specific example. Maybe something that has an agent in it, actually. Agents are particularly because agents, you know, if you have let's go back to our chat support system.
+
+00:46:46.000 --> 00:46:54.000
+If the chat support system isn't just an LLM, but is actually an agent, a tool using agent that can actually do things and can reason.
+
+00:46:54.000 --> 00:47:05.000
+Then that's going to potentially have arbitrarily long compute to some extent because agents, as you'll see, do that sometimes.
+
+00:47:05.000 --> 00:47:13.000
+And it can be nice to have that be asynchronous so you're not blocking everything else on what the agent is is potentially figuring out.
+
+00:47:13.000 --> 00:47:25.000
+A weight is like an expression to run in the background. Yeah, basically. I mean, what it is, is it's saying this is going to go off and run in the background and actually we're going to wait for it.
+
+00:47:25.000 --> 00:47:31.000
+So it actually kind of makes this asynchronous thing synchronous. It tells us we're waiting for the result.
+
+00:47:31.000 --> 00:47:36.000
+I know that there's a similar keyword in JavaScript. It's just escaping me right now.
+
+00:47:36.000 --> 00:47:50.000
+But if somebody wants to drop it in the thread And… Stream looks awesome in the notebook, but it's showing in our front end a little more complicated. Probably. Yeah, I don't think it's that complicated.
+
+00:47:50.000 --> 00:47:56.000
+I think that if you refer to the OpenAI documentation, Langchain documentation.
+
+00:47:56.000 --> 00:48:05.000
+It's not that much of a lift. But yes, the notebook is doing some of the work for us here as well.
+
+00:48:05.000 --> 00:48:09.000
+Is it a no-brainer to use lane chain versus doing it more raw?
+
+00:48:09.000 --> 00:48:32.000
+I mean… tool choice ultimately is still subjective and contextual. I don't think you can call anything just like a no-brainer, the objective right choice. We are teaching Langchain and largely prescribing it Because it is a well-packaged experience and it lets you focus on the fast iteration that you need to do the tasks we're asking you to do.
+
+00:48:32.000 --> 00:48:51.000
+That said, personally, I do think part of why we have the non-laying chain versions and like the non LCEL chains is it is important. The more magical a tool is the more important I think it is to actually understand at least a little bit about what it's doing behind the magic.
+
+00:48:51.000 --> 00:49:08.000
+So that you're not just sort of superstitious about it and you're not just, you just because it's so expressive and so simple and cool, you still need to know what's going on You can't just be throwing it around without any understanding because you'll end up in a
+
+00:49:08.000 --> 00:49:13.000
+In a bad place sooner or later. If you do that, then you won't be able to fix it because you won't understand what's going on.
+
+00:49:13.000 --> 00:49:20.000
+So I hope that kind of answers your question. A little bit of my philosophy there at the end.
+
+00:49:20.000 --> 00:49:30.000
+We're not worried about fine tuning right now, and I'll let Ash field if and when that'll be relevant, but it's not relevant for us right now.
+
+00:49:30.000 --> 00:49:38.000
+I will just generally say fine tuning is cool, but it's expensive enough that you don't want to go to it as your first like thing.
+
+00:49:38.000 --> 00:49:44.000
+It's good to start with other approaches. You can do a lot with just prompt engineering.
+
+00:49:44.000 --> 00:49:51.000
+For example. All right, some Zendesk questions. I'm going to let those be handled in thread.
+
+00:49:51.000 --> 00:50:00.000
+Lane graph. Yeah, we will talk some about lane graph. And indeed, you know, as I kind of alluded to at the beginning. There are things more complicated than chains.
+
+00:50:00.000 --> 00:50:08.000
+Graph is even more general, right? Don't worry about that today.
+
+00:50:08.000 --> 00:50:22.000
+Do we want to elaborate on the requirements? Well, Ash, we do have about five minutes. Do we want to elaborate a little bit more on the requirements. The other thing we have besides questions is there is another notebook here, but I'm not going to
+
+00:50:22.000 --> 00:50:26.000
+Run this notebook live, I think. We've given it to them, so I encourage you to look at it.
+
+00:50:26.000 --> 00:50:29.000
+So I could either talk about it or you could talk about requirements.
+
+00:50:29.000 --> 00:50:31.000
+Yeah, I can do requirements because I feel like it's the main question coming.
+
+00:50:31.000 --> 00:50:33.000
+All right.
+
+00:50:33.000 --> 00:50:39.000
+So let me take a step back and talk about how we set up projects.
+
+00:50:39.000 --> 00:50:48.000
+Projects are meant to give you creativity and the chance to explore At the same time give you a few starting points.
+
+00:50:48.000 --> 00:50:57.000
+To give you direction. We are not trying to confine you to specific requirements, rather say that if you have no idea where to start.
+
+00:50:57.000 --> 00:51:12.000
+Then this is where you should start. So in the first project, there was a ton a ton of questions about Hey, what should I be using? How do I start? And people were really confused on how to go about doing anything.
+
+00:51:12.000 --> 00:51:17.000
+So that's why for this project our prescribed stack is React, SuperBase, and Cursor Agent.
+
+00:51:17.000 --> 00:51:21.000
+Those are the three required things that we are requiring of you.
+
+00:51:21.000 --> 00:51:27.000
+Please use those three things. So super base auth Super Base Database.
+
+00:51:27.000 --> 00:51:35.000
+Cursor agent for your majority of the AI first development. And react for your front end. Those are the three things that must happen.
+
+00:51:35.000 --> 00:51:42.000
+Everything else is a strong recommendation. But if you want to deviate from that recommendation and do something else, you can.
+
+00:51:42.000 --> 00:51:47.000
+For example, if you want to use Langchain, feel free. But if you don't want to use Langchain and use something else.
+
+00:51:47.000 --> 00:51:53.000
+That's okay. A lot of this program is also taking some time to learn on your own, making the right call.
+
+00:51:53.000 --> 00:51:57.000
+And so if you feel that you want to use something else, you can.
+
+00:51:57.000 --> 00:52:08.000
+What I've tried to do in this document, what Aaron has tried to do is elaborate as much as we can on all the possibilities and what we're looking at in terms of functionality and all the potential AI features.
+
+00:52:08.000 --> 00:52:27.000
+We still have to add some of the production grade metrics that we're going to be looking for, and we'll add them shortly. But in terms of what you should be working on right now is to get as many of those functions that are outlined in the MVP rebuild in the document inside your applications. And we believe if you use super base and you use React and Cursor Agent
+
+00:52:27.000 --> 00:52:40.000
+You should be able to do that fairly quickly.
+
+00:52:40.000 --> 00:52:49.000
+Yes. So the super base is something that We are requiring you guys to use if there's a really good reason not to, then I can talk about it.
+
+00:52:49.000 --> 00:52:56.000
+The three things that we're requiring is React, SuperBase, and Cursor agent.
+
+00:52:56.000 --> 00:52:58.000
+Okay. Aj, go ahead.
+
+00:52:58.000 --> 00:53:15.000
+Yeah. Sort of like formulating in question based on like what you just said but um The point about being able to build much faster with super base, it certainly seems to be the case that that's in general true and like in general good for
+
+00:53:15.000 --> 00:53:30.000
+Ai development. So I guess what I'm wondering is like, the ITD recommendations coming from like the hiring team, is that in the context of their recommendations for AI development in general, or were they looking at the actual requirements of this week's
+
+00:53:30.000 --> 00:53:40.000
+Because a lot of this like AI first stuff in here. And I think, in my opinion, like having built like a bunch of apps, the only time like Firebase or Superbase is actually kind of a bad tech choice.
+
+00:53:40.000 --> 00:53:49.000
+Is if you're going to be doing stuff where you have an API like providing like business logic actually to a bunch of different front ends Which, yeah.
+
+00:53:49.000 --> 00:53:55.000
+Yes. So to answer your question directly, if you guys are on their team.
+
+00:53:55.000 --> 00:53:59.000
+They will make you prototype and build the first version using Firebase or Superbase.
+
+00:53:59.000 --> 00:54:04.000
+So they're giving you itds defined by what you would be doing on the job.
+
+00:54:04.000 --> 00:54:12.000
+Not based on the project requirements.
+
+00:54:12.000 --> 00:54:18.000
+Yeah. Oh, Callum, sorry.
+
+00:54:18.000 --> 00:54:21.000
+Oh, okay. Aj, you have a second question? Okay.
+
+00:54:21.000 --> 00:54:23.000
+No, I just failed to lower my hand.
+
+00:54:23.000 --> 00:54:31.000
+And there's some questions in the thread too. So there's questions about CICD from Joshua?
+
+00:54:31.000 --> 00:54:38.000
+Csed is just GitHub, right? So it's just GitHub connected to Amplify. There's no other advanced CSED we're using.
+
+00:54:38.000 --> 00:54:48.000
+If there's more specifics about that, but the only CICD we're looking for is a working GitHub connection from your repo to the amplifier.
+
+00:54:48.000 --> 00:54:53.000
+And then Lucas asked, is Amplify required or just a strong suggestion?
+
+00:54:53.000 --> 00:54:59.000
+Amplifies a strong suggestion because you do have access to the gambit of AWS features.
+
+00:54:59.000 --> 00:55:02.000
+But you guys really should not need anything else but amplify.
+
+00:55:02.000 --> 00:55:12.000
+It has S3 capabilities. It has Cloud Functions. It has backends deployment so I would start with Amplify.
+
+00:55:12.000 --> 00:55:23.000
+And then Super Base automatically deploys on itself. And you don't need that. Rustam, multi front end architectures for those individuals who get their web app working.
+
+00:55:23.000 --> 00:55:34.000
+So if you get your web app working and you want to try out doing a mobile application, you can do it that way.
+
+00:55:34.000 --> 00:55:50.000
+Sorry, I forgot to mute myself when you called on me or unmute myself last time. I just noticed in the… in the calendar, we don't have currently like a 24 hour get a proof of concept thing done. Are we not doing that for this project? Is it all just kind of just kind of just kind of just kind of
+
+00:55:50.000 --> 00:55:53.000
+Do Friday or how does that work?
+
+00:55:53.000 --> 00:55:55.000
+The deadlines are at the bottom of the project doc and I reflected that on the calendar while Aaron was teaching. So you should see it now.
+
+00:55:55.000 --> 00:56:02.000
+Okay.
+
+00:56:02.000 --> 00:56:11.000
+Yes, the Christian, the next app is TikTok. So next one's mobile.
+
+00:56:11.000 --> 00:56:17.000
+Jared or Callum for a second question. Jared, go ahead.
+
+00:56:17.000 --> 00:56:28.000
+Yeah, thanks. I was wondering… If you're going to upload the recording from the AWS workshop last week.
+
+00:56:28.000 --> 00:56:31.000
+I did on the recordings channel i believe Let me check.
+
+00:56:31.000 --> 00:56:34.000
+Oh, you did? Okay, thank you.
+
+00:56:34.000 --> 00:56:35.000
+I think the windsurf question has come up a few times.
+
+00:56:35.000 --> 00:56:39.000
+Yes, sir.
+
+00:56:39.000 --> 00:56:40.000
+You can use… You can use windsurb if you want, but we're not going to be paying for windsurf.
+
+00:56:40.000 --> 00:56:45.000
+People there are a few people wanting to use windsurf.
+
+00:56:45.000 --> 00:56:47.000
+Direct answer.
+
+00:56:47.000 --> 00:56:51.000
+And there's also, can you discuss lovable? How do we integrate it into our stacks?
+
+00:56:51.000 --> 00:57:00.000
+Lovable is for your front end scaffold. So the same way we use v0 Or you use replicated agent, it should just help you make the front end scaffolding.
+
+00:57:00.000 --> 00:57:03.000
+That includes the general gist of what your front end application looks like.
+
+00:57:03.000 --> 00:57:10.000
+Then the goal would be to take the code out of lovable And then connect it to your Super Base account.
+
+00:57:10.000 --> 00:57:22.000
+And Robert, to your question about cursor agent is the chat tab and cursor. I mean, yeah, but I think… cursor agent is what we're saying, but really what we're saying is cursor, whatever cursor functionality that is enabled, right?
+
+00:57:22.000 --> 00:57:32.000
+Is what we're… default suggesting here.
+
+00:57:32.000 --> 00:57:42.000
+So someone's asking the question, Tao was asking a question that uh Austin is letting people use other stacks and can we not use these stacks? And then the answer to that question I'm giving is.
+
+00:57:42.000 --> 00:57:50.000
+I will connect with Austin directly but based on what I've learned from Trilogy folks that we want you guys to at least use Superbase and React.
+
+00:57:50.000 --> 00:57:58.000
+If you decide to change other things, you can. But if you want to change your stack and you have a really good reason for it.
+
+00:57:58.000 --> 00:58:16.000
+Because it affects the Zendex capability or you think it's going to be X, Y, Z better, then if you shoot me a message, then I could do some approvals here and there but the gist of what Trilogy is looking for is Super Basin React.
+
+00:58:16.000 --> 00:58:22.000
+There is a GitHub org. I'm slowly inviting everybody. I should just probably think of doing that quicker.
+
+00:58:22.000 --> 00:58:29.000
+So by the end of this week, everyone will be added to the GitHub org.
+
+00:58:29.000 --> 00:58:42.000
+Yeah, so about the IM pass role, Steve gave the IM pass role to the users already, so I'm not sure what's happening there. That's something I'm going to check out today and try to get resolved.
+
+00:58:42.000 --> 00:58:56.000
+I would use super-based storage. Worksmart is necessary and required.
+
+00:58:56.000 --> 00:59:11.000
+While people are thinking of a few more questions. Since we didn't get to the second notebook, the one that's called Chroma Multimodal RAG, I encourage checking that out if you're curious. It's already rendered, so you can really just scroll through it, but you could also try to run it locally if you want.
+
+00:59:11.000 --> 00:59:21.000
+That's optional, but it shows a multimodal rag, aka a rag that can actually index and refer to images, which is Pretty cool.
+
+00:59:21.000 --> 00:59:26.000
+It's more just to know the capabilities of these things. It's probably not something you'll immediately use for this project.
+
+00:59:26.000 --> 00:59:35.000
+Who knows, but probably not. Anyway, sounds like some more questions have come in.
+
+00:59:35.000 --> 00:59:41.000
+Aiden's asking, what if we run out of lovable credits? Then I would just switch over to cursor.
+
+00:59:41.000 --> 00:59:46.000
+Directly?
+
+00:59:46.000 --> 00:59:53.000
+Yes, Lamar, I can just reset your login.
+
+00:59:53.000 --> 00:59:57.000
+And Rafal has… His hand up, I think.
+
+00:59:57.000 --> 00:59:58.000
+Yep.
+
+00:59:58.000 --> 01:00:08.000
+Could you expand a bit on the on the multi front end architecture point?
+
+01:00:08.000 --> 01:00:18.000
+Sure.
+
+01:00:18.000 --> 01:00:19.000
+Yeah.
+
+01:00:19.000 --> 01:00:31.000
+Because… i tried to chat with the O1 about it a bit having next to zero front end experience I'm still confused on monorepo or or how to like set up basic uh architecture structure for for this multiple React contents.
+
+01:00:31.000 --> 01:00:36.000
+Yep. So if you're looking to make something multi front end.
+
+01:00:36.000 --> 01:00:43.000
+That means that the API is abstracted away from your front end. So if you have a next project with an API on it.
+
+01:00:43.000 --> 01:00:49.000
+For example, it might be a little bit harder for you to connect a mobile application using React Native or something else.
+
+01:00:49.000 --> 01:00:52.000
+So what they're saying is if you're going to consider making a mobile application or something else.
+
+01:00:52.000 --> 01:01:03.000
+Or taking your web application And deciding to also go mobile, then what you would consider is to do a two repo solution where you'd have a React repo and you maybe just have Superbase.
+
+01:01:03.000 --> 01:01:14.000
+So since we're using Super Base for fall, all this means is Every time you want to do another front end architecture, you can just create a new repo and connect SuperBase to it directly using the SDK.
+
+01:01:14.000 --> 01:01:25.000
+But I wouldn't consider talking about mobile or thinking about the multiple front ends yet, I would just work on the web-based functionality. And once you get that working, if you want to go on to mobile, you can.
+
+01:01:25.000 --> 01:01:26.000
+So.
+
+01:01:26.000 --> 01:01:31.000
+Yes, I'm definitely trying the simplest solution for now.
+
+01:01:31.000 --> 01:01:43.000
+So Marcus asked a great question in the thread about spiky POVs and that, you know, so far I've done nothing related to CRMs. I've not used a lot of CRMs in my career either. So I get it.
+
+01:01:43.000 --> 01:02:01.000
+We put in the document in the uh the project doc some resources and videos you can watch of people walking through and using CRMs and discussing them. So that can be a good place to get started if you're light on your CRM experience. And the other thing I'd say is.
+
+01:02:01.000 --> 01:02:12.000
+Crms are their own ecosystem, but if you've never really used, if you've never been on that side of the business or whatever, but you have at least used some sort of ticketing system, and I imagine you have.
+
+01:02:12.000 --> 01:02:31.000
+Probably, right? And maybe from a more technical perspective maybe JIRA or maybe even GitHub issues are kind of a ticket system. Think of Think of the use case of user requests coming in. If you've never used it, at the very least, I'm sure you've been the customer at a business that uses a CRM.
+
+01:02:31.000 --> 01:02:46.000
+Think about the full end-to-end of how requests come in how they have to be managed, how people would work with it, how how you could potentially minimize the drudgery. That's the overall goal.
+
+01:02:46.000 --> 01:02:53.000
+So that's where I would start. Coming from when you're thinking about your planning and your spiky POVs and whatever else.
+
+01:02:53.000 --> 01:02:58.000
+So if I could pop in real fast, one thing, Marcus.
+
+01:02:58.000 --> 01:03:07.000
+About what I was saying with spiky POVs isn't just like, oh, you can look at it. Cause like, yeah, I can get a sense of what's going on, but it's that specifically that spiky POVs come from experience.
+
+01:03:07.000 --> 01:03:18.000
+Not just kind of looking at a YouTube video and being like, I think this is true and it goes against the grain. Like, why do you think that's true? Because you've experienced, you've tested it.
+
+01:03:18.000 --> 01:03:21.000
+Which you don't get from looking at a YouTube video.
+
+01:03:21.000 --> 01:03:30.000
+Sure. No, I think that's a great point. And what I would say is you're not always going to have the same amount of experience going into a project. Like the first project, Slack.
+
+01:03:30.000 --> 01:03:35.000
+All of us have lived and breathed Slack or something like it, I think.
+
+01:03:35.000 --> 01:03:50.000
+But the same is not true of CRMs. And that might mean that your spiky POV section is a little bit more sparse. That is okay, or that you have to be more thoughtful. You still need to have something there that is part of the requirements. And I don't know if we're going to give more specific guidelines for how much.
+
+01:03:50.000 --> 01:04:00.000
+But I think that it's good that you're aware that, yes, to be particularly opinionated would come from deeper personal experience using the thing or something.
+
+01:04:00.000 --> 01:04:18.000
+If you don't have that, then you can still spend some time doing some research and trying to find, well, maybe there's somebody, maybe not just a YouTube video, but if there's a former, like, let's say you have a past colleague who you respect, who you know, some friend, and you know that they ended up working on CRM stuff, maybe ask them if they want to
+
+01:04:18.000 --> 01:04:29.000
+Chat over coffee or something. You can pick their brain a bit. There are a variety of ways to potentially pursue it, but still recognizing your limitations as well is a good part of that.
+
+01:04:29.000 --> 01:04:35.000
+So I think that's all part of part of the problem space, if that makes sense.
+
+01:04:35.000 --> 01:04:42.000
+And I will say that when you guys get your assignments at your job, you might not have experience with the application you're working with.
+
+01:04:42.000 --> 01:04:56.000
+So. By the way, you can make a free Zendesk account with any email and try it out directly as well.
+
+01:04:56.000 --> 01:05:06.000
+Okay, I will look into the IMPass rule error. But I think we're going to call class for today. I want to go over just the calendar. We have two talks.
+
+01:05:06.000 --> 01:05:12.000
+So tomorrow night and Wednesday night with austin And guest speakers. And then we have our usual MVP deadline tomorrow.
+
+01:05:12.000 --> 01:05:18.000
+Then a project check-in on Our next class will be on Wednesday with Aaron on Langegraph.
+
+01:05:18.000 --> 01:05:22.000
+And then we'll have office hours in between the two classes.
+
+01:05:22.000 --> 01:05:28.000
+We're also going to be planning a logistics session for all the logistics related to Austin later this week.
+
+01:05:28.000 --> 01:05:37.000
+And then we'll probably have another logistics session early next week so A lot of stuff that is going to be added on the fly in terms of the logistics stuff.
+
+01:05:37.000 --> 01:05:40.000
+But just keep an eye on the calendar just so you guys are aware of that.
+
+01:05:40.000 --> 01:05:53.000
+In terms of the goal for tomorrow's MVP submission, the goal is to try your scaffold up and running, connect it to your super base, and at least some of the functionality, you can pick and choose which of the functions
+
+01:05:53.000 --> 01:05:57.000
+At least try to get three or four of those functions working properly for MVP submission.
+
+01:05:57.000 --> 01:06:11.000
+So we've laid out a lot of functions, right? So you can pick any of the functionality And try to get as many as done by tomorrow's submission. The goal is that we are on track for the end of the week. So I don't want anybody to fall behind.
+
+01:06:11.000 --> 01:06:20.000
+So the goal is that you are working all the way through today and tomorrow to some sort of MVP submitted. And then by the end of the week, we're getting that full rebuild done.
+
+01:06:20.000 --> 01:06:25.000
+But that's the plan. If there's more questions, feel free to reach out to Austin directly on Slack or me.
+
+01:06:25.000 --> 01:06:29.000
+And then I'm going to do that AWS stuff. Think about the IM Pass role.
+
+01:06:29.000 --> 01:06:32.000
+And then thanks, Aaron.
+
+01:06:32.000 --> 01:06:35.000
+Thank Ash and thanks. Thanks, everybody. And, uh. Enjoy the second project.
+
+01:06:35.000 --> 01:06:41.000
+Thanks, guys.
+

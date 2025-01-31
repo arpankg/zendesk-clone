@@ -1,0 +1,1427 @@
+WEBVTT
+
+00:00:03.000 --> 00:00:25.000
+Awesome. Cool. All right, before we kick off, just a couple of housekeeping items to go over, and then I'll pass it over to Ash and Aaron. This week, obviously, we're getting into the more AI product features side of AI, which is super exciting, super interesting.
+
+00:00:25.000 --> 00:00:35.000
+We'll be building on top of the applications that you built last week. But before we get going. Just a couple of housekeeping items.
+
+00:00:35.000 --> 00:00:45.000
+First, brain lifts. When you are So we shared an example template.
+
+00:00:45.000 --> 00:00:51.000
+Of, you know, here's an example of a brain lift Let me see if I can bring it up.
+
+00:00:51.000 --> 00:00:56.000
+Um…
+
+00:00:56.000 --> 00:01:09.000
+It's not a workflow account. The way that we shared that was a direct link to a brain lift on brain lifts and it uh includes an example.
+
+00:01:09.000 --> 00:01:21.000
+Those examples are live linked. That means if you copy those If you copy the text and it says add to account or mirror.
+
+00:01:21.000 --> 00:01:25.000
+If you add it to your account or mirror it that way and then make changes.
+
+00:01:25.000 --> 00:01:41.000
+You're changing the master file for everybody. So the folks who built that, they're kind enough to share a link with all of us and a handful of people have inadvertently mirrored it or added it to their account. And you're actually making changes to the master version.
+
+00:01:41.000 --> 00:01:50.000
+Workflow doesn't have a way to lock that down. So please be very, very, you know, copy and paste it into a new thing or create a new template.
+
+00:01:50.000 --> 00:01:59.000
+Because I've gotten a couple of emails from people who are trying to do actual work being like, hey, why are you guys deleting all of the stuff that I'm doing?
+
+00:01:59.000 --> 00:02:16.000
+Get out of my account. And I'm like, oh, shoot, that's Definitely wasn't the intent. So we apologize for that. And I know that a few of you have mentioned like when you submit a second brain or a brain lift, it feels like
+
+00:02:16.000 --> 00:02:25.000
+It's the wrong link. No, you guys are actually editing on top of each other because you're all editing the original documents.
+
+00:02:25.000 --> 00:02:32.000
+The second thing is aws We are all using the same AWS account.
+
+00:02:32.000 --> 00:02:41.000
+So a couple of things that happened over the weekend. First, if you have and we'll go into a lot of depth and detail on this.
+
+00:02:41.000 --> 00:02:53.000
+Aws will give you keys. Those are called keys for a reason. If you put those keys in publicly accessible parts of your repo that you then deploy to the cloud.
+
+00:02:53.000 --> 00:03:07.000
+Everybody who is… scanning GitHub can see those And hackers and hackers and random people do have crawlers running that will instantly pull those keys out, spin up a bunch of instances.
+
+00:03:07.000 --> 00:03:15.000
+Try to mine Bitcoin with them. So your keys are only valuable if you're not throwing them out on the welcome mat for everybody.
+
+00:03:15.000 --> 00:03:25.000
+So be very, very careful with the keys. We had to revoke a few keys and we'll get a lot better at security as time goes along.
+
+00:03:25.000 --> 00:03:34.000
+But if you see a bunch of giant instances spun up and at 100% mining crypto.
+
+00:03:34.000 --> 00:03:40.000
+Hopefully that's not any of us, but yeah, they did not read the gauntlet handbook.
+
+00:03:40.000 --> 00:03:48.000
+So make sure that your keys are Very well protected. We'll talk more about how to do that.
+
+00:03:48.000 --> 00:04:13.000
+Another thing is because we're all sharing an AWS account. If you happen to pop in there and see somebody else running something and turn off their servers, yeah, you can turn off Other students servers, you can break stuff for other people. So be cautious and be considerate of that just because you see something in AWS doesn't mean it's something that you spun up. We're all
+
+00:04:13.000 --> 00:04:18.000
+Those are a couple instances of where we're all in shared space.
+
+00:04:18.000 --> 00:04:24.000
+So we'll obviously learn a lot more about that and be a lot more careful.
+
+00:04:24.000 --> 00:04:29.000
+And we'll help you out along the way. It is a classic.
+
+00:04:29.000 --> 00:04:40.000
+Beginner error to make and we should have covered it in more depth but um know that if you have your keys anywhere in your repository and you deploy that to a public GitHub.
+
+00:04:40.000 --> 00:04:50.000
+That is the technical equivalent of the throwing your keys out on the lawn at a football game with the address attached to them. Someone's going to break in.
+
+00:04:50.000 --> 00:04:59.000
+With those two things. Please be cautious and considerate of workflowy use.
+
+00:04:59.000 --> 00:05:19.000
+Copy and paste it to literally a new workflowy doc before you do anything. If it's something that's a shared example. I'm trying to remove the example with one that's been cloned already so we're not accidentally writing over the work of people who are trying to go about their day-to-day jobs.
+
+00:05:19.000 --> 00:05:26.000
+But if you have added it in the past, it will just be on your sidebar and I can't go through and delete that for you.
+
+00:05:26.000 --> 00:05:40.000
+Um so be be aware of that and I'll send you all a new link that we can use that won't be attached to any real work. That said, you can still, if you make changes directly to that, it will make changes for all of the
+
+00:05:40.000 --> 00:05:54.000
+Gauntlet AI students. That's a couple pieces of housekeeping. We're still going through all the assignments, especially those of you that submitted at 3 a.m. This morning. We haven't gotten to those yet.
+
+00:05:54.000 --> 00:06:00.000
+But we'll reach out and give some feedback here shortly and we'll go from there.
+
+00:06:00.000 --> 00:06:05.000
+So with that, I'm going to turn the time back over to Aaron and Ash.
+
+00:06:05.000 --> 00:06:08.000
+Great. Ash, do you have anything?
+
+00:06:08.000 --> 00:06:14.000
+No, I don't have anything. I just wanted to remind everybody about the AWS workshop on Thursday.
+
+00:06:14.000 --> 00:06:19.000
+Originally, I had said it was not mandatory, but now I am saying it is mandatory.
+
+00:06:19.000 --> 00:06:27.000
+Please attend the AWS workshop. The hiring partners, everyone is seeing all your keys all over the internet and that's not a good look.
+
+00:06:27.000 --> 00:06:34.000
+We need to make sure that our practices are industry grade And we will resolve all of this on Thursday at the workshop.
+
+00:06:34.000 --> 00:06:39.000
+So I just want to make sure that I recant what I said last week.
+
+00:06:39.000 --> 00:06:47.000
+I will see you guys on Thursday. Aaron, all over to you. And please go to the Slack thread if you have any questions for class.
+
+00:06:47.000 --> 00:06:54.000
+Me and Aaron tend not to keep up with the Zoom thread.
+
+00:06:54.000 --> 00:07:03.000
+All right. So onwards. Let me get my desktop up.
+
+00:07:03.000 --> 00:07:11.000
+Are we seeing slides? Like we are.
+
+00:07:11.000 --> 00:07:19.000
+So today, what we're going to be digging into You spent a week.
+
+00:07:19.000 --> 00:07:29.000
+On an act using LLM tools, using AI, using these things But the app itself is a chat app.
+
+00:07:29.000 --> 00:07:42.000
+We'd like to add, as we've discussed. A sort of avatar, an autonomous representative for the users of this app. And one of the key components of that is going to be a technique called RAG.
+
+00:07:42.000 --> 00:07:54.000
+So that's what we're going to discuss today. Rag is something that will be useful I won't say necessarily in literally every project, but it will be useful a lot of the time. There are a lot of projects and a lot of things you'll do with that.
+
+00:07:54.000 --> 00:08:04.000
+Could potentially be relevant. Because it's a pretty uh a pretty powerful technique, even though it's actually not that complicated.
+
+00:08:04.000 --> 00:08:10.000
+It's almost like a really clever So RAG stands for retrieval augmentation.
+
+00:08:10.000 --> 00:08:20.000
+And we'll see this in the slides and the code and the examples and everything. And I might move kind of fast in the slides. That's right.
+
+00:08:20.000 --> 00:08:32.000
+I'll check my audio settings here are they checked right before, but… You're all seeing them.
+
+00:08:32.000 --> 00:08:35.000
+Yeah, I think it's a mic thing. Aaron likes to use linux thing And… It's better than last time. It's still a little quiet.
+
+00:08:35.000 --> 00:08:43.000
+Well, is this a little better or different?
+
+00:08:43.000 --> 00:08:52.000
+All right. I turned this level up to the highest it could be but I just switched to a plug mic. I just have enough stuff on my desk and it's nice to have flexibility.
+
+00:08:52.000 --> 00:08:59.000
+Anyway, retrieval augmentation. I'll just make sure to also talk loud enough.
+
+00:08:59.000 --> 00:09:23.000
+Gives us basically the ability to augment the context window with relevant information And this will give us better answers. This will potentially reduce hallucinations if you're worried about fact retrieval, that sort of thing because fundamentally Large language models do not solve
+
+00:09:23.000 --> 00:09:29.000
+Information retrieval. Do not solve the search problem. That's not really what they do.
+
+00:09:29.000 --> 00:09:45.000
+They generate the most likely next token. And it's kind of a weird emergent property of them that this seems like you're interacting with an information retrieval thing sometimes but that's not really what they do. And that's why we experience hallucinations and all that because
+
+00:09:45.000 --> 00:09:57.000
+Just going to the next most likely tokens. Rag is not a cure for hallucinations. There arguably isn't really one, at least completely Other than, you know, human review.
+
+00:09:57.000 --> 00:10:02.000
+Because humans define what these things are in the first place.
+
+00:10:02.000 --> 00:10:10.000
+But they help. So as I was saying also, I might move a little quickly through the slides because I want to get to the code.
+
+00:10:10.000 --> 00:10:14.000
+We have so much time, but you have all this for your reference.
+
+00:10:14.000 --> 00:10:23.000
+So your learning objectives to understand RAG, embeddings and vector databases, which are the core components of RAG.
+
+00:10:23.000 --> 00:10:30.000
+And then how similarity search is how we retrieve from those databases and then how to connect to an LLM.
+
+00:10:30.000 --> 00:10:43.000
+And then a few somewhat more sophisticated techniques where you can combine things to combine things potentially have richer results.
+
+00:10:43.000 --> 00:11:00.000
+So RAG, I already defined basically. Retrieval augmented generation. But what this means for this to be relevant, and this is why it's not relevant all the time, but You have to have a set of documents. I'll typically use the word corpus because really
+
+00:11:00.000 --> 00:11:06.000
+I was just saying like RAG doesn't solve the search problem, doesn't solve the information retrieval problem.
+
+00:11:06.000 --> 00:11:25.000
+Giving it, sorry, not like LLMs. Rag is giving it a search basically giving it the ability to search and retrieve information and combining that with what the LLM does so But to search, you need a corpus. You need a group of documents that you care about that are relevant and
+
+00:11:25.000 --> 00:11:45.000
+Correct or factual or somehow important to what you're doing. And then the rad technique makes it easy for, and this is basically transparent to the user. As the user is interacting With the LLM, the LLM will also automatically retrieve
+
+00:11:45.000 --> 00:11:52.000
+Relevant documents and add those documents into the conversation or into its input at least.
+
+00:11:52.000 --> 00:12:14.000
+And use that to inform its response. So again, very useful if you've played with tools like perplexity or if you looked at I might be able to pull out a wired headphone if that would really make a difference.
+
+00:12:14.000 --> 00:12:21.000
+Yeah, let's give it a shot. It's worth trying. If it fixes it, great. If not, we'll… Keep going.
+
+00:12:21.000 --> 00:12:38.000
+One second.
+
+00:12:38.000 --> 00:12:40.000
+Sorry to put you on the spot there, Aaron. Generally, we avoid
+
+00:12:40.000 --> 00:12:47.000
+Actually, I mean, how's this, Mike? It's probably low quality, but is it loud enough?
+
+00:12:47.000 --> 00:12:48.000
+10x better.
+
+00:12:48.000 --> 00:13:02.000
+Okay, then we'll stick with this. You might hear a little bit of ambient noise because this is My laptop mic, I am in a separate room, but if you hear a cat or a person, they're out there.
+
+00:13:02.000 --> 00:13:15.000
+All right. So, uh. Anyway, where were we? We were talking about how RAG provides information retrieval, provides search.
+
+00:13:15.000 --> 00:13:19.000
+To LLM, at least that's an initial way to think about it, I'd say.
+
+00:13:19.000 --> 00:13:32.000
+How is this potentially relevant to the project you're working on? Well, in this case, the natural corpus If you wanted to make an avatar would be the chats of that person, right? The chats that person has set.
+
+00:13:32.000 --> 00:13:56.000
+And potentially. It might not be a bad idea to also have the avatar be able to search and read the rest of the slack too, right? But you'd want to be able to or the chat instance because you'd want it to be able to have information from other places to inform its responses, like it reads this reads the chats basically, or can read the chats.
+
+00:13:56.000 --> 00:14:07.000
+So, um. Well, I'll focus on, of course, the actual just techniques here and you'll have to think more about applying it to your projects.
+
+00:14:07.000 --> 00:14:18.000
+So basic walkthrough of RAG. What RAG has, you have your knowledge base or corpus, as I've been saying.
+
+00:14:18.000 --> 00:14:31.000
+And these documents have to be, as we'll see. Chunked, which means made into smaller pieces and then vectorized. And those vectors are what you actually search through.
+
+00:14:31.000 --> 00:14:43.000
+And a vector is just a bunch of numbers in this context. And that means there's all sorts of numerical distance metrics we can use to retrieve the relevant documents.
+
+00:14:43.000 --> 00:15:01.000
+And those relevant documents will be added to the query that goes to the LLM. So the user query goes in first and the user query both retrieves the documents basically You know, we find documents. And by the way, there's other things you can do here. This is the simplest setup.
+
+00:15:01.000 --> 00:15:09.000
+But for now, we're just saying, hey, find documents that also look like what the user is talking about, because hopefully that's relevant.
+
+00:15:09.000 --> 00:15:25.000
+And then add those documents to the query of the user in a template that says, hey, LLM, this is the user question. Here's some information you should use while you're answering the question. And then the LLM answers the question.
+
+00:15:25.000 --> 00:15:35.000
+And again, it's not actually that complicated. But it can have pretty good results. It can really help increase the confidence in what you're getting out from this.
+
+00:15:35.000 --> 00:15:51.000
+And also, again, this is all very new stuff and there are more sophisticated things you can do for some of this. You can be more sophisticated, for instance, how you decide to query the database, which we'll talk about a little bit in the future, I believe.
+
+00:15:51.000 --> 00:15:56.000
+So, uh. The pieces of a rag, the retriever.
+
+00:15:56.000 --> 00:16:11.000
+This is basically how we're searching. The knowledge base, which is the set of documents and the LLM, which It's the LLM. It's making the next token. And this means that we're focusing on what the LLM is actually good at, language manipulation and understanding
+
+00:16:11.000 --> 00:16:17.000
+And generation. But for information that matters we're getting it.
+
+00:16:17.000 --> 00:16:25.000
+You know elsewhere. It's not a guarantee there are no hallucinations. It is possible because LLMs are probabilistic.
+
+00:16:25.000 --> 00:16:39.000
+To feed them right in their prompt like a document with information and nonetheless the output of the LLM will somehow be wrong, right? Like that is not something that this prevents.
+
+00:16:39.000 --> 00:16:48.000
+But I would argue that it significantly reduces the probability of it because when you have those facts right in the prompt and you're telling the LLM, hey, this is true.
+
+00:16:48.000 --> 00:16:58.000
+And you should use this while you're responding. The vast majority of LLMs, the vast majority of the time will respect that, I would say.
+
+00:16:58.000 --> 00:17:08.000
+All right. It is for you visual learners. I'm not going to spend as much time on this slide. It's stuff we're talking about.
+
+00:17:08.000 --> 00:17:14.000
+With more of a graph, I think. Oh, well, there's one other step here that I haven't talked about too much, the embedding model.
+
+00:17:14.000 --> 00:17:22.000
+So I will spend some time on this slide. The embedding model is what converts the text to numbers.
+
+00:17:22.000 --> 00:17:37.000
+So the vectors, right? And, uh. We'll see and talk a little bit more about it. For now, it's okay to kind of think of it like a black box and OpenAI offers some very capable general purpose embedding models.
+
+00:17:37.000 --> 00:17:53.000
+But when I say numbers, it's literally like giving you 3,072 numbers and those numbers represent the text in semantic space, which really just means they represent what it means, kind of.
+
+00:17:53.000 --> 00:18:03.000
+Yeah, it's things like Word2Vect. We're not specifically using Word2Vect right now, but if you're familiar with Word2Vect, you know what I'm talking about here when I say embeddings.
+
+00:18:03.000 --> 00:18:17.000
+So, and of course. Chunks of documents in the vector store have to be embedded as well and embedded. The important thing about embeddings from a practical perspective, because this will be a gotcha when you're actually working with it.
+
+00:18:17.000 --> 00:18:20.000
+You gotta always use the same embedding model with the same number of dimensions.
+
+00:18:20.000 --> 00:18:40.000
+For your application. If you wanted to switch it, that would require essentially a migration and converting all your old documents because If you have your corpus and you split it up and you make its vectors and you store it in the vector store.
+
+00:18:40.000 --> 00:18:50.000
+And you do that with a certain model then the query has to use the same embedding model so its numbers are basically the same shape, the same number of dimensions generated the same way.
+
+00:18:50.000 --> 00:18:59.000
+And so be consistent about the embedding model and the number of dimensions you use. It's pretty easy with OpenA.
+
+00:18:59.000 --> 00:19:07.000
+All right. So text searchable inside vector databases.
+
+00:19:07.000 --> 00:19:27.000
+So this is another, this is another You can think of it as a 2D projection because actually embeddings are As I said, I mean, the OpenAI ones are really big these days. I remember embeddings that were more like 256, 512 numbers, but you get 3,072 numbers, which means a 3072 dimensional space
+
+00:19:27.000 --> 00:19:36.000
+Is what you're representing which is what the human mind can't really think about. But if you think of it in two dimensions.
+
+00:19:36.000 --> 00:19:45.000
+These documents have two numbers and all the documents have two numbers, X and Y. And these documents, the numbers are closer to each other than these.
+
+00:19:45.000 --> 00:19:55.000
+And that means that these documents are kind of similar. And so if a user search was here, you'd give them like these documents in the context window because it'd be kind of similar.
+
+00:19:55.000 --> 00:20:00.000
+If the user search was over here. You'd put this document in the context window.
+
+00:20:00.000 --> 00:20:17.000
+And… How do these numbers do that? If we have time at the end, I'll give a little bit of a a brief version of it, but essentially it uses another neural network type architecture
+
+00:20:17.000 --> 00:20:24.000
+That makes these numbers they're not understandable to us.
+
+00:20:24.000 --> 00:20:39.000
+When I say they have meaning, if you look at them, you're just going to see numbers. But for the space that they're in, they represent, they behave in this way All right, I'm going to check the question thread here.
+
+00:20:39.000 --> 00:20:49.000
+Is RAG always implemented with vector search? I mean, always is a strong word, but pretty much certainly as we're talking about it, you know, when we're talking about rag.
+
+00:20:49.000 --> 00:21:03.000
+We're talking about retrieving relevant text snippets and usually that's going to involve something like this. Technically, you could use any information retrieval mechanism you want.
+
+00:21:03.000 --> 00:21:19.000
+And… indeed like perplexity or some of the search engines that kind of do rag on the internet doing more than just vectorizing everything. They're probably doing like a page rank type thing as well to find the relevant pages first. And then they're finding the relevant
+
+00:21:19.000 --> 00:21:36.000
+Chunks from that page or something like that. So there could be other pieces to RAG, but you will very typically, you kind of have to have vectors because that's also how you determine that the query what snippets are relevant based on the user query.
+
+00:21:36.000 --> 00:21:43.000
+But yeah, I mean, other search solutions could work. Certainly. But you'll typically see vector.
+
+00:21:43.000 --> 00:21:56.000
+Um. And it looks like the other things are already addressed. Yes, three blue One round can provide good intuition here if you care about the maths.
+
+00:21:56.000 --> 00:22:09.000
+All right. So a little bit about trunking, and I'm also going to acknowledge chunking is complicated. It's one of those like operational details that you can actually can really matter and you might spend a lot of time on an implementation.
+
+00:22:09.000 --> 00:22:14.000
+So I'm just going to sort of define and overview it here, but you might have to dig deeper.
+
+00:22:14.000 --> 00:22:22.000
+At a high level, chunking is just how you split up the text. And the reason you do this is if you're feeding arbitrary length text.
+
+00:22:22.000 --> 00:22:38.000
+That's not good often i mean These days, you might not hit a hard limit for a while because the models support such enormous input, but it might still be in your interest to split up the chunks somewhat because those chunks are what you're retrieving
+
+00:22:38.000 --> 00:22:54.000
+That you put in the context window as well. And, you know, smaller focus chunks that individually capture the meaning are what you're aiming for. And so the most naive thing you can do is just literally cut every, say.
+
+00:22:54.000 --> 00:23:00.000
+So many characters, right? And if you only if you just cut every so many characters, which I think is what this picture might be doing.
+
+00:23:00.000 --> 00:23:18.000
+You'll see you literally cut up words, right? Like different, the D is in one chunk and the ifrent is in the rest of it. And that's not ideal. That's going to mangle the language and really hurt your system.
+
+00:23:18.000 --> 00:23:28.000
+There's other sorts of chunking strategies that So there's a recursive chunker that, uh.
+
+00:23:28.000 --> 00:23:41.000
+Is a good sort of baseline because it basically observes grammar a bit more and will figure out how to split things a little bit more gracefully. So your trunks won't all be the same size.
+
+00:23:41.000 --> 00:23:56.000
+Like you lose that guarantee, but your chunks won't be split as poorly. And then it's sort of a continuum of trade-offs. The most sophisticated chunking or one of the most sophisticated chunking you can do is called semantic chunking, where you literally actually use
+
+00:23:56.000 --> 00:24:13.000
+Language models to understand, hey, what is the meaning of this text and how can we split based on that you know what you're sort of like essentially doing very similar math to calculating the embeddings as you're splitting and you're saying okay this
+
+00:24:13.000 --> 00:24:19.000
+Paragraph has certain meaning, so we split this off as its own thing. And then this sentence stands alone or whatever, right?
+
+00:24:19.000 --> 00:24:27.000
+And that's the most expensive to run. So it's certainly more expensive than a lot of the other techniques.
+
+00:24:27.000 --> 00:24:36.000
+And not always worth it, but you can look into semantic chunking. And then the other thing that I'd remind for chunking, and again, I'll highlight this in particular for the project you're working on.
+
+00:24:36.000 --> 00:24:58.000
+If your corpus has some structure to it already, which yours likely does because it's chat messages, but really it's probably like JSON objects that are from certain users and, you know, most people you might have a max text message length and people don't send super long text messages. Usually they
+
+00:24:58.000 --> 00:25:05.000
+A series of them if they have a lot to say. So long story short, you could start by maybe just chunking on text message.
+
+00:25:05.000 --> 00:25:13.000
+Inside your chat app, like that could be your chunk, be your message, right? And that's probably pretty good.
+
+00:25:13.000 --> 00:25:18.000
+And similarly if you are worried about code.
+
+00:25:18.000 --> 00:25:37.000
+Like let's say you're making an editor-like cursor while code has a structure and that structure informs you how to take chunks of it and include those chunks in your prompts and indeed this sort of thing, automatically chunking and pieces of your code base and sending it along.
+
+00:25:37.000 --> 00:25:46.000
+With your queries is most likely generally something cursor is doing in the background. These tools use these sorts of techniques.
+
+00:25:46.000 --> 00:25:51.000
+To augment the context window and to improve the quality of the responses.
+
+00:25:51.000 --> 00:26:04.000
+So. Visualization of vector databases in slightly more dimensions. And you can see these Yeah.
+
+00:26:04.000 --> 00:26:05.000
+Yeah, I forgot that I'm not on.
+
+00:26:05.000 --> 00:26:12.000
+Hey, Aaron, real quick, do you want to mute your Slack notifications? That's the only thing we can hear, but it's I mean, that's why we, yeah, that's our fault for making you switch mics ad hoc but
+
+00:26:12.000 --> 00:26:22.000
+I almost never, where is the new button on Slack?
+
+00:26:22.000 --> 00:26:23.000
+I think it's just pause notifications.
+
+00:26:23.000 --> 00:26:28.000
+Can I just ignore? Pause notifications for a couple hours. There we go. All right.
+
+00:26:28.000 --> 00:26:34.000
+Yeah, that makes sense. Giving everybody a little bit of the slack.
+
+00:26:34.000 --> 00:26:38.000
+That response we all get when you hear that click, click.
+
+00:26:38.000 --> 00:26:47.000
+All right. So here we're seeing these concepts, these carnivorous mammals versus these fruits are clearly separate.
+
+00:26:47.000 --> 00:26:54.000
+And, uh. Again, we're representing these as documents in semantic space.
+
+00:26:54.000 --> 00:27:08.000
+And the vector database is just what stores it. So it should store basically both the numbers that tell you where this dot is and the document itself that's going to be retrieved, which in our case is going to be the chunks, the snippets of
+
+00:27:08.000 --> 00:27:15.000
+Things in our corpus that we care about. Vector databases, there's a lot of them out there. We're going to demo with Pinecone.
+
+00:27:15.000 --> 00:27:22.000
+Which I believe also has an AWS version, but I will defer to future sessions on more specific advice there.
+
+00:27:22.000 --> 00:27:44.000
+But there's a lot of vector databases out there and vector databases can scale pretty well because You know, it's not like a… traditional database and, you know, it's not a traditional SQL database that's trying to guarantee certain foreign key relationships and things like that. It's just a pile.
+
+00:27:44.000 --> 00:27:53.000
+Of documents right And so you can often do horizontal scaling if you really need to, that kind of thing.
+
+00:27:53.000 --> 00:28:07.000
+All right. Similarity in vector space. We've kind of talked about this, so I'll just emphasize what the slide is showing which is When I say vector, vector really sort of means direction. So here we saw numbers.
+
+00:28:07.000 --> 00:28:14.000
+Sorry, we saw points. But you can also think of the vector as the arrow from the origin, which is zero, zero.
+
+00:28:14.000 --> 00:28:22.000
+All zeros through that point, right? And so it's a multidimensional line going out from zero through that point.
+
+00:28:22.000 --> 00:28:38.000
+And when you have lines, you can calculate angles between them if you have multiple lines. And that's what cosine similarity is. It's calculating the angle between these different vectors represented as lines out from the origin. And if the angle is small.
+
+00:28:38.000 --> 00:28:51.000
+That means the points are closer together. And this is, there are a lot of other distance metrics. You can come up with basically almost any way to manipulate the numbers to give you a new number from zero to one usually.
+
+00:28:51.000 --> 00:29:13.000
+Where, you know. Zero is they're close together and one is they're far apart, something like that. That's what distance metrics look like. And like all these other things we've been talking about, you might end up reading and doing a lot more with them. But cosine similarity is a good starting point, especially for this application. It can be fairly robust to
+
+00:29:13.000 --> 00:29:27.000
+The sparsity of the many dimensions and at the same time, it's reasonably performant. It's not like ridiculously slow or anything like that. So, uh.
+
+00:29:27.000 --> 00:29:37.000
+Cosine similarity is a good distance metric and it's giving us these numbers that actually quantify rather than us just eyeballing like, oh, these dots are close together.
+
+00:29:37.000 --> 00:29:43.000
+We're getting a number here and this number says, okay, these are the documents that are close together.
+
+00:29:43.000 --> 00:30:03.000
+And how do we use that? Another, and this, by the way is You could call it a hyperparameter almost. It's not really, but a setting. This is a little bit of a choice. You return up to n of them or k, as this slide says. So you have your query, which lands here because you vectorized that too.
+
+00:30:03.000 --> 00:30:13.000
+And then you use the distance metric to identify the most similar documents. And here they are. And in this case, we've decided, okay, we're going to put the three most similar documents in the prompt.
+
+00:30:13.000 --> 00:30:32.000
+To the LLM. Y3? Because there's not necessarily a grand reason there And if you care, you'd have to run experiments and try to see what the best setting is for your use case because it's not going to be a universal answer.
+
+00:30:32.000 --> 00:30:37.000
+It'll depend probably on how big your chunks are, as well as what your problem is solved.
+
+00:30:37.000 --> 00:30:56.000
+All right. So that's it for like the basics of RAG. Let's hit really quick some of the other things you can do with RAG and then the rest of our time we'll be looking at code, get through as much of that as we can. But you do have the repo if we don't get through all of the code.
+
+00:30:56.000 --> 00:31:09.000
+Understanding RAG fusion. So RAGFusion is, you know, let's say we have our user and They are asking questions the way a user does, right?
+
+00:31:09.000 --> 00:31:23.000
+But instead of a chat app, let's think, let's say we built a rag on top of our corporate Help Center articles. We work somewhere, it has a help center and we want to make a help center robot that helps people
+
+00:31:23.000 --> 00:31:33.000
+And we find that, well, it doesn't work as well as we thought. And while it doesn't always find the right documents. Well, why is that?
+
+00:31:33.000 --> 00:31:39.000
+While the users are speaking like users, right? They're asking questions using their language.
+
+00:31:39.000 --> 00:32:01.000
+And what they know. And the corpus, the Help Center articles are written by technical experts or domain experts or technical writers or people with opinions and backgrounds specific to these things and they're using different language and they're writing things differently. And so even though everybody's writing and trying to talk about the same things, if you use radically different
+
+00:32:01.000 --> 00:32:16.000
+Language or even not radically, just significantly different language to discuss it You might find that, well, those vectors aren't as similar as you'd think. And so the retrieved documents become a little bit more of a mishmash.
+
+00:32:16.000 --> 00:32:22.000
+And so what RAG Fusion says, is RAG Fusion says, well.
+
+00:32:22.000 --> 00:32:29.000
+Let's have usually an LLM prompt. That we feed the user query to.
+
+00:32:29.000 --> 00:32:34.000
+And we say, hey, LLM, This is what the user wants.
+
+00:32:34.000 --> 00:32:51.000
+Rewrite this into, you know, like give me three or four different versions of this query written in a certain way, right? Like written for searching our help center right or written for searching the internet, you know, optimize this query
+
+00:32:51.000 --> 00:32:58.000
+Like an expert to make it representative and to make it similar to the dog, whatever. You can do some prompt engineering.
+
+00:32:58.000 --> 00:33:12.000
+But the general idea being that, hey, the user's query, sure, it means what they want, but it's not written the way that is the most effective. And the way something is written, the literal word choice matters a lot in this situation.
+
+00:33:12.000 --> 00:33:26.000
+And of course, we can generate multiple And part of the value there is then we can run all of these, right? So we're going to query the vector database multiple times. We'll query it with the user's query too. You know, we're not going to always say the user doesn't know what they're doing.
+
+00:33:26.000 --> 00:33:34.000
+So we throw that one in there. And we also query with our rewritten ones based on the LLMs prompt.
+
+00:33:34.000 --> 00:33:52.000
+And then all of these queries give their own response. And we combine it with an approach called reciprocal rank fusion which In a nutshell, because I think that's the time we'll have for it right now, it basically means if a document shows up
+
+00:33:52.000 --> 00:34:09.000
+Multiple times, it's more relevant. So if the same result from the vector database shows up in all five queries, you're pretty sure that that's an important document because it was similar to the user's original query. It was similar to all the rewritten queries. That is a similar document.
+
+00:34:09.000 --> 00:34:20.000
+And if something only shows up to one of the queries, well, I mean, depending how many documents you're taking, there's still some relevance there, but it's definitely way less relevant.
+
+00:34:20.000 --> 00:34:33.000
+So you combine all the rankings and you use the re-ranked results to retrieve the top K and put that in your prompt and uh get your response. So RagFusion, uh.
+
+00:34:33.000 --> 00:34:49.000
+Can be very useful in these sorts of situations where you find that the user is just not writing the way that the The corpus is written. Probably not super relevant to chat genius, to be honest, because your corpus is chats and users write chats.
+
+00:34:49.000 --> 00:34:52.000
+I mean, you could still try it. You still might get some value.
+
+00:34:52.000 --> 00:35:01.000
+Out of it. But I would I would… I would think that it would be less critical, but it's still a very good technique to know about.
+
+00:35:01.000 --> 00:35:08.000
+So checking the Slack, since I no longer get the ticky ticks.
+
+00:35:08.000 --> 00:35:22.000
+A lot of slack going on, but it looks like questions are being handled.
+
+00:35:22.000 --> 00:35:28.000
+Okay. So we got to the code.
+
+00:35:28.000 --> 00:35:38.000
+All right, so we're here in the repo And I'm going talk through the upload and uh then run the main.
+
+00:35:38.000 --> 00:35:51.000
+I'm not running the upload because it might take a little while and I already, it's one of those cooking shows I pre-baked and I have I have the vector database ready to go for it. So I'll just show it. But the upload is certainly important.
+
+00:35:51.000 --> 00:36:09.000
+Upload. Upload is run, I mean, once or basically whenever you are setting up your vector database. And what upload does is it loads documents, chunks them, calculates vectors, and stores all of it. And I should frame the problem we're solving here, the corpus
+
+00:36:09.000 --> 00:36:24.000
+We have all these PDFs of Berkshire Hathaway like annual statements or whatever he calls those documents And as you can see, these are kind of funky.
+
+00:36:24.000 --> 00:36:31.000
+These are messy and anybody who's tried to programmatically process PDFs knows it can be painful.
+
+00:36:31.000 --> 00:36:35.000
+Definitely looks like this was typeset with some sort of latex, so that's cool.
+
+00:36:35.000 --> 00:36:43.000
+But maybe not, but kind of looks like it. The justification.
+
+00:36:43.000 --> 00:36:58.000
+Anyway. So a lot going on here and you know a lot going on here These are long documents, many, many pages and over 20 or 20 documents And a lot of financial wisdom here. So you could see this as a relevant corpus
+
+00:36:58.000 --> 00:37:10.000
+For a financial advisor bot or something like that. Or at least a Berkshire Hathaway history bot. It would be able to answer questions factually using these documents.
+
+00:37:10.000 --> 00:37:20.000
+And I'm not going to run over all the files here. A lot of this is what I would call boilerplate, you know, the sort of stuff you need to install or run things.
+
+00:37:20.000 --> 00:37:40.000
+It's the .py files upload .py is what sets up the vector database and it's and I should note, if people are still hitting the end.sample thing so or the end thing is the .env file and what you should be doing to set this up
+
+00:37:40.000 --> 00:37:46.000
+Is popping it. And I only have it all in, so I'm going to call it .env2.
+
+00:37:46.000 --> 00:37:52.000
+And then when you have your .N2, you can put in your things here.
+
+00:37:52.000 --> 00:38:07.000
+And by the way, just like Austin said at the beginning about the AWS keys being keys being secrets. These, as they say here, are also secrets. Api keys are secrets generally. I mean.
+
+00:38:07.000 --> 00:38:14.000
+Certainly, these ones are. They will give authorization to give authorization to do things like run LLMs.
+
+00:38:14.000 --> 00:38:19.000
+And what this will give us is the ability to connect to OpenAI.
+
+00:38:19.000 --> 00:38:27.000
+To send prompts and receive responses, it will connect to lane smith which is made by Lane Chain.
+
+00:38:27.000 --> 00:38:45.000
+And we'll look a little bit at that today and more in future, but basically it's an observation platform that lets you see traces of everything you do with LLMs and that's Just like observation platforms are useful logs and monitoring for regular developments, very useful for LLM development.
+
+00:38:45.000 --> 00:38:50.000
+And then this specifies how to connect a pine cone and what your indexes are.
+
+00:38:50.000 --> 00:38:54.000
+So while I'm talking setup, I'll just show a little bit about Pinecone.
+
+00:38:54.000 --> 00:39:03.000
+When you log into Pinecone, you should see something like this and you're going to want two indexes and you can do that by clicking create index.
+
+00:39:03.000 --> 00:39:15.000
+And… I'm not going to actually make it because I already have it. The first index is large. It's 3,072 dimensions.
+
+00:39:15.000 --> 00:39:36.000
+You can potentially, if you just click this, I think it'll set it correctly. Whereas, yeah, so this is the model we're using, text embedding large. And then the other example uses text embedding small, which is 1536. So you can literally, they added this recently, but you can just click the model type you're using and will set up the dimensions and the metric that this needs to match the model.
+
+00:39:36.000 --> 00:39:41.000
+And then the rest of this you probably need to just stick with defaults.
+
+00:39:41.000 --> 00:39:50.000
+If you're on a starter plan and that's fine. And then you create it And then you literally get this name is whatever you name it is what you should set it.
+
+00:39:50.000 --> 00:39:56.000
+Here in the API key should be somewhere in there.
+
+00:39:56.000 --> 00:40:04.000
+Back to the code, what does upload actually do well It's a pretty simple file.
+
+00:40:04.000 --> 00:40:19.000
+We're getting a lot of magic here from lane change. So in addition to providing the Lang Smith observation platform, which you see as a tab over here, they have a library, well, kind of a framework, a bunch of libraries.
+
+00:40:19.000 --> 00:40:37.000
+So we're actually going to connect to OpenAI using Langchain's API, which is a which will basically make it even simpler. And they provide a text splitter, the one I mentioned that we're using, the recursive character text splitter, which is a good baseline text splitter if you don't know what else to pick.
+
+00:40:37.000 --> 00:40:49.000
+And then they also provide a way to connect to Pinecone as a vector store. And they also provide a way to parse PDFs. So a lot of stuff from, now this is actually from the community. So this is open source and you can
+
+00:40:49.000 --> 00:40:59.000
+Look at it and contribute to it, I believe. And then we are going to just load the .env file, get all those keys and stuff we need.
+
+00:40:59.000 --> 00:41:08.000
+Glob, get all the PDFs. And then just pass them to the things we imported. So it's pretty straightforward. Now, of course.
+
+00:41:08.000 --> 00:41:17.000
+Actually writing this for the first time would take a little longer in terms of reading documentation, but you should also be asking your LLMs to write and understand things.
+
+00:41:17.000 --> 00:41:32.000
+So we have the recursive character text splitter uh and that is we have to specify the chunk size and the overlap. The overlap is the number of tokens that the chunks can share. And you typically want a bit of an overlap.
+
+00:41:32.000 --> 00:41:46.000
+To avoid just missing stuff or having really weird cuts. And then we take all those documents and literally one line, just pine conevector store from documents. We give it the documents.
+
+00:41:46.000 --> 00:41:52.000
+We give it the embedding model. Which we instantiated the line above and we give it the index name to store it in.
+
+00:41:52.000 --> 00:41:57.000
+So if you run this What you will get.
+
+00:41:57.000 --> 00:42:17.000
+Is something like this. So I stored it in an index called RagFusion 3072. And you'll see, hey, here's these numbers and there's 3,072 of them. We can only see some of them, but they're just quotes representing it out in space. And here's the actual text
+
+00:42:17.000 --> 00:42:22.000
+And it even saves a little bit of other metadata. It saves the document that it came from.
+
+00:42:22.000 --> 00:42:39.000
+It saves the page it was found on. And we can actually even basically interact with this here. We can search and see I mean, right now it has some default search populated. It's giving us the top 10 that are similar to this vector.
+
+00:42:39.000 --> 00:42:45.000
+For some reason. But you can experiment with this sort of admin cloud view of things.
+
+00:42:45.000 --> 00:42:53.000
+This is the vector database. And any other vector database would basically look similar to this.
+
+00:42:53.000 --> 00:43:07.000
+So… Once we have that, we can run the main and main just asks a question. So same setup connection stuff How has Berkshire Hathaway's investment in Coca-Cola grown?
+
+00:43:07.000 --> 00:43:20.000
+Then we have to use the same embeddings model and connect to the same vector store. But again, we'd already set up the vector store in the other. So that is a one-off. We only need to run upload once.
+
+00:43:20.000 --> 00:43:24.000
+Or potentially if you're adding documents, you'd want to have some incremental upload.
+
+00:43:24.000 --> 00:43:33.000
+But this, the main.py is like search and search would have to be or ask, query would have to be run Every time there's a query.
+
+00:43:33.000 --> 00:43:55.000
+We make our retriever. We retrieve based on the prompt, which will automatically embed the prompt and retrieve relevant documents. And we'll see that we're going to print the relevant documents. So let me also just get this running but this one runs pretty quick
+
+00:43:55.000 --> 00:44:03.000
+You know it's in my history, I'll just hit up and let's see it.
+
+00:44:03.000 --> 00:44:11.000
+There we go.
+
+00:44:11.000 --> 00:44:26.000
+All right, so these are the relevant documents being printed to the query. And the query, by the way, was How is Berkshire Hathaway's investment in Coca-Cola grown? Berkshire Hathaway is somewhat known for having Coca-Cola investment for a long time.
+
+00:44:26.000 --> 00:44:38.000
+We see Berkshire Hathaway. We see these documents where Coca-Cola was mentioned. And these are not These documents are chunks of the original full PDF documents.
+
+00:44:38.000 --> 00:44:47.000
+And then these one, two, three, four of them i guess are fed into the LLM and this is what the LLM actually said.
+
+00:44:47.000 --> 00:44:54.000
+Berkshire Hathaway's investment in Coca-Cola has experienced significant growth since its initial purchase in the 90s. Here's some key points, blah, blah, blah.
+
+00:44:54.000 --> 00:45:13.000
+Purchase in August 94, the investment, $1.3 billion for 400 million shares, all this information, 8.9 to 9.1. And the reason I'm highlighting this is there's a lot of specific numeric information that you'd often be suspicious of hallucinations with an LLM for this level of specificity.
+
+00:45:13.000 --> 00:45:20.000
+But I bet you, if we refer back here, we'll find all these numbers here, right? 8.9 to 9.1.
+
+00:45:20.000 --> 00:45:26.000
+One point um I saw 1994, 1994.
+
+00:45:26.000 --> 00:45:36.000
+You know etc etc so it's pulling these numbers from the context it was given And therefore the numbers are accurate, which is nice if you care about things like that.
+
+00:45:36.000 --> 00:45:43.000
+So this is it being applied just to straightforward information retrieval, but you can imagine whatever corpus you've got.
+
+00:45:43.000 --> 00:45:51.000
+Can improve the quality of interactions with the LLM for that purpose. And that's why this is such a general purpose thing.
+
+00:45:51.000 --> 00:45:57.000
+So let me check if there are any questions about this code example. And then the remaining time.
+
+00:45:57.000 --> 00:46:02.000
+I'll be running through those notebooks, I think. A lot of debugging stuff.
+
+00:46:02.000 --> 00:46:16.000
+Um. But… I don't see any particular All right. So embedding model is tool to convert text to numbers Sure. Vector store.
+
+00:46:16.000 --> 00:46:26.000
+The embedding space I mean, yeah, I consider the embedding space more the mathematical concept, like literally the 3072 dimensional space.
+
+00:46:26.000 --> 00:46:33.000
+Yes, I will get to Lang Smith. But the vector story is what's storing the vectors. It's the set of vectors for the corpus you're vectorizing.
+
+00:46:33.000 --> 00:46:56.000
+And then… So the vector store, the index is, I view them, the vector store has an index essentially or I don't know. It's how you're searching it. But the retriever is Similar to the upload process, but just focused on one vector at a time. The retriever embeds your query
+
+00:46:56.000 --> 00:47:02.000
+And so it does convert numbers to text, and then it also converts text to numbers.
+
+00:47:02.000 --> 00:47:13.000
+So it's not numbers to tax. The retriever converts text to numbers and then uses those numbers to retrieve relevant documents based on the similarity score from the vector.
+
+00:47:13.000 --> 00:47:18.000
+So these things that I ran Because I set all those environment variables.
+
+00:47:18.000 --> 00:47:22.000
+You'll see, and this is me running it a little bit before class as well.
+
+00:47:22.000 --> 00:47:29.000
+These are the traces. So these are essentially records of what we just did.
+
+00:47:29.000 --> 00:47:38.000
+And it broke out the different aspects. And a lot of this, if you use mostly Langchain libraries, things will be instrumented kind of automagically.
+
+00:47:38.000 --> 00:47:42.000
+Assuming you also set the environment variables to connect to Lane Smith.
+
+00:47:42.000 --> 00:47:48.000
+And some useful things to call out here and why this is different than just a regular observation platform.
+
+00:47:48.000 --> 00:47:55.000
+It gives me how many tokens. Which apparently I didn't even manage to add up to a penny yet.
+
+00:47:55.000 --> 00:48:15.000
+But that's okay. 2,609 tokens. And if we look at the actual interactions, we can see the retriever step and we can see these payloads So this is the payload that represents these documents reprinted here.
+
+00:48:15.000 --> 00:48:21.000
+Right. And this was what was retrieved from the vector store.
+
+00:48:21.000 --> 00:48:39.000
+From Pinecone. And then we can see the prompt template and we can actually see how to drag around to see this a little bit better, but we can see how in the raw The response.
+
+00:48:39.000 --> 00:48:56.000
+Sorry, the question includes a user question and then context And then the documents. So that's how we're not engineering the prompt a lot here. It's pretty simple, but we're including all of the information from all those retrieved documents along with the user question.
+
+00:48:56.000 --> 00:49:01.000
+To the LLM. And we see the actual LLM.
+
+00:49:01.000 --> 00:49:19.000
+Human, what it considers the human input but it's not just human. This is human plus documents from the vector store And then it's raw output and the actual. And by the way, you get the actual text, which is typically what we care about, but there's a lot of useful stuff here.
+
+00:49:19.000 --> 00:49:35.000
+Internal details that we're not going to get into right now. But if you're debugging or configuring things more advanced, yeah, you see all sorts of things about tokens. And if you're going to be setting other hyperparameters to change how the LLM behaves.
+
+00:49:35.000 --> 00:49:42.000
+You'd want to be looking at this more. So a lot of stuff here, we will see more of this in future.
+
+00:49:42.000 --> 00:50:02.000
+You also get latency and you also have the ability, this is not something that's relevant for this, but you can actually annotate and curate LLM responses and build data sets right here. So you can actually or you can expose via an API the ability to build data sets. And that can be pretty useful as well.
+
+00:50:02.000 --> 00:50:28.000
+So that's Lang Smith in a nutshell. Let me get the notebooks up. And at this point i think basically just get a very quick tour of the notebooks and then you all can run the notebooks interactively and play with them more as you'd like.
+
+00:50:28.000 --> 00:50:35.000
+All right, so we've got rag fusion and similarity search. Which one's good to look at here?
+
+00:50:35.000 --> 00:50:52.000
+We'll start with similarity search. So similarity search This one's actually pretty straightforward, but it will give you an interactive way to play with this if you want to gain more of an intuition. We're using FICE, which is an in-memory vector store.
+
+00:50:52.000 --> 00:50:58.000
+You could think of it as sort of like SQLite running in RAM or something, but for vectors instead of SQL.
+
+00:50:58.000 --> 00:51:05.000
+And we're going to… use the same large embedding model.
+
+00:51:05.000 --> 00:51:10.000
+And we see if we give it hello world and we look at the first five numbers from it.
+
+00:51:10.000 --> 00:51:14.000
+This is what we get. But indeed, there's a lot more than five numbers.
+
+00:51:14.000 --> 00:51:23.000
+There really is. I've been saying 3072 a bunch. I'm not I'm not lying. There are a lot of numbers.
+
+00:51:23.000 --> 00:51:33.000
+And we're going to make our list here of like, think of these as HR statements or something. Alice works in finance. Bob is a database admin. Carl man is Bob and Alice.
+
+00:51:33.000 --> 00:51:43.000
+You put all those, calculate all the embeddings, put all of the embeddings in, in this case, our vector store is this, the in-memory one.
+
+00:51:43.000 --> 00:51:49.000
+And then if we ask if we ask tell me about Alice, what we'll see.
+
+00:51:49.000 --> 00:51:59.000
+Is it can sort the three documents and we get the actual number here. This is the actual similarity. So actually, this one isn't a zero one in the trick.
+
+00:51:59.000 --> 00:52:05.000
+And lower is more similar. You can think of it as a rank. That's how this happens to be outputting the score.
+
+00:52:05.000 --> 00:52:16.000
+And… Alice Works in finance is the most relevant to Alice. So it's got a score of about 0.8 Carl manages Bob and Alice. Well, hey, Alice is there.
+
+00:52:16.000 --> 00:52:22.000
+So Alice is relevant, but there's also stuff about Carl and Bob. So, okay, 1.24.
+
+00:52:22.000 --> 00:52:28.000
+Bob is a database administrator. Well, that's not about Alice at all. So that's got the biggest number.
+
+00:52:28.000 --> 00:52:39.000
+Which makes for the worst score in how this particular API works. And you can play with this more and just get an intuition from it.
+
+00:52:39.000 --> 00:52:57.000
+Essentially, there's no LLM stuff happening here. I mean, there's language models that are calculating the embeddings and the language models are actually in some ways similar down the limbs but This is just this is just query retrieval step from a simple in-memory database.
+
+00:52:57.000 --> 00:53:04.000
+So… This one is a little more involved.
+
+00:53:04.000 --> 00:53:11.000
+But we'll run through it. In this case, oh, so I actually, I don't know that I set that. So I'm going to set that.
+
+00:53:11.000 --> 00:53:26.000
+Myself here rag fusion 1536. I'm doing that because I don't think I put the environment variable in my .en file, but I can just define it here in Python and that's fine.
+
+00:53:26.000 --> 00:53:34.000
+So we are connecting now to a different index because we're going to use a different size of embeddings for this example, just to show that.
+
+00:53:34.000 --> 00:53:43.000
+But we're still going to use Pinecur and OpenAI. And these are documents that are about climate change.
+
+00:53:43.000 --> 00:53:54.000
+And… they're not real documents. They're sort of hypothetical documents, just the titles as an example. And you could consider the titles a chunk.
+
+00:53:54.000 --> 00:54:10.000
+And we're going to store all those. And then we're going to set up to retrieve. And another cool thing about Langchain is they actually have a hub full of prompts. And so we're going to pull a instead of doing our own prompt engineering.
+
+00:54:10.000 --> 00:54:21.000
+We're going to pull a pre-engineered prompt for doing RAD solution. So RAG fusion you recall is when we say, hey, the user, we're going to rewrite their query a few times.
+
+00:54:21.000 --> 00:54:36.000
+All right it's just a warning. All right. We're going to rewrite their query and use the rewritten query to retrieve documents because we think that the documents, these documents are written the way academics and such would write a title
+
+00:54:36.000 --> 00:54:45.000
+And users are going to ask questions with more colloquial language or different sort of language. And we want to rewrite to make sure that we query as effectively as possible.
+
+00:54:45.000 --> 00:54:59.000
+Then, and this is Very brief introduction to what's called the Lang Chain Expression Language. Langchain allows you to use something kind of like what you've seen in the CLI, piping things together.
+
+00:54:59.000 --> 00:55:19.000
+To make a chain and a chain will let you then interact with all these pieces, but just once. And the way it generally works a lot like command line like Unix command line is this basically mostly speaks text. Llms speak text. So you're getting text, you're returning text.
+
+00:55:19.000 --> 00:55:33.000
+I'm simplifying a bit here. There's some structure. Really, this would probably be better thought of as dicts or JSON objects, key value pairs where a certain keys and values matter. I will leave that detail to the documentation.
+
+00:55:33.000 --> 00:55:40.000
+But we are making an overall combined chain that lets us start from the prompt.
+
+00:55:40.000 --> 00:55:46.000
+Feed the prompt to OpenAI, get the output from it, and then look at the output split by new lines.
+
+00:55:46.000 --> 00:55:50.000
+So the original user query is, hey, what's the impact of climate change?
+
+00:55:50.000 --> 00:56:02.000
+Right. Skipping ahead to this If we invoke the original query.
+
+00:56:02.000 --> 00:56:16.000
+What we find here is these documents, climate change and its impact on biodiversity. But we can look at this partially here, we can instead of just invoking the chain, we can invoke generate queries.
+
+00:56:16.000 --> 00:56:25.000
+Right? So we made another chain here that combined things more.
+
+00:56:25.000 --> 00:56:49.000
+Very. So the query rewriter, which we pulled from the hub, took our query, Impact of Climate Change, written somewhat casually and rewrote it into these four versions, the effects of climate change on biodiversity, economic consequences, social impact. So the user did not use any of these words. They did not say biodiversity, economics, or social.
+
+00:56:49.000 --> 00:57:01.000
+But those are three words that are pretty good and relevant in this context that makes sense to include as we're calculating vectors and getting these semantically similar documents. And so having these rewritten versions is really handy.
+
+00:57:01.000 --> 00:57:09.000
+And then that goes, all these queries get mapped. The map is here because there's multiple of them to the retriever.
+
+00:57:09.000 --> 00:57:20.000
+And so we retrieve for all of them. And then all of that output goes into this, the reciprocal rank function Which, as I very briefly described in the slides.
+
+00:57:20.000 --> 00:57:25.000
+Looks over all the different sets of results. That's why it's a list of lists.
+
+00:57:25.000 --> 00:57:30.000
+And is keeping the fused scores. And that's why if something happens more than once.
+
+00:57:30.000 --> 00:57:39.000
+You know it's already in it already has a previous score so the score just keeps going up. So the more often you see something, the more you bump its score, the better it is.
+
+00:57:39.000 --> 00:57:44.000
+And then we return the re-ranked results combined from all the queries.
+
+00:57:44.000 --> 00:58:01.000
+And that's what we get here. In a full rag example, we would actually use these chunks or really more chunks that are from these documents in the prompt template that we send to the LLM to answer the actual user question.
+
+00:58:01.000 --> 00:58:08.000
+But I leave that as an exercise to the viewer if they wish to add it.
+
+00:58:08.000 --> 00:58:14.000
+All right, that's through all the code. How about that? I'm going to check for questions in this last minute here.
+
+00:58:14.000 --> 00:58:19.000
+Is there anything you want to add as we're closing up here?
+
+00:58:19.000 --> 00:58:23.000
+No, I think… That was awesome. Thanks, Aaron.
+
+00:58:23.000 --> 00:58:24.000
+Sure. Thank you. Yeah.
+
+00:58:24.000 --> 00:58:33.000
+And the next class is on optimizations and evals. So like this was the first class We will have a second class on Wednesday.
+
+00:58:33.000 --> 00:58:47.000
+A lot of questions on parameters and hyper and settings and metrics, well, that class is coming on Wednesday. I think today you should think about implementing rag and adding it to your Slack application.
+
+00:58:47.000 --> 00:58:56.000
+And then on Wednesday, we can talk about how to optimize it. I think the optimization example is unnecessary until you have a running.
+
+00:58:56.000 --> 00:58:58.000
+Example of rag, correct?
+
+00:58:58.000 --> 00:59:15.000
+Don't start being like, I'm going to do fusion super duper whatever like just start with something that has at least functional chunks of documents and retrieval and gets it to an llm right and and then go from there.
+
+00:59:15.000 --> 00:59:16.000
+All right.
+
+00:59:16.000 --> 00:59:25.000
+Right. And since we started, somebody already deployed the open AI API key to a public GitHub. So it's now been disabled.
+
+00:59:25.000 --> 00:59:37.000
+We are going to meet up later today and talk in depth about API key usage and security. Clearly, there's a long way to go there. So we'll fix that.
+
+00:59:37.000 --> 00:59:42.000
+There's a new one that's going to be shared, but please, please, please, please, please do not.
+
+00:59:42.000 --> 01:00:04.000
+Put any keys in anything that touches public anything. We'll give you some strategies for doing that that are very basic. And then we'll talk about some more advanced ones that are more secure than But yeah, we'll fix this. So thanks, everyone.
+
+01:00:04.000 --> 01:00:10.000
+Thanks, everyone. And if we missed questions in the Slack, we'll try to follow up async.
+
+01:00:10.000 --> 01:00:17.000
+I just want to confirm what our goal is now is to play around with this with our chat app and see what we can make up.
+
+01:00:17.000 --> 01:00:18.000
+With this?
+
+01:00:18.000 --> 01:00:24.000
+Yeah, I mean, the idea would be that an avatar would need to retrieve relevant information from the Slack to act like somebody.
+
+01:00:24.000 --> 01:00:33.000
+So yes, start by just trying to add something that could answer questions based on the Slack retrieving chats from the Slack. I would say that would be a good starting point.
+
+01:00:33.000 --> 01:00:49.000
+What would that even look like? Can you just walk it through as a function? I mean, I can barely… I'm like, so thinking through what the function would actually look like, you just give an example.
+
+01:00:49.000 --> 01:00:57.000
+So it's going to depend a little bit how you built your app. And I think maybe giving a full answer to that will be beyond the scope of what we're discussing right now. So we might have to follow up in Slack.
+
+01:00:57.000 --> 01:01:14.000
+But I think the sketch that I would offer is some sort of interface that, well, I mean, let's talk about the tech side, not the interface side. The tech side would be something presumably Your chat app has messages and these messages are stored somewhere.
+
+01:01:14.000 --> 01:01:22.000
+Those are your documents, right? And potentially you don't even have to chuck, as I sort of hinted earlier, if your messages aren't that long, your messages are your chunks.
+
+01:01:22.000 --> 01:01:30.000
+So you would potentially start by retrieving messages calculated embeddings for those messages and storing those in a vector store.
+
+01:01:30.000 --> 01:01:37.000
+And you don't even, you could just do this experimentally in Python in a REPL or a notebook at first if you want.
+
+01:01:37.000 --> 01:01:52.000
+Take those messages. And have something like we showed where a user asks a question and to answer the question, you retrieve relevant messages and you combine those messages with the user question in order to answer the question.
+
+01:01:52.000 --> 01:02:07.000
+And you can start as simple as just ask the chat, like ask the entire chat genius app and maybe not asking a specific person. So instead of an avatar, it's a bot that just knows all about the entire chat genius. And that's an okay starting point.
+
+01:02:07.000 --> 01:02:23.000
+And then you want to get to the point where you do more prompt engineering and you maybe delineate between the messages that are just in the chat genius app versus the messages that are from the user being represented, right? Because those messages are special basically
+
+01:02:23.000 --> 01:02:30.000
+But that's how I would begin to approach it. Does that help?
+
+01:02:30.000 --> 01:02:31.000
+And yeah, the document.
+
+01:02:31.000 --> 01:02:37.000
+Yeah, it's a little more. And Ash actually just said something in there too. I'm just like the simplest possible feature you could imagine. I just, I, get to that and then my and then I'll you know i when i it'll go from there
+
+01:02:37.000 --> 01:02:58.000
+Absolutely. I'm going to start with Avatar. I think this is the simplest possible icon that is still kind of a useful feature is like just basically a rag slack search or a rag chat app search where it's just like, I want to search the chat app and get questions answered.
+
+01:02:58.000 --> 01:03:06.000
+Based on the stuff that's in the chat, right? So that would be the starting point, I think.
+
+01:03:06.000 --> 01:03:12.000
+All right. I do have to hop off. Ash, I don't know if you're going to stay and answer more questions.
+
+01:03:12.000 --> 01:03:13.000
+Yep, I'll stay on for 10 minutes and then I have another meeting. But thanks, Aaron.
+
+01:03:13.000 --> 01:03:16.000
+Or…
+
+01:03:16.000 --> 01:03:20.000
+Yeah, everybody. Hi.
+
+01:03:20.000 --> 01:03:23.000
+What's up, Sebastian? Go ahead.
+
+01:03:23.000 --> 01:03:38.000
+Yes. So I was thinking like, you know, I already have my chat seen in a database And I'm a little bit concerned of You know, how is the process to upload the information so it has you know fresh information about the people that is chatting
+
+01:03:38.000 --> 01:03:53.000
+So how do you imagine this process on, I don't know, like every night every day Because I imagine that every time that I upload the information and I create the new embeddings because it's going to be new documents and new things, it will have some cost.
+
+01:03:53.000 --> 01:04:03.000
+So I'm thinking mostly on regards of how it's the actual way to do this on being you know as frugal as you can be.
+
+01:04:03.000 --> 01:04:08.000
+Yep, you could just do it every seven days. Sunday late night or something.
+
+01:04:08.000 --> 01:04:09.000
+For now. And then as the application scales and gets more users, you can make it daily. You can make it every three days.
+
+01:04:09.000 --> 01:04:14.000
+Okay.
+
+01:04:14.000 --> 01:04:22.000
+The way we do MVP prototyping with RAG applications is we just refresh their vector database Sunday at 2 a.m.
+
+01:04:22.000 --> 01:04:37.000
+Okay. And one last question is regarding so so you know that's in regards of data wise then the other part is the llm which one are we going to use are those credentials that we have on OpenAI also works for using it for the LLM?
+
+01:04:37.000 --> 01:04:42.000
+Yep, your opening ad credentials should work if you want to use any LLM that OpenAI offers.
+
+01:04:42.000 --> 01:04:43.000
+Okay. Okay.
+
+01:04:43.000 --> 01:04:52.000
+I would use the 4.0 mini model. There's no need to use a reasoning model 4.0 completely, save some money, use 4.0 Mini.
+
+01:04:52.000 --> 01:04:58.000
+Okay. And I imagine with the security breach, you're going to send us new keys through the mail or something like that.
+
+01:04:58.000 --> 01:05:07.000
+I already updated the new key on the post for class.
+
+01:05:07.000 --> 01:05:17.000
+Do we know what time we're going to be? Like required to go for the AWS meeting or the meeting API key meeting later today.
+
+01:05:17.000 --> 01:05:24.000
+Oh, the API meeting hasn't been put on the schedule yet, so I don't know the time, but the AWS meeting is on Thursday at 11 ET.
+
+01:05:24.000 --> 01:05:29.000
+8 PT.
+
+01:05:29.000 --> 01:05:30.000
+I think I just want to… Sorry, who was speaking?
+
+01:05:30.000 --> 01:05:47.000
+Well, sir. I was just going to ask my My chat project is kind of big and it'll go back and forth between Looking pretty good and being completely broken when I deploy.
+
+01:05:47.000 --> 01:05:58.000
+And I'm wondering when we're testing this rag function Is there a good strategy to do this somewhere separately and then plug it into the application?
+
+01:05:58.000 --> 01:06:08.000
+Can I get a brief… bit of advice on that?
+
+01:06:08.000 --> 01:06:09.000
+Yeah.
+
+01:06:09.000 --> 01:06:15.000
+Yep. The first thing I would do is you have your messages stored in some database. If you don't then that's scarier. I'm assuming everybody here has their message is stored in some database.
+
+01:06:15.000 --> 01:06:20.000
+I would create some sort of cron job or function that you can manually run through command line.
+
+01:06:20.000 --> 01:06:29.000
+That would take these database messages and vectorize them or embed them And put them in a vector database. Once you have that set up.
+
+01:06:29.000 --> 01:06:41.000
+You have a very nice little thing where you can either open up a notebook or you can, whether it's a Jupyter notebook or just some Python code or JavaScript code. You guys are not limited to Python.
+
+01:06:41.000 --> 01:06:48.000
+You can just start querying this vector database that you've set up to ensure that the retriever is working properly.
+
+01:06:48.000 --> 01:06:53.000
+Once you know that you're actually retrieving things and the code is working for the retriever.
+
+01:06:53.000 --> 01:07:02.000
+Then what I would do is connect the LLM. Don't collect the LLM until you see actual You know, contextual messages coming back.
+
+01:07:02.000 --> 01:07:10.000
+After you have that, like, and then let's say you connect the LLM and all is working well, it's able to talk back I can use context to answer those questions.
+
+01:07:10.000 --> 01:07:14.000
+Then I would go back to your Slack application. I would create a new API route.
+
+01:07:14.000 --> 01:07:22.000
+The API route will be connected to a The same retriever function that we talked about in your sample application.
+
+01:07:22.000 --> 01:07:29.000
+And we would use that API route based on certain commands in your Slack application, whether it's forward slash askai.
+
+01:07:29.000 --> 01:07:35.000
+Forward slash ask Slack, whatever. And I would try to communicate through your Slack application with that vector database.
+
+01:07:35.000 --> 01:07:44.000
+That would be the first step I do. Just get a channel working where I use a command to then actually communicate with the vector database.
+
+01:07:44.000 --> 01:07:45.000
+Once you're there, I think you guys have a really nice setup where you can build things off of.
+
+01:07:45.000 --> 01:07:49.000
+Great.
+
+01:07:49.000 --> 01:07:50.000
+I…
+
+01:07:50.000 --> 01:08:00.000
+Great. That makes a lot of sense. So basically make the functionality and then connect the API to it, make an API out of it and connect the API to it in your app.
+
+01:08:00.000 --> 01:08:01.000
+Yep, everything. Go ahead, sorry.
+
+01:08:01.000 --> 01:08:06.000
+That makes a ton of sense. But… Yeah, well, one clarifying question.
+
+01:08:06.000 --> 01:08:16.000
+You mentioned… setting up the vector database querying the database in the notebook and then connecting the LLM.
+
+01:08:16.000 --> 01:08:28.000
+Running through the steps today The LLM seemed to be You know, tied in with everything from the get What am I missing there?
+
+01:08:28.000 --> 01:08:32.000
+I just meant to connect the LLM for generation. Obviously, you'll need the LLM.
+
+01:08:32.000 --> 01:08:37.000
+Generation.
+
+01:08:37.000 --> 01:08:38.000
+Okay. Okay.
+
+01:08:38.000 --> 01:08:47.000
+You'll need the LLM for embedding. You'll need the LLM for several of the lane chain steps, but I just meant like, don't actually generate an answer with the context until you see that the context coming back is somewhat relevant.
+
+01:08:47.000 --> 01:08:51.000
+Okay, great. Thank you.
+
+01:08:51.000 --> 01:09:01.000
+Taking a step back, I think… Before you guys tackle today's task, which is to add rag to add these, start thinking about these AI features.
+
+01:09:01.000 --> 01:09:11.000
+I want you to sort of put yourself in a strategic product position How would this look for the user? Maybe make a user journey.
+
+01:09:11.000 --> 01:09:23.000
+The user is going to put a command in. Ask a question to the Slack, get an answer the user is going to then talk to a persona. What is the user doing to then actually use the AI feature.
+
+01:09:23.000 --> 01:09:35.000
+Do not go in blind and just start implementing RAG. I really think it's important because everyone's Slack applications are in different levels. They're tackling different areas.
+
+01:09:35.000 --> 01:09:39.000
+People have focused on different areas of Slack for their implementation.
+
+01:09:39.000 --> 01:09:51.000
+Understand how is this AI feature going to complement what I've built already. Don't pick an AI feature that is going to make you pilled more stuff just so it works properly.
+
+01:09:51.000 --> 01:09:58.000
+I really do think that If you think through the user journey, if you understand the approach you're going to be taking.
+
+01:09:58.000 --> 01:10:03.000
+It's going to be powerful.
+
+01:10:03.000 --> 01:10:09.000
+For the MVP tomorrow, I just want to see that you actually, you know, the pipeline I just talked about.
+
+01:10:09.000 --> 01:10:14.000
+The simple Ask Slack pipeline. The API route and everything. Me and Benji just talked through.
+
+01:10:14.000 --> 01:10:21.000
+I would love to see that. At least that. If you guys are able to do that, I think that's a really big step in terms of MVP.
+
+01:10:21.000 --> 01:10:27.000
+And then once we have that pipeline working, the API route is working, it's actually retrieving things.
+
+01:10:27.000 --> 01:10:30.000
+Then we can talk about how to make it more complex on Wednesday.
+
+01:10:30.000 --> 01:10:36.000
+Could anybody type out what that process was? I was like trying to keep up with it.
+
+01:10:36.000 --> 01:10:40.000
+Following it but not following it. Um if Oh, you did? Awesome. Thanks, man.
+
+01:10:40.000 --> 01:10:47.000
+Post it in the Slack thread. I will. Yeah.
+
+01:10:47.000 --> 01:10:54.000
+Yeah, so… It's just breaking down the task, right? So if you were to look at all the components.
+
+01:10:54.000 --> 01:11:00.000
+The first step is the vector database. So get some fake data in a vector database, upload that data.
+
+01:11:00.000 --> 01:11:04.000
+And make sure there's some messages in the vector database for you guys to actually query.
+
+01:11:04.000 --> 01:11:09.000
+Then let's put the summary in the discord and the Slack. That'd be great.
+
+01:11:09.000 --> 01:11:14.000
+Not just the Discord. The only other thing I… Okay, thank you.
+
+01:11:14.000 --> 01:11:20.000
+I put it in the Slack, not the discord someone else can put it in the Discord.
+
+01:11:20.000 --> 01:11:29.000
+And then the other thing you want to consider is like, okay, now I have this vector database. I have this code from Langchain to query that database Let me just try to query something.
+
+01:11:29.000 --> 01:11:43.000
+So get it just printing to the console understand what your career is, see what's coming in the terminal Once you have that running, then you can sort think about, okay, how do I connect this to an LLM? How do I put a prompt in it?
+
+01:11:43.000 --> 01:11:52.000
+So it understands what this context is actually doing. And then you can think about connecting into your Slack application. But everything should be through an API route.
+
+01:11:52.000 --> 01:12:00.000
+That would be my suggestion. Use an API route to sort of abstract away a lot of that functionality.
+
+01:12:00.000 --> 01:12:10.000
+You could do messages or documents. I'm okay with it either.
+
+01:12:10.000 --> 01:12:17.000
+Yeah, so if the messages are not like helpful enough. You can synthetically generate your messages using AI.
+
+01:12:17.000 --> 01:12:24.000
+Or you can use documents as a placeholder because you don't have enough messages.
+
+01:12:24.000 --> 01:12:27.000
+This is everything is in the same project. Don't start a new project.
+
+01:12:27.000 --> 01:12:36.000
+This should be building on top of your Slack foundation. Not rebuilding anything.
+
+01:12:36.000 --> 01:12:38.000
+Okay. What's up, man?
+
+01:12:38.000 --> 01:12:52.000
+One last question real quick, Ash. So the vector database essentially is just we're giving it created at username and the content of the message.
+
+01:12:52.000 --> 01:12:53.000
+The vectorizer. Okay, just making sure that that's
+
+01:12:53.000 --> 01:12:59.000
+And the vectorized version. But yeah, that's correct. I think there's more optimal ways to do it, but let's not get into optimizations until Wednesday.
+
+01:12:59.000 --> 01:13:00.000
+Let's make it work.
+
+01:13:00.000 --> 01:13:09.000
+I rather people get the MVP working and then we can think about like, you can save so many parameters, right? You can think You can save that this was in a thread. So you can save the thread ID, for example.
+
+01:13:09.000 --> 01:13:10.000
+Okay.
+
+01:13:10.000 --> 01:13:19.000
+You can save the context. You can save the sentiment of the message. But again, we're not going to get into that right now. I would start off with something simple and just get the ball rolling.
+
+01:13:19.000 --> 01:13:21.000
+Awesome. All right. Thank you, Ash.
+
+01:13:21.000 --> 01:13:37.000
+Yeah, of course. Okay. I think Austin's going to put another meeting on the docket for keys but keys I do want to say that keys are very important to manage correctly.
+
+01:13:37.000 --> 01:13:53.000
+I have heard stories of junior engineers exposing keys and Not having a job eventually. So I think it's very important to understand that Obviously, this is a learning environment, so I'm not saying like you guys are in trouble or anything.
+
+01:13:53.000 --> 01:14:02.000
+Don't get me wrong. But at the same time, let's get be more mindful You can get a gitignore file by just googling .gitignore with the language you want.
+
+01:14:02.000 --> 01:14:07.000
+And it will pretty much generate a really nice file for you. You can also find them on GitHub.
+
+01:14:07.000 --> 01:14:12.000
+Everything you do should be local, right? You should only send it up to GitHub.
+
+01:14:12.000 --> 01:14:18.000
+You should only send up the files that are relevant to your application code up to GitHub, right?
+
+01:14:18.000 --> 01:14:26.000
+So there's no need to send in your .env file. You need to make sure that you're not hard coding any values into the files that you're using.
+
+01:14:26.000 --> 01:14:32.000
+When you do use the git add command, you don't use git add all or git add dot.
+
+01:14:32.000 --> 01:14:35.000
+You want to use git status. You want to see all the files that are updated.
+
+01:14:35.000 --> 01:14:38.000
+So we're going to be walking through all of this later today.
+
+01:14:38.000 --> 01:14:46.000
+But I just want to restate the importance of managing your environmental variables.
+
+01:14:46.000 --> 01:14:50.000
+Okay. Thanks, guys. I'll see you soon. Bye.
+
+01:14:50.000 --> 01:14:54.000
+Sorry, actually, I just had a real quick question about that before I did.
+
+01:14:54.000 --> 01:15:02.000
+For AWS, there's the AWS key store, and then you can also do their Docker managed version of that.
+
+01:15:02.000 --> 01:15:06.000
+It looks like our IAM users still don't have access to that though.
+
+01:15:06.000 --> 01:15:11.000
+And I was wondering if that's something we can get you guys to take a look at.
+
+01:15:11.000 --> 01:15:15.000
+Yes, I will make sure by Thursday that's resolved.
+
+01:15:15.000 --> 01:15:19.000
+Excellent. Cool. Thanks.
+
+01:15:19.000 --> 01:15:23.000
+Also, there's a bunch of free, so people who are not using AWS, sorry, Kellum.
+
+01:15:23.000 --> 01:15:34.000
+If you're not using AWS, based on his point, obviously AWS has a a software to handle this There's also open source key handling softwares that you guys can use.
+
+01:15:34.000 --> 01:15:41.000
+So feel free to Google and try that out. Okay. See you guys. Bye.
+

@@ -1,0 +1,2291 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:19.000
+Um like i don't really know what patterns or best practices are And as a result, when I'm going down through one I don't know when the cursor deviates from that path, right? So now instead of trying to unpack or debug one design route that I thought I was going down inadvertently, I'm now
+
+00:00:19.000 --> 00:00:35.000
+Like possibly debugging two or three different configuration changes that cursors introduced in the system. I'm constantly changing my context window. I'm trying to document problems that I solve in a brain lift and i have it apply learning lessons to it but
+
+00:00:35.000 --> 00:00:46.000
+I've collectively spent hours, for example, on like super base config and rls right which and it's like one of those things where it's like groundhog Day.
+
+00:00:46.000 --> 00:01:01.000
+You fix it. You think you got it good you tell you tell cursor, hey, enforce cursor enforce you know this working implementation and then boom, all of a sudden it breaks Because I'm not familiar with the tech. Now I'm i'm in tech.
+
+00:01:01.000 --> 00:01:06.000
+You know the 10th level of hell. Which is RLS superbase issues.
+
+00:01:06.000 --> 00:01:07.000
+Yeah. No, no.
+
+00:01:07.000 --> 00:01:11.000
+It's kind of a long question. I'm sorry if I Random.
+
+00:01:11.000 --> 00:01:17.000
+I think a couple of things. First and foremost.
+
+00:01:17.000 --> 00:01:23.000
+Make sure you are checking in a version of the working app into GitHub.
+
+00:01:23.000 --> 00:01:28.000
+So that if you do need to go backwards, you can.
+
+00:01:28.000 --> 00:01:29.000
+Yeah, definitely.
+
+00:01:29.000 --> 00:01:52.000
+That's the first step. The second step is when you give the cursor. Can you like describe one of the prompts you give? Give me one of the prompts.
+
+00:01:52.000 --> 00:01:53.000
+Okay.
+
+00:01:53.000 --> 00:01:59.000
+Oh, so like if I open up a new context window, I'll typically cite my cursor file. I'll ask it, I'll cite SRC and then um to evaluate where it's at in its current state, right? And then I have an overall goals checklist, right? And I ask you to give it progress and then it'll start working on a feature, right? And then when I start running into a common error pattern.
+
+00:01:59.000 --> 00:02:06.000
+Where I fix it, I apply a fix. The error is still there. I apply another fix that it suggests the error is there.
+
+00:02:06.000 --> 00:02:21.000
+Then what I'll do is I'll typically cite, I've uploaded these super base documentation into my cursor. So then I'll cite that have it apply, look for best practices do the documentation and then typically it won't fix it. And then I'll have to go to web
+
+00:02:21.000 --> 00:02:22.000
+Yeah.
+
+00:02:22.000 --> 00:02:26.000
+And then it won't sit. And then I'm just like, holy crap i'm i'm going and take a holistic view of this and then debug it.
+
+00:02:26.000 --> 00:02:36.000
+So… So if I'm understanding correctly, you are putting in the entire goals and asking it to base it off that.
+
+00:02:36.000 --> 00:02:37.000
+Is that correct?
+
+00:02:37.000 --> 00:03:00.000
+Well, that's if I'm opening up the context window at first, right? Because typically I want to get an evaluation of where my app is currently with a new context window. And then from there, it'll tell me what's partially implemented, what has basic fundamentals. And then I'll ask it, okay, foundationally, what is the next best feature in your opinion.
+
+00:03:00.000 --> 00:03:01.000
+Got it, got it. I think you're leaving too much decision making up the cursor.
+
+00:03:01.000 --> 00:03:08.000
+That I can build upon that will support extendability. Right. And then it'll typically go into that pattern But… Okay.
+
+00:03:08.000 --> 00:03:10.000
+So what I would do is I would take a step back.
+
+00:03:10.000 --> 00:03:15.000
+Go back to a checkpoint or a git commit that you know is working.
+
+00:03:15.000 --> 00:03:16.000
+You need to have an understanding of your app that's better than cursor.
+
+00:03:16.000 --> 00:03:21.000
+Okay.
+
+00:03:21.000 --> 00:03:27.000
+I think you're leaving too much of like, hey, what's the next feature that I don't think you should ask cursor that.
+
+00:03:27.000 --> 00:03:37.000
+I think you should use some sort of document previously Before you even start coding to know the next steps you're going to be taking, whether that's through ChatGPT or Claude.
+
+00:03:37.000 --> 00:03:42.000
+And then you should divide the actions by file. So for example, let's say you're gold
+
+00:03:42.000 --> 00:03:46.000
+Say that again. Divide the actions by file. Yeah.
+
+00:03:46.000 --> 00:03:56.000
+Or, you know, so it's a it's a, but the prompts you're giving cursor is within the user.jsx file, do X, Y, and Z.
+
+00:03:56.000 --> 00:03:58.000
+They need to be that specific.
+
+00:03:58.000 --> 00:04:02.000
+I see. Okay. That's very helpful.
+
+00:04:02.000 --> 00:04:12.000
+So AI is really good. So think of ai as really good at syntax, really bad at decisions.
+
+00:04:12.000 --> 00:04:13.000
+So you need to make the decisions, but let AI handle the syntax.
+
+00:04:13.000 --> 00:04:16.000
+Okay.
+
+00:04:16.000 --> 00:04:17.000
+So for example, what I would do is once you have the initial setup done.
+
+00:04:17.000 --> 00:04:20.000
+Okay.
+
+00:04:20.000 --> 00:04:26.000
+And you have an outline in a notebook and a chat GPT window, in a perplexity window, in a cloud window.
+
+00:04:26.000 --> 00:04:33.000
+Of what steps that need to be taken and you understand your app as a whole Think of yourself as the director.
+
+00:04:33.000 --> 00:04:43.000
+Direct cursor to take every narrow step. That's how I use it. For example, I will go into the dashboard and say, hey, the dashboard is missing a sidebar.
+
+00:04:43.000 --> 00:04:54.000
+Work inside the common directory in the components directory and add a sidebar component that can be reusable across the application.
+
+00:04:54.000 --> 00:04:55.000
+Basically.
+
+00:04:55.000 --> 00:05:05.000
+That's one product. I check that that's done properly. Then I will say, take the sidebar component you've just created and add it to the dashboard layout that you already have.
+
+00:05:05.000 --> 00:05:06.000
+Yeah. Okay.
+
+00:05:06.000 --> 00:05:12.000
+So you have to be very specific. What is happening? So that would be my argument to you is I believe you're leaving too much decision making up to the AI.
+
+00:05:12.000 --> 00:05:15.000
+Yeah. Yep.
+
+00:05:15.000 --> 00:05:19.000
+And that's what AI has sort of lost track.
+
+00:05:19.000 --> 00:05:22.000
+Okay. Oh, sorry. Go ahead.
+
+00:05:22.000 --> 00:05:29.000
+The second thing I'll say is to ensure that
+
+00:05:29.000 --> 00:05:43.000
+You can have better output. You need to use few shot prompting So for example, if you go on docs As you're doing, you're sort of bringing the super base stocks you were saying into the entire cursor window. Sure, that's good.
+
+00:05:43.000 --> 00:05:50.000
+What I would also do is i would also do The code below represents XYZ component.
+
+00:05:50.000 --> 00:05:58.000
+Use the code and reference its format and structure to remake another component that does this instead.
+
+00:05:58.000 --> 00:06:04.000
+You know what I'm saying?
+
+00:06:04.000 --> 00:06:05.000
+Yep.
+
+00:06:05.000 --> 00:06:12.000
+I love that. Yeah. So you're you're basically you're basically giving it like a sample template and you want to replicate it for another function that has obvious similarities but obvious differences as well.
+
+00:06:12.000 --> 00:06:13.000
+Is that right?
+
+00:06:13.000 --> 00:06:19.000
+Exactly. Exactly. So you need to give it a format and a pattern for it to follow. This is really good for routing. This is really good for React components.
+
+00:06:19.000 --> 00:06:30.000
+This is really good for like reusable code. Another tip I will give you is Superbase has been set up on numerous public Git repositories already.
+
+00:06:30.000 --> 00:06:31.000
+So you can pretty much just search super base react starter and you get all the connecting files.
+
+00:06:31.000 --> 00:06:35.000
+Yes.
+
+00:06:35.000 --> 00:06:36.000
+Copy and paste all that in and have cursor focus in on the syntax level.
+
+00:06:36.000 --> 00:06:40.000
+Yeah.
+
+00:06:40.000 --> 00:06:45.000
+So I would say my tips are across the board, but my biggest tip is You need to add examples to your prompts. Your prompts need to be more narrow and specific.
+
+00:06:45.000 --> 00:06:49.000
+Yeah.
+
+00:06:49.000 --> 00:06:50.000
+That makes sense. Yeah.
+
+00:06:50.000 --> 00:07:04.000
+And assume that AI is always going to make the wrong decision And you need to direct it more.
+
+00:07:04.000 --> 00:07:05.000
+Yeah.
+
+00:07:05.000 --> 00:07:09.000
+I love it. Thank you. Because I know that there are they say that there's like six six components of a good prompt, right? And you just, you know, like example is one of them, right? And I think I've just completely forgotten it because I'm doing coding as a like prompt coding
+
+00:07:09.000 --> 00:07:11.000
+Yeah.
+
+00:07:11.000 --> 00:07:24.000
+But essentially, it prompts the same. And I think what you just provided will help me also with a lot of my configuration overwrite issues, right?
+
+00:07:24.000 --> 00:07:25.000
+Yeah. Yep. Yep.
+
+00:07:25.000 --> 00:07:39.000
+Cursor for me will like I'll have one working configuration implementation and then it'll generate a new API file. The route is different depending API to it. It's using a different getter method for JWT or it's using some other implementation and it's
+
+00:07:39.000 --> 00:07:40.000
+Oh, yeah. Thanks, guys.
+
+00:07:40.000 --> 00:07:48.000
+Driving me crazy. But I really appreciate it. And someone actually commented some good Campbell and Al Zeldin thank you for Yeah, I'm like, I was out and just provided a really good one because I think I've been a little bit too verbose in my cursor rules.
+
+00:07:48.000 --> 00:07:49.000
+Okay.
+
+00:07:49.000 --> 00:07:53.000
+And so that I think also it will help. But no, very helpful. Thank you so much. Because I know like the only person going through this stuff so hopefully this
+
+00:07:53.000 --> 00:08:01.000
+No, anytime. Oh, no, no, no. So I would assume everybody's going through it. I think you have to get to the other side.
+
+00:08:01.000 --> 00:08:03.000
+Yeah.
+
+00:08:03.000 --> 00:08:09.000
+The other thing I will say is over time you're going to figure out how to make cursor work better.
+
+00:08:09.000 --> 00:08:10.000
+Yeah.
+
+00:08:10.000 --> 00:08:17.000
+So I would just keep pushing. But again, make sure you're using git to get versions of your app that are working so you can go backwards if you need to.
+
+00:08:17.000 --> 00:08:19.000
+There's also the checkpoints feature, so you can go backwards if a cursor prompt properly.
+
+00:08:19.000 --> 00:08:23.000
+Yeah. Tremendous. Thank you.
+
+00:08:23.000 --> 00:08:26.000
+Be very narrow. Be very narrow. Like so narrow. It's almost like you're giving cooking directions.
+
+00:08:26.000 --> 00:08:29.000
+Yeah. Yeah.
+
+00:08:29.000 --> 00:08:36.000
+Pick up this spice, put it in here. It's almost like take the function in this file use that function to do this.
+
+00:08:36.000 --> 00:08:41.000
+Update this function to do this, only edit this file. See, like, it needs to be that clear. And I think it'll work.
+
+00:08:41.000 --> 00:08:51.000
+Yeah. As an idea just coming up with this, how cool it would be if someone created like a cursor extension that basically had like, hey, this is the formula, the six components.
+
+00:08:51.000 --> 00:08:52.000
+Yeah.
+
+00:08:52.000 --> 00:09:00.000
+Of a good prompt. So no matter what you type into cursor for agent or whatever, it'll do like a type check and be like, hey, you're actually missing a sample.
+
+00:09:00.000 --> 00:09:01.000
+Example or such a cool extension. I don't know how possible.
+
+00:09:01.000 --> 00:09:13.000
+Yeah. I mean, that… Yeah. That'd be cool because they would be the extension of an extension. Yeah.
+
+00:09:13.000 --> 00:09:14.000
+That would be crazy.
+
+00:09:14.000 --> 00:09:25.000
+Yeah. I actually do it in a closer. I actually try to do it as an experiment before Gauntlet. I try to make a browser extension that like when you're on chat GPT, you can type in as distribution for a potential app I was going to launch. But man, it would be so much more applicable
+
+00:09:25.000 --> 00:09:27.000
+Yeah.
+
+00:09:27.000 --> 00:09:33.000
+To all of us, if we just built like someone just built the extension and a cursor, because I think it would accelerate us so much more.
+
+00:09:33.000 --> 00:09:43.000
+Yeah, it could be just like a native Mac application But yeah, I mean, I would try that out, see what happens and don't, yeah, someone made a really good comment.
+
+00:09:43.000 --> 00:09:46.000
+Don't be afraid to go slower. It's okay.
+
+00:09:46.000 --> 00:09:48.000
+Yeah, tried.
+
+00:09:48.000 --> 00:09:55.000
+Because if you get stuck in one of these loops, you're almost wasting more time. So if you're going slowly but getting things done, that's better.
+
+00:09:55.000 --> 00:10:02.000
+Yeah, someone just suggested something really cool. Cameron was like, I wonder if you could set up your cursor rules to reject bad prompts.
+
+00:10:02.000 --> 00:10:03.000
+I don't know how like i don't know how how work yeah yeah
+
+00:10:03.000 --> 00:10:13.000
+I wouldn't trust that. I wouldn't trust that. But yeah, feel free to try it out on a different project, but I wouldn't trust it if you're working on this.
+
+00:10:13.000 --> 00:10:16.000
+I see Zach. I see Zach's shaking his head. He's like, nope. He's like, don't do it.
+
+00:10:16.000 --> 00:10:17.000
+Don't do that. Um.
+
+00:10:17.000 --> 00:10:22.000
+He's boy. You're going to get cooked.
+
+00:10:22.000 --> 00:10:23.000
+But I think try that out, Timothy, and then let me know.
+
+00:10:23.000 --> 00:10:25.000
+Cool. Absolutely.
+
+00:10:25.000 --> 00:10:31.000
+The other thing I'll say is you guys really have to start thinking more like product managers than engineers.
+
+00:10:31.000 --> 00:10:39.000
+You guys really have to figure out like What is the end goal of the user and how do you get there? So I think that's also what we're trying to teach.
+
+00:10:39.000 --> 00:10:47.000
+Really focus in on like What is this component on this page doing? What does it allow the user to do?
+
+00:10:47.000 --> 00:10:53.000
+If you understand that really well, I think it's going to be a really easy. It's going to be much easier for you to sort of prompt cursor.
+
+00:10:53.000 --> 00:11:03.000
+Okay, let me start the class officially. So the goal of this class is going to be our project two check-in. These check-ins in Austin will become in-person.
+
+00:11:03.000 --> 00:11:09.000
+And there'll be more people involved and it'll be essentially a nice way for you guys to get personalized help.
+
+00:11:09.000 --> 00:11:16.000
+I'm not saying office hours are going away, but sometimes in office hours, we like to cover topics. So tomorrow, for example, we're going to be covering Git.
+
+00:11:16.000 --> 00:11:21.000
+And version control. So we have less time to take questions.
+
+00:11:21.000 --> 00:11:33.000
+So these project check-ins and even the time we've allotted in the morning for the study time and all that stuff that, you know, all that stuff is going to become a nice way for you guys to ensure that we're eliminating blockers.
+
+00:11:33.000 --> 00:11:41.000
+I just wanted to start off with some logistical details. Like I start off every meeting and then we'll get into the nitty gritty.
+
+00:11:41.000 --> 00:11:52.000
+First and foremost, we have our office hours tomorrow on Git and version control that's going to be led be led by Aaron. Aaron's going to walk through what he would expect.
+
+00:11:52.000 --> 00:11:59.000
+A sort of staff level engineer to know regarding git and and version control. So go through some of those commands.
+
+00:11:59.000 --> 00:12:05.000
+He's also going to walk through some cursor workflow to sort of go backwards using your Git commits.
+
+00:12:05.000 --> 00:12:09.000
+To ensure that you guys have some saved code that you can reuse just in case AI goes haywire.
+
+00:12:09.000 --> 00:12:17.000
+That's the plan for office hours tomorrow. We have a dinner tonight, a double header this week with the founder of every kieran.
+
+00:12:17.000 --> 00:12:22.000
+And so that's going to be awesome dinner. The fireside chats I thought have been great so far.
+
+00:12:22.000 --> 00:12:26.000
+So just so we're trying to get you, what is the market like?
+
+00:12:26.000 --> 00:12:31.000
+What is the lay of the land, right? Because we're sort of building frontier cutting edge tech.
+
+00:12:31.000 --> 00:12:39.000
+Everything is changing every other day, right? R1 just launched, for example, right? So like.
+
+00:12:39.000 --> 00:12:43.000
+All of a sudden we have now a whole new LLM to consider.
+
+00:12:43.000 --> 00:12:51.000
+So the same way if we get these founders in front of you guys, hopefully it sparks some ideas. It sparks some intuition about where the market is going.
+
+00:12:51.000 --> 00:12:57.000
+After the dinner tonight and the office hours tomorrow morning, we have a logistics meeting with our logistics team.
+
+00:12:57.000 --> 00:13:00.000
+There's going to be three individuals who are going to be leading that meeting.
+
+00:13:00.000 --> 00:13:06.000
+I've shared previously a Google form to sort of input any questions you have.
+
+00:13:06.000 --> 00:13:16.000
+And feel free to input one question with each submission. So if you have multiple questions, just submit And then resubmit. Don't put questions separated by commas, please.
+
+00:13:16.000 --> 00:13:21.000
+And then the goal would be that in the presentation tomorrow, they're going to address the most asked questions.
+
+00:13:21.000 --> 00:13:28.000
+And then they will address individual questions on an asynchronous basis.
+
+00:13:28.000 --> 00:13:39.000
+All right. And then after that We are headed straight towards submission of your Zendesk project rebuild.
+
+00:13:39.000 --> 00:13:54.000
+Okay. Any questions on just the schedule, what's expected in terms of those meetings?
+
+00:13:54.000 --> 00:14:04.000
+I've already requested the number of deployments on AWS for Amplify to increase with the Trilogy team. I expected by Friday morning.
+
+00:14:04.000 --> 00:14:10.000
+So everyone should be able to fix those issues. If you are having issues deploying.
+
+00:14:10.000 --> 00:14:15.000
+Feel free to use Netlify. Vercel, render, all of these free options.
+
+00:14:15.000 --> 00:14:22.000
+Let you deploy both. Well, Vercel, I don't know if Vercel lets you deploy backend, Zach, maybe I'm wrong there.
+
+00:14:22.000 --> 00:14:31.000
+But Netlify and Render definitely let you do both. And so you guys should be able to get something out the door fairly quickly.
+
+00:14:31.000 --> 00:14:37.000
+I guess I do also have a question. One thing that you've mentioned before, and I'm still kind of unclear about.
+
+00:14:37.000 --> 00:14:38.000
+Yeah.
+
+00:14:38.000 --> 00:14:54.000
+Because I know a few days ago you mentioned expecting to take like only like 100 people There's currently like 150. What? And you said like you've been a bit wishy-washy, like, oh, submit something. But then you say, oh, and then do all you ask.
+
+00:14:54.000 --> 00:15:04.000
+All that we're asking of you, but like the project guidelines are Not even suggestions, just like, hey, here's everything you could ever do.
+
+00:15:04.000 --> 00:15:15.000
+Yep.
+
+00:15:15.000 --> 00:15:16.000
+Yep.
+
+00:15:16.000 --> 00:15:23.000
+Have fun. And then just like no update. I haven't even gotten a grading for my mvp It wasn't entirely working. It kind of was now, but I broke it working on it as you do. So I'm just, I have, if you're saying 100, that means a third of people are going to get cut. And that I have no idea.
+
+00:15:23.000 --> 00:15:26.000
+What like that even is.
+
+00:15:26.000 --> 00:15:31.000
+So first off. There's not 150, there's 130 ish left.
+
+00:15:31.000 --> 00:15:41.000
+And the second thing I'll say is like. The people we're reaching out to are the individuals that are submitting really poor MVPs and really poor applications or not submitting anything at all.
+
+00:15:41.000 --> 00:15:44.000
+So not getting a reach out from us It's actually a good thing.
+
+00:15:44.000 --> 00:15:45.000
+Okay, cool.
+
+00:15:45.000 --> 00:15:52.000
+Start with that. So everybody that Austin is reaching out to, and I'll give you the entire process of what's happening.
+
+00:15:52.000 --> 00:15:59.000
+Me and Austin usually divide up what we're supposed to look at. And so since this was submitted yesterday, it usually takes us a number of hours to get through everything.
+
+00:15:59.000 --> 00:16:03.000
+And then we use the AI preliminary check just to make sure that everything's okay.
+
+00:16:03.000 --> 00:16:07.000
+Or like to tag things that are specifically things that we should look into.
+
+00:16:07.000 --> 00:16:08.000
+But everybody who submits something that basically has zero features.
+
+00:16:08.000 --> 00:16:11.000
+Mm-hmm.
+
+00:16:11.000 --> 00:16:15.000
+Or close to zero features gets a message from Austin saying, hey.
+
+00:16:15.000 --> 00:16:22.000
+I just saw what you built. It's not up to par of what's required. You have XYZ number of days.
+
+00:16:22.000 --> 00:16:26.000
+To fix that. If you don't fix that and check in with me every single day.
+
+00:16:26.000 --> 00:16:36.000
+And unfortunately, you know, we'll have to remove you from the program. What tends to happen so far, Marcus, is that most people don't even respond to Austin when he does that.
+
+00:16:36.000 --> 00:16:42.000
+And so when Austin doesn't get a response for three to five days, he then processes the withdrawal.
+
+00:16:42.000 --> 00:16:48.000
+In this remote portion of the program, we're not trying to intentionally cut people.
+
+00:16:48.000 --> 00:16:59.000
+The goal is who is putting in time and who is actually making submissions So we're not being let's say we're not being extensive with the cutting requirements because we don't need to be.
+
+00:16:59.000 --> 00:17:09.000
+Most people are bowing out themselves and most people are quitting because they feel either imposter syndrome for continuing Or they feel that this is just not worth their time.
+
+00:17:09.000 --> 00:17:19.000
+To each their own. I don't mind. I mean… I don't mind here or there. And the hundred number is a guess that I made. We're not trying to get to 100.
+
+00:17:19.000 --> 00:17:23.000
+So if all 130 of you submit something and it's really good.
+
+00:17:23.000 --> 00:17:32.000
+We'll take 130 of you. I just think that at the rate that things are going, we should be around the number 100. So that was a guess I made, not a goal.
+
+00:17:32.000 --> 00:17:37.000
+And as we get closer to, so as the projects are going along.
+
+00:17:37.000 --> 00:17:48.000
+What we're doing is we're increasing the requirements. The goal right now is to add as many pieces of functionality based on the ones that are listed.
+
+00:17:48.000 --> 00:17:55.000
+But the reason we've listed so many is because people were so lost in the Slack application. And maybe that wasn't you.
+
+00:17:55.000 --> 00:18:01.000
+But this is just based on questions I got. And so we listed all the possibilities of what you could work on.
+
+00:18:01.000 --> 00:18:08.000
+And the goal would be to add So we're leaving it up to you if you're choosing one type of user, if you're choosing one type of workflow.
+
+00:18:08.000 --> 00:18:16.000
+Which of these functions would then correlate with that? But if you feel that that's being too broad, I understand that's good feedback.
+
+00:18:16.000 --> 00:18:23.000
+I think what I'll do for the next one is just say these are the ones I'm expecting. These are the users I expect, and there should be four to five of them.
+
+00:18:23.000 --> 00:18:28.000
+But I'm sure some people would be like. You're constricting me too much.
+
+00:18:28.000 --> 00:18:29.000
+So it's just something we're trying to do and figure out properly. But that's the process we're doing for grading.
+
+00:18:29.000 --> 00:18:35.000
+Okay.
+
+00:18:35.000 --> 00:18:39.000
+And it does take us a long time to grade. That is on us.
+
+00:18:39.000 --> 00:18:43.000
+But if you haven't gotten a message from us, that's almost a good thing.
+
+00:18:43.000 --> 00:18:46.000
+Oh, wow. Sounds good. Thank you.
+
+00:18:46.000 --> 00:18:51.000
+Yeah, anytime. Sebastian, go ahead.
+
+00:18:51.000 --> 00:19:00.000
+Yeah, regardless of what you were saying for me happened the contrary. I was very imaginative on what I can do with the Zendesk.
+
+00:19:00.000 --> 00:19:18.000
+And I was creating like a whole environment where you can create an organization and then the organization can create a lot of things. And I was getting like a mess you know so it's good to have some outline I'm just sharing my case that I was very i created
+
+00:19:18.000 --> 00:19:25.000
+Too much features that i can grasp. So I have to go back and, you know, like reduce it a little bit more
+
+00:19:25.000 --> 00:19:34.000
+Sure. I mean, if you guys, what I'll do is I'll make minimum requirements going forward and odd minimum requirements for AI.
+
+00:19:34.000 --> 00:19:36.000
+And if you don't meet those minimum requirements, you'll be out.
+
+00:19:36.000 --> 00:19:41.000
+And otherwise, if you've already met those minimum requirements, you can continue adding extra features.
+
+00:19:41.000 --> 00:19:50.000
+Does that sound good to everybody?
+
+00:19:50.000 --> 00:19:53.000
+It is a little harsher.
+
+00:19:53.000 --> 00:19:55.000
+Out? What does out mean?
+
+00:19:55.000 --> 00:20:00.000
+Out just meaning you haven't passed. Sorry, Roger.
+
+00:20:00.000 --> 00:20:06.000
+You haven't served We haven't survived the gauntlet.
+
+00:20:06.000 --> 00:20:10.000
+Okay, so I have, oh man, people are going the other way.
+
+00:20:10.000 --> 00:20:16.000
+Okay, we're going to figure this out. We're going to figure out this whole flexible versus restricted approach.
+
+00:20:16.000 --> 00:20:26.000
+But at least for this one. I'm looking for at least three to four of the functions I've listed. So any three to four of the functions I'd be pretty happy with.
+
+00:20:26.000 --> 00:20:33.000
+I think that is a good, I think a list and a number is good. Last week, there was like specific stuff that was required and specific stuff that was bonus.
+
+00:20:33.000 --> 00:20:34.000
+Yeah.
+
+00:20:34.000 --> 00:20:47.000
+I think there's a certain type of… I think it's easier to do more when it's just like a list of features and you're like, oh, I had like four out of five rather than like, oh, I did like the A, B, and C that they listed. So I'm like done for the week.
+
+00:20:47.000 --> 00:20:52.000
+It's like a different psychological thing.
+
+00:20:52.000 --> 00:20:53.000
+Yeah.
+
+00:20:53.000 --> 00:21:05.000
+Yeah, that's true. I don't want any Then again, we're now tracking everything on WorkSmart. So I do see people working, but like I do agree, AJ that I don't want people to like not challenge themselves. So what minimum requirements do, it essentially halts people from pushing harder.
+
+00:21:05.000 --> 00:21:16.000
+So for now, at least for the Zendesk project, I expect Three… working three to five working functions.
+
+00:21:16.000 --> 00:21:22.000
+Off the list as a minimum requirement. Any three to five.
+
+00:21:22.000 --> 00:21:27.000
+And that would really be nice if The ones that you're picking make a cohesive MVP.
+
+00:21:27.000 --> 00:21:31.000
+And I think that's the language I'll update the document with as well.
+
+00:21:31.000 --> 00:21:35.000
+Zach, what do you think? Does that make sense?
+
+00:21:35.000 --> 00:21:44.000
+Yeah, I think it does. And I think it brings and maintains the personal accountability that you are needed as an engineer.
+
+00:21:44.000 --> 00:21:47.000
+Because when you work on a project, they're not going to say.
+
+00:21:47.000 --> 00:22:02.000
+These are our minimum. They're going to say we want this world and you're going to have to figure out what's the good three to five, eight features that make that world as close to reality as possible. So I think, yeah, I think that's a better way to go at it.
+
+00:22:02.000 --> 00:22:11.000
+And it does leave a more open-ended striving point.
+
+00:22:11.000 --> 00:22:16.000
+Don't implement all the workspace features and no tickets.
+
+00:22:16.000 --> 00:22:24.000
+Oh, yeah. If you're implementing random features across the board, I will notice. So don't try to game the system.
+
+00:22:24.000 --> 00:22:31.000
+Some of you, I'm not saying anybody in this room specifically, but students in this program have previously tried to game the system. And I was like, what?
+
+00:22:31.000 --> 00:22:37.000
+But let me just add the language and then John, you can go with your question.
+
+00:22:37.000 --> 00:22:48.000
+As you're adding that, I think it's important because three really good cohesive beyond features could be better than five or six disjointed.
+
+00:22:48.000 --> 00:23:02.000
+If you're doing Zendesk and you've integrated video capture so that while you're working with a person they can screen record their steps perhaps right that's a really great feature that's quite tough.
+
+00:23:02.000 --> 00:23:19.000
+And so those are, you know, I think the quality of feature is part of it too think it through And I highly doubt there will be any negative consequences for really great design and really great features. Even if they're not perfect
+
+00:23:19.000 --> 00:23:32.000
+You know thinking beyond what you're given is a strength.
+
+00:23:32.000 --> 00:23:33.000
+Yes.
+
+00:23:33.000 --> 00:23:41.000
+Yeah, so I've had some problems with some problems react and testing and such. For instance, I often run into this thing where there's errors in console, so I can't see my UI. So I don't know exactly where I'm at with the app. And so I guess I'm just thinking about like.
+
+00:23:41.000 --> 00:23:51.000
+We're trying to be AI first, so I don't want to do just like, oh, DevOps best practices, but I am going to need some kind of like automated processes here.
+
+00:23:51.000 --> 00:23:52.000
+So… No, no. Finish your question, then I'll go.
+
+00:23:52.000 --> 00:23:57.000
+You know, for instance, yeah, keep going.
+
+00:23:57.000 --> 00:24:12.000
+Sure. So, you know, there's maybe I split off into feature branches and I'm working on various things at the same time. And then we pull back to the center and we reconciliate We make sure everything passes. There's maybe a GitHub CI build, there's a deploy to amplify
+
+00:24:12.000 --> 00:24:23.000
+I'm just kind of wondering, like, how do I make this all accelerant and reliable and kind of a tested good process?
+
+00:24:23.000 --> 00:24:35.000
+I think the first thing I'll say and then probably give Zach some time as well but like AI-first development doesn't mean that AI makes all the decisions.
+
+00:24:35.000 --> 00:24:45.000
+I think that's a clear distinction I want to make. Like, John, you still have to lead the direction of the AI.
+
+00:24:45.000 --> 00:24:51.000
+With narrow pointed prompts that point to specific actions you want it to take.
+
+00:24:51.000 --> 00:24:57.000
+I almost think using feature branches might be a detriment to cursor.
+
+00:24:57.000 --> 00:25:09.000
+Because cursor then only sees the code within that feature branch and maybe can't use the other code within the code base as reference.
+
+00:25:09.000 --> 00:25:13.000
+So I might almost ask you to simplify the current process you have.
+
+00:25:13.000 --> 00:25:19.000
+As a way to achieve better accuracy, because when you do the add code-based function inside of the cursor agent.
+
+00:25:19.000 --> 00:25:25.000
+And it indexes your code base. It's really only indexing the feature branch that you're on.
+
+00:25:25.000 --> 00:25:31.000
+And I would rather it index everything so it can use that as consideration for building new things.
+
+00:25:31.000 --> 00:25:38.000
+Those are the first two points that come to mind. In terms of prototyping and getting an MVP built.
+
+00:25:38.000 --> 00:25:43.000
+I almost feel like you want to simplify the process as much as possible.
+
+00:25:43.000 --> 00:25:49.000
+And that doesn't mean you have to work off the main branch and only the main branch. I mean, maybe you have some feature branches.
+
+00:25:49.000 --> 00:25:55.000
+But maybe you don't go on to another feature branch until one feature is completed.
+
+00:25:55.000 --> 00:26:03.000
+And then so that you can use the code from that feature to then be a reference or context for the next feature.
+
+00:26:03.000 --> 00:26:06.000
+Okay, that's what I have. Zach, all you.
+
+00:26:06.000 --> 00:26:13.000
+I would say, yeah, I'm in agreeance with that. You made it sound and maybe I just, you know.
+
+00:26:13.000 --> 00:26:22.000
+Mandela that conversation. But John, you almost made it sound like you're working on multiple features at the same time in different branches.
+
+00:26:22.000 --> 00:26:40.000
+That's kind of a team dynamic, but I would not do it as your… as you're a solo developer especially Because the flow should be You start off on your main, you pull a feature You build that feature it works.
+
+00:26:40.000 --> 00:26:48.000
+You then push merge go back to main start back on Maine again with a new feature branch if you're going to feature branch.
+
+00:26:48.000 --> 00:26:53.000
+That way your code is always complete. You have 100% of indexing.
+
+00:26:53.000 --> 00:27:02.000
+I would recommend that I would recommend maybe the paradigm between human and machine here changes a little bit.
+
+00:27:02.000 --> 00:27:09.000
+This is a driver navigator situation. And if you don't watch, you know, kind of rally car racing, you may not make as much sense.
+
+00:27:09.000 --> 00:27:23.000
+But the AI is the driver. And you're the navigator. You're a little one looking at the map. You know where you're going. You say, hey, in 15 seconds, you're going to turn left, right? You're the one in control. The navigator controls the destiny.
+
+00:27:23.000 --> 00:27:30.000
+The AI is just typing faster than you ever could. It knows more code structure than you ever could.
+
+00:27:30.000 --> 00:27:36.000
+But you're the navigator. And so if you're going too many places at the same time, you're not going to get anywhere.
+
+00:27:36.000 --> 00:27:43.000
+So you should have a feature if you're going to do feature. I do features when I get to the point of diminishing returns.
+
+00:27:43.000 --> 00:27:50.000
+Where you're starting to hit a loop. You feature and then that way in case it breaks, you can reset back to your good working model.
+
+00:27:50.000 --> 00:28:01.000
+But then as soon as it works. That gets merged into your main and you continue moving into your next your next one. But that flow of how you do it is really important.
+
+00:28:01.000 --> 00:28:09.000
+And… And so I would say make sure, one, that you're only doing one thing at a time.
+
+00:28:09.000 --> 00:28:16.000
+Ai doesn't do two things at a time very well. And since you're driving get it working, fix it.
+
+00:28:16.000 --> 00:28:25.000
+Merge it, go to the next thing. Yeah.
+
+00:28:25.000 --> 00:28:34.000
+Which begs the question that some team engineering dynamics might actually be a detriment to AI first development.
+
+00:28:34.000 --> 00:28:42.000
+So please remember that like what John is doing, like if me, Zach, John are on a team, that's the right way to do things.
+
+00:28:42.000 --> 00:28:46.000
+But for what you guys might be doing at your hiring companies.
+
+00:28:46.000 --> 00:28:48.000
+Where you're going to be asked to build something in a week.
+
+00:28:48.000 --> 00:28:55.000
+It might actually slow you down. That's something to think about. Nick, go ahead.
+
+00:28:55.000 --> 00:29:19.000
+Yeah, thanks. First of all, I just want to say that I, yeah, I really appreciate the comment that we're more product managers and actually even project managers, I would say like that that's That's been the big game changer for me this week. Like I wasn't all over the place. I actually had a really well structured plan and everything.
+
+00:29:19.000 --> 00:29:35.000
+But my question is. Ash, you mentioned about like Over the past two weeks and weeks over this week and everything, it's basically just about submitting And that's the criteria for passing and everything.
+
+00:29:35.000 --> 00:29:51.000
+What about in person? Is that going to get harsher? Like, you know, can you talk a little bit more about that? Because I feel like so far I've been kind of just making it through. And so that puts into question whether kind of going to Austin would be a good idea.
+
+00:29:51.000 --> 00:29:53.000
+Oh, Nick, it is a good idea. Let's start there. I do think that you should 100% come.
+
+00:29:53.000 --> 00:29:56.000
+Okay.
+
+00:29:56.000 --> 00:30:02.000
+And that I want to say that everybody is struggling, at least a little. Everybody has their thing that they're not good at.
+
+00:30:02.000 --> 00:30:09.000
+Everybody has and you know, you guys are going to be faced with this imposter syndrome But I think everybody should push towards Austin. That is my opinion.
+
+00:30:09.000 --> 00:30:20.000
+And I believe all of you can do it. In terms of How are we going to make the criteria harder? So I just made the passing criteria for this week at least three to five features of the ones that are listed below.
+
+00:30:20.000 --> 00:30:21.000
+Mm-hmm.
+
+00:30:21.000 --> 00:30:27.000
+To build a cohesive user experience. Next week for the AI features, I think I'm going to associate some metrics with them.
+
+00:30:27.000 --> 00:30:37.000
+So for example. Number of requests sent to LLMs answered correctly, something like that maybe number of Whatever, I don't know. So it depends on what the AI component you're building will be.
+
+00:30:37.000 --> 00:30:42.000
+But whatever agent function you have, does it have some level of accuracy rate?
+
+00:30:42.000 --> 00:30:50.000
+So I think I'll move to metrics next week. And then as we move to Austin, it's going to be more about, okay, we're rebuilding TikTok after this.
+
+00:30:50.000 --> 00:30:56.000
+Can you handle the number of concurrent users properly? Are your videos loading quickly enough?
+
+00:30:56.000 --> 00:31:01.000
+Is the experience for the user actually at the level it should be if you're actually trying to build TikTok.
+
+00:31:01.000 --> 00:31:07.000
+So that'd be an example of how I make it harder and harder.
+
+00:31:07.000 --> 00:31:22.000
+But we will give you ample time and ample introduction. To the requirements for each project before we do it. So it's not like oh my God, now you got to add caching and make sure these videos load in three seconds. I don't know. I made that up.
+
+00:31:22.000 --> 00:31:29.000
+But, um. Essentially, Nick, we're going to go from qualifiable metrics to quantifiable metrics.
+
+00:31:29.000 --> 00:31:30.000
+Metrics.
+
+00:31:30.000 --> 00:31:45.000
+Got it. Yeah. I don't mind you listing all the features. I kind of like that. So like that in between about putting all the features, but putting like exactly like what you did right now, you know, say it.
+
+00:31:45.000 --> 00:31:52.000
+Do three to five. I'm aiming to do them all. Like I'm on track to do every single one that you have in that list so
+
+00:31:52.000 --> 00:31:57.000
+Nice. That's why I don't want to stop the people who are pushing themselves. That's what you should be doing.
+
+00:31:57.000 --> 00:32:03.000
+So I think I will put this, but again, I'll put some sort of caveat at the top.
+
+00:32:03.000 --> 00:32:04.000
+Yeah, thanks.
+
+00:32:04.000 --> 00:32:12.000
+I don't know who asked the question first because Zoom doesn't tell me in order, but I believe it was Kale.
+
+00:32:12.000 --> 00:32:27.000
+Yeah, so I kind of had a general question. So something I really struggled with on the first one is it was pretty good at building things When you get going and when there's not much for it to kind of understand and then
+
+00:32:27.000 --> 00:32:43.000
+It kind of gets to the point where it just it it's really difficult for the agent to make any progress. And I'm wondering if you had any kind of tips, tricks, strategies for how to deal with that when it's starting to just
+
+00:32:43.000 --> 00:32:47.000
+Yes.
+
+00:32:47.000 --> 00:32:48.000
+Like starting not to be useful, basically. Is that what you mean?
+
+00:32:48.000 --> 00:33:00.000
+Kind of taking notes.
+
+00:33:00.000 --> 00:33:01.000
+Yeah. Right.
+
+00:33:01.000 --> 00:33:08.000
+Yeah, when, you know, so if it if you can get the first five features you can get built in two hours. And then, you know, the last feature takes you two days Because it just keeps introducing new bugs and it keeps not understanding what you're saying and it keeps doing this and that and the other thing.
+
+00:33:08.000 --> 00:33:09.000
+Yeah.
+
+00:33:09.000 --> 00:33:17.000
+When you have a larger code base that you're dealing with, do you have any strategies for how to still maintain the effectiveness of the agent.
+
+00:33:17.000 --> 00:33:23.000
+Yep. Okay. So I have a couple of strategies I'll give you. One of them is slow and tedious, but it works all the time.
+
+00:33:23.000 --> 00:33:34.000
+And then the other strategy I'll give you is sort of a framework that to decide how specific or how vague you can be.
+
+00:33:34.000 --> 00:33:51.000
+With cursor and AI in general but Let's start with the strategy. Let's say, Kale, you're implementing a complex feature like I don't know, guys, pick a feature in auto crm that's complex
+
+00:33:51.000 --> 00:33:55.000
+Handling tickets.
+
+00:33:55.000 --> 00:33:56.000
+Yeah.
+
+00:33:56.000 --> 00:34:06.000
+It was editing tickets. Is that what you said? Okay. So let's say you have the tickets on a Kanban UKL and the goal is to edit tickets. What I would do is I'd make a procedure, almost like a scientific procedure.
+
+00:34:06.000 --> 00:34:18.000
+Of how you would go about file by file making the feature. It doesn't have to be crazy extensive where you're saying, okay, this is the code I would put on this line. I'm not saying that.
+
+00:34:18.000 --> 00:34:24.000
+What I'm saying is go into the Kanban card component.
+
+00:34:24.000 --> 00:34:29.000
+Inside the Kanban card component in the top right corner, add XYZ button.
+
+00:34:29.000 --> 00:34:34.000
+Like, so I would make that procedure out And once you have that procedure.
+
+00:34:34.000 --> 00:34:42.000
+See, I would put it into ChatGPT or Claude. And I would say, hey, if I had a junior programmer, would they be able to follow this?
+
+00:34:42.000 --> 00:34:48.000
+And actually create the component I'm trying to build. You know, they'll give you some feedback. Maybe you're able to improve it.
+
+00:34:48.000 --> 00:34:57.000
+But now you essentially have a recipe or a starting point for each prompt that you can give to AI to build that component.
+
+00:34:57.000 --> 00:35:06.000
+And so I really believe that the way you do AI first development really well, and this is now going more into a framework.
+
+00:35:06.000 --> 00:35:15.000
+Is that you deeply understand the outcome you're looking for And you're able to reverse engineer the process of getting to that outcome.
+
+00:35:15.000 --> 00:35:23.000
+For the AI. So that means, as Zach was saying, the navigator versus the driver.
+
+00:35:23.000 --> 00:35:32.000
+The AI is the driver, right? It's the one that's going to put the syntax in. It's the one that's going to connect all the routes. It's the one that's going to put the components in the right place.
+
+00:35:32.000 --> 00:35:36.000
+But you have to be the one to tell it, hey, this goes here, this goes here.
+
+00:35:36.000 --> 00:35:42.000
+And the clearer you are on what that procedure or that map is.
+
+00:35:42.000 --> 00:35:47.000
+The better and less the AI will freak out and go into loops.
+
+00:35:47.000 --> 00:35:51.000
+So I almost think, and this is going back to my product manager thing.
+
+00:35:51.000 --> 00:36:01.000
+It's almost a better thing to spend an hour, maybe an hour is too long, however long it takes you to properly make that procedure.
+
+00:36:01.000 --> 00:36:06.000
+Then you just go into the component willy-nilly. So I don't know your entire workflow, so I don't know what you're doing.
+
+00:36:06.000 --> 00:36:10.000
+But I will say that has made my life a lot easier with AI.
+
+00:36:10.000 --> 00:36:19.000
+And that is actually what I would recommend. Right now, when it does the thing where it just starts going crazy, I would go back to a checkpoint.
+
+00:36:19.000 --> 00:36:34.000
+Maybe you know this already, but just for the class's sake, you go back to a checkpoint that's working I would actually step back and I would actually start writing the procedure and then then start doing the prompts. That would be my workflow. It can be a little tedious.
+
+00:36:34.000 --> 00:36:40.000
+But I think it will get you back on track. What do you think?
+
+00:36:40.000 --> 00:36:45.000
+No, I like that.
+
+00:36:45.000 --> 00:37:03.000
+I guess, so one of the difficulties there is like… that necessarily means that you have to slow down a lot more in the beginning when it is working well.
+
+00:37:03.000 --> 00:37:04.000
+Yep.
+
+00:37:04.000 --> 00:37:10.000
+So that you understand the code base as it's getting built up. I guess that that would be kind of the unsaid part of of is by the time it gets too difficult for the AI to understand, I also don't understand the code base because I didn't write any of it.
+
+00:37:10.000 --> 00:37:11.000
+And so…
+
+00:37:11.000 --> 00:37:21.000
+Right. It is good practice. I will say, Kale, for you to understand the code base because eventually you're the one that's going to have to present it to your team and your manager.
+
+00:37:21.000 --> 00:37:22.000
+Sure. Sure. Okay. No, no, no. Yeah, I was just going to say, yeah, like.
+
+00:37:22.000 --> 00:37:28.000
+Sorry, finish your thought.
+
+00:37:28.000 --> 00:37:32.000
+Yes. Sending the code base for a programmer, generally a good idea.
+
+00:37:32.000 --> 00:37:36.000
+Yeah. Okay. Okay.
+
+00:37:36.000 --> 00:37:41.000
+Yeah, I would slow down. I think slowing down will actually make you go faster in the long term.
+
+00:37:41.000 --> 00:37:43.000
+One of those slowest, smooth, and smoothest type things? Okay.
+
+00:37:43.000 --> 00:37:49.000
+Yeah, yeah, yeah, yeah. Zach, did you have something?
+
+00:37:49.000 --> 00:37:56.000
+I was just going to say it's maybe I would say that maybe it's an overgeneralization to say to understand the code base.
+
+00:37:56.000 --> 00:38:02.000
+We're moving at a speed you won't understand the code base. Half the time I don't understand the code base on the projects I'm building on.
+
+00:38:02.000 --> 00:38:20.000
+But you have to understand the interconnectivity between one feature to the next You have to understand the flow And you have to understand the code in general, what's happening but I think the… What Ash said earlier about being a project manager
+
+00:38:20.000 --> 00:38:38.000
+We are moving from being, you know, I think where AI is taking us is I'm no longer a node engineer I mean, I will be for a bit longer, but I no longer need that skill set because I can program in any programming language you can come across.
+
+00:38:38.000 --> 00:38:50.000
+And I can build anything that I can imagine, right? And so you become less of a specialist, which means you're moving to a more managerial navigator project management, however you want to think about it, role.
+
+00:38:50.000 --> 00:39:01.000
+Where your understanding of how those pieces fit together because AI does not get that, right? It can write components very well. It can tell a lot of things.
+
+00:39:01.000 --> 00:39:07.000
+But it does not understand how pieces work together. And if you don't understand the pieces.
+
+00:39:07.000 --> 00:39:17.000
+You can't navigate the AI to understand those pieces. And so what Ash said, I think there's this law of diminishing returns, right?
+
+00:39:17.000 --> 00:39:20.000
+The first two hours, man, you can crank out a lot of code.
+
+00:39:20.000 --> 00:39:28.000
+When you start seeing that it starts slowing down, that's really that good time. Make sure that you've committed. Make sure you have a good code base that's restored.
+
+00:39:28.000 --> 00:39:40.000
+Everything's working. You have a new spot Anybody that's attended my things, I put a capital working Just in my git commit so that I can remember this is a spot I can go back to no matter what.
+
+00:39:40.000 --> 00:39:49.000
+Then that's when you start breaking down and diagramming in your head, maybe on a notebook or whatever those next pieces, what should happen when this happens?
+
+00:39:49.000 --> 00:39:54.000
+So that you can make sure that you walk the AI through it. Ai will write that code for you.
+
+00:39:54.000 --> 00:40:07.000
+But you have to understand the flow. And that, I think is really You know, Ash said about that piece is really the most important thing when you hit that diminishing return.
+
+00:40:07.000 --> 00:40:20.000
+And so always try to understand your own product higher level in the code base, it's probably not as critical as understanding the entirety of the app and where you're going.
+
+00:40:20.000 --> 00:40:22.000
+Awesome. Thanks so much.
+
+00:40:22.000 --> 00:40:27.000
+Thanks, Gail. Before I go to Asher and Patrice, I'm just going to cover some of the Zoom chat questions.
+
+00:40:27.000 --> 00:40:33.000
+Chris is saying the idea of security has been bugging me a bit. It's not obvious at glance if the app is like ponable.
+
+00:40:33.000 --> 00:40:42.000
+I do want to spend some time and it like and it's probably fine for mvp There will be full security departments at the companies that you will be going to.
+
+00:40:42.000 --> 00:41:00.000
+It is not the job function we're training you for. The job function we're training you for is to be able to prototype and code fast so we can test working applications and test them in the market and see if they're going to work, right? That's what the gist of what we're trying to train you for, or at least one of the things, right?
+
+00:41:00.000 --> 00:41:14.000
+Security is not one of those things. There are entire cybersecurity departments there are entire compliance departments that will be dedicated to making those applications like that. So therefore, that's the reason why we haven't put a big emphasis on it.
+
+00:41:14.000 --> 00:41:20.000
+This does not mean I'm not going to introduce it. I will introduce it a little bit. We'll make sure somebody comes in.
+
+00:41:20.000 --> 00:41:24.000
+And gives you at least an introduction so you understand the tenants, the first principles.
+
+00:41:24.000 --> 00:41:34.000
+But the things that we're going to ask you to do in practice will be away from that.
+
+00:41:34.000 --> 00:41:39.000
+Oh, AJ is asking a great question. How do you work with multiple AI first engineers then?
+
+00:41:39.000 --> 00:41:51.000
+I have no idea because that had never happened before. So that's probably going to be a problem that you guys are going to face when you guys go to your hiring partners. And that's something that You guys are going to work out the trial by fire, to be honest.
+
+00:41:51.000 --> 00:41:59.000
+But you'll be in very small teams or you'll be working alone so I don't think it's going to be at the level where you have a complex engineering team.
+
+00:41:59.000 --> 00:42:07.000
+And have to worry about that. Josh said, are we doing React Native for TikTok?
+
+00:42:07.000 --> 00:42:12.000
+I haven't really decided. I was thinking Flutter or React Native.
+
+00:42:12.000 --> 00:42:18.000
+Okay, Asher, go ahead.
+
+00:42:18.000 --> 00:42:19.000
+Yep. Yep.
+
+00:42:19.000 --> 00:42:31.000
+Yeah, thanks. I have a quick clarifying question on when we were talking about the you must implement three to five features How exactly are you defining features? Like we have this list Which high level is the feature like is it
+
+00:42:31.000 --> 00:42:39.000
+Like the customizable views, for example, of queue management or Is it the whole queue management thing like what
+
+00:42:39.000 --> 00:42:43.000
+Great question. It's the subheadings in the bigger one so This is a user flow.
+
+00:42:43.000 --> 00:42:46.000
+Okay. Yeah.
+
+00:42:46.000 --> 00:42:52.000
+Employee or like it could be interface, it could be a flow, whatever. This is the feature, right? Q management.
+
+00:42:52.000 --> 00:42:57.000
+Perfect. Thanks.
+
+00:42:57.000 --> 00:42:58.000
+Yeah, that makes sense.
+
+00:42:58.000 --> 00:43:05.000
+Ticket hand performance tools that would be the future. Right. I think that's right. I don't think… I wouldn't say employee interface is like a full user flow. My product manager is like.
+
+00:43:05.000 --> 00:43:21.000
+Not upset by how I'm defining that. But let's just say grouping a feature is employee interface and this is the actual feature, which is queue management.
+
+00:43:21.000 --> 00:43:22.000
+Yeah, go ahead.
+
+00:43:22.000 --> 00:43:34.000
+Okay. I actually have another It's not really a question, just asking for your feedback basically So this project, what I did is I wanted to initially start like understanding the code base, like not like a super exactly what every line does but like more of like what the functions do.
+
+00:43:34.000 --> 00:43:42.000
+So I was trying to do that at first, but then I'm like, if I'm doing it at this pace, I don't think I'm going to be able to get to the MVP by Tuesday.
+
+00:43:42.000 --> 00:43:43.000
+Okay.
+
+00:43:43.000 --> 00:43:52.000
+So I'm just wondering, so what I did is I got to the MVP with like bad like it was really spaghetti code.
+
+00:43:52.000 --> 00:43:53.000
+And then today I spent like six hours rewriting the backend.
+
+00:43:53.000 --> 00:43:56.000
+Yep.
+
+00:43:56.000 --> 00:43:57.000
+Okay.
+
+00:43:57.000 --> 00:44:07.000
+And I'm just wanting to ask what you think about like just not meeting the thing on Tuesday and just getting it well the first time or getting there and then redoing it or what?
+
+00:44:07.000 --> 00:44:12.000
+Submit whatever you have at the deadline on Friday and then Sunday.
+
+00:44:12.000 --> 00:44:22.000
+In terms of the MVP deadline it's still important to submit at all deadlines throughout the week.
+
+00:44:22.000 --> 00:44:41.000
+But I think it's important to start slower in the beginning so that I think once you decide on a path to move forward for your MVP, don't deviate from it unless it's like the worst thing in the world. I don't know how to say that better, Zach. So maybe you'll say it better than I do, but like.
+
+00:44:41.000 --> 00:44:50.000
+When you guys get into production applications, you'll really realize how much duct tape and shit code runs the world.
+
+00:44:50.000 --> 00:45:00.000
+So I apologize for the curse. I know I'm supposed to be more professional, but duct tape and terrible code is running every application in the world today.
+
+00:45:00.000 --> 00:45:11.000
+Especially government and financial applications with COBOL and assembly and mainframe and Like that stuff has not been maintained.
+
+00:45:11.000 --> 00:45:16.000
+It's just working because of like some side fixes and stuff. And there's like that one engineer who knows everything.
+
+00:45:16.000 --> 00:45:23.000
+Anyway, my whole point being, Asher. There's never going to be a perfect path and you have to come to terms with that.
+
+00:45:23.000 --> 00:45:35.000
+So I'm not saying you guys can't make the call to redo something. What I am saying is spend some more time at the beginning So you might not have to redo everything.
+
+00:45:35.000 --> 00:45:43.000
+For example, when we started out. On the LMS for Gauntlet, we chose a path where we chose clerk as the authentic.
+
+00:45:43.000 --> 00:45:50.000
+Authentication system. Didn't really have a good time using Clerk, but we pushed through because it was important to just launch something.
+
+00:45:50.000 --> 00:45:55.000
+It ends up breaking. Now I have a clear flag in the ground that, okay, I have to update this. I have to change this, right?
+
+00:45:55.000 --> 00:45:59.000
+That's what I look for. I look for breakages and breakpoints.
+
+00:45:59.000 --> 00:46:07.000
+For me to do… changes in code or tell engineers to do huge changes in code.
+
+00:46:07.000 --> 00:46:14.000
+For you guys, at least for projects, I would say spend more time at the front so you don't have to do that.
+
+00:46:14.000 --> 00:46:17.000
+Because ideally you could use the whole time just coding in what you have.
+
+00:46:17.000 --> 00:46:18.000
+Yeah. Okay. Can I say something real quick?
+
+00:46:18.000 --> 00:46:23.000
+Okay, that's my show. Zach, all you. Yeah, go ahead.
+
+00:46:23.000 --> 00:46:35.000
+At the beginning you're saying spend more time at the beginning so would that mean even if you don't reach the MVP tuesday But it would just make you able to reach the end like easier Is that what you're saying?
+
+00:46:35.000 --> 00:46:43.000
+Well, so let's like by you're saying like you wouldn't have as many MVP features as you wanted. Is that what you're saying?
+
+00:46:43.000 --> 00:46:44.000
+Like I wouldn't meet the Tuesday MVP. Yeah. But if I just had the back end and I didn't have a front end, like.
+
+00:46:44.000 --> 00:46:53.000
+But like you have something. You'd have something, right? You'd have at least have Okay, so…
+
+00:46:53.000 --> 00:46:57.000
+I mean, it depends on how much of the backend you finished, right?
+
+00:46:57.000 --> 00:47:00.000
+Like it depends on how much work you put in. That's where we're also looking at, right?
+
+00:47:00.000 --> 00:47:01.000
+Okay.
+
+00:47:01.000 --> 00:47:18.000
+So to give you a clear answer. I would like to see a working first approach, a first pass But like, I'd rather you guys make the right call. And I'm not saying spend three hours on it also, Asher.
+
+00:47:18.000 --> 00:47:19.000
+Yeah, yeah, yeah.
+
+00:47:19.000 --> 00:47:25.000
+I'm saying like, spend a good hour, get people's advice. Ask your classmates, maybe shoot Zach a message, shoot me a message. Is this the right approach?
+
+00:47:25.000 --> 00:47:32.000
+That's what I'm saying. And then once you've planted the flag, hey, this is the approach I'm doing.
+
+00:47:32.000 --> 00:47:38.000
+Do everything in your power not to deviate until something huge happens but Go ahead, Zach.
+
+00:47:38.000 --> 00:47:46.000
+Yeah, I think one, there's really no reason in an AI-first development that you should not also have a front end.
+
+00:47:46.000 --> 00:47:54.000
+Part of it is time and product management. I mean, you can get a lot of front end done in an hour and a half.
+
+00:47:54.000 --> 00:48:06.000
+Even if it's and so if it's you should be looking at maybe how you're managing your time and your processes and how you're managing your overall development.
+
+00:48:06.000 --> 00:48:19.000
+You are an entire product development engineer here, right? You have front end and back end and AI and database. I mean, you have all of those roles and so maybe you want to spend a little bit more time on how you're looking at them.
+
+00:48:19.000 --> 00:48:33.000
+I would say this too. From a lot of the struggles that I've seen and meetings I've had It's typically an all or nothing kind of mentality. I got to get all the backend done before I can do the front end, or I got to get all the front end done before I can do this.
+
+00:48:33.000 --> 00:48:41.000
+That's not really, it's not generally, it's not a very effective route get you a piece.
+
+00:48:41.000 --> 00:48:49.000
+That works another piece that works, and then enhance where you're kind of moving more symmetrically through your app.
+
+00:48:49.000 --> 00:49:01.000
+Tends to be generally a better way to go about it because You're going to reach that diminishing return so you can do back in, hit some diminishing returns, get the front end where those pieces are working.
+
+00:49:01.000 --> 00:49:07.000
+Then you improve the back end, then you improve the front end to make the new upgrades, right? And you kind of move back and forth.
+
+00:49:07.000 --> 00:49:18.000
+And so I think that that's something that everybody needs to kind of pay attention to. I've said this before, when I took one of my first computer science classes.
+
+00:49:18.000 --> 00:49:23.000
+My professor said. You are a software engineers.
+
+00:49:23.000 --> 00:49:33.000
+Engineers are people that take applied science and economy. Without economy, if we don't think about economy, we're scientists, right?
+
+00:49:33.000 --> 00:49:41.000
+We're building the A-BOM. We don't care how much it spins, right? But the engineer is the one that has to make it reality.
+
+00:49:41.000 --> 00:49:42.000
+Yeah.
+
+00:49:42.000 --> 00:49:50.000
+And so you have to think about the economy of what you're doing as well. An economy is time. Economy is resources, it's money.
+
+00:49:50.000 --> 00:50:01.000
+All of those things. So kind of keep that in the back of your head that Day two, I want to have day two 50% of these three pieces, how much do are these two pieces, right?
+
+00:50:01.000 --> 00:50:12.000
+And you kind of have to probably just have to kind of monitor your own progress maybe a little bit more soft i would say.
+
+00:50:12.000 --> 00:50:19.000
+Where you're not too locked into one particular thing happening. Get one thing done, make sure it works.
+
+00:50:19.000 --> 00:50:27.000
+Get its pairing done. And move it a little bit more efficiently that way. But you can get a whole lot of app done in 18 hours.
+
+00:50:27.000 --> 00:50:32.000
+I promise you, you know, that that where you're trying to go.
+
+00:50:32.000 --> 00:50:38.000
+Don't be perfectionist, guys. Do not be perfectionist. If you try to be a perfectionist.
+
+00:50:38.000 --> 00:50:39.000
+It's going to be hard. It's going to be hard.
+
+00:50:39.000 --> 00:50:49.000
+I've always said that the software will break a type A personalities. Everybody thinks that software, oh, you're all about the numbers. No, we're not.
+
+00:50:49.000 --> 00:51:06.000
+And if you're a perfectionist, you got to learn to give that up. The sooner you do, the better you'll do at your job. One of our other clients that we're working on, here's a company that has like 40,000 employees is one of the biggest companies in the world.
+
+00:51:06.000 --> 00:51:07.000
+Yep.
+
+00:51:07.000 --> 00:51:14.000
+And we're months in and we can't even get access. To the simplest things to the simplest things They've got 80 different people that have to approve 80 different things. It's so incredibly bad.
+
+00:51:14.000 --> 00:51:22.000
+Don't try for production. Grade, try for work. Remember what I've said. If it works, it's right. If it doesn't, it's wrong.
+
+00:51:22.000 --> 00:51:27.000
+And make it work. You can always clean it up later.
+
+00:51:27.000 --> 00:51:31.000
+And so focus on that, you know, getting it to work.
+
+00:51:31.000 --> 00:51:39.000
+People keep asking about the check marks and then i'll go to patrice The check marks are in beta right now. Beta.
+
+00:51:39.000 --> 00:51:44.000
+So essentially, we have the entire process working and we have the comments coming in as well.
+
+00:51:44.000 --> 00:51:48.000
+But every time we grade something, we're making sure the AI didn't hallucinate.
+
+00:51:48.000 --> 00:51:52.000
+So that's why we haven't fully told you guys, hey, the check marks are end all be all.
+
+00:51:52.000 --> 00:51:56.000
+Because right now what we're doing is with your MVP submissions.
+
+00:51:56.000 --> 00:52:02.000
+We're checking to see if our agent is working properly. But for the AI submissions next week.
+
+00:52:02.000 --> 00:52:06.000
+I have a feeling that we will be able to get the agent working.
+
+00:52:06.000 --> 00:52:10.000
+And you guys will get at least some level of preliminary feedback.
+
+00:52:10.000 --> 00:52:15.000
+On how to improve it. When do you see the grade?
+
+00:52:15.000 --> 00:52:20.000
+Right now, it's just a check and an X. That you can just see next to your submission.
+
+00:52:20.000 --> 00:52:25.000
+But then when me and Austin look at it, if it's wrong, we will update it. If it's right, we will.
+
+00:52:25.000 --> 00:52:28.000
+You know, depending on what it is, contact you or not.
+
+00:52:28.000 --> 00:52:30.000
+Patrice, go ahead.
+
+00:52:30.000 --> 00:52:39.000
+Back to work smart i know before starting the program, it was made clear that the expectation was about 80 to 100 hours a week.
+
+00:52:39.000 --> 00:52:40.000
+Yeah.
+
+00:52:40.000 --> 00:52:52.000
+Curious now that you're able to actually log that, is there a minimum you're enforcing? And a similar question is You know, you talked about some people basically dropping out by ghosting austin So conversely, if someone's output is questionable.
+
+00:52:52.000 --> 00:52:56.000
+Yep.
+
+00:52:56.000 --> 00:53:03.000
+Yeah.
+
+00:53:03.000 --> 00:53:04.000
+Yep.
+
+00:53:04.000 --> 00:53:07.000
+But you're seeing that they're putting in a lot of work, you know, actual work, not just turning work smart on. You know, I was just wondering if you could discuss how you're factoring that into uh To everyone's…
+
+00:53:07.000 --> 00:53:16.000
+Yep. So the individuals who are not turning in something workable but are still putting in the work, we are giving them more chances.
+
+00:53:16.000 --> 00:53:33.000
+We just ask that individual to give us updates more often than everybody else. So if someone else is already performing well and then They're doing well. We don't make them like check in with us more often But what Austin has is like he'll check in with that individual multiple times throughout the day. It's like, hey, what'd you do?
+
+00:53:33.000 --> 00:53:43.000
+Is there any blockers, et cetera, blah, blah, blah. And so we are trying to give everybody a fair shot and we're trying to push people to at least get to Austin, right?
+
+00:53:43.000 --> 00:53:53.000
+So, but yeah, most of the time it's been people who have ghosted completely gone. You know, they haven't answered to any of our emails or messages.
+
+00:53:53.000 --> 00:54:01.000
+They haven't submitted anything for multiple submission deadlines. Those are the people who have been leading the program so far.
+
+00:54:01.000 --> 00:54:14.000
+In terms of work smart. In Austin, we will enforce more of like a minimum, but Right now, what we're seeing is like a lot of people have errors. So we're trying to work through those errors.
+
+00:54:14.000 --> 00:54:20.000
+There's a couple of people using Linux that are waiting for the Linux version of WorkSmart.
+
+00:54:20.000 --> 00:54:27.000
+So we're trying to work through those errors patrice. And once we work through those we will You know, propose a minimum.
+
+00:54:27.000 --> 00:54:29.000
+Okay, got it. Thank you.
+
+00:54:29.000 --> 00:54:32.000
+Rafal, go ahead.
+
+00:54:32.000 --> 00:54:37.000
+Hi. I'm very happy that you said to not be perfectionist.
+
+00:54:37.000 --> 00:54:39.000
+Because I have a question about testing. Yeah.
+
+00:54:39.000 --> 00:54:49.000
+Go ahead. Yeah.
+
+00:54:49.000 --> 00:54:50.000
+Yeah.
+
+00:54:50.000 --> 00:54:58.000
+Basically, I'm building my Second, third up, like front end application And last time I was totally not in control. Right now, I'm feeling like Basically, I know I kind of know what I'm doing.
+
+00:54:58.000 --> 00:55:16.000
+But I have no idea how to include testing in my workflow and haven't done any frontend testing ever and I'm wondering how much of it is a requirement.
+
+00:55:16.000 --> 00:55:24.000
+Great question. For your prototypes, none would be my answer, right, Zach?
+
+00:55:24.000 --> 00:55:29.000
+But again, maybe your hiring partners require you to do something called test driven development.
+
+00:55:29.000 --> 00:55:32.000
+So test-driven development, I'm not sure if they do. I can check with them.
+
+00:55:32.000 --> 00:55:36.000
+But test-driven development is when you create the test for a component first.
+
+00:55:36.000 --> 00:55:40.000
+Then you create the component to ensure that the component passes that test.
+
+00:55:40.000 --> 00:55:47.000
+So if I were to give you a workflow, the most popular workflow in software engineering is test test-driven development. I'm sure there's pros and cons to it.
+
+00:55:47.000 --> 00:55:51.000
+Whether people like it, people don't like it. That's the one I've heard of over and over again.
+
+00:55:51.000 --> 00:55:58.000
+For your rebuild, Rafale, I wouldn't… do that i would work to have the component running in front of you.
+
+00:55:58.000 --> 00:56:04.000
+And test it yourself after the AI has coded something. Because the goal here is speed.
+
+00:56:04.000 --> 00:56:15.000
+And efficiency. And then once we get to you know making the app a little bit more scalable, maybe on this next week of this project I would then think about, okay, I need to add tests for my AI.
+
+00:56:15.000 --> 00:56:22.000
+To test to see if my agent has a good accuracy rate. I need to connect Langsmith and all these things.
+
+00:56:22.000 --> 00:56:28.000
+I would do in the second week of a project. After the initial MVP is done. That's my recommendation for that.
+
+00:56:28.000 --> 00:56:30.000
+Zach, you know, if you want to add.
+
+00:56:30.000 --> 00:56:40.000
+Yeah, I was answering on a thread in Slack where we were talking about TDD. Tdd is very hard for front end.
+
+00:56:40.000 --> 00:56:48.000
+There are a few people I've seen being able to do it successfully, but it's quite tough because you have to know what you want before you even get started.
+
+00:56:48.000 --> 00:56:59.000
+For things like back end where you have functional code Even in front end where I enter this and I want to make sure that I always get this out.
+
+00:56:59.000 --> 00:57:04.000
+You can write those tests and Claude writes those tests quite well.
+
+00:57:04.000 --> 00:57:22.000
+But for back end, for your ai for a Especially Lang Smith is really great for your ai flow, but it's not It's a one-liner, right? I mean, you just add one line and tell it to monitor. There you go. That one's
+
+00:57:22.000 --> 00:57:27.000
+That's good to go. It's not really test driven. It's more uptime kind of mentality.
+
+00:57:27.000 --> 00:57:45.000
+But I wouldn't spend very much time on on it because you will slow down progress. But the other thing is, is that you're not going to necessarily produce better anything with it Because you don't really know what it is you're trying to accomplish in the first place. That's part of this AI first movement
+
+00:57:45.000 --> 00:57:50.000
+Is we're moving quickly So don't spend a lot of time worrying on tests.
+
+00:57:50.000 --> 00:57:58.000
+But things that are always the same. Those you can test as you go along. And Claude is pretty good about writing those kind of tests.
+
+00:57:58.000 --> 00:58:07.000
+But testing will make the best of us. I wrote some tests on my app the other day and I just Man, I'd rather go clean toilets any day of the week.
+
+00:58:07.000 --> 00:58:17.000
+It can be really miserable. Even with AI, it's just like, oh, God, I hate this So from a developer standpoint, it's not pleasant.
+
+00:58:17.000 --> 00:58:29.000
+But generally speaking, get it to work first and then make your change, then test.
+
+00:58:29.000 --> 00:58:30.000
+Okay. Yeah.
+
+00:58:30.000 --> 00:58:35.000
+Yeah, I have a little, I have background in backend and in backend writing TDD is It's great, but I had no idea how to do it in front of them. Thanks.
+
+00:58:35.000 --> 00:58:42.000
+No, yeah, I think it's harder in React. Not harder, but it's more annoying in React. There you go. That's the word. Annoying.
+
+00:58:42.000 --> 00:58:49.000
+Okay, I have a hard stop at seven. So Zach, if you want to stay on for a couple of minutes, you can. Otherwise, I'll call it.
+
+00:58:49.000 --> 00:58:50.000
+I can hang up for a few if we need it.
+
+00:58:50.000 --> 00:59:07.000
+We have a… Okay, awesome. We have a dinner, guys, today with… Kieran of every And I'd love to see everyone for dinner. We're just going to do a fireside chat style like we always do.
+
+00:59:07.000 --> 00:59:14.000
+And then if there's questions, we'll take them in the Zoom chat. Okay, I'm going to hop for my next meeting and then I'll hand it off to Zach before I go.
+
+00:59:14.000 --> 00:59:15.000
+Thanks, Zach.
+
+00:59:15.000 --> 00:59:21.000
+Sounds good. Yep, I agree with AJ.
+
+00:59:21.000 --> 00:59:29.000
+It's very hard and I don't see a whole lot of benefit to it other than testing functionality At some point, like I said.
+
+00:59:29.000 --> 00:59:33.000
+You know, I enter this, I get back this, those kind of things.
+
+00:59:33.000 --> 00:59:43.000
+But the front end test frameworks are just really not as easy to work with.
+
+00:59:43.000 --> 00:59:48.000
+Yeah, and I let Cypress do that. Kale.
+
+00:59:48.000 --> 00:59:59.000
+Yeah, so sorry. I'm sorry. Almost positive that Ash is the guy to answer this, but he was saying you know that our goal right now is like, just get to Austin.
+
+00:59:59.000 --> 01:00:17.000
+And I was kind of thinking that most of our trimming of headcount was going to happen before austin And I was kind of thinking that that was like once you get there, you're kind of in the free and clear and I'm, or not free and clear. You obviously stopped to work your ass off.
+
+01:00:17.000 --> 01:00:18.000
+It'll actually be harder in reality. It'll be harder.
+
+01:00:18.000 --> 01:00:28.000
+But, you know. I'm sure it'll be harder, but we expect the people who are going to have dropped who are going to drop out to have dropped out by Austin? Is that kind of the idea?
+
+01:00:28.000 --> 01:00:41.000
+Generally speaking. The goal is not to weed anybody out We're not trying to cut it to a number or, you know, we only have 82 jobs so we got to Just kick everybody out until we get to that. It's not like that. That's not the goal.
+
+01:00:41.000 --> 01:00:51.000
+The goal is that the goal is every person that's putting in the effort, putting in the code, putting in the time.
+
+01:00:51.000 --> 01:00:52.000
+Cool.
+
+01:00:52.000 --> 01:01:02.000
+Should continue the process. It's not, you know, this is not a college environment where it's set up to ensure that a percentile always fails. That's not the goal.
+
+01:01:02.000 --> 01:01:13.000
+People are weeding themselves out um you know If you're not participating, to me, you know, you're weeding yourself out. And Austin and National really have to do anything along with that, right?
+
+01:01:13.000 --> 01:01:17.000
+Those are the same. And generally speaking, yes, if you get to Austin.
+
+01:01:17.000 --> 01:01:25.000
+The presumption is you're going to continue to work that hard or harder for the next eight weeks, get your job, move to Austin.
+
+01:01:25.000 --> 01:01:33.000
+And do that as the rest of your career, or at least the next phase of your career.
+
+01:01:33.000 --> 01:01:34.000
+Yep.
+
+01:01:34.000 --> 01:01:42.000
+And so I hope that answers your question. But the goal is not to just cut people that are productive it's only letting people get out that are not putting in the effort.
+
+01:01:42.000 --> 01:01:55.000
+And in… Anything else real quick before we go? That way, Karen's going to set up and uh Karen, that'd be really interesting because if I remember right, he's a one-man shop, which is super cool.
+
+01:01:55.000 --> 01:01:56.000
+Yeah, I got a real fast question. I already asked the question. You go first.
+
+01:01:56.000 --> 01:01:57.000
+I, sir.
+
+01:01:57.000 --> 01:02:01.000
+Mm-hmm.
+
+01:02:01.000 --> 01:02:08.000
+Okay, so my question is like i am understanding the AI principles and techniques that are being taught in the class.
+
+01:02:08.000 --> 01:02:24.000
+But when implementing those, I don't know how to code those functionalities, how to code right how to build agents so what is the best you know process to implement those AI techniques in our apps.
+
+01:02:24.000 --> 01:02:31.000
+Using AI. I mean, I think that's probably the hardest thing.
+
+01:02:31.000 --> 01:02:45.000
+Believe me, and I get that, right? But… The point is that you are a navigator. You're not a software developer in the sense that you're not writing the code.
+
+01:02:45.000 --> 01:02:51.000
+You're controlling the direction. And you're utilizing the tools around you.
+
+01:02:51.000 --> 01:03:03.000
+I mean, I built a lot of rag apps and that kind of thing. And last night, I just wanted to see because I really hadn't let AI do it because 3.5 is new.
+
+01:03:03.000 --> 01:03:05.000
+I can't build a ride gap that fast or that good.
+
+01:03:05.000 --> 01:03:10.000
+In an hour like I did last night, right? You have to use your tools.
+
+01:03:10.000 --> 01:03:27.000
+Part of this whole thing this paradigm shift that we're going is that, like I said earlier, you're no longer a single specialist in the sense that It's about learning to work your tools, not learning to write code.
+
+01:03:27.000 --> 01:03:35.000
+And so you should learn what you should learn it takes to make things happen.
+
+01:03:35.000 --> 01:03:41.000
+You should learn those things. Because without that, you can't navigate.
+
+01:03:41.000 --> 01:03:52.000
+But if you take the docs from Langchain and drop them into Claude Claude will write you a ragab that will do exactly what you want. You can throw steam it.
+
+01:03:52.000 --> 01:04:04.000
+Stream it on top of it. And it'll work in less than an hour. I mean, in reality, you can write a lot of this code in Python in less than 30 or 40 lines anyway.
+
+01:04:04.000 --> 01:04:09.000
+And so Use your tools.
+
+01:04:09.000 --> 01:04:22.000
+Research using your tools. If you're not exactly sure what are the five pieces say that I need to accomplish, spend five minutes talking with AI about that Do a quick Google search, double check that that makes sense.
+
+01:04:22.000 --> 01:04:35.000
+I would say, you know, perplexity is a really great tool for that spend a few minutes in perplexity to get an understanding of where you're going, look at drawing your, okay, I see I need this and I see I need this.
+
+01:04:35.000 --> 01:04:39.000
+Now let's let AI start to fill in the pieces.
+
+01:04:39.000 --> 01:04:55.000
+If you test constantly. As you go along, you won't get into the weeds Especially at the beginning. Eventually you can get yourself into the weeds no matter what. But at the beginning of it, you can get a lot of stuff accomplished in just a few minutes.
+
+01:04:55.000 --> 01:05:01.000
+Do it, right? Spend five minutes and let AI help you.
+
+01:05:01.000 --> 01:05:07.000
+And if you get there and you're at 10 minutes and wait a minute, this doesn't work. Let's figure out why.
+
+01:05:07.000 --> 01:05:15.000
+You should be learning what the pitfalls were as you continue to go along, right? Well, 10 minutes later, it doesn't work.
+
+01:05:15.000 --> 01:05:23.000
+And you can build a… RAG app in a single prompt on Claude.
+
+01:05:23.000 --> 01:05:27.000
+So even if you get it completely wrong. You can go right back and do it again.
+
+01:05:27.000 --> 01:05:28.000
+With what you've learned. Yes.
+
+01:05:28.000 --> 01:05:33.000
+Thanks.
+
+01:05:33.000 --> 01:05:39.000
+Where it's headed is that, like you said, we have to think about a project mentality, the entirety of it.
+
+01:05:39.000 --> 01:05:48.000
+Because you should be able to do what an entire team of us used to do seven months ago.
+
+01:05:48.000 --> 01:05:58.000
+And you can't know it all. Nobody can. And so you just… have to know how to get from point A to point B.
+
+01:05:58.000 --> 01:06:12.000
+And then as you go along, you'll get better at it. So just try it. I mean… Just get out there, tell Claude to do something reevaluate your And I'll tell you a trick that I've been using a fair amount of time
+
+01:06:12.000 --> 01:06:23.000
+Is I'll go into one of the GPTs like say hey I want to build this. Is it even possible? If it is possible, give me the five steps that are required.
+
+01:06:23.000 --> 01:06:29.000
+And then you can take that and just kind of set it off to the side and then say, okay, I want to try this real quick. Can you do this for me real quick?
+
+01:06:29.000 --> 01:06:36.000
+Spend 10 minutes, 15 minutes. Then kind of step into your app.
+
+01:06:36.000 --> 01:06:44.000
+But if you go that route, you will get there. It's not a… there's no real secret to it. The secret is in the sauce, as they say.
+
+01:06:44.000 --> 01:06:52.000
+And not the kitchen. Mm-hmm.
+
+01:06:52.000 --> 01:06:58.000
+Anyone else? Check out lean change tutorials.
+
+01:06:58.000 --> 01:07:16.000
+One of the really powerful tools that you have. And it is kind of funny until you've done it a few times, honestly, I don't think it's very… awe-inspiring. Until you've like struggled through it, sometimes, you know, you have to suffer in order to enjoy the
+
+01:07:16.000 --> 01:07:20.000
+The fruits. But here's one of the really cool things you can do.
+
+01:07:20.000 --> 01:07:28.000
+Go to any lane chain, I don't know who posted that uh aj But go to link chain.
+
+01:07:28.000 --> 01:07:38.000
+Copy that. Just go to the the tutorials and just go to the headers and say, hey, go to Cloud and say, we're going to build this.
+
+01:07:38.000 --> 01:07:43.000
+And just use the headers to say, here are my, you know, one step at a time. Do this, do this, do this, do this.
+
+01:07:43.000 --> 01:07:52.000
+And see if at the end of a tutorial that would take you an hour if you can get it done in 10 minutes.
+
+01:07:52.000 --> 01:07:57.000
+It's a great way to go. I've recommended before and I'm actually kind of working on a whole little process with it.
+
+01:07:57.000 --> 01:08:03.000
+Search YouTube for a really cool tutorial that you find interesting. Maybe it's in Python or React or whatever.
+
+01:08:03.000 --> 01:08:07.000
+Watch the first 10 minutes so you know what it's supposed to do.
+
+01:08:07.000 --> 01:08:21.000
+And then go to the end so you have a kind of a picture of it and then see if you can build it with AI in a quarter of whatever amount of time that the instructor did the video. It's a four hour class. See if you can do it in less than an hour.
+
+01:08:21.000 --> 01:08:26.000
+If you get stuck, you can always watch the video a little bit and say, oh, what did they do next? Okay, great.
+
+01:08:26.000 --> 01:08:32.000
+And then come go back over, but try to do it 100% or 99.9% AI.
+
+01:08:32.000 --> 01:08:41.000
+You'll learn flows really good that way.
+
+01:08:41.000 --> 01:08:53.000
+Yeah, lane chain is really is really not very complicated. Writing a rag is stupidly simple.
+
+01:08:53.000 --> 01:09:01.000
+So what the goal is And Claude can do it in a minute.
+
+01:09:01.000 --> 01:09:14.000
+It's a design pattern. It's a thought process. It's about understanding where you can apply it. So you can write the rag tell it to You can tell Claude I want a Lang Ching rag.
+
+01:09:14.000 --> 01:09:32.000
+That takes in URLs. And I wanted to be in a flask gap so that I can call it with my front end And Claude will build it. Just exactly what I said right there, you'll have a gap in Flask in about two minutes.
+
+01:09:32.000 --> 01:09:36.000
+Because you can hand code the thing. An hour easy.
+
+01:09:36.000 --> 01:09:44.000
+So without knowing anything, just by looking at their tutorial. So don't overcomplicate it.
+
+01:09:44.000 --> 01:09:54.000
+I think one of the things I've noticed over time is that when you're dealing with a smart group of people like we have right here, I mean, everybody got in here for a reason.
+
+01:09:54.000 --> 01:10:01.000
+And it's because you're smart. There's no doubt about that. Every person in here is smart.
+
+01:10:01.000 --> 01:10:08.000
+Plenty intelligent is that we tend to overcomplicate it more than it needs to be. Go back.
+
+01:10:08.000 --> 01:10:15.000
+You know go back just a little bit, see about how simple you can make it. Give Claude single sentences and see what you get with it.
+
+01:10:15.000 --> 01:10:20.000
+Just test it. Best way to know your limitations are to push them.
+
+01:10:20.000 --> 01:10:27.000
+That's what I loved about cybersecurity. I loved breaking things. That's why I liked hacking into boxes because I got to break it.
+
+01:10:27.000 --> 01:10:34.000
+Break your AI a little bit in a safe environment. Just try something that's been floating in your head. Oh, I wonder what if.
+
+01:10:34.000 --> 01:10:45.000
+See what you can get from it. Spend a few minutes doing that in the learning that you'll gain from it is far more valuable than you can probably appreciate.
+
+01:10:45.000 --> 01:10:53.000
+Yeah, the you do, we do media. We call it the I do, but you do, we do, I do.
+
+01:10:53.000 --> 01:11:03.000
+But yeah, it's a it's a great It's a great process. But I would say this, don't watch the whole video anymore. Don't read the whole tutorial.
+
+01:11:03.000 --> 01:11:08.000
+You found a cool one on Medium that walks you through all the steps?
+
+01:11:08.000 --> 01:11:13.000
+Copy it, paste it in Claude. Hey, we're going to build something similar to this, but I wanted to do this also.
+
+01:11:13.000 --> 01:11:21.000
+See what you get out of it. That might happen.
+
+01:11:21.000 --> 01:11:23.000
+Pin testing is not as fun as it used to be.
+
+01:11:23.000 --> 01:11:31.000
+There's too many things that just take away the book. Anyone else, any other questions?
+
+01:11:31.000 --> 01:11:37.000
+Or talking points.
+
+01:11:37.000 --> 01:11:38.000
+You see? Uh-huh. Go ahead.
+
+01:11:38.000 --> 01:11:56.000
+I guess if there's no one else One thing that I'm realizing is This is all new, like AI first. We're kind of figuring this out. One thing, and it might be true that When all is said and done, you don't have to really know coding. You just have to know how to, you'll need to know a little bit.
+
+01:11:56.000 --> 01:12:22.000
+But, you know, in order to get, you know, great software. But what I'm definitely finding right now is like developing with it is that understanding the way that like specifically just like, you know, traditional software debit experience helps a lot because sometimes cursor gets stuck and it's a very, very like esoteric tiny problem that it just does not understand. And if you can go in and say, ah, there's the issue.
+
+01:12:22.000 --> 01:12:28.000
+You fix it, it can keep going. But if you don't have that technical background you will suffer.
+
+01:12:28.000 --> 01:12:33.000
+Absolutely correct. Yeah, absolutely correct.
+
+01:12:33.000 --> 01:12:41.000
+It's why I tend to develop at a much faster rate than most other people with AI because I've done so many apps manually.
+
+01:12:41.000 --> 01:12:48.000
+That I can see those blocks, I know what a more efficient flow is.
+
+01:12:48.000 --> 01:13:01.000
+You know, generally get off first. Is a better flow than to build a bunch of stuff and then try to add auth, right? I've done it enough to know that some of these things. Now, though, you don't have to have been doing it
+
+01:13:01.000 --> 01:13:16.000
+Since the last millennium. You can you can do… it in a few hours you can build and really start to get through some of those hurdles through repetition in a very short period of time.
+
+01:13:16.000 --> 01:13:25.000
+You are not going to learn it. Ai is not going to know all the pieces and you're not going to learn it in an a single app, right?
+
+01:13:25.000 --> 01:13:31.000
+And so when you have a little bit of downtime or you're thinking about, well, maybe I can do this.
+
+01:13:31.000 --> 01:13:35.000
+Spend the time, create a new app, spend one hour on it, see what you get. Learn from that flow.
+
+01:13:35.000 --> 01:13:37.000
+What downtime?
+
+01:13:37.000 --> 01:13:44.000
+And then apply that to your real project. And it is new.
+
+01:13:44.000 --> 01:13:49.000
+Even six months ago. We could not do what we're doing right now.
+
+01:13:49.000 --> 01:13:54.000
+So everyone here is on everyone here is You know, the edge of the world.
+
+01:13:54.000 --> 01:14:01.000
+This is a brand new territory and a lot of it's going to be figured out as we go along.
+
+01:14:01.000 --> 01:14:16.000
+But those that are going to be good at it. If you don't have a long history of of being able to do this the old fashioned way You're going to have to accelerate your own growth and do a lot of projects in order to
+
+01:14:16.000 --> 01:14:25.000
+To amount to as many hurdles. And I think that, you know, I was working the other day on something and it still took a lot an hour to solve one bug.
+
+01:14:25.000 --> 01:14:30.000
+And I was like, yeah, I know the answer to this. I can solve this in three minutes.
+
+01:14:30.000 --> 01:14:38.000
+But I wanted to see how Claude would do it. But how I knew the answer was from having that problem like 50 times in the past.
+
+01:14:38.000 --> 01:14:46.000
+And spending days and weeks and, you know, stack overflow and trying to solve all these problems that we can bypass now.
+
+01:14:46.000 --> 01:14:55.000
+But being good at this is definitely going to be about having a certain amount of fluidity. You have to be fluid. You have to be willing.
+
+01:14:55.000 --> 01:15:07.000
+To not constrain yourself to not constrain yourself If you do, you are not maximizing your potential with it.
+
+01:15:07.000 --> 01:15:08.000
+You're welcome.
+
+01:15:08.000 --> 01:15:17.000
+Sounds pretty good to me. Thank you. And that's what the next 10 weeks are. I haven't given blood yet, but definitely tears and sweat, 100%.
+
+01:15:17.000 --> 01:15:22.000
+I've always said if you're if you haven't cried in software, have you really done software?
+
+01:15:22.000 --> 01:15:23.000
+Well, yeah, I've done that. I've done that this time. Yeah, it sucked.
+
+01:15:23.000 --> 01:15:34.000
+Even when they're lying. If you've cried, you know, consider that to be one of the patches that you'll use as you continue to move along. Sebastian, go ahead, man.
+
+01:15:34.000 --> 01:15:35.000
+Yeah.
+
+01:15:35.000 --> 01:15:48.000
+So this is like more a philosophical question like So we are doing like a like a whole hard process on giving more details on step by step so at the beginning we we start with the front end and then we get
+
+01:15:48.000 --> 01:15:56.000
+To more complex fixtures and then we go step by step and and it's it's to get harder as you get more features.
+
+01:15:56.000 --> 01:16:14.000
+But I'm thinking more on regards of the whole process. Do you think this whole process of building with AI will be the same like i mean like I don't like all the things that we are learning, maybe next tools would be much easier and all the things that we are doing step by step will be
+
+01:16:14.000 --> 01:16:16.000
+Really different.
+
+01:16:16.000 --> 01:16:21.000
+I think that i think
+
+01:16:21.000 --> 01:16:25.000
+That. Practice no matter what it is.
+
+01:16:25.000 --> 01:16:45.000
+Always will help you be a bit better, right? I think where the direction is going, and I would hope that there's some in this room that are going to be on this next edge. But I think the next direction where I could see it going.
+
+01:16:45.000 --> 01:16:56.000
+Is that AI is really the tools become the tools become more, not necessarily trained to a specific, but more trained to a flow.
+
+01:16:56.000 --> 01:17:02.000
+Where you could say I have this stack. This is the stack I want.
+
+01:17:02.000 --> 01:17:17.000
+I want React, et cetera, et cetera, et cetera. And AI is able to provide a much more concise understanding of pieces between those tooling.
+
+01:17:17.000 --> 01:17:37.000
+Right now, AI doesn't have that. And, you know, they talk about baby g you know baby gi this kind of next… phase you know gpt5 phase Where we're getting close to that that what is the connection? Because that's where
+
+01:17:37.000 --> 01:17:43.000
+Claude always messes up her GTU10. That's where they always mess up. Very rarely.
+
+01:17:43.000 --> 01:17:52.000
+Do they mess up and just say, I want this one thing, go ahead and write it and get it done. Almost always they'll get it done.
+
+01:17:52.000 --> 01:17:59.000
+But when you say, I want this and connect it to this, so I'm building this component, it has to be behind protection.
+
+01:17:59.000 --> 01:18:10.000
+The data comes from super base We're using this authentication. Oh, and by the way, also include that That's where all AI goes.
+
+01:18:10.000 --> 01:18:16.000
+And we crash. And so right now we're having to simplify it down to little bitty pieces.
+
+01:18:16.000 --> 01:18:19.000
+Do this one thing. Reach out to the database and get this.
+
+01:18:19.000 --> 01:18:27.000
+Then take that and use it this way. But I would think that the next kind of step in development.
+
+01:18:27.000 --> 01:18:34.000
+Will be to say, this is my stack And it has a better understanding of all of its peripheral pieces.
+
+01:18:34.000 --> 01:18:43.000
+And those that build that that next step, I think will be be very valuable to the rest of us.
+
+01:18:43.000 --> 01:18:54.000
+I want to retire at some point in the near future. So it's not going to be me. I will tell you that. But I think that there is going to be somebody here it's going to be on that edge. And that edge is like
+
+01:18:54.000 --> 01:19:01.000
+Six or 12 months from now. Right. That's where it's going to go.
+
+01:19:01.000 --> 01:19:02.000
+Thanks for the answer.
+
+01:19:02.000 --> 01:19:07.000
+Let's see, I see. So I see iPhone. Oh, boy, your parents loved or hated you.
+
+01:19:07.000 --> 01:19:14.000
+No. Has already been trained on most of the data on the internet.
+
+01:19:14.000 --> 01:19:24.000
+Yeah, it's already been trained on that. The data the next kind of phase will be relationships.
+
+01:19:24.000 --> 01:19:33.000
+How things connect to each other. I know that this and this work together. Llms are very great about that relationship with semantic meaning in words.
+
+01:19:33.000 --> 01:19:41.000
+Now the next surveys will be that semantic meaning between entities, different things.
+
+01:19:41.000 --> 01:19:49.000
+Different in our case, front end, back-end data. That type of thing.
+
+01:19:49.000 --> 01:20:00.000
+Reese. Well… Depends on the test, right? If you're trying to test front end, yeah, good luck.
+
+01:20:00.000 --> 01:20:09.000
+If you're testing something that has an absolute outcome. That is not necessarily impaired by 50 different things working.
+
+01:20:09.000 --> 01:20:14.000
+As tests should be. Klein is very good at it.
+
+01:20:14.000 --> 01:20:23.000
+Claude writes really good unit tests. If you're… your item is testable, is functional.
+
+01:20:23.000 --> 01:20:29.000
+Do this. I gave the example of when I worked at epic we had to write a ton test.
+
+01:20:29.000 --> 01:20:36.000
+But the tests were… move forward, move back, jump, pick up, drop, turn, shoot.
+
+01:20:36.000 --> 01:20:43.000
+Fire, did the score go up? Did the score go down? Those are things that are all individual pieces that are very attestable.
+
+01:20:43.000 --> 01:21:05.000
+Backend is much more adapted testing. And that's why most front end developer Most companies have moved to things like Cypress where you can see it, you can interact with it you can control mouse, automated testing, right? Because it's more beneficial.
+
+01:21:05.000 --> 01:21:09.000
+And it follows a more human flow, backend database If I send it this, does the database give me that?
+
+01:21:09.000 --> 01:21:14.000
+Yeah.
+
+01:21:14.000 --> 01:21:19.000
+That's an easy test. Clyde can write that all day long.
+
+01:21:19.000 --> 01:21:20.000
+Mm-hmm.
+
+01:21:20.000 --> 01:21:28.000
+I guess if I could step in briefly, Zach. Kind of what I've struggled with is like I'm trying to make sure like my Gmail connection works, for example.
+
+01:21:28.000 --> 01:21:36.000
+So like, and then it's trying to make like mock data, but it doesn't make the mock data in the right formatting. And then the test fails. It's not the right formatting.
+
+01:21:36.000 --> 01:21:41.000
+And I'm like, no, it's not because the function doesn't work. It's because you wrote the stupid test wrong.
+
+01:21:41.000 --> 01:21:43.000
+Do you have any advice for that?
+
+01:21:43.000 --> 01:21:55.000
+Test it yourself. I mean, if it works once and each every so often you go back through and you've tested it you'll begin to see what you actually need to focus on tests with.
+
+01:21:55.000 --> 01:22:08.000
+But no, there's not a whole lot I can offer you in that environment because it's It's a mess, man.
+
+01:22:08.000 --> 01:22:09.000
+Yeah.
+
+01:22:09.000 --> 01:22:30.000
+In the best of times, it's a mess. And part of what makes testing such a just miserable, miserable thing is that there are so many different tools and they're generally only good at you know um super test is great with React, doesn't work with Vite. You got to use Vite test. Well, VTest is great with Vite.
+
+01:22:30.000 --> 01:22:38.000
+Except in these scenarios, right? Oh, you got to back in. Oh, you have authentication. Well, we need mock data because we can't hit the backend every time.
+
+01:22:38.000 --> 01:22:55.000
+And I think that's kind of where Cypress pulls in, which is pretty nice because you can add a user to your database that's a test user It can be part of that. And so when you test this username, this password is good.
+
+01:22:55.000 --> 01:23:03.000
+Because you've got a real response. You put in a wrong password, you got a denial was my You know, was my status code?
+
+01:23:03.000 --> 01:23:13.000
+My 403. Did I get a 403? Then that's a good test. But when you have to start writing mock data, especially on front end and trying, oh man, it's a mess.
+
+01:23:13.000 --> 01:23:22.000
+And if you love it, I applaud you. I don't, right? Just because of that.
+
+01:23:22.000 --> 01:23:23.000
+Well, thank you.
+
+01:23:23.000 --> 01:23:37.000
+Let's see. What else we got? On my landing page, I have a sign in as button are good. Sometimes that's a really nice way to go for testing.
+
+01:23:37.000 --> 01:23:41.000
+Make your life easier. Don't spend time making your life harder.
+
+01:23:41.000 --> 01:23:48.000
+Let's see. I used to write tests full time. Definitely keep them small.
+
+01:23:48.000 --> 01:23:53.000
+The least amount of options One thing, test one thing.
+
+01:23:53.000 --> 01:24:12.000
+If you're a tester, if you're a QA dev, you learn over time what things are testable and need to be tested Like I said, passing a username password that's invalid That's a very good test to have. Do I get the right status code back? Did I get the right toast?
+
+01:24:12.000 --> 01:24:18.000
+Notification so that my users know that that's the problem, right? That's a great test.
+
+01:24:18.000 --> 01:24:28.000
+Testing that I can log in is a less valuable test, even though you get success Because what do you get?
+
+01:24:28.000 --> 01:24:34.000
+Well, if you write custom status codes or custom messages, you can test that, right?
+
+01:24:34.000 --> 01:24:39.000
+Did I get redirected? That's a big one. When I log in, did I get redirected?
+
+01:24:39.000 --> 01:24:48.000
+And so learning the test world is an entirely different world from software.
+
+01:24:48.000 --> 01:24:52.000
+And the few that are good at it, God, I love you guys.
+
+01:24:52.000 --> 01:25:01.000
+The rest of us, we just do our best at it. So don't fight it and make it worse on yourself.
+
+01:25:01.000 --> 01:25:11.000
+Let's see here. Ai first is that program, then what?
+
+01:25:11.000 --> 01:25:16.000
+I don't quite understand A.J. I mean, what's your question?
+
+01:25:16.000 --> 01:25:17.000
+Richard. Gotcha.
+
+01:25:17.000 --> 01:25:25.000
+I was just making a joke that A follow-up cohort could be a software development engineer and test, but like AI first.
+
+01:25:25.000 --> 01:25:37.000
+You know, I'm… more… I think that we will benefit more from AI than testing engineers will, at least for a while.
+
+01:25:37.000 --> 01:25:49.000
+Because there's just so much in there. I wanted to test it a few weeks ago and it took a very, very simple app.
+
+01:25:49.000 --> 01:25:59.000
+Very simple. And man, I went through every testing library in the book and I never once did half the test work.
+
+01:25:59.000 --> 01:26:16.000
+It's an area. Again, why is testing hard? Because AI doesn't understand relationships, right? It doesn't understand how to connect authentication, how I need to test that. And so that'll be the next phase. At some point it's going to happen.
+
+01:26:16.000 --> 01:26:26.000
+But… It's not there yet.
+
+01:26:26.000 --> 01:26:44.000
+Yep. Some companies, that's what they care about. Usually it's big companies that have very bad architecture and a lot of bad coding practices over time that can't afford for it to go down.
+
+01:26:44.000 --> 01:26:48.000
+I've also been talking about COBOL a while back. Cobol is a powerhouse language.
+
+01:26:48.000 --> 01:27:05.000
+It is very good at what it does. I learned COBOL for one reason. My client, I had a client at Texaco Turned out that Texaco happens to be one of the biggest program or higher programmers You know that a program, a COBOL programmer
+
+01:27:05.000 --> 01:27:07.000
+A couple of years ago, I haven't done a couple of years ago.
+
+01:27:07.000 --> 01:27:15.000
+Was getting about 1800 bucks an hour Because there's only a few hundred people in the world that would write in COBOL.
+
+01:27:15.000 --> 01:27:20.000
+And Zoom hired them all up. When Zoom came out, they went with COBOL and they hired them all up.
+
+01:27:20.000 --> 01:27:36.000
+And so because it's very good at transactional data. And so Texaco, you know, in my state, there's a big Texaco and I got pulled in and was looking Most of that code was from the 70s.
+
+01:27:36.000 --> 01:27:42.000
+And they spent billions of dollars in the 70s writing it.
+
+01:27:42.000 --> 01:27:46.000
+And now it would cost them hundreds of billions of dollars. Now, so they're still around.
+
+01:27:46.000 --> 01:28:06.000
+So they do a ton of testing because every single change can have massive impact. And so companies, Amazon, a lot of Amazon is that way it's on old architecture. When I worked at cbs They had more QA engineers than they had software engineers.
+
+01:28:06.000 --> 01:28:17.000
+Because it was so old and held together by duct tape and bailing wire that any change could have catastrophic.
+
+01:28:17.000 --> 01:28:23.000
+And so the quality of the test engineers was insane. They're by far the best engineers.
+
+01:28:23.000 --> 01:28:29.000
+Test engineers I've ever come across. Because you can sneeze and take out half a CVS pharmacy.
+
+01:28:29.000 --> 01:28:42.000
+That's always going to be a concern. And if you're And that's why AI-first development is not happening with these companies on legacy software.
+
+01:28:42.000 --> 01:28:53.000
+Oh, man, I wouldn't die. It terrifies me to crack open some of this code Because of that, I wouldn't let a guy near it.
+
+01:28:53.000 --> 01:29:00.000
+Well, I will tell you this. Cobol programming.
+
+01:29:00.000 --> 01:29:10.000
+I don't know if you know if the book that was, I think it was in 1995, COBOL first in 24 hours, I think is what the name is. I have two copies over there.
+
+01:29:10.000 --> 01:29:29.000
+Originally, they were like 40 bucks, right? A few years ago, they were like $700 used on eBay because It had been written in nearly 30 years. Nobody knew COBOL. So just to get the book itself was through the roof.
+
+01:29:29.000 --> 01:29:36.000
+When you work, it's definitely… steak and lobster and programming cobalt.
+
+01:29:36.000 --> 01:29:38.000
+But on the other side, there's not a whole lot of work for it.
+
+01:29:38.000 --> 01:29:47.000
+But it was nice to go up and spend the weekend and make 25 grand in the weekend. It was pretty sweet.
+
+01:29:47.000 --> 01:30:02.000
+Anything else? All right, last chance. Roger, I'm going to have to send you some of my… My company, we're about to release our first products Badass Beard Brothers.
+
+01:30:02.000 --> 01:30:16.000
+We'll have to send you some good stuff, man. We got lots of the good bearded good life, good smells, vanillas and citrus, that kind of stuff. So it's nice to smell ourselves.
+
+01:30:16.000 --> 01:30:22.000
+I have this old just rack filled with stuff people have given me over the years.
+
+01:30:22.000 --> 01:30:32.000
+You know, the thing is that when we started it, we wanted, you know, there's a whole like the number one beard for the non-bearded people, I'm sorry, but you'll learn something.
+
+01:30:32.000 --> 01:30:42.000
+The number one supposed scent for men in your beard care is diesel sweet cigar smoke.
+
+01:30:42.000 --> 01:30:54.000
+And something else. I don't know about any of you guys, but my woman does not want to snuggle up and smell peaceful and cigar smoke in my beard.
+
+01:30:54.000 --> 01:31:03.000
+And so we came out with good vanilla with citrus and that kind of stuff. So it smells really nice when you have to, you know, yeah.
+
+01:31:03.000 --> 01:31:20.000
+Yeah, that smells nice. You know, our actual motto is, since so good Your wife wants to use it, right? Because, you know, I mean… I don't know about you, but part of the benefit of having a beard is that it catches some fun attention.
+
+01:31:20.000 --> 01:31:25.000
+And if it smells like gun smoke, it's not going to get that attention.
+
+01:31:25.000 --> 01:31:38.000
+We'll have to send some out. Well, I hope everybody had a good uh a good learning experience today and I look forward to What do you call it?
+
+01:31:38.000 --> 01:31:41.000
+We used to call them brown bags. I forgot what he called it.
+
+01:31:41.000 --> 01:31:48.000
+Dinner with Kieran. It ought to be really interesting because… he's pretty much one man shop, I believe.
+
+01:31:48.000 --> 01:31:56.000
+And highly productive. So that's really… I think it's going to be really beneficial. But I would say this as a closing thought.
+
+01:31:56.000 --> 01:32:04.000
+Don't be afraid to break it. It's okay. You can restart it. I mean, worst case scenario, it's not that big of a deal.
+
+01:32:04.000 --> 01:32:17.000
+And don't take it so serious that you wipe out your own forward movement because that happens a lot in software Anyway, and I see it really happening here a lot.
+
+01:32:17.000 --> 01:32:21.000
+Enjoy the process. It may be 100 hours. It may suck.
+
+01:32:21.000 --> 01:32:37.000
+But enjoy the process. Software is a wonderful place to be. I love it. And I'm so happy that So many of you are so many of you deciding to add this to your life It's been a good life for me and I suspect it will be a good life for
+
+01:32:37.000 --> 01:32:42.000
+All of you as well. Ryan, you're most welcome.
+
+01:32:42.000 --> 01:32:48.000
+And everyone, we'll see you in half an hour. Enjoy. Have fun.
+
+01:32:48.000 --> 01:32:49.000
+And take care. You're most welcome.
+
+01:32:49.000 --> 01:32:52.000
+Thank you, Zach.
+
+01:32:52.000 --> 01:33:04.000
+Man, it's so clean cut. I don't know. We need to give you a mohawk or something, Reese. I mean… Man, if I could grow this, I would most definitely have a mohawk.
+
+01:33:04.000 --> 01:33:05.000
+The only good picture. I had another picture, I'd change it.
+
+01:33:05.000 --> 01:33:26.000
+Well, it's a very good picture. And, you know, blue tie and everything. I feel like that, you know, we should have… Reese for president or something. I mean, and the name Harding too. Come on, I mean… So if you decide to run for Congress or something, let me know. I'll vote for you.
+
+01:33:26.000 --> 01:33:32.000
+You've got me sold. Have a good one, everybody. Bye.
+
